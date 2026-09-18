@@ -20,7 +20,9 @@ scope:
   exclude: []
 navigation:
   parent: lunar-charging
-  related: []
+  related:
+  - lunar-magnetic-anomalies
+  - spacecraft-plasma
 groups:
 - id: measurements
   title: 観測手法と月面計測

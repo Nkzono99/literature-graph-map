@@ -17,7 +17,8 @@ scope:
   exclude: []
 navigation:
   parent: lunar-charging
-  related: []
+  related:
+  - spacecraft-plasma
 groups:
 - id: charging
   title: 帯電解析と環境

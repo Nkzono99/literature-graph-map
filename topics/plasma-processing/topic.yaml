@@ -1,0 +1,392 @@
+schema_version: 1
+topic_id: plasma-processing
+title: プラズマ加工・微細構造の帯電
+question: プラズマから届く粒子と表面反応が、微細構造の電位・加工速度・形状をどう変えるか。
+review:
+- heading: 粒子が表面へ届き、反応生成物が離れるまで
+  paragraphs:
+  - プラズマ加工では、反応性の中性粒子が表面を化学的に変え、イオンや電子の照射が反応や物質の除去を促す。[@P000129]はSiや酸化膜などを用いた実験から、この照射と化学反応の結び付きを調べた。どの材料を、どのガスで、どれだけ方向をそろえて削るかが加工形状を左右する。装置の発展と材料別の反応をまとめた[@P000130]は、個々の計算や実験を位置付ける入口になる。文献を比較するときは、表面に届く粒子の種類・エネルギー・角度分布と、表面反応のモデルを対応させると、同じ電位でも加工結果が変わる理由を追いやすい。
+- heading: 装置全体のプラズマと、薄いRFシースをつなぐ
+  paragraphs:
+  - 基板に高周波電圧を加えると、シースが時間的に変化し、粒子が表面へ届く条件も変わる。装置寸法に比べて薄いシースを扱うため、[@P000131]は電荷の出入りを追う半解析モデルを二次元の装置計算に組み込んだ。ここでは装置から得るプラズマ状態がシースへ渡り、シースの電位降下が装置側の場にも反映される。[@P000132]のハイブリッド計算は、電磁場・粒子輸送・反応を時間スケールごとに分担して結合する考え方を整理している。流体計算、粒子追跡、半解析解をどの領域で使うかは、装置条件と必要な出力に応じた選択になる。
+- heading: 溝の形が電流収支を変え、イオンの進路を曲げる
+  paragraphs:
+  - 深い溝では側壁が電子を遮り、底面に届く電子とイオンの量に差が生じる。[@P000133]はアスペクト比が大きいほど底面が正に帯電し、その電場によるイオン偏向が側壁のノッチ形成につながる過程を計算した。[@P000134]は電子温度もこの遮蔽と電位差を変えることを示しており、形状と入射分布を組にして読むとよい。SiO2の溝を扱う[@P000135]では、入射イオンのエネルギーに対して局所電位が高くなると底面への到達が妨げられ、加工停止に至る。月面空洞の文献とも、形状による粒子選別と表面電荷の再分布に着目して読み比べられる。
+- heading: 帯電と粗さは、加工の進行とともに変わる
+  paragraphs:
+  - 加工が進めば表面形状が変わり、粒子の集まり方と局所電位も変わる。[@P000136]は帯電・エッチング速度・形状更新を結合し、高分子表面では帯電が平滑化を促す条件を示した。さらにArによるPMMA加工を扱った[@P000137]はイオン反射と電子誘起二次電子放出を加え、反射が粗さの維持に、帯電が粗さの減少に寄与すると整理した。これらの計算では粗さの指標だけでなく、反射、入射角依存の収率、材料の誘電特性を合わせて参照すると、微細構造の損傷と表面機能の調整を同じ帯電問題から考えられる。
+public: true
+scope:
+  include:
+  - プラズマエッチングの反応機構
+  - RFシース・装置モデル
+  - 微細構造の局所帯電
+  - 高分子表面の粗さ
+  exclude: []
+navigation:
+  parent: null
+  related:
+  - plasma-sheaths
+  - pic
+  - poisson-solvers
+  - lunar-charging
+  - lunar-charging-topography
+groups:
+- id: etching-foundations
+  title: エッチングの基礎・総説
+- id: reactor-models
+  title: RFシース・装置モデル
+- id: feature-charging
+  title: 溝・微細構造の局所帯電
+- id: roughness-evolution
+  title: 表面粗さ・形状の発展
+entries:
+- paper_id: P000129
+  group: etching-foundations
+  role: 粒子照射と表面反応
+  summary:
+    question: イオン・電子の照射は、表面の化学反応をどう促進するか。
+    method: Si・SiO2・Si3N4と反応性ガスの組合せを実験で比較。
+    contribution: 揮発性生成物を生む表面反応の照射促進を、エッチングの基礎として整理。
+  evidence_by_item:
+    question:
+    - paper_id: P000129
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.326355
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000129
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.326355
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000129
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.326355
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000130
+  group: etching-foundations
+  role: プラズマエッチングの総説
+  summary:
+    question: 反応機構と装置の発展は、微細加工の要求にどう応えてきたか。
+    method: 装置設計・吸着・材料別反応・集積回路製造への応用を概説。
+    contribution: Si・酸化膜・低誘電率材料の加工を、共通の物理化学から参照できる。
+  evidence_by_item:
+    question:
+    - paper_id: P000130
+      version_id: V1
+      url: https://api.crossref.org/works/10.1116/1.4819316
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000130
+      version_id: V1
+      url: https://api.crossref.org/works/10.1116/1.4819316
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000130
+      version_id: V1
+      url: https://api.crossref.org/works/10.1116/1.4819316
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000131
+  group: reactor-models
+  role: RFシースと装置モデルの結合
+  summary:
+    question: 薄いRFシースを、装置全体の計算にどう組み込むか。
+    method: シース電荷の時間発展と半解析解を、二次元ハイブリッドモデルに接続。
+    contribution: Ar・Ar/Cl2放電で、誘導結合電力とRFバイアスに応じた表面流束・電位を計算。
+  evidence_by_item:
+    question:
+    - paper_id: P000131
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000131
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000131
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000132
+  group: reactor-models
+  role: 低温プラズマのハイブリッド計算
+  summary:
+    question: 時間スケールの異なる輸送・反応・電磁場をどう計算するか。
+    method: 物理過程ごとのモジュールを反復結合する手法を、誘導結合プラズマで説明。
+    contribution: 対象条件に適した流体・粒子モデルを組み合わせる装置解析の枠組みを示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000132
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jpd_42_194013_2009.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000132
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jpd_42_194013_2009.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000132
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jpd_42_194013_2009.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000133
+  group: feature-charging
+  role: アスペクト比と電子の遮蔽
+  summary:
+    question: 溝が深くなると、底面電位と側壁の加工はどう変わるか。
+    method: 絶縁膜上のポリシリコン構造で、粒子入射をMonte Carlo計算。
+    contribution: 底面への電子不足が正電位とイオン偏向を強め、ノッチ形成を促すと説明。
+  evidence_by_item:
+    question:
+    - paper_id: P000133
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.365616
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000133
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.365616
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000133
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.365616
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000134
+  group: feature-charging
+  role: 電子温度による帯電変化
+  summary:
+    question: 同じ微細構造でも、電子温度で帯電損傷はどう変わるか。
+    method: 高アスペクト比の密集構造を二次元Monte Carlo計算で比較。
+    contribution: 高い電子温度で底面への電子流が減り、電位上昇と側壁へのイオン偏向が強まる。
+  evidence_by_item:
+    question:
+    - paper_id: P000134
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.79.845
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000134
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.79.845
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000134
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.79.845
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000135
+  group: feature-charging
+  role: 局所帯電によるエッチストップ
+  summary:
+    question: 深いSiO2溝の加工を、局所電位が止める条件は何か。
+    method: 電子・イオンのMonte Carlo追跡を表面電荷収支とPoisson方程式に結合。
+    contribution: 入射300 eVのモデルで、深い溝の正帯電がイオン到達を阻み、加工停止を生む。
+  evidence_by_item:
+    question:
+    - paper_id: P000135
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.1347021
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000135
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.1347021
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000135
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.1347021
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000136
+  group: roughness-evolution
+  role: 帯電と表面粗さの相互作用
+  summary:
+    question: 高分子表面の粗さと局所電位は、加工中にどう変化するか。
+    method: 帯電・エッチング速度・形状更新のモデルを結合し、入射角依存性を比較。
+    contribution: 帯電が粗さの減少を促し、平滑化に伴って帯電電位も低下する条件を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000136
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.5018313
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000136
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.5018313
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000136
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.5018313
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000137
+  group: roughness-evolution
+  role: 反射・二次電子と形状変化
+  summary:
+    question: イオン反射と二次電子放出は、帯電を通じて粗さにどう作用するか。
+    method: ArプラズマによるPMMA加工モデルに、イオン反射と電子誘起二次電子を追加。
+    contribution: 計算条件では反射が粗さを維持し、帯電が平滑化を促進。二次電子の寄与は小さい。
+  evidence_by_item:
+    question:
+    - paper_id: P000137
+      version_id: V1
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6187714/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000137
+      version_id: V1
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6187714/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000137
+      version_id: V1
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6187714/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: '2026-09-18'
+  scope_period: 制限なし
+  provider_names:
+  - Paperpile
+  - Crossref
+  - 出版社・著者公開記録
+  queries: []
+  coverage_note: 所蔵文献を起点に主要論点の文献を追加。公開要旨による初版。
+  limitations:
+  - 全件の本文精読・図表確認は未実施。
+  changes: 新規テーマを作成。
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

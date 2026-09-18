@@ -18,7 +18,8 @@ scope:
   exclude: []
 navigation:
   parent: lunar-charging
-  related: []
+  related:
+  - plasma-sheaths
 groups:
 - id: balance
   title: 電流収支と材料特性

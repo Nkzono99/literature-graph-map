@@ -1,0 +1,432 @@
+schema_version: 1
+topic_id: poisson-solvers
+title: Poisson方程式・場の解法
+question: 自由空間、部分周期、複雑形状の境界条件に応じて、電位と電場の数値解法を比較する。
+review:
+- heading: 境界条件から解法を選ぶ
+  paragraphs:
+  - 静電PICでは、粒子から求めた電荷密度をPoisson方程式へ渡し、電位と電場を計算する。ここで先に決めたいのは、計算領域の外をどう表すかである。孤立した電荷分布、周期的に繰り返す系、電位を指定した壁では、解くべき境界値問題が変わる。孤立系の古典的な検討は[@P000075]、規則格子で複数の境界条件を使い分ける実装はSailFFish（[@P000084]）が入口になる。月面の一部を切り出す場合も、面内の繰り返しと上空側の条件を、表したい空間スケールに合わせる。
+- heading: 自由空間のFFTと、多重極展開
+  paragraphs:
+  - 規則格子上では、電荷密度とGreen関数の畳み込みをFFTで高速に計算できる。[@P000083]は自由空間を解く二つの方式を比較し、Vico–Greengard–Ferrando法による電位・勾配の誤差収束の改善を示した。粒子計算では電位を微分して得る力も使うため、電位と電場の精度を併せて読むと、解法の違いが分かりやすい。
+  - 粒子同士の長距離相互作用を直接まとめるのが、高速多重極法（FMM）である。[@P000076]は遠方の多数の粒子を展開係数で表し、階層的に計算する基礎を示した。[@P000077]は粒子分布に適応させ、偏った配置へ広げている。格子の規則性を使うFFTと、空間的なまとまりを使うFMMは、電荷の置き方や欲しい出力点から比較できる。
+- heading: 部分的な周期性と、正味電荷の扱い
+  paragraphs:
+  - 面内の二方向を周期的にし、垂直方向を開くと、三方向周期の計算とは周期像の足し合わせ方が変わる。[@P000081]はFourier級数と積分を組み合わせ、こうした薄い領域のEwald和を高速に評価する。[@P000082]は近傍と遠方を分け、FMMに一方向・二方向・三方向の周期条件を導入した。両者は、境界条件を守りながら長距離相互作用を高速化する異なる経路になる。さらに計算領域に正味の電荷があるときは、基準となる電位やエネルギーの定義も関わる。[@P000080]は帯電壁による中性化に対応する正則化を与え、二方向周期の非中性系を扱った。
+- heading: 形状と局所解像度を、格子に反映する
+  paragraphs:
+  - 物体表面や細い構造の周囲では、全領域を一様に細分化する費用が大きくなる。[@P000078]は直交格子のセルを物体境界で切り分け、有限体積法の流束を通じて境界条件を与える。二次元の変係数Poisson問題で、マルチグリッドと適応格子を組み合わせた二次精度を示した。[@P000079]は非等間隔点のデータに対し、非等間隔FFT（NFFT）に基づく方法とマルチグリッドを比較する。表面形状をどう近似するか、電荷密度をどこで解像するか、場をどの位置へ戻すかを併せて考えると、PIC側の格子設計までつながる。
+public: true
+scope:
+  include:
+  - 自由空間・FFTと実装
+  - 高速多重極法
+  - 部分周期・非中性系
+  - 複雑形状・非一様格子
+  exclude: []
+navigation:
+  parent: null
+  related:
+  - pic
+  - plasma-sheaths
+  - spacecraft-plasma
+  - lunar-charging-topography
+  - plasma-processing
+groups:
+- id: free-space
+  title: 自由空間・FFTと実装
+- id: multipole
+  title: 高速多重極法
+- id: periodic
+  title: 部分周期・非中性系
+- id: geometry
+  title: 複雑形状・非一様格子
+entries:
+- paper_id: P000075
+  group: free-space
+  role: 孤立系のFFT解法
+  summary:
+    question: 孤立した電荷分布の電位を、有限の計算格子でどう求めるか。
+    method: 孤立系に対するPoisson方程式の数値解法を検討。
+    contribution: 自由空間の電位計算をたどる起点となる基礎文献。
+  evidence_by_item:
+    question:
+    - paper_id: P000075
+      version_id: V1
+      url: https://api.crossref.org/works/10.1016/0021-9991(79)90139-6
+      source_type: metadata
+      locator: 書誌レコード
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000075
+      version_id: V1
+      url: https://api.crossref.org/works/10.1016/0021-9991(79)90139-6
+      source_type: metadata
+      locator: 書誌レコード
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000075
+      version_id: V1
+      url: https://api.crossref.org/works/10.1016/0021-9991(79)90139-6
+      source_type: metadata
+      locator: 書誌レコード
+      checked_at: '2026-09-18'
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000083
+  group: free-space
+  role: 自由空間FFTの精度比較
+  summary:
+    question: FFTによる自由空間電位と、その勾配の精度をどう高めるか。
+    method: Hockney–Eastwood法とVico–Greengard–Ferrando法の誤差収束を比較。
+    contribution: 後者が同程度の実装・計算負担で、高い精度を得られる例を示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000083
+      version_id: V1
+      url: https://arxiv.org/abs/2103.08531
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000083
+      version_id: V1
+      url: https://arxiv.org/abs/2103.08531
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000083
+      version_id: V1
+      url: https://arxiv.org/abs/2103.08531
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000084
+  group: free-space
+  role: SailFFishの実装
+  summary:
+    question: 複数の境界条件に対応する高速Poissonソルバをどう実装するか。
+    method: 規則格子と離散変換を用い、周期・Dirichlet・Neumann・自由空間を検証。
+    contribution: CPU・GPU向けのライブラリとして、電位や勾配の計算をまとめる。
+  evidence_by_item:
+    question:
+    - paper_id: P000084
+      version_id: V1
+      url: https://arxiv.org/abs/2301.01145
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000084
+      version_id: V1
+      url: https://arxiv.org/abs/2301.01145
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000084
+      version_id: V1
+      url: https://arxiv.org/abs/2301.01145
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000076
+  group: multipole
+  role: 高速多重極法の基礎
+  summary:
+    question: 多数の粒子が作るポテンシャルと力を高速に求めるには。
+    method: 遠方の相互作用を多重極展開でまとめ、階層的に評価。
+    contribution: 粒子数に比例する計算量を目指すFMMの基礎アルゴリズムを提示。
+  evidence_by_item:
+    question:
+    - paper_id: P000076
+      version_id: V1
+      url: https://users.flatironinstitute.org/~ahb/m126w12/public_html/Greengard1987JCP_Rokhlin_FMM_Coulomb_algorithm.pdf
+      source_type: abstract
+      locator: 論文冒頭の要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000076
+      version_id: V1
+      url: https://users.flatironinstitute.org/~ahb/m126w12/public_html/Greengard1987JCP_Rokhlin_FMM_Coulomb_algorithm.pdf
+      source_type: abstract
+      locator: 論文冒頭の要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000076
+      version_id: V1
+      url: https://users.flatironinstitute.org/~ahb/m126w12/public_html/Greengard1987JCP_Rokhlin_FMM_Coulomb_algorithm.pdf
+      source_type: abstract
+      locator: 論文冒頭の要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000077
+  group: multipole
+  role: 不均一分布への適応
+  summary:
+    question: 粒子分布が偏っていても、FMMの効率を保つには。
+    method: 粒子の分布に合わせる適応的な多重極アルゴリズムを構成。
+    contribution: Coulomb相互作用の高速評価を、不均一な粒子分布へ広げる。
+  evidence_by_item:
+    question:
+    - paper_id: P000077
+      version_id: V1
+      url: https://api.crossref.org/works/10.1137/0909044
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000077
+      version_id: V1
+      url: https://api.crossref.org/works/10.1137/0909044
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000077
+      version_id: V1
+      url: https://api.crossref.org/works/10.1137/0909044
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000080
+  group: periodic
+  role: 非中性スラブの境界条件
+  summary:
+    question: 二方向が周期的な系に正味の電荷があるとき、エネルギーをどう定義するか。
+    method: 両側の帯電壁による中性化に対応する正則化を導入。
+    contribution: 二次元周期系の力とエネルギーを整合的に計算し、格子和などで検証。
+  evidence_by_item:
+    question:
+    - paper_id: P000080
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.3216473
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000080
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.3216473
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000080
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.3216473
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000081
+  group: periodic
+  role: 二方向周期のEwald和
+  summary:
+    question: 面内は周期的、面に垂直な方向は開いた系を高速に計算するには。
+    method: Fourier級数と積分を組み合わせ、粒子・格子型のEwald計算法を導出。
+    contribution: 二方向周期の静電系で、スペクトル精度と誤差要因の分離を実現。
+  evidence_by_item:
+    question:
+    - paper_id: P000081
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.4704177
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000081
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.4704177
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000081
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.4704177
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000082
+  group: periodic
+  role: FMMへの周期条件の導入
+  summary:
+    question: FMMで一方向から三方向までの周期条件をどう指定するか。
+    method: 近傍を通常のFMMで、遠方の周期像を事前構成した変換演算子で評価。
+    contribution: カーネル独立FMMに、周期性と整合条件を満たす処理を追加。
+  evidence_by_item:
+    question:
+    - paper_id: P000082
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999117308501
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000082
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999117308501
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000082
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999117308501
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000078
+  group: geometry
+  role: 埋め込み境界とマルチグリッド
+  summary:
+    question: 曲がった境界を直交格子の中で、精度よく扱うには。
+    method: 有限体積法で境界セルの流束を離散化し、マルチグリッドとAMRを併用。
+    contribution: 二次元の変係数・Dirichlet問題で、二次精度を保つ境界処理を示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000078
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0021999198959654
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000078
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0021999198959654
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000078
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0021999198959654
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000079
+  group: geometry
+  role: 非等間隔格子の解法比較
+  summary:
+    question: 非等間隔の点配置で、Fourier法とマルチグリッドはどう違うか。
+    method: NFFTに基づくメッシュレス法と、非等間隔格子のマルチグリッドを比較。
+    contribution: 加速器の空間電荷計算を背景に、格子配置に応じた解法選択を検討。
+  evidence_by_item:
+    question:
+    - paper_id: P000079
+      version_id: V1
+      url: https://citeseerx.ist.psu.edu/document?doi=df99cf01e1f5814ea0aa87724bbf8a1df57bcc6c&repid=rep1&type=pdf
+      source_type: abstract
+      locator: 著者稿 p.1 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000079
+      version_id: V1
+      url: https://citeseerx.ist.psu.edu/document?doi=df99cf01e1f5814ea0aa87724bbf8a1df57bcc6c&repid=rep1&type=pdf
+      source_type: abstract
+      locator: 著者稿 p.1 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000079
+      version_id: V1
+      url: https://citeseerx.ist.psu.edu/document?doi=df99cf01e1f5814ea0aa87724bbf8a1df57bcc6c&repid=rep1&type=pdf
+      source_type: abstract
+      locator: 著者稿 p.1 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: '2026-09-18'
+  scope_period: 制限なし
+  provider_names:
+  - Paperpile
+  - Crossref
+  - 出版社公開レコード
+  - arXiv
+  queries:
+  - Poisson方程式・場の解法
+  coverage_note: 所有ライブラリを起点に、書誌・公開要旨と書籍紹介を確認して基礎と実装の文献を選定。
+  limitations:
+  - 要点は主に要旨に基づく。書誌のみ確認した文献はinspectionに区別した。
+  - 公開版の所在は確認できたものを登録し、網羅的な探索は行っていない。
+  changes: 基礎・手法・実装を関連づけたテーマを新規作成。
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

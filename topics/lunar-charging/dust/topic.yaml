@@ -23,7 +23,8 @@ scope:
   exclude: []
 navigation:
   parent: lunar-charging
-  related: []
+  related:
+  - plasma-sheaths
 groups:
 - id: properties
   title: 電子放出と粒子電荷

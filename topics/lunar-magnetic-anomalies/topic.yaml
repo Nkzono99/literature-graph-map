@@ -1,0 +1,362 @@
+schema_version: 1
+topic_id: lunar-magnetic-anomalies
+title: 月の磁気異常と太陽風相互作用
+question: 地殻磁場が太陽風の粒子軌道・電位・表面照射をどう変えるかを、観測・PIC・実験から整理する。
+review:
+- heading: 局所的な磁場が、太陽風の届き方を変える
+  paragraphs:
+  - 月の地殻には、場所によって強さや向きの異なる磁場が残っている。その近くでは太陽風の粒子軌道が曲がり、表面に届く粒子の量とエネルギーが変わる。計算や観測を比較する出発点になるのが、かぐやとLunar
+    Prospectorから表面磁場を復元した[@P000107]である。磁場の強さに加えて、表面に対する向きや空間的な広がりを参照できる。
+  - Chandrayaan-1が測った月面からの水素中性原子は、太陽風の到達を画像として見る手段になった。[@P000109]は磁気異常の上に粒子フラックスが減る領域と、その周囲の増加域を捉えた。[@P000110]は中性原子のエネルギー分布へ着目し、入射陽子が減速する分から正の電位を推定している。
+- heading: 電子とイオンの運動の違いが、電場と境界電流を作る
+  paragraphs:
+  - 小さな磁気異常では、電子は磁場の影響を強く受ける一方、イオンの旋回半径は異常の寸法より大きくなる。この応答の違いから電荷が分かれ、電場が生じる。かぐやによる[@P000111]では電子の加速と陽子・アルファ粒子の減速が同時に観測され、電場の存在を粒子エネルギーから調べている。
+  - 三次元PICの[@P000112]は、電子の偏向、反射イオン、周囲の密度増加を一つの計算で追跡した。[@P000114]は境界層に焦点を絞り、電子のドリフトと旋回運動から電流の構造を説明する。双極子を垂直に向けた[@P000113]では、カスプへの流入と周囲の電場によって反射や表面照射の形が変わる。磁場の形状は、遮蔽の強さと同じくらい重要な比較軸になる。
+- heading: 実際の磁場配置と表面帯電へ広げる
+  paragraphs:
+  - Reiner Gammaの観測に基づく磁場を使った[@P000115]は、太陽風の入射角や磁気シース通過を含む8条件を比較した。高度によっても粒子分布が大きく変わるため、周回機と着陸機の観測を結び付ける際に参照できる。
+  - 表面電位は、流入する粒子と放出電子の両方に応答する。[@P000116]の室内実験では、電子が磁場で遮られる領域の正電位が、イオン衝突で生じた二次電子によって抑えられる可能性が示された。地球の磁気圏ローブ中を扱う[@P000051]は、光電子スペクトルから地殻磁場と日照面の相対電位の対応を調べている。外部プラズマの条件をそろえることで、これらの結果を比較しやすくなる。
+- heading: 局所の遮蔽から、広域の照射とスワールへ
+  paragraphs:
+  - 磁気異常に反射・偏向された陽子は周囲にも運ばれる。[@P000117]は、異常内部でのフラックス減少と、1,000 kmを超える周辺領域での増加を中性原子・陽子のマップから示した。小さな孤立異常とSouth
+    Pole–Aitkenの磁気群では、太陽風動圧への応答も異なる。
+  - 長い時間にわたる照射の違いは、表面の明るいスワール模様や宇宙風化へとつながる。[@P000108]は磁場と反射スペクトルを比較し、太陽風遮蔽と微細ダスト集積の両方から模様の成因を論じた。粒子・電場を扱う研究と表面の分光観測を合わせて読むことで、瞬間的なプラズマ環境から表面変化へのつながりを追える。
+public: true
+scope:
+  include:
+  - 磁場モデル・スワール
+  - 粒子観測・電位推定
+  - 運動論的シミュレーション
+  - 表面帯電・広域への影響
+  exclude: []
+navigation:
+  parent: null
+  related:
+  - lunar-charging
+  - pic
+  - plasma-sheaths
+  - plasma-expansion
+  - lunar-water
+  - lunar-charging-observations
+groups:
+- id: field-and-swirls
+  title: 磁場モデル・スワール
+- id: particles-and-potentials
+  title: 粒子観測・電位推定
+- id: kinetic-models
+  title: 運動論的シミュレーション
+- id: surface-and-global
+  title: 表面帯電・広域への影響
+entries:
+- paper_id: P000107
+  group: field-and-swirls
+  role: 月表面の磁場モデル
+  summary:
+    question: 月周回の磁場観測から、地表のベクトル磁場をどう復元するか。
+    method: かぐやとLunar Prospectorの低高度観測をsurface vector mappingで統合。
+    contribution: 全球の表面磁場3成分を提供し、明るい模様と磁場構造の対応を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000107
+      version_id: V1
+      url: https://doi.org/10.1002/2014je004785
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000108
+  group: field-and-swirls
+  role: スワールと宇宙風化
+  summary:
+    question: 明るいスワール模様は、地殻磁場や表面物質とどう対応するか。
+    method: Clementineの多波長画像とLunar Prospectorの磁場観測を比較。
+    contribution: スワールの未成熟なスペクトルを整理し、太陽風遮蔽とダスト集積の仮説を論じた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000108
+      version_id: V1
+      url: https://doi.org/10.1029/2010je003656
+      source_type: abstract
+      locator: 論文冒頭の要旨（p.1）
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000109
+  group: particles-and-potentials
+  role: 中性原子による遮蔽の画像化
+  summary:
+    question: 磁気異常による太陽風の遮蔽を、月面から戻る中性原子で捉えられるか。
+    method: Chandrayaan-1/SARAで後方散乱する水素原子を画像化。
+    contribution: 直径約360 kmのフラックス減少域と、その周囲の増加域を観測した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000109
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl041721
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000110
+  group: particles-and-potentials
+  role: ENAによる電位推定
+  summary:
+    question: 磁気異常上空の電位を、離れた場所から面として推定できるか。
+    method: Chandrayaan-1/CENAの水素中性原子スペクトルから入射陽子の減速を推定。
+    contribution: Gerasimovic磁気異常内に+135 Vを超える電位を推定した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000110
+      version_id: V1
+      url: https://doi.org/10.1002/grl.50135
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000111
+  group: particles-and-potentials
+  role: 電子とイオンの同時計測
+  summary:
+    question: 磁気異常上空の電子加速とイオン減速は、どの電場に対応するか。
+    method: かぐやMAP-PACEで電子・陽子・アルファ粒子のエネルギー変化を比較。
+    contribution: 電荷当たりのエネルギー変化の対応から、月から外向きの電場を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000111
+      version_id: V1
+      url: https://link.springer.com/article/10.5047/eps.2011.07.011
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000112
+  group: kinetic-models
+  role: 三次元PICによる基本構造
+  summary:
+    question: 小さな磁気異常は、電子とイオンをどう偏向・反射するか。
+    method: 磁気双極子と太陽風の相互作用を三次元・全運動論的電磁PICで計算。
+    contribution: 電子の運動、反射イオン、周囲の密度増加を結び付け、上流条件への依存を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000112
+      version_id: V1
+      url: https://doi.org/10.1002/2015ja021070
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000113
+  group: kinetic-models
+  role: 双極子の向きの効果
+  summary:
+    question: 表面に垂直な磁気双極子では、太陽風の反射と表面流入はどう変わるか。
+    method: 垂直双極子を三次元・全運動論的PICで計算し、水平双極子と比較。
+    contribution: カスプ周囲の電場によるイオン反射と、環状の表面照射パターンを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000113
+      version_id: V1
+      url: https://doi.org/10.1002/2016gl068535
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000114
+  group: kinetic-models
+  role: 電子境界電流の構造
+  summary:
+    question: ミニ磁気圏の境界電流は、電子のどの運動から生じるか。
+    method: Reiner Gammaを模した小双極子を三次元電磁PICで計算。
+    contribution: 電荷分離電場による電子加速とドリフトを分け、電子旋回半径程度の電流層を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000114
+      version_id: V1
+      url: https://doi.org/10.1002/2016ja022927
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000115
+  group: kinetic-models
+  role: Reiner Gammaの局所環境
+  summary:
+    question: Reiner Gamma付近のプラズマは、高度や月の軌道位置によってどう変わるか。
+    method: 観測に基づく磁場モデルを使い、8条件を全運動論的PICで計算。
+    contribution: 高度・太陽風入射角・磁気シース通過による違いを整理し、現地計測の条件を論じた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000115
+      version_id: V1
+      url: https://doi.org/10.1029/2021ja029180
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000116
+  group: surface-and-global
+  role: 磁気遮蔽と二次電子の実験
+  summary:
+    question: 電子が遮蔽される表面では、イオン照射による正電位がどこまで上がるか。
+    method: 絶縁面下の垂直双極子に100–800 eVのイオンビームを照射し、探針で測定。
+    contribution: 高エネルギー側で正電位の上昇が抑えられ、二次電子の流入による説明を提示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000116
+      version_id: V1
+      url: https://doi.org/10.1029/2021ja029821
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000117
+  group: surface-and-global
+  role: 磁気異常の広域への影響
+  summary:
+    question: 磁気異常による陽子の再分配は、月面のどこまで広がるか。
+    method: Chandrayaan-1/SARAの中性原子・反射陽子を全球マップ化。
+    contribution: 異常内の遮蔽と周囲の広域増加を示し、小孤立異常とSPA磁気群の動圧応答を比較した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000117
+      version_id: V1
+      url: https://doi.org/10.1029/2025ja034163
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000051
+  group: surface-and-global
+  role: 地殻磁場と相対電位
+  summary:
+    question: 地殻磁場は、日照面の電位分布をどう変えるか。
+    method: かぐやの光電子スペクトルと光電子モデルから相対電位を解析。
+    contribution: 磁気圏ローブ中で、強い地殻磁場の領域ほど正側の相対電位を持つ傾向を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000051
+      version_id: V1
+      url: https://doi.org/10.1029/2024ja033545
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: '2026-09-18'
+  scope_period: 制限なし
+  provider_names:
+  - Paperpileライブラリ
+  - Crossref
+  - 出版社・機関リポジトリ
+  queries: []
+  coverage_note: 書誌と要旨を中心に、各文献の比較軸と参照先を整理。
+  limitations: []
+  changes: 新規テーマの初版を作成。
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

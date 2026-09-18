@@ -1,0 +1,485 @@
+schema_version: 1
+topic_id: plasma-sheaths
+title: シース・表面帯電の基礎
+question: 表面への粒子捕集と電子放出が、電位・電流・周囲のシースをどう決めるか。
+review:
+- heading: 電位と流入電流を一緒に考える
+  paragraphs:
+  - プラズマ中の表面には電子とイオンが流れ込み、光や粒子衝突を受けた表面からは電子が出ていく。その差で表面電位が変わり、電位が変わると次に到達できる粒子も変わる。[@P000086]は、この電流収支を宇宙機からダストまで共通する帯電の枠組みとして整理した。周囲に生じる電荷の偏った層がシースであり、[@P000085]では電位分布、粒子密度、表面電流を求める流体・運動論モデルをたどれる。
+  - シースの外側では、より緩やかな密度・電位変化が粒子を加速する。このプレシースとシースの接続を扱うのがBohm条件である。[@P000087]は速度分布を含めた条件を比較し、電子の分布がイオンの流入速度にも効くことを示した。正にバイアスした小さな電極を扱う[@P000088]へ進むと、電子を加速する圧力勾配と、電子シースを取り巻く広いプレシースが問題になる。
+- heading: 電子放出が電位分布を組み替える
+  paragraphs:
+  - 電子放出は、表面に流入する電子電流を相殺するとともに、周囲の電子密度を増やす。放出が強くなると、放出電子を表面へ戻す電位の極小が現れ、さらに条件が変わると表面が周囲より正になる逆シースへ移る。[@P000093]はこれらの電位構造を実験で測定した。どの状態になるかを比べる際は、放出率に加え、周囲と放出電子の温度をそろえて読むとよい。
+  - '[@P000089]は放出電子の温度を含む運動論をPICと熱電子放出実験で検証し、両者の電子温度が近づくとシース電位差が小さくなることを示した。材料側の条件を見るには、窒化ホウ素壁の電位分布を調べた[@P000090]が参考になる。二次電子を計算の境界条件として与える際は、放出率とエネルギー分布を確率的に扱う[@P000091]が出発点になる。'
+- heading: 光電子シースを実験から月面へつなぐ
+  paragraphs:
+  - 日照面ではUVによる光電子放出が加わる。[@P000092]は真空中の金属面を照らして光電子層を作り、電子密度の分布を一次元PICと比較した。月面の平坦な日照面を扱う[@P000007]では、光電子シースとその中のダスト運動を計算している。[@P000011]は太陽風電子の流れを半解析モデルに含め、PICとの比較や電子分布を変えた計算へ進む。実験の照射・材料条件と、月面のプラズマ・放出条件を対応させると、同じシースの議論を両者で参照しやすい。
+- heading: 平面から小さな粒子へ
+  paragraphs:
+  - 球状ダストでは、電位によって曲がる粒子軌道が捕集電流を決める。[@P000094]は、電子を放出しない静止球について、軌道運動制限（OML）理論とPICを比較した。粒径とDebye長の比を変え、電荷、捕集電流、エネルギー流束を別々に評価している。表面電位から電荷を求めたい場合と、材料への粒子流入を求めたい場合では、参照する量を分けて読むと使いやすい。
+public: true
+scope:
+  include:
+  - シース・プレシースと電流収支
+  - 二次電子・光電子・熱電子の放出
+  - 粒子捕集とOML理論
+  - 理論・PIC・室内実験の比較
+  exclude: []
+navigation:
+  parent: null
+  related:
+  - pic
+  - poisson-solvers
+  - plasma-expansion
+  - spacecraft-plasma
+  - plasma-processing
+  - lunar-charging-sheath
+  - lunar-charging-dust
+  - lunar-charging
+  - lunar-magnetic-anomalies
+groups:
+- id: foundations
+  title: 電流収支・シース・プレシース
+- id: emission
+  title: 電子放出と電位構造
+- id: photoemission
+  title: 光電子シースと月面への応用
+- id: collection
+  title: 粒子捕集と球状ダスト
+entries:
+- paper_id: P000085
+  group: foundations
+  role: シース理論の見取り図
+  summary:
+    question: 壁・探針・宇宙物体の周囲に、どのようなシースができるか。
+    method: 流体・運動論モデルを基礎から整理し、電子放出や多成分プラズマへ拡張。
+    contribution: 電位・密度・表面電流を計算するためのモデルと適用条件をまとめた。
+  evidence_by_item:
+    question:
+    - paper_id: P000085
+      version_id: V1
+      url: https://doi.org/10.1088/0741-3335/55/9/093001
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000085
+      version_id: V1
+      url: https://doi.org/10.1088/0741-3335/55/9/093001
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000085
+      version_id: V1
+      url: https://doi.org/10.1088/0741-3335/55/9/093001
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000086
+  group: foundations
+  role: 電流収支から表面電位へ
+  summary:
+    question: 宇宙の物体の電位は、環境と表面特性によってどう決まるか。
+    method: 粒子捕集・光電子放出・二次電子放出と、宇宙機の帯電観測を総説。
+    contribution: 平衡電位、異なる面の帯電、電位障壁を共通の電流収支で結び付けた。
+  evidence_by_item:
+    question:
+    - paper_id: P000086
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/19820040215
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000086
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/19820040215
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000086
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/19820040215
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000087
+  group: foundations
+  role: Bohm条件と分布関数
+  summary:
+    question: 速度分布の違いは、シース入口のイオン速度条件をどう変えるか。
+    method: 従来の運動論的Bohm条件と、流体モーメント階層からの導出を比較。
+    contribution: 電子の運動論的効果により、亜音速のイオン流入が生じる条件を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000087
+      version_id: V1
+      url: https://plasmatheory.engin.umich.edu/wp-content/uploads/sites/519/2021/01/BaalrudPPCF2015.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000087
+      version_id: V1
+      url: https://plasmatheory.engin.umich.edu/wp-content/uploads/sites/519/2021/01/BaalrudPPCF2015.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000087
+      version_id: V1
+      url: https://plasmatheory.engin.umich.edu/wp-content/uploads/sites/519/2021/01/BaalrudPPCF2015.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000088
+  group: foundations
+  role: 電子シースの前駆領域
+  summary:
+    question: 正にバイアスした小さな電極は、周囲の電子流をどう変えるか。
+    method: 一次元のシース・プレシース理論を、PICの速度分布と比較。
+    contribution: 電子圧力勾配による加速と、広い電子プレシースの形成を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000088
+      version_id: V1
+      url: https://plasmatheory.engin.umich.edu/wp-content/uploads/sites/519/2021/01/ScheinerPOP2015.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000088
+      version_id: V1
+      url: https://plasmatheory.engin.umich.edu/wp-content/uploads/sites/519/2021/01/ScheinerPOP2015.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000088
+      version_id: V1
+      url: https://plasmatheory.engin.umich.edu/wp-content/uploads/sites/519/2021/01/ScheinerPOP2015.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000089
+  group: emission
+  role: 放出電子の温度を含む理論
+  summary:
+    question: 放出電子の温度は、シースの電位差をどの程度変えるか。
+    method: 平面放出面の運動論をPICと、RF放電の残光中の熱電子放出実験で検証。
+    contribution: 周囲の電子温度が放出電子温度に近づくと、シース電位差が消えることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000089
+      version_id: V1
+      url: https://w3.pppl.gov/~ikaganov/Kinetic%20Theory%20of%20Plasma%20Sheaths.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000089
+      version_id: V1
+      url: https://w3.pppl.gov/~ikaganov/Kinetic%20Theory%20of%20Plasma%20Sheaths.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000089
+      version_id: V1
+      url: https://w3.pppl.gov/~ikaganov/Kinetic%20Theory%20of%20Plasma%20Sheaths.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000090
+  group: emission
+  role: 二次電子放出の実験検証
+  summary:
+    question: 材料からの二次電子放出は、シースの電位分布をどう変えるか。
+    method: アルゴンプラズマ中の窒化ホウ素壁を放出探針で測り、運動論モデルと比較。
+    contribution: 高エネルギー電子を含む条件で、浮遊電位とシース形状のモデルとの一致を調べた。
+  evidence_by_item:
+    question:
+    - paper_id: P000090
+      version_id: V1
+      url: https://hpepl.ae.gatech.edu/papers/2015_Sam_PoP2.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000090
+      version_id: V1
+      url: https://hpepl.ae.gatech.edu/papers/2015_Sam_PoP2.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000090
+      version_id: V1
+      url: https://hpepl.ae.gatech.edu/papers/2015_Sam_PoP2.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000091
+  group: emission
+  role: 二次電子の確率モデル
+  summary:
+    question: 放出率と放出エネルギー分布を、粒子計算にどう組み込むか。
+    method: 実測の放出特性を再現する現象論的な確率モデルと生成アルゴリズムを構築。
+    contribution: 銅とステンレス鋼のデータに対応する、放出電子モデルのパラメータを提示。
+  evidence_by_item:
+    question:
+    - paper_id: P000091
+      version_id: V1
+      url: https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.5.124404
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000091
+      version_id: V1
+      url: https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.5.124404
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000091
+      version_id: V1
+      url: https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.5.124404
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000093
+  group: emission
+  role: 古典・空間電荷制限・逆シース
+  summary:
+    question: 電子の放出量を増やすと、シースはどの形へ移るか。
+    method: 二次電子を放出する平面の電位分布を実験で測定。
+    contribution: 放出条件に応じた古典シース、電位極小を持つシース、逆シースを観測。
+  evidence_by_item:
+    question:
+    - paper_id: P000093
+      version_id: V1
+      url: https://doi.org/10.1002/2015gl067175
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000093
+      version_id: V1
+      url: https://doi.org/10.1002/2015gl067175
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000093
+      version_id: V1
+      url: https://doi.org/10.1002/2015gl067175
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000092
+  group: photoemission
+  role: 光電子シースの実験とPIC
+  summary:
+    question: UVを受ける面の上の光電子層を、室内でどう再現するか。
+    method: 真空中の金属面を172 nmのUVで照射し、探針計測と一次元PICを比較。
+    contribution: 光電子層の密度分布とPICの整合を示し、光電子シースを測る実験系を提示。
+  evidence_by_item:
+    question:
+    - paper_id: P000092
+      version_id: V1
+      url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000092
+      version_id: V1
+      url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000092
+      version_id: V1
+      url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000094
+  group: collection
+  role: 球状ダストのOMLとPIC
+  summary:
+    question: 球状粒子の電荷と捕集電流を、軌道運動制限理論でどこまで予測できるか。
+    method: 電子放出のない静止球について、改良OML理論とPICを比較。
+    contribution: 無衝突・無磁場かつ電子とイオンが等温の条件で、粒径に対する電荷・電流の誤差を評価。
+  evidence_by_item:
+    question:
+    - paper_id: P000094
+      version_id: V2
+      url: https://arxiv.org/abs/1611.08658
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000094
+      version_id: V2
+      url: https://arxiv.org/abs/1611.08658
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000094
+      version_id: V2
+      url: https://arxiv.org/abs/1611.08658
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V2
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000007
+  group: photoemission
+  role: 光電子シースと粒子運動
+  summary:
+    question: 電子分布と帯電の時間変化は、粒子の浮遊をどう変えるか。
+    method: 正午の平坦面を一次元PICで計算し、粒子の帯電・軌道を追跡。
+    contribution: 光電子シース内の帯電と粒子軌道を結び付け、浮遊平衡への到達条件を調べた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000007
+      version_id: V1
+      url: https://doi.org/10.1029/2010JA015286
+      source_type: full_text
+      locator: §2.1・考察（PDF pp.2,8）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000011
+  group: photoemission
+  role: 半解析解とPIC
+  summary:
+    question: 太陽風電子の流れを含むシースを半解析解で再現できるか。
+    method: 半解析解を一次元PICで検証し、Maxwell・κ分布の差も比較。
+    contribution: 半解析解とPICが整合。平均的な太陽風で電子分布による差も小さい。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000011
+      version_id: V2
+      url: https://doi.org/10.1109/TPS.2021.3110946
+      source_type: full_text
+      locator: 要旨・§V（著者最終稿 pp.1–2,11–12）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V2
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: '2026-09-18'
+  scope_period: 制限なし
+  provider_names:
+  - Paperpile（Bukan）
+  - 出版社
+  - arXiv
+  - 著者所属機関
+  queries:
+  - sheath
+  - electron emission
+  - OML PIC
+  coverage_note: 所蔵文献を中心に、シース理論・電子放出・粒子捕集の入口を選んだ。新規項目は要旨を確認。既存の月面シース文献は以前の確認記録を引き継いだ。
+  limitations: []
+  changes: シースの基礎テーマを新設。
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

@@ -1,8 +1,17 @@
 # テーマ別文献マップ
 
-テーマごとに文献と要点を整理し、一覧や概説の引用から参照できる文献マップです。[月面帯電](https://nkzono99.github.io/literature-graph-map/topics/lunar-charging/)では、全体の一覧と、電流収支・観測・地形・ダスト・工学の子テーマを用意しています。
+テーマごとに文献と要点を整理し、一覧や概説の引用から参照できる文献マップです。月面のプラズマ環境を中心に、基礎過程・計算手法・関連する応用をまとめています。
 
 公開先は [GitHub Pages](https://nkzono99.github.io/literature-graph-map/) です。
+
+## 収録テーマ
+
+- 計算手法：[PIC法](https://nkzono99.github.io/literature-graph-map/topics/pic/) ／ [Poisson方程式・場の解法](https://nkzono99.github.io/literature-graph-map/topics/poisson-solvers/)
+- 基礎過程：[シース・表面帯電](https://nkzono99.github.io/literature-graph-map/topics/plasma-sheaths/) ／ [プラズマ膨張・ウェイク](https://nkzono99.github.io/literature-graph-map/topics/plasma-expansion/)
+- 月の環境：[月面帯電](https://nkzono99.github.io/literature-graph-map/topics/lunar-charging/) ／ [磁気異常と太陽風](https://nkzono99.github.io/literature-graph-map/topics/lunar-magnetic-anomalies/) ／ [水・揮発性物質](https://nkzono99.github.io/literature-graph-map/topics/lunar-water/)
+- 応用：[宇宙機・計測器とプラズマ](https://nkzono99.github.io/literature-graph-map/topics/spacecraft-plasma/) ／ [プラズマ加工・微細構造の帯電](https://nkzono99.github.io/literature-graph-map/topics/plasma-processing/)
+
+月面帯電には、電流収支・観測・地形・ダスト・工学の子テーマもあります。同じ論文を複数のテーマから参照でき、テーマ間の移動には各ページの関連リンクを使えます。
 
 ## 編集とプレビュー
 

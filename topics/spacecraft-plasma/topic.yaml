@@ -1,0 +1,367 @@
+schema_version: 1
+topic_id: spacecraft-plasma
+title: 宇宙機・計測器とプラズマの相互作用
+question: 機体の帯電・シース・ウェイクと、電場センサや探針による計測への影響を整理する。
+review:
+- heading: 機体の電位と、周囲のプラズマを一緒に考える
+  paragraphs:
+  - 宇宙機には電子とイオンが流入し、表面からは光電子や二次電子が出ていく。その電流収支で機体の電位が決まると、周囲の粒子軌道と密度分布も変わる。電位が変化するシースと、流れの後方にできるウェイクを含めて扱うことが、宇宙機とプラズマの相互作用を理解する基礎になる。[@P000118]は帯電過程・シース理論・観測を概観し、[@P000119]は式の導出から帯電対策までを調べるための教科書である。
+- heading: 材料と形状を入れて、機体の帯電を計算する
+  paragraphs:
+  - 実際の機体では、部位ごとの日照、材質、電気的な接続が電位差を作る。[@P000120]のNASCAP-2Kは、形状を含む表面帯電や粒子軌道、シース・ウェイクを扱う計算機能を整理している。月面の候補機体を解析した[@P000024]は、導電性材料の利用と表面間の電位差を具体的に結び付けた。
+  - 太陽近傍を想定した[@P000121]は5つの計算モデルを比較し、浮遊電位、捕集・放出電流、密度と電位の空間分布を調べた。同じ物理過程を同様に扱う条件では予測がよく一致し、放出電子や背景磁場の扱いを変えると結果も変わる。数値手法を選ぶ際には、取り込む物理過程と幾何形状を併せて確認したい。
+- heading: 光電子と細いブームが、シースとウェイクを変える
+  paragraphs:
+  - 日照が強くても、放出された光電子が電位障壁で機体へ戻ると、負の浮遊電位が維持される場合がある。[@P000122]は太陽近傍を想定し、光電子密度、機体寸法、電子温度と障壁形成の関係を示した。イオンウェイクによる放出電子の再捕集も、機体電位に影響する。
+  - 希薄で低温の流れの中では、細いワイヤーブームも周囲のイオンを大きく偏向する。Clusterを計算した[@P000123]では、正帯電したブームの存在がウェイク電場を強めた。図面上の太さに加え、ブームの電位とプラズマの遮蔽距離が、計測器周辺の環境を決める。
+- heading: 電場センサの信号を、機体の影響まで含めて読む
+  paragraphs:
+  - 二点の電位差から電場を求める方法では、各プローブがどの電位を測っているかが問題になる。[@P000126]は測定原理と誤差・寸法の関係を整理した。[@P000124]は細い構造を境界要素法で扱うPICを使い、機体とブームが作る電位分布から、Clusterで観測される見かけの電場波形を説明している。
+  - 周波数を持つ電場やプラズマ波を測る場合は、センサのインピーダンスも必要になる。[@P000125]は磁化プラズマ中のダイポールをPICで駆動し、応答のピークをプラズマ波の分散関係と結び付けた。静的な機体電位の補正と、センサの周波数応答の校正は、測定対象に応じて参照する論点が変わる。
+- heading: 探針の電流電圧特性から、周囲の密度・温度へ戻る
+  paragraphs:
+  - Langmuir探針は、印加電圧を変えたときの捕集電流からプラズマを推定する。粒子軌道で捕集電流が決まるOML理論について、[@P000127]は球や円柱からさらに広い形状へ適用条件を整理した。
+  - 機体のシース内に置いた小さな探針では、周囲の電位障壁が低エネルギー電子の到達を制限する。[@P000128]はこの効果を組み込んだモデルをCassiniのデータと比較し、電流電圧曲線の遷移領域と温度・電位推定への影響を論じた。探針の寸法と位置、機体の電位を同時に参照するための文献である。
+public: true
+scope:
+  include:
+  - 帯電の基礎・教科書
+  - 機体モデル・コード比較
+  - 光電子シース・ウェイク
+  - 電場センサ・ブーム
+  - 探針電流の解釈
+  exclude: []
+navigation:
+  parent: null
+  related:
+  - lunar-charging
+  - pic
+  - plasma-sheaths
+  - plasma-expansion
+  - lunar-charging-engineering
+  - lunar-charging-observations
+  - poisson-solvers
+groups:
+- id: charging-basics
+  title: 帯電の基礎・教科書
+- id: charging-models
+  title: 機体モデル・コード比較
+- id: sheath-and-wake
+  title: 光電子シース・ウェイク
+- id: electric-field
+  title: 電場センサ・ブーム
+- id: probe-interpretation
+  title: 探針電流の解釈
+entries:
+- paper_id: P000118
+  group: charging-basics
+  role: 宇宙機帯電の基礎レビュー
+  summary:
+    question: 宇宙機表面の電荷は何で決まり、観測・設計にどう影響するか。
+    method: 帯電過程、電荷蓄積モデル、宇宙機シース理論と観測を整理。
+    contribution: 表面帯電を設計上の問題と低エネルギー粒子計測の両方から概観した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000118
+      version_id: V1
+      url: https://doi.org/10.1029/rg019i004p00577
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000119
+  group: charging-basics
+  role: 帯電物理の教科書
+  summary:
+    question: 宇宙機帯電の式と機構を、基礎からどう理解するか。
+    method: 電子放出、プラズマ中の帯電、電位障壁、緩和策を例題とともに解説。
+    contribution: 電流収支から機体の帯電対策までを調べるための体系的な参照書。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000119
+      version_id: V1
+      url: https://assets.press.princeton.edu/catalogs/S11Featured.pdf
+      source_type: metadata
+      locator: 出版社の書籍紹介
+      checked_at: '2026-09-18'
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000120
+  group: charging-models
+  role: NASCAP-2Kの計算機能
+  summary:
+    question: 形状と環境を含む宇宙機帯電を、どのような計算で扱えるか。
+    method: 入れ子格子上の有限要素法、粒子軌道計算、PIC機能と適用例を紹介。
+    contribution: 表面帯電・シース・ウェイク・プルームを扱うコードの構成を整理した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000120
+      version_id: V1
+      url: https://jaxa.repo.nii.ac.jp/records/6371
+      source_type: abstract
+      locator: 会議版p.499の要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000121
+  group: charging-models
+  role: 太陽近傍のモデル比較
+  summary:
+    question: 同じ宇宙機・プラズマ条件を解く計算コードは、どこまで一致するか。
+    method: Solar Probe Plusの簡略形状を5モデルで計算し、放出電子や磁場の扱いを比較。
+    contribution: 同じ物理過程を同様に扱う条件では予測が約2%以内で一致した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000121
+      version_id: V1
+      url: https://doi.org/10.1063/1.4882439
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000122
+  group: sheath-and-wake
+  role: 太陽近傍の光電子障壁
+  summary:
+    question: 強い光電子放出の下でも、宇宙機が負に帯電する条件は何か。
+    method: 三次元の自己無撞着計算で、光電子シースとイオンウェイクを評価。
+    contribution: 放出電子を戻す電位障壁とウェイクによって、負電位が維持される条件を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000122
+      version_id: V1
+      url: https://experts.umn.edu/en/publications/spacecraft-charging-and-ion-wake-formation-in-the-near-sun-enviro/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000123
+  group: sheath-and-wake
+  role: 細いブームのウェイク
+  summary:
+    question: 細いワイヤーブームは、宇宙機後方の電場にどの程度影響するか。
+    method: 希薄な低温流プラズマ中のClusterを、機体とブームを含むPICで計算。
+    contribution: 正帯電したブームがイオンを偏向し、ウェイクの電場を強めることを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000123
+      version_id: V1
+      url: https://doi.org/10.1002/jgra.50543
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000124
+  group: electric-field
+  role: ダブルプローブ計測のPIC
+  summary:
+    question: 機体とブームが作る電位分布は、電場計測にどの信号を加えるか。
+    method: 境界要素法を組み込んだPICで、Cluster周囲を3種類のプラズマ条件で計算。
+    contribution: ウェイクに由来する見かけの電場波形を再現し、光電子分布による短絡効果も示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000124
+      version_id: V1
+      url: https://doi.org/10.1002/2016rs006095
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000125
+  group: electric-field
+  role: 磁化プラズマ中のセンサ応答
+  summary:
+    question: 磁場は電場センサのインピーダンスの周波数依存をどう変えるか。
+    method: 導体棒のダイポールセンサを三次元PICで駆動し、線形分散関係と比較。
+    contribution: インピーダンスのピークと、センサ長に対応するプラズマ波の分枝を結び付けた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000125
+      version_id: V1
+      url: https://doi.org/10.1186/s40623-024-01977-x
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000126
+  group: electric-field
+  role: 電位差による電場測定の理論
+  summary:
+    question: 磁気圏で二点の電位差から電場を測る際、どの誤差を考えるか。
+    method: 電気プローブによる測定原理、プラズマとの結合、装置寸法を検討。
+    contribution: 電離圏から磁気圏まで、電場計測の方式と設計条件を整理した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000126
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/BF00215600
+      source_type: metadata
+      locator: 公開結論・本文冒頭p.238
+      checked_at: '2026-09-18'
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000127
+  group: probe-interpretation
+  role: OML電流とプローブ形状
+  summary:
+    question: 球以外の形状でも、軌道運動制限電流を使って温度・密度を測れるか。
+    method: 粒子の角運動量保存を仮定せず捕集電流を導き、多電極形状を提案。
+    contribution: 適用可能な凸形状を広げ、イオン温度を含む探針設計の条件を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000127
+      version_id: V1
+      url: https://doi.org/10.1063/1.1694398
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000128
+  group: probe-interpretation
+  role: 宇宙機シース内の探針
+  summary:
+    question: 負帯電した機体のシース内では、Langmuir探針の電流電圧特性がどう変わるか。
+    method: 小球探針のOML理論を電位障壁付きに拡張し、Cassiniのデータと比較。
+    contribution: 低エネルギー電子の遮蔽が遷移領域を作り、温度・電位推定に影響することを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000128
+      version_id: V1
+      url: https://doi.org/10.1063/1.3482155
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000024
+  group: charging-models
+  role: 宇宙機の差動帯電
+  summary:
+    question: 月面の宇宙機で、材質や形状は帯電をどう変えるか。
+    method: NASCAP-2Kで候補機体の軌道・着陸時の帯電を計算。
+    contribution: 導電性材料の利用が、表面間の電位差と静電放電リスクの低減に有効とした。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000024
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20070031940
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: '2026-09-18'
+  scope_period: 制限なし
+  provider_names:
+  - Paperpileライブラリ
+  - Crossref
+  - 出版社・機関リポジトリ
+  queries: []
+  coverage_note: 書誌と要旨を中心に、各文献の比較軸と参照先を整理。
+  limitations: []
+  changes: 新規テーマの初版を作成。
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

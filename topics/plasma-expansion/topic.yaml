@@ -1,0 +1,559 @@
+schema_version: 1
+topic_id: plasma-expansion
+title: プラズマ膨張・ウェイク
+question: 希薄な領域への流入が、電位・粒子分布・イオン加速をどう生むか。
+review:
+- heading: 電子とイオンの速さの差が膨張を駆動する
+  paragraphs:
+  - プラズマが真空や低密度領域に接すると、動きの速い電子が先行し、電荷分離によって生じる電場がイオンを加速する。[@P000095]は、希薄化波が元のプラズマへ広がる過程と、イオン先端が空隙へ進む過程を整理し、宇宙物体背後のウェイクへ結び付けた。膨張する密度や速度をまず見通したいときの入口になる。
+  - '[@P000096]は電荷分離を詳しく扱い、イオン先端の構造とエネルギースペクトル、最大エネルギーを求めた。月の後方が埋まる過程や、推進機からプルームが広がる過程にも同じ膨張の発想が使える。物体による粒子の吸収、表面電位、磁場を順に加えることで、それぞれの対象に近づけていく。'
+- heading: 電子の分布から計算モデルを選ぶ
+  paragraphs:
+  - 電子を流体に置き換えるハイブリッドPICは、大きな空間を計算する際によく用いられる。[@P000099]は平板背後のウェイクについて、解析解・ハイブリッドPIC・完全運動論PICを比較した。電子が平衡に近い領域では結果が近く、速度分布が強く歪む領域では電子の扱いが電位や流入量の差につながる。
+  - プルームを扱う[@P000100]では、電子が冷却する領域と等温に近い領域が現れ、電位井戸との相互作用が電子分布を変える。[@P000101]はXe推進機の条件でモデルを比較し、密度分布の近さに比べて電位の差が大きいことを示した。必要な出力が密度・電位・電子分布のどれかによって、モデル比較で見るべき量も変わる。
+- heading: 月ウェイクは流入経路と再充填の段階で読む
+  paragraphs:
+  - 月の背後では、両側から入るプラズマと夜側表面の帯電が相互に作用する。[@P000102]の二次元PICは、近傍の電荷分離とイオン加速を調べ、下流で両側のイオン流が重なるまでを追った。観測では、[@P000103]が昼側で散乱した陽子の回り込みを示している。どの粒子群がどこから来たかを区別すると、局所的な膨張と表面を介した輸送を整理しやすい。
+  - '[@P000104]はARTEMISの電子分布から電位を推定し、太陽風の電子温度・流速と、磁場の傾きに応じた非対称性を調べた。さらに[@P000105]は、対向イオン流が出会う中央で静電衝撃波と波動が生じる過程を計算した。プレプリントの[@P000106]は、大域的な膨張電位と局所的な衝撃波の電位を通じたエネルギー変換をまとめ、観測される粒子分布へつないでいる。'
+- heading: ダストとクレーターでは、物体の尺度が効く
+  paragraphs:
+  - Debye長より小さな負帯電粒子の背後では、イオンの集束が周囲の電位や粒子間力を変える。[@P000097]は低速流中の2粒子を計算し、流速・衝突と整列力の関係を調べた。[@P000098]は動的遮蔽を求める理論と自己無撞着PICを比較しており、粒子の帯電と非線形性をどこまで扱うかを考える際に使える。
+  - 地形の陰への膨張は、クレーターへの太陽風供給に直結する。[@P000008]は表面帯電と膨張のフィードバックを扱い、[@P000048]は三次元の地形で底面・壁面へ回り込むイオン流を計算した。月全体のウェイク、局所地形の陰、粒子周囲では、物体サイズとDebye長、流速、磁場をそろえて比較するとつながりが見える。
+public: true
+scope:
+  include:
+  - 真空・希薄プラズマへの膨張
+  - ダスト・物体背後のウェイク
+  - 月ウェイクと極域クレーター
+  - 電子の運動論と推進機プルーム
+  exclude: []
+navigation:
+  parent: null
+  related:
+  - pic
+  - plasma-sheaths
+  - lunar-charging-topography
+  - lunar-magnetic-anomalies
+  - spacecraft-plasma
+  - lunar-charging
+  - lunar-water
+groups:
+- id: expansion
+  title: 真空膨張の基礎
+- id: grain-wakes
+  title: ダスト周囲のウェイク
+- id: electron-models
+  title: 電子モデルとプルーム
+- id: lunar-wake
+  title: 月ウェイクの計算と観測
+- id: crater-wakes
+  title: 地形の陰への膨張
+entries:
+- paper_id: P000095
+  group: expansion
+  role: 真空膨張と宇宙ウェイクの総説
+  summary:
+    question: 真空や希薄プラズマへの膨張で、粒子と電場はどう変化するか。
+    method: 希薄化波、イオン加速、膨張先端を整理し、宇宙物体のウェイクへ適用。
+    contribution: プラズマ膨張と人工衛星・天体背後の粒子分布を共通の過程として結び付けた。
+  evidence_by_item:
+    question:
+    - paper_id: P000095
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RG021i007p01631
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000095
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RG021i007p01631
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000095
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RG021i007p01631
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000096
+  group: expansion
+  role: 電荷分離とイオンの加速限界
+  summary:
+    question: 真空へ膨張するプラズマのイオン先端とエネルギーはどう決まるか。
+    method: 無衝突プラズマの膨張で生じる電荷分離を理論的に解析。
+    contribution: イオン先端の構造、エネルギースペクトル、最大イオンエネルギーを求めた。
+  evidence_by_item:
+    question:
+    - paper_id: P000096
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.90.185002
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000096
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.90.185002
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000096
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.90.185002
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000097
+  group: grain-wakes
+  role: 低速流中の粒子間力
+  summary:
+    question: 流れの遅いプラズマでも、上流粒子のウェイクは下流粒子を引き寄せるか。
+    method: COPTICによる三次元PICで、小さな負帯電粒子2個の相互作用を計算。
+    contribution: 流速と衝突がウェイクの振動・粒子整列力を変えることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000097
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.85.066409
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000097
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.85.066409
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000097
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.85.066409
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000098
+  group: grain-wakes
+  role: 動的遮蔽と自己無撞着PIC
+  summary:
+    question: 流れるプラズマ中のダスト周囲の電位を、どのモデルで求めるか。
+    method: 誘電関数から求める動的遮蔽電位と、帯電を含む三次元PICを比較。
+    contribution: 粒子の帯電と非線形効果を含めて、二つのウェイク計算法の適用範囲を整理。
+  evidence_by_item:
+    question:
+    - paper_id: P000098
+      version_id: V2
+      url: https://arxiv.org/abs/1201.1714
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000098
+      version_id: V2
+      url: https://arxiv.org/abs/1201.1714
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000098
+      version_id: V2
+      url: https://arxiv.org/abs/1201.1714
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V2
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000099
+  group: electron-models
+  role: 電子流体近似とウェイク
+  summary:
+    question: 電子を流体として扱う近似は、物体背後のどこで使えるか。
+    method: 無衝突流中の大きな平板を、解析解・ハイブリッドPIC・完全運動論PICで比較。
+    contribution: 平衡に近い領域と、電子分布の歪みが流体近似の誤差を生む領域を分けた。
+  evidence_by_item:
+    question:
+    - paper_id: P000099
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JA025743
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000099
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JA025743
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000099
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JA025743
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000100
+  group: electron-models
+  role: プルームの電子分布と冷却
+  summary:
+    question: 放出されたプラズマは、電子の分布を変えながらどう広がるか。
+    method: 冷たいビームイオンと熱電子からなる無衝突プルームを完全運動論PICで計算。
+    contribution: 中心部・電子冷却領域・等温膨張領域を区分し、電位井戸と電子分布の関係を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000100
+      version_id: V1
+      url: https://doi.org/10.1063/1.4978484
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000100
+      version_id: V1
+      url: https://doi.org/10.1063/1.4978484
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000100
+      version_id: V1
+      url: https://doi.org/10.1063/1.4978484
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000101
+  group: electron-models
+  role: 推進機プルームのモデル比較
+  summary:
+    question: ハイブリッドPICは、推進機プルームの電位をどの程度再現するか。
+    method: 実際のXeイオン・電子質量比を用いる完全運動論PICと比較。
+    contribution: 比較条件では密度構造が似ていても電位に差が生じ、電子の異方性と中和領域が影響した。
+  evidence_by_item:
+    question:
+    - paper_id: P000101
+      version_id: V1
+      url: https://doi.org/10.1063/1.5111791
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000101
+      version_id: V1
+      url: https://doi.org/10.1063/1.5111791
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000101
+      version_id: V1
+      url: https://doi.org/10.1063/1.5111791
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000102
+  group: lunar-wake
+  role: 表面帯電を含むイオン流入
+  summary:
+    question: 非磁化天体の背後へ入るイオンは、表面帯電によってどう加速されるか。
+    method: 太陽風中の障害物を二次元電磁PICで計算し、自己相似解と比較。
+    contribution: 近傍の電荷分離と、両側から流入するイオンの重なりを示し、物体サイズと流速の効果を調べた。
+  evidence_by_item:
+    question:
+    - paper_id: P000102
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/jgra.50129
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000102
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/jgra.50129
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000102
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/jgra.50129
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000103
+  group: lunar-wake
+  role: 昼側散乱から夜側への陽子輸送
+  summary:
+    question: 太陽風陽子は、低高度の月ウェイク深部へどう到達するか。
+    method: かぐやの粒子観測と、昼側で散乱した陽子の軌道計算を比較。
+    contribution: 昼側散乱と太陽風電場による拾い上げを経て、陽子が深部へ回り込む経路を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000103
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039444
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000103
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039444
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000103
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039444
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000104
+  group: lunar-wake
+  role: ARTEMISから電位構造を推定
+  summary:
+    question: 月ウェイクの電位と左右の非対称性は、太陽風条件でどう変わるか。
+    method: ARTEMISの内外の電子分布を比較して電位を推定し、膨張モデルと照合。
+    contribution: 電子温度・流速への依存と、傾いた磁場による非対称性を観測から確かめた。
+  evidence_by_item:
+    question:
+    - paper_id: P000104
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026536
+      source_type: abstract
+      locator: 著者公開稿 p.1 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000104
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026536
+      source_type: abstract
+      locator: 著者公開稿 p.1 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000104
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026536
+      source_type: abstract
+      locator: 著者公開稿 p.1 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000105
+  group: lunar-wake
+  role: 再充填から衝撃波・波動へ
+  summary:
+    question: 月ウェイクが両側から埋まる過程で、流入イオンのエネルギーはどう変わるか。
+    method: 完全運動論PICで、初期膨張から対向イオン流の衝突まで追跡。
+    contribution: 中央の静電衝撃波によるイオン減速・電子加熱と、電磁波の励起を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000105
+      version_id: V2
+      url: https://arxiv.org/abs/2505.12497
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000105
+      version_id: V2
+      url: https://arxiv.org/abs/2505.12497
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000105
+      version_id: V2
+      url: https://arxiv.org/abs/2505.12497
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V2
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000106
+  group: lunar-wake
+  role: 二つの電位スケールとエネルギー変換
+  summary:
+    question: ウェイクの大域的電位と局所的衝撃波は、粒子分布に何を残すか。
+    method: 膨張とイオン音波衝撃波の電位構造を調べ、ARTEMISの粒子分布と比較。
+    contribution: 電子熱からイオン流、さらに粒子の熱への変換を、二つの電位スケールで整理。
+  evidence_by_item:
+    question:
+    - paper_id: P000106
+      version_id: V1
+      url: https://arxiv.org/abs/2608.18383
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000106
+      version_id: V1
+      url: https://arxiv.org/abs/2608.18383
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000106
+      version_id: V1
+      url: https://arxiv.org/abs/2608.18383
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000008
+  group: crater-wakes
+  role: 極域への太陽風侵入
+  summary:
+    question: 極域クレーターへの太陽風侵入と帯電はどう影響し合うか。
+    method: 影の段差を二次元で計算し、表面電荷と二次電子放出を追跡。
+    contribution: 帯電と両極性膨張が相互に抑制し、二次電子放出が陽子流入を調整。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000008
+      version_id: V1
+      url: https://doi.org/10.1029/2011GL048880
+      source_type: full_text
+      locator: §2・§4（PDF pp.1–2,4–5）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000048
+  group: crater-wakes
+  role: 極域クレーターのミニウェイク
+  summary:
+    question: 極域クレーターの陰へ、太陽風はどのように入り込むか。
+    method: 三次元静電ハイブリッドPICで、km規模のクレーター周辺を計算。
+    contribution: 電子に富む負電位のプラズマ領域と、底面・壁面へ回り込むイオン流を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000048
+      version_id: V1
+      url: https://doi.org/10.1029/2024ja032764
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: '2026-09-18'
+  scope_period: 制限なし
+  provider_names:
+  - Paperpile（Bukan）
+  - 出版社
+  - arXiv
+  - 著者所属機関
+  queries:
+  - plasma expansion
+  - wake
+  - plume electron kinetic
+  coverage_note: 所蔵文献を軸に、真空膨張の基礎から月ウェイク・粒子周囲・推進機プルームへ広げた。新規文献は要旨を確認し、既存の地形文献は確認記録を引き継いだ。
+  limitations: []
+  changes: プラズマ膨張・ウェイクのテーマを新設。
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

@@ -1,0 +1,503 @@
+schema_version: 1
+topic_id: lunar-water
+title: 月面の水・揮発性物質
+question: 月面のOH・分子水・氷は、どこで生まれ、何に保持され、どの環境で失われるか。
+review:
+- heading: 吸収帯から、月面の水の姿を分けて読む
+  paragraphs:
+  - 月面の「水」には、鉱物に結び付いたOH、分子水H2O、極域にある氷などの姿がある。[@P000138]はChandrayaan-1のM3で2.8–3.0 μm付近の吸収を捉え、OH/H2Oに対応する水和が広く分布することを示した。分子水に固有な6
+    μm帯を使ったSOFIAの[@P000141]は、日照のある高緯度の観測域でH2Oを識別した。観測波長と、どの深さを捉える観測かを確認すると、表面の水和、粒子に保持された水、氷の分布を整理できる。
+- heading: 極域の氷を、分光と衝突噴出物から捉える
+  paragraphs:
+  - 永久影の内部には周囲からの散乱光がわずかに届く。[@P000140]はその光の近赤外スペクトルから氷の吸収を抽出し、両極の光学的表層に露出した氷の分布を示した。一方、LCROSSの[@P000139]はCabeusクレーターへ衝突体を落とし、掘り出された物質の水蒸気・氷・OHを観測した。前者は露出氷の空間分布、後者は一地点の掘削された物質に含まれる水と揮発性成分を知る手掛かりになる。氷の存在とその場所の物質量を考える際に、二つの観測の違いが役立つ。
+- heading: 太陽風の水素が入り、ガラスや鉱物に残る
+  paragraphs:
+  - 太陽風は月面へ水素を供給する。[@P000142]は陽子を注入したケイ酸塩へ微小隕石衝突を模した熱衝撃を加え、水が生成・放出される過程を実験で示した。粒子へ入った水素がどこに蓄えられるかについては、Chang’e-5の衝突ガラスを調べた[@P000148]が、水量・同位体比・内部濃度分布から太陽風由来水の保持と拡散を論じている。生成実験と試料分析を合わせると、入射した水素が表面反応を経て粒子内部に保持され、再び放出されるまでの経路を考えられる。
+- heading: 粗さと温度が、残りやすい場所を作る
+  paragraphs:
+  - 水分子の脱離や氷の昇華は、表面温度に敏感である。[@P000143]は日照域でも凹凸が低温部分を作り、平坦面モデルより吸着水を保持しやすくすると示した。極域では[@P000147]がcm規模までの小さな影を評価し、微小コールドトラップも氷の安定領域に寄与すると見積もった。保持の条件は分子によって変わる。Divinerの長期温度データを使った[@P000149]は、さらに低温を要するCO2の安定域を計算している。温度の最大値だけでなく、時間平均した損失を扱う点も参照したい。
+- heading: 地形と磁場が、水素供給と氷の損失を変える
+  paragraphs:
+  - 太陽風は水素の供給源であると同時に、表面氷をスパッタで失わせる要因でもある。[@P000144]は南極の実地形から水素の流束とエネルギーを地図化した。[@P000145]は極域磁場と露出氷の分布の対応を調べ、磁気異常がイオン流入と損失を弱める可能性を論じている。地形と磁場を同時に入れた[@P000146]の電磁PICでは、地形による流束変化が大きく、磁場はその分布をさらに調整する。平均太陽風と実験由来の収率を用いた氷の収支は、月面帯電の計算を揮発性物質の進化へつなぐ具体例になる。
+public: true
+scope:
+  include:
+  - OH/H2O・氷の観測
+  - 太陽風水素による生成と保持
+  - 脱離・昇華・コールドトラップ
+  - 地形・地殻磁場と氷収支
+  exclude: []
+navigation:
+  parent: null
+  related:
+  - lunar-charging
+  - lunar-magnetic-anomalies
+  - plasma-expansion
+  - pic
+groups:
+- id: observations
+  title: 水和・分子水・氷の観測
+- id: formation-storage
+  title: 生成・粒子内の貯蔵
+- id: thermal-retention
+  title: 温度・脱離・コールドトラップ
+- id: plasma-environment
+  title: 太陽風・地形・磁場
+entries:
+- paper_id: P000138
+  group: observations
+  role: M3によるOH/H2Oの広域検出
+  summary:
+    question: 月面のOH/H2Oに対応する吸収は、どこに分布するか。
+    method: Chandrayaan-1のM3で2.8–3.0 μm付近の反射スペクトルを解析。
+    contribution: 高緯度や一部の新鮮なクレーターで強い吸収を見いだし、表層の水和過程を示唆。
+  evidence_by_item:
+    question:
+    - paper_id: P000138
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/19779151/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000138
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/19779151/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000138
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/19779151/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000139
+  group: observations
+  role: LCROSS衝突噴出物中の水
+  summary:
+    question: 永久影のレゴリスには、どれほど水と揮発性物質が含まれるか。
+    method: Cabeusへの衝突で生じた噴出物を、近赤外・紫外分光などで観測。
+    contribution: 水蒸気・氷・OHの信号を検出し、掘削域の水氷量を質量比5.6±2.9%と推定。
+  evidence_by_item:
+    question:
+    - paper_id: P000139
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/20966242/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000139
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/20966242/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000139
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/20966242/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000140
+  group: observations
+  role: 極域の表面露出氷
+  summary:
+    question: 月の極域で、表面に露出した水氷を分光で見分けられるか。
+    method: 永久影に入る間接光を利用し、M3の近赤外スペクトルの氷吸収を抽出。
+    contribution: 両極周辺の光学的表層に露出した水氷の分布を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000140
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/30126996/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000140
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/30126996/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000140
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/30126996/
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000141
+  group: observations
+  role: 日照域の分子水
+  summary:
+    question: 日照域の水和信号のうち、分子水H2Oを識別できるか。
+    method: SOFIAで高緯度月面の6 μm帯を観測し、分子水の振動信号を解析。
+    contribution: 観測域で分子水を検出し、存在量を約100–400 μg/gと推定。
+  evidence_by_item:
+    question:
+    - paper_id: P000141
+      version_id: V1
+      url: https://www.nature.com/articles/s41550-020-01222-x
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000141
+      version_id: V1
+      url: https://www.nature.com/articles/s41550-020-01222-x
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000141
+      version_id: V1
+      url: https://www.nature.com/articles/s41550-020-01222-x
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000142
+  group: formation-storage
+  role: 陽子注入と衝撃加熱による水生成
+  summary:
+    question: 太陽風の水素と微小衝突は、水の生成・放出にどう関わるか。
+    method: 陽子を注入した無水ケイ酸塩に、微小隕石衝突を模した熱衝撃を加える。
+    contribution: 注入水素と熱衝撃の組合せで水が生成・放出されることを室内実験で示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000142
+      version_id: V1
+      url: https://www.uhmreactiondynamics.org/publication_papers/p430.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000142
+      version_id: V1
+      url: https://www.uhmreactiondynamics.org/publication_papers/p430.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000142
+      version_id: V1
+      url: https://www.uhmreactiondynamics.org/publication_papers/p430.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000143
+  group: thermal-retention
+  role: 粗さによる吸着水の保持
+  summary:
+    question: 日照域の凹凸は、吸着水の寿命をどの程度延ばすか。
+    method: 日照・影・自己加熱・熱伝導を含む粗面熱モデルを、一次脱離モデルと結合。
+    contribution: 凹凸による温度分布が水の保持を増やし、平坦面近似との差を生むと示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000143
+      version_id: V1
+      url: https://api.crossref.org/works/10.1093/mnras/stab1360
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000143
+      version_id: V1
+      url: https://api.crossref.org/works/10.1093/mnras/stab1360
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000143
+      version_id: V1
+      url: https://api.crossref.org/works/10.1093/mnras/stab1360
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000144
+  group: plasma-environment
+  role: クレーターへの水素供給
+  summary:
+    question: 南極クレーターの地形は、太陽風水素の到達量をどう分けるか。
+    method: LRO地形と解析的プラズマモデルから、4クレーターの月周期平均流束を計算。
+    contribution: 水素流束・エネルギー・磁気圏による変調を地図化し、氷のスパッタ寿命も評価。
+  evidence_by_item:
+    question:
+    - paper_id: P000144
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20205003310/downloads/lunar.Rhodes.maps._2020_Planet._Sci._J._1_13.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000144
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20205003310/downloads/lunar.Rhodes.maps._2020_Planet._Sci._J._1_13.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000144
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20205003310/downloads/lunar.Rhodes.maps._2020_Planet._Sci._J._1_13.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000145
+  group: plasma-environment
+  role: 極域磁場と氷分布の対応
+  summary:
+    question: 南北極の氷分布の違いに、地殻磁場は関わるか。
+    method: 極域の磁場地図を改良し、永久影と表面露出氷の分布を比較。
+    contribution: 南極の磁気異常と氷の対応から、入射イオンとスパッタ損失の抑制を提案。
+  evidence_by_item:
+    question:
+    - paper_id: P000145
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022GL100557
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000145
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022GL100557
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000145
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022GL100557
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000146
+  group: plasma-environment
+  role: 地形・磁場を含む氷の収支
+  summary:
+    question: 実地形と地殻磁場の組合せは、南極の氷の生成・損失をどう変えるか。
+    method: 地形・磁場地図を組み込む電磁PICで粒子流束を求め、生成・脱離・昇華を評価。
+    contribution: 平均太陽風の仮定下で地形の寄与が大きく、採用収率では永久影の氷収支が正になる。
+  evidence_by_item:
+    question:
+    - paper_id: P000146
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009774
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000146
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009774
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000146
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009774
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000147
+  group: thermal-retention
+  role: 微小コールドトラップ
+  summary:
+    question: 小さな凹凸が作る永久影は、水氷の保持面積にどれほど寄与するか。
+    method: LROデータと熱モデルを使い、kmからcmまでの影を評価。
+    contribution: 水氷が熱的に安定な微小領域が、全コールドトラップ面積の約10–20%を占めると推定。
+  evidence_by_item:
+    question:
+    - paper_id: P000147
+      version_id: V1
+      url: https://www.nature.com/articles/s41550-020-1198-9
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000147
+      version_id: V1
+      url: https://www.nature.com/articles/s41550-020-1198-9
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000147
+      version_id: V1
+      url: https://www.nature.com/articles/s41550-020-1198-9
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000148
+  group: formation-storage
+  role: 衝突ガラスに保持された太陽風由来水
+  summary:
+    question: 月面の衝突ガラスは、水を貯めて補給する媒体になりうるか。
+    method: Chang’e-5試料のガラス粒子で水量・水素同位体・内部濃度分布を測定。
+    contribution: 太陽風由来の水素と内向き拡散に整合する分布から、ガラスの水貯蔵機能を示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000148
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-023-01159-6
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000148
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-023-01159-6
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000148
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-023-01159-6
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000149
+  group: thermal-retention
+  role: CO2の極低温トラップ
+  summary:
+    question: 水氷より揮発しやすいCO2は、月のどこで保持できるか。
+    method: Divinerの11年分の温度から、季節変化を含む平均昇華損失を計算。
+    contribution: 南極の限られた低温域にCO2が安定な場所を求め、LCROSSの検出と対応付けた。
+  evidence_by_item:
+    question:
+    - paper_id: P000149
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021GL095533
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000149
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021GL095533
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000149
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021GL095533
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: '2026-09-18'
+  scope_period: 制限なし
+  provider_names:
+  - Paperpile
+  - Crossref
+  - 出版社・著者公開記録
+  queries: []
+  coverage_note: 所蔵文献を起点に主要論点の文献を追加。公開要旨による初版。
+  limitations:
+  - 全件の本文精読・図表確認は未実施。
+  changes: 新規テーマを作成。
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

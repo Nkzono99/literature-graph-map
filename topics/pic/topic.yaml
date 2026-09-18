@@ -1,0 +1,654 @@
+schema_version: 1
+topic_id: pic
+title: PIC法・プラズマ粒子シミュレーション
+question: 粒子と場の結合、数値誤差、陰解法、境界処理から大規模計算まで、PICの手法と実装をたどる。
+review:
+- heading: 粒子と格子の往復で、分布関数と場をつなぐ
+  paragraphs:
+  - PIC（Particle-in-Cell）では、多数の実粒子を代表する計算粒子を動かし、その電荷や電流を格子に集めて場を求める。得られた場を粒子位置へ戻すことで、粒子の運動と集団としての応答が結び付く。[@P000059]はこの数値実験で分布関数、非線形現象、輸送を調べる考え方をまとめている。実装から学ぶなら、一次元の静電・電磁コードを出発点とする[@P000060]の教科書と、KEMPO1の教材[@P000061]が入口になる。静電場を解く部分は、Poissonソルバのテーマともつながる。
+- heading: 保存則とノイズは、別々に確かめる
+  paragraphs:
+  - 粒子数を増やすと統計的な揺らぎは小さくなるが、場と粒子の離散化に由来する誤差も調べる必要がある。[@P000062]は電磁PICで生じるGauss則のずれを拡散的な補正で抑えた。小さな不安定性を追いたいときには、初期配置の揺らぎを減らす方法や、分布関数の摂動だけを粒子で表すδf法が役立つ。[@P000063]はその構成と電磁不安定性の試験を扱う。さらに[@P000072]のSICは、位相空間の分布をつながったシートで表す。一次元の標準問題におけるPICとの比較から、追跡点の数とノイズの関係を読み取れる。
+- heading: 時間スケールの差を、陰解法で扱う
+  paragraphs:
+  - 速い電子運動と遅い変化を同時に追うと、時間刻みが計算費用を左右する。[@P000064]は陰的モーメント法で粒子と流体を結び、衝突を伴う電子輸送を扱った。電磁・運動論的な実装の基本は[@P000065]にまとまっている。そこからエネルギー保存に重点を移したのがECSIM（[@P000066]）で、非線形反復を使わずに粒子と場のエネルギー交換を釣り合わせる。相対論的な完全陰解法（[@P000067]）も併せると、結合の解き方と保存性を比較できる。計算条件を選ぶ際には、安定性とともに対象現象の時間・空間分解能を考える。
+- heading: 物体形状と計算規模に合わせて構成を選ぶ
+  paragraphs:
+  - 月面地形や宇宙機の近傍では、表面形状に沿う格子や粒子の境界処理が効いてくる。CPIC（[@P000068]）は曲線格子とマルチグリッドを組み合わせ、複雑な物体とプラズマの相互作用に対応した。[@P000074]は宇宙機帯電を題材に、複数のPIC手法を整理して並列実行へつなぐソフトウェア構成を示している。
+  - 大規模化では、格子数と粒子数の両方が費用を決める。OhHelp（[@P000069]）は粒子が集中する領域の仕事を他ノードへ分担し、[@P000070]は位相空間で近い粒子を統合する。FLEKS（[@P000071]）では、MHD計算に埋め込むPIC領域を動的に変え、必要な場所へ計算を集中させる。局所構造を細かく解く別の方向として、[@P000073]は疎格子のノイズ低減と適応的な格子細分化を組み合わせている。
+public: true
+scope:
+  include:
+  - 基礎・教材
+  - 保存則・ノイズ・分布の表現
+  - 陰解法・粒子と流体の結合
+  - 物体境界・コードの構成
+  - 負荷分散・粒子数・適応化
+  exclude: []
+navigation:
+  parent: null
+  related:
+  - poisson-solvers
+  - plasma-sheaths
+  - spacecraft-plasma
+  - plasma-processing
+  - lunar-charging
+  - plasma-expansion
+  - lunar-magnetic-anomalies
+  - lunar-water
+groups:
+- id: foundations
+  title: 基礎・教材
+- id: accuracy
+  title: 保存則・ノイズ・分布の表現
+- id: implicit
+  title: 陰解法・粒子と流体の結合
+- id: boundaries
+  title: 物体境界・コードの構成
+- id: scaling
+  title: 負荷分散・粒子数・適応化
+entries:
+- paper_id: P000059
+  group: foundations
+  role: 粒子計算の総説
+  summary:
+    question: 粒子の運動から、プラズマの集団現象をどう調べるか。
+    method: 自己無撞着な電磁場中の粒子計算と、分布関数・輸送の診断を整理。
+    contribution: 理論・実験と数値実験を結ぶ、粒子シミュレーションの全体像を示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000059
+      version_id: V1
+      url: https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.55.403
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000059
+      version_id: V1
+      url: https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.55.403
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000059
+      version_id: V1
+      url: https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.55.403
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000060
+  group: foundations
+  role: 実装と数値誤差の教科書
+  summary:
+    question: PICの実装と、格子・時間刻み・粒子数の影響をどう理解するか。
+    method: 一次元の静電・電磁コードから、多次元計算と境界条件へ進む構成。
+    contribution: 実装例と理論を対応させ、数値誤差を調べる基礎をまとめた。
+  evidence_by_item:
+    question:
+    - paper_id: P000060
+      version_id: V1
+      url: https://www.routledge.com/Plasma-Physics-via-Computer-Simulation/Birdsall-Langdon-Langdon/p/book/9780750310253
+      source_type: metadata
+      locator: 出版社の書籍紹介・目次
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000060
+      version_id: V1
+      url: https://www.routledge.com/Plasma-Physics-via-Computer-Simulation/Birdsall-Langdon-Langdon/p/book/9780750310253
+      source_type: metadata
+      locator: 出版社の書籍紹介・目次
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000060
+      version_id: V1
+      url: https://www.routledge.com/Plasma-Physics-via-Computer-Simulation/Birdsall-Langdon-Langdon/p/book/9780750310253
+      source_type: metadata
+      locator: 出版社の書籍紹介・目次
+      checked_at: '2026-09-18'
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000061
+  group: foundations
+  role: 一次元電磁コードの教材
+  summary:
+    question: 一次元PICで、プラズマの微視的な過程をどう計算するか。
+    method: KEMPO1の数値手法と、波動・不安定性を扱う計算例を解説。
+    contribution: 電磁粒子コードの仕組みをたどるための教材を提供。
+  evidence_by_item:
+    question:
+    - paper_id: P000061
+      version_id: V1
+      url: https://space.rish.kyoto-u.ac.jp/people/omura/publist.htm
+      source_type: metadata
+      locator: 著者の業績一覧・書籍章情報
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000061
+      version_id: V1
+      url: https://space.rish.kyoto-u.ac.jp/people/omura/publist.htm
+      source_type: metadata
+      locator: 著者の業績一覧・書籍章情報
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000061
+      version_id: V1
+      url: https://space.rish.kyoto-u.ac.jp/people/omura/publist.htm
+      source_type: metadata
+      locator: 著者の業績一覧・書籍章情報
+      checked_at: '2026-09-18'
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000062
+  group: accuracy
+  role: Gauss則の誤差補正
+  summary:
+    question: 粒子から格子への割り付けで生じるGauss則のずれをどう抑えるか。
+    method: Maxwell方程式に誤差を拡散させる項を加える。
+    contribution: 電磁PICでGauss則の大きな逸脱を抑える局所補正法を提示。
+  evidence_by_item:
+    question:
+    - paper_id: P000062
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/002199918790043X
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000062
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/002199918790043X
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000062
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/002199918790043X
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000063
+  group: accuracy
+  role: 低ノイズPIC・δf法
+  summary:
+    question: 小振幅の不安定性を、粒子ノイズに埋もれず計算するには。
+    method: 静かな初期配置と、分布関数の摂動を追うδf法を整理・検証。
+    contribution: 温度異方性による電磁不安定性で、低ノイズ手法の有用性を示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000063
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0377042799001612
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000063
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0377042799001612
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000063
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0377042799001612
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000072
+  group: accuracy
+  role: SICとの比較
+  summary:
+    question: 分布関数の表現を変えると、粒子ノイズと収束はどう変わるか。
+    method: 位相空間のシートを格子へ投影し、一次元の標準問題でPICと比較。
+    contribution: SICは試験問題で少ない追跡点でも高精度に収束した。
+  evidence_by_item:
+    question:
+    - paper_id: P000072
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999115006816
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000072
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999115006816
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000072
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999115006816
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000064
+  group: implicit
+  role: 衝突と粒子・流体の結合
+  summary:
+    question: 衝突性が大きく変わるプラズマの電子輸送をどう計算するか。
+    method: 粒子と流体を組み合わせ、陰的モーメント法で電場を求める。
+    contribution: レーザー生成の高エネルギー電子と背景プラズマを一つの計算で扱う。
+  evidence_by_item:
+    question:
+    - paper_id: P000064
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/0021999183901651
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000064
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/0021999183901651
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000064
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/0021999183901651
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000065
+  group: implicit
+  role: 陰的モーメント法の解説
+  summary:
+    question: 異なる時空間スケールを陰的PICでどう扱うか。
+    method: CELESTE3Dの電磁・運動論モデルを用いてアルゴリズムを説明。
+    contribution: 粒子応答と場を結ぶ陰的モーメント法の基礎を整理。
+  evidence_by_item:
+    question:
+    - paper_id: P000065
+      version_id: V1
+      url: https://arxiv.org/abs/0801.4134
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000065
+      version_id: V1
+      url: https://arxiv.org/abs/0801.4134
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000065
+      version_id: V1
+      url: https://arxiv.org/abs/0801.4134
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000066
+  group: implicit
+  role: エネルギー保存半陰解法
+  summary:
+    question: 粒子と場の更新で、エネルギーを厳密に釣り合わせるには。
+    method: 非線形反復を使わない半陰的PICで、離散エネルギー保存を導出・検証。
+    contribution: ECSIMを提案し、エネルギー保存と数値安定性をベンチマークで示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000066
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0021999117300128
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000066
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0021999117300128
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000066
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0021999117300128
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000067
+  group: implicit
+  role: 相対論的な完全陰解法
+  summary:
+    question: 相対論的な粒子運動を、長時間安定に計算するには。
+    method: エネルギー保存型の完全陰的PICを構成し、不安定性の標準問題で検証。
+    contribution: 三次元定式化と一次元・二次元の試験で、保存性と理論との整合を示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000067
+      version_id: V1
+      url: https://api.crossref.org/works/10.1088/1742-6596/1225/1/012011
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000067
+      version_id: V1
+      url: https://api.crossref.org/works/10.1088/1742-6596/1225/1/012011
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000067
+      version_id: V1
+      url: https://api.crossref.org/works/10.1088/1742-6596/1225/1/012011
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000068
+  group: boundaries
+  role: 曲線格子と物体表面
+  summary:
+    question: 複雑な物体形状と、近傍の細かなプラズマ構造をどう扱うか。
+    method: 曲線格子を論理座標へ写し、マルチグリッドと粒子移動を組み合わせる。
+    contribution: 形状に沿う格子を使った静電PICを、プラズマと物体の相互作用へ適用。
+  evidence_by_item:
+    question:
+    - paper_id: P000068
+      version_id: V1
+      url: https://laro.lanl.gov/esploro/outputs/journalArticle/CPIC-A-Curvilinear-Particle-in-Cell-Code-for/9916369934703761
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000068
+      version_id: V1
+      url: https://laro.lanl.gov/esploro/outputs/journalArticle/CPIC-A-Curvilinear-Particle-in-Cell-Code-for/9916369934703761
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000068
+      version_id: V1
+      url: https://laro.lanl.gov/esploro/outputs/journalArticle/CPIC-A-Curvilinear-Particle-in-Cell-Code-for/9916369934703761
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000074
+  group: boundaries
+  role: 宇宙機帯電コードの構成
+  summary:
+    question: 宇宙機帯電の計算法を、並列化可能なソフトウェアにどうまとめるか。
+    method: 複数のPIC手法を備えたパッケージを作り、標準問題と正電位探針で検証。
+    contribution: 静電PICの実装と拡張を支える、直列・並列共通の構成を示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000074
+      version_id: V1
+      url: https://api.crossref.org/works/10.1017/s0022377820000410
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000074
+      version_id: V1
+      url: https://api.crossref.org/works/10.1017/s0022377820000410
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000074
+      version_id: V1
+      url: https://api.crossref.org/works/10.1017/s0022377820000410
+      source_type: abstract
+      locator: 出版社提供のCrossref要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000069
+  group: scaling
+  role: OhHelpによる負荷分散
+  summary:
+    question: 粒子が局所へ集まっても、並列計算の負荷をどう均すか。
+    method: 均等な領域分割を保ち、重い領域の粒子処理を他ノードへ分担。
+    contribution: 粒子の偏りが大きい三次元PICでも、動的な負荷分散と拡張性を示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000069
+      version_id: V1
+      url: https://www.researchgate.net/publication/221236040_OhHelp_A_scalable_domain-decomposing_dynamic_load_balancing_for_particle-in-cell_simulations
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000069
+      version_id: V1
+      url: https://www.researchgate.net/publication/221236040_OhHelp_A_scalable_domain-decomposing_dynamic_load_balancing_for_particle-in-cell_simulations
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000069
+      version_id: V1
+      url: https://www.researchgate.net/publication/221236040_OhHelp_A_scalable_domain-decomposing_dynamic_load_balancing_for_particle-in-cell_simulations
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000070
+  group: scaling
+  role: 粒子の統合
+  summary:
+    question: 計算粒子を減らしながら、位相空間分布をどこまで保てるか。
+    method: 近い粒子をVoronoi型の領域にまとめ、位置・運動量の許容差で統合。
+    contribution: 二流不安定性などで、計算量削減と精度の調整方法を示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000070
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S001046551600028X
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000070
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S001046551600028X
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000070
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S001046551600028X
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000071
+  group: scaling
+  role: FLEKS・流体との領域結合
+  summary:
+    question: 大域計算の中で、運動論が必要な領域をどう追い続けるか。
+    method: PIC領域の動的な切り替え、時間刻み調整、粒子の分割・統合を実装。
+    contribution: MHDとの結合に向け、形状が変わるPIC領域を扱う計算基盤を提供。
+  evidence_by_item:
+    question:
+    - paper_id: P000071
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0010465523000590
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000071
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0010465523000590
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000071
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0010465523000590
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000073
+  group: scaling
+  role: 疎格子の局所適応
+  summary:
+    question: 局所構造の解像と、疎格子のノイズ低減をどう両立するか。
+    method: 階層的な近似空間と局所細分化を組み合わせ、数値問題で比較。
+    contribution: 格子点と粒子数を抑えながら、局在する解の近似精度を改善。
+  evidence_by_item:
+    question:
+    - paper_id: P000073
+      version_id: V1
+      url: https://arxiv.org/abs/2608.16294
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000073
+      version_id: V1
+      url: https://arxiv.org/abs/2608.16294
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000073
+      version_id: V1
+      url: https://arxiv.org/abs/2608.16294
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: '2026-09-18'
+  scope_period: 制限なし
+  provider_names:
+  - Paperpile
+  - Crossref
+  - 出版社公開レコード
+  - arXiv
+  queries:
+  - PIC法・プラズマ粒子シミュレーション
+  coverage_note: 所有ライブラリを起点に、書誌・公開要旨と書籍紹介を確認して基礎と実装の文献を選定。
+  limitations:
+  - 要点は主に要旨に基づく。書誌のみ確認した文献はinspectionに区別した。
+  - 公開版の所在は確認できたものを登録し、網羅的な探索は行っていない。
+  changes: 基礎・手法・実装を関連づけたテーマを新規作成。
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

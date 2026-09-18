@@ -31,7 +31,14 @@ scope:
   exclude: []
 navigation:
   parent: null
-  related: []
+  related:
+  - plasma-sheaths
+  - plasma-expansion
+  - lunar-magnetic-anomalies
+  - lunar-water
+  - pic
+  - spacecraft-plasma
+  - plasma-processing
 groups:
 - id: photoelectron-sheath
   title: 電流収支・光電子シース

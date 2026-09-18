@@ -11,3 +11,4 @@ dist/
 *.pem
 
 _site/
+_handoff/

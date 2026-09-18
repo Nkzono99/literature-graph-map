@@ -5,9 +5,15 @@ build-backend = "hatchling.build"
 [project]
 name = "literature-graph-map"
 version = "0.1.0"
-description = "Literature tables and Mermaid maps for GitHub"
+description = "Literature maps as an HTML site for GitHub Pages"
 requires-python = ">=3.11"
-dependencies = ["pydantic>=2.10,<3", "PyYAML>=6,<7", "httpx>=0.28,<1", "pypdf>=6,<7"]
+dependencies = [
+    "pydantic>=2.10,<3",
+    "PyYAML>=6,<7",
+    "httpx>=0.28,<1",
+    "pypdf>=6,<7",
+    "jinja2>=3.1.6,<4",
+]
 
 [project.scripts]
 lgm = "literature_graph_map.cli:main"

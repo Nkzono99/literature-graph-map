@@ -2,6 +2,22 @@ schema_version: 1
 topic_id: lunar-charging
 title: 月面帯電：光電子シース・宇宙環境・地形・ダスト
 question: 月面の電位は何で決まり、日照・宇宙環境・地形・粒子の配置によってどう変わるか。
+review:
+- heading: 月面の電位は、入る電荷と出る電荷の釣り合いで決まる
+  paragraphs:
+  - 月面には太陽風などの電子・イオンが流れ込み、紫外線や粒子の衝突によって電子が放出される。その収支が表面の電位を決める。光電子を失う日照面は正に、電子の流入が優勢な日陰は負に帯電しやすい。月面帯電を読む出発点は、この電流の釣り合いを整理した[@P000002]にある。日照だけでなく、周囲のプラズマの温度や密度も釣り合いを変えるため、月面電位は場所と時間によって変わる。
+  - 放出された電子は表面近くにとどまり、電位が空間的に変化する層、シースを作る。月試料から出る光電子の分布を測った[@P000001]は、その計算に使う材料特性を与えた。この分布を取り入れた[@P000007]は、粒子と電場を追跡するPIC計算でシースとダストの浮遊条件を調べている。[@P000011]は太陽風電子の流れを含む半解析解をPICと比較した。表面の電位を求める電流収支から、表面の上に広がる電場や粒子の運動へと、問いが具体化していく。
+- heading: 宇宙環境が変わると、日照面でも強い負帯電が起こる
+  paragraphs:
+  - 軌道観測は、電流収支で予想される帯電を実際の宇宙環境に結び付ける。[@P000003]はLunar Prospectorの電子観測から、夜側の月面が探査機より平均約35 V低い電位にあると推定した。同じ観測の系列を追うと、地球の磁気圏尾部では日照域でも500 V以上の負電位差が現れ（[@P000004]）、太陽高エネルギー粒子イベントでは約−4.5 kVに達する（[@P000006]）。静かな夜側から磁気圏尾部、太陽活動に伴うイベントへと比較を広げることで、入射粒子の環境が帯電の強さを大きく変えることが見えてくる。これらの電位差は探査機を基準としている。
+- heading: 地形は粒子の届き方を変え、空洞の底を正にも帯電させる
+  paragraphs:
+  - 平坦面で考えた電流収支に、地形による遮蔽が加わるとどうなるか。極域の影の段差を扱った[@P000008]では、太陽風の侵入と表面帯電が互いに影響し、二次電子の放出も陽子の流入を変えた。深い空洞へ上方から太陽風が入る[@P000012]では、側壁で電子が失われ、底へ届くイオンと電子の比が変わる。その結果、光電子放出がなくても底部が正に帯電しうる。側壁から供給される光電子は、むしろこの正電位を緩和する。
+  - この空洞モデルを出発点に、[@P000015]は空洞寸法とシース厚の比、[@P000016]は太陽風の流速と粒子の熱速度の比を調べた。前者は空洞が大きくなると底への電子供給が増えることを、後者は流速に応じて底部電位が負・正・ほぼゼロへ変わる条件を示す。地形の議論では、深さや幅だけでなく、シースや粒子運動の尺度と比べることが手掛かりになる。
+- heading: ダストの離脱を考えるには、粒子の隙間まで見る必要がある
+  paragraphs:
+  - 表面全体の電位から一粒のダストへ視点を移すと、材料の電子放出特性に加えて粒子の配置が効いてくる。[@P000005]は単粒子の光電子放出を測り、粒径や粒子電位への依存とバルク試料との差を報告した。さらに粉体では、放出された電子が粒子間の隙間へ再び捕らえられる。[@P000009]のpatched charge model（PCM）は、この再吸収による局所的な負帯電と反発力で、照射実験で見られた粒子の跳躍を説明する。シース中の浮遊を扱う[@P000007]と併せて読むと、付着した粒子が離脱する過程と、離脱後に電場中を動く過程をつなげて考えられる。
+  - 微小な配置や照射条件を変える研究も進んでいる。PCMの考え方は粒子と基板の隙間へ拡張され（[@P000013]）、光と低密度プラズマを同時に照射する実験では、単独照射より粉体の帯電と飛び出しが増えた（[@P000014]）。一方、[@P000010]は導電性による電荷の逃げ方が、粒子間の電場の上限を左右することを示す。ダストの動きまで見通すには、電子の放出・再吸収・導電損失を、粒子の形や接触状態と組み合わせて追う必要がある。
 public: true
 scope:
   include:
@@ -30,9 +46,9 @@ entries:
   group: photoelectron-sheath
   role: 月試料の光電子放出
   summary:
-    question: 月試料の光電子放出は、月面上にどのような電子層を作るか。
-    method: 月試料の放出収率と電子エネルギー分布を測り、太陽光下の光電子シースを近似計算した。
-    contribution: 月試料に基づく放出条件を与え、電子分布をMaxwell分布で近似する際の高エネルギー側のずれを示した。
+    question: 月試料の光電子放出は、どのようなシースを作るか。
+    method: 月試料の放出収率・電子分布を測り、シースを近似計算。
+    contribution: 月試料の電子分布とMaxwell近似の高エネルギー側のずれを示した。
   evidence_by_item:
     question: []
     method: []
@@ -54,9 +70,9 @@ entries:
   group: photoelectron-sheath
   role: 電流収支の基礎
   summary:
-    question: 太陽風・磁気圏尾部や日照条件によって、月面電位はどう変わるか。
-    method: 電子・イオンの流入と光電子・二次電子の放出を電流収支で扱い、表面電位を推定した。
-    contribution: 昼側の正帯電から夜側・高温プラズマ中の強い負帯電までを、入射電流と放出電流の釣り合いで整理した。
+    question: 日照とプラズマ環境によって、月面電位はどう変わるか。
+    method: 電子・イオンの流入と、光電子・二次電子の放出を電流収支で計算。
+    contribution: 昼側の正帯電と夜側・高温プラズマ中の負帯電を、電流の釣り合いで整理。
   evidence_by_item:
     question: []
     method: []
@@ -65,7 +81,7 @@ entries:
       version_id: V1
       url: https://doi.org/10.1007/978-94-010-2647-5_22
       source_type: abstract
-      locator: p.347 要旨（所蔵は冒頭2頁）
+      locator: p.347 要旨
       checked_at: '2026-09-18'
   inspection:
     level: abstract
@@ -78,9 +94,9 @@ entries:
   group: environment
   role: 夜側の負帯電
   summary:
-    question: 日陰の月面はどの程度負に帯電し、その電位差を軌道上の電子観測から捉えられるか。
-    method: Lunar Prospectorの電子分布から、電子の欠損領域（ロスコーン）のエネルギー依存性と上向き二次電子ビームを解析した。
-    contribution: 夜側月面が探査機より平均約35 V低い電位にあると推定し、日陰での負帯電を観測で裏付けた。
+    question: 日陰の月面の負帯電を、軌道上から推定できるか。
+    method: Lunar Prospectorのロスコーンと二次電子ビームを解析。
+    contribution: 夜側月面は探査機より平均約35 V低い電位と推定。
   evidence_by_item:
     question: []
     method: []
@@ -102,9 +118,9 @@ entries:
   group: environment
   role: 日照域の強い負帯電
   summary:
-    question: 月が地球磁気圏尾部を通過するとき、日陰と日照域で大きな負帯電は起こるか。
-    method: Lunar Prospectorの上向き電子ビームを探し、推定電位差の大きさが500 Vを超える事例と入射電子スペクトルを比較した。
-    contribution: 500 V以上の負電位差を示す稀な事例が主にプラズマシートで生じ、日照域にも存在することを示した。
+    question: 磁気圏尾部では、日照域でも強い負帯電が起こるか。
+    method: Lunar Prospectorの電子ビームと入射電子スペクトルを比較。
+    contribution: 日照域でも500 V以上の負電位差を観測。主にプラズマシートで発生。
   evidence_by_item:
     question: []
     method: []
@@ -126,9 +142,9 @@ entries:
   group: grain-charging
   role: 単粒子の光電子放出
   summary:
-    question: 月ダスト一粒の光電子放出効率は、粒径や粒子電位によってどう変わるか。
-    method: Apollo 17・Luna 24の帰還試料とJSC-1模擬物の単粒子を電気力で保持し、120・140・160 nmの紫外線による帯電変化を測った。
-    contribution: 単粒子の光電子放出効率と推定収率の粒径依存性を報告し、既報のバルク試料の値との差を示した。
+    question: 単粒子の光電子放出効率は、粒径・粒子電位にどう依存するか。
+    method: 月試料・模擬物の単粒子を保持し、紫外線による帯電を測定。
+    contribution: 放出効率・推定収率の粒径依存と、バルク試料との差を報告。
   evidence_by_item:
     question: []
     method: []
@@ -150,9 +166,9 @@ entries:
   group: environment
   role: SEP時の極端な帯電
   summary:
-    question: 太陽高エネルギー粒子（SEP）イベントは、月面の負帯電をどこまで強めるか。
-    method: 1998年4–5月の電子ビームから電位差を推定し、ACE・SOHOの粒子観測との比較とLunar Prospector全期間の事例検索を行った。
-    contribution: SEPイベント時に月面と探査機の電位差が約−4.5 kVに達し、大きな負帯電がSEPと磁気圏尾部の通過に集中することを示した。
+    question: SEPイベントは月面の負帯電をどこまで強めるか。
+    method: 月周回の電子ビームを、ACE・SOHOの粒子観測と比較。
+    contribution: SEP時に月面と探査機の電位差が約−4.5 kVに到達。
   evidence_by_item:
     question: []
     method: []
@@ -174,9 +190,9 @@ entries:
   group: photoelectron-sheath
   role: シースと浮遊条件
   summary:
-    question: 光電子の分布と時間依存の粒子帯電は、シース内の浮遊条件をどう変えるか。
-    method: 正午の平坦面を一次元PICで計算し、月試料由来の電子分布とMaxwell分布、粒子の帯電・軌道を比較した。
-    contribution: 非単調な電位分布を示し、浮遊の平衡点が存在しても粒子がそこへ到達するとは限らないと整理した。表面からの剥離は扱わない。
+    question: 電子分布と帯電の時間変化は、粒子の浮遊をどう変えるか。
+    method: 正午の平坦面を一次元PICで計算し、粒子の帯電・軌道を追跡。
+    contribution: 浮遊平衡点への到達は保証されない。表面からの剥離は対象外。
   evidence_by_item:
     question: []
     method: []
@@ -198,9 +214,9 @@ entries:
   group: topography
   role: 極域への太陽風侵入
   summary:
-    question: 永久影の月極域クレーターへ太陽風が侵入する際、表面帯電とプラズマ膨張はどう影響し合うか。
-    method: 段差状の影領域を二次元の粒子運動論シミュレーションで表し、表面電荷の蓄積と二次電子放出を自己無撞着に計算する。
-    contribution: 表面帯電と両極性膨張の負のフィードバックが準定常な後流を作り、その構造と底面への陽子流入を二次電子放出が調整すると示した。
+    question: 極域クレーターへの太陽風侵入と帯電はどう影響し合うか。
+    method: 影の段差を二次元で計算し、表面電荷と二次電子放出を追跡。
+    contribution: 帯電と両極性膨張が相互に抑制し、二次電子放出が陽子流入を調整。
   evidence_by_item:
     question: []
     method: []
@@ -222,9 +238,9 @@ entries:
   group: grain-charging
   role: 空隙の電子再吸収
   summary:
-    question: 粉体面の粒子は、平均的なシース電場からの見積もりを超える電荷と離脱力をどう得るか。
-    method: 模擬粉体に紫外線・電子ビーム・プラズマを照射する比較実験と、粒子間空隙での電子再吸収モデルを組み合わせた。
-    contribution: 微小空隙への放出電子の再吸収が局所的な負帯電と反発力を強めるpatched charge modelを提案し、実験で観測した粒子の跳躍を説明した。
+    question: 粉体面の粒子は、離脱に必要な電荷をどう得るか。
+    method: 粉体の照射実験と、空隙内の電子再吸収モデルを比較。
+    contribution: 空隙の負帯電・反発力で粒子の跳躍を説明するPCMを提案。
   evidence_by_item:
     question: []
     method: []
@@ -246,9 +262,9 @@ entries:
   group: grain-charging
   role: 粒子間電場と導電性
   summary:
-    question: 粒子間の局所電場はどこまで強くなり、何がその上限を決めるか。
-    method: 光電子放出と太陽風による差動帯電を、導電性を含む一次元モデルと固定粒子群の三次元計算で調べた。
-    contribution: 粒子間の強い電場と小さな正味電荷が両立し、導電性が局所電場の上限を左右すると示した。粒子の離脱は計算していない。
+    question: 粒子間の局所電場はどこまで強くなるか。
+    method: 一次元で導電性を、三次元で固定粒子群の差動帯電を計算。
+    contribution: 導電性が局所電場の上限を左右する。粒子離脱は計算対象外。
   evidence_by_item:
     question: []
     method: []
@@ -270,9 +286,9 @@ entries:
   group: photoelectron-sheath
   role: 半解析解とPIC
   summary:
-    question: 太陽風電子の流れを含む光電子シースを、半解析解で再現できるか。
-    method: 電子ドリフトを含む一次元の半解析解を導き、運動論的PIC計算と速度分布の違いを比較した。
-    contribution: 同じ一次元条件で半解析解とPICの整合を示し、平均的な太陽風ではMaxwell分布とκ分布の結果が近いと報告した。
+    question: 太陽風電子の流れを含むシースを半解析解で再現できるか。
+    method: 半解析解を一次元PICで検証し、Maxwell・κ分布の差も比較。
+    contribution: 半解析解とPICが整合。平均的な太陽風で電子分布による差も小さい。
   evidence_by_item:
     question: []
     method: []
@@ -294,9 +310,9 @@ entries:
   group: topography
   role: 深い空洞の正帯電
   summary:
-    question: 光電子放出がなくても、太陽風に開いた深い空洞の底は正に帯電するか。
-    method: 絶縁性の直方体空洞を三次元PICで計算し、深さと幅の比、入射条件、光電子放出による違いを調べる。
-    contribution: 側壁で電子が失われて底部にイオン電流が優勢になる正帯電機構と、側壁由来の光電子がその正電位を緩和する働きを示した。
+    question: 深い空洞の底は、光電子放出がなくても正に帯電するか。
+    method: 直方体空洞の深さ・幅・入射条件を変え、三次元PICで計算。
+    contribution: 側壁での電子損失が底部を正帯電させ、側壁の光電子が正電位を緩和。
   evidence_by_item:
     question: []
     method: []
@@ -318,9 +334,9 @@ entries:
   group: grain-charging
   role: 単粒子と基板の隙間
   summary:
-    question: 固体基板に直接載る一粒でも、放出電子の再吸収によって帯電が増し、移動できるか。
-    method: Kapton膜上のSiO₂粒子を電子ビームまたは紫外線で照射し、画像から求めた移動度を粒子と基板の帯電計算と比較した。
-    contribution: 粉体間の空隙を扱うPCMを粒子と基板の隙間へ広げ、再捕集と移動の関係を示した。画像から求めた移動度は、表面からの離脱率とは異なる。
+    question: 基板上の単粒子も、電子の再捕集で帯電・移動するか。
+    method: Kapton上のSiO₂粒子を電子・紫外線で照射し、移動を画像計測。
+    contribution: PCMを粒子と基板の隙間へ拡張。計測した移動度は離脱率とは異なる。
   evidence_by_item:
     question: []
     method: []
@@ -342,9 +358,9 @@ entries:
   group: grain-charging
   role: 光とプラズマの同時照射
   summary:
-    question: 光電子を放出する粉体に周囲のプラズマ電子が加わると、帯電と飛び出しはどう変わるか。
-    method: 模擬粉体への真空紫外線と低密度アルゴンプラズマの単独・同時照射を比べ、飛び出し数と電圧しきい値を測った。
-    contribution: 同時照射で飛び出しと推定負電荷が増えることを示し、周囲の電子が光電子の移動を促すcharge pumpingで説明した。
+    question: 光電子を放出する粉体に、プラズマ電子はどう作用するか。
+    method: 模擬粉体への真空紫外線・低密度Arプラズマの単独／同時照射を比較。
+    contribution: 同時照射で飛び出し・推定負電荷が増加。charge pumpingで説明。
   evidence_by_item:
     question: []
     method: []
@@ -366,9 +382,9 @@ entries:
   group: topography
   role: 空洞寸法とシース厚
   summary:
-    question: 空洞の大きさが表面シースの厚さをまたぐと、底部の正帯電はどう変わるか。
-    method: PIC計算で空洞の入口幅5・30・100 mと深さ対幅比を変え、表面電荷と内部の空間電荷の寄与を比較する。
-    contribution: シースより小さな空洞では強い正帯電が生じ、大きな空洞では側壁付近のシースが電子の底部への供給を助けて正電位を緩和すると示した。
+    question: 空洞寸法とシース厚の比は、底部の正帯電をどう変えるか。
+    method: 入口幅5・30・100 mと深さ対幅比を変えたPIC計算。
+    contribution: シースより大きな空洞では、底部への電子供給が増え正電位を緩和。
   evidence_by_item:
     question: []
     method: []
@@ -390,9 +406,9 @@ entries:
   group: topography
   role: 流速と熱速度の比
   summary:
-    question: 太陽風の流速と電子・イオンの熱速度の関係は、深い空洞の底部電位をどう決めるか。
-    method: Debye長より幅の小さな空洞を三次元PICで計算し、流速と縦横比への依存性を自由落下型の半解析モデルと比較する。
-    contribution: 流速がイオンの熱速度より小さいと底部は負、イオンと電子の熱速度の間で正、電子の熱速度を超えるとほぼゼロになる三つの領域を示した。
+    question: 太陽風の流速と熱速度の比は、空洞底部の電位をどう決めるか。
+    method: Debye長より幅が小さい空洞を、三次元PICと自由落下モデルで比較。
+    contribution: 流速がイオン・電子の熱速度を順に超すと、底部電位は負→正→ほぼゼロ。
   evidence_by_item:
     question: []
     method: []
@@ -414,9 +430,9 @@ entries:
   group: environment
   role: 南極実地形モデル
   summary:
-    question: 南極の実地形と月の公転に伴うプラズマ環境の変化は、表面電位と電場をどう変えるか。
-    method: LRO/LOLA標高データによる南緯86–90度の地形を用い、有限要素法とBPニューラルネットを組み合わせて半公転分を計算した。
-    contribution: 地形による局所電場の増強を示し、プラズマシートでは表面電位が約−1000 V、計算領域の最大電場が約5 V/mになると予測した。
+    question: 南極の実地形と磁気圏環境は、表面電位・電場をどう変えるか。
+    method: 南緯86–90度のLOLA地形を、有限要素法とニューラルネットで計算。
+    contribution: プラズマシート下で約−1000 V、計算領域の最大電場約5 V/mを予測。
   evidence_by_item:
     question: []
     method: []
@@ -436,6 +452,7 @@ entries:
   locked_fields: []
 relations:
 - relation_id: R000001
+  graph_label: 測定した光電子分布を使用
   source: P000001
   target: P000007
   type: uses_method
@@ -456,6 +473,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000002
+  graph_label: 電流収支とPICを比較
   source: P000002
   target: P000007
   type: compares_with
@@ -468,7 +486,7 @@ relations:
     version_id: V1
     url: https://doi.org/10.1007/978-94-010-2647-5_22
     source_type: abstract
-    locator: p.347 要旨（所蔵は冒頭2頁）
+    locator: p.347 要旨
     checked_at: '2026-09-18'
   - paper_id: P000007
     version_id: V1
@@ -479,9 +497,10 @@ relations:
   comparability: null
   checked_by: ai
   checked_at: '2026-09-18'
-  limitation: Mankaは所蔵された要旨・冒頭のみを参照。Poppeは正午の平坦面が対象。
+  limitation: Poppeの計算対象は正午の平坦面。
   locked_fields: []
 - relation_id: R000003
+  graph_label: 放出分布と電子ドリフトを比較
   source: P000007
   target: P000011
   type: compares_with
@@ -508,6 +527,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000004
+  graph_label: 日照域の強い負帯電へ拡張
   source: P000003
   target: P000004
   type: extends
@@ -528,6 +548,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000005
+  graph_label: 電子ビーム診断をSEP時に適用
   source: P000003
   target: P000006
   type: uses_method
@@ -548,6 +569,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000006
+  graph_label: 磁気圏尾部とSEP時を比較
   source: P000006
   target: P000004
   type: compares_with
@@ -574,6 +596,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000007
+  graph_label: 負帯電の観測と計算を比較
   source: P000017
   target: P000004
   type: compares_with
@@ -600,6 +623,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000008
+  graph_label: 段差と空洞への流入を比較
   source: P000008
   target: P000012
   type: compares_with
@@ -626,6 +650,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000009
+  graph_label: 空洞寸法とシース厚へ拡張
   source: P000012
   target: P000015
   type: extends
@@ -646,6 +671,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000010
+  graph_label: 流速による帯電の変化へ拡張
   source: P000012
   target: P000016
   type: extends
@@ -666,6 +692,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000011
+  graph_label: 小さな空洞で流速依存を調査
   source: P000015
   target: P000016
   type: extends
@@ -686,6 +713,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000012
+  graph_label: 単粒子放出と再吸収を比較
   source: P000005
   target: P000009
   type: compares_with
@@ -712,6 +740,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000013
+  graph_label: 電子再吸収と導電損失を比較
   source: P000009
   target: P000010
   type: compares_with
@@ -738,6 +767,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000014
+  graph_label: PCMを粒子と基板の隙間へ拡張
   source: P000009
   target: P000013
   type: extends
@@ -758,6 +788,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000015
+  graph_label: PCMに周囲電子の流入を追加
   source: P000009
   target: P000014
   type: extends
@@ -775,9 +806,10 @@ relations:
   comparability: null
   checked_by: ai
   checked_at: '2026-09-18'
-  limitation: charge pumpingの先行提案はYeo et al. (2022)。本マップでは途中の関連研究をすべて収録していない。
+  limitation: charge pumpingの先行提案はYeo et al. (2022)。
   locked_fields: []
 - relation_id: R000016
+  graph_label: 粒子配置と照射条件を比較
   source: P000013
   target: P000014
   type: compares_with
@@ -804,6 +836,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000017
+  graph_label: 負帯電の理論と観測を比較
   source: P000002
   target: P000003
   type: compares_with
@@ -816,7 +849,7 @@ relations:
     version_id: V1
     url: https://doi.org/10.1007/978-94-010-2647-5_22
     source_type: abstract
-    locator: p.347 要旨（所蔵は冒頭2頁）
+    locator: p.347 要旨
     checked_at: '2026-09-18'
   - paper_id: P000003
     version_id: V1
@@ -827,9 +860,10 @@ relations:
   comparability: null
   checked_by: ai
   checked_at: '2026-09-18'
-  limitation: Halekasの約−35 Vは探査機基準。プラズマ基準の計算値とそのまま比較しない。
+  limitation: Halekasの約−35 Vは探査機基準。理論値と比較する際は基準電位をそろえる。
   locked_fields: []
 - relation_id: R000018
+  graph_label: バルク試料と単粒子を比較
   source: P000001
   target: P000005
   type: compares_with
@@ -856,6 +890,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000019
+  graph_label: 浮遊条件と離脱機構を比較
   source: P000007
   target: P000009
   type: compares_with
@@ -882,6 +917,7 @@ relations:
   limitation: 浮遊の平衡点があることと、付着力を越えて表面から飛び出せることは別の問題。
   locked_fields: []
 - relation_id: R000020
+  graph_label: 平坦面と深い空洞の帯電を比較
   source: P000011
   target: P000012
   type: compares_with
@@ -908,6 +944,7 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000021
+  graph_label: 理想地形と南極の実地形を比較
   source: P000008
   target: P000017
   type: compares_with
@@ -931,10 +968,9 @@ relations:
   comparability: null
   checked_by: ai
   checked_at: '2026-09-18'
-  limitation: 空間規模、入射条件、計算手法が異なり、同条件での相互検証ではない。
+  limitation: 空間規模、入射条件、計算手法が異なる。
   locked_fields: []
 view:
-  table_group_by: group
   sort:
   - year
   - first_author
@@ -948,7 +984,6 @@ view:
   - P000009
   - P000014
   graphs: []
-  table_rows: 30
   graph_nodes: 20
   graph_edges: 30
 survey:
@@ -966,10 +1001,7 @@ survey:
   - Manka 1973は所蔵ファイルの冒頭2頁のみ。Xiao 2026はarXiv v1のプレプリント
   - 無料版やプレプリントの有無は一括調査していない。未確認は非公開を意味しない
   - 参考文献の追跡と各枝の文献追加は今後の更新で行う
-  changes: 初版として17本、4分類、21件の関係を追加。文献中の言及と本マップの比較整理を区別した。
+  changes: 公開ページをHTMLへ移行。調査ログの表示を外し、読む順番と説明文を整理した。
   publication_status: draft
   reviewed_at: null
-reading_notes:
-- 読み始めるならManka 1973で電流収支、Halekas 2002・2005・2007で環境による違い、Poppe 2010とZhao 2021でシースモデルへ進む。PICは粒子を追跡してプラズマと電場を解く計算法、シースは表面近くで電荷が偏る層。
-- 地形はZimmerman 2011からNakazono 2023・2025へ、粒子の移動はWang 2016からPagán Muñoz 2024・Richmond 2025へ読む。PCM（patched charge model）は、微小空隙への放出電子の再吸収による局所帯電を扱う。
-- 月面電位の符号や大きさを比べるときは、日照・プラズマ条件・基準電位をそろえる。表面の平均電位と粒子間の局所電場、浮遊条件と付着した粒子の離脱は区別する。室内での粒子移動やXiao 2026の計算値は、月面での直接観測ではない。
+reading_notes: []

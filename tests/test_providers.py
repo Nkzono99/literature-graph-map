@@ -103,6 +103,7 @@ def test_refresh_preserves_summary_and_verified_access(tmp_path, snapshot):
 
     work = snapshot.works["P000001"]
     work.locked_fields = ["title"]
+    work.citation_author = "Pagán Muñoz"
     work.versions[0].locations.append(
         Location(
             url="https://example.org/free",
@@ -123,6 +124,7 @@ def test_refresh_preserves_summary_and_verified_access(tmp_path, snapshot):
         issues = refresh(snapshot, snapshot.topics["demo"], provider)
     assert any("locked" in issue for issue in issues)
     assert snapshot.works["P000001"].title == work.title
+    assert snapshot.works["P000001"].citation_author == "Pagán Muñoz"
     assert snapshot.works["P000001"].versions[0].locations[0].access_status == "free"
     assert snapshot.topics["demo"].entries[0].model_dump() == before
 

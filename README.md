@@ -1,22 +1,21 @@
 # テーマ別文献マップ
 
-テーマごとの論文比較表と関係図から、先行研究の違いやつながりをたどるためのリポジトリです。
+テーマの概説を読み、引用から文献一覧や関係図へ進める文献マップです。現在は月面帯電の17文献を収録しています。
 
-この文献マップには誤りや抜けが含まれる可能性があります。気づいた点をご指摘いただければ、その都度修正します。
+公開先は [GitHub Pages](https://nkzono99.github.io/literature-graph-map/) です。
 
-<!-- BEGIN GENERATED: topic-index -->
-- [月面帯電：光電子シース・宇宙環境・地形・ダスト](<topics/lunar-charging/README.md>)（17件）
-<!-- END GENERATED: topic-index -->
+## 編集とプレビュー
 
-## マップを育てる
-
-調査にはAI、検索、外部プラグインなど、テーマに合う方法を使えます。共通書誌は `data/works.jsonl`、要点・関係は `topics/` のテーマ別YAMLへ記録し、同梱のCLIで表と図を生成します。
+共通書誌は `data/works.jsonl`、要点・分類・関係は `topics/**/topic.yaml` が正本です。HTMLを生成して表示します。
 
 ```powershell
 uv sync
 uv run lgm render
+uv run python -m http.server 8000 --bind 127.0.0.1 --directory _site
 ```
 
-テーマのひな形を作る場合は `uv run lgm survey "研究テーマ" --id my-topic --offline` を使えます。CLIによる候補検索やデータ取り込みも利用できます。
+ブラウザで `http://127.0.0.1:8000/` を開きます。`_site/` は生成専用で、Gitには含めません。テーマ別Markdownの生成は行いません。
 
-[操作方法](docs/USAGE.md) ／ [架空データによる表示例](examples/library/topics/demo/README.md) ／ [仕様](THEME_LITERATURE_MAP_SPEC.md) ／ [著作権について](COPYRIGHT.md)
+調査にはAI、検索、外部プラグインなど、テーマに合う方法を使えます。誤りや不足は気づいた時点で直していきます。
+
+[編集・公開の手順](docs/USAGE.md) ／ [仕様](THEME_LITERATURE_MAP_SPEC.md) ／ [HTMLテンプレート](src/literature_graph_map/web/topic.html) ／ [著作権について](COPYRIGHT.md)

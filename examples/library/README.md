@@ -1,11 +1,5 @@
-# テーマ別文献マップ
+# 架空データによる表示例
 
-テーマごとの比較表と関係図から、先行研究の違いやつながりをたどれます。
+このディレクトリの書誌・テーマは表示検証用の架空データです。
 
-<!-- BEGIN GENERATED: topic-index -->
-- [動作確認用の架空テーマ](<topics/demo/README.md>)（4件）
-<!-- END GENERATED: topic-index -->
-
-この文献マップには誤りや抜けが含まれる可能性があります。気づいた点をご指摘いただければ、その都度修正します。
-
-[原著と公開コンテンツの権利境界](COPYRIGHT.md)
+リポジトリルートで `uv run lgm --repo examples/library render` を実行すると、`examples/library/_site/` にHTMLサイトを生成します。

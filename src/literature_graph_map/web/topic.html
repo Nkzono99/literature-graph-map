@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block navigation %}
+<nav aria-label="このテーマの目次">
+  <p class="sidebar-caption">このテーマを読む</p>
+  {% if topic.review %}<a href="#review">研究の概観</a>{% endif %}
+  <a href="#papers">文献一覧 <span>{{ topic.entries | length }}</span></a>
+  <a href="#graphs">論文間の関係図</a>
+  {% if topic.reading_notes %}<a href="#reading">文献をたどる</a>{% endif %}
+  <p class="sidebar-caption">分類</p>
+  {% for group in groups %}<a href="#group-{{ group.id }}">{{ group.title }}</a>{% endfor %}
+</nav>
+{% endblock %}
+{% block content %}
+<header class="page-header">
+  <p class="eyebrow">TOPIC MAP · {{ topic.entries | length }} PAPERS</p>
+  <h1>{{ topic.title }}</h1>
+  <p class="lead">{{ topic.question }}</p>
+  {% if topic.scope.include %}<p class="scope">{{ topic.scope.include | join(' ／ ') }}</p>{% endif %}
+</header>
+{% if topic.review %}
+<section id="review" aria-labelledby="review-heading">
+  <div class="section-heading"><h2 id="review-heading">研究の概観</h2></div>
+  <div class="topic-review">
+    {% for section in topic.review %}
+    <section aria-labelledby="review-section-{{ loop.index }}">
+      <h3 id="review-section-{{ loop.index }}">{{ section.heading }}</h3>
+      {% for paragraph in section.paragraphs %}<p>{{ review_paragraph(paragraph, citations) }}</p>{% endfor %}
+    </section>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+<section id="papers" aria-labelledby="papers-heading">
+  <div class="section-heading"><h2 id="papers-heading">文献一覧</h2></div>
+  <form class="paper-filter" role="search" hidden>
+    <div><label for="paper-search">文献を検索</label><input id="paper-search" type="search" placeholder="タイトル・著者・キーワード" autocomplete="off"></div>
+    <div><label for="group-filter">分類</label><select id="group-filter"><option value="">すべての分類</option>{% for group in groups %}<option value="{{ group.id }}">{{ group.title }}</option>{% endfor %}</select></div>
+    <button type="reset">リセット</button>
+    <output id="paper-count" aria-live="polite">{{ topic.entries | length }}件</output>
+  </form>
+  <p id="no-results" hidden>一致する文献がありません。キーワードや分類を変えてみてください。</p>
+  {% for group in groups %}
+  <section class="paper-group" id="group-{{ group.id }}" data-group="{{ group.id }}" aria-labelledby="heading-{{ group.id }}">
+    <h3 class="group-heading" id="heading-{{ group.id }}">{{ group.title }}</h3>
+    {% for entry in group.entries %}
+    {% set work = works[entry.paper_id] %}{% set version = work.version() %}
+    <article class="paper" id="{{ entry.paper_id }}" data-authors="{{ work.authors | join(' ') }}">
+      <div class="paper-kicker"><a href="#{{ entry.paper_id }}">{{ citations[entry.paper_id] }}</a><span>{{ entry.role }}</span></div>
+      <h4><a href="{{ title_url(work) }}">{{ work.title }}</a></h4>
+      {% if version.kind == 'submitted' %}<p class="badge">{{ 'プレプリント・未査読' if version.status == 'preprint' else '査読状態未確認' }}</p>{% endif %}
+      <dl class="bibliography">
+        <div><dt>著者</dt><dd>{{ authors(work) }}</dd></div>
+        <div><dt>掲載誌</dt><dd>{{ version.venue or '未確認' }}</dd></div>
+        {% if version.publisher %}<div><dt>出版社</dt><dd>{{ version.publisher }}</dd></div>{% endif %}
+        <div><dt>公開先</dt><dd>OA・無料公開：{{ access(work) }} <span class="access-divider">／</span> Preprint：{{ preprint(work) }}</dd></div>
+      </dl>
+      {{ summary(entry, work) }}
+    </article>
+    {% endfor %}
+  </section>
+  {% else %}<p>文献はまだ登録されていません。</p>{% endfor %}
+</section>
+<section id="graphs" aria-labelledby="graphs-heading">
+  <div class="section-heading"><h2 id="graphs-heading">論文間の関係図</h2></div>
+  <p class="section-note">実線は文献中の言及、点線はこのマップでの比較を表します。矢印は基礎となる研究から、それを拡張・利用・検証する研究へ向きます。</p>
+  <p class="section-note">文献の枠をクリックすると、文献一覧の該当項目へ移動します。</p>
+  {% for graph in graphs %}
+  <figure class="graph">
+    <figcaption>{{ graph.title }}</figcaption>
+    <div class="graph-canvas" hidden></div>
+    <details class="graph-source"><summary>関係図のテキスト</summary><pre><code>{{ graph.source }}</code></pre></details>
+  </figure>
+  {% else %}<p>関係図は準備中です。</p>{% endfor %}
+</section>
+{% if topic.reading_notes %}
+<section id="reading" aria-labelledby="reading-heading">
+  <div class="section-heading"><h2 id="reading-heading">文献をたどる</h2></div>
+  {% for note in topic.reading_notes %}<p>{{ note }}</p>{% endfor %}
+</section>
+{% endif %}
+{% if navigation %}
+<section aria-labelledby="related-heading"><h2 id="related-heading">関連するテーマ</h2><ul>{% for item in navigation %}<li>{{ item.label }}：<a href="{{ item.url }}">{{ item.title }}</a></li>{% endfor %}</ul></section>
+{% endif %}
+{% endblock %}

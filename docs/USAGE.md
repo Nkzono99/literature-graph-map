@@ -1,6 +1,6 @@
 # 文献マップの編集とCLI
 
-このリポジトリ自体を文献マップとして公開します。CLIは、文献データから比較表・Mermaidの関係図・索引を生成する補助ツールです。調査方法は自由で、AIの知識や推論、検索、外部プラグイン、手作業などを使えます。
+GitHub PagesでHTMLの文献マップを公開します。CLIは、文献データから文献一覧・Mermaidの関係図・索引を生成する補助ツールです。調査方法は自由で、AIの知識や推論、検索、外部プラグイン、手作業などを使えます。
 
 マップには誤りや抜けが含まれる可能性があります。指摘や新しい情報を反映しながら更新します。
 
@@ -18,9 +18,19 @@ uv run lgm render
 uv run lgm check
 ```
 
-`check` は入力形式、参照ID、生成ページとの一致を確認します。研究内容の正しさや調査の網羅性を判定するものではありません。
+`check` は入力形式と参照IDを確認します。研究内容の正しさや調査の網羅性を判定するものではありません。
 
-READMEの `BEGIN GENERATED` / `END GENERATED` 内は、再生成時に正本の内容で置き換わります。領域外の文章は維持されます。ハッシュによる編集保護はありません。残したい訂正は正本へ反映してください。
+公開ページはHTMLのみです。`render` は `_site/` を作り直すため、本文の訂正は正本へ、レイアウトの変更は `src/literature_graph_map/web/` へ反映します。`_site/` は生成専用で、Git管理外です。
+
+```powershell
+uv run python -m http.server 8000 --bind 127.0.0.1 --directory _site
+```
+
+ブラウザで `http://127.0.0.1:8000/` を開きます。関係図の描画にはMermaidのCDN接続を使います。研究の概観・文献一覧・出典はオフラインでも読めます。
+
+関係図の文献ノードをクリックすると、同じページの文献一覧へ移動します。検索や分類で隠れている文献も表示されます。Tabキーでノードを選び、Enterキーでも移動できます。
+
+検索経路、検索語、作業ログはページへ出力しません。`survey` は編集用の記録として利用できます。公開リポジトリではYAMLやコメントも閲覧できるため、非公開メモはリポジトリ外へ保存してください。
 
 ## データの入力例
 
@@ -40,6 +50,10 @@ topic:
   topic_id: my-topic
   title: 研究テーマ
   question: どのような手法があるか
+  review:
+    - heading: 基準モデルから研究をたどる
+      paragraphs:
+        - このテーマでは、まず[@P000001]のモデルを出発点にする。
   entries:
     - paper_id: P000001
       group: general
@@ -58,16 +72,20 @@ uv run lgm import packet.yaml
 
 要点には `question`・`method`・`contribution` の3項目を記録します。要点自体は省略できます。項目別出典の `evidence_by_item`、確認状況の `inspection`、書誌取得元の `metadata_sources` は任意です。未記録でも掲載できます。
 
-参考情報として参照する文献は、比較表に載せず共通台帳にだけ登録することもできます。
+`review` は文献一覧より上に置く概説です。節ごとに `heading` と `paragraphs` を書き、本文中の `[@P000001]` で同じテーマの文献を引用します。表示時には著者＋年のリンクに変わり、クリックすると該当文献へ移動します。引用以外はプレーンテキストです。分量は3〜5節、1,000〜2,000字程度を目安に調整できます。省略時は概説の欄を表示しません。
 
-関係にはID、両端の文献ID、種類、比較軸（`aspect`）、理由（`reason`）を記録します。`basis` は既定で `comparison`、`state` は既定で `candidate` です。出典、確認日、確認主体、条件差は分かる範囲で追加できます。
+画面では第一著者＋年で文献を呼びます。同じ組み合わせには `-1`、`-2` を付けます。複合姓などは共通書誌の `citation_author: Pagán Muñoz` で表示名の著者部分を指定できます。内部の `paper_id` は参照用として維持します。
+
+参考情報として参照する文献は、文献一覧に載せず共通台帳にだけ登録することもできます。
+
+関係にはID、両端の文献ID、種類、比較軸（`aspect`）、理由（`reason`）を記録します。`basis` は既定で `comparison`、`state` は既定で `candidate` です。図の辺には任意の `graph_label` で関係を短く説明できます（例：`graph_label: 空洞寸法とシース厚へ拡張`）。省略時は比較軸＋種類を使います。出典、確認日、確認主体、条件差は分かる範囲で追加できます。
 
 | 関係の状態 | ページでの表示 |
 |---|---|
-| `candidate` | 「仮」を付けて掲載 |
-| `checked` | 通常の関係として掲載 |
-| `recheck` | 「見直し予定」を付けて掲載 |
-| `rejected` | データに残し、図と一覧には表示しない |
+| `candidate` | 図に「仮」を付けて掲載 |
+| `checked` | 図で通常表示 |
+| `recheck` | 図に「見直し予定」を付けて掲載 |
+| `rejected` | データに残し、図には表示しない |
 
 `checked` は整理上の状態です。人間の確認や原著の精読を保証しません。記録していない確認主体・確認日を自動で補うこともありません。
 
@@ -79,15 +97,15 @@ uv run lgm import packet.yaml
 
 | 操作 | 用途 |
 |---|---|
-| `init [--license FILE]` | 空の台帳・索引を作る。ライセンス文書の配置は任意 |
+| `init [--license FILE]` | 空の台帳を作る。ライセンス文書の配置は任意 |
 | `survey THEME [--id ID] [--parent ID] [--offline]` | テーマのひな形を作る |
 | `survey THEME --query QUERY [--seed SEED]` | Crossrefで候補を探し、指定した種文献の書誌を追加する |
 | `add TOPIC_ID SEED [SEED ...]` | 種文献のDOIを同定して追加する |
 | `update TOPIC_ID [--query QUERY] [--since YYYY-MM-DD]` | Crossrefの書誌を再取得し、候補を探す |
 | `import PACKET [--path PATH]` | 文献・テーマのデータを取り込む |
-| `render` | 通信せずに正本からページを再生成する |
-| `check [--public]` | データとページの整合性を確認する |
-| `export DIRECTORY` | マップを別の新規ディレクトリに書き出す |
+| `render` | 通信せずに正本から `_site/` のHTMLサイトを再生成する |
+| `check [--public]` | 正本の形式・参照を確認する |
+| `export DIRECTORY` | 正本と生成HTMLを別の新規ディレクトリに書き出す |
 | `config` | CLIの候補検索に使う上限・連絡先を保存する |
 | `schema --output DIRECTORY` | 入力形式をJSON Schemaで出力する |
 
@@ -119,7 +137,17 @@ uv run lgm config --max-candidates 30 --max-search-calls 8 --timeout-seconds 20
 
 `check --public` では、掲載対象の整合性に加え、秘密情報やローカルパス、データ用ディレクトリへの意図しないファイル混入を確認します。出典の有無や調査の完成度によって掲載を止めません。
 
-このリポジトリをそのまま公開できます。マップだけを切り出す場合は `export` を使えます。既存の `LICENSE` があれば一緒に出力されます。CLIはGitへのコミットやpushを行いません。
+正本とHTMLサイトを別の場所へ保存する場合は `export` を使えます。スナップショットにはYAMLの編集記録も含まれます。Pagesへの公開対象は `_site/` だけです。既存の `LICENSE` があれば一緒に出力されます。CLIはGitへのコミットやpushを行いません。
+
+## GitHub Pagesへの公開
+
+1. GitHubリポジトリの **Settings → Pages → Build and deployment → Source** で **GitHub Actions** を選びます。
+2. 変更を `main` へpushすると、`.github/workflows/pages.yml` が検証・HTML生成・公開を実行します。Actions画面の **Publish literature map → Run workflow** からも実行できます。
+3. 公開URLはPages設定画面やデプロイ結果に表示されます。このリポジトリでは `https://nkzono99.github.io/literature-graph-map/` です。
+
+生成HTMLのコミットは不要です。公開されるファイルはHTML・CSS・JavaScriptに限定され、正本や作業ログはPagesへコピーしません。
+
+[GitHub公式のカスタムワークフロー説明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
 
 ## 開発
 

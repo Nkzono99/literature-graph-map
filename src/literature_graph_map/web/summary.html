@@ -1,0 +1,19 @@
+{% if entry.summary %}
+<ul class="paper-summary">
+  {% for key, label in labels.items() %}
+  <li><strong>{{ label }}</strong><span>{{ entry.summary[key] }}</span></li>
+  {% endfor %}
+</ul>
+{% set refs = entry.evidence_by_item %}
+{% if status or refs.question or refs.method or refs.contribution %}
+<details class="sources">
+  <summary>出典・確認状況</summary>
+  {% if status %}<p>{{ status }}</p>{% endif %}
+  {% for key, label in labels.items() %}
+  {% if refs[key] %}
+  <p>{{ label }}：{% for ref in refs[key] %}<a href="{{ ref.url }}">{{ ref.locator or '参考' }}</a>{% if not loop.last %} ／ {% endif %}{% endfor %}</p>
+  {% endif %}
+  {% endfor %}
+</details>
+{% endif %}
+{% else %}<p class="muted">要点は準備中です。</p>{% endif %}

@@ -9,3 +9,5 @@ dist/
 *.pdf
 *.key
 *.pem
+
+_site/

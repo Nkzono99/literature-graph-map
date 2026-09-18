@@ -16,6 +16,7 @@ from literature_graph_map.operations import (
     research_handoff,
 )
 from literature_graph_map.providers import Crossref, Settings, seed_identifiers
+from literature_graph_map.render import render
 from literature_graph_map.storage import MapError, Snapshot, load, read_yaml
 
 
@@ -38,15 +39,22 @@ def test_existing_version_cannot_change_doi(tmp_path, snapshot, packet):
     assert not (tmp_path / "repo/data/works.jsonl").exists()
 
 
-def test_relation_lock_protects_endpoints_and_qualifications(tmp_path, snapshot, packet):
-    snapshot.topics["demo"].relations[0].locked_fields = ["type"]
+@pytest.mark.parametrize("locked_field", ["type", "graph_label"])
+def test_relation_lock_protects_endpoints_and_qualifications(
+    tmp_path, snapshot, packet, locked_field
+):
+    snapshot.topics["demo"].relations[0].locked_fields = [locked_field]
+    snapshot.topics["demo"].relations[0].graph_label = "測定した分布を使用"
     packet = packet.model_copy(deep=True)
     packet.topic.relations[0].source = "P000004"
     packet.topic.relations[0].limitation = "不適切な変更"
+    packet.topic.relations[0].graph_label = "矛盾する変更"
     conflicts = import_packet(tmp_path / "repo", snapshot, packet, tmp_path / "private")
     relation = load(tmp_path / "repo").topics["demo"].relations[0]
     assert relation.source == "P000001" and relation.limitation is None
+    assert relation.graph_label == "測定した分布を使用"
     assert any("source" in c for c in conflicts)
+    assert any("graph_label" in c for c in conflicts)
 
 
 def test_scope_changes_update_generated_prose(tmp_path, snapshot, packet):
@@ -56,7 +64,8 @@ def test_scope_changes_update_generated_prose(tmp_path, snapshot, packet):
     packet.topic.question = "更新後の問い。"
     packet.topic.scope.include = ["更新後の対象条件"]
     import_packet(repo, snapshot, packet, tmp_path / "private")
-    page = (repo / "topics/demo/README.md").read_text(encoding="utf-8")
+    render(repo, load(repo))
+    page = (repo / "_site/topics/demo/index.html").read_text(encoding="utf-8")
     assert "更新後の問い。" in page and "更新後の対象条件" in page
     assert "全論文・著者・関係・出典は架空" not in page
 
@@ -186,19 +195,20 @@ def test_partial_research_can_be_published_without_evidence_or_license(tmp_path,
     assert main(common + ["import", str(path)]) == 0
     assert main(common + ["check", "--public"]) == 0
     snapshot = load(repo)
-    assert export_snapshot(repo, snapshot, out) == 5
-    assert len(load(out).topics["minimal"].relations) == 1
-    page = (out / "topics/minimal/README.md").read_text(encoding="utf-8")
+    assert export_snapshot(repo, snapshot, out) > 0
+    saved_relations = load(out).topics["minimal"].relations
+    assert len(saved_relations) == 1 and saved_relations[0].reason == relation["reason"]
+    page = (out / "_site/topics/minimal/index.html").read_text(encoding="utf-8")
     assert "誤りや抜け" in page and "共通の現象を調べる。" in page
     assert "本文確認" not in page and "人間確認" not in page and "None" not in page
     if state == "rejected":
-        assert "R000001" not in page
+        assert "結果の比較：支持" not in page
     else:
-        assert "R000001" in page and "条件差はTODO。" in page
+        assert "結果の比較：支持" in page
         if state is None:
-            assert "R000001 支持・仮" in page
+            assert "結果の比較：支持（仮）" in page
         elif state == "recheck":
-            assert "R000001 支持・見直し予定" in page
+            assert "結果の比較：支持（見直し予定）" in page
 
 
 @pytest.mark.parametrize("level", ["full_text", "preprint", "abstract"])
@@ -213,10 +223,11 @@ def test_unspecified_inspection_version_is_not_inferred_after_update(tmp_path, p
     packet.works[0].versions.append(Version(version_id="Vnew", kind="published"))
     packet.works[0].representative_version_id = "Vnew"
     import_packet(repo, load(repo), packet, private)
-    page = (repo / "topics/demo/README.md").read_text(encoding="utf-8")
-    row = next(line for line in page.splitlines() if line.startswith("| P000001 |"))
-    assert "参照版未記録" in row and "旧版に基づく記述" in row
-    assert "本文確認（出版版）" not in row and "要旨確認（出版版）" not in row
+    render(repo, load(repo))
+    page = (repo / "_site/topics/demo/index.html").read_text(encoding="utf-8")
+    paper = page.split('id="P000001"', 1)[1].split("</article>", 1)[0]
+    assert "参照版未記録" in paper and "旧版に基づく記述" in paper
+    assert "本文確認（出版版）" not in paper and "要旨確認（出版版）" not in paper
 
 
 @pytest.mark.parametrize("reference", ["relation", "summary"])
@@ -321,12 +332,10 @@ def test_export_index_is_self_contained(tmp_path, snapshot):
     repo, dest = tmp_path / "repo", tmp_path / "export"
     commit(repo, snapshot)
     index = repo / "README.md"
-    index.write_text(
-        index.read_text(encoding="utf-8") + "\n[開発者向け説明](docs/USAGE.md)\n", encoding="utf-8"
-    )
+    index.write_text("[開発者向け説明](docs/USAGE.md)\n", encoding="utf-8")
     (repo / "LICENSE").write_text("Synthetic data license.", encoding="utf-8")
     export_snapshot(repo, snapshot, dest)
-    assert "docs/USAGE.md" not in (dest / "README.md").read_text(encoding="utf-8")
+    assert "docs/USAGE.md" not in (dest / "_site/index.html").read_text(encoding="utf-8")
 
 
 def test_shared_work_version_update_preserves_other_topics_pending_relations(tmp_path, packet):

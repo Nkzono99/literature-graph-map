@@ -21,7 +21,7 @@ from .operations import (
     research_handoff,
 )
 from .providers import Crossref, Settings, settings
-from .render import check_rendered, render, rendered_files
+from .render import render, rendered_files
 from .storage import (
     MapError,
     inside,
@@ -37,7 +37,7 @@ from .storage import (
 
 
 def parser() -> argparse.ArgumentParser:
-    root = argparse.ArgumentParser(description="文献比較表とMermaidの関係図を生成します。")
+    root = argparse.ArgumentParser(description="文献一覧と関係図のHTMLサイトを生成します。")
     root.add_argument(
         "--repo",
         type=Path,
@@ -74,8 +74,8 @@ def parser() -> argparse.ArgumentParser:
     ingest = commands.add_parser("import", help="文献・テーマのデータを取り込み")
     ingest.add_argument("packet", type=Path)
     ingest.add_argument("--path", help="新規テーマの配置先（例: topics/dust/charging）")
-    commands.add_parser("render", help="通信なしで正本からREADMEを再生成")
-    check = commands.add_parser("check", help="データ形式、参照、生成ページの整合性を検証")
+    commands.add_parser("render", help="通信なしで正本から_site/のHTMLを再生成")
+    check = commands.add_parser("check", help="データ形式と参照を検証")
     check.add_argument(
         "--public", action="store_true", help="公開対象フィールドと生成内容の漏えい検査も行う"
     )
@@ -127,12 +127,12 @@ def run(args: argparse.Namespace) -> int:
         commit(repo, snapshot)
         if license_text is not None:
             write_files(repo, {repo / "LICENSE": license_text})
-        print(f"初期化: {repo / 'README.md'}")
+        print(f"初期化: {repo / 'data/works.jsonl'}")
     elif args.command == "render":
         render(repo, snapshot)
-        print(f"{len(snapshot.topics)}テーマを再生成しました。")
+        print(f"HTMLサイトを生成: {repo / '_site/index.html'}")
     elif args.command == "check":
-        issues = check_rendered(repo, snapshot)
+        issues = []
         if args.public:
             issues.extend(publication_files(repo))
             public = public_snapshot(snapshot)
@@ -217,7 +217,7 @@ def run(args: argparse.Namespace) -> int:
             topic.survey.reviewed_at = None
             commit(repo, snapshot)
             request = research_handoff(private, topic, snapshot, provider.events)
-            print(f"草稿: {repo / snapshot.paths[topic.topic_id] / 'README.md'}")
+            print(f"草稿: {repo / snapshot.paths[topic.topic_id] / 'topic.yaml'}")
             print(f"調査メモ: {request}")
             print(
                 f"補足: {len(topic.survey.limitations)}件。正本の編集またはimportで内容を更新できます。"

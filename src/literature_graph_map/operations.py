@@ -6,9 +6,9 @@ import re
 from datetime import date
 from pathlib import Path
 
-from .models import Entry, ImportPacket, Inspection, Topic, Work
+from .models import PAPER_CITATION, Entry, ImportPacket, Inspection, Topic, Work
 from .providers import Crossref, crossref_work, seed_identifiers
-from .render import COPYRIGHT, check_rendered, index_page, rendered_files
+from .render import COPYRIGHT, rendered_files
 from .storage import (
     MapError,
     Snapshot,
@@ -22,8 +22,8 @@ from .storage import (
 
 
 def prepare_commit(repo: Path, snapshot: Snapshot) -> dict[Path, str]:
-    pages = rendered_files(repo, snapshot)
-    files = {**snapshot.source_files(repo), **pages}
+    snapshot.validate()
+    files = snapshot.source_files(repo)
     copyright_path = inside(repo, repo / "COPYRIGHT.md")
     if not copyright_path.exists():
         files[copyright_path] = COPYRIGHT
@@ -87,7 +87,13 @@ def merge_work(
     sources.update({source.url: source.model_dump() for source in incoming.metadata_sources})
     data["metadata_sources"] = list(sources.values())
     if metadata_only:
-        for key in ("access_check", "preprint_check", "representative_version_id", "record_url"):
+        for key in (
+            "access_check",
+            "preprint_check",
+            "representative_version_id",
+            "record_url",
+            "citation_author",
+        ):
             data[key] = getattr(existing, key)
     data["locked_fields"] = sorted(set(existing.locked_fields + incoming.locked_fields))
     locked = set(existing.locked_fields)
@@ -201,6 +207,11 @@ def import_packet(
         return value
 
     data = remap(data)
+    for section in data["review"]:
+        section["paragraphs"] = [
+            PAPER_CITATION.sub(lambda m: f"[@{mapping.get(m[1], m[1])}]", paragraph)
+            for paragraph in section["paragraphs"]
+        ]
     old = snapshot.topics.get(packet.topic.topic_id)
     if old:
         if topic_path and Path(topic_path) != snapshot.paths[old.topic_id]:
@@ -237,6 +248,7 @@ def import_packet(
                         "reason",
                         "evidence",
                         "aspect",
+                        "graph_label",
                         "comparability",
                         "checked_by",
                         "checked_at",
@@ -475,9 +487,6 @@ def public_snapshot(snapshot: Snapshot) -> Snapshot:
 
 
 def export_snapshot(repo: Path, snapshot: Snapshot, destination: Path) -> int:
-    issues = check_rendered(repo, snapshot)
-    if issues:
-        raise MapError("; ".join(issues))
     destination = destination.resolve()
     if destination.is_relative_to(repo) or repo.is_relative_to(destination):
         raise MapError("export destination must be separate from the working repository")
@@ -488,11 +497,7 @@ def export_snapshot(repo: Path, snapshot: Snapshot, destination: Path) -> int:
     if not public.topics:
         raise MapError("no topics are marked public: true")
     files = public.source_files(destination)
-    # Rebuild navigational regions against the selected public snapshot, preserving manual prose.
-    for path, text in rendered_files(repo, public).items():
-        files[destination / path.relative_to(repo)] = (
-            index_page(public) if path == repo / "README.md" else text
-        )
+    files.update(rendered_files(destination, public))
     files[destination / "COPYRIGHT.md"] = COPYRIGHT
     if license_path.is_file():
         files[destination / "LICENSE"] = license_path.read_text(encoding="utf-8")

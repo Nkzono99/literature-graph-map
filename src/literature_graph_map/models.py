@@ -48,6 +48,7 @@ URL = Annotated[str, AfterValidator(public_url)]
 DOI = Annotated[str, AfterValidator(normalize_doi)]
 Text = Annotated[str, Field(min_length=1)]
 PaperID = Annotated[str, Field(pattern=r"^P[0-9]{6,}$")]
+PAPER_CITATION = re.compile(r"\[@(P[0-9]{6,})\]")
 VersionID = Annotated[str, Field(pattern=r"^V[A-Za-z0-9_-]+$")]
 TopicID = Annotated[str, Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")]
 RelationID = Annotated[str, Field(pattern=r"^R[0-9]{6,}$")]
@@ -108,6 +109,7 @@ class Work(Model):
     paper_id: PaperID
     title: Text
     authors: list[Text]
+    citation_author: Text | None = None
     representative_version_id: VersionID
     versions: list[Version] = Field(min_length=1)
     metadata_sources: list[MetadataSource] = Field(default_factory=list)
@@ -119,7 +121,14 @@ class Work(Model):
     version_links: list[VersionLink] = Field(default_factory=list)
     missing_note: str = "未取得の書誌項目は未確認。"
     locked_fields: list[
-        Literal["title", "authors", "representative_version_id", "versions", "record_url"]
+        Literal[
+            "title",
+            "authors",
+            "citation_author",
+            "representative_version_id",
+            "versions",
+            "record_url",
+        ]
     ] = Field(default_factory=list)
 
     @model_validator(mode="after")
@@ -196,6 +205,7 @@ class Relation(Model):
     basis: Literal["explicit", "comparison"] = "comparison"
     state: Literal["candidate", "checked", "recheck", "rejected"] = "candidate"
     aspect: Text
+    graph_label: Text | None = None
     reason: Text
     evidence: list[Evidence] = Field(default_factory=list)
     comparability: Comparability | None = None
@@ -203,7 +213,9 @@ class Relation(Model):
     checked_at: date | None = None
     limitation: str | None = None
     locked_fields: list[
-        Literal["type", "basis", "state", "aspect", "reason", "evidence", "comparability"]
+        Literal[
+            "type", "basis", "state", "aspect", "graph_label", "reason", "evidence", "comparability"
+        ]
     ] = Field(default_factory=list)
 
     @model_validator(mode="after")
@@ -234,11 +246,9 @@ class Graph(Model):
 
 
 class View(Model):
-    table_group_by: Literal["group"] = "group"
     sort: list[str] = Field(default_factory=lambda: ["year", "first_author", "paper_id"])
     overview_nodes: list[PaperID] = Field(default_factory=list)
     graphs: list[Graph] = Field(default_factory=list)
-    table_rows: int = Field(default=30, ge=1, le=100)
     graph_nodes: int = Field(default=20, ge=2, le=20)
     graph_edges: int = Field(default=30, ge=1, le=30)
 
@@ -255,11 +265,17 @@ class Survey(Model):
     reviewed_at: date | None = None
 
 
+class ReviewSection(Model):
+    heading: Text
+    paragraphs: list[Text] = Field(min_length=1)
+
+
 class Topic(Model):
     schema_version: Literal[1] = 1
     topic_id: TopicID
     title: Text
     question: Text
+    review: list[ReviewSection] = Field(default_factory=list)
     public: bool = True
     scope: Scope = Field(default_factory=Scope)
     navigation: Navigation = Field(default_factory=Navigation)
@@ -281,6 +297,10 @@ class Topic(Model):
             raise ValueError("duplicate paper, group, or relation ID in topic")
         if any(e.group not in groups for e in self.entries):
             raise ValueError("entry references an unknown group")
+        for section in self.review:
+            for paragraph in section.paragraphs:
+                if not set(PAPER_CITATION.findall(paragraph)) <= set(papers):
+                    raise ValueError("review citations must appear in the topic's paper list")
         for relation in self.relations:
             if relation.source not in papers or relation.target not in papers:
                 raise ValueError("relation endpoints must appear in the topic's table")

@@ -219,14 +219,12 @@ relations:
   limitation: null
   locked_fields: []
 view:
-  table_group_by: group
   sort:
   - year
   - first_author
   - paper_id
   overview_nodes: []
   graphs: []
-  table_rows: 30
   graph_nodes: 20
   graph_edges: 30
 survey:

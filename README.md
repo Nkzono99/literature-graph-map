@@ -7,7 +7,7 @@
 ## 収録テーマ
 
 - 計算手法：[PIC法](https://nkzono99.github.io/literature-graph-map/topics/pic/) ／ [Poisson方程式・場の解法](https://nkzono99.github.io/literature-graph-map/topics/poisson-solvers/)
-- 基礎過程：[シース・表面帯電](https://nkzono99.github.io/literature-graph-map/topics/plasma-sheaths/) ／ [プラズマ膨張・ウェイク](https://nkzono99.github.io/literature-graph-map/topics/plasma-expansion/)
+- 基礎過程：[シース・表面帯電](https://nkzono99.github.io/literature-graph-map/topics/plasma-sheaths/) ／ [二次電子放出](https://nkzono99.github.io/literature-graph-map/topics/secondary-electron-emission/) ／ [プラズマ膨張・ウェイク](https://nkzono99.github.io/literature-graph-map/topics/plasma-expansion/)
 - 月の環境：[月面帯電](https://nkzono99.github.io/literature-graph-map/topics/lunar-charging/) ／ [磁気異常と太陽風](https://nkzono99.github.io/literature-graph-map/topics/lunar-magnetic-anomalies/) ／ [水・揮発性物質](https://nkzono99.github.io/literature-graph-map/topics/lunar-water/)
 - 応用：[宇宙機・計測器とプラズマ](https://nkzono99.github.io/literature-graph-map/topics/spacecraft-plasma/) ／ [プラズマ加工・微細構造の帯電](https://nkzono99.github.io/literature-graph-map/topics/plasma-processing/)
 

@@ -38,6 +38,7 @@ navigation:
   - plasma-expansion
   - lunar-water
   - lunar-charging-observations
+  - secondary-electron-emission
 groups:
 - id: field-and-swirls
   title: 磁場モデル・スワール

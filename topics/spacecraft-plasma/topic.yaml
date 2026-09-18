@@ -41,6 +41,7 @@ navigation:
   - lunar-charging-engineering
   - lunar-charging-observations
   - poisson-solvers
+  - secondary-electron-emission
 groups:
 - id: charging-basics
   title: 帯電の基礎・教科書

@@ -37,6 +37,7 @@ navigation:
   - lunar-charging-dust
   - lunar-charging
   - lunar-magnetic-anomalies
+  - secondary-electron-emission
 groups:
 - id: foundations
   title: 電流収支・シース・プレシース

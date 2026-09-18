@@ -25,6 +25,7 @@ navigation:
   parent: lunar-charging
   related:
   - plasma-sheaths
+  - secondary-electron-emission
 groups:
 - id: properties
   title: 電子放出と粒子電荷

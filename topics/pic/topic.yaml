@@ -36,6 +36,7 @@ navigation:
   - plasma-expansion
   - lunar-magnetic-anomalies
   - lunar-water
+  - secondary-electron-emission
 groups:
 - id: foundations
   title: 基礎・教材

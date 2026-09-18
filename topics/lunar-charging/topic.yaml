@@ -39,6 +39,7 @@ navigation:
   - pic
   - spacecraft-plasma
   - plasma-processing
+  - secondary-electron-emission
 groups:
 - id: photoelectron-sheath
   title: 電流収支・光電子シース

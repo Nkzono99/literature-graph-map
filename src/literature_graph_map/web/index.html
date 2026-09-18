@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block navigation %}
 <p class="sidebar-caption">研究の入口</p>
-<p>テーマを選び、文献の要点と関係図をたどれます。</p>
+<p>テーマの概観を読み、引用から各文献へ進めます。</p>
 {% endblock %}
 {% block content %}
 <header class="page-header">
   <p class="eyebrow">LITERATURE MAP</p>
   <h1>研究の違いと<br>つながりをたどる。</h1>
-  <p class="lead">テーマごとの文献一覧と関係図から、読みたい論文を見つけるためのマップです。</p>
+  <p class="lead">テーマの概観から研究の流れをつかみ、文献一覧でそれぞれの要点を読めます。</p>
 </header>
 <section aria-labelledby="themes">
   <div class="section-heading"><h2 id="themes">テーマ</h2><span>{{ topic_links | length }} topics</span></div>

@@ -37,7 +37,7 @@ from .storage import (
 
 
 def parser() -> argparse.ArgumentParser:
-    root = argparse.ArgumentParser(description="文献一覧と関係図のHTMLサイトを生成します。")
+    root = argparse.ArgumentParser(description="研究の概観と文献一覧のHTMLサイトを生成します。")
     root.add_argument(
         "--repo",
         type=Path,

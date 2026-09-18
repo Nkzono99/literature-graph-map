@@ -4,7 +4,6 @@
   <p class="sidebar-caption">このテーマを読む</p>
   {% if topic.review %}<a href="#review">研究の概観</a>{% endif %}
   <a href="#papers">文献一覧 <span>{{ topic.entries | length }}</span></a>
-  <a href="#graphs">論文間の関係図</a>
   {% if topic.reading_notes %}<a href="#reading">文献をたどる</a>{% endif %}
   <p class="sidebar-caption">分類</p>
   {% for group in groups %}<a href="#group-{{ group.id }}">{{ group.title }}</a>{% endfor %}
@@ -59,18 +58,6 @@
     {% endfor %}
   </section>
   {% else %}<p>文献はまだ登録されていません。</p>{% endfor %}
-</section>
-<section id="graphs" aria-labelledby="graphs-heading">
-  <div class="section-heading"><h2 id="graphs-heading">論文間の関係図</h2></div>
-  <p class="section-note">実線は文献中の言及、点線はこのマップでの比較を表します。矢印は基礎となる研究から、それを拡張・利用・検証する研究へ向きます。</p>
-  <p class="section-note">文献の枠をクリックすると、文献一覧の該当項目へ移動します。</p>
-  {% for graph in graphs %}
-  <figure class="graph">
-    <figcaption>{{ graph.title }}</figcaption>
-    <div class="graph-canvas" hidden></div>
-    <details class="graph-source"><summary>関係図のテキスト</summary><pre><code>{{ graph.source }}</code></pre></details>
-  </figure>
-  {% else %}<p>関係図は準備中です。</p>{% endfor %}
 </section>
 {% if topic.reading_notes %}
 <section id="reading" aria-labelledby="reading-heading">

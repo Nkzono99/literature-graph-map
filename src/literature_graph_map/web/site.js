@@ -47,39 +47,3 @@ if (form) {
   });
   revealTarget();
 }
-
-const graphs = [...document.querySelectorAll('.graph')];
-if (graphs.length) {
-  try {
-    const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.esm.min.mjs');
-    mermaid.initialize({
-      startOnLoad: false, securityLevel: 'strict', theme: 'base',
-      themeVariables: { primaryColor: '#edf2ee', primaryTextColor: '#23313a', primaryBorderColor: '#8daba0', lineColor: '#537c72', fontSize: '14px' },
-      flowchart: { useMaxWidth: false, htmlLabels: false },
-    });
-    for (const [index, graph] of graphs.entries()) {
-      const source = graph.querySelector('code').textContent;
-      const canvas = graph.querySelector('.graph-canvas');
-      try {
-        const { svg } = await mermaid.render(`graph-${index}`, source);
-        canvas.innerHTML = svg;
-        // Use native SVG links so paper navigation also works with the keyboard.
-        for (const node of canvas.querySelectorAll('g.node')) {
-          const paperClass = [...node.classList].find(name => name.startsWith('paper_'));
-          const paperId = paperClass.slice('paper_'.length);
-          const paper = document.getElementById(paperId);
-          const link = document.createElementNS('http://www.w3.org/2000/svg', 'a');
-          link.setAttribute('href', `#${paperId}`);
-          link.setAttribute('aria-label', `${paper.querySelector('.paper-kicker a').textContent} の文献へ`);
-          node.replaceWith(link);
-          link.append(node);
-        }
-        canvas.hidden = false;
-      } catch {
-        graph.querySelector('details').open = true;
-      }
-    }
-  } catch {
-    for (const graph of graphs) graph.querySelector('details').open = true;
-  }
-}

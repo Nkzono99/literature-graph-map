@@ -9,7 +9,7 @@ from urllib.parse import quote
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
-from .models import PAPER_CITATION, RELATION_LABELS, Entry, Relation, Topic, Work
+from .models import PAPER_CITATION, Entry, Topic, Work
 from .storage import Snapshot, inside, write_files
 
 DISCLAIMER = "この文献マップには誤りや抜けが含まれる可能性があります。気づいた点をご指摘いただければ、その都度修正します。"
@@ -163,88 +163,11 @@ def citation_labels(works: dict[str, Work]) -> dict[str, str]:
     }
 
 
-def relation_label(relation: Relation) -> str:
-    label = relation.graph_label or f"{relation.aspect}：{RELATION_LABELS[relation.type]}"
-    return label + {"candidate": "（仮）", "recheck": "（見直し予定）"}.get(relation.state, "")
-
-
 def review_paragraph(text: str, citations: dict[str, str]) -> Markup:
     return Markup("").join(
         link(citations[part], f"#{part}") if index % 2 else part
         for index, part in enumerate(PAPER_CITATION.split(text))
     )
-
-
-def mermaid_label(value: str) -> str:
-    return "".join(f"#{ord(c)};" if c in '#"&<>|`[]{}\\' else c for c in " ".join(value.split()))
-
-
-def graph_batches(topic: Topic) -> list[tuple[str, list[str], list[Relation]]]:
-    pending = {
-        r.relation_id: r
-        for r in sorted(topic.relations, key=lambda r: r.relation_id)
-        if r.state != "rejected"
-    }
-    batches = []
-    seen_nodes = set()
-    preferences = [("概観", topic.view.overview_nodes)] if topic.view.overview_nodes else []
-    preferences += [(g.title, g.nodes) for g in topic.view.graphs]
-    preferences += [
-        (g.title, [e.paper_id for e in topic.entries if e.group == g.id]) for g in topic.groups
-    ]
-    preferences += [("分類をまたぐ関係", [e.paper_id for e in topic.entries])]
-    for title, preferred in preferences:
-        nodes = set()
-        edges = []
-        for rid, relation in list(pending.items()):
-            pair = {relation.source, relation.target}
-            if not pair <= set(preferred):
-                continue
-            if edges and (
-                len(nodes | pair) > topic.view.graph_nodes or len(edges) >= topic.view.graph_edges
-            ):
-                batches.append((title, sorted(nodes), edges))
-                seen_nodes.update(nodes)
-                nodes, edges = set(), []
-            nodes.update(pair)
-            edges.append(relation)
-            del pending[rid]
-        if nodes:
-            batches.append((title, sorted(nodes), edges))
-            seen_nodes.update(nodes)
-    for group in topic.groups:
-        remaining = sorted(
-            e.paper_id
-            for e in topic.entries
-            if e.group == group.id and e.paper_id not in seen_nodes
-        )
-        for start in range(0, len(remaining), topic.view.graph_nodes):
-            batches.append(
-                (
-                    group.title + "（関係未登録）",
-                    remaining[start : start + topic.view.graph_nodes],
-                    [],
-                )
-            )
-    return batches
-
-
-def graph_source(
-    nodes: list[str], edges: list[Relation], topic: Topic, citations: dict[str, str]
-) -> str:
-    entries = {entry.paper_id: entry for entry in topic.entries}
-    lines = ["flowchart LR"]
-    for node in nodes:
-        label = mermaid_label(citations[node]) + "<br/>" + mermaid_label(entries[node].role)
-        lines.append(f'    n{node}["{label}"]:::paper_{node}')
-    for relation in edges:
-        if relation.basis == "explicit":
-            arrow = "---" if relation.type == "compares_with" else "-->"
-        else:
-            arrow = "-.-" if relation.type == "compares_with" else "-.->"
-        label = mermaid_label(relation_label(relation))
-        lines.append(f'    n{relation.source} {arrow}|"{label}"| n{relation.target}')
-    return "\n".join(lines)
 
 
 def page_context(snapshot: Snapshot, path: Path) -> dict:
@@ -295,10 +218,6 @@ def topic_page(topic: Topic, snapshot: Snapshot) -> str:
         groups=paper_groups(topic, snapshot.works),
         works=snapshot.works,
         citations=citations,
-        graphs=[
-            {"title": title, "source": graph_source(nodes, edges, topic, citations)}
-            for title, nodes, edges in graph_batches(topic)
-        ],
         navigation=navigation,
     )
 
@@ -312,7 +231,7 @@ def index_page(snapshot: Snapshot) -> str:
 
 COPYRIGHT = """# 原著と公開コンテンツの権利境界
 
-このリポジトリには、書誌情報、原著へのリンク、独自の比較・分類・関係図を掲載します。参照先論文、Abstract、本文、図表、PDFの権利は各権利者に帰属します。
+このリポジトリには、書誌情報、原著へのリンク、独自の概説・要点・比較・分類を掲載します。参照先論文、Abstract、本文、図表、PDFの権利は各権利者に帰属します。
 
 LICENSEは管理者が自ら許諾できる自作部分にのみ適用され、参照先の論文や第三者素材には適用されません。無料で読めることと、再配布・改変の許諾は別です。
 """

@@ -54,14 +54,6 @@ TopicID = Annotated[str, Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")]
 RelationID = Annotated[str, Field(pattern=r"^R[0-9]{6,}$")]
 Actor = Literal["ai", "human"]
 Kind = Literal["published", "accepted", "submitted", "unknown"]
-RELATION_LABELS = {
-    "extends": "拡張",
-    "uses_method": "手法利用",
-    "tests": "検証",
-    "supports": "支持",
-    "challenges": "異議",
-    "compares_with": "比較",
-}
 
 
 class Model(BaseModel):

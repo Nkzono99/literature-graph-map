@@ -198,17 +198,10 @@ def test_partial_research_can_be_published_without_evidence_or_license(tmp_path,
     assert export_snapshot(repo, snapshot, out) > 0
     saved_relations = load(out).topics["minimal"].relations
     assert len(saved_relations) == 1 and saved_relations[0].reason == relation["reason"]
+    assert saved_relations[0].state == (state or "candidate")
     page = (out / "_site/topics/minimal/index.html").read_text(encoding="utf-8")
     assert "誤りや抜け" in page and "共通の現象を調べる。" in page
     assert "本文確認" not in page and "人間確認" not in page and "None" not in page
-    if state == "rejected":
-        assert "結果の比較：支持" not in page
-    else:
-        assert "結果の比較：支持" in page
-        if state is None:
-            assert "結果の比較：支持（仮）" in page
-        elif state == "recheck":
-            assert "結果の比較：支持（見直し予定）" in page
 
 
 @pytest.mark.parametrize("level", ["full_text", "preprint", "abstract"])

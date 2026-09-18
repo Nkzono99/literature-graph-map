@@ -1,4 +1,3 @@
-from html import unescape
 from pathlib import Path
 
 import pytest
@@ -21,8 +20,6 @@ from literature_graph_map.operations import commit, export_snapshot, import_pack
 from literature_graph_map.render import (
     access_cell,
     citation_labels,
-    graph_batches,
-    graph_source,
     preprint_cell,
     render,
     summary_block,
@@ -38,7 +35,7 @@ def test_offline_survey_end_to_end(tmp_path):
     assert main(common + ["check"]) == 0
     assert main(common + ["render"]) == 0
     page = (repo / "_site/topics/dust/index.html").read_text(encoding="utf-8")
-    assert "文献一覧" in page and "論文間の関係図" in page
+    assert "文献一覧" in page
     assert not list(repo.rglob("README.md"))
     assert 'id="review"' not in page
     assert (private / "dust/RESEARCH_REQUEST.md").exists()
@@ -58,9 +55,6 @@ def test_deterministic_render_and_all_papers(tmp_path, snapshot):
     assert "Example 1" in page and "架空の検証用誌" in page
     assert "OA・無料公開：未確認" in page and "Preprint：未確認" in page
     assert "検証用の架空の節" in page and "本文確認（出版版）" in page
-    assert "候補：検証（仮）" in page
-    assert "nP000001 -->" in unescape(page) and "nP000002 -.-" in page
-    assert "nP000004[" in page
 
 
 def test_render_replaces_generated_html_and_removes_moved_pages(tmp_path, snapshot):
@@ -108,48 +102,23 @@ def test_summary_without_inspection_does_not_claim_review(snapshot):
     assert "本文確認" not in text and "人間" not in text and "None" not in text
 
 
-def test_scale_splits_without_losing_nodes_or_edges(snapshot):
+def test_large_topic_keeps_all_papers(snapshot):
     works = [make_work(i) for i in range(1, 82)]
     topic = snapshot.topics["demo"]
     topic.entries = [make_entry(w) for w in works]
     topic.relations = []
-    from literature_graph_map.models import Relation
-
-    for i in range(1, 81):
-        entry = topic.entries[i]
-        topic.relations.append(
-            Relation(
-                relation_id=f"R{i:06d}",
-                source=works[i - 1].paper_id,
-                target=works[i].paper_id,
-                type="extends",
-                basis="explicit",
-                state="checked",
-                aspect="検証",
-                reason="架空の拡張。",
-                evidence=entry.evidence_by_item.method,
-                checked_by="ai",
-                checked_at=DAY,
-            )
-        )
     snapshot.works = {w.paper_id: w for w in works}
-    batches = graph_batches(topic)
-    assert all(len(nodes) <= 20 and len(edges) <= 30 for _, nodes, edges in batches)
-    assert {n for _, nodes, _ in batches for n in nodes} == set(snapshot.works)
-    assert {r.relation_id for _, _, edges in batches for r in edges} == {
-        r.relation_id for r in topic.relations
-    }
     page = topic_page(topic, snapshot)
     assert page.count('class="paper"') == 81
+    assert all(f'id="{work.paper_id}"' in page for work in works)
 
 
 def test_escape_external_text(snapshot):
     snapshot.works["P000001"].title = 'A | <script>alert("x")</script> [link]\nnext'
-    snapshot.topics["demo"].entries[0].role = 'x"] --> injected["x'
+    snapshot.topics["demo"].entries[0].role = '<script>alert("role")</script>'
     page = topic_page(snapshot.topics["demo"], snapshot)
     assert "<script>" not in page and "&lt;script&gt;" in page
-    assert "#34;" in page
-    assert 'injected["x' not in page
+    assert "&lt;script&gt;alert(&#34;role&#34;)&lt;/script&gt;" in page
 
 
 def test_citations_disambiguate_author_year_and_preserve_compound_names(snapshot):
@@ -219,17 +188,6 @@ def test_import_remaps_inline_review_citations(tmp_path, snapshot):
     assert topic.review[0].paragraphs == ["[@P000001]から始める。"]
     assert topic.entries[0].paper_id == "P000001"
     assert '<a href="#P000001">1 2001</a>から始める。' in topic_page(topic, loaded)
-
-
-def test_graph_uses_explanations_and_escapes_labels(snapshot):
-    topic = snapshot.topics["demo"]
-    topic.relations[0].graph_label = '測定した分布を使用 | "条件" <script>'
-    labels = citation_labels(snapshot.works)
-    source = graph_source(list(snapshot.works), topic.relations, topic, labels)
-    assert 'nP000001["1 2001<br/>検証用役割"]:::paper_P000001' in source
-    assert "測定した分布を使用 #124; #34;条件#34; #60;script#62;" in source
-    assert "R000001" not in source and "R000002" not in source
-    assert "架空条件：比較" in source and "候補：検証（仮）" in source
 
 
 @pytest.mark.parametrize(
@@ -304,7 +262,7 @@ def test_new_version_keeps_old_evidence_and_marks_every_topic(tmp_path, snapshot
         assert topic.entries[0].inspection.version_id == "V000001"
         assert topic.entries[0].inspection.recheck
         assert topic.relations[0].state == "recheck"
-        assert "架空モデル：拡張（見直し予定）" in (
+        assert "旧版に基づく記述" in (
             tmp_path / "repo" / "_site" / loaded.paths[topic.topic_id] / "index.html"
         ).read_text(encoding="utf-8")
         pending = ImportPacket.model_validate(

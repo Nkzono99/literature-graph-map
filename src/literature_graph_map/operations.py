@@ -424,7 +424,7 @@ def research_handoff(private: Path, topic: Topic, snapshot: Snapshot, events: li
 
 テーマの問い：{topic.question}
 
-このテーマの文献を比較表と関係図に整理します。調査方法や利用するAI・検索・プラグインは自由です。情報が揃った部分から反映し、誤りや不足は随時修正します。
+このテーマを引用リンク付きの概説と文献一覧に整理します。調査方法や利用するAI・検索・プラグインは自由です。情報が揃った部分から反映し、誤りや不足は随時修正します。
 
 補助ファイル：`packet.generated.yaml` は現在のデータ、`packet.yaml` は編集用コピーです。既存の編集用コピーは上書きしません。検索を行った場合の候補は `candidates.json`、取得応答は作業領域の `responses/` にあります。
 

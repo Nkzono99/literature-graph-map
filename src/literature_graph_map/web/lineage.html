@@ -1,0 +1,24 @@
+<section id="lineage" aria-labelledby="lineage-heading">
+  <div class="section-heading"><h2 id="lineage-heading">研究の系譜</h2><span>{{ milestones | length }}件の節目</span></div>
+  <p class="lineage-intro">収録文献から、考え方・観測・手法の変化をたどる。</p>
+  <div class="lineage-tracks">
+    {% for track in topic.lineage %}
+    <section class="lineage-track" aria-labelledby="lineage-track-{{ loop.index }}">
+      <h3 id="lineage-track-{{ loop.index }}">{{ track.title }}</h3>
+      <ol>
+        {% for step in track.steps %}
+        {% set version = works[step.paper_id].version() %}
+        <li id="lineage-{{ step.paper_id }}">
+          {% if step.connection %}<p class="lineage-connection"><span aria-hidden="true">↓</span>{{ step.connection }}</p>{% endif %}
+          <a class="lineage-paper" href="#{{ step.paper_id }}">
+            <span class="lineage-citation">{{ citations[step.paper_id] }}{% if version.kind == 'submitted' or version.status == 'preprint' %}<span class="badge">{{ 'プレプリント・未査読' if version.status == 'preprint' else '査読状態未確認' }}</span>{% endif %}<span class="lineage-jump" aria-hidden="true">文献へ ↘</span></span>
+            <h4>{{ step.title }}</h4>
+            <p>{{ step.significance }}</p>
+          </a>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endfor %}
+  </div>
+</section>

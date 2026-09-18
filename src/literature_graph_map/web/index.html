@@ -15,7 +15,7 @@
       <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
       <p>{{ item.question }}</p>
     </div>
-    <a class="theme-entry-link" href="{{ item.url }}"><span>{{ item.count }} 文献</span><span class="sr-only">：{{ item.title }}を開く</span><span aria-hidden="true">→</span></a>
+    <a class="theme-entry-link" href="{{ item.url }}"><span>{{ item.count }} {{ 'テーマ' if item.is_collection else '文献' }}</span><span class="sr-only">：{{ item.title }}を開く</span><span aria-hidden="true">→</span></a>
   </article>
   {% if item.children %}<ul>{{ loop(item.children) }}</ul>{% endif %}
   </li>

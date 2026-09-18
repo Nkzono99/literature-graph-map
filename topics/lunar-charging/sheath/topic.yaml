@@ -10,6 +10,33 @@ review:
   paragraphs:
   - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar
     Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]、イオン温度を組み込む最近の理論は[@P000055]に進める。
+lineage:
+- title: 放出測定から電位分布へ
+  steps:
+  - paper_id: P000001
+    title: 月試料の光電子放出を測る
+    significance: 放出収率とエネルギー分布を測り、材料の特性から月面上の光電子シースを考えた。
+  - paper_id: P000002
+    title: 放出と流入を電流収支にまとめる
+    significance: 光電子・二次電子と周囲のプラズマを組み合わせ、昼夜の電位を同じ枠組みで扱った。
+    connection: 材料の特性から環境ごとの帯電へ
+  - paper_id: P000007
+    title: 電子分布と粒子運動を直接追う
+    significance: PICで光電子シースを解き、時間変化する帯電がダストの運動に与える影響を調べた。
+    connection: 表面の収支から空間・時間の分布へ
+- title: 実験・観測と計算を対応させる
+  steps:
+  - paper_id: P000030
+    title: 光電子シースを実験室で測る
+    significance: UVで電子を放出させ、面の近傍の電気的構造を調べる実験系を示した。
+  - paper_id: P000036
+    title: 月周回の電子分布をPICと比べる
+    significance: ARTEMISとPICから非単調な電位構造を調べ、イオン温度の影響も示した。
+    connection: 室内の測定から月周回観測へ
+  - paper_id: P000011
+    title: 太陽風の流れを半解析解へ
+    significance: 太陽風電子の流れを含むシースを半解析モデルで記述し、電子分布を変えたPIC計算との対応を示した。
+    connection: 観測・PICで扱う構造をモデル化
 public: true
 scope:
   include:

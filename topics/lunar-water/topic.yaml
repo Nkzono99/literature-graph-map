@@ -19,6 +19,33 @@ review:
 - heading: 地形と磁場が、水素供給と氷の損失を変える
   paragraphs:
   - 太陽風は水素の供給源であると同時に、表面氷をスパッタで失わせる要因でもある。[@P000144]は南極の実地形から水素の流束とエネルギーを地図化した。[@P000145]は極域磁場と露出氷の分布の対応を調べ、磁気異常がイオン流入と損失を弱める可能性を論じている。地形と磁場を同時に入れた[@P000146]の電磁PICでは、地形による流束変化が大きく、磁場はその分布をさらに調整する。平均太陽風と実験由来の収率を用いた氷の収支は、月面帯電の計算を揮発性物質の進化へつなぐ具体例になる。
+lineage:
+- title: 日照域の水と供給源
+  steps:
+  - paper_id: P000138
+    title: 月面の水和信号を広く捉える
+    significance: M3の反射スペクトルにOH/H2Oの吸収を見いだし、高緯度や新鮮なクレーターの分布を示した。
+  - paper_id: P000141
+    title: 日照域で分子水を識別
+    significance: SOFIAの6 μm帯でH2Oの振動信号を捉え、OHと区別できる観測を加えた。
+    connection: 水和信号から分子水の識別へ
+  - paper_id: P000148
+    title: 衝突ガラス中の水を調べる
+    significance: 嫦娥5号試料のガラス粒子を分析し、太陽風起源の水を蓄える媒体として位置付けた。
+    connection: 分光観測から試料中の貯蔵へ
+- title: 極域の氷と保持場所
+  steps:
+  - paper_id: P000139
+    title: 永久影の物質を衝突で取り出す
+    significance: LCROSSの噴出物から水蒸気・氷・OHを捉え、掘削域に含まれる水の量を推定した。
+  - paper_id: P000140
+    title: 表面に露出した氷の分布を示す
+    significance: 永久影に入る間接光を使い、両極周辺の表層に氷の吸収を見いだした。
+    connection: 一地点の掘削から極域の分布へ
+  - paper_id: P000147
+    title: 小さな永久影まで保持面積を数える
+    significance: 微小地形が作る低温の影を評価し、氷を保持できる領域を細かなスケールへ広げた。
+    connection: 氷が残る場所を微小地形まで探る
 public: true
 scope:
   include:
@@ -28,7 +55,7 @@ scope:
   - 地形・地殻磁場と氷収支
   exclude: []
 navigation:
-  parent: null
+  parent: lunar-environment
   related:
   - lunar-charging
   - lunar-magnetic-anomalies

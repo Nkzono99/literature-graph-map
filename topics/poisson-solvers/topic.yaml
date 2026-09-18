@@ -8,7 +8,7 @@ review:
   - 静電PICでは、粒子から求めた電荷密度をPoisson方程式へ渡し、電位と電場を計算する。ここで先に決めたいのは、計算領域の外をどう表すかである。孤立した電荷分布、周期的に繰り返す系、電位を指定した壁では、解くべき境界値問題が変わる。孤立系の古典的な検討は[@P000075]、規則格子で複数の境界条件を使い分ける実装はSailFFish（[@P000084]）が入口になる。月面の一部を切り出す場合も、面内の繰り返しと上空側の条件を、表したい空間スケールに合わせる。
 - heading: 自由空間のFFTと、多重極展開
   paragraphs:
-  - 規則格子上では、電荷密度とGreen関数の畳み込みをFFTで高速に計算できる。[@P000083]は自由空間を解く二つの方式を比較し、Vico–Greengard–Ferrando法による電位・勾配の誤差収束の改善を示した。粒子計算では電位を微分して得る力も使うため、電位と電場の精度を併せて読むと、解法の違いが分かりやすい。
+  - 規則格子上では、電荷密度とGreen関数の畳み込みをFFTで高速に計算できる。[@P000160]はGreen関数を実空間で切り詰める方法を示し、滑らかな電荷分布に対する自由空間電位の収束精度を高めた。[@P000083]は自由空間を解く二つの方式を比較し、Vico–Greengard–Ferrando法による電位・勾配の誤差収束の改善を示した。粒子計算では電位を微分して得る力も使うため、電位と電場の精度を併せて読むと、解法の違いが分かりやすい。
   - 粒子同士の長距離相互作用を直接まとめるのが、高速多重極法（FMM）である。[@P000076]は遠方の多数の粒子を展開係数で表し、階層的に計算する基礎を示した。[@P000077]は粒子分布に適応させ、偏った配置へ広げている。格子の規則性を使うFFTと、空間的なまとまりを使うFMMは、電荷の置き方や欲しい出力点から比較できる。
 - heading: 部分的な周期性と、正味電荷の扱い
   paragraphs:
@@ -16,6 +16,33 @@ review:
 - heading: 形状と局所解像度を、格子に反映する
   paragraphs:
   - 物体表面や細い構造の周囲では、全領域を一様に細分化する費用が大きくなる。[@P000078]は直交格子のセルを物体境界で切り分け、有限体積法の流束を通じて境界条件を与える。二次元の変係数Poisson問題で、マルチグリッドと適応格子を組み合わせた二次精度を示した。[@P000079]は非等間隔点のデータに対し、非等間隔FFT（NFFT）に基づく方法とマルチグリッドを比較する。表面形状をどう近似するか、電荷密度をどこで解像するか、場をどの位置へ戻すかを併せて考えると、PIC側の格子設計までつながる。
+lineage:
+- title: 自由空間のFFT
+  steps:
+  - paper_id: P000075
+    title: 孤立系の電位を格子で求める
+    significance: 有限の格子で孤立した電荷分布を扱う解法を整理し、自由空間FFTの基礎を示した。
+  - paper_id: P000160
+    title: Green関数の扱いを高精度化
+    significance: 実空間で切り詰めたGreen関数を使い、滑らかな電荷分布の電位を高精度に計算した。
+    connection: 自由空間の畳み込みを改良
+  - paper_id: P000083
+    title: 電位と電場の誤差収束を比べる
+    significance: Hockney–Eastwood法とVico–Greengard–Ferrando法を比較し、解法選択を精度から論じた。
+    connection: 従来法との収束精度を比較
+- title: 多重極展開と適応化
+  steps:
+  - paper_id: P000076
+    title: 遠方の粒子をまとめて高速化
+    significance: 階層的な多重極展開を使うFMMを示し、多数の粒子間相互作用の計算量を削減した。
+  - paper_id: P000077
+    title: 不均一な粒子分布に適応
+    significance: 粒子が集中する領域に合わせて計算を分け、偏った分布でもFMMを使えるようにした。
+    connection: 一様な分布から適応的な分割へ
+  - paper_id: P000082
+    title: 周期像を変換演算子で扱う
+    significance: 近傍と遠方を分け、カーネル独立FMMに一方向から三方向までの周期性を導入した。
+    connection: 周期境界へ広げる
 public: true
 scope:
   include:
@@ -25,7 +52,7 @@ scope:
   - 複雑形状・非一様格子
   exclude: []
 navigation:
-  parent: null
+  parent: numerical-methods
   related:
   - pic
   - plasma-sheaths
@@ -398,6 +425,42 @@ entries:
   inspection:
     level: abstract
     version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000160
+  group: free-space
+  role: 自由空間FFTの高精度化
+  summary:
+    question: 自由空間の電位を、FFTの速さと高い収束精度でどう求めるか。
+    method: Green関数を実空間で切り詰め、正則化したFourier変換で畳み込みを計算。
+    contribution: 滑らかで局在した電荷分布に対し、高精度の電位とその微分をFFTで求める方法を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000160
+      version_id: Vpre
+      url: https://arxiv.org/abs/1604.03155
+      source_type: abstract
+      locator: ''
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000160
+      version_id: Vpre
+      url: https://arxiv.org/abs/1604.03155
+      source_type: abstract
+      locator: ''
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000160
+      version_id: Vpre
+      url: https://arxiv.org/abs/1604.03155
+      source_type: abstract
+      locator: ''
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: Vpre
     checked_by: ai
     checked_at: '2026-09-18'
     recheck: false

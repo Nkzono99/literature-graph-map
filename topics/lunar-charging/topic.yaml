@@ -20,6 +20,33 @@ review:
 - heading: 探査機の帯電と、付着ダストへの対策
   paragraphs:
   - 機器への影響を考える際は、表面間の電位差や材料の違いが問題になる。[@P000024]はNASCAP-2Kによる機体の帯電解析、[@P000054]は月ミッションの帯電環境を整理した。除塵には電極が作る電場を用いるEDS（[@P000028]）があり、イオン中和（[@P000049]）やEDSとUVを組み合わせたブラシ（[@P000050]）の特許もある。これらは、自然のダスト移動で扱う電荷と力の関係を、機器側から制御する技術として参照できる。
+lineage:
+- title: 電流収支から空間構造へ
+  steps:
+  - paper_id: P000002
+    title: 昼夜の電位を電流収支で捉える
+    significance: 粒子の流入と電子放出をまとめ、日照やプラズマ環境による帯電の違いを説明した。
+  - paper_id: P000007
+    title: 光電子シースを粒子計算で解く
+    significance: 電子分布と粒子の帯電を時間発展で追い、表面近傍の電位とダスト運動を結び付けた。
+    connection: 表面電位から周囲の分布へ
+  - paper_id: P000008
+    title: 地形と太陽風侵入を結び付ける
+    significance: クレーターへのプラズマ膨張と表面帯電が互いを変える過程を計算した。
+    connection: 地形の陰に入るプラズマへ
+- title: ダスト浮遊から粒子間の帯電へ
+  steps:
+  - paper_id: P000019
+    title: 地平線光をダストと結び付ける
+    significance: Surveyorの画像に見える光を低高度のダスト散乱として解釈し、浮遊研究の起点を作った。
+  - paper_id: P000022
+    title: 上昇・落下を噴水モデルにする
+    significance: 電場による加速と弾道運動から、粒径や帯電条件に応じたダストの高さを予測した。
+    connection: 光の解釈から粒子の運動へ
+  - paper_id: P000009
+    title: 空隙の電子再吸収で離脱を説明
+    significance: 粉体面の微小な空隙に電子が集まるPCMを提案し、粒子を押し出す局所電荷に着目した。
+    connection: 離脱を生む局所帯電へ
 public: true
 scope:
   include:
@@ -30,7 +57,7 @@ scope:
   - 帯電リスク・除塵技術
   exclude: []
 navigation:
-  parent: null
+  parent: lunar-environment
   related:
   - plasma-sheaths
   - plasma-expansion

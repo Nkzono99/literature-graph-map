@@ -8,7 +8,7 @@ review:
   - PIC（Particle-in-Cell）では、多数の実粒子を代表する計算粒子を動かし、その電荷や電流を格子に集めて場を求める。得られた場を粒子位置へ戻すことで、粒子の運動と集団としての応答が結び付く。[@P000059]はこの数値実験で分布関数、非線形現象、輸送を調べる考え方をまとめている。実装から学ぶなら、一次元の静電・電磁コードを出発点とする[@P000060]の教科書と、KEMPO1の教材[@P000061]が入口になる。静電場を解く部分は、Poissonソルバのテーマともつながる。
 - heading: 保存則とノイズは、別々に確かめる
   paragraphs:
-  - 粒子数を増やすと統計的な揺らぎは小さくなるが、場と粒子の離散化に由来する誤差も調べる必要がある。[@P000062]は電磁PICで生じるGauss則のずれを拡散的な補正で抑えた。小さな不安定性を追いたいときには、初期配置の揺らぎを減らす方法や、分布関数の摂動だけを粒子で表すδf法が役立つ。[@P000063]はその構成と電磁不安定性の試験を扱う。さらに[@P000072]のSICは、位相空間の分布をつながったシートで表す。一次元の標準問題におけるPICとの比較から、追跡点の数とノイズの関係を読み取れる。
+  - 粒子数を増やすと統計的な揺らぎは小さくなるが、場と粒子の離散化に由来する誤差も調べる必要がある。[@P000062]は電磁PICで生じるGauss則のずれを拡散的な補正で抑えた。[@P000159]は粒子の移動から電流を構成し、離散的な連続の式を割り付けの段階で満たす方法を示した。小さな不安定性を追いたいときには、初期配置の揺らぎを減らす方法や、分布関数の摂動だけを粒子で表すδf法が役立つ。[@P000063]はその構成と電磁不安定性の試験を扱う。さらに[@P000072]のSICは、位相空間の分布をつながったシートで表す。一次元の標準問題におけるPICとの比較から、追跡点の数とノイズの関係を読み取れる。
 - heading: 時間スケールの差を、陰解法で扱う
   paragraphs:
   - 速い電子運動と遅い変化を同時に追うと、時間刻みが計算費用を左右する。[@P000064]は陰的モーメント法で粒子と流体を結び、衝突を伴う電子輸送を扱った。電磁・運動論的な実装の基本は[@P000065]にまとまっている。そこからエネルギー保存に重点を移したのがECSIM（[@P000066]）で、非線形反復を使わずに粒子と場のエネルギー交換を釣り合わせる。相対論的な完全陰解法（[@P000067]）も併せると、結合の解き方と保存性を比較できる。計算条件を選ぶ際には、安定性とともに対象現象の時間・空間分解能を考える。
@@ -16,6 +16,29 @@ review:
   paragraphs:
   - 月面地形や宇宙機の近傍では、表面形状に沿う格子や粒子の境界処理が効いてくる。CPIC（[@P000068]）は曲線格子とマルチグリッドを組み合わせ、複雑な物体とプラズマの相互作用に対応した。[@P000074]は宇宙機帯電を題材に、複数のPIC手法を整理して並列実行へつなぐソフトウェア構成を示している。
   - 大規模化では、格子数と粒子数の両方が費用を決める。OhHelp（[@P000069]）は粒子が集中する領域の仕事を他ノードへ分担し、[@P000070]は位相空間で近い粒子を統合する。FLEKS（[@P000071]）では、MHD計算に埋め込むPIC領域を動的に変え、必要な場所へ計算を集中させる。局所構造を細かく解く別の方向として、[@P000073]は疎格子のノイズ低減と適応的な格子細分化を組み合わせている。
+lineage:
+- title: 電荷と電場の整合性
+  steps:
+  - paper_id: P000062
+    title: Gauss則のずれを局所的に補正
+    significance: 場の更新に誤差を拡散させる項を加え、電磁PICの制約違反を抑えた。
+  - paper_id: P000159
+    title: 電荷を保存する電流を構成
+    significance: 粒子の移動に伴う電荷変化と格子電流を整合させ、離散的な連続の式を満たした。
+    connection: 誤差の補正から保存する割り付けへ
+- title: 時間刻みとエネルギー保存
+  steps:
+  - paper_id: P000064
+    title: 陰的モーメント法で粒子と流体を結ぶ
+    significance: 衝突性が大きく異なる電子を同じ計算で扱い、輸送計算の時間スケールを広げた。
+  - paper_id: P000066
+    title: 半陰解法でエネルギーを保存
+    significance: ECSIMにより、非線形反復を使わずに粒子と場のエネルギー交換を釣り合わせた。
+    connection: 陰解法の保存性を高める
+  - paper_id: P000067
+    title: 相対論的な保存計算を構成
+    significance: 完全陰的な粒子と場の更新で、相対論的運動を含む系のエネルギー保存を扱った。
+    connection: 相対論的な完全陰解法と比較
 public: true
 scope:
   include:
@@ -26,7 +49,7 @@ scope:
   - 負荷分散・粒子数・適応化
   exclude: []
 navigation:
-  parent: null
+  parent: numerical-methods
   related:
   - poisson-solvers
   - plasma-sheaths
@@ -621,6 +644,42 @@ entries:
   inspection:
     level: abstract
     version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000159
+  group: accuracy
+  role: 電荷保存型の電流割り付け
+  summary:
+    question: 粒子を格子へ割り付ける際、離散的な電荷保存をどう満たすか。
+    method: 一時間刻みの電荷密度の変化から、連続の式を満たす電流を構成。
+    contribution: 直交格子で積に分離できる粒子形状に対応し、電流割り付けで電荷保存を実現。
+  evidence_by_item:
+    question:
+    - paper_id: P000159
+      version_id: Vpre
+      url: https://arxiv.org/abs/physics/9901047
+      source_type: abstract
+      locator: ''
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000159
+      version_id: Vpre
+      url: https://arxiv.org/abs/physics/9901047
+      source_type: abstract
+      locator: ''
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000159
+      version_id: Vpre
+      url: https://arxiv.org/abs/physics/9901047
+      source_type: abstract
+      locator: ''
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: Vpre
     checked_by: ai
     checked_at: '2026-09-18'
     recheck: false

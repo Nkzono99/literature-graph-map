@@ -170,14 +170,24 @@ def review_paragraph(text: str, citations: dict[str, str]) -> Markup:
     )
 
 
+def topic_link(snapshot: Snapshot, key: str, path: Path) -> dict:
+    topic = snapshot.topics[key]
+    child_count = sum(t.public and t.navigation.parent == key for t in snapshot.topics.values())
+    is_collection = not topic.entries and child_count > 0
+    return {
+        "id": key,
+        "title": topic.title,
+        "url": relative_url(path, snapshot.paths[key] / "index.html"),
+        "count": child_count if is_collection else len(topic.entries),
+        "is_collection": is_collection,
+        "question": topic.question,
+    }
+
+
 def page_context(snapshot: Snapshot, path: Path) -> dict:
     topics = {
         key: {
-            "id": key,
-            "title": topic.title,
-            "url": relative_url(path, snapshot.paths[key] / "index.html"),
-            "count": len(topic.entries),
-            "question": topic.question,
+            **topic_link(snapshot, key, path),
             "children": [],
         }
         for key, topic in sorted(snapshot.topics.items())
@@ -194,7 +204,7 @@ def page_context(snapshot: Snapshot, path: Path) -> dict:
         "copyright_url": relative_url(path, Path("copyright.html")),
         "disclaimer": DISCLAIMER,
         "topic_links": roots,
-        "topic_count": len(topics),
+        "topic_count": sum(not item["is_collection"] for item in topics.values()),
     }
 
 
@@ -219,13 +229,7 @@ def topic_page(topic: Topic, snapshot: Snapshot) -> str:
         navigation[label] = []
         for key in keys:
             if snapshot.topics[key].public:
-                navigation[label].append(
-                    {
-                        "title": snapshot.topics[key].title,
-                        "url": relative_url(path, snapshot.paths[key] / "index.html"),
-                        "count": len(snapshot.topics[key].entries),
-                    }
-                )
+                navigation[label].append(topic_link(snapshot, key, path))
     return TEMPLATES.get_template("topic.html").render(
         **page_context(snapshot, path),
         title=topic.title,
@@ -233,6 +237,8 @@ def topic_page(topic: Topic, snapshot: Snapshot) -> str:
         groups=paper_groups(topic, snapshot.works),
         works=snapshot.works,
         citations=citations,
+        milestones={step.paper_id for track in topic.lineage for step in track.steps},
+        is_collection=not topic.entries and bool(navigation["children"]),
         navigation=navigation,
     )
 

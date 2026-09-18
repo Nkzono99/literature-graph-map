@@ -12,6 +12,33 @@ review:
 - heading: 場所の違いと、新しい月面計測
   paragraphs:
   - かぐやの光電子から相対電位を求めた[@P000051]は、地殻磁場の強さと電位分布を結び付けた。観測計画の資料としては月面電磁場計測を検討する[@P000032]がある。IM-1のROLSES（[@P000056]）は月面の電波・プラズマ波を測る装置であり、装置論文には設計と初期観測がまとまっている。
+lineage:
+- title: 粒子計測から表面電位を推定する
+  steps:
+  - paper_id: P000018
+    title: 月面で荷電粒子を測る
+    significance: Apollo 14のCPLEE装置と計測成果をまとめ、月面近傍のプラズマを読む基盤を作った。
+  - paper_id: P000003
+    title: 軌道上から日陰の負帯電を捉える
+    significance: Lunar Prospectorの電子分布から、夜側月面が探査機より低い電位にあることを示した。
+    connection: 現地の粒子計測から軌道上の推定へ
+  - paper_id: P000025
+    title: 入射電流と月面電位を対応付ける
+    significance: 探査機電位を補正して周囲のプラズマを基準にし、電流収支への応答を調べた。
+    connection: 電位の基準を補正し電流収支と照合
+- title: 極端な帯電を捉え、予測する
+  steps:
+  - paper_id: P000004
+    title: 日照域にも強い負帯電を見いだす
+    significance: 磁気圏尾部の高温電子によって、日照面でも大きな負電位差が生じることを観測した。
+  - paper_id: P000006
+    title: SEP時の極端な負帯電を捉える
+    significance: 太陽高エネルギー粒子イベントで、月面と探査機の電位差が約−4.5 kVに達する例を示した。
+    connection: プラズマシートからSEPイベントへ
+  - paper_id: P000027
+    title: 複数イベントで予測を試す
+    significance: 11回のSEPイベントを電流収支計算と比べ、8イベントで観測を再現した。
+    connection: 事例の検出から帯電の予測へ
 public: true
 scope:
   include:

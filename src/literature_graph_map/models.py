@@ -262,12 +262,31 @@ class ReviewSection(Model):
     paragraphs: list[Text] = Field(min_length=1)
 
 
+class LineageStep(Model):
+    paper_id: PaperID
+    title: Text
+    significance: Text
+    connection: str = ""
+
+
+class LineageTrack(Model):
+    title: Text
+    steps: list[LineageStep] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def connections(self) -> Self:
+        if self.steps[0].connection or any(not step.connection for step in self.steps[1:]):
+            raise ValueError("label the connection to each step after the first")
+        return self
+
+
 class Topic(Model):
     schema_version: Literal[1] = 1
     topic_id: TopicID
     title: Text
     question: Text
     review: list[ReviewSection] = Field(default_factory=list)
+    lineage: list[LineageTrack] = Field(default_factory=list)
     public: bool = True
     scope: Scope = Field(default_factory=Scope)
     navigation: Navigation = Field(default_factory=Navigation)
@@ -289,6 +308,9 @@ class Topic(Model):
             raise ValueError("duplicate paper, group, or relation ID in topic")
         if any(e.group not in groups for e in self.entries):
             raise ValueError("entry references an unknown group")
+        milestones = [step.paper_id for track in self.lineage for step in track.steps]
+        if len(set(milestones)) != len(milestones) or not set(milestones) <= set(papers):
+            raise ValueError("lineage steps must reference distinct papers in the topic's list")
         for section in self.review:
             for paragraph in section.paragraphs:
                 if not set(PAPER_CITATION.findall(paragraph)) <= set(papers):

@@ -14,6 +14,33 @@ review:
   paragraphs:
   - Surveyorの地平線光（[@P000019]）は、低高度のダストを考える出発点になった。[@P000022]は電場で加速された粒子の噴水モデル、[@P000042]は環境条件と浮遊の関係を扱う。LDEXでは、高度3–250
     kmの測定範囲で浮遊ダストに上限を置く[@P000039]と、薄明クレーター付近の局所的な増加を論じる[@P000044]がある。それぞれの粒径・高度・地形を対応付けることで、離脱機構と輸送先を比較しやすくなる。
+lineage:
+- title: 浮遊モデルを観測で絞る
+  steps:
+  - paper_id: P000019
+    title: 地平線光をダスト散乱と解釈
+    significance: Surveyor画像の低高度の発光を読み解き、月面近くのダスト浮遊という問いを立てた。
+  - paper_id: P000022
+    title: 浮遊の高さを噴水モデルで予測
+    significance: 電場による加速と弾道運動で、粒径・帯電条件から上昇と落下を説明した。
+    connection: 散乱光から運動の予測へ
+  - paper_id: P000039
+    title: 浮遊粒子の密度に上限を与える
+    significance: LADEE/LDEXの測定可能な粒径・高度範囲で、浮遊成分の密度を観測から制約した。
+    connection: 予測される浮遊成分を観測で絞る
+- title: 粒子が離脱する電荷を探る
+  steps:
+  - paper_id: P000029
+    title: 放出率の違いでダストを動かす
+    significance: 電子照射下で基板と粒子の帯電差が電場を作り、移動や離脱を促すことを実験で示した。
+  - paper_id: P000009
+    title: 粉体の空隙に電子を集める
+    significance: 電子の再吸収で粒子の局所電荷を増やすPCMを提案し、跳躍の機構を説明した。
+    connection: 基板との電位差から粒子間の帯電へ
+  - paper_id: P000014
+    title: 光とプラズマの同時照射へ広げる
+    significance: 同時照射で粒子の飛び出しと推定負電荷が増え、charge pumpingで説明できることを示した。
+    connection: 単独照射から複合的な環境へ
 public: true
 scope:
   include:

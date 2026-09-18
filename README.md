@@ -11,7 +11,9 @@
 - 月の環境：[月面帯電](https://nkzono99.github.io/literature-graph-map/topics/lunar-charging/) ／ [磁気異常と太陽風](https://nkzono99.github.io/literature-graph-map/topics/lunar-magnetic-anomalies/) ／ [水・揮発性物質](https://nkzono99.github.io/literature-graph-map/topics/lunar-water/)
 - 応用：[宇宙機・計測器とプラズマ](https://nkzono99.github.io/literature-graph-map/topics/spacecraft-plasma/) ／ [プラズマ加工・微細構造の帯電](https://nkzono99.github.io/literature-graph-map/topics/plasma-processing/)
 
-月面帯電には、電流収支・観測・地形・ダスト・工学の子テーマもあります。同じ論文を複数のテーマから参照でき、テーマ間の移動には各ページの関連リンクを使えます。
+上位には[数値計算手法](https://nkzono99.github.io/literature-graph-map/topics/numerical-methods/)・[プラズマの基礎過程](https://nkzono99.github.io/literature-graph-map/topics/plasma-processes/)・[月の環境](https://nkzono99.github.io/literature-graph-map/topics/lunar-environment/)・[宇宙機・プラズマ応用](https://nkzono99.github.io/literature-graph-map/topics/applications/)の入口を置いています。月面帯電には、電流収支・観測・地形・ダスト・工学の子テーマもあります。同じ論文を複数のテーマから参照でき、分野をまたぐ移動には関連テーマのリンクを使えます。
+
+各テーマの「研究の系譜」には、転機となる論文と研究の変化を短くまとめています。論文ブロックから文献一覧へ移動し、一覧の「系譜の節目」から戻れます。
 
 ## 編集とプレビュー
 

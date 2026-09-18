@@ -17,6 +17,33 @@ review:
 - heading: 平面から小さな粒子へ
   paragraphs:
   - 球状ダストでは、電位によって曲がる粒子軌道が捕集電流を決める。[@P000094]は、電子を放出しない静止球について、軌道運動制限（OML）理論とPICを比較した。粒径とDebye長の比を変え、電荷、捕集電流、エネルギー流束を別々に評価している。表面電位から電荷を求めたい場合と、材料への粒子流入を求めたい場合では、参照する量を分けて読むと使いやすい。
+lineage:
+- title: 放出電子とシース電位
+  steps:
+  - paper_id: P000089
+    title: 放出電子の温度を理論に入れる
+    significance: 放出電子と周囲の電子の温度比が、シース電位差を小さくする条件を示した。
+  - paper_id: P000090
+    title: 材料の二次電子放出と照合
+    significance: 窒化ホウ素壁の電位分布を測り、高エネルギー電子を含む条件で運動論モデルを調べた。
+    connection: 熱電子放出から二次電子放出へ
+  - paper_id: P000093
+    title: 逆シースまでの電位構造を測る
+    significance: 電子放出を増やしたときの電位分布の変化を実験で捉え、複数のシース状態を対応付けた。
+    connection: 放出量に伴う状態変化へ
+- title: 月面の光電子シース
+  steps:
+  - paper_id: P000007
+    title: 光電子の分布をPICで追う
+    significance: 平坦な日照面の電子分布を解き、電位構造と帯電粒子の運動を結び付けた。
+  - paper_id: P000092
+    title: UV照射実験と粒子計算を結ぶ
+    significance: 金属面から放出した光電子の密度分布を測り、一次元PICと比較できる実験系を作った。
+    connection: 粒子計算を実験室で調べる
+  - paper_id: P000011
+    title: 粒子計算から半解析モデルへ
+    significance: 太陽風電子の流れを含むシースを半解析的に記述し、Maxwell・κ分布のPIC計算と比較した。
+    connection: 電位構造を簡潔なモデルへ
 public: true
 scope:
   include:
@@ -26,7 +53,7 @@ scope:
   - 理論・PIC・室内実験の比較
   exclude: []
 navigation:
-  parent: null
+  parent: plasma-processes
   related:
   - pic
   - poisson-solvers

@@ -15,6 +15,29 @@ review:
 - heading: 帯電と粗さは、加工の進行とともに変わる
   paragraphs:
   - 加工が進めば表面形状が変わり、粒子の集まり方と局所電位も変わる。[@P000136]は帯電・エッチング速度・形状更新を結合し、高分子表面では帯電が平滑化を促す条件を示した。さらにArによるPMMA加工を扱った[@P000137]はイオン反射と電子誘起二次電子放出を加え、反射が粗さの維持に、帯電が粗さの減少に寄与すると整理した。これらの計算では粗さの指標だけでなく、反射、入射角依存の収率、材料の誘電特性を合わせて参照すると、微細構造の損傷と表面機能の調整を同じ帯電問題から考えられる。
+lineage:
+- title: 表面反応から微細溝の帯電へ
+  steps:
+  - paper_id: P000129
+    title: 粒子照射と化学反応の相乗効果
+    significance: イオン・電子の照射による表面反応の促進を実験で示し、プラズマエッチングの基礎を作った。
+  - paper_id: P000133
+    title: 深い溝の電子不足を電位へ結ぶ
+    significance: 電子の遮蔽による底面の正帯電とイオン偏向を示し、ノッチ形成を説明した。
+    connection: 平面の反応から微細形状の効果へ
+  - paper_id: P000135
+    title: 局所帯電による加工停止を示す
+    significance: 粒子追跡とPoisson方程式を結び、深い溝の正電位がイオンの到達を阻む条件を示した。
+    connection: イオン偏向から到達の阻害へ
+- title: 装置から変化する表面形状へ
+  steps:
+  - paper_id: P000131
+    title: RFシースを装置モデルへ組み込む
+    significance: 半解析的なシースと二次元放電モデルを結び、表面へ届く粒子流束と電位を計算した。
+  - paper_id: P000136
+    title: 帯電と表面粗さを一緒に更新
+    significance: 局所電位、加工速度、形状変化を結び、平滑化と帯電の相互作用を示した。
+    connection: 入射条件から表面形状の時間発展へ
 public: true
 scope:
   include:
@@ -24,7 +47,7 @@ scope:
   - 高分子表面の粗さ
   exclude: []
 navigation:
-  parent: null
+  parent: applications
   related:
   - plasma-sheaths
   - pic

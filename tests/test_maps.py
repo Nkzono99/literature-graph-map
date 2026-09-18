@@ -9,6 +9,8 @@ from pydantic import ValidationError
 from literature_graph_map.cli import main
 from literature_graph_map.models import (
     ImportPacket,
+    LineageStep,
+    LineageTrack,
     Location,
     ReviewSection,
     Topic,
@@ -171,7 +173,7 @@ def test_review_citations_require_a_paper_in_the_topic(snapshot):
         Topic.model_validate(data)
 
 
-def test_import_remaps_inline_review_citations(tmp_path, snapshot):
+def test_import_remaps_review_and_lineage_references(tmp_path, snapshot):
     incoming = snapshot.works["P000001"].model_copy(update={"paper_id": "P999999"}, deep=True)
     packet = ImportPacket(
         works=[incoming],
@@ -181,6 +183,14 @@ def test_import_remaps_inline_review_citations(tmp_path, snapshot):
             question="研究のつながりを読む。",
             entries=[make_entry(incoming)],
             review=[ReviewSection(heading="基礎", paragraphs=["[@P999999]から始める。"])],
+            lineage=[
+                LineageTrack(
+                    title="基礎",
+                    steps=[
+                        LineageStep(paper_id="P999999", title="節目", significance="変化の説明")
+                    ],
+                )
+            ],
         ),
     )
     import_packet(tmp_path / "repo", snapshot, packet, tmp_path / "private")
@@ -188,7 +198,68 @@ def test_import_remaps_inline_review_citations(tmp_path, snapshot):
     topic = loaded.topics["with-review"]
     assert topic.review[0].paragraphs == ["[@P000001]から始める。"]
     assert topic.entries[0].paper_id == "P000001"
+    assert topic.lineage[0].steps[0].paper_id == "P000001"
     assert '<a href="#P000001">1 2001</a>から始める。' in topic_page(topic, loaded)
+
+
+def test_lineage_links_to_bibliography_and_uses_current_citations(tmp_path, snapshot):
+    topic = snapshot.topics["demo"]
+    assert 'id="lineage"' not in topic_page(topic, snapshot)
+    topic.lineage = [
+        LineageTrack(
+            title="理論から観測へ",
+            steps=[
+                LineageStep(paper_id="P000001", title="<基準モデル>", significance="出発点。"),
+                LineageStep(
+                    paper_id="P000002",
+                    title="観測で検討",
+                    significance="条件を絞る。",
+                    connection="予測を測定と比較",
+                ),
+            ],
+        )
+    ]
+    work = snapshot.works["P000002"]
+    work.citation_author = "Revised"
+    work.version().year = 2026
+    work.version().kind = "unknown"
+    work.version().status = "preprint"
+    commit(tmp_path, snapshot)
+    restored = load(tmp_path)
+    assert restored.topics["demo"].lineage == topic.lineage
+    page = topic_page(restored.topics["demo"], restored)
+    lineage = page.split('<section id="lineage"')[1].split('<section id="papers"')[0]
+    assert 'href="#P000002"' in lineage
+    assert "Revised 2026" in lineage
+    assert "プレプリント・未査読" in lineage
+    assert "予測を測定と比較" in lineage
+    assert "&lt;基準モデル&gt;" in lineage and "<基準モデル>" not in lineage
+    assert '<a class="milestone-tag" href="#lineage-P000002">' in page
+    assert '<a class="milestone-tag" href="#lineage-P000003">' not in page
+
+
+@pytest.mark.parametrize(
+    "ids, connections, message",
+    [
+        (["P999999"], [""], "lineage steps"),
+        (["P000001", "P000001"], ["", "比較"], "lineage steps"),
+        (["P000001", "P000002"], ["", ""], "label the connection"),
+        (["P000001"], ["前段がない"], "label the connection"),
+    ],
+)
+def test_lineage_rejects_broken_references_or_connections(snapshot, ids, connections, message):
+    data = snapshot.topics["demo"].model_dump()
+    data["lineage"] = [
+        {
+            "title": "経路",
+            "steps": [
+                {"paper_id": pid, "title": "節目", "significance": "内容", "connection": connection}
+                for pid, connection in zip(ids, connections, strict=True)
+            ],
+        }
+    ]
+    with pytest.raises(ValidationError, match=message):
+        Topic.model_validate(data)
 
 
 @pytest.mark.parametrize(
@@ -334,7 +405,10 @@ def test_nested_themes_and_private_parent_remain_reachable(tmp_path, snapshot):
     assert content.count("<ul>") == 2
     assert "公開の子" in content and "PRIVATE_PARENT" not in index
     parent = (tmp_path / "_site/topics/parent/index.html").read_text(encoding="utf-8")
-    assert parent.index('href="../child/index.html"') < parent.index('id="papers"')
+    assert 'href="../child/index.html"' in parent
+    assert 'id="papers"' not in parent and 'href="#papers"' not in parent
+    assert "<b>1</b> テーマ" in parent
+    assert '<h2 id="themes">収録テーマ</h2><span>3件</span>' in index
     grandchild = (tmp_path / "_site/topics/grandchild/index.html").read_text(encoding="utf-8")
     breadcrumb = grandchild.split('<nav class="breadcrumb"')[1].split("</nav>")[0]
     assert breadcrumb.index('href="../parent/index.html"') < breadcrumb.index(
@@ -370,7 +444,7 @@ def test_sidebar_theme_destinations_are_consistent_across_pages(tmp_path, snapsh
     root = tmp_path / "_site"
     pages = {
         root / "index.html": set(),
-        root / "topics/parent/index.html": {"#subtopics", "#review", "#papers"},
+        root / "topics/parent/index.html": {"#subtopics", "#review"},
         root / "topics/parent/child/index.html": {"#papers"},
     }
     for path, anchors in pages.items():
@@ -389,6 +463,26 @@ def test_sidebar_theme_destinations_are_consistent_across_pages(tmp_path, snapsh
             assert (path.parent / current[0]["href"]).resolve() == path
         else:
             assert not current
+
+
+def test_parent_with_papers_keeps_bibliography_and_excludes_private_children(snapshot):
+    topic = snapshot.topics["demo"]
+    for key, public in [("child", True), ("private", False)]:
+        snapshot.topics[key] = Topic(
+            topic_id=key,
+            title=key,
+            question="検証用",
+            public=public,
+            navigation={"parent": "demo"},
+        )
+        snapshot.paths[key] = Path("topics") / key
+    page = topic_page(topic, snapshot)
+    assert 'id="subtopics"' in page and 'id="papers"' in page
+    assert "<b>4</b> 文献" in page and "../private/" not in page
+    topic.entries = []
+    topic.relations = []
+    page = topic_page(topic, snapshot)
+    assert "<b>1</b> テーマ" in page and 'id="papers"' not in page
 
 
 def test_export_only_public_allowlisted_data(tmp_path, snapshot):

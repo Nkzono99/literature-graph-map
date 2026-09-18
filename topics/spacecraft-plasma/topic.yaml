@@ -22,6 +22,33 @@ review:
   paragraphs:
   - Langmuir探針は、印加電圧を変えたときの捕集電流からプラズマを推定する。粒子軌道で捕集電流が決まるOML理論について、[@P000127]は球や円柱からさらに広い形状へ適用条件を整理した。
   - 機体のシース内に置いた小さな探針では、周囲の電位障壁が低エネルギー電子の到達を制限する。[@P000128]はこの効果を組み込んだモデルをCassiniのデータと比較し、電流電圧曲線の遷移領域と温度・電位推定への影響を論じた。探針の寸法と位置、機体の電位を同時に参照するための文献である。
+lineage:
+- title: 機体の帯電を空間分布で解く
+  steps:
+  - paper_id: P000120
+    title: 複雑な機体と周囲の場を計算
+    significance: NASCAP-2Kの入れ子格子と粒子計算を整理し、形状・表面材質・周囲環境を結ぶ解析を示した。
+  - paper_id: P000122
+    title: 強い光電子放出下の負帯電を説明
+    significance: 放出電子を戻す電位障壁とイオンウェイクが、太陽近傍の負帯電を維持する条件を示した。
+    connection: 太陽近傍の放出シースへ
+  - paper_id: P000121
+    title: 同じ機体条件で予測を比較
+    significance: Solar Probe Plusの簡略モデルを5つの計算で解き、物理過程の扱いと予測差を照合した。
+    connection: 複数コードで帯電予測を比べる
+- title: 電場計測と機体の影響
+  steps:
+  - paper_id: P000126
+    title: 電位差から電場を測る原理を整理
+    significance: 電気プローブとプラズマの結合を考え、磁気圏の電場計測に必要な設計条件を示した。
+  - paper_id: P000124
+    title: 機体とブームが作る信号を再現
+    significance: Cluster周囲のPICで、ウェイクの見かけの電場と光電子分布による短絡効果を示した。
+    connection: 測定原理から実際の機体形状へ
+  - paper_id: P000125
+    title: センサ応答をプラズマ波と結ぶ
+    significance: 磁化プラズマ中のセンサを駆動し、インピーダンスのピークと波の分散関係を対応付けた。
+    connection: 静的な電位差から周波数応答へ
 public: true
 scope:
   include:
@@ -32,7 +59,7 @@ scope:
   - 探針電流の解釈
   exclude: []
 navigation:
-  parent: null
+  parent: applications
   related:
   - lunar-charging
   - pic

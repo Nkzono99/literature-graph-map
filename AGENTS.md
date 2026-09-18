@@ -9,6 +9,7 @@
 - 共通書誌は `data/works.jsonl`、テーマ別の要点・関係は `topics/**/topic.yaml` が正本です。`uv run lgm render` で `_site/` にHTMLサイトを生成します。生成HTMLは直接編集せず、正本や `src/literature_graph_map/web/` のテンプレートを更新します。
 - CLIの入力形式やコマンドは [docs/USAGE.md](docs/USAGE.md)、表示とデータの仕様は [THEME_LITERATURE_MAP_SPEC.md](THEME_LITERATURE_MAP_SPEC.md) を必要に応じて参照できます。
 - 調査結果は正本へ直接編集するか、任意の取り込みデータを `lgm import` で反映できます。
+- 文献追加には、Bukan経由でPaperpileのMy Libraryへ未登録文献を登録する作業も含めます。追加する文献が決まったら `bukan-paperpile` スキルに従い、`paperpile_import_references` の重複スキップを使って登録し、結果を確認します。この範囲で都度の登録確認は不要です。具体的な手順は [文献追加時のPaperpile登録](docs/USAGE.md#文献追加時のpaperpile登録) を参照してください。
 - 検索経路・作業ログは公開ページへ出しません。YAMLの `survey` は編集用の記録です。非公開メモはリポジトリ外に置きます。
 - 読者向けの文献名は第一著者＋年で表示します。研究同士の関係は概説と `lineage` の系譜で説明します。系譜には節目を選び、何が変わったかと前段とのつながりを書きます。連番IDと関係データは内部参照に使います。
 - テーマ冒頭の概説は `topic.yaml` の `review` に書けます。本文の `[@P000001]` は同じテーマの文献への引用リンクになります。

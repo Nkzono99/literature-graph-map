@@ -1,22 +1,24 @@
 {% extends "base.html" %}
 {% block navigation %}
-<p class="sidebar-caption">研究の入口</p>
-<p>テーマの概観を読み、引用から各文献へ進めます。</p>
+<nav class="library-nav" aria-label="テーマ">
+  {% for item in topic_links %}<a href="{{ item.url }}"><span>{{ item.title }}</span><span class="nav-count">{{ item.count }}</span></a>{% endfor %}
+</nav>
 {% endblock %}
 {% block content %}
 <header class="page-header">
-  <p class="eyebrow">LITERATURE MAP</p>
-  <h1>研究の違いと<br>つながりをたどる。</h1>
-  <p class="lead">テーマの概観から研究の流れをつかみ、文献一覧でそれぞれの要点を読めます。</p>
+  <p class="eyebrow">LITERATURE LIBRARY</p>
+  <h1>テーマ一覧</h1>
+  <p class="lead">テーマごとに文献と要点を整理しています。概説の引用から、各文献を参照できます。</p>
 </header>
 <section aria-labelledby="themes">
-  <div class="section-heading"><h2 id="themes">テーマ</h2><span>{{ topic_links | length }} topics</span></div>
+  <div class="section-heading"><h2 id="themes">収録テーマ</h2><span>{{ topic_links | length }}件</span></div>
   {% for item in topic_links %}
-  <article class="theme-card">
-    <span class="eyebrow">{{ item.count }} PAPERS</span>
-    <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
-    <p>{{ item.question }}</p>
-    <a class="text-link" href="{{ item.url }}">マップを開く <span aria-hidden="true">→</span></a>
+  <article class="theme-entry">
+    <div>
+      <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+      <p>{{ item.question }}</p>
+    </div>
+    <a class="theme-entry-link" href="{{ item.url }}"><span>{{ item.count }} 文献</span><span class="sr-only">：{{ item.title }}を開く</span><span aria-hidden="true">→</span></a>
   </article>
   {% else %}<p>テーマはまだ登録されていません。</p>{% endfor %}
 </section>

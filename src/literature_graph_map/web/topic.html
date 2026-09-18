@@ -1,20 +1,25 @@
 {% extends "base.html" %}
 {% block navigation %}
 <nav aria-label="このテーマの目次">
-  <p class="sidebar-caption">このテーマを読む</p>
+  <a class="topic-current" href="#main"><span>{{ topic.title }}</span><span class="nav-count">{{ topic.entries | length }}</span></a>
+  <div class="section-nav">
   {% if topic.review %}<a href="#review">研究の概観</a>{% endif %}
-  <a href="#papers">文献一覧 <span>{{ topic.entries | length }}</span></a>
+  <a href="#papers">文献一覧</a>
   {% if topic.reading_notes %}<a href="#reading">文献をたどる</a>{% endif %}
+  </div>
+  <div class="group-nav">
   <p class="sidebar-caption">分類</p>
-  {% for group in groups %}<a href="#group-{{ group.id }}">{{ group.title }}</a>{% endfor %}
+  {% for group in groups %}<a href="#group-{{ group.id }}"><span>{{ group.title }}</span><span class="nav-count">{{ group.entries | length }}</span></a>{% endfor %}
+  </div>
 </nav>
 {% endblock %}
 {% block content %}
 <header class="page-header">
-  <p class="eyebrow">TOPIC MAP · {{ topic.entries | length }} PAPERS</p>
+  <nav class="breadcrumb" aria-label="パンくず"><a href="{{ home_url }}">テーマ一覧</a><span aria-hidden="true">/</span><span>文献ライブラリ</span></nav>
   <h1>{{ topic.title }}</h1>
   <p class="lead">{{ topic.question }}</p>
-  {% if topic.scope.include %}<p class="scope">{{ topic.scope.include | join(' ／ ') }}</p>{% endif %}
+  {% if topic.scope.include %}<details class="scope"><summary>対象範囲</summary><p>{{ topic.scope.include | join(' ／ ') }}</p></details>{% endif %}
+  <div class="topic-meta"><span><b>{{ topic.entries | length }}</b> 文献</span><span><b>{{ groups | length }}</b> 分類</span><a href="#papers">文献一覧へ <span aria-hidden="true">↓</span></a></div>
 </header>
 {% if topic.review %}
 <section id="review" aria-labelledby="review-heading">
@@ -30,20 +35,22 @@
 </section>
 {% endif %}
 <section id="papers" aria-labelledby="papers-heading">
-  <div class="section-heading"><h2 id="papers-heading">文献一覧</h2></div>
+  <div class="section-heading"><h2 id="papers-heading">文献一覧</h2><span>{{ topic.entries | length }}件</span></div>
   <form class="paper-filter" role="search" hidden>
-    <div><label for="paper-search">文献を検索</label><input id="paper-search" type="search" placeholder="タイトル・著者・キーワード" autocomplete="off"></div>
+    <div class="search-field"><label for="paper-search">文献を検索</label><input id="paper-search" type="search" placeholder="タイトル・著者・キーワード" autocomplete="off"></div>
     <div><label for="group-filter">分類</label><select id="group-filter"><option value="">すべての分類</option>{% for group in groups %}<option value="{{ group.id }}">{{ group.title }}</option>{% endfor %}</select></div>
-    <button type="reset">リセット</button>
-    <output id="paper-count" aria-live="polite">{{ topic.entries | length }}件</output>
+    <div><label for="year-order">分類内の並び順</label><select id="year-order"><option value="oldest">年：古い順</option><option value="newest">年：新しい順</option></select></div>
+    <div class="filter-status"><output id="paper-count" aria-live="polite">{{ topic.entries | length }} / {{ topic.entries | length }}件</output><button type="reset">リセット</button></div>
   </form>
   <p id="no-results" hidden>一致する文献がありません。キーワードや分類を変えてみてください。</p>
   {% for group in groups %}
   <section class="paper-group" id="group-{{ group.id }}" data-group="{{ group.id }}" aria-labelledby="heading-{{ group.id }}">
-    <h3 class="group-heading" id="heading-{{ group.id }}">{{ group.title }}</h3>
+    <h3 class="group-heading" id="heading-{{ group.id }}">{{ group.title }} <span>{{ group.entries | length }}件</span></h3>
     {% for entry in group.entries %}
     {% set work = works[entry.paper_id] %}{% set version = work.version() %}
-    <article class="paper" id="{{ entry.paper_id }}" data-authors="{{ work.authors | join(' ') }}">
+    <article class="paper" id="{{ entry.paper_id }}" data-authors="{{ work.authors | join(' ') }}" data-year="{{ version.year or '' }}">
+      <div class="paper-year" aria-hidden="true">{{ version.year or '—' }}</div>
+      <div class="paper-body">
       <div class="paper-kicker"><a href="#{{ entry.paper_id }}">{{ citations[entry.paper_id] }}</a><span>{{ entry.role }}</span></div>
       <h4><a href="{{ title_url(work) }}">{{ work.title }}</a></h4>
       {% if version.kind == 'submitted' %}<p class="badge">{{ 'プレプリント・未査読' if version.status == 'preprint' else '査読状態未確認' }}</p>{% endif %}
@@ -51,9 +58,10 @@
         <div><dt>著者</dt><dd>{{ authors(work) }}</dd></div>
         <div><dt>掲載誌</dt><dd>{{ version.venue or '未確認' }}</dd></div>
         {% if version.publisher %}<div><dt>出版社</dt><dd>{{ version.publisher }}</dd></div>{% endif %}
-        <div><dt>公開先</dt><dd>OA・無料公開：{{ access(work) }} <span class="access-divider">／</span> Preprint：{{ preprint(work) }}</dd></div>
+        <div><dt>公開先</dt><dd class="paper-access"><span>OA・無料公開：{{ access(work) }}</span><span>Preprint：{{ preprint(work) }}</span></dd></div>
       </dl>
       {{ summary(entry, work) }}
+      </div>
     </article>
     {% endfor %}
   </section>

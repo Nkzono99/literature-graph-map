@@ -10,13 +10,16 @@
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
   <header class="site-header">
-    <a class="brand" href="{{ home_url }}"><span class="brand-mark" aria-hidden="true"></span>Literature Map</a>
-    <span>論文から、研究のつながりへ。</span>
+    <a class="brand" href="{{ home_url }}"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>literature-graph-map</a>
+    <span>テーマ別文献ライブラリ</span>
   </header>
   <div class="layout">
     <aside class="sidebar">
-      <a class="back-link" href="{{ home_url }}">テーマ一覧</a>
-      {% block navigation %}{% endblock %}
+      <div class="sidebar-inner">
+        <p class="sidebar-label">LIBRARY</p>
+        <a class="back-link" href="{{ home_url }}">テーマ一覧</a>
+        {% block navigation %}{% endblock %}
+      </div>
     </aside>
     <main id="main">
       {% block content %}{% endblock %}

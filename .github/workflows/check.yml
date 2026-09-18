@@ -1,0 +1,24 @@
+name: check
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install uv
+      - run: uv sync --locked
+      - run: uv run pytest -q
+      - run: uv run ruff check src tests
+      - run: uv run ruff format --check src tests
+      - run: uv run lgm --repo examples/library check
+      - run: uv run lgm check --public

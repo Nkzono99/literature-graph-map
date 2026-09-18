@@ -1,0 +1,348 @@
+works:
+- paper_id: P000001
+  title: 検証用架空文献 1
+  authors:
+  - Example 1
+  representative_version_id: V000001
+  versions:
+  - version_id: V000001
+    kind: published
+    doi: 10.5555/fixture-1
+    repository_id: null
+    year: 2001
+    online_year: null
+    venue: 架空の検証用誌
+    publisher: null
+    status: unknown
+    locations: []
+  metadata_sources:
+  - provider: 架空の検証データ
+    url: https://example.org/papers/1
+    checked_at: '2026-09-17'
+  record_url: https://example.org/papers/1
+  access_check: not_checked
+  preprint_check: not_checked
+  version_links: []
+  missing_note: 未取得の書誌項目は未確認。
+  locked_fields: []
+- paper_id: P000002
+  title: 検証用架空文献 2
+  authors:
+  - Example 2
+  representative_version_id: V000002
+  versions:
+  - version_id: V000002
+    kind: published
+    doi: 10.5555/fixture-2
+    repository_id: null
+    year: 2002
+    online_year: null
+    venue: 架空の検証用誌
+    publisher: null
+    status: unknown
+    locations: []
+  metadata_sources:
+  - provider: 架空の検証データ
+    url: https://example.org/papers/2
+    checked_at: '2026-09-17'
+  record_url: https://example.org/papers/2
+  access_check: not_checked
+  preprint_check: not_checked
+  version_links: []
+  missing_note: 未取得の書誌項目は未確認。
+  locked_fields: []
+- paper_id: P000003
+  title: 検証用架空文献 3
+  authors:
+  - Example 3
+  representative_version_id: V000003
+  versions:
+  - version_id: V000003
+    kind: published
+    doi: 10.5555/fixture-3
+    repository_id: null
+    year: 2003
+    online_year: null
+    venue: 架空の検証用誌
+    publisher: null
+    status: unknown
+    locations: []
+  metadata_sources:
+  - provider: 架空の検証データ
+    url: https://example.org/papers/3
+    checked_at: '2026-09-17'
+  record_url: https://example.org/papers/3
+  access_check: not_checked
+  preprint_check: not_checked
+  version_links: []
+  missing_note: 未取得の書誌項目は未確認。
+  locked_fields: []
+- paper_id: P000004
+  title: 検証用架空文献 4
+  authors:
+  - Example 4
+  representative_version_id: V000004
+  versions:
+  - version_id: V000004
+    kind: published
+    doi: 10.5555/fixture-4
+    repository_id: null
+    year: 2004
+    online_year: null
+    venue: 架空の検証用誌
+    publisher: null
+    status: unknown
+    locations: []
+  metadata_sources:
+  - provider: 架空の検証データ
+    url: https://example.org/papers/4
+    checked_at: '2026-09-17'
+  record_url: https://example.org/papers/4
+  access_check: not_checked
+  preprint_check: not_checked
+  version_links: []
+  missing_note: 未取得の書誌項目は未確認。
+  locked_fields: []
+topic:
+  schema_version: 1
+  topic_id: demo
+  title: 動作確認用の架空テーマ
+  question: 全論文・著者・関係・出典は架空の検証用データです。実際の調査結果ではありません。
+  public: false
+  scope:
+    include: []
+    exclude: []
+  navigation:
+    parent: null
+    related: []
+  groups:
+  - id: general
+    title: 先行研究
+  entries:
+  - paper_id: P000001
+    group: general
+    role: 検証用役割
+    summary:
+      question: 架空の問いを比較する。
+      method: 架空のモデルを使う。
+      contribution: これは実在研究の成果ではない。
+    evidence_by_item:
+      question:
+      - paper_id: P000001
+        version_id: V000001
+        url: https://example.org/papers/1
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+      method:
+      - paper_id: P000001
+        version_id: V000001
+        url: https://example.org/papers/1
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+      contribution:
+      - paper_id: P000001
+        version_id: V000001
+        url: https://example.org/papers/1
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+    inspection:
+      level: full_text
+      version_id: V000001
+      checked_by: ai
+      checked_at: '2026-09-17'
+      recheck: false
+    locked_fields: []
+  - paper_id: P000002
+    group: general
+    role: 検証用役割
+    summary:
+      question: 架空の問いを比較する。
+      method: 架空のモデルを使う。
+      contribution: これは実在研究の成果ではない。
+    evidence_by_item:
+      question:
+      - paper_id: P000002
+        version_id: V000002
+        url: https://example.org/papers/2
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+      method:
+      - paper_id: P000002
+        version_id: V000002
+        url: https://example.org/papers/2
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+      contribution:
+      - paper_id: P000002
+        version_id: V000002
+        url: https://example.org/papers/2
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+    inspection:
+      level: full_text
+      version_id: V000002
+      checked_by: ai
+      checked_at: '2026-09-17'
+      recheck: false
+    locked_fields: []
+  - paper_id: P000003
+    group: general
+    role: 検証用役割
+    summary:
+      question: 架空の問いを比較する。
+      method: 架空のモデルを使う。
+      contribution: これは実在研究の成果ではない。
+    evidence_by_item:
+      question:
+      - paper_id: P000003
+        version_id: V000003
+        url: https://example.org/papers/3
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+      method:
+      - paper_id: P000003
+        version_id: V000003
+        url: https://example.org/papers/3
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+      contribution:
+      - paper_id: P000003
+        version_id: V000003
+        url: https://example.org/papers/3
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+    inspection:
+      level: full_text
+      version_id: V000003
+      checked_by: ai
+      checked_at: '2026-09-17'
+      recheck: false
+    locked_fields: []
+  - paper_id: P000004
+    group: general
+    role: 検証用役割
+    summary:
+      question: 架空の問いを比較する。
+      method: 架空のモデルを使う。
+      contribution: これは実在研究の成果ではない。
+    evidence_by_item:
+      question:
+      - paper_id: P000004
+        version_id: V000004
+        url: https://example.org/papers/4
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+      method:
+      - paper_id: P000004
+        version_id: V000004
+        url: https://example.org/papers/4
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+      contribution:
+      - paper_id: P000004
+        version_id: V000004
+        url: https://example.org/papers/4
+        source_type: full_text
+        locator: 検証用の架空の節
+        checked_at: '2026-09-17'
+    inspection:
+      level: full_text
+      version_id: V000004
+      checked_by: ai
+      checked_at: '2026-09-17'
+      recheck: false
+    locked_fields: []
+  relations:
+  - relation_id: R000001
+    source: P000001
+    target: P000002
+    type: extends
+    basis: explicit
+    state: checked
+    aspect: 架空モデル
+    reason: 表示検証用の架空の拡張関係。
+    evidence:
+    - paper_id: P000002
+      version_id: V000002
+      url: https://example.org/papers/2
+      source_type: full_text
+      locator: 検証用の架空の節
+      checked_at: '2026-09-17'
+    comparability: null
+    checked_by: ai
+    checked_at: '2026-09-17'
+    limitation: null
+    locked_fields: []
+  - relation_id: R000002
+    source: P000002
+    target: P000003
+    type: compares_with
+    basis: comparison
+    state: checked
+    aspect: 架空条件
+    reason: 表示検証用の架空の比較関係。
+    evidence:
+    - paper_id: P000002
+      version_id: V000002
+      url: https://example.org/papers/2
+      source_type: full_text
+      locator: 検証用の架空の節
+      checked_at: '2026-09-17'
+    - paper_id: P000003
+      version_id: V000003
+      url: https://example.org/papers/3
+      source_type: full_text
+      locator: 検証用の架空の節
+      checked_at: '2026-09-17'
+    comparability: null
+    checked_by: ai
+    checked_at: '2026-09-17'
+    limitation: null
+    locked_fields: []
+  - relation_id: R000003
+    source: P000003
+    target: P000004
+    type: tests
+    basis: explicit
+    state: candidate
+    aspect: 候補
+    reason: 根拠未確認の検証候補。
+    evidence: []
+    comparability: null
+    checked_by: null
+    checked_at: null
+    limitation: null
+    locked_fields: []
+  view:
+    table_group_by: group
+    sort:
+    - year
+    - first_author
+    - paper_id
+    overview_nodes: []
+    graphs: []
+    table_rows: 30
+    graph_nodes: 20
+    graph_edges: 30
+  survey:
+    searched_at: null
+    scope_period: 制限なし
+    provider_names: []
+    queries: []
+    coverage_note: 未実行
+    limitations: []
+    changes: 新規作成
+    publication_status: draft
+    reviewed_at: null
+  reading_notes: []

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block navigation %}
 <nav class="library-nav" aria-label="テーマ">
-  {% for item in topic_links %}<a href="{{ item.url }}"><span>{{ item.title }}</span><span class="nav-count">{{ item.count }}</span></a>{% endfor %}
+  <ul class="theme-tree">{% for item in topic_links recursive %}<li><a href="{{ item.url }}"><span>{{ item.title }}</span><span class="nav-count">{{ item.count }}</span></a>{% if item.children %}<ul>{{ loop(item.children) }}</ul>{% endif %}</li>{% endfor %}</ul>
 </nav>
 {% endblock %}
 {% block content %}
@@ -11,8 +11,10 @@
   <p class="lead">テーマごとに文献と要点を整理しています。概説の引用から、各文献を参照できます。</p>
 </header>
 <section aria-labelledby="themes">
-  <div class="section-heading"><h2 id="themes">収録テーマ</h2><span>{{ topic_links | length }}件</span></div>
-  {% for item in topic_links %}
+  <div class="section-heading"><h2 id="themes">収録テーマ</h2><span>{{ topic_count }}件</span></div>
+  <ul class="theme-tree">
+  {% for item in topic_links recursive %}
+  <li>
   <article class="theme-entry">
     <div>
       <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
@@ -20,6 +22,9 @@
     </div>
     <a class="theme-entry-link" href="{{ item.url }}"><span>{{ item.count }} 文献</span><span class="sr-only">：{{ item.title }}を開く</span><span aria-hidden="true">→</span></a>
   </article>
-  {% else %}<p>テーマはまだ登録されていません。</p>{% endfor %}
+  {% if item.children %}<ul>{{ loop(item.children) }}</ul>{% endif %}
+  </li>
+  {% else %}<li>テーマはまだ登録されていません。</li>{% endfor %}
+  </ul>
 </section>
 {% endblock %}

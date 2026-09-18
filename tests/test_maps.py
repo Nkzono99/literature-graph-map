@@ -305,6 +305,44 @@ def test_navigation_links_follow_paths(tmp_path, snapshot):
     )
 
 
+def test_nested_themes_and_private_parent_remain_reachable(tmp_path, snapshot):
+    for key, title, parent, public in (
+        ("parent", "親テーマ", None, True),
+        ("child", "子テーマ", "parent", True),
+        ("grandchild", "孫テーマ", "child", True),
+        ("private", "PRIVATE_PARENT", None, False),
+        ("orphan", "公開の子", "private", True),
+    ):
+        snapshot.topics[key] = Topic(
+            topic_id=key,
+            title=title,
+            question="検証用",
+            public=public,
+            navigation={"parent": parent},
+        )
+        snapshot.paths[key] = Path("topics") / key
+    render(tmp_path, snapshot)
+    index = (tmp_path / "_site/index.html").read_text(encoding="utf-8")
+    # The index uses navigation ancestry even when filesystem paths are siblings.
+    content = index[index.index('<section aria-labelledby="themes">') :]
+    assert (
+        content.index(">親テーマ</a>")
+        < content.index(">子テーマ</a>")
+        < content.index(">孫テーマ</a>")
+    )
+    assert content.count("<ul>") == 2
+    assert "公開の子" in content and "PRIVATE_PARENT" not in index
+    parent = (tmp_path / "_site/topics/parent/index.html").read_text(encoding="utf-8")
+    assert parent.index('href="../child/index.html"') < parent.index('id="papers"')
+    grandchild = (tmp_path / "_site/topics/grandchild/index.html").read_text(encoding="utf-8")
+    breadcrumb = grandchild.split('<nav class="breadcrumb"')[1].split("</nav>")[0]
+    assert breadcrumb.index('href="../parent/index.html"') < breadcrumb.index(
+        'href="../child/index.html"'
+    )
+    orphan = (tmp_path / "_site/topics/orphan/index.html").read_text(encoding="utf-8")
+    assert "PRIVATE_PARENT" not in orphan and "../private/" not in orphan
+
+
 def test_export_only_public_allowlisted_data(tmp_path, snapshot):
     repo = tmp_path / "repo"
     snapshot.topics["private"] = Topic(

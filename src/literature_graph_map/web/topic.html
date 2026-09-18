@@ -3,6 +3,7 @@
 <nav aria-label="このテーマの目次">
   <a class="topic-current" href="#main"><span>{{ topic.title }}</span><span class="nav-count">{{ topic.entries | length }}</span></a>
   <div class="section-nav">
+  {% if navigation.children %}<a href="#subtopics">子テーマ</a>{% endif %}
   {% if topic.review %}<a href="#review">研究の概観</a>{% endif %}
   <a href="#papers">文献一覧</a>
   {% if topic.reading_notes %}<a href="#reading">文献をたどる</a>{% endif %}
@@ -15,12 +16,18 @@
 {% endblock %}
 {% block content %}
 <header class="page-header">
-  <nav class="breadcrumb" aria-label="パンくず"><a href="{{ home_url }}">テーマ一覧</a><span aria-hidden="true">/</span><span>文献ライブラリ</span></nav>
+  <nav class="breadcrumb" aria-label="パンくず"><a href="{{ home_url }}">テーマ一覧</a>{% for item in navigation.ancestors %}<span aria-hidden="true">/</span><a href="{{ item.url }}">{{ item.title }}</a>{% endfor %}<span aria-hidden="true">/</span><span aria-current="page">{{ topic.title }}</span></nav>
   <h1>{{ topic.title }}</h1>
   <p class="lead">{{ topic.question }}</p>
   {% if topic.scope.include %}<details class="scope"><summary>対象範囲</summary><p>{{ topic.scope.include | join(' ／ ') }}</p></details>{% endif %}
   <div class="topic-meta"><span><b>{{ topic.entries | length }}</b> 文献</span><span><b>{{ groups | length }}</b> 分類</span><a href="#papers">文献一覧へ <span aria-hidden="true">↓</span></a></div>
 </header>
+{% if navigation.children %}
+<section id="subtopics" aria-labelledby="subtopics-heading">
+  <div class="section-heading"><h2 id="subtopics-heading">子テーマ</h2></div>
+  <ul class="subtopic-links">{% for item in navigation.children %}<li><a href="{{ item.url }}"><span>{{ item.title }}</span><span class="nav-count">{{ item.count }}件 <span aria-hidden="true">→</span></span></a></li>{% endfor %}</ul>
+</section>
+{% endif %}
 {% if topic.review %}
 <section id="review" aria-labelledby="review-heading">
   <div class="section-heading"><h2 id="review-heading">研究の概観</h2></div>
@@ -73,7 +80,7 @@
   {% for note in topic.reading_notes %}<p>{{ note }}</p>{% endfor %}
 </section>
 {% endif %}
-{% if navigation %}
-<section aria-labelledby="related-heading"><h2 id="related-heading">関連するテーマ</h2><ul>{% for item in navigation %}<li>{{ item.label }}：<a href="{{ item.url }}">{{ item.title }}</a></li>{% endfor %}</ul></section>
+{% if navigation.related %}
+<section aria-labelledby="related-heading"><h2 id="related-heading">関連するテーマ</h2><ul>{% for item in navigation.related %}<li><a href="{{ item.url }}">{{ item.title }}</a></li>{% endfor %}</ul></section>
 {% endif %}
 {% endblock %}

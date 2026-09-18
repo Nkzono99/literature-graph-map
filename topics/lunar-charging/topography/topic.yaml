@@ -1,0 +1,233 @@
+schema_version: 1
+topic_id: lunar-charging-topography
+title: 極域・クレーター・空洞
+question: 永久影、クレーター、縦孔・地下空洞で、太陽風の遮蔽と帯電がどう結び付くか。
+review:
+- heading: 永久影へ入り込むプラズマ
+  paragraphs:
+  - 極域の低い太陽高度では、クレーターの壁が光と太陽風を遮る。電子とイオンは質量や速度分布が違うため、陰への到達もそろわない。[@P000058]はこの差から永久影の負帯電を考え、[@P000031]はLOLA地形を使って遮蔽を具体化した。[@P000008]は表面帯電が流入粒子へ及ぼす作用も計算する。[@P000048]の三次元ハイブリッドPICでは、クレーター近傍の負電位のプラズマ領域と、底や壁へ回り込むイオン流が描かれている。
+- heading: 深い空洞と実地形への拡張
+  paragraphs:
+  - 深い空洞では、入口から底へ至る間に電子が側壁へ失われる。上方から太陽風が入る条件を扱った[@P000012]は、その選別によって底部が正に帯電しうることを示した。[@P000015]は空洞寸法とシース厚の比に注目し、大きな空洞では電子供給が増えて正電位が緩和されることを示した。[@P000016]は流速と熱速度の比を変え、底部電位が負から正、さらにほぼゼロへ移る条件を調べる。南極の実地形を含む[@P000017]は、理想化した形状の計算から、候補地点ごとの環境を読むための研究へつながる。
+public: true
+scope:
+  include:
+  - 極域クレーターと実地形
+  - 深い空洞
+  exclude: []
+navigation:
+  parent: lunar-charging
+  related: []
+groups:
+- id: craters
+  title: 極域クレーターと実地形
+- id: cavities
+  title: 深い空洞
+entries:
+- paper_id: P000008
+  group: craters
+  role: 極域への太陽風侵入
+  summary:
+    question: 極域クレーターへの太陽風侵入と帯電はどう影響し合うか。
+    method: 影の段差を二次元で計算し、表面電荷と二次電子放出を追跡。
+    contribution: 帯電と両極性膨張が相互に抑制し、二次電子放出が陽子流入を調整。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000008
+      version_id: V1
+      url: https://doi.org/10.1029/2011GL048880
+      source_type: full_text
+      locator: §2・§4（PDF pp.1–2,4–5）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000017
+  group: craters
+  role: 南極実地形モデル
+  summary:
+    question: 南極の実地形と磁気圏環境は、表面電位・電場をどう変えるか。
+    method: 南緯86–90度のLOLA地形を、有限要素法とニューラルネットで計算。
+    contribution: プラズマシート下で約−1000 V、計算領域の最大電場約5 V/mを予測。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000017
+      version_id: V1
+      url: https://arxiv.org/pdf/2607.13510v1
+      source_type: full_text
+      locator: 要旨・§2.1・§4（v1 pp.1–3,14–16）
+      checked_at: '2026-09-18'
+  inspection:
+    level: preprint
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000031
+  group: craters
+  role: 実地形によるプラズマ遮蔽
+  summary:
+    question: 極域の地形は、太陽風の到達と帯電分布をどう変えるか。
+    method: LOLA地形データでプラズマの遮蔽と表面帯電を計算。
+    contribution: LCROSS衝突域を含む局所環境を、実地形から予測する枠組みを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000048
+  group: craters
+  role: 極域クレーターのミニウェイク
+  summary:
+    question: 極域クレーターの陰へ、太陽風はどのように入り込むか。
+    method: 三次元静電ハイブリッドPICで、km規模のクレーター周辺を計算。
+    contribution: 電子に富む負電位のプラズマ領域と、底面・壁面へ回り込むイオン流を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000048
+      version_id: V1
+      url: https://doi.org/10.1029/2024ja032764
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000058
+  group: craters
+  role: 永久影クレーターの電気的環境
+  summary:
+    question: 永久影クレーターでは、電子とイオンの届き方がどう異なるか。
+    method: 地形による太陽風遮蔽とプラズマの膨張を用いて帯電を推定。
+    contribution: イオンが届きにくい領域での負帯電と、探査機・ダストへの影響を論じた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000058
+      version_id: V1
+      url: https://doi.org/10.1029/2009je003464
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000012
+  group: cavities
+  role: 深い空洞の正帯電
+  summary:
+    question: 深い空洞の底は、光電子放出がなくても正に帯電するか。
+    method: 直方体空洞の深さ・幅・入射条件を変え、三次元PICで計算。
+    contribution: 側壁での電子損失が底部を正帯電させ、側壁の光電子が正電位を緩和。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000012
+      version_id: V1
+      url: https://da.lib.kobe-u.ac.jp/da/kernel/0100483394/0100483394.pdf
+      source_type: full_text
+      locator: 要旨・§2・§4–5（本文pp.1–3,10–12）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000015
+  group: cavities
+  role: 空洞寸法とシース厚
+  summary:
+    question: 空洞寸法とシース厚の比は、底部の正帯電をどう変えるか。
+    method: 入口幅5・30・100 mと深さ対幅比を変えたPIC計算。
+    contribution: シースより大きな空洞では、底部への電子供給が増え正電位を緩和。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000015
+      version_id: V1
+      url: https://doi.org/10.1029/2024JA033490
+      source_type: full_text
+      locator: 要旨・§2・§5（PDF pp.1–3,14–16）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000016
+  group: cavities
+  role: 流速と熱速度の比
+  summary:
+    question: 太陽風の流速と熱速度の比は、空洞底部の電位をどう決めるか。
+    method: Debye長より幅が小さい空洞を、三次元PICと自由落下モデルで比較。
+    contribution: 流速がイオン・電子の熱速度を順に超すと、底部電位は負→正→ほぼゼロ。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000016
+      version_id: V1
+      url: https://da.lib.kobe-u.ac.jp/da/kernel/0100497769/0100497769.pdf
+      source_type: full_text
+      locator: 要旨・§2・§5–6（PDF pp.1–3,13–14）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: null
+  scope_period: 制限なし
+  provider_names: []
+  queries: []
+  coverage_note: 未記録
+  limitations: []
+  changes: 新規作成
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

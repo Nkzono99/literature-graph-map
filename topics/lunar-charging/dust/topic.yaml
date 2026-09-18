@@ -1,0 +1,493 @@
+schema_version: 1
+topic_id: lunar-charging-dust
+title: ダスト・材料・静電輸送
+question: 電子放出と粒子電荷、微小な隙間での帯電、付着面からの離脱と上空への輸送。
+review:
+- heading: 光電子と二次電子は、粒子ごとに出入りする
+  paragraphs:
+  - 月ダストの帯電を定量化するには、電子放出と粒子電荷を測る必要がある。[@P000021]は月試料などの帯電、[@P000005]は単粒子の光電子放出、[@P000037]は模擬レゴリス表面の粒子電荷を扱う。VUV照射下で正負両方の粒子を測った[@P000052]は、粉体の平均電位だけでは個々の電荷を代表できないことを示す。材料の電子収率は[@P000053]から参照できる。
+- heading: 付着した粒子が離れるまで
+  paragraphs:
+  - プラズマ中の粉体の縁で起こる移動（[@P000026]）や、電子照射による基板との帯電差（[@P000029]）は、局所電場の役割を示した。[@P000009]のpatched
+    charge modelは粒子間の空隙に再吸収される電子を扱い、[@P000043]はその帯電を浮遊モデルへ、[@P000013]は粒子と基板の隙間へと展開する。UV照射と付着力を扱う[@P000040]、光とプラズマの同時照射を扱う[@P000014]も、離脱条件を調べる実験として並べられる。電荷が残る時間には導電性（[@P000010]）も効き、粗い表面の研究方針（[@P000047]）や内部への蓄積モデル（[@P000057]）へ論点が広がる。
+- heading: 地平線光から、上空のダスト分布へ
+  paragraphs:
+  - Surveyorの地平線光（[@P000019]）は、低高度のダストを考える出発点になった。[@P000022]は電場で加速された粒子の噴水モデル、[@P000042]は環境条件と浮遊の関係を扱う。LDEXでは、高度3–250
+    kmの測定範囲で浮遊ダストに上限を置く[@P000039]と、薄明クレーター付近の局所的な増加を論じる[@P000044]がある。それぞれの粒径・高度・地形を対応付けることで、離脱機構と輸送先を比較しやすくなる。
+public: true
+scope:
+  include:
+  - 電子放出と粒子電荷
+  - 局所帯電・付着・離脱
+  - 浮遊モデルとダスト観測
+  exclude: []
+navigation:
+  parent: lunar-charging
+  related: []
+groups:
+- id: properties
+  title: 電子放出と粒子電荷
+- id: mechanisms
+  title: 局所帯電・付着・離脱
+- id: transport
+  title: 浮遊モデルとダスト観測
+entries:
+- paper_id: P000005
+  group: properties
+  role: 単粒子の光電子放出
+  summary:
+    question: 単粒子の光電子放出効率は、粒径・粒子電位にどう依存するか。
+    method: 月試料・模擬物の単粒子を保持し、紫外線による帯電を測定。
+    contribution: 放出効率・推定収率の粒径依存と、バルク試料との差を報告。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000005
+      version_id: V1
+      url: https://doi.org/10.1016/j.pss.2006.12.007
+      source_type: full_text
+      locator: 要旨・結論（pp.953–954,964）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000021
+  group: properties
+  role: 月試料と模擬粒子の帯電
+  summary:
+    question: 月ダストの電子照射による帯電は、材料によってどう変わるか。
+    method: 月試料と模擬粒子の静電帯電を実験で比較。
+    contribution: 材料の電子放出特性を、ダスト帯電の実験的な検討対象にした。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000037
+  group: properties
+  role: 模擬レゴリスの電荷測定
+  summary:
+    question: レゴリス表面のダスト粒子は、どの程度の電荷を持つか。
+    method: 月レゴリス模擬物を使い、粒子の帯電を実験的に測定。
+    contribution: ダストの電荷を定量化し、浮遊・移動モデルに使う実験的制約を与えた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000052
+  group: properties
+  role: VUV照射下の双極性帯電
+  summary:
+    question: 光照射された粉体では、全粒子が同じ符号に帯電するか。
+    method: VUV照射した月ダスト模擬物の粒子電荷分布を測定。
+    contribution: 同じ照射条件で正負両方の粒子を測定し、平均電位だけでは表せない帯電を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000053
+  group: properties
+  role: 模擬レゴリスの電子放出収率
+  summary:
+    question: 粒状レゴリスの電子放出は、組成や形状でどう変わるか。
+    method: 模擬物層などの二次電子・後方散乱電子の収率を広い入射エネルギーで測定。
+    contribution: 粒状材料の電子収率を定量化し、表面の組成・微細構造の影響を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000053
+      version_id: V1
+      url: https://doi.org/10.1109/tps.2025.3615913
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000009
+  group: mechanisms
+  role: 空隙の電子再吸収
+  summary:
+    question: 粉体面の粒子は、離脱に必要な電荷をどう得るか。
+    method: 粉体の照射実験と、空隙内の電子再吸収モデルを比較。
+    contribution: 空隙の負帯電・反発力で粒子の跳躍を説明するPCMを提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000009
+      version_id: V1
+      url: https://doi.org/10.1002/2016GL069491
+      source_type: full_text
+      locator: §2–4（pp.6104–6109）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000010
+  group: mechanisms
+  role: 粒子間電場と導電性
+  summary:
+    question: 粒子間の局所電場はどこまで強くなるか。
+    method: 一次元で導電性を、三次元で固定粒子群の差動帯電を計算。
+    contribution: 導電性が局所電場の上限を左右する。粒子離脱は計算対象外。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000010
+      version_id: V1
+      url: https://doi.org/10.1002/2016JE005049
+      source_type: full_text
+      locator: 考察・§5（p.2163）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000013
+  group: mechanisms
+  role: 単粒子と基板の隙間
+  summary:
+    question: 基板上の単粒子も、電子の再捕集で帯電・移動するか。
+    method: Kapton上のSiO₂粒子を電子・紫外線で照射し、移動を画像計測。
+    contribution: PCMを粒子と基板の隙間へ拡張。計測した移動度は離脱率とは異なる。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000013
+      version_id: V1
+      url: https://doi.org/10.1103/PhysRevLett.133.115301
+      source_type: full_text
+      locator: PCM-SP・Figs.3–4（PDF pp.1–3）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000014
+  group: mechanisms
+  role: 光とプラズマの同時照射
+  summary:
+    question: 光電子を放出する粉体に、プラズマ電子はどう作用するか。
+    method: 模擬粉体への真空紫外線・低密度Arプラズマの単独／同時照射を比較。
+    contribution: 同時照射で飛び出し・推定負電荷が増加。charge pumpingで説明。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000014
+      version_id: V1
+      url: https://doi.org/10.1029/2024GL113715
+      source_type: full_text
+      locator: 要旨・§3.2–3.3（PDF pp.1,5）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000026
+  group: mechanisms
+  role: プラズマ中のダスト移動実験
+  summary:
+    question: 粉体の中央と縁で、帯電と移動はどう変わるか。
+    method: 負にバイアスした導電板上のJSC-Mars-1粒子をプラズマ中で観察。
+    contribution: 正に帯電した粒子の外向き移動と、粉体層の縁で強まる帯電を報告。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000026
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013983
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000029
+  group: mechanisms
+  role: 電子ビームとダスト離脱
+  summary:
+    question: 電子照射は、粉体と基板の間にどのような電場を作るか。
+    method: 浮遊電位の黒鉛上に置いたJSC-Mars-1粒子へ、プラズマ中で電子を照射。
+    contribution: 二次電子放出の違いが水平・鉛直電場を強め、粒子の移動と離脱を促した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000029
+      version_id: V1
+      url: https://doi.org/10.1029/2010ja015465
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000040
+  group: mechanisms
+  role: UV照射・付着力・粒子移動
+  summary:
+    question: UVで帯電した粒子の離脱を、付着力も含めて説明できるか。
+    method: 真空中のUV照射・電場・機械振動実験を、数値モデルと比較。
+    contribution: 粒子の付着力を制約し、微小な電場増幅が移動に与える影響を検討。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000040
+      version_id: V1
+      url: https://doi.org/10.1002/2015ja021738
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000043
+  group: mechanisms
+  role: 粒子間空隙と浮遊モデル
+  summary:
+    question: 粒子間の微小空隙による帯電は、明暗境界の浮遊をどう変えるか。
+    method: 表面電場と粒子間空隙内の帯電を組み込んだ数値モデルを計算。
+    contribution: 粒子スケールの帯電を加え、ターミネーター付近の離脱条件を検討。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000047
+  group: mechanisms
+  role: 粗い表面の微視的電場
+  summary:
+    question: レゴリスの凹凸は、粒子スケールの電荷分離をどう作るか。
+    method: 粗い絶縁表面の計算・観測・実験を整理し、計測器開発と結び付ける。
+    contribution: 局所的な正負の帯電と強い電場を、月面表層を理解する研究課題として整理。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000047
+      version_id: V1
+      url: https://arxiv.org/abs/2410.05913
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000057
+  group: mechanisms
+  role: レゴリス内部の電荷保持
+  summary:
+    question: 入射粒子が残す電荷は、低温のレゴリス内部にどう蓄積するか。
+    method: 粒子の侵入深さ・電荷保持を、電荷連続式・伝導・Poisson方程式で記述。
+    contribution: 永久影を念頭に、表面収支に内部の電荷蓄積と緩和を加える枠組みを提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000057
+      version_id: V1
+      url: https://arxiv.org/abs/2609.06496
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000019
+  group: transport
+  role: 地平線光の観測
+  summary:
+    question: Surveyorが捉えた地平線付近の発光をどう説明するか。
+    method: 月の日没付近の画像から、地平線光の空間分布を解析。
+    contribution: 低高度のダストによる散乱光という解釈を提示し、静電浮遊研究の出発点となった。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000022
+  group: transport
+  role: ダスト噴水モデル
+  summary:
+    question: 月面から飛び出した帯電ダストは、どこまで上昇するか。
+    method: 表面近傍の電場による加速と、離脱後の弾道運動をモデル化。
+    contribution: 粒径や帯電条件に応じたダストの上昇・落下を、動的な噴水として説明。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000039
+  group: transport
+  role: LDEXによる浮遊ダストの制約
+  summary:
+    question: 月上空に静電的に浮遊したダストは検出されるか。
+    method: LADEE搭載LDEXの粒子衝突データを高度3–250 kmで解析。
+    contribution: 測定可能な粒径・高度の範囲で浮遊成分を検出せず、その密度に上限を与えた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000039
+      version_id: V1
+      url: https://doi.org/10.1002/2015gl064324
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000042
+  group: transport
+  role: 環境条件とダスト浮遊
+  summary:
+    question: 太陽風と紫外線の条件は、ダスト浮遊にどう影響するか。
+    method: 月面の電流収支と、帯電粒子に働く力を条件別に計算。
+    contribution: 宇宙環境の変動を、月面電位と粒子浮遊の条件へ結び付けた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000044
+  group: transport
+  role: 薄明クレーター付近のダスト増加
+  summary:
+    question: 薄明域のクレーター近傍で、ダストの増加は見られるか。
+    method: LDEXの5つの増加イベントを、地形と太陽風条件に対応付ける。
+    contribution: クレーター下流の粒子増加を報告し、局所的なダスト噴水での解釈を提示。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000044
+      version_id: V1
+      url: https://doi.org/10.1029/2020gl089593
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: null
+  scope_period: 制限なし
+  provider_names: []
+  queries: []
+  coverage_note: 未記録
+  limitations: []
+  changes: 新規作成
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

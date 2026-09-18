@@ -171,21 +171,29 @@ def review_paragraph(text: str, citations: dict[str, str]) -> Markup:
 
 
 def page_context(snapshot: Snapshot, path: Path) -> dict:
+    topics = {
+        key: {
+            "title": topic.title,
+            "url": relative_url(path, snapshot.paths[key] / "index.html"),
+            "count": len(topic.entries),
+            "question": topic.question,
+            "children": [],
+        }
+        for key, topic in sorted(snapshot.topics.items())
+        if topic.public
+    }
+    roots = []
+    for key, item in topics.items():
+        parent = snapshot.topics[key].navigation.parent
+        siblings = topics[parent]["children"] if parent in topics else roots
+        siblings.append(item)
     return {
         "home_url": relative_url(path, Path("index.html")),
         "asset_url": relative_url(path, Path("assets")),
         "copyright_url": relative_url(path, Path("copyright.html")),
         "disclaimer": DISCLAIMER,
-        "topic_links": [
-            {
-                "title": topic.title,
-                "url": relative_url(path, snapshot.paths[key] / "index.html"),
-                "count": len(topic.entries),
-                "question": topic.question,
-            }
-            for key, topic in sorted(snapshot.topics.items())
-            if topic.public
-        ],
+        "topic_links": roots,
+        "topic_count": len(topics),
     }
 
 
@@ -193,22 +201,28 @@ def topic_page(topic: Topic, snapshot: Snapshot) -> str:
     path = snapshot.paths[topic.topic_id]
     citations = citation_labels(snapshot.works)
     nav = topic.navigation
-    navigation = []
+    ancestors = []
+    parent = nav.parent
+    while parent:
+        ancestors.append(parent)
+        parent = snapshot.topics[parent].navigation.parent
+    navigation = {}
     for label, keys in (
-        ("親テーマ", [nav.parent] if nav.parent else []),
+        ("ancestors", reversed(ancestors)),
         (
-            "子テーマ",
+            "children",
             sorted(k for k, t in snapshot.topics.items() if t.navigation.parent == topic.topic_id),
         ),
-        ("関連テーマ", nav.related),
+        ("related", nav.related),
     ):
+        navigation[label] = []
         for key in keys:
             if snapshot.topics[key].public:
-                navigation.append(
+                navigation[label].append(
                     {
-                        "label": label,
                         "title": snapshot.topics[key].title,
                         "url": relative_url(path, snapshot.paths[key] / "index.html"),
+                        "count": len(snapshot.topics[key].entries),
                     }
                 )
     return TEMPLATES.get_template("topic.html").render(

@@ -1,0 +1,270 @@
+schema_version: 1
+topic_id: lunar-charging-sheath
+title: 電流収支・光電子シース
+question: 月面の電位と、その上に広がる光電子シースを決める電流・材料特性・プラズマ条件。
+review:
+- heading: 電流の釣り合いと電子放出
+  paragraphs:
+  - '[@P000002]の電流収支は、プラズマの電子・イオンが運ぶ電荷と、光電子・二次電子として出ていく電荷を釣り合わせる。放出特性を測る[@P000001]と、月面電場やシースを整理する[@P000020]を併せて読むと、材料特性から表面電位へ進む筋道が分かる。[@P000038]は太陽風と太陽放射を変え、環境条件への応答を調べた。'
+- heading: 単一の表面電位から、空間構造へ
+  paragraphs:
+  - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar
+    Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]、イオン温度を組み込む最近の理論は[@P000055]に進める。
+public: true
+scope:
+  include:
+  - 電流収支と材料特性
+  - シースの構造と検証
+  exclude: []
+navigation:
+  parent: lunar-charging
+  related: []
+groups:
+- id: balance
+  title: 電流収支と材料特性
+- id: structure
+  title: シースの構造と検証
+entries:
+- paper_id: P000001
+  group: balance
+  role: 月試料の光電子放出
+  summary:
+    question: 月試料の光電子放出は、どのようなシースを作るか。
+    method: 月試料の放出収率・電子分布を測り、シースを近似計算。
+    contribution: 月試料の電子分布とMaxwell近似の高エネルギー側のずれを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000001
+      version_id: V1
+      url: https://ui.adsabs.harvard.edu/abs/1972LPSC....3.2655F/abstract
+      source_type: full_text
+      locator: pp.2655,2662
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000002
+  group: balance
+  role: 電流収支の基礎
+  summary:
+    question: 日照とプラズマ環境によって、月面電位はどう変わるか。
+    method: 電子・イオンの流入と、光電子・二次電子の放出を電流収支で計算。
+    contribution: 昼側の正帯電と夜側・高温プラズマ中の負帯電を、電流の釣り合いで整理。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000002
+      version_id: V1
+      url: https://doi.org/10.1007/978-94-010-2647-5_22
+      source_type: abstract
+      locator: p.347 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000020
+  group: balance
+  role: 月面電場とシースの初期像
+  summary:
+    question: 月面電位・電場・プラズマシースは、どのように結び付くか。
+    method: 初期の月面観測を踏まえ、帯電とシースの理論を整理。
+    contribution: 昼夜の電気的環境を、表面電位と周辺プラズマの両面から論じた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000038
+  group: balance
+  role: 太陽風・日照条件への応答
+  summary:
+    question: 太陽風と日照の変化は、月面電位にどう効くか。
+    method: プラズマ条件と太陽放射を変えて、表面の電流収支を計算。
+    contribution: 電子・イオンの条件と照射条件に対する帯電の感度を整理。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000007
+  group: structure
+  role: シースと浮遊条件
+  summary:
+    question: 電子分布と帯電の時間変化は、粒子の浮遊をどう変えるか。
+    method: 正午の平坦面を一次元PICで計算し、粒子の帯電・軌道を追跡。
+    contribution: 浮遊平衡点への到達は保証されない。表面からの剥離は対象外。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000007
+      version_id: V1
+      url: https://doi.org/10.1029/2010JA015286
+      source_type: full_text
+      locator: §2.1・考察（PDF pp.2,8）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000011
+  group: structure
+  role: 半解析解とPIC
+  summary:
+    question: 太陽風電子の流れを含むシースを半解析解で再現できるか。
+    method: 半解析解を一次元PICで検証し、Maxwell・κ分布の差も比較。
+    contribution: 半解析解とPICが整合。平均的な太陽風で電子分布による差も小さい。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000011
+      version_id: V2
+      url: https://doi.org/10.1109/TPS.2021.3110946
+      source_type: full_text
+      locator: 要旨・§V（著者最終稿 pp.1–2,11–12）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V2
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000030
+  group: structure
+  role: 光電子シースの室内計測
+  summary:
+    question: UV照射で生じる光電子シースを実験室で測れるか。
+    method: UV光源を用いて表面から電子を放出させ、近傍シースを計測。
+    contribution: 光電子が作る電気的構造を、室内実験で調べる手法を提示。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000033
+  group: structure
+  role: 昼側の非単調シース
+  summary:
+    question: 日照域の上空に、負電位の領域は形成されるか。
+    method: Lunar Prospectorの電子観測と一次元PIC計算を比較。
+    contribution: 磁気圏プラズマシート中の昼側で、非単調な電位構造を支持する結果を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000033
+      version_id: V1
+      url: https://doi.org/10.1029/2010gl046119
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000036
+  group: structure
+  role: ARTEMISとPICの比較
+  summary:
+    question: 磁気圏尾部の光電子シースを、観測と計算で説明できるか。
+    method: ARTEMIS-P1の電子観測を、一次元PICシース計算と比較。
+    contribution: 非単調な電位分布を再現し、電子温度に加えてイオン温度の影響を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000036
+      version_id: V1
+      url: https://doi.org/10.1029/2011gl050321
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000055
+  group: structure
+  role: イオン温度と光電子シース
+  summary:
+    question: 有限のイオン温度は、光電子シースをどう変えるか。
+    method: イオンの熱圧力を含む運動方程式とPoisson方程式を解く。
+    contribution: シースの厚さと電位分布、光電子の捕捉がイオン温度で変わることを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000055
+      version_id: V1
+      url: https://arxiv.org/abs/2608.19926
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: null
+  scope_period: 制限なし
+  provider_names: []
+  queries: []
+  coverage_note: 未記録
+  limitations: []
+  changes: 新規作成
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

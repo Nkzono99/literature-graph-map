@@ -1,46 +1,48 @@
 schema_version: 1
 topic_id: lunar-charging
-title: 月面帯電：光電子シース・宇宙環境・地形・ダスト
-question: 月面の電位は何で決まり、日照・宇宙環境・地形・粒子の配置によってどう変わるか。
+title: 月面帯電
+question: 月面の電位、光電子シース、ダストの帯電と移動を、基礎・観測・地形・材料・探査技術から整理する。
 review:
-- heading: 月面の電位は、入る電荷と出る電荷の釣り合いで決まる
+- heading: 月面電位から、表面の上に広がるシースへ
   paragraphs:
-  - 月面には太陽風などの電子・イオンが流れ込み、紫外線や粒子の衝突によって電子が放出される。その収支が表面の電位を決める。光電子を失う日照面は正に、電子の流入が優勢な日陰は負に帯電しやすい。月面帯電を読む出発点は、この電流の釣り合いを整理した[@P000002]にある。日照だけでなく、周囲のプラズマの温度や密度も釣り合いを変えるため、月面電位は場所と時間によって変わる。
-  - 放出された電子は表面近くにとどまり、電位が空間的に変化する層、シースを作る。月試料から出る光電子の分布を測った[@P000001]は、その計算に使う材料特性を与えた。この分布を取り入れた[@P000007]は、粒子と電場を追跡するPIC計算でシースとダストの浮遊条件を調べている。[@P000011]は太陽風電子の流れを含む半解析解をPICと比較した。表面の電位を求める電流収支から、表面の上に広がる電場や粒子の運動へと、問いが具体化していく。
-- heading: 宇宙環境が変わると、日照面でも強い負帯電が起こる
+  - 月面にはプラズマの電子とイオンが流れ込み、紫外線や粒子の衝突で電子が放出される。その電流の釣り合いが表面電位を決める。月試料の光電子放出を測った[@P000001]と、電流収支を整理した[@P000002]が基礎になる。放出電子が表面近くにとどまると、電位が空間的に変わる層、シースが生じる。粒子と電場を追跡する[@P000007]のPIC計算、[@P000030]の室内計測、[@P000036]の観測との比較は、この構造をそれぞれ異なる方法で調べている。
+- heading: 月面電位を変える宇宙環境
   paragraphs:
-  - 軌道観測は、電流収支で予想される帯電を実際の宇宙環境に結び付ける。[@P000003]はLunar Prospectorの電子観測から、夜側の月面が探査機より平均約35 V低い電位にあると推定した。同じ観測の系列を追うと、地球の磁気圏尾部では日照域でも500 V以上の負電位差が現れ（[@P000004]）、太陽高エネルギー粒子イベントでは約−4.5 kVに達する（[@P000006]）。静かな夜側から磁気圏尾部、太陽活動に伴うイベントへと比較を広げることで、入射粒子の環境が帯電の強さを大きく変えることが見えてくる。これらの電位差は探査機を基準としている。
-- heading: 地形は粒子の届き方を変え、空洞の底を正にも帯電させる
+  - ApolloのCPLEEなどによる初期の粒子計測（[@P000018]）に続き、Lunar Prospectorは軌道上の電子から夜側の負帯電や、磁気圏尾部・太陽活動に伴う強い帯電を捉えた（[@P000003]、[@P000004]、[@P000006]）。[@P000025]は探査機電位の補正を含めて入射電流との対応を定量化し、[@P000027]はSEPイベントの観測と予測を比較した。ARTEMISでは昼側シースの遠隔計測（[@P000034]）や、微小隕石衝突による電流の寄与（[@P000045]）へと論点が広がる。かぐやによる地殻磁場と相対電位の研究（[@P000051]）、IM-1のROLSESによる電波・プラズマ波観測（[@P000056]）も、月面の電気的環境を知る手掛かりになる。
+- heading: 極域と空洞では、地形が粒子の到達を変える
   paragraphs:
-  - 平坦面で考えた電流収支に、地形による遮蔽が加わるとどうなるか。極域の影の段差を扱った[@P000008]では、太陽風の侵入と表面帯電が互いに影響し、二次電子の放出も陽子の流入を変えた。深い空洞へ上方から太陽風が入る[@P000012]では、側壁で電子が失われ、底へ届くイオンと電子の比が変わる。その結果、光電子放出がなくても底部が正に帯電しうる。側壁から供給される光電子は、むしろこの正電位を緩和する。
-  - この空洞モデルを出発点に、[@P000015]は空洞寸法とシース厚の比、[@P000016]は太陽風の流速と粒子の熱速度の比を調べた。前者は空洞が大きくなると底への電子供給が増えることを、後者は流速に応じて底部電位が負・正・ほぼゼロへ変わる条件を示す。地形の議論では、深さや幅だけでなく、シースや粒子運動の尺度と比べることが手掛かりになる。
-- heading: ダストの離脱を考えるには、粒子の隙間まで見る必要がある
+  - 永久影では光電子が出にくく、地形が太陽風も遮る。[@P000058]は電子とイオンの入り込み方の違いから、クレーター内の電気的環境を論じた。LOLA地形を使う[@P000031]、表面帯電とプラズマを解く[@P000008]、三次元のミニウェイクを扱う[@P000048]は、形状と流入条件を具体化している。深い空洞では、側壁で電子が失われると底へイオンが届きやすくなり、底部が正に帯電する場合がある（[@P000012]）。空洞寸法とシース厚の比による正電位の緩和は[@P000015]、流速と熱速度の比による底部電位の変化は[@P000016]へとつながる。南極の実地形を含む計算は[@P000017]が扱う。
+- heading: ダストの離脱と輸送を、粒子の電荷から考える
   paragraphs:
-  - 表面全体の電位から一粒のダストへ視点を移すと、材料の電子放出特性に加えて粒子の配置が効いてくる。[@P000005]は単粒子の光電子放出を測り、粒径や粒子電位への依存とバルク試料との差を報告した。さらに粉体では、放出された電子が粒子間の隙間へ再び捕らえられる。[@P000009]のpatched charge model（PCM）は、この再吸収による局所的な負帯電と反発力で、照射実験で見られた粒子の跳躍を説明する。シース中の浮遊を扱う[@P000007]と併せて読むと、付着した粒子が離脱する過程と、離脱後に電場中を動く過程をつなげて考えられる。
-  - 微小な配置や照射条件を変える研究も進んでいる。PCMの考え方は粒子と基板の隙間へ拡張され（[@P000013]）、光と低密度プラズマを同時に照射する実験では、単独照射より粉体の帯電と飛び出しが増えた（[@P000014]）。一方、[@P000010]は導電性による電荷の逃げ方が、粒子間の電場の上限を左右することを示す。ダストの動きまで見通すには、電子の放出・再吸収・導電損失を、粒子の形や接触状態と組み合わせて追う必要がある。
+  - Surveyorの地平線光（[@P000019]）を背景に、[@P000022]は電場で加速されたダストの上昇と落下を噴水モデルで表した。離脱そのものを理解するには、表面の平均電位に加えて粒子間の隙間や付着力が重要になる。電子照射下の移動実験（[@P000029]）、局所的な再吸収を扱うpatched
+    charge model（[@P000009]）、VUV照射下で正負の粒子を測る[@P000052]が、その機構を調べる。電子収率（[@P000053]）や導電損失（[@P000010]）は電荷の蓄積を左右する。
+  - 観測からは、LDEXが高度3–250 kmの測定範囲で浮遊ダスト密度に上限を与えた（[@P000039]）。一方、薄明クレーター付近の5つの増加イベントを局所的な噴水と解釈した研究もある（[@P000044]）。粒径・高度・地形・太陽風条件を対応させることが、実験での離脱と月上空での粒子分布を結び付ける鍵になる。
+- heading: 探査機の帯電と、付着ダストへの対策
+  paragraphs:
+  - 機器への影響を考える際は、表面間の電位差や材料の違いが問題になる。[@P000024]はNASCAP-2Kによる機体の帯電解析、[@P000054]は月ミッションの帯電環境を整理した。除塵には電極が作る電場を用いるEDS（[@P000028]）があり、イオン中和（[@P000049]）やEDSとUVを組み合わせたブラシ（[@P000050]）の特許もある。これらは、自然のダスト移動で扱う電荷と力の関係を、機器側から制御する技術として参照できる。
 public: true
 scope:
   include:
-  - 月面の電流収支と光電子シース
-  - 月面電位の軌道観測と宇宙環境
-  - クレーター・空洞の局所帯電
-  - 粒子の帯電機構と移動実験
-  exclude:
-  - 帯電対策装置の設計
-  - 摩擦帯電の詳細
-  - ダストの長距離輸送量の推定
+  - 電流収支・光電子シース
+  - 観測・宇宙環境
+  - 極域・クレーター・空洞
+  - ダスト・材料・静電輸送
+  - 帯電リスク・除塵技術
+  exclude: []
 navigation:
   parent: null
   related: []
 groups:
 - id: photoelectron-sheath
-  title: 光電子放出・電流収支・シース
+  title: 電流収支・光電子シース
 - id: environment
-  title: 軌道観測・宇宙環境・南極域モデル
+  title: 観測・宇宙環境
 - id: topography
-  title: 極域クレーター・深い空洞
+  title: 極域・クレーター・空洞
 - id: grain-charging
-  title: 粒子の帯電・局所電場・移動実験
+  title: ダスト・材料・静電輸送
+- id: engineering
+  title: 帯電リスク・除塵技術
 entries:
 - paper_id: P000001
   group: photoelectron-sheath
@@ -427,7 +429,7 @@ entries:
     recheck: false
   locked_fields: []
 - paper_id: P000017
-  group: environment
+  group: topography
   role: 南極実地形モデル
   summary:
     question: 南極の実地形と磁気圏環境は、表面電位・電場をどう変えるか。
@@ -450,15 +452,915 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000020
+  group: photoelectron-sheath
+  role: 月面電場とシースの初期像
+  summary:
+    question: 月面電位・電場・プラズマシースは、どのように結び付くか。
+    method: 初期の月面観測を踏まえ、帯電とシースの理論を整理。
+    contribution: 昼夜の電気的環境を、表面電位と周辺プラズマの両面から論じた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000030
+  group: photoelectron-sheath
+  role: 光電子シースの室内計測
+  summary:
+    question: UV照射で生じる光電子シースを実験室で測れるか。
+    method: UV光源を用いて表面から電子を放出させ、近傍シースを計測。
+    contribution: 光電子が作る電気的構造を、室内実験で調べる手法を提示。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000033
+  group: photoelectron-sheath
+  role: 昼側の非単調シース
+  summary:
+    question: 日照域の上空に、負電位の領域は形成されるか。
+    method: Lunar Prospectorの電子観測と一次元PIC計算を比較。
+    contribution: 磁気圏プラズマシート中の昼側で、非単調な電位構造を支持する結果を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000033
+      version_id: V1
+      url: https://doi.org/10.1029/2010gl046119
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000036
+  group: photoelectron-sheath
+  role: ARTEMISとPICの比較
+  summary:
+    question: 磁気圏尾部の光電子シースを、観測と計算で説明できるか。
+    method: ARTEMIS-P1の電子観測を、一次元PICシース計算と比較。
+    contribution: 非単調な電位分布を再現し、電子温度に加えてイオン温度の影響を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000036
+      version_id: V1
+      url: https://doi.org/10.1029/2011gl050321
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000038
+  group: photoelectron-sheath
+  role: 太陽風・日照条件への応答
+  summary:
+    question: 太陽風と日照の変化は、月面電位にどう効くか。
+    method: プラズマ条件と太陽放射を変えて、表面の電流収支を計算。
+    contribution: 電子・イオンの条件と照射条件に対する帯電の感度を整理。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000055
+  group: photoelectron-sheath
+  role: イオン温度と光電子シース
+  summary:
+    question: 有限のイオン温度は、光電子シースをどう変えるか。
+    method: イオンの熱圧力を含む運動方程式とPoisson方程式を解く。
+    contribution: シースの厚さと電位分布、光電子の捕捉がイオン温度で変わることを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000055
+      version_id: V1
+      url: https://arxiv.org/abs/2608.19926
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000018
+  group: environment
+  role: Apollo 14の月面粒子観測
+  summary:
+    question: 月面近傍の荷電粒子を、どのように測定したか。
+    method: CPLEEの装置・較正・設置とApollo 14観測成果を整理。
+    contribution: 初期の月面プラズマ計測と、その後のデータ解析の基盤をまとめた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000018
+      version_id: V1
+      url: https://hdl.handle.net/20.500.11753/96
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000023
+  group: environment
+  role: 全球の帯電分布
+  summary:
+    question: 月面電位の全球分布は、プラズマ環境から推定できるか。
+    method: Lunar Prospectorのプラズマデータと電流収支モデルを組み合わせる。
+    contribution: 太陽風・ウェイク・磁気圏尾部で変わる帯電環境を全球的に整理。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000023
+      version_id: V1
+      url: https://iro.uiowa.edu/esploro/outputs/conferenceProceeding/Lunar-surface-charging-A-global-perspective/9984429043102771
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000025
+  group: environment
+  role: 入射電流と月面電位
+  summary:
+    question: 入射粒子の電流は、実際の月面電位をどこまで説明するか。
+    method: 探査機電位を補正したLunar Prospectorの電子分布と電流収支を解析。
+    contribution: 周囲のプラズマを基準とする月面電位を求め、入射電流への応答を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000025
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013194
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000027
+  group: environment
+  role: SEP時の帯電予測
+  summary:
+    question: 太陽高エネルギー粒子イベントの強い負帯電を予測できるか。
+    method: 11回のSEPイベントでLunar Prospector観測と電流収支計算を比較。
+    contribution: 夜側で最大約−4.5 kVの帯電を扱い、8イベントで計算が観測を再現。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000027
+      version_id: V1
+      url: https://doi.org/10.1029/2009ja014113
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000032
+  group: environment
+  role: 月面電磁場観測の計画
+  summary:
+    question: 月面での電磁場観測を、次の探査でどう実現するか。
+    method: かぐやの磁場観測成果を踏まえ、月面での観測計画を検討。
+    contribution: 月面電磁場の計測設計を、SELENE-2に向けた課題として整理。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000034
+  group: environment
+  role: ARTEMISによる遠隔電位測定
+  summary:
+    question: 月から離れた探査機で、月面近傍の電位を推定できるか。
+    method: 月面と磁力線でつながったARTEMIS-P2の電子分布を解析。
+    contribution: 昼側シースに電位の極小を持つ構造を、遠隔観測から示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000034
+      version_id: V1
+      url: https://doi.org/10.1029/2011ja016542
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000041
+  group: environment
+  role: 太陽放射と光電子の対応
+  summary:
+    question: 太陽放射の変動は、昼側の光電子と電位をどう変えるか。
+    method: ARTEMISとApolloの光電子観測を、太陽放射モデルと組み合わせて解析。
+    contribution: 光電子フラックスと太陽放射の対応を示し、ローブ中の昼側電位を推定。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017gl073419
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000045
+  group: environment
+  role: 微小隕石衝突による帯電電流
+  summary:
+    question: 磁気圏ローブ中の夜側電位は、プラズマ電流だけで決まるか。
+    method: ARTEMISの月面電位推定と、微小隕石衝突を含む電流モデルを比較。
+    contribution: 予測より弱い負帯電を、衝突で生じる電流を加えることで説明した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000045
+      version_id: V1
+      url: https://doi.org/10.1029/2021gl094585
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000046
+  group: environment
+  role: 観測データからの宇宙天気条件
+  summary:
+    question: 実際の宇宙天気の変化を、月面帯電モデルへどう反映するか。
+    method: ARTEMISとOMNIから得たプラズマ条件を用いて帯電を計算。
+    contribution: 観測に基づく環境条件と月面電位予測をつなぐ枠組みを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000051
+  group: environment
+  role: 地殻磁場と相対電位
+  summary:
+    question: 地殻磁場は、日照面の電位分布をどう変えるか。
+    method: かぐやの光電子スペクトルと光電子モデルから相対電位を解析。
+    contribution: 磁気圏ローブ中で、強い地殻磁場の領域ほど正側の相対電位を持つ傾向を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000051
+      version_id: V1
+      url: https://doi.org/10.1029/2024ja033545
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000056
+  group: environment
+  role: IM-1搭載ROLSES
+  summary:
+    question: 月面の電波・プラズマ波環境を、着陸機でどう測るか。
+    method: IM-1搭載の4本のモノポールアンテナで、2 kHz–30 MHzを観測。
+    contribution: ROLSESの装置設計と、着陸後に得られた初期観測を報告。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000056
+      version_id: V1
+      url: https://arxiv.org/abs/2603.22600
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000031
+  group: topography
+  role: 実地形によるプラズマ遮蔽
+  summary:
+    question: 極域の地形は、太陽風の到達と帯電分布をどう変えるか。
+    method: LOLA地形データでプラズマの遮蔽と表面帯電を計算。
+    contribution: LCROSS衝突域を含む局所環境を、実地形から予測する枠組みを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000048
+  group: topography
+  role: 極域クレーターのミニウェイク
+  summary:
+    question: 極域クレーターの陰へ、太陽風はどのように入り込むか。
+    method: 三次元静電ハイブリッドPICで、km規模のクレーター周辺を計算。
+    contribution: 電子に富む負電位のプラズマ領域と、底面・壁面へ回り込むイオン流を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000048
+      version_id: V1
+      url: https://doi.org/10.1029/2024ja032764
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000058
+  group: topography
+  role: 永久影クレーターの電気的環境
+  summary:
+    question: 永久影クレーターでは、電子とイオンの届き方がどう異なるか。
+    method: 地形による太陽風遮蔽とプラズマの膨張を用いて帯電を推定。
+    contribution: イオンが届きにくい領域での負帯電と、探査機・ダストへの影響を論じた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000058
+      version_id: V1
+      url: https://doi.org/10.1029/2009je003464
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000019
+  group: grain-charging
+  role: 地平線光の観測
+  summary:
+    question: Surveyorが捉えた地平線付近の発光をどう説明するか。
+    method: 月の日没付近の画像から、地平線光の空間分布を解析。
+    contribution: 低高度のダストによる散乱光という解釈を提示し、静電浮遊研究の出発点となった。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000021
+  group: grain-charging
+  role: 月試料と模擬粒子の帯電
+  summary:
+    question: 月ダストの電子照射による帯電は、材料によってどう変わるか。
+    method: 月試料と模擬粒子の静電帯電を実験で比較。
+    contribution: 材料の電子放出特性を、ダスト帯電の実験的な検討対象にした。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000022
+  group: grain-charging
+  role: ダスト噴水モデル
+  summary:
+    question: 月面から飛び出した帯電ダストは、どこまで上昇するか。
+    method: 表面近傍の電場による加速と、離脱後の弾道運動をモデル化。
+    contribution: 粒径や帯電条件に応じたダストの上昇・落下を、動的な噴水として説明。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000026
+  group: grain-charging
+  role: プラズマ中のダスト移動実験
+  summary:
+    question: 粉体の中央と縁で、帯電と移動はどう変わるか。
+    method: 負にバイアスした導電板上のJSC-Mars-1粒子をプラズマ中で観察。
+    contribution: 正に帯電した粒子の外向き移動と、粉体層の縁で強まる帯電を報告。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000026
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013983
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000029
+  group: grain-charging
+  role: 電子ビームとダスト離脱
+  summary:
+    question: 電子照射は、粉体と基板の間にどのような電場を作るか。
+    method: 浮遊電位の黒鉛上に置いたJSC-Mars-1粒子へ、プラズマ中で電子を照射。
+    contribution: 二次電子放出の違いが水平・鉛直電場を強め、粒子の移動と離脱を促した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000029
+      version_id: V1
+      url: https://doi.org/10.1029/2010ja015465
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000037
+  group: grain-charging
+  role: 模擬レゴリスの電荷測定
+  summary:
+    question: レゴリス表面のダスト粒子は、どの程度の電荷を持つか。
+    method: 月レゴリス模擬物を使い、粒子の帯電を実験的に測定。
+    contribution: ダストの電荷を定量化し、浮遊・移動モデルに使う実験的制約を与えた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000039
+  group: grain-charging
+  role: LDEXによる浮遊ダストの制約
+  summary:
+    question: 月上空に静電的に浮遊したダストは検出されるか。
+    method: LADEE搭載LDEXの粒子衝突データを高度3–250 kmで解析。
+    contribution: 測定可能な粒径・高度の範囲で浮遊成分を検出せず、その密度に上限を与えた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000039
+      version_id: V1
+      url: https://doi.org/10.1002/2015gl064324
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000040
+  group: grain-charging
+  role: UV照射・付着力・粒子移動
+  summary:
+    question: UVで帯電した粒子の離脱を、付着力も含めて説明できるか。
+    method: 真空中のUV照射・電場・機械振動実験を、数値モデルと比較。
+    contribution: 粒子の付着力を制約し、微小な電場増幅が移動に与える影響を検討。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000040
+      version_id: V1
+      url: https://doi.org/10.1002/2015ja021738
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000042
+  group: grain-charging
+  role: 環境条件とダスト浮遊
+  summary:
+    question: 太陽風と紫外線の条件は、ダスト浮遊にどう影響するか。
+    method: 月面の電流収支と、帯電粒子に働く力を条件別に計算。
+    contribution: 宇宙環境の変動を、月面電位と粒子浮遊の条件へ結び付けた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000043
+  group: grain-charging
+  role: 粒子間空隙と浮遊モデル
+  summary:
+    question: 粒子間の微小空隙による帯電は、明暗境界の浮遊をどう変えるか。
+    method: 表面電場と粒子間空隙内の帯電を組み込んだ数値モデルを計算。
+    contribution: 粒子スケールの帯電を加え、ターミネーター付近の離脱条件を検討。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000044
+  group: grain-charging
+  role: 薄明クレーター付近のダスト増加
+  summary:
+    question: 薄明域のクレーター近傍で、ダストの増加は見られるか。
+    method: LDEXの5つの増加イベントを、地形と太陽風条件に対応付ける。
+    contribution: クレーター下流の粒子増加を報告し、局所的なダスト噴水での解釈を提示。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000044
+      version_id: V1
+      url: https://doi.org/10.1029/2020gl089593
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000047
+  group: grain-charging
+  role: 粗い表面の微視的電場
+  summary:
+    question: レゴリスの凹凸は、粒子スケールの電荷分離をどう作るか。
+    method: 粗い絶縁表面の計算・観測・実験を整理し、計測器開発と結び付ける。
+    contribution: 局所的な正負の帯電と強い電場を、月面表層を理解する研究課題として整理。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000047
+      version_id: V1
+      url: https://arxiv.org/abs/2410.05913
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000052
+  group: grain-charging
+  role: VUV照射下の双極性帯電
+  summary:
+    question: 光照射された粉体では、全粒子が同じ符号に帯電するか。
+    method: VUV照射した月ダスト模擬物の粒子電荷分布を測定。
+    contribution: 同じ照射条件で正負両方の粒子を測定し、平均電位だけでは表せない帯電を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000053
+  group: grain-charging
+  role: 模擬レゴリスの電子放出収率
+  summary:
+    question: 粒状レゴリスの電子放出は、組成や形状でどう変わるか。
+    method: 模擬物層などの二次電子・後方散乱電子の収率を広い入射エネルギーで測定。
+    contribution: 粒状材料の電子収率を定量化し、表面の組成・微細構造の影響を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000053
+      version_id: V1
+      url: https://doi.org/10.1109/tps.2025.3615913
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000057
+  group: grain-charging
+  role: レゴリス内部の電荷保持
+  summary:
+    question: 入射粒子が残す電荷は、低温のレゴリス内部にどう蓄積するか。
+    method: 粒子の侵入深さ・電荷保持を、電荷連続式・伝導・Poisson方程式で記述。
+    contribution: 永久影を念頭に、表面収支に内部の電荷蓄積と緩和を加える枠組みを提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000057
+      version_id: V1
+      url: https://arxiv.org/abs/2609.06496
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000024
+  group: engineering
+  role: 宇宙機の差動帯電
+  summary:
+    question: 月面の宇宙機で、材質や形状は帯電をどう変えるか。
+    method: NASCAP-2Kで候補機体の軌道・着陸時の帯電を計算。
+    contribution: 導電性材料の利用が、表面間の電位差と静電放電リスクの低減に有効とした。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000024
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20070031940
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000028
+  group: engineering
+  role: 電場による除塵
+  summary:
+    question: 月探査装置に付着したダストを、電気力で除去できるか。
+    method: 電極による静電力・誘電泳動力を使った除塵方式を検討。
+    contribution: 電場で粒子を動かすEDSの設計と、月探査機器への適用を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000035
+  group: engineering
+  role: 気体中の除塵・特許
+  summary:
+    question: 太陽電池上のダストを、電極で生む気流によって除去できるか。
+    method: 透明誘電体の両側に電極を置き、気体中の誘電体バリア放電を利用。
+    contribution: プラズマが誘起する流れでダストを動かす、大気のある環境向けの方式を提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000035
+      version_id: V1
+      url: https://patents.google.com/patent/US7999173B1/en
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000049
+  group: engineering
+  role: イオン中和・特許
+  summary:
+    question: 宇宙服に付着した帯電ダストを、どう除去するか。
+    method: 正負のイオンシャワーによる中和と、外部での粒子回収を組み合わせる。
+    contribution: 船内への持ち込みを減らすための、宇宙服の除塵装置を提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000049
+      version_id: V1
+      url: https://patents.google.com/patent/US11866203B2/en
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000050
+  group: engineering
+  role: EDS・UVブラシ・特許
+  summary:
+    question: ブラシに集めたダストを、電場とUVで取り除けるか。
+    method: ブラシの電極とUV照射部を組み合わせ、付着粒子の除去を制御。
+    contribution: 機械的なブラッシングと電気的な除塵を組み合わせる構成を提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000050
+      version_id: V1
+      url: https://patents.google.com/patent/WO2024118089A2/en
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000054
+  group: engineering
+  role: 月ミッションの帯電環境
+  summary:
+    question: 月探査の機体・搭乗員は、どのような帯電環境にさらされるか。
+    method: 自然環境と機体が作る環境を整理し、帯電予測・対策の論点を紹介。
+    contribution: Artemisなどの月ミッションで検討する帯電ハザードをまとめた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000054
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20250004470
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
 relations:
 - relation_id: R000001
-  graph_label: 測定した光電子分布を使用
   source: P000001
   target: P000007
   type: uses_method
   basis: explicit
   state: checked
   aspect: 光電子のエネルギー分布
+  graph_label: 測定した光電子分布を使用
   reason: 月試料から測った光電子分布をPICの放出条件に用い、Maxwell分布を仮定した場合との差を計算する。
   evidence:
   - paper_id: P000007
@@ -473,13 +1375,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000002
-  graph_label: 電流収支とPICを比較
   source: P000002
   target: P000007
   type: compares_with
   basis: comparison
   state: checked
   aspect: 表面電位から空間分布へ
+  graph_label: 電流収支とPICを比較
   reason: 電流収支による表面電位の整理と、電子を追跡するPICによるシース電位分布を比較できる。
   evidence:
   - paper_id: P000002
@@ -500,13 +1402,13 @@ relations:
   limitation: Poppeの計算対象は正午の平坦面。
   locked_fields: []
 - relation_id: R000003
-  graph_label: 放出分布と電子ドリフトを比較
   source: P000007
   target: P000011
   type: compares_with
   basis: comparison
   state: checked
   aspect: シースモデルの仮定
+  graph_label: 放出分布と電子ドリフトを比較
   reason: Poppeは月試料由来の光電子分布と粒子浮遊を、Zhaoは太陽風電子のドリフトを含む半解析解とPICの整合を扱う。
   evidence:
   - paper_id: P000007
@@ -527,13 +1429,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000004
-  graph_label: 日照域の強い負帯電へ拡張
   source: P000003
   target: P000004
   type: extends
   basis: explicit
   state: checked
   aspect: 日陰から日照域・高温プラズマへ
+  graph_label: 日照域の強い負帯電へ拡張
   reason: 2002年の静穏な夜側での電位差推定を踏まえ、地球磁気圏尾部の日照域も含む強い負帯電へ対象を広げた。
   evidence:
   - paper_id: P000004
@@ -548,13 +1450,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000005
-  graph_label: 電子ビーム診断をSEP時に適用
   source: P000003
   target: P000006
   type: uses_method
   basis: explicit
   state: checked
   aspect: 上向き電子ビームによる電位差推定
+  graph_label: 電子ビーム診断をSEP時に適用
   reason: 2002年に検証した上向き二次電子ビームによる電位差推定を、SEP時の高い背景計数下でも使える診断として採用した。
   evidence:
   - paper_id: P000006
@@ -569,13 +1471,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000006
-  graph_label: 磁気圏尾部とSEP時を比較
   source: P000006
   target: P000004
   type: compares_with
   basis: comparison
   state: checked
   aspect: 強い負帯電を生む宇宙環境
+  graph_label: 磁気圏尾部とSEP時を比較
   reason: 2005年の磁気圏尾部・プラズマシートと、2007年の太陽高エネルギー粒子イベントを、強い負帯電が生じる別条件として比較できる。
   evidence:
   - paper_id: P000006
@@ -596,13 +1498,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000007
-  graph_label: 負帯電の観測と計算を比較
   source: P000017
   target: P000004
   type: compares_with
   basis: comparison
   state: checked
   aspect: 磁気圏環境下の観測と予測
+  graph_label: 負帯電の観測と計算を比較
   reason: 磁気圏プラズマ下の強い負帯電を共通の論点として、軌道観測による推定と南極の実地形を用いた予測を対比できる。
   evidence:
   - paper_id: P000017
@@ -623,13 +1525,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000008
-  graph_label: 段差と空洞への流入を比較
   source: P000008
   target: P000012
   type: compares_with
   basis: comparison
   state: checked
   aspect: 地形とプラズマの侵入方向
+  graph_label: 段差と空洞への流入を比較
   reason: 両者とも地形による電子・イオンの到達差と表面帯電を扱うが、前者は影の段差へ横から膨張する太陽風、後者は深い空洞へ上から入射する流れを対象とする。
   evidence:
   - paper_id: P000008
@@ -650,13 +1552,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000009
-  graph_label: 空洞寸法とシース厚へ拡張
   source: P000012
   target: P000015
   type: extends
   basis: explicit
   state: checked
   aspect: 空洞寸法とシース厚
+  graph_label: 空洞寸法とシース厚へ拡張
   reason: 2025年論文は2023年の局所的な正帯電を先行結果として明示し、空洞寸法とシース厚の関係へ検討を広げる。
   evidence:
   - paper_id: P000015
@@ -671,13 +1573,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000010
-  graph_label: 流速による帯電の変化へ拡張
   source: P000012
   target: P000016
   type: extends
   basis: explicit
   state: checked
   aspect: 太陽風条件への拡張
+  graph_label: 流速による帯電の変化へ拡張
   reason: 2025年の流速論文は2023年のイオン駆動正帯電を明示して、代表流速の結果から流速と熱速度の比による三つの帯電領域へ検討を広げる。
   evidence:
   - paper_id: P000016
@@ -692,13 +1594,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000011
-  graph_label: 小さな空洞で流速依存を調査
   source: P000015
   target: P000016
   type: extends
   basis: explicit
   state: checked
   aspect: 小さな空洞での速度比依存
+  graph_label: 小さな空洞で流速依存を調査
   reason: 流速論文は寸法による正帯電の緩和を先行結果として明示し、小さな空洞を対象に流速と熱速度の比による変化を調べる。
   evidence:
   - paper_id: P000016
@@ -713,13 +1615,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000012
-  graph_label: 単粒子放出と再吸収を比較
   source: P000005
   target: P000009
   type: compares_with
   basis: comparison
   state: checked
   aspect: 単粒子の放出と粉体の再吸収
+  graph_label: 単粒子放出と再吸収を比較
   reason: 単粒子からの光電子放出と、粉体の空隙への電子再吸収を比較でき、放出特性と粒子配置による帯電を分けて読む手掛かりになる。
   evidence:
   - paper_id: P000005
@@ -740,13 +1642,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000013
-  graph_label: 電子再吸収と導電損失を比較
   source: P000009
   target: P000010
   type: compares_with
   basis: comparison
   state: checked
   aspect: 空隙での再吸収と導電損失
+  graph_label: 電子再吸収と導電損失を比較
   reason: どちらも粒子スケールの帯電を扱うが、Wangは空隙の電子再吸収と跳躍、Zimmermanは差動帯電・導電損失・局所強電場に重点を置く。
   evidence:
   - paper_id: P000009
@@ -767,13 +1669,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000014
-  graph_label: PCMを粒子と基板の隙間へ拡張
   source: P000009
   target: P000013
   type: extends
   basis: explicit
   state: checked
   aspect: 粒子間から粒子と基板の隙間へ
+  graph_label: PCMを粒子と基板の隙間へ拡張
   reason: 放出電子が微小空隙に再捕集されるPCMの考え方を保ち、粒子同士の空隙から単粒子と固体基板の隙間へ対象を広げる。
   evidence:
   - paper_id: P000013
@@ -788,13 +1690,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000015
-  graph_label: PCMに周囲電子の流入を追加
   source: P000009
   target: P000014
   type: extends
   basis: explicit
   state: checked
   aspect: 光電子放出と周囲電子の流入
+  graph_label: PCMに周囲電子の流入を追加
   reason: PCMの空隙内電位差と光電子再捕集を基礎に、周囲の電子流入が光電子放出と負帯電を増やす過程を加えて同時照射を調べる。
   evidence:
   - paper_id: P000014
@@ -809,13 +1711,13 @@ relations:
   limitation: charge pumpingの先行提案はYeo et al. (2022)。
   locked_fields: []
 - relation_id: R000016
-  graph_label: 粒子配置と照射条件を比較
   source: P000013
   target: P000014
   type: compares_with
   basis: comparison
   state: checked
   aspect: 粒子配置と照射条件
+  graph_label: 粒子配置と照射条件を比較
   reason: 電子再捕集を扱う実験同士として、単粒子と基板の隙間か粉体間の空隙か、電子ビーム中心かVUVと熱プラズマの同時照射かを比較できる。
   evidence:
   - paper_id: P000013
@@ -836,13 +1738,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000017
-  graph_label: 負帯電の理論と観測を比較
   source: P000002
   target: P000003
   type: compares_with
   basis: comparison
   state: checked
   aspect: 負帯電の理論と軌道観測
+  graph_label: 負帯電の理論と観測を比較
   reason: 日陰での負帯電を電流収支から考える枠組みと、軌道上の電子分布から月面電位差を推定する観測をつなぐ。
   evidence:
   - paper_id: P000002
@@ -863,13 +1765,13 @@ relations:
   limitation: Halekasの約−35 Vは探査機基準。理論値と比較する際は基準電位をそろえる。
   locked_fields: []
 - relation_id: R000018
-  graph_label: バルク試料と単粒子を比較
   source: P000001
   target: P000005
   type: compares_with
   basis: comparison
   state: checked
   aspect: 試料の配置と光電子放出
+  graph_label: バルク試料と単粒子を比較
   reason: 月試料のバルク表面と空中保持した単粒子を比べ、粒径・配置が光電子放出の推定に与える違いを読む。
   evidence:
   - paper_id: P000001
@@ -890,13 +1792,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000019
-  graph_label: 浮遊条件と離脱機構を比較
   source: P000007
   target: P000009
   type: compares_with
   basis: comparison
   state: checked
   aspect: シース内の浮遊と表面からの離脱
+  graph_label: 浮遊条件と離脱機構を比較
   reason: シース内に既にある粒子の浮遊条件と、粉体の空隙で帯電を増やして粒子を離脱させる機構を比較する。
   evidence:
   - paper_id: P000007
@@ -917,13 +1819,13 @@ relations:
   limitation: 浮遊の平衡点があることと、付着力を越えて表面から飛び出せることは別の問題。
   locked_fields: []
 - relation_id: R000020
-  graph_label: 平坦面と深い空洞の帯電を比較
   source: P000011
   target: P000012
   type: compares_with
   basis: comparison
   state: checked
   aspect: 平坦面から深い空洞へ
+  graph_label: 平坦面と深い空洞の帯電を比較
   reason: 平坦面上の一次元シースと、側壁で電子が失われる三次元の深い空洞を対比し、形状が電流収支を変えることを読む。
   evidence:
   - paper_id: P000011
@@ -944,13 +1846,13 @@ relations:
   limitation: null
   locked_fields: []
 - relation_id: R000021
-  graph_label: 理想地形と南極の実地形を比較
   source: P000008
   target: P000017
   type: compares_with
   basis: comparison
   state: checked
   aspect: 理想化した地形と南極の実地形
+  graph_label: 理想地形と南極の実地形を比較
   reason: 影の段差への太陽風侵入を追う運動論計算と、南極の標高データと変動するプラズマ環境を組み合わせるモデルを比較する。
   evidence:
   - paper_id: P000008
@@ -996,12 +1898,12 @@ survey:
   queries:
   - charging
   - lunar
-  coverage_note: Paperpile所蔵の文献を出発点に、4分類17本を選んだ初版。要旨・方法・結論の該当箇所と既存ノートを参照し、本文確認は関連箇所の確認を意味する。全頁の精読や網羅的なサーベイではない。
+  coverage_note: 月面帯電の基礎、観測、地形、ダスト、工学を扱う58件。会議資料・特許・プレプリントを含む。
   limitations:
   - Manka 1973は所蔵ファイルの冒頭2頁のみ。Xiao 2026はarXiv v1のプレプリント
   - 無料版やプレプリントの有無は一括調査していない。未確認は非公開を意味しない
   - 参考文献の追跡と各枝の文献追加は今後の更新で行う
-  changes: 公開ページをHTMLへ移行。調査ログの表示を外し、読む順番と説明文を整理した。
+  changes: 提供された文献リストを基に41件を追加し、5つの子テーマへ分類。書誌記録に合わせて著者・年・資料種別・要点を調整。
   publication_status: draft
   reviewed_at: null
 reading_notes: []

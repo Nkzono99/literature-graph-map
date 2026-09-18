@@ -1,0 +1,374 @@
+schema_version: 1
+topic_id: lunar-charging-observations
+title: 観測・宇宙環境
+question: ApolloからLunar Prospector、ARTEMIS、かぐや、IM-1へ。観測から読む月面の電気的環境。
+review:
+- heading: 電子観測から月面電位を推定する
+  paragraphs:
+  - 月面の粒子環境はApollo 14のCPLEE（[@P000018]）などで測られ、その後は軌道からの電子観測が蓄積された。Lunar Prospectorでは電子のロスコーンやビームが夜側電位の手掛かりになる（[@P000003]）。[@P000025]は探査機自身の電位を補正し、周囲のプラズマに対する月面電位と入射電流の関係を求めた。[@P000023]はその環境の違いを全球的に整理している。
+- heading: 磁気圏・太陽活動・衝突で変わる電流
+  paragraphs:
+  - 磁気圏尾部では日照域も強く負に帯電しうる（[@P000004]）。太陽高エネルギー粒子イベントを扱う[@P000006]、[@P000027]はkV級の負帯電を観測と電流収支で比較する。ARTEMISでは遠隔のシース推定（[@P000034]）、太陽放射と光電子の対応（[@P000041]）、微小隕石衝突が供給する電流（[@P000045]）が調べられた。[@P000046]はARTEMISとOMNIの条件を帯電予測へ組み込む。
+- heading: 場所の違いと、新しい月面計測
+  paragraphs:
+  - かぐやの光電子から相対電位を求めた[@P000051]は、地殻磁場の強さと電位分布を結び付けた。観測計画の資料としては月面電磁場計測を検討する[@P000032]がある。IM-1のROLSES（[@P000056]）は月面の電波・プラズマ波を測る装置であり、装置論文には設計と初期観測がまとまっている。
+public: true
+scope:
+  include:
+  - 観測手法と月面計測
+  - 宇宙環境・磁場・衝突
+  exclude: []
+navigation:
+  parent: lunar-charging
+  related: []
+groups:
+- id: measurements
+  title: 観測手法と月面計測
+- id: environment
+  title: 宇宙環境・磁場・衝突
+entries:
+- paper_id: P000003
+  group: measurements
+  role: 夜側の負帯電
+  summary:
+    question: 日陰の月面の負帯電を、軌道上から推定できるか。
+    method: Lunar Prospectorのロスコーンと二次電子ビームを解析。
+    contribution: 夜側月面は探査機より平均約35 V低い電位と推定。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000003
+      version_id: V1
+      url: https://doi.org/10.1029/2001GL014428
+      source_type: full_text
+      locator: 要旨・結論（PDF pp.1,3）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000018
+  group: measurements
+  role: Apollo 14の月面粒子観測
+  summary:
+    question: 月面近傍の荷電粒子を、どのように測定したか。
+    method: CPLEEの装置・較正・設置とApollo 14観測成果を整理。
+    contribution: 初期の月面プラズマ計測と、その後のデータ解析の基盤をまとめた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000018
+      version_id: V1
+      url: https://hdl.handle.net/20.500.11753/96
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000023
+  group: measurements
+  role: 全球の帯電分布
+  summary:
+    question: 月面電位の全球分布は、プラズマ環境から推定できるか。
+    method: Lunar Prospectorのプラズマデータと電流収支モデルを組み合わせる。
+    contribution: 太陽風・ウェイク・磁気圏尾部で変わる帯電環境を全球的に整理。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000023
+      version_id: V1
+      url: https://iro.uiowa.edu/esploro/outputs/conferenceProceeding/Lunar-surface-charging-A-global-perspective/9984429043102771
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000025
+  group: measurements
+  role: 入射電流と月面電位
+  summary:
+    question: 入射粒子の電流は、実際の月面電位をどこまで説明するか。
+    method: 探査機電位を補正したLunar Prospectorの電子分布と電流収支を解析。
+    contribution: 周囲のプラズマを基準とする月面電位を求め、入射電流への応答を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000025
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013194
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000032
+  group: measurements
+  role: 月面電磁場観測の計画
+  summary:
+    question: 月面での電磁場観測を、次の探査でどう実現するか。
+    method: かぐやの磁場観測成果を踏まえ、月面での観測計画を検討。
+    contribution: 月面電磁場の計測設計を、SELENE-2に向けた課題として整理。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000034
+  group: measurements
+  role: ARTEMISによる遠隔電位測定
+  summary:
+    question: 月から離れた探査機で、月面近傍の電位を推定できるか。
+    method: 月面と磁力線でつながったARTEMIS-P2の電子分布を解析。
+    contribution: 昼側シースに電位の極小を持つ構造を、遠隔観測から示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000034
+      version_id: V1
+      url: https://doi.org/10.1029/2011ja016542
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000056
+  group: measurements
+  role: IM-1搭載ROLSES
+  summary:
+    question: 月面の電波・プラズマ波環境を、着陸機でどう測るか。
+    method: IM-1搭載の4本のモノポールアンテナで、2 kHz–30 MHzを観測。
+    contribution: ROLSESの装置設計と、着陸後に得られた初期観測を報告。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000056
+      version_id: V1
+      url: https://arxiv.org/abs/2603.22600
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000004
+  group: environment
+  role: 日照域の強い負帯電
+  summary:
+    question: 磁気圏尾部では、日照域でも強い負帯電が起こるか。
+    method: Lunar Prospectorの電子ビームと入射電子スペクトルを比較。
+    contribution: 日照域でも500 V以上の負電位差を観測。主にプラズマシートで発生。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000004
+      version_id: V1
+      url: https://doi.org/10.1029/2005GL022627
+      source_type: full_text
+      locator: 要旨・結論（PDF pp.1,3–4）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000006
+  group: environment
+  role: SEP時の極端な帯電
+  summary:
+    question: SEPイベントは月面の負帯電をどこまで強めるか。
+    method: 月周回の電子ビームを、ACE・SOHOの粒子観測と比較。
+    contribution: SEP時に月面と探査機の電位差が約−4.5 kVに到達。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000006
+      version_id: V1
+      url: https://doi.org/10.1029/2006GL028517
+      source_type: full_text
+      locator: §2・§5–6（PDF pp.1–2,4）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000027
+  group: environment
+  role: SEP時の帯電予測
+  summary:
+    question: 太陽高エネルギー粒子イベントの強い負帯電を予測できるか。
+    method: 11回のSEPイベントでLunar Prospector観測と電流収支計算を比較。
+    contribution: 夜側で最大約−4.5 kVの帯電を扱い、8イベントで計算が観測を再現。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000027
+      version_id: V1
+      url: https://doi.org/10.1029/2009ja014113
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000041
+  group: environment
+  role: 太陽放射と光電子の対応
+  summary:
+    question: 太陽放射の変動は、昼側の光電子と電位をどう変えるか。
+    method: ARTEMISとApolloの光電子観測を、太陽放射モデルと組み合わせて解析。
+    contribution: 光電子フラックスと太陽放射の対応を示し、ローブ中の昼側電位を推定。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017gl073419
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000045
+  group: environment
+  role: 微小隕石衝突による帯電電流
+  summary:
+    question: 磁気圏ローブ中の夜側電位は、プラズマ電流だけで決まるか。
+    method: ARTEMISの月面電位推定と、微小隕石衝突を含む電流モデルを比較。
+    contribution: 予測より弱い負帯電を、衝突で生じる電流を加えることで説明した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000045
+      version_id: V1
+      url: https://doi.org/10.1029/2021gl094585
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000046
+  group: environment
+  role: 観測データからの宇宙天気条件
+  summary:
+    question: 実際の宇宙天気の変化を、月面帯電モデルへどう反映するか。
+    method: ARTEMISとOMNIから得たプラズマ条件を用いて帯電を計算。
+    contribution: 観測に基づく環境条件と月面電位予測をつなぐ枠組みを示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000051
+  group: environment
+  role: 地殻磁場と相対電位
+  summary:
+    question: 地殻磁場は、日照面の電位分布をどう変えるか。
+    method: かぐやの光電子スペクトルと光電子モデルから相対電位を解析。
+    contribution: 磁気圏ローブ中で、強い地殻磁場の領域ほど正側の相対電位を持つ傾向を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000051
+      version_id: V1
+      url: https://doi.org/10.1029/2024ja033545
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: null
+  scope_period: 制限なし
+  provider_names: []
+  queries: []
+  coverage_note: 未記録
+  limitations: []
+  changes: 新規作成
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

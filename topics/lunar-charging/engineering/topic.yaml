@@ -1,0 +1,185 @@
+schema_version: 1
+topic_id: lunar-charging-engineering
+title: 帯電リスク・除塵技術
+question: 探査機の差動帯電と静電放電、機器や宇宙服に付着したダストへの対策。
+review:
+- heading: 差動帯電を機体設計へつなげる
+  paragraphs:
+  - 同じプラズマ環境でも、材質や日照が異なる表面は別々の電位になりうる。[@P000024]はNASCAP-2Kで候補宇宙機を計算し、導電性材料による電位差の低減を検討した。[@P000054]の発表資料は、月ミッションの自然・誘起帯電環境をまとめており、設計時に考えるハザードを見渡せる。
+- heading: 電場・中和・ブラシによる除塵
+  paragraphs:
+  - '[@P000028]のEDSは、電極が作る電場と静電力・誘電泳動力で粒子を移動させる。特許には、宇宙服のダストを正負のイオンで中和する[@P000049]と、ブラシへEDS・UVを組み合わせる[@P000050]がある。周辺技術として収録した[@P000035]は、気体中の誘電体バリア放電が生む流れを使う太陽電池除塵である。作用する媒体と力を押さえると、各方式の対象環境を見分けやすい。'
+public: true
+scope:
+  include:
+  - 帯電解析と環境
+  - 除塵技術と特許
+  exclude: []
+navigation:
+  parent: lunar-charging
+  related: []
+groups:
+- id: charging
+  title: 帯電解析と環境
+- id: removal
+  title: 除塵技術と特許
+entries:
+- paper_id: P000024
+  group: charging
+  role: 宇宙機の差動帯電
+  summary:
+    question: 月面の宇宙機で、材質や形状は帯電をどう変えるか。
+    method: NASCAP-2Kで候補機体の軌道・着陸時の帯電を計算。
+    contribution: 導電性材料の利用が、表面間の電位差と静電放電リスクの低減に有効とした。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000024
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20070031940
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000054
+  group: charging
+  role: 月ミッションの帯電環境
+  summary:
+    question: 月探査の機体・搭乗員は、どのような帯電環境にさらされるか。
+    method: 自然環境と機体が作る環境を整理し、帯電予測・対策の論点を紹介。
+    contribution: Artemisなどの月ミッションで検討する帯電ハザードをまとめた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000054
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20250004470
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000028
+  group: removal
+  role: 電場による除塵
+  summary:
+    question: 月探査装置に付着したダストを、電気力で除去できるか。
+    method: 電極による静電力・誘電泳動力を使った除塵方式を検討。
+    contribution: 電場で粒子を動かすEDSの設計と、月探査機器への適用を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution: []
+  inspection:
+    level: metadata_only
+    version_id: null
+    checked_by: null
+    checked_at: null
+    recheck: false
+  locked_fields: []
+- paper_id: P000035
+  group: removal
+  role: 気体中の除塵・特許
+  summary:
+    question: 太陽電池上のダストを、電極で生む気流によって除去できるか。
+    method: 透明誘電体の両側に電極を置き、気体中の誘電体バリア放電を利用。
+    contribution: プラズマが誘起する流れでダストを動かす、大気のある環境向けの方式を提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000035
+      version_id: V1
+      url: https://patents.google.com/patent/US7999173B1/en
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000049
+  group: removal
+  role: イオン中和・特許
+  summary:
+    question: 宇宙服に付着した帯電ダストを、どう除去するか。
+    method: 正負のイオンシャワーによる中和と、外部での粒子回収を組み合わせる。
+    contribution: 船内への持ち込みを減らすための、宇宙服の除塵装置を提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000049
+      version_id: V1
+      url: https://patents.google.com/patent/US11866203B2/en
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000050
+  group: removal
+  role: EDS・UVブラシ・特許
+  summary:
+    question: ブラシに集めたダストを、電場とUVで取り除けるか。
+    method: ブラシの電極とUV照射部を組み合わせ、付着粒子の除去を制御。
+    contribution: 機械的なブラッシングと電気的な除塵を組み合わせる構成を提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000050
+      version_id: V1
+      url: https://patents.google.com/patent/WO2024118089A2/en
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+relations: []
+view:
+  sort:
+  - year
+  - first_author
+  - paper_id
+  overview_nodes: []
+  graphs: []
+  graph_nodes: 20
+  graph_edges: 30
+survey:
+  searched_at: null
+  scope_period: 制限なし
+  provider_names: []
+  queries: []
+  coverage_note: 未記録
+  limitations: []
+  changes: 新規作成
+  publication_status: draft
+  reviewed_at: null
+reading_notes: []

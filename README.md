@@ -1,6 +1,6 @@
 # テーマ別文献マップ
 
-テーマごとに文献と要点を整理し、一覧や概説の引用から参照できる文献マップです。現在は月面帯電の17文献を収録しています。
+テーマごとに文献と要点を整理し、一覧や概説の引用から参照できる文献マップです。[月面帯電](https://nkzono99.github.io/literature-graph-map/topics/lunar-charging/)では、全体の一覧と、電流収支・観測・地形・ダスト・工学の子テーマを用意しています。
 
 公開先は [GitHub Pages](https://nkzono99.github.io/literature-graph-map/) です。
 

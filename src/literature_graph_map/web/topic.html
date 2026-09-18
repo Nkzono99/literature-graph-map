@@ -1,19 +1,4 @@
 {% extends "base.html" %}
-{% block navigation %}
-<nav aria-label="このテーマの目次">
-  <a class="topic-current" href="#main"><span>{{ topic.title }}</span><span class="nav-count">{{ topic.entries | length }}</span></a>
-  <div class="section-nav">
-  {% if navigation.children %}<a href="#subtopics">子テーマ</a>{% endif %}
-  {% if topic.review %}<a href="#review">研究の概観</a>{% endif %}
-  <a href="#papers">文献一覧</a>
-  {% if topic.reading_notes %}<a href="#reading">文献をたどる</a>{% endif %}
-  </div>
-  <div class="group-nav">
-  <p class="sidebar-caption">分類</p>
-  {% for group in groups %}<a href="#group-{{ group.id }}"><span>{{ group.title }}</span><span class="nav-count">{{ group.entries | length }}</span></a>{% endfor %}
-  </div>
-</nav>
-{% endblock %}
 {% block content %}
 <header class="page-header">
   <nav class="breadcrumb" aria-label="パンくず"><a href="{{ home_url }}">テーマ一覧</a>{% for item in navigation.ancestors %}<span aria-hidden="true">/</span><a href="{{ item.url }}">{{ item.title }}</a>{% endfor %}<span aria-hidden="true">/</span><span aria-current="page">{{ topic.title }}</span></nav>

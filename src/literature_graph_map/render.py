@@ -173,6 +173,7 @@ def review_paragraph(text: str, citations: dict[str, str]) -> Markup:
 def page_context(snapshot: Snapshot, path: Path) -> dict:
     topics = {
         key: {
+            "id": key,
             "title": topic.title,
             "url": relative_url(path, snapshot.paths[key] / "index.html"),
             "count": len(topic.entries),

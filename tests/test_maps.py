@@ -1,3 +1,4 @@
+from html.parser import HTMLParser
 from pathlib import Path
 
 import pytest
@@ -341,6 +342,53 @@ def test_nested_themes_and_private_parent_remain_reachable(tmp_path, snapshot):
     )
     orphan = (tmp_path / "_site/topics/orphan/index.html").read_text(encoding="utf-8")
     assert "PRIVATE_PARENT" not in orphan and "../private/" not in orphan
+
+
+def test_sidebar_theme_destinations_are_consistent_across_pages(tmp_path, snapshot):
+    parent = Topic(
+        topic_id="parent",
+        title="親テーマ",
+        question="検証用",
+        review=[ReviewSection(heading="概観", paragraphs=["検証用の本文。"])],
+    )
+    snapshot.topics["parent"] = parent
+    snapshot.paths["parent"] = Path("topics/parent")
+    snapshot.topics["demo"].navigation.parent = "parent"
+    snapshot.paths["demo"] = Path("topics/parent/child")
+    render(tmp_path, snapshot)
+
+    class Links(HTMLParser):
+        def __init__(self, text):
+            super().__init__()
+            self.links = []
+            self.feed(text)
+
+        def handle_starttag(self, tag, attrs):
+            if tag == "a":
+                self.links.append(dict(attrs))
+
+    root = tmp_path / "_site"
+    pages = {
+        root / "index.html": set(),
+        root / "topics/parent/index.html": {"#subtopics", "#review", "#papers"},
+        root / "topics/parent/child/index.html": {"#papers"},
+    }
+    for path, anchors in pages.items():
+        page = path.read_text(encoding="utf-8")
+        links = Links(page.split('<aside class="sidebar">')[1].split("</aside>")[0]).links
+        destinations = {
+            (path.parent / link["href"]).resolve()
+            for link in links
+            if not link["href"].startswith("#")
+        }
+        assert destinations == set(pages)
+        assert {link["href"] for link in links if link["href"].startswith("#")} == anchors
+        current = [link for link in links if link.get("aria-current") == "page"]
+        if anchors:
+            assert len(current) == 1
+            assert (path.parent / current[0]["href"]).resolve() == path
+        else:
+            assert not current
 
 
 def test_export_only_public_allowlisted_data(tmp_path, snapshot):

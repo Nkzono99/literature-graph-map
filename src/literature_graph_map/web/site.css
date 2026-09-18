@@ -45,10 +45,11 @@ section, article, main { scroll-margin-top: 1.5rem; }
 .sidebar nav a:hover { color: var(--accent); background: var(--accent-soft); border-radius: .25rem; }
 .sidebar nav .topic-current { color: var(--accent); background: var(--accent-soft); border-left: 2px solid var(--accent); border-radius: .25rem; font-weight: 600; line-height: 1.65; }
 .nav-count { flex-shrink: 0; margin-left: auto; font-family: var(--mono); font-size: .6875rem; font-weight: 400; }
-.section-nav { margin-top: .75rem; }
-.group-nav { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.sidebar-menu > summary { display: none; }
+.page-toc { margin: .35rem 0 .75rem .75rem; padding-left: .65rem; border-left: 1px solid var(--line); }
+.sidebar .section-nav { margin: 0; padding: 0; border: 0; }
+.sidebar .page-toc a { padding: .25rem .5rem; font-size: .75rem; }
 .sidebar-caption { font-size: .6875rem; margin: 0 .5rem .5rem; }
-.group-nav a { line-height: 1.65; }
 main { min-width: 0; padding: 1.75rem clamp(1.5rem, 3.6vw, 3.5rem) 3rem; }
 .page-header { padding-bottom: 2rem; overflow-wrap: anywhere; }
 .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .8rem; color: var(--muted); font-size: .75rem; margin-bottom: 1.25rem; }
@@ -119,10 +120,11 @@ summary { cursor: pointer; }
 @media (max-width: 64rem) {
   .layout { grid-template-columns: minmax(0, 1fr); }
   .sidebar { padding: .6rem 1.5rem; border-right: 0; border-bottom: 1px solid var(--line); }
-  .sidebar-inner { position: static; max-height: none; overflow: visible; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; align-items: center; padding: 0; }
+  .sidebar-inner { position: static; max-height: none; overflow: visible; padding: 0; }
   .back-link { margin: 0; padding: .4rem 0; }
-  .sidebar-label, .sidebar nav .topic-current, .group-nav, .sidebar .library-nav { display: none; }
-  .section-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; }
+  .sidebar-label { display: none; }
+  .sidebar-menu > summary { display: list-item; padding: .4rem 0; }
+  .sidebar-menu[open] > summary { margin-bottom: .5rem; }
   .sidebar nav a { padding: .4rem .5rem; }
   main { padding-top: 1.5rem; }
 }
@@ -130,7 +132,6 @@ summary { cursor: pointer; }
   .site-header { padding: .9rem 1rem; }
   .site-header > span { display: none; }
   .sidebar { padding: .5rem 1rem; }
-  .sidebar-inner { gap: .25rem 1rem; }
   main { padding: 1.25rem 1rem 2rem; }
   h1 { font-size: 1.5rem; }
   .breadcrumb { margin-bottom: 1rem; }

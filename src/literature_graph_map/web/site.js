@@ -1,3 +1,9 @@
+const sidebarMenu = document.querySelector('.sidebar-menu');
+const compactSidebar = window.matchMedia('(max-width: 64rem)');
+const updateSidebar = () => { sidebarMenu.open = !compactSidebar.matches; };
+updateSidebar();
+compactSidebar.addEventListener('change', updateSidebar);
+
 const form = document.querySelector('.paper-filter');
 if (form) {
   const search = document.querySelector('#paper-search');

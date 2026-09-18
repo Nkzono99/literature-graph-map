@@ -1,0 +1,25 @@
+<details class="sidebar-menu" open>
+  <summary>テーマ・ページ内目次</summary>
+  <nav class="library-nav" aria-label="テーマとページ内目次">
+    <ul class="theme-tree">
+      {% for item in topic_links recursive %}
+      {% set current = topic is defined and item.id == topic.topic_id %}
+      <li>
+        <a href="{{ item.url }}"{% if current %} class="topic-current" aria-current="page"{% endif %}><span>{{ item.title }}</span><span class="nav-count">{{ item.count }}</span></a>
+        {% if current %}
+        <div class="page-toc">
+          <p class="sidebar-caption">このページ内</p>
+          <ul class="section-nav" aria-label="{{ topic.title }}のページ内目次">
+            {% if navigation.children %}<li><a href="#subtopics">子テーマ <span aria-hidden="true">↓</span></a></li>{% endif %}
+            {% if topic.review %}<li><a href="#review">研究の概観 <span aria-hidden="true">↓</span></a></li>{% endif %}
+            <li><a href="#papers">文献一覧 <span aria-hidden="true">↓</span></a></li>
+            {% if topic.reading_notes %}<li><a href="#reading">文献をたどる <span aria-hidden="true">↓</span></a></li>{% endif %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if item.children %}<ul>{{ loop(item.children) }}</ul>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</details>

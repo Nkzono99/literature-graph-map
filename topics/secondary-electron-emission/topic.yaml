@@ -9,8 +9,7 @@ review:
   - 粒子計算では、衝突のたびに何個の電子を、どのエネルギーで放出するかを決める必要がある。[@P000091]は銅とステンレス鋼の測定に合わせた確率モデルを示した。PICへ放出過程を組み込む際の出発点になり、材料の収率と放出電子の分布を一緒に扱える。
 - heading: 月試料を粉体・孤立粒子・軌道観測で比べる
   paragraphs:
-  - 月試料の初期測定として、[@P000150]はApollo 14の粉体を用い、放出収率とエネルギー分布を調べた。Apollo 16土壌を扱う[@P000151]は、40–2000
-    eVでの総電子収率と、10 keV照射下での粒子移動を測定している。一方、[@P000153]は0.2–13 µmの粒子を個別に保持して帯電を測った。孤立粒子と粉体層では電子が周囲の粒子へ戻る経路が異なるため、粒径と試料の置き方が比較の手掛かりになる。
+  - 月試料の初期測定として、[@P000150]はApollo 14の粉体を用い、放出収率とエネルギー分布を調べた。単粒子の材料比較では、[@P000166]がApollo 17・MLS-I・JSC-1の帯電を電子照射で測り、実月試料の収率がMLS-Iに近いと推定した。Apollo 16土壌を扱う[@P000151]は、40–2000 eVでの総電子収率と、10 keV照射下での粒子移動を測定している。一方、[@P000153]は0.2–13 µmの粒子を個別に保持して帯電を測った。孤立粒子と粉体層では電子が周囲の粒子へ戻る経路が異なるため、粒径と試料の置き方が比較の手掛かりになる。
   - 観測へ進むと、[@P000152]は月が地球磁気圏内にある夜側のデータから、月面を出入りする電子電流を比較した。推定した実効収率は、比較対象の実験室試料の約3分の1だった。模擬レゴリス層を測る[@P000053]と併せると、材料組成や微細構造から、表面を脱出する電子の量へ議論をつなげられる。
 - heading: 強い放出がシースの電位構造を変える
   paragraphs:
@@ -683,6 +682,40 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000166
+  group: lunar-materials
+  role: Apollo 17粒子の電子衝撃帯電
+  summary:
+    question: 実月試料と模擬粒子では、電子照射による帯電がどう異なるか。
+    method: Apollo 17・MLS-I・JSC-1の単粒子へ20–90 eVの電子を照射し、電荷を測定。
+    contribution: Apollo 17の二次電子収率は両模擬試料の中間で、MLS-Iに近いと推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000166
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000166
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000166
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
 relations: []
 view:
   sort:

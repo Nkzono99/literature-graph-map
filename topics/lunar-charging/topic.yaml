@@ -9,6 +9,7 @@ review:
 - heading: 月面電位を変える宇宙環境
   paragraphs:
   - ApolloのCPLEEなどによる初期の粒子計測（[@P000018]）に続き、Lunar Prospectorは軌道上の電子から夜側の負帯電や、磁気圏尾部・太陽活動に伴う強い帯電を捉えた（[@P000003]、[@P000004]、[@P000006]）。[@P000025]は探査機電位の補正を含めて入射電流との対応を定量化し、[@P000027]はSEPイベントの観測と予測を比較した。ARTEMISでは昼側シースの遠隔計測（[@P000034]）や、微小隕石衝突による電流の寄与（[@P000045]）へと論点が広がる。かぐやによる地殻磁場と相対電位の研究（[@P000051]）、IM-1のROLSESによる電波・プラズマ波観測（[@P000056]）も、月面の電気的環境を知る手掛かりになる。
+  - 昼側の正電位も、環境に応じて変わる。[@P000162]は太陽活動による光電子放出の変動を調べ、[@P000161]は別の光電子モデルとARTEMIS観測から日照・プラズマ条件への依存を推定した。太陽風の流入側では、[@P000163]が磁気異常の反射陽子による広域の擾乱を論じている。
 - heading: 極域と空洞では、地形が粒子の到達を変える
   paragraphs:
   - 永久影では光電子が出にくく、地形が太陽風も遮る。[@P000058]は電子とイオンの入り込み方の違いから、クレーター内の電気的環境を論じた。LOLA地形を使う[@P000031]、表面帯電とプラズマを解く[@P000008]、三次元のミニウェイクを扱う[@P000048]は、形状と流入条件を具体化している。深い空洞では、側壁で電子が失われると底へイオンが届きやすくなり、底部が正に帯電する場合がある（[@P000012]）。空洞寸法とシース厚の比による正電位の緩和は[@P000015]、流速と熱速度の比による底部電位の変化は[@P000016]へとつながる。南極の実地形を含む計算は[@P000017]が扱う。
@@ -17,9 +18,11 @@ review:
   - Surveyorの地平線光（[@P000019]）を背景に、[@P000022]は電場で加速されたダストの上昇と落下を噴水モデルで表した。離脱そのものを理解するには、表面の平均電位に加えて粒子間の隙間や付着力が重要になる。電子照射下の移動実験（[@P000029]）、局所的な再吸収を扱うpatched
     charge model（[@P000009]）、VUV照射下で正負の粒子を測る[@P000052]が、その機構を調べる。電子収率（[@P000053]）や導電損失（[@P000010]）は電荷の蓄積を左右する。
   - 観測からは、LDEXが高度3–250 kmの測定範囲で浮遊ダスト密度に上限を与えた（[@P000039]）。一方、薄明クレーター付近の5つの増加イベントを局所的な噴水と解釈した研究もある（[@P000044]）。粒径・高度・地形・太陽風条件を対応させることが、実験での離脱と月上空での粒子分布を結び付ける鍵になる。
+  - 実月試料の電子衝撃帯電は、Apollo 17と模擬粒子を比べた[@P000166]にさかのぼれる。飛翔後の電荷も変わり続ける。[@P000167]は光電子シース中で連続・離散帯電を比べ、[@P000165]は着陸機プルームで生じた摩擦電荷が停止後の輸送へ残る過程を計算した。
 - heading: 探査機の帯電と、付着ダストへの対策
   paragraphs:
   - 機器への影響を考える際は、表面間の電位差や材料の違いが問題になる。[@P000024]はNASCAP-2Kによる機体の帯電解析、[@P000054]は月ミッションの帯電環境を整理した。除塵には電極が作る電場を用いるEDS（[@P000028]）があり、イオン中和（[@P000049]）やEDSとUVを組み合わせたブラシ（[@P000050]）の特許もある。これらは、自然のダスト移動で扱う電荷と力の関係を、機器側から制御する技術として参照できる。
+  - 電子ビームを使う[@P000164]では、VUVを併用すると布上の模擬ダストが動き出しやすくなった。太陽に似た波長分布を用い、照射強度は月面より高い条件で調べている。
 lineage:
 - title: 電流収支から空間構造へ
   steps:
@@ -1387,6 +1390,244 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000161
+  group: environment
+  role: 昼側電位の統計と環境依存
+  summary:
+    question: 磁気圏ローブ中の昼側電位は、日照と周囲のプラズマにどう応答するか。
+    method: ARTEMISの光電子スペクトルをモデルと比較し、表面電位を統計的に推定。
+    contribution: 太陽天頂角・密度・電子温度・地殻磁場に対する電位の依存を整理した。
+  evidence_by_item:
+    question:
+    - paper_id: P000161
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
+      source_type: full_text
+      locator: §2–4
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000161
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
+      source_type: full_text
+      locator: §2–4
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000161
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
+      source_type: full_text
+      locator: §2–4
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000162
+  group: environment
+  role: 太陽活動と昼側の正電位
+  summary:
+    question: 太陽活動の変化は、月面の光電子放出と正電位をどこまで高めるか。
+    method: ARTEMIS長期観測と光電子モデルを照合し、電流収支から電位を計算。
+    contribution: 磁気圏ローブでフレア時に+100 Vを超える正電位を予測した。
+  evidence_by_item:
+    question:
+    - paper_id: P000162
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
+      source_type: full_text
+      locator: Abstract; §4 Conclusions
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000162
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
+      source_type: full_text
+      locator: Abstract; §4 Conclusions
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000162
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
+      source_type: full_text
+      locator: Abstract; §4 Conclusions
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000163
+  group: environment
+  role: 反射陽子による広域の太陽風擾乱
+  summary:
+    question: 磁気異常で反射された陽子は、周囲の太陽風をどこまで変えるか。
+    method: Chandrayaan-1のイオン計測から、SPA磁気群上空の偏向・加熱・減速を解析。
+    contribution: 高度約100 kmで続く擾乱から、広域のproto-magnetosheathを提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000163
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
+      source_type: full_text
+      locator: Abstract; §6 Conclusions
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000163
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
+      source_type: full_text
+      locator: Abstract; §6 Conclusions
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000163
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
+      source_type: full_text
+      locator: Abstract; §6 Conclusions
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000164
+  group: engineering
+  role: VUV照射下の電子ビーム除塵
+  summary:
+    question: 光電子放出は、電子ビームで付着ダストを除く条件をどう変えるか。
+    method: 太陽VUVに似た波長分布・高い照射強度で、布上の模擬粒子へ電子ビームを照射。
+    contribution: VUVを加えると移動開始に必要なビーム条件が下がり、除去効率が上がった。
+  evidence_by_item:
+    question:
+    - paper_id: P000164
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526000846
+      source_type: full_text
+      locator: Abstract; §3
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000164
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526000846
+      source_type: full_text
+      locator: Abstract; §3
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000164
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526000846
+      source_type: full_text
+      locator: Abstract; §3
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000165
+  group: engineering
+  role: プルーム中の帯電履歴と輸送
+  summary:
+    question: 噴射中に得た電荷は、エンジン停止後のダスト輸送にどう残るか。
+    method: 気固流れ・摩擦帯電・shifted OML帯電・静電力による運動を結合して計算。
+    contribution: 摩擦帯電の履歴が残る間、微粒子の輸送が平衡電荷を使う予測から大きく変わった。
+  evidence_by_item:
+    question:
+    - paper_id: P000165
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S1270963826015154
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000165
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S1270963826015154
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000165
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S1270963826015154
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000166
+  group: grain-charging
+  role: Apollo 17粒子の電子衝撃帯電
+  summary:
+    question: 実月試料と模擬粒子では、電子照射による帯電がどう異なるか。
+    method: Apollo 17・MLS-I・JSC-1の単粒子へ20–90 eVの電子を照射し、電荷を測定。
+    contribution: Apollo 17の二次電子収率は両模擬試料の中間で、MLS-Iに近いと推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000166
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000166
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000166
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000167
+  group: grain-charging
+  role: 離散帯電と飛翔中の電荷変化
+  summary:
+    question: 光電子シース中で、電荷の時間変化と離散性は粒子の軌道をどう変えるか。
+    method: 太陽スペクトルとκ分布電子を用い、離脱後の粒子の帯電と運動を連成計算。
+    contribution: 希薄プラズマでは離散帯電が軌道を変え、静止浮遊の成立を難しくすると示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
 relations:
 - relation_id: R000001
   source: P000001

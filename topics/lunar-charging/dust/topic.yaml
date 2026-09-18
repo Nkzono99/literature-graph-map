@@ -6,28 +6,33 @@ review:
 - heading: 光電子と二次電子は、粒子ごとに出入りする
   paragraphs:
   - 月ダストの帯電を定量化するには、電子放出と粒子電荷を測る必要がある。[@P000021]は月試料などの帯電、[@P000005]は単粒子の光電子放出、[@P000037]は模擬レゴリス表面の粒子電荷を扱う。VUV照射下で正負両方の粒子を測った[@P000052]は、粉体の平均電位だけでは個々の電荷を代表できないことを示す。材料の電子収率は[@P000053]から参照できる。
+  - 電子衝撃に対しては、[@P000166]がApollo 17の単粒子と2種類の模擬粒子を20–90 eVで比較した。電荷から推定する二次電子収率は材料によって異なり、模擬試料の選択を考える基準になる。
 - heading: 付着した粒子が離れるまで
   paragraphs:
   - プラズマ中の粉体の縁で起こる移動（[@P000026]）や、電子照射による基板との帯電差（[@P000029]）は、局所電場の役割を示した。[@P000009]のpatched
     charge modelは粒子間の空隙に再吸収される電子を扱い、[@P000043]はその帯電を浮遊モデルへ、[@P000013]は粒子と基板の隙間へと展開する。UV照射と付着力を扱う[@P000040]、光とプラズマの同時照射を扱う[@P000014]も、離脱条件を調べる実験として並べられる。電荷が残る時間には導電性（[@P000010]）も効き、粗い表面の研究方針（[@P000047]）や内部への蓄積モデル（[@P000057]）へ論点が広がる。
+  - この放出過程を除塵へ使う[@P000164]では、VUVと電子ビームを布上の模擬粒子へ同時に照射した。VUVで移動開始の条件が下がるという結果は、太陽に似た波長分布・月面より高い光強度の実験から得られている。
 - heading: 地平線光から、上空のダスト分布へ
   paragraphs:
   - Surveyorの地平線光（[@P000019]）は、低高度のダストを考える出発点になった。[@P000022]は電場で加速された粒子の噴水モデル、[@P000042]は環境条件と浮遊の関係を扱う。LDEXでは、高度3–250
     kmの測定範囲で浮遊ダストに上限を置く[@P000039]と、薄明クレーター付近の局所的な増加を論じる[@P000044]がある。それぞれの粒径・高度・地形を対応付けることで、離脱機構と輸送先を比較しやすくなる。
+- heading: 飛翔中の電荷と、離脱前の履歴
+  paragraphs:
+  - 粒子が動く間にも電子とイオンは出入りする。[@P000167]は光電子シース中の軌道を連続・離散帯電で比べ、希薄プラズマでの静止浮遊や繰り返す跳躍の成立条件を調べた。着陸時の[@P000165]では、噴射中の衝突で得た摩擦電荷が、停止後にプラズマとの平衡へ緩和する過程を追う。どちらも、運動と同じ時間軸で電荷を扱う点が比較の軸になる。
 lineage:
-- title: 浮遊モデルを観測で絞る
+- title: 飛翔中の帯電と輸送
   steps:
-  - paper_id: P000019
-    title: 地平線光をダスト散乱と解釈
-    significance: Surveyor画像の低高度の発光を読み解き、月面近くのダスト浮遊という問いを立てた。
   - paper_id: P000022
-    title: 浮遊の高さを噴水モデルで予測
-    significance: 電場による加速と弾道運動で、粒径・帯電条件から上昇と落下を説明した。
-    connection: 散乱光から運動の予測へ
-  - paper_id: P000039
-    title: 浮遊粒子の密度に上限を与える
-    significance: LADEE/LDEXの測定可能な粒径・高度範囲で、浮遊成分の密度を観測から制約した。
-    connection: 予測される浮遊成分を観測で絞る
+    title: 電場による上昇と落下をモデル化
+    significance: 粒径と帯電条件から、ダストが到達する高さを噴水モデルで予測した。
+  - paper_id: P000167
+    title: 電荷の時間変化と離散性を入れる
+    significance: 光電子シース中で帯電と運動を連成し、電子の出入りが軌道を変える条件を調べた。
+    connection: 固定した電荷から飛翔中の変化へ
+  - paper_id: P000165
+    title: 着陸時に得た電荷の履歴を追う
+    significance: プルーム停止後も摩擦電荷が残り、微粒子の輸送予測を変える過程を計算した。
+    connection: 動的帯電を自然シースとプルームで比較
 - title: 粒子が離脱する電荷を探る
   steps:
   - paper_id: P000029
@@ -59,7 +64,7 @@ groups:
 - id: mechanisms
   title: 局所帯電・付着・離脱
 - id: transport
-  title: 浮遊モデルとダスト観測
+  title: ダストの浮遊・輸送と観測
 entries:
 - paper_id: P000005
   group: properties
@@ -499,6 +504,142 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000164
+  group: mechanisms
+  role: VUV照射下の電子ビーム除塵
+  summary:
+    question: 光電子放出は、電子ビームで付着ダストを除く条件をどう変えるか。
+    method: 太陽VUVに似た波長分布・高い照射強度で、布上の模擬粒子へ電子ビームを照射。
+    contribution: VUVを加えると移動開始に必要なビーム条件が下がり、除去効率が上がった。
+  evidence_by_item:
+    question:
+    - paper_id: P000164
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526000846
+      source_type: full_text
+      locator: Abstract; §3
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000164
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526000846
+      source_type: full_text
+      locator: Abstract; §3
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000164
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526000846
+      source_type: full_text
+      locator: Abstract; §3
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000165
+  group: transport
+  role: プルーム中の帯電履歴と輸送
+  summary:
+    question: 噴射中に得た電荷は、エンジン停止後のダスト輸送にどう残るか。
+    method: 気固流れ・摩擦帯電・shifted OML帯電・静電力による運動を結合して計算。
+    contribution: 摩擦帯電の履歴が残る間、微粒子の輸送が平衡電荷を使う予測から大きく変わった。
+  evidence_by_item:
+    question:
+    - paper_id: P000165
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S1270963826015154
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000165
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S1270963826015154
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000165
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S1270963826015154
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000166
+  group: properties
+  role: Apollo 17粒子の電子衝撃帯電
+  summary:
+    question: 実月試料と模擬粒子では、電子照射による帯電がどう異なるか。
+    method: Apollo 17・MLS-I・JSC-1の単粒子へ20–90 eVの電子を照射し、電荷を測定。
+    contribution: Apollo 17の二次電子収率は両模擬試料の中間で、MLS-Iに近いと推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000166
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000166
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000166
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000167
+  group: transport
+  role: 離散帯電と飛翔中の電荷変化
+  summary:
+    question: 光電子シース中で、電荷の時間変化と離散性は粒子の軌道をどう変えるか。
+    method: 太陽スペクトルとκ分布電子を用い、離脱後の粒子の帯電と運動を連成計算。
+    contribution: 希薄プラズマでは離散帯電が軌道を変え、静止浮遊の成立を難しくすると示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
 relations: []
 view:
   sort:

@@ -17,6 +17,7 @@ review:
 - heading: 平面から小さな粒子へ
   paragraphs:
   - 球状ダストでは、電位によって曲がる粒子軌道が捕集電流を決める。[@P000094]は、電子を放出しない静止球について、軌道運動制限（OML）理論とPICを比較した。粒径とDebye長の比を変え、電荷、捕集電流、エネルギー流束を別々に評価している。表面電位から電荷を求めたい場合と、材料への粒子流入を求めたい場合では、参照する量を分けて読むと使いやすい。
+  - 月面の光電子シース中を動く粒子へ進むと、[@P000167]は位置と電荷を連成して追跡する。非Maxwell型の電子分布を含め、電荷を連続量で扱う場合と電子1個ずつの出入りで扱う場合を比較し、希薄な条件で軌道や浮遊の成立が変わることを示した。
 lineage:
 - title: 放出電子とシース電位
   steps:
@@ -483,6 +484,40 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000167
+  group: collection
+  role: 離散帯電と飛翔中の電荷変化
+  summary:
+    question: 光電子シース中で、電荷の時間変化と離散性は粒子の軌道をどう変えるか。
+    method: 太陽スペクトルとκ分布電子を用い、離脱後の粒子の帯電と運動を連成計算。
+    contribution: 希薄プラズマでは離散帯電が軌道を変え、静止浮遊の成立を難しくすると示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
 relations: []
 view:
   sort:

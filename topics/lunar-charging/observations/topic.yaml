@@ -9,9 +9,11 @@ review:
 - heading: 磁気圏・太陽活動・衝突で変わる電流
   paragraphs:
   - 磁気圏尾部では日照域も強く負に帯電しうる（[@P000004]）。太陽高エネルギー粒子イベントを扱う[@P000006]、[@P000027]はkV級の負帯電を観測と電流収支で比較する。ARTEMISでは遠隔のシース推定（[@P000034]）、太陽放射と光電子の対応（[@P000041]）、微小隕石衝突が供給する電流（[@P000045]）が調べられた。[@P000046]はARTEMISとOMNIの条件を帯電予測へ組み込む。
+  - 太陽活動が高まると、光電子電流も増える。[@P000162]はARTEMISの長期観測をモデルと照合し、フレア時の磁気圏ローブで+100 Vを超える正電位を予測した。[@P000161]は別の放出モデルで光電子のエネルギーずれを読み、昼側電位の日照・プラズマ依存を統計化している。
 - heading: 場所の違いと、新しい月面計測
   paragraphs:
   - かぐやの光電子から相対電位を求めた[@P000051]は、地殻磁場の強さと電位分布を結び付けた。観測計画の資料としては月面電磁場計測を検討する[@P000032]がある。IM-1のROLSES（[@P000056]）は月面の電波・プラズマ波を測る装置であり、装置論文には設計と初期観測がまとまっている。
+  - Chandrayaan-1の[@P000163]は、SPA磁気群上空で太陽風の偏向・加熱・減速が持続することを示した。著者らは反射陽子との相互作用によるproto-magnetosheathと解釈しており、上流で測った太陽風と月面近くの入射条件を結ぶ際に参照できる。
 lineage:
 - title: 粒子計測から表面電位を推定する
   steps:
@@ -26,19 +28,19 @@ lineage:
     title: 入射電流と月面電位を対応付ける
     significance: 探査機電位を補正して周囲のプラズマを基準にし、電流収支への応答を調べた。
     connection: 電位の基準を補正し電流収支と照合
-- title: 極端な帯電を捉え、予測する
+- title: 光電子から昼側電位の変動を読む
   steps:
-  - paper_id: P000004
-    title: 日照域にも強い負帯電を見いだす
-    significance: 磁気圏尾部の高温電子によって、日照面でも大きな負電位差が生じることを観測した。
-  - paper_id: P000006
-    title: SEP時の極端な負帯電を捉える
-    significance: 太陽高エネルギー粒子イベントで、月面と探査機の電位差が約−4.5 kVに達する例を示した。
-    connection: プラズマシートからSEPイベントへ
-  - paper_id: P000027
-    title: 複数イベントで予測を試す
-    significance: 11回のSEPイベントを電流収支計算と比べ、8イベントで観測を再現した。
-    connection: 事例の検出から帯電の予測へ
+  - paper_id: P000051
+    title: 地殻磁場と相対電位を対応付ける
+    significance: かぐやの光電子を使い、日照面の相対電位の空間変化を調べた。
+  - paper_id: P000162
+    title: 太陽活動による正電位の変動を予測
+    significance: ARTEMISと光電子モデルを照合し、フレア時の電流収支から正電位を予測した。
+    connection: 場所の違いから太陽活動への応答へ
+  - paper_id: P000161
+    title: 日照とプラズマの依存を分ける
+    significance: 別の放出モデルから昼側電位を推定し、天頂角・密度・温度・磁場との対応を調べた。
+    connection: 別モデルで環境依存を比較
 public: true
 scope:
   include:
@@ -380,6 +382,108 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000161
+  group: measurements
+  role: 昼側電位の統計と環境依存
+  summary:
+    question: 磁気圏ローブ中の昼側電位は、日照と周囲のプラズマにどう応答するか。
+    method: ARTEMISの光電子スペクトルをモデルと比較し、表面電位を統計的に推定。
+    contribution: 太陽天頂角・密度・電子温度・地殻磁場に対する電位の依存を整理した。
+  evidence_by_item:
+    question:
+    - paper_id: P000161
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
+      source_type: full_text
+      locator: §2–4
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000161
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
+      source_type: full_text
+      locator: §2–4
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000161
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
+      source_type: full_text
+      locator: §2–4
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000162
+  group: environment
+  role: 太陽活動と昼側の正電位
+  summary:
+    question: 太陽活動の変化は、月面の光電子放出と正電位をどこまで高めるか。
+    method: ARTEMIS長期観測と光電子モデルを照合し、電流収支から電位を計算。
+    contribution: 磁気圏ローブでフレア時に+100 Vを超える正電位を予測した。
+  evidence_by_item:
+    question:
+    - paper_id: P000162
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
+      source_type: full_text
+      locator: Abstract; §4 Conclusions
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000162
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
+      source_type: full_text
+      locator: Abstract; §4 Conclusions
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000162
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
+      source_type: full_text
+      locator: Abstract; §4 Conclusions
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000163
+  group: environment
+  role: 反射陽子による広域の太陽風擾乱
+  summary:
+    question: 磁気異常で反射された陽子は、周囲の太陽風をどこまで変えるか。
+    method: Chandrayaan-1のイオン計測から、SPA磁気群上空の偏向・加熱・減速を解析。
+    contribution: 高度約100 kmで続く擾乱から、広域のproto-magnetosheathを提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000163
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
+      source_type: full_text
+      locator: Abstract; §6 Conclusions
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000163
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
+      source_type: full_text
+      locator: Abstract; §6 Conclusions
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000163
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
+      source_type: full_text
+      locator: Abstract; §6 Conclusions
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
 relations: []
 view:
   sort:

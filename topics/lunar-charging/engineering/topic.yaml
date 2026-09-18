@@ -6,9 +6,11 @@ review:
 - heading: 差動帯電を機体設計へつなげる
   paragraphs:
   - 同じプラズマ環境でも、材質や日照が異なる表面は別々の電位になりうる。[@P000024]はNASCAP-2Kで候補宇宙機を計算し、導電性材料による電位差の低減を検討した。[@P000054]の発表資料は、月ミッションの自然・誘起帯電環境をまとめており、設計時に考えるハザードを見渡せる。
+  - 着陸機の噴射は、周囲のダストに運動量と電荷を与える。[@P000165]は気固流れ・摩擦帯電・プラズマ帯電を結合し、噴射停止後も残る電荷が微粒子の輸送を変えると予測した。噴射後の付着先を考える際にも、離脱時の電荷が条件になる。
 - heading: 電場・中和・ブラシによる除塵
   paragraphs:
   - '[@P000028]のEDSは、電極が作る電場と静電力・誘電泳動力で粒子を移動させる。特許には、宇宙服のダストを正負のイオンで中和する[@P000049]と、ブラシへEDS・UVを組み合わせる[@P000050]がある。周辺技術として収録した[@P000035]は、気体中の誘電体バリア放電が生む流れを使う太陽電池除塵である。作用する媒体と力を押さえると、各方式の対象環境を見分けやすい。'
+  - 電子照射で粒子を動かす[@P000164]は、宇宙服用の布と模擬レゴリスを用い、VUVの併用による除去効率の向上を測った。太陽に似た波長分布を再現し、光強度は月面より高く設定している。電極配置に加え、照射と材料の組合せも除塵の設計変数になる。
 lineage:
 - title: 機体の帯電設計
   steps:
@@ -20,6 +22,10 @@ lineage:
   - paper_id: P000028
     title: 電場で粒子を動かして除塵
     significance: 静電力・誘電泳動力を使うEDSを検討し、月探査機器の表面からダストを取り除く設計を示した。
+  - paper_id: P000164
+    title: VUVと電子ビームを組み合わせる
+    significance: 月面より強いVUVの照射下で、電子ビームによる布上ダストの除去効率が上がった。
+    connection: 電極による搬送と電子照射を比較
 public: true
 scope:
   include:
@@ -174,6 +180,74 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000164
+  group: removal
+  role: VUV照射下の電子ビーム除塵
+  summary:
+    question: 光電子放出は、電子ビームで付着ダストを除く条件をどう変えるか。
+    method: 太陽VUVに似た波長分布・高い照射強度で、布上の模擬粒子へ電子ビームを照射。
+    contribution: VUVを加えると移動開始に必要なビーム条件が下がり、除去効率が上がった。
+  evidence_by_item:
+    question:
+    - paper_id: P000164
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526000846
+      source_type: full_text
+      locator: Abstract; §3
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000164
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526000846
+      source_type: full_text
+      locator: Abstract; §3
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000164
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526000846
+      source_type: full_text
+      locator: Abstract; §3
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000165
+  group: charging
+  role: プルーム中の帯電履歴と輸送
+  summary:
+    question: 噴射中に得た電荷は、エンジン停止後のダスト輸送にどう残るか。
+    method: 気固流れ・摩擦帯電・shifted OML帯電・静電力による運動を結合して計算。
+    contribution: 摩擦帯電の履歴が残る間、微粒子の輸送が平衡電荷を使う予測から大きく変わった。
+  evidence_by_item:
+    question:
+    - paper_id: P000165
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S1270963826015154
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000165
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S1270963826015154
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000165
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S1270963826015154
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
 relations: []
 view:
   sort:

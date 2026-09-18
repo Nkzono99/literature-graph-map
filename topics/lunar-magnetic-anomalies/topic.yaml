@@ -21,6 +21,7 @@ review:
   - 磁気異常に反射・偏向された陽子は周囲にも運ばれる。[@P000117]は、異常内部でのフラックス減少と、1,000 kmを超える周辺領域での増加を中性原子・陽子のマップから示した。小さな孤立異常とSouth
     Pole–Aitkenの磁気群では、太陽風動圧への応答も異なる。
   - 長い時間にわたる照射の違いは、表面の明るいスワール模様や宇宙風化へとつながる。[@P000108]は磁場と反射スペクトルを比較し、太陽風遮蔽と微細ダスト集積の両方から模様の成因を論じた。粒子・電場を扱う研究と表面の分光観測を合わせて読むことで、瞬間的なプラズマ環境から表面変化へのつながりを追える。
+  - 続く[@P000163]は、Chandrayaan-1の高度約100 kmで太陽風の偏向・加熱・減速が持続することを調べた。反射陽子との相互作用で生じる広域のproto-magnetosheathという解釈により、フラックスの再分配を上空の流れの変化へ結び付けている。
 lineage:
 - title: 遮蔽の観測から電荷分離へ
   steps:
@@ -35,19 +36,19 @@ lineage:
     title: 電子とイオンの運動を三次元で解く
     significance: 全運動論PICで電子の偏向、イオン反射、周囲の密度増加を結び付けた。
     connection: 電荷分離を粒子運動で説明
-- title: 実際の磁場と広域環境
+- title: 局所環境から広域の太陽風擾乱へ
   steps:
-  - paper_id: P000107
-    title: 観測から表面ベクトル磁場を復元
-    significance: かぐやとLunar Prospectorの磁場を統合し、実際の磁気異常を計算へ取り込む基盤を作った。
   - paper_id: P000115
     title: Reiner Gammaの環境を計算
     significance: 観測に基づく磁場で、太陽風の入射や磁気シース通過に伴う局所プラズマの変化を調べた。
-    connection: 磁場モデルを局所環境の計算へ
   - paper_id: P000117
     title: 粒子の再分配を全球へ広げる
     significance: 磁気異常内の遮蔽と周囲の広域増加をマップ化し、孤立異常と磁気群の応答を比較した。
     connection: 局所環境から広域の観測へ
+  - paper_id: P000163
+    title: 反射陽子が作る広域構造を考える
+    significance: SPA上空の持続的な流れの擾乱から、proto-magnetosheathという相互作用領域を提案した。
+    connection: フラックスの再分配から流れの変化へ
 public: true
 scope:
   include:
@@ -364,6 +365,40 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000163
+  group: surface-and-global
+  role: 反射陽子による広域の太陽風擾乱
+  summary:
+    question: 磁気異常で反射された陽子は、周囲の太陽風をどこまで変えるか。
+    method: Chandrayaan-1のイオン計測から、SPA磁気群上空の偏向・加熱・減速を解析。
+    contribution: 高度約100 kmで続く擾乱から、広域のproto-magnetosheathを提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000163
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
+      source_type: full_text
+      locator: Abstract; §6 Conclusions
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000163
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
+      source_type: full_text
+      locator: Abstract; §6 Conclusions
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000163
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
+      source_type: full_text
+      locator: Abstract; §6 Conclusions
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
 relations: []
 view:
   sort:

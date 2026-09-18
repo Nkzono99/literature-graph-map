@@ -6,10 +6,12 @@ review:
 - heading: 電流の釣り合いと電子放出
   paragraphs:
   - '[@P000002]の電流収支は、プラズマの電子・イオンが運ぶ電荷と、光電子・二次電子として出ていく電荷を釣り合わせる。放出特性を測る[@P000001]と、月面電場やシースを整理する[@P000020]を併せて読むと、材料特性から表面電位へ進む筋道が分かる。[@P000038]は太陽風と太陽放射を変え、環境条件への応答を調べた。'
+  - 磁気圏ローブ中の昼側について、[@P000162]は太陽活動に応じた放出電流から電位を予測し、[@P000161]は観測光電子のエネルギーずれから電位を推定する。放出モデルと観測を往復して電流収支を調べる研究として読める。
 - heading: 単一の表面電位から、空間構造へ
   paragraphs:
   - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar
     Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]、イオン温度を組み込む最近の理論は[@P000055]に進める。
+  - シース内を動く粒子には、場所ごとの電場と電子・イオン電流が同時に効く。[@P000167]は帯電と軌道を連成し、希薄な条件では電子1個ずつの出入りが運動を変えることを示した。
 lineage:
 - title: 放出測定から電位分布へ
   steps:
@@ -276,6 +278,108 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000161
+  group: balance
+  role: 昼側電位の統計と環境依存
+  summary:
+    question: 磁気圏ローブ中の昼側電位は、日照と周囲のプラズマにどう応答するか。
+    method: ARTEMISの光電子スペクトルをモデルと比較し、表面電位を統計的に推定。
+    contribution: 太陽天頂角・密度・電子温度・地殻磁場に対する電位の依存を整理した。
+  evidence_by_item:
+    question:
+    - paper_id: P000161
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
+      source_type: full_text
+      locator: §2–4
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000161
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
+      source_type: full_text
+      locator: §2–4
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000161
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
+      source_type: full_text
+      locator: §2–4
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000162
+  group: balance
+  role: 太陽活動と昼側の正電位
+  summary:
+    question: 太陽活動の変化は、月面の光電子放出と正電位をどこまで高めるか。
+    method: ARTEMIS長期観測と光電子モデルを照合し、電流収支から電位を計算。
+    contribution: 磁気圏ローブでフレア時に+100 Vを超える正電位を予測した。
+  evidence_by_item:
+    question:
+    - paper_id: P000162
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
+      source_type: full_text
+      locator: Abstract; §4 Conclusions
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000162
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
+      source_type: full_text
+      locator: Abstract; §4 Conclusions
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000162
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
+      source_type: full_text
+      locator: Abstract; §4 Conclusions
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+- paper_id: P000167
+  group: structure
+  role: 離散帯電と飛翔中の電荷変化
+  summary:
+    question: 光電子シース中で、電荷の時間変化と離散性は粒子の軌道をどう変えるか。
+    method: 太陽スペクトルとκ分布電子を用い、離脱後の粒子の帯電と運動を連成計算。
+    contribution: 希薄プラズマでは離散帯電が軌道を変え、静止浮遊の成立を難しくすると示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000167
+      version_id: V1
+      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
+      source_type: full_text
+      locator: Abstract; §III; §VI
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
 relations: []
 view:
   sort:

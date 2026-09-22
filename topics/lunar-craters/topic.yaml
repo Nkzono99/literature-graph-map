@@ -1,0 +1,145 @@
+schema_version: 1
+topic_id: lunar-craters
+title: 月の衝突クレーター・年代学
+question: クレーターの分布と生成・二次衝突から、表面年代とレゴリス更新をどう制約するか。
+public: true
+navigation:
+  parent: lunar-geology
+  related:
+  - lunar-geodesy-interior
+  - lunar-volcanism
+  - lunar-charging-topography
+  - lunar-water
+groups:
+- id: chronology
+  title: 年代尺度
+- id: catalogs
+  title: 全球分布・台帳
+- id: renewal
+  title: 二次衝突・表層更新
+entries:
+- paper_id: P000187
+  group: chronology
+  role: クレーター数に基づく年代尺度
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000188
+  group: catalogs
+  role: LOLAによる大型クレーター全球分布
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000191
+  group: catalogs
+  role: 1〜2 km以上の全球クレーター台帳
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: km級の月クレーターの全球分布はどうなっているか。
+    method: 画像と既存台帳を照合し、位置と寸法を整理する。
+    contribution: 1〜2 km以上の網羅を目指す台帳を作成し、密度と二次クレーターの地域差を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000191
+      version_id: V1
+      url: https://doi.org/10.1029/2018je005592
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000191
+      version_id: V1
+      url: https://doi.org/10.1029/2018je005592
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000191
+      version_id: V1
+      url: https://doi.org/10.1029/2018je005592
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000189
+  group: renewal
+  role: LROC時系列画像による衝突と表層更新
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000190
+  group: renewal
+  role: 二次クレーターと噴出岩塊の寸法
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 二次クレーターを作る岩塊の大きさは放出速度とどう対応するか。
+    method: 六つの二次クレーター領域を地図化して統計解析する。
+    contribution: 一次衝突の規模によって岩塊寸法と速度の関係が変わることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000190
+      version_id: V1
+      url: https://doi.org/10.1029/2019je006313
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000190
+      version_id: V1
+      url: https://doi.org/10.1029/2019je006313
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000190
+      version_id: V1
+      url: https://doi.org/10.1029/2019je006313
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+review:
+- heading: クレーター台帳が、表面の履歴を比較する基盤になる
+  paragraphs:
+  - '[@P000187]はクレーターのサイズ別頻度を月の年代尺度へ結び付ける。LOLAによる大型クレーターの全球分布[@P000188]に対し、[@P000191]は1〜2
+    km以上を網羅する台帳を作り、小径側の地域差も比較できるようにした。'
+- heading: 新しい衝突と二次クレーターを見分ける
+  paragraphs:
+  - '[@P000189]は同じ場所の時系列画像から新しい衝突と表層の変化を調べる。一方、[@P000190]は一次衝突から飛び出した岩塊が作る二次クレーターを対象とし、岩塊の大きさと放出速度の関係を評価した。年代推定に使う個数には、地形の更新と二次衝突の両方が影響する。'
+lineage:
+- title: 全球の個数を大型から小径へ広げる
+  steps:
+  - paper_id: P000188
+    title: 大型クレーターを全球で数える
+    significance: LOLA地形から大型クレーターの分布を調べた。
+  - paper_id: P000191
+    title: 台帳をkm級へ拡張する
+    significance: より小さなクレーターを含む全球台帳を作り、地域ごとの個数を比較した。
+    connection: 共通の全球比較を小径側へ広げる
+survey:
+  searched_at: '2026-09-22'
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。

@@ -55,6 +55,7 @@ navigation:
   - lunar-charging
   - lunar-charging-topography
   - secondary-electron-emission
+  - plasma-cavities
 groups:
 - id: etching-foundations
   title: エッチングの基礎・総説
@@ -64,6 +65,8 @@ groups:
   title: 溝・微細構造の局所帯電
 - id: roughness-evolution
   title: 表面粗さ・形状の発展
+- id: resource-processing
+  title: レゴリスの資源処理
 entries:
 - paper_id: P000129
   group: etching-foundations
@@ -389,6 +392,164 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000227
+  group: feature-charging
+  role: 電子温度と溝底への流入
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 電子温度は溝底への電流と局所帯電をどう変えるか。
+    method: 微細構造内の電位と粒子軌道を二次元モンテカルロ法で計算する。
+    contribution: 電子温度の上昇が電子の遮蔽を強め、底部電位と側壁へのイオン流入を変えることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000227
+      version_id: V1
+      url: https://doi.org/10.1063/1.365039
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000227
+      version_id: V1
+      url: https://doi.org/10.1063/1.365039
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000227
+      version_id: V1
+      url: https://doi.org/10.1063/1.365039
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000228
+  group: feature-charging
+  role: 局所帯電とノッチ形状の計算
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 局所帯電は側壁のノッチ形成を説明できるか。
+    method: 帯電過渡、イオン軌道、エッチングと散乱を組み合わせる。
+    contribution: 配線の接続状態や開口幅に応じたノッチ形状を計算で説明した。
+  evidence_by_item:
+    question:
+    - paper_id: P000228
+      version_id: V1
+      url: https://doi.org/10.1116/1.589258
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000228
+      version_id: V1
+      url: https://doi.org/10.1116/1.589258
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000228
+      version_id: V1
+      url: https://doi.org/10.1116/1.589258
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000229
+  group: feature-charging
+  role: 粒子の入射方向差によるノッチ形成
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 一様なプラズマでも局所的なノッチができるか。
+    method: シース・Poisson方程式・粒子軌道を組み合わせて微細パターンを計算する。
+    contribution: 電子とイオンの入射方向の違いによる底部帯電と、側壁へのイオン偏向を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000229
+      version_id: V1
+      url: https://doi.org/10.1116/1.588431
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000229
+      version_id: V1
+      url: https://doi.org/10.1116/1.588431
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000229
+      version_id: V1
+      url: https://doi.org/10.1116/1.588431
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000230
+  group: feature-charging
+  role: 電子遮蔽とゲート酸化膜損傷
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 高アスペクト比パターンはなぜ電気的損傷を生むか。
+    method: ゲート酸化膜につながる電極をパターンで覆い、複数のプラズマ条件で損傷を調べる。
+    contribution: 斜入射電子の遮蔽による局所帯電を示し、酸化膜厚への強い依存性を調べた。
+  evidence_by_item:
+    question:
+    - paper_id: P000230
+      version_id: V1
+      url: https://doi.org/10.1143/jjap.33.6013
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000230
+      version_id: V1
+      url: https://doi.org/10.1143/jjap.33.6013
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000230
+      version_id: V1
+      url: https://doi.org/10.1143/jjap.33.6013
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000245
+  group: resource-processing
+  role: フッ素系プラズマによる酸素抽出
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000248
+  group: reactor-models
+  role: エネルギー依存SEEとRF放電密度
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
 relations: []
 view:
   sort:
@@ -400,17 +561,20 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-18'
+  searched_at: '2026-09-22'
   scope_period: 制限なし
   provider_names:
   - Paperpile
   - Crossref
   - 出版社・著者公開記録
+  - 'GitHub Issues #2–#8'
+  - 出版社・公的機関の公開書誌
   queries: []
-  coverage_note: 所蔵文献を起点に主要論点の文献を追加。公開要旨による初版。
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
   limitations:
   - 全件の本文精読・図表確認は未実施。
-  changes: 新規テーマを作成。
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

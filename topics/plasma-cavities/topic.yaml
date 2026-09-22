@@ -1,0 +1,862 @@
+schema_version: 1
+topic_id: plasma-cavities
+title: 空洞・微細構造へのプラズマ流入
+question: 形状と速度分布による粒子の届き方の違いが、空洞内の電位をどう決めるか。
+public: true
+navigation:
+  parent: plasma-processes
+  related:
+  - plasma-expansion
+  - plasma-processing
+  - lunar-charging-topography
+  - lunar-subsurface
+  - dust-charging
+groups:
+- id: expansion
+  title: 真空膨張・ウェイク
+- id: lunar
+  title: 月面クレーター・縦孔
+- id: features
+  title: 微細構造・電子遮蔽
+entries:
+- paper_id: P000219
+  group: expansion
+  role: 無衝突プラズマ膨張の基準解
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 無衝突プラズマが真空へ膨張すると先端のイオンはどう加速するか。
+    method: 半無限プラズマの無衝突膨張を計算する。
+    contribution: イオン先端が電子熱速度に匹敵する速度へ加速することを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000219
+      version_id: V1
+      url: https://doi.org/10.1017/s0022377800025538
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000219
+      version_id: V1
+      url: https://doi.org/10.1017/s0022377800025538
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000219
+      version_id: V1
+      url: https://doi.org/10.1017/s0022377800025538
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000096
+  group: expansion
+  role: 電荷分離とイオンの加速限界
+  summary:
+    question: 真空へ膨張するプラズマのイオン先端とエネルギーはどう決まるか。
+    method: 無衝突プラズマの膨張で生じる電荷分離を理論的に解析。
+    contribution: イオン先端の構造、エネルギースペクトル、最大イオンエネルギーを求めた。
+  evidence_by_item:
+    question:
+    - paper_id: P000096
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.90.185002
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000096
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.90.185002
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000096
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.90.185002
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000220
+  group: expansion
+  role: 月ウェイクの一次元PIC
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月ウェイクの粒子構造を単純な運動論モデルで説明できるか。
+    method: 空隙の断面を一次元静電PICで計算し、Windの観測と比較する。
+    contribution: 境界の電場で加速される対向イオン流などを再現した。
+  evidence_by_item:
+    question:
+    - paper_id: P000220
+      version_id: V1
+      url: https://doi.org/10.1029/97ja03717
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000220
+      version_id: V1
+      url: https://doi.org/10.1029/97ja03717
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000220
+      version_id: V1
+      url: https://doi.org/10.1029/97ja03717
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000221
+  group: expansion
+  role: 日夜境界の電場とダスト運動
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000223
+  group: expansion
+  role: Windによる月ウェイク観測
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000224
+  group: expansion
+  role: Lunar Prospectorの電子・磁場観測
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000231
+  group: expansion
+  role: ARTEMISによるウェイクの三次元再構成
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000232
+  group: expansion
+  role: ARTEMISの静電衝撃波観測
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000262
+  group: expansion
+  role: 関連研究
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 電子分布から月ウェイクの電位を復元できるか。
+    method: Hamiltonian inversionを領域別に適用し、PICとARTEMISで検証する。
+    contribution: ストラール非対称性と中心部の衝撃波を含む電位分布を推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000262
+      version_id: V1
+      url: https://arxiv.org/abs/2604.17825
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000262
+      version_id: V1
+      url: https://arxiv.org/abs/2604.17825
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000262
+      version_id: V1
+      url: https://arxiv.org/abs/2604.17825
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000058
+  group: lunar
+  role: 永久影クレーターの電気的環境
+  summary:
+    question: 永久影クレーターでは、電子とイオンの届き方がどう異なるか。
+    method: 地形による太陽風遮蔽とプラズマの膨張を用いて帯電を推定。
+    contribution: イオンが届きにくい領域での負帯電と、探査機・ダストへの影響を論じた。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000058
+      version_id: V1
+      url: https://doi.org/10.1029/2009je003464
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000008
+  group: lunar
+  role: 極域への太陽風侵入
+  summary:
+    question: 極域クレーターへの太陽風侵入と帯電はどう影響し合うか。
+    method: 影の段差を二次元で計算し、表面電荷と二次電子放出を追跡。
+    contribution: 帯電と両極性膨張が相互に抑制し、二次電子放出が陽子流入を調整。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000008
+      version_id: V1
+      url: https://doi.org/10.1029/2011GL048880
+      source_type: full_text
+      locator: §2・§4（PDF pp.1–2,4–5）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000222
+  group: lunar
+  role: 太陽嵐中のクレーター帯電
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 太陽嵐で影のクレーターと内部の物体はどう帯電するか。
+    method: 運動論計算の結果を無次元比で整理し、物体の等価回路へ入力する。
+    contribution: 低電流環境での帯電緩和と、地形に届くイオンの分布を評価した。
+  evidence_by_item:
+    question:
+    - paper_id: P000222
+      version_id: V1
+      url: https://doi.org/10.1029/2012je004094
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000222
+      version_id: V1
+      url: https://doi.org/10.1029/2012je004094
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000222
+      version_id: V1
+      url: https://doi.org/10.1029/2012je004094
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000225
+  group: lunar
+  role: 縦孔周囲の三次元粒子計算
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000012
+  group: lunar
+  role: 深い空洞の正帯電
+  summary:
+    question: 深い空洞の底は、光電子放出がなくても正に帯電するか。
+    method: 直方体空洞の深さ・幅・入射条件を変え、三次元PICで計算。
+    contribution: 側壁での電子損失が底部を正帯電させ、側壁の光電子が正電位を緩和。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000012
+      version_id: V1
+      url: https://da.lib.kobe-u.ac.jp/da/kernel/0100483394/0100483394.pdf
+      source_type: full_text
+      locator: 要旨・§2・§4–5（本文pp.1–3,10–12）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000048
+  group: lunar
+  role: 極域クレーターのミニウェイク
+  summary:
+    question: 極域クレーターの陰へ、太陽風はどのように入り込むか。
+    method: 三次元静電ハイブリッドPICで、km規模のクレーター周辺を計算。
+    contribution: 電子に富む負電位のプラズマ領域と、底面・壁面へ回り込むイオン流を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000048
+      version_id: V1
+      url: https://doi.org/10.1029/2024ja032764
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000015
+  group: lunar
+  role: 空洞寸法とシース厚
+  summary:
+    question: 空洞寸法とシース厚の比は、底部の正帯電をどう変えるか。
+    method: 入口幅5・30・100 mと深さ対幅比を変えたPIC計算。
+    contribution: シースより大きな空洞では、底部への電子供給が増え正電位を緩和。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000015
+      version_id: V1
+      url: https://doi.org/10.1029/2024JA033490
+      source_type: full_text
+      locator: 要旨・§2・§5（PDF pp.1–3,14–16）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000016
+  group: lunar
+  role: 流速と熱速度の比
+  summary:
+    question: 太陽風の流速と熱速度の比は、空洞底部の電位をどう決めるか。
+    method: Debye長より幅が小さい空洞を、三次元PICと自由落下モデルで比較。
+    contribution: 流速がイオン・電子の熱速度を順に超すと、底部電位は負→正→ほぼゼロ。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000016
+      version_id: V1
+      url: https://da.lib.kobe-u.ac.jp/da/kernel/0100497769/0100497769.pdf
+      source_type: full_text
+      locator: 要旨・§2・§5–6（PDF pp.1–3,13–14）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000226
+  group: lunar
+  role: 溶岩チューブ内の帯電実験
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 溶岩チューブを模した空洞の奥はどう帯電するか。
+    method: イオン流にさらしたガラス管の入口電位と深さを変え、底部電位を測る。
+    contribution: 電子遮蔽による正帯電と、壁面からのイオン誘起二次電子による電位抑制を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000226
+      version_id: V1
+      url: https://doi.org/10.3847/psj/ada6b0
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000226
+      version_id: V1
+      url: https://doi.org/10.3847/psj/ada6b0
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000226
+      version_id: V1
+      url: https://doi.org/10.3847/psj/ada6b0
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000263
+  group: lunar
+  role: クレーター寸法とシースの実験
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: クレーター寸法は内部シースをどう変えるか。
+    method: 実験室プラズマで地形寸法とデバイ長の関係を変える。
+    contribution: デバイ長が地形寸法以上になると内部電場が弱まり、外部との二重層が形成されることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000264
+  group: lunar
+  role: クレーター内の電子雲の解析解
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 膨張前線より下の電子雲と表面電位を解析的に求められるか。
+    method: 自己相似膨張前線と帯電表面の間でMaxwell電子雲のPoisson方程式を解く。
+    contribution: クレーター内の非中性領域を扱い、既存の数値結果を説明する解析解を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000133
+  group: features
+  role: アスペクト比と電子の遮蔽
+  summary:
+    question: 溝が深くなると、底面電位と側壁の加工はどう変わるか。
+    method: 絶縁膜上のポリシリコン構造で、粒子入射をMonte Carlo計算。
+    contribution: 底面への電子不足が正電位とイオン偏向を強め、ノッチ形成を促すと説明。
+  evidence_by_item:
+    question:
+    - paper_id: P000133
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.365616
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000133
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.365616
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000133
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.365616
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000227
+  group: features
+  role: 電子温度と溝底への流入
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 電子温度は溝底への電流と局所帯電をどう変えるか。
+    method: 微細構造内の電位と粒子軌道を二次元モンテカルロ法で計算する。
+    contribution: 電子温度の上昇が電子の遮蔽を強め、底部電位と側壁へのイオン流入を変えることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000227
+      version_id: V1
+      url: https://doi.org/10.1063/1.365039
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000227
+      version_id: V1
+      url: https://doi.org/10.1063/1.365039
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000227
+      version_id: V1
+      url: https://doi.org/10.1063/1.365039
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000228
+  group: features
+  role: 局所帯電とノッチ形状の計算
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 局所帯電は側壁のノッチ形成を説明できるか。
+    method: 帯電過渡、イオン軌道、エッチングと散乱を組み合わせる。
+    contribution: 配線の接続状態や開口幅に応じたノッチ形状を計算で説明した。
+  evidence_by_item:
+    question:
+    - paper_id: P000228
+      version_id: V1
+      url: https://doi.org/10.1116/1.589258
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000228
+      version_id: V1
+      url: https://doi.org/10.1116/1.589258
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000228
+      version_id: V1
+      url: https://doi.org/10.1116/1.589258
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000229
+  group: features
+  role: 粒子の入射方向差によるノッチ形成
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 一様なプラズマでも局所的なノッチができるか。
+    method: シース・Poisson方程式・粒子軌道を組み合わせて微細パターンを計算する。
+    contribution: 電子とイオンの入射方向の違いによる底部帯電と、側壁へのイオン偏向を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000229
+      version_id: V1
+      url: https://doi.org/10.1116/1.588431
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000229
+      version_id: V1
+      url: https://doi.org/10.1116/1.588431
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000229
+      version_id: V1
+      url: https://doi.org/10.1116/1.588431
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000230
+  group: features
+  role: 電子遮蔽とゲート酸化膜損傷
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 高アスペクト比パターンはなぜ電気的損傷を生むか。
+    method: ゲート酸化膜につながる電極をパターンで覆い、複数のプラズマ条件で損傷を調べる。
+    contribution: 斜入射電子の遮蔽による局所帯電を示し、酸化膜厚への強い依存性を調べた。
+  evidence_by_item:
+    question:
+    - paper_id: P000230
+      version_id: V1
+      url: https://doi.org/10.1143/jjap.33.6013
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000230
+      version_id: V1
+      url: https://doi.org/10.1143/jjap.33.6013
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000230
+      version_id: V1
+      url: https://doi.org/10.1143/jjap.33.6013
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000129
+  group: features
+  role: 粒子照射と表面反応
+  summary:
+    question: イオン・電子の照射は、表面の化学反応をどう促進するか。
+    method: Si・SiO2・Si3N4と反応性ガスの組合せを実験で比較。
+    contribution: 揮発性生成物を生む表面反応の照射促進を、エッチングの基礎として整理。
+  evidence_by_item:
+    question:
+    - paper_id: P000129
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.326355
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000129
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.326355
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000129
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.326355
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000131
+  group: features
+  role: RFシースと装置モデルの結合
+  summary:
+    question: 薄いRFシースを、装置全体の計算にどう組み込むか。
+    method: シース電荷の時間発展と半解析解を、二次元ハイブリッドモデルに接続。
+    contribution: Ar・Ar/Cl2放電で、誘導結合電力とRFバイアスに応じた表面流束・電位を計算。
+  evidence_by_item:
+    question:
+    - paper_id: P000131
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000131
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000131
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000132
+  group: features
+  role: 低温プラズマのハイブリッド計算
+  summary:
+    question: 時間スケールの異なる輸送・反応・電磁場をどう計算するか。
+    method: 物理過程ごとのモジュールを反復結合する手法を、誘導結合プラズマで説明。
+    contribution: 対象条件に適した流体・粒子モデルを組み合わせる装置解析の枠組みを示す。
+  evidence_by_item:
+    question:
+    - paper_id: P000132
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jpd_42_194013_2009.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000132
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jpd_42_194013_2009.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000132
+      version_id: V1
+      url: https://cpseg.eecs.umich.edu/pub/articles/jpd_42_194013_2009.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000136
+  group: features
+  role: 帯電と表面粗さの相互作用
+  summary:
+    question: 高分子表面の粗さと局所電位は、加工中にどう変化するか。
+    method: 帯電・エッチング速度・形状更新のモデルを結合し、入射角依存性を比較。
+    contribution: 帯電が粗さの減少を促し、平滑化に伴って帯電電位も低下する条件を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000136
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.5018313
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000136
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.5018313
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000136
+      version_id: V1
+      url: https://api.crossref.org/works/10.1063/1.5018313
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000282
+  group: expansion
+  role: 日夜境界・極域での準中性破れ
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+review:
+- heading: 空間の陰が、電子とイオンの届き方を分ける
+  paragraphs:
+  - '[@P000219]の真空膨張と[@P000220]のウェイクPICは、希薄な領域へプラズマが入る過程を扱う。地形が流れを遮る場合には、空洞寸法、デバイ長、流速と熱速度の比が、流入する粒子と電位を比較する軸になる。'
+  - '[@P000008]はクレーターへの流入と表面帯電の相互作用を扱い、[@P000222]は太陽嵐中へ広げた。深い空洞では[@P000012]、寸法の違いは[@P000015]、流速と熱速度の比は[@P000016]からたどれる。'
+- heading: 実験と微細加工の研究から、形状の効果を比較する
+  paragraphs:
+  - '[@P000263]のクレーター実験は、デバイ長と地形寸法の比によって内部電場が変わることを示す。[@P000226]の管を使った実験は、入口と壁面による電子遮蔽に加え、イオン誘起二次電子が奥の正電位を抑える効果を調べた。'
+  - 微細加工の[@P000230]は、斜めに入射する電子がパターンで遮られることで局所損傷が生じることを示した。[@P000227]は電子温度と溝底電流、[@P000228]は局所電位と側壁の削れを結び付ける。月面空洞との比較では、幾何形状と流入分布に加えて、衝突や材料の条件もそろえる。
+lineage:
+- title: 電子遮蔽から局所的な加工形状へ
+  steps:
+  - paper_id: P000230
+    title: 入射方向の遮蔽を測る
+    significance: 高アスペクト比のパターンによる電子遮蔽を損傷の実験から調べた。
+  - paper_id: P000227
+    title: 電子温度と流入量を結び付ける
+    significance: 電子温度が溝壁電位と底部への電流を変える過程を計算した。
+    connection: 遮蔽を速度分布と局所電位から説明
+  - paper_id: P000228
+    title: 電位から削れる場所を予測する
+    significance: 粒子軌道と帯電の時間変化を加工形状の発展に結び付けた。
+    connection: 流入の偏りから側壁の形状へ
+survey:
+  searched_at: '2026-09-22'
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。

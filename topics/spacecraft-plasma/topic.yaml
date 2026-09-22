@@ -369,6 +369,15 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000251
+  group: sheath-and-wake
+  role: シース・ウェイク障壁と宇宙機電位計測
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
 relations: []
 view:
   sort:
@@ -380,16 +389,19 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-18'
+  searched_at: '2026-09-22'
   scope_period: 制限なし
   provider_names:
   - Paperpileライブラリ
   - Crossref
   - 出版社・機関リポジトリ
+  - 'GitHub Issues #2–#8'
+  - 出版社・公的機関の公開書誌
   queries: []
-  coverage_note: 書誌と要旨を中心に、各文献の比較軸と参照先を整理。
-  limitations: []
-  changes: 新規テーマの初版を作成。
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

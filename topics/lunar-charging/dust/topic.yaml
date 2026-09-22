@@ -58,6 +58,8 @@ navigation:
   related:
   - plasma-sheaths
   - secondary-electron-emission
+  - dust-charging
+  - dust-adhesion
 groups:
 - id: properties
   title: 電子放出と粒子電荷
@@ -640,6 +642,407 @@ entries:
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-18'
+- paper_id: P000233
+  group: properties
+  role: 軌道運動制限による捕集理論の起点
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000237
+  group: properties
+  role: 離散的な流入による電荷ゆらぎ
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000238
+  group: properties
+  role: 粒子電荷の平均と分散
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 粒子電荷の平均と分散はプラズマ条件とどう対応するか。
+    method: OMLの条件で捕集電流から電荷の確率分布を求める。
+    contribution: 一定の条件下でガウス分布を導き、Maxwell分布以外のプラズマへの拡張も示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000238
+      version_id: V1
+      url: https://doi.org/10.1063/1.359451
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000238
+      version_id: V1
+      url: https://doi.org/10.1063/1.359451
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000238
+      version_id: V1
+      url: https://doi.org/10.1063/1.359451
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000239
+  group: properties
+  role: 凝集体の見通しを考慮した帯電
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000240
+  group: properties
+  role: 凝集体の帯電と電子放出
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000241
+  group: properties
+  role: 凝集体の確率的帯電
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000242
+  group: properties
+  role: 不規則形状粒子の電荷測定
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 不規則形状粒子の電荷をどの球で近似できるか。
+    method: 長距離顕微鏡と位相分解共振法による測定を分子動力学と比較する。
+    contribution: 検討した粒子では最小包絡球と似た電荷を示し、形状近似を検証した。
+  evidence_by_item:
+    question:
+    - paper_id: P000242
+      version_id: V1
+      url: https://doi.org/10.1063/1.5038183
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000242
+      version_id: V1
+      url: https://doi.org/10.1063/1.5038183
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000242
+      version_id: V1
+      url: https://doi.org/10.1063/1.5038183
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000243
+  group: properties
+  role: 月試料の光電子・二次電子放出
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000254
+  group: properties
+  role: 模擬レゴリス粒子同士の摩擦帯電
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000255
+  group: properties
+  role: 模擬粒子と異種材料の接触帯電
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000265
+  group: properties
+  role: 真空中の単粒子光帯電
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000266
+  group: properties
+  role: 光帯電と摩擦帯電の実験比較
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000208
+  group: mechanisms
+  role: 月ダストの付着・凝集機構
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000209
+  group: mechanisms
+  role: 月ダスト付着の技術報告
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000210
+  group: mechanisms
+  role: 遠心法による模擬粒子の付着測定
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000211
+  group: mechanisms
+  role: 真空・UV条件を含む付着試験
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000215
+  group: mechanisms
+  role: 光帯電と外部電場による離脱
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 外部電場の向きは光帯電粒子の離脱をどう変えるか。
+    method: 導体上の絶縁粒子にUVと正負の外部電場を与える。
+    contribution: 光電子の軌道の違いが、正帯電に至る過程と粒子離脱の違いを生むことを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000215
+      version_id: V1
+      url: https://doi.org/10.1063/5.0210675
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000215
+      version_id: V1
+      url: https://doi.org/10.1063/5.0210675
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000215
+      version_id: V1
+      url: https://doi.org/10.1063/5.0210675
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000216
+  group: mechanisms
+  role: 電荷ゆらぎと静電離脱
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000218
+  group: mechanisms
+  role: Apollo試料の三次元形状と空隙
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000250
+  group: mechanisms
+  role: 斜入射電子ビームによる方向性輸送
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000257
+  group: mechanisms
+  role: 受動的なダスト対策表面の比較
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000258
+  group: mechanisms
+  role: ZnO薄膜と立体テクスチャの付着試験
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000259
+  group: mechanisms
+  role: 導電性ポリイミドによる付着低減
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000260
+  group: mechanisms
+  role: UV併用の電気力学的除塵
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000217
+  group: transport
+  role: 離脱後の打ち上げ速度の評価
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000221
+  group: transport
+  role: 日夜境界の電場とダスト運動
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000249
+  group: transport
+  role: 月ダストの生成・物性・輸送の総説
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000256
+  group: transport
+  role: ダスト運動とレゴリス力学の総説
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000263
+  group: transport
+  role: クレーター寸法とシースの実験
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: クレーター寸法は内部シースをどう変えるか。
+    method: 実験室プラズマで地形寸法とデバイ長の関係を変える。
+    contribution: デバイ長が地形寸法以上になると内部電場が弱まり、外部との二重層が形成されることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000267
+  group: transport
+  role: シース中の粒子浮遊実験
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000268
+  group: transport
+  role: 光電子シース中のダスト音波の非線形発展
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000269
+  group: transport
+  role: 太陽系ダストプラズマの電荷変動と散逸
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000270
+  group: transport
+  role: 電荷ゆらぎによる微粒子の加速
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
 relations: []
 view:
   sort:
@@ -651,13 +1054,17 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: null
+  searched_at: '2026-09-22'
   scope_period: 制限なし
-  provider_names: []
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
   queries: []
-  coverage_note: 未記録
-  limitations: []
-  changes: 新規作成
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

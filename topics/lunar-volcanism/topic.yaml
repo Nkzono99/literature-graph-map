@@ -1,0 +1,170 @@
+schema_version: 1
+topic_id: lunar-volcanism
+title: 月の火山活動と年代
+question: クレーター年代、玄武岩層厚、揮発性物質から火山活動の時間変化を調べる。
+public: true
+navigation:
+  parent: lunar-geology
+  related:
+  - kaguya
+  - lunar-craters
+  - lunar-geodesy-interior
+  - lunar-subsurface
+  - lunar-water
+groups:
+- id: chronology
+  title: 画像・年代・噴出量
+- id: volatiles
+  title: 水と噴火機構
+entries:
+- paper_id: P000171
+  group: chronology
+  role: TC画像による裏側火山活動の年代
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月裏側の火山活動はいつまで続いたか。
+    method: TC画像のクレーター頻度から海のモデル年代を推定する。
+    contribution: 一部の海で比較的若い年代を示し、裏側火山活動の継続期間を見直した。
+  evidence_by_item:
+    question:
+    - paper_id: P000171
+      version_id: V1
+      url: https://doi.org/10.1126/science.1163382
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000171
+      version_id: V1
+      url: https://doi.org/10.1126/science.1163382
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000171
+      version_id: V1
+      url: https://doi.org/10.1126/science.1163382
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000182
+  group: chronology
+  role: Moscovienseの玄武岩層厚と年代
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: Moscovienseの噴出期間と量はどの程度か。
+    method: TC画像から玄武岩の年代・層厚・体積を推定する。
+    contribution: 長期の火山活動と大きな噴出量を薄い地殻と関連付けて論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000182
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040472
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000182
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040472
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000182
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040472
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000187
+  group: chronology
+  role: クレーター数に基づく年代尺度
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000181
+  group: chronology
+  role: LRSによる海の地下層序
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月の海の下にどのような層があるか。
+    method: LRSの地下反射と表面地質を比較する。
+    contribution: 地下の反射層を噴出休止期の埋没レゴリスと解釈し、玄武岩の堆積史を調べた。
+  evidence_by_item:
+    question:
+    - paper_id: P000181
+      version_id: V1
+      url: https://doi.org/10.1126/science.1165988
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000181
+      version_id: V1
+      url: https://doi.org/10.1126/science.1165988
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000181
+      version_id: V1
+      url: https://doi.org/10.1126/science.1165988
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000246
+  group: volatiles
+  role: 水と爆発的火山活動
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+review:
+- heading: クレーター数と層厚から、火山活動の時間と量を調べる
+  paragraphs:
+  - 表面に残るクレーターのサイズ別頻度を年代へ対応させる枠組みが[@P000187]である。[@P000171]はTC画像を用いて裏側の海の年代を調べ、一部の地域で従来考えられていたより遅くまで火山活動が続いた可能性を示した。
+  - '[@P000182]はMoscovienseの年代に玄武岩の層厚・体積を加え、長期間の活動と薄い地殻との関係を論じた。[@P000181]の地下反射層は、表面の年代だけでは見えない噴出の休止期を検討する材料になる。'
+- heading: 水の研究を、マグマの噴火過程へつなぐ
+  paragraphs:
+  - '[@P000246]は水と爆発的火山活動の関係を扱う。表面での水の生成・保持を扱う研究と併せると、月内部からの供給と、その後に表面で起きる移動を別々の過程として追える。'
+lineage:
+- title: 裏側の火山活動を年代と体積で読む
+  steps:
+  - paper_id: P000171
+    title: 海の年代を広域で求める
+    significance: TC画像のクレーター頻度から裏側の活動時期を調べた。
+  - paper_id: P000182
+    title: Moscovienseの層厚と体積を加える
+    significance: 活動期間と噴出量を地殻厚の違いへ結び付けた。
+    connection: 広域の年代から地域の噴出史へ
+survey:
+  searched_at: '2026-09-22'
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。

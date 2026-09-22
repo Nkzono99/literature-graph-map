@@ -64,6 +64,7 @@ navigation:
   - spacecraft-plasma
   - lunar-charging
   - lunar-water
+  - plasma-cavities
 groups:
 - id: expansion
   title: 真空膨張の基礎
@@ -556,6 +557,376 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000219
+  group: expansion
+  role: 無衝突プラズマ膨張の基準解
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 無衝突プラズマが真空へ膨張すると先端のイオンはどう加速するか。
+    method: 半無限プラズマの無衝突膨張を計算する。
+    contribution: イオン先端が電子熱速度に匹敵する速度へ加速することを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000219
+      version_id: V1
+      url: https://doi.org/10.1017/s0022377800025538
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000219
+      version_id: V1
+      url: https://doi.org/10.1017/s0022377800025538
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000219
+      version_id: V1
+      url: https://doi.org/10.1017/s0022377800025538
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000220
+  group: lunar-wake
+  role: 月ウェイクの一次元PIC
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月ウェイクの粒子構造を単純な運動論モデルで説明できるか。
+    method: 空隙の断面を一次元静電PICで計算し、Windの観測と比較する。
+    contribution: 境界の電場で加速される対向イオン流などを再現した。
+  evidence_by_item:
+    question:
+    - paper_id: P000220
+      version_id: V1
+      url: https://doi.org/10.1029/97ja03717
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000220
+      version_id: V1
+      url: https://doi.org/10.1029/97ja03717
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000220
+      version_id: V1
+      url: https://doi.org/10.1029/97ja03717
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000223
+  group: lunar-wake
+  role: Windによる月ウェイク観測
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000224
+  group: lunar-wake
+  role: Lunar Prospectorの電子・磁場観測
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000231
+  group: lunar-wake
+  role: ARTEMISによるウェイクの三次元再構成
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000232
+  group: lunar-wake
+  role: ARTEMISの静電衝撃波観測
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000184
+  group: lunar-wake
+  role: PACEによる太陽風陽子の月面反射
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000186
+  group: lunar-wake
+  role: ウェイク内の陽子エネルギー変化
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000247
+  group: lunar-wake
+  role: Chandrayaan-2電波観測による密度ゆらぎ
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000262
+  group: lunar-wake
+  role: 電子位相空間密度からの電位推定
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 電子分布から月ウェイクの電位を復元できるか。
+    method: Hamiltonian inversionを領域別に適用し、PICとARTEMISで検証する。
+    contribution: ストラール非対称性と中心部の衝撃波を含む電位分布を推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000262
+      version_id: V1
+      url: https://arxiv.org/abs/2604.17825
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000262
+      version_id: V1
+      url: https://arxiv.org/abs/2604.17825
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000262
+      version_id: V1
+      url: https://arxiv.org/abs/2604.17825
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000272
+  group: lunar-wake
+  role: ARTEMISによる磁気異常周辺の圧縮構造
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 磁気異常周辺の圧縮構造はどこでどの条件で生じるか。
+    method: ARTEMISの5年間の粒子・磁場観測を統計解析する。
+    contribution: 太陽風条件と圧縮構造の位置・流れの偏向を関連付け、反射陽子との運動量交換から解釈した。
+  evidence_by_item:
+    question:
+    - paper_id: P000272
+      version_id: V1
+      url: https://doi.org/10.1002/2017ja023931
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000272
+      version_id: V1
+      url: https://doi.org/10.1002/2017ja023931
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000272
+      version_id: V1
+      url: https://doi.org/10.1002/2017ja023931
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000273
+  group: lunar-wake
+  role: 磁気異常からウェイクへの陽子輸送
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 磁気異常で散乱された陽子は月ウェイクへ届くか。
+    method: SARA/SWIM観測と粒子の逆向き軌道追跡を組み合わせる。
+    contribution: South Pole–Aitkenの磁気異常に由来する近傍ウェイクへの輸送経路を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000273
+      version_id: V1
+      url: https://doi.org/10.1029/2018gl079330
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000273
+      version_id: V1
+      url: https://doi.org/10.1029/2018gl079330
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000273
+      version_id: V1
+      url: https://doi.org/10.1029/2018gl079330
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000221
+  group: crater-wakes
+  role: 日夜境界の電場とダスト運動
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000222
+  group: crater-wakes
+  role: 太陽嵐中のクレーター帯電
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 太陽嵐で影のクレーターと内部の物体はどう帯電するか。
+    method: 運動論計算の結果を無次元比で整理し、物体の等価回路へ入力する。
+    contribution: 低電流環境での帯電緩和と、地形に届くイオンの分布を評価した。
+  evidence_by_item:
+    question:
+    - paper_id: P000222
+      version_id: V1
+      url: https://doi.org/10.1029/2012je004094
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000222
+      version_id: V1
+      url: https://doi.org/10.1029/2012je004094
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000222
+      version_id: V1
+      url: https://doi.org/10.1029/2012je004094
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000225
+  group: crater-wakes
+  role: 縦孔周囲の三次元粒子計算
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000226
+  group: crater-wakes
+  role: 溶岩チューブ内の帯電実験
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 溶岩チューブを模した空洞の奥はどう帯電するか。
+    method: イオン流にさらしたガラス管の入口電位と深さを変え、底部電位を測る。
+    contribution: 電子遮蔽による正帯電と、壁面からのイオン誘起二次電子による電位抑制を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000226
+      version_id: V1
+      url: https://doi.org/10.3847/psj/ada6b0
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000226
+      version_id: V1
+      url: https://doi.org/10.3847/psj/ada6b0
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000226
+      version_id: V1
+      url: https://doi.org/10.3847/psj/ada6b0
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000264
+  group: crater-wakes
+  role: クレーター内の電子雲の解析解
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 膨張前線より下の電子雲と表面電位を解析的に求められるか。
+    method: 自己相似膨張前線と帯電表面の間でMaxwell電子雲のPoisson方程式を解く。
+    contribution: クレーター内の非中性領域を扱い、既存の数値結果を説明する解析解を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000282
+  group: crater-wakes
+  role: 日夜境界・極域での準中性破れ
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
 relations: []
 view:
   sort:
@@ -567,20 +938,24 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-18'
+  searched_at: '2026-09-22'
   scope_period: 制限なし
   provider_names:
   - Paperpile（Bukan）
   - 出版社
   - arXiv
   - 著者所属機関
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
   queries:
   - plasma expansion
   - wake
   - plume electron kinetic
-  coverage_note: 所蔵文献を軸に、真空膨張の基礎から月ウェイク・粒子周囲・推進機プルームへ広げた。新規文献は要旨を確認し、既存の地形文献は確認記録を引き継いだ。
-  limitations: []
-  changes: プラズマ膨張・ウェイクのテーマを新設。
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

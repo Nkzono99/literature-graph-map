@@ -1,0 +1,186 @@
+schema_version: 1
+topic_id: lunar-geodesy-interior
+title: 月の地形計測・重力・地殻
+question: 高度と重力を組み合わせて、表裏の地形と地殻構造をどう推定するか。
+public: true
+navigation:
+  parent: lunar-geology
+  related:
+  - kaguya
+  - lunar-craters
+  - lunar-subsurface
+  - lunar-volcanism
+groups:
+- id: measurements
+  title: LALT・重力計測
+- id: interior
+  title: 地殻厚・内部構造
+entries:
+- paper_id: P000169
+  group: measurements
+  role: LALTによる全球地形
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月の全球地形をどの精度で復元できるか。
+    method: かぐやのLALT高度データから全球地形を作成する。
+    contribution: 全球形状と地形の波長別の特徴を示し、地殻の支持機構を比較した。
+  evidence_by_item:
+    question:
+    - paper_id: P000169
+      version_id: V1
+      url: https://doi.org/10.1126/science.1164146
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000169
+      version_id: V1
+      url: https://doi.org/10.1126/science.1164146
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000169
+      version_id: V1
+      url: https://doi.org/10.1126/science.1164146
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000170
+  group: measurements
+  role: リレー衛星による月裏側重力
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月裏側の盆地の重力構造は表側とどう違うか。
+    method: リレー衛星を介した4ウェイドップラー観測から重力場を求める。
+    contribution: 盆地の重力異常と補償構造に表裏差を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000170
+      version_id: V1
+      url: https://doi.org/10.1126/science.1168029
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000170
+      version_id: V1
+      url: https://doi.org/10.1126/science.1168029
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000170
+      version_id: V1
+      url: https://doi.org/10.1126/science.1168029
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000180
+  group: interior
+  role: 重力と地形からの地殻厚推定
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 裏側の盆地構造の違いは何で決まるか。
+    method: SELENEの重力場と地形から地殻厚を計算する。
+    contribution: 衝突前の地殻厚と衝突規模の比に着目して盆地構造を解釈した。
+  evidence_by_item:
+    question:
+    - paper_id: P000180
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039708
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000180
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039708
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000180
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039708
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000194
+  group: interior
+  role: GRAIL重力からの地下空洞候補
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 重力から細長い地下空洞の候補を抽出できるか。
+    method: GRAIL重力に勾配法と相互相関を適用する。
+    contribution: 質量欠損から空洞候補を示し、方向や寸法に対する検出感度を整理した。
+  evidence_by_item:
+    question:
+    - paper_id: P000194
+      version_id: V1
+      url: https://doi.org/10.1002/2016gl071588
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000194
+      version_id: V1
+      url: https://doi.org/10.1002/2016gl071588
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000194
+      version_id: V1
+      url: https://doi.org/10.1002/2016gl071588
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+review:
+- heading: 高さと重力の組合せから、地殻の厚さを推定する
+  paragraphs:
+  - レーザー高度計による[@P000169]は全球の地形を与える。[@P000170]は、地球から直接追跡しにくい裏側の重力をリレー衛星経由で測り、表裏の盆地が異なる重力構造を持つことを示した。
+  - '[@P000180]は、この地形と重力から地殻厚を計算した。地殻厚は密度や補償の仮定を介した推定量なので、観測された高度・重力とモデルの条件を合わせて参照する。'
+- heading: 重力の空間分解能が、探せる地下構造を変える
+  paragraphs:
+  - GRAIL重力を使った[@P000194]は、長く細い質量欠損を空洞の候補として抽出する。衛星軌道と検出法によって感度の高い方向・寸法が異なるため、縦孔の画像やLRSの地下反射との対応が解釈を補う。
+lineage:
+- title: 月裏側の重力から地殻厚へ
+  steps:
+  - paper_id: P000170
+    title: 裏側の盆地構造を制約
+    significance: リレー衛星による追跡から裏側重力場の精度を改善した。
+  - paper_id: P000180
+    title: 地形を加えて地殻厚を求める
+    significance: 重力場と全球地形を組み合わせ、盆地の構造差を解釈した。
+    connection: 重力と地形の統合
+survey:
+  searched_at: '2026-09-22'
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。

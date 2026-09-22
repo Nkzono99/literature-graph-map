@@ -11,6 +11,9 @@ review:
   paragraphs:
   - '[@P000028]のEDSは、電極が作る電場と静電力・誘電泳動力で粒子を移動させる。特許には、宇宙服のダストを正負のイオンで中和する[@P000049]と、ブラシへEDS・UVを組み合わせる[@P000050]がある。周辺技術として収録した[@P000035]は、気体中の誘電体バリア放電が生む流れを使う太陽電池除塵である。作用する媒体と力を押さえると、各方式の対象環境を見分けやすい。'
   - 電子照射で粒子を動かす[@P000164]は、宇宙服用の布と模擬レゴリスを用い、VUVの併用による除去効率の向上を測った。太陽に似た波長分布を再現し、光強度は月面より高く設定している。電極配置に加え、照射と材料の組合せも除塵の設計変数になる。
+- heading: 受動表面とUV併用で除塵の選択肢を広げる
+  paragraphs:
+  - 受動的な表面技術の比較は[@P000257]、ZnO薄膜と立体テクスチャは[@P000258]、導電性ポリイミドは[@P000259]にまとまっている。電気力学的な除塵ではUVの併用[@P000260]と柔軟電極[@P000261]が加わる。各方式の効果は、真空・照射条件、粒径、表面形状と併せて比較する。
 lineage:
 - title: 機体の帯電設計
   steps:
@@ -36,6 +39,7 @@ navigation:
   parent: lunar-charging
   related:
   - spacecraft-plasma
+  - dust-adhesion
 groups:
 - id: charging
   title: 帯電解析と環境
@@ -248,6 +252,78 @@ entries:
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-18'
+- paper_id: P000214
+  group: removal
+  role: ナノチューブ表面による付着低減
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000249
+  group: removal
+  role: 月ダストの生成・物性・輸送の総説
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000256
+  group: removal
+  role: ダスト運動とレゴリス力学の総説
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000257
+  group: removal
+  role: 受動的なダスト対策表面の比較
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000258
+  group: removal
+  role: ZnO薄膜と立体テクスチャの付着試験
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000259
+  group: removal
+  role: 導電性ポリイミドによる付着低減
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000260
+  group: removal
+  role: UV併用の電気力学的除塵
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000261
+  group: removal
+  role: 柔軟な電気力学的ダストシールド
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
 relations: []
 view:
   sort:
@@ -259,13 +335,17 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: null
+  searched_at: '2026-09-22'
   scope_period: 制限なし
-  provider_names: []
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
   queries: []
-  coverage_note: 未記録
-  limitations: []
-  changes: 新規作成
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

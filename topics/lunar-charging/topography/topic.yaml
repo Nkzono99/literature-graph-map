@@ -48,6 +48,9 @@ navigation:
   - plasma-expansion
   - poisson-solvers
   - plasma-processing
+  - lunar-craters
+  - lunar-subsurface
+  - plasma-cavities
 groups:
 - id: craters
   title: 極域クレーターと実地形
@@ -240,6 +243,164 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000222
+  group: craters
+  role: 太陽嵐中のクレーター帯電
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 太陽嵐で影のクレーターと内部の物体はどう帯電するか。
+    method: 運動論計算の結果を無次元比で整理し、物体の等価回路へ入力する。
+    contribution: 低電流環境での帯電緩和と、地形に届くイオンの分布を評価した。
+  evidence_by_item:
+    question:
+    - paper_id: P000222
+      version_id: V1
+      url: https://doi.org/10.1029/2012je004094
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000222
+      version_id: V1
+      url: https://doi.org/10.1029/2012je004094
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000222
+      version_id: V1
+      url: https://doi.org/10.1029/2012je004094
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000263
+  group: craters
+  role: クレーター寸法とシースの実験
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: クレーター寸法は内部シースをどう変えるか。
+    method: 実験室プラズマで地形寸法とデバイ長の関係を変える。
+    contribution: デバイ長が地形寸法以上になると内部電場が弱まり、外部との二重層が形成されることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000264
+  group: craters
+  role: クレーター内の電子雲の解析解
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 膨張前線より下の電子雲と表面電位を解析的に求められるか。
+    method: 自己相似膨張前線と帯電表面の間でMaxwell電子雲のPoisson方程式を解く。
+    contribution: クレーター内の非中性領域を扱い、既存の数値結果を説明する解析解を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000225
+  group: cavities
+  role: 縦孔周囲の三次元粒子計算
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000226
+  group: cavities
+  role: 溶岩チューブ内の帯電実験
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 溶岩チューブを模した空洞の奥はどう帯電するか。
+    method: イオン流にさらしたガラス管の入口電位と深さを変え、底部電位を測る。
+    contribution: 電子遮蔽による正帯電と、壁面からのイオン誘起二次電子による電位抑制を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000226
+      version_id: V1
+      url: https://doi.org/10.3847/psj/ada6b0
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000226
+      version_id: V1
+      url: https://doi.org/10.3847/psj/ada6b0
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000226
+      version_id: V1
+      url: https://doi.org/10.3847/psj/ada6b0
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000282
+  group: craters
+  role: 日夜境界・極域での準中性破れ
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
 relations: []
 view:
   sort:
@@ -251,13 +412,17 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: null
+  searched_at: '2026-09-22'
   scope_period: 制限なし
-  provider_names: []
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
   queries: []
-  coverage_note: 未記録
-  limitations: []
-  changes: 新規作成
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

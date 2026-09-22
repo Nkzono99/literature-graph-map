@@ -66,6 +66,7 @@ navigation:
   - lunar-charging
   - lunar-magnetic-anomalies
   - secondary-electron-emission
+  - dust-charging
 groups:
 - id: foundations
   title: 電流収支・シース・プレシース
@@ -518,6 +519,148 @@ entries:
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-18'
+- paper_id: P000271
+  group: emission
+  role: 強いSEEが励起するシース不安定性
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000251
+  group: emission
+  role: シース・ウェイク障壁と宇宙機電位計測
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000233
+  group: collection
+  role: 軌道運動制限による捕集理論の起点
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000234
+  group: collection
+  role: 球状探針へのイオン捕集
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000235
+  group: collection
+  role: 有限寸法の球・円筒探針理論
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000263
+  group: collection
+  role: クレーター寸法とシースの実験
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: クレーター寸法は内部シースをどう変えるか。
+    method: 実験室プラズマで地形寸法とデバイ長の関係を変える。
+    contribution: デバイ長が地形寸法以上になると内部電場が弱まり、外部との二重層が形成されることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000263
+      version_id: V1
+      url: https://doi.org/10.1029/2018ja026235
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000264
+  group: collection
+  role: クレーター内の電子雲の解析解
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 膨張前線より下の電子雲と表面電位を解析的に求められるか。
+    method: 自己相似膨張前線と帯電表面の間でMaxwell電子雲のPoisson方程式を解く。
+    contribution: クレーター内の非中性領域を扱い、既存の数値結果を説明する解析解を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000264
+      version_id: V1
+      url: https://doi.org/10.1029/2019ja026625
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000267
+  group: collection
+  role: シース中の粒子浮遊実験
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000265
+  group: photoemission
+  role: 真空中の単粒子光帯電
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000268
+  group: photoemission
+  role: 光電子シース中のダスト音波の非線形発展
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
 relations: []
 view:
   sort:
@@ -529,20 +672,24 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-18'
+  searched_at: '2026-09-22'
   scope_period: 制限なし
   provider_names:
   - Paperpile（Bukan）
   - 出版社
   - arXiv
   - 著者所属機関
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
   queries:
   - sheath
   - electron emission
   - OML PIC
-  coverage_note: 所蔵文献を中心に、シース理論・電子放出・粒子捕集の入口を選んだ。新規項目は要旨を確認。既存の月面シース文献は以前の確認記録を引き継いだ。
-  limitations: []
-  changes: シースの基礎テーマを新設。
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

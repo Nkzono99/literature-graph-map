@@ -1,0 +1,138 @@
+schema_version: 1
+topic_id: lunar-mineralogy
+title: 月の鉱物・元素組成
+question: 鉱物スペクトルと元素分布から、地殻の形成・深部物質・資源候補をどう読むか。
+public: true
+navigation:
+  parent: lunar-geology
+  related:
+  - kaguya
+  - lunar-water
+  - lunar-volcanism
+groups:
+- id: composition
+  title: 鉱物・元素分布
+- id: calibration
+  title: 機器間比較・較正
+entries:
+- paper_id: P000172
+  group: composition
+  role: MIによる純斜長岩の分布
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月高地の地殻はどの程度斜長石に富むか。
+    method: MIの斜長石吸収帯を使って全球の露出地点を調べる。
+    contribution: 高純度斜長岩の分布を示し、地殻形成モデルを制約した。
+  evidence_by_item:
+    question:
+    - paper_id: P000172
+      version_id: V1
+      url: https://www.nature.com/articles/nature08317
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000172
+      version_id: V1
+      url: https://www.nature.com/articles/nature08317
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000172
+      version_id: V1
+      url: https://www.nature.com/articles/nature08317
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000173
+  group: composition
+  role: SPによるかんらん石と深部物質の候補
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000174
+  group: composition
+  role: SPアーカイブによるイルメナイト分布
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000175
+  group: composition
+  role: GRSによるウランとU/Th比
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000277
+  group: calibration
+  role: 観測機器間の放射輝度比較
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000278
+  group: calibration
+  role: 観測幾何と測光補正
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000279
+  group: calibration
+  role: MI・SP・M³の反射スペクトル比較
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+review:
+- heading: 鉱物の分布から、地殻と深部物質を考える
+  paragraphs:
+  - '[@P000172]はMIの斜長石吸収帯から、高純度の斜長岩の全球分布を調べた。地殻形成モデルに対する組成の制約になる。[@P000173]のかんらん石分布は、衝突盆地周辺で深部物質が露出した可能性を考える入口である。'
+  - 元素の側からは、GRSによるウラン分布とU/Th比[@P000175]が地域差を示す。SPを再解析した[@P000174]はイルメナイトに富むスペクトルと火砕堆積物の対応を調べ、鉱物分布を資源候補の検討につないでいる。
+- heading: 機器の違いをそろえてから、組成を比べる
+  paragraphs:
+  - One Moon, Many Measurementsの3論文は、同じ月の観測を放射輝度[@P000277]、測光補正[@P000278]、反射率[@P000279]に分けて比較する。鉱物分布の差を読む前に、観測幾何と較正がそろっているかを確認するための文献群である。
+lineage:
+- title: 分光観測で異なる地質を読む
+  steps:
+  - paper_id: P000172
+    title: 高地の純斜長岩を調べる
+    significance: MIの吸収帯から高純度斜長岩の分布を捉えた。
+  - paper_id: P000173
+    title: 衝突盆地周辺の深部物質へ
+    significance: かんらん石の分布から深部起源の可能性を調べた。
+    connection: 対象鉱物と地質条件を広げる
+  - paper_id: P000174
+    title: 保存スペクトルを資源候補へつなぐ
+    significance: SPのイルメナイトに富む地点を地形・地質と比較した。
+    connection: 鉱物分布から堆積物の解釈へ
+survey:
+  searched_at: '2026-09-22'
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。

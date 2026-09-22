@@ -1,0 +1,301 @@
+schema_version: 1
+topic_id: lunar-subsurface
+title: 月の縦孔・地下構造・空洞
+question: 画像、レーダー、重力、熱観測が、それぞれ地下構造の何を制約するか。
+public: true
+navigation:
+  parent: lunar-geology
+  related:
+  - kaguya
+  - lunar-geodesy-interior
+  - lunar-charging-topography
+  - plasma-cavities
+  - lunar-water
+groups:
+- id: radar
+  title: LRS・地下層序
+- id: pits
+  title: 画像で捉える縦孔
+- id: voids
+  title: レーダー・重力による空洞候補
+- id: thermal
+  title: 照明・熱環境
+entries:
+- paper_id: P000276
+  group: radar
+  role: LRSの装置・観測方法
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000181
+  group: radar
+  role: LRSによる海の地下層序
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月の海の下にどのような層があるか。
+    method: LRSの地下反射と表面地質を比較する。
+    contribution: 地下の反射層を噴出休止期の埋没レゴリスと解釈し、玄武岩の堆積史を調べた。
+  evidence_by_item:
+    question:
+    - paper_id: P000181
+      version_id: V1
+      url: https://doi.org/10.1126/science.1165988
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000181
+      version_id: V1
+      url: https://doi.org/10.1126/science.1165988
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000181
+      version_id: V1
+      url: https://doi.org/10.1126/science.1165988
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000176
+  group: radar
+  role: LRSと表面散乱計算による地下エコー探索
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 小さな地下構造からの反射を表面散乱と分けられるか。
+    method: 生成した高解像度DEMで散乱を計算し、LRSとの差から候補を抽出する。
+    contribution: 地下空洞または高空隙率の物質と整合する小規模エコーを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000176
+      version_id: V1
+      url: https://doi.org/10.3390/rs17101710
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000176
+      version_id: V1
+      url: https://doi.org/10.3390/rs17101710
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000176
+      version_id: V1
+      url: https://doi.org/10.3390/rs17101710
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000183
+  group: pits
+  role: TC・MIによるMarius Hillsの縦孔
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: Marius Hillsの深い穴はどのような地形か。
+    method: TC・MIの画像を異なる照明条件で比較する。
+    contribution: 深さと直径、周囲の地質から溶岩チューブの開口という可能性を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000183
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040635
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000183
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040635
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000183
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040635
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000192
+  group: pits
+  role: LROCによる縦孔の壁と張り出し
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000193
+  group: pits
+  role: 縦孔の分布・形成機構
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000194
+  group: voids
+  role: GRAIL重力からの地下空洞候補
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 重力から細長い地下空洞の候補を抽出できるか。
+    method: GRAIL重力に勾配法と相互相関を適用する。
+    contribution: 質量欠損から空洞候補を示し、方向や寸法に対する検出感度を整理した。
+  evidence_by_item:
+    question:
+    - paper_id: P000194
+      version_id: V1
+      url: https://doi.org/10.1002/2016gl071588
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000194
+      version_id: V1
+      url: https://doi.org/10.1002/2016gl071588
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000194
+      version_id: V1
+      url: https://doi.org/10.1002/2016gl071588
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000195
+  group: voids
+  role: LRSによる溶岩チューブ候補
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: Marius Hillsの周囲に空洞と整合する地下反射があるか。
+    method: LRSのエコーとGRAILの質量欠損の位置を比較する。
+    contribution: 特徴的な二つ目の反射を複数地点で見いだし、溶岩チューブの可能性を論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000195
+      version_id: V1
+      url: https://doi.org/10.1002/2017gl074998
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000195
+      version_id: V1
+      url: https://doi.org/10.1002/2017gl074998
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000195
+      version_id: V1
+      url: https://doi.org/10.1002/2017gl074998
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000197
+  group: voids
+  role: Mini-RFによる横方向の空洞候補
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000196
+  group: thermal
+  role: Diviner観測と縦孔・空洞の熱モデル
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 縦孔とその奥の空洞では温度がどう変わるか。
+    method: Divinerの熱放射観測と熱物理モデルを組み合わせる。
+    contribution: 縦孔の夜間の高温と日陰の温度安定性を評価し、地表熱観測による空洞検出の感度を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000196
+      version_id: V1
+      url: https://doi.org/10.1029/2022gl099710
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000196
+      version_id: V1
+      url: https://doi.org/10.1029/2022gl099710
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000196
+      version_id: V1
+      url: https://doi.org/10.1029/2022gl099710
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+review:
+- heading: 画像に写る縦孔を、地下構造の手掛かりにする
+  paragraphs:
+  - '[@P000183]はTCとMIの画像からMarius Hillsの深い穴を報告した。縦孔は観測される地形であり、溶岩チューブ天井の崩落口という解釈には、周囲の地質や壁の形が関わる。LROCの追観測[@P000192]と縦孔分布の整理[@P000193]を合わせると、個別の穴から形成機構の比較へ進める。'
+- heading: レーダーと重力は、異なる地下の性質を測る
+  paragraphs:
+  - LRSの地下反射[@P000181]は海の層序を調べる手段となった。空洞候補を扱う[@P000195]は特徴的なエコーと、GRAILの質量欠損[@P000194]との対応を調べている。[@P000176]は表面散乱を計算して地下エコーを選別する。エコーの強さには空洞だけでなく、物質の誘電率や空隙率も関わる。
+  - Mini-RFを用いた[@P000197]はMare Tranquillitatisの縦孔下の通路候補を扱う。Diviner観測と熱モデル[@P000196]は内部の温度環境を評価するが、地表の熱放射だけから奥の空洞の存在を判定する感度は限られる。
+lineage:
+- title: 縦孔の発見から地下エコーの検討へ
+  steps:
+  - paper_id: P000183
+    title: Marius Hillsの縦孔を捉える
+    significance: 画像から深い穴の形状を測り、地下空洞への開口という可能性を示した。
+  - paper_id: P000192
+    title: 壁と張り出しを詳しく見る
+    significance: LROC画像で縦孔周辺の形状と海の層構造を調べた。
+    connection: 可視画像の空間分解能を高める
+  - paper_id: P000195
+    title: 地下からの反射を重ねる
+    significance: LRSの特徴的なエコーを空洞候補と関連付け、重力との空間対応を調べた。
+    connection: 地表形状から地下の観測量へ
+survey:
+  searched_at: '2026-09-22'
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。

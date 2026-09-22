@@ -1,0 +1,629 @@
+schema_version: 1
+topic_id: kaguya
+title: かぐや（SELENE）の観測と研究
+question: 観測装置ごとの成果と、保存データの再解析・他ミッションとの比較をたどる。
+public: true
+navigation:
+  parent: lunar-environment
+  related:
+  - lunar-geodesy-interior
+  - lunar-mineralogy
+  - lunar-volcanism
+  - lunar-subsurface
+  - lunar-charging-observations
+  - lunar-magnetic-anomalies
+  - lunar-water
+groups:
+- id: mission
+  title: ミッション・装置
+- id: geodesy
+  title: 地形・重力・地殻
+- id: geology
+  title: 鉱物・火山・地下構造
+- id: calibration
+  title: 較正・水氷候補
+- id: plasma
+  title: PACE・LMAGと粒子環境
+entries:
+- paper_id: P000168
+  group: mission
+  role: かぐやのミッション・観測装置
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000276
+  group: mission
+  role: LRSの装置・観測方法
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000169
+  group: geodesy
+  role: LALTによる全球地形
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月の全球地形をどの精度で復元できるか。
+    method: かぐやのLALT高度データから全球地形を作成する。
+    contribution: 全球形状と地形の波長別の特徴を示し、地殻の支持機構を比較した。
+  evidence_by_item:
+    question:
+    - paper_id: P000169
+      version_id: V1
+      url: https://doi.org/10.1126/science.1164146
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000169
+      version_id: V1
+      url: https://doi.org/10.1126/science.1164146
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000169
+      version_id: V1
+      url: https://doi.org/10.1126/science.1164146
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000170
+  group: geodesy
+  role: リレー衛星による月裏側重力
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月裏側の盆地の重力構造は表側とどう違うか。
+    method: リレー衛星を介した4ウェイドップラー観測から重力場を求める。
+    contribution: 盆地の重力異常と補償構造に表裏差を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000170
+      version_id: V1
+      url: https://doi.org/10.1126/science.1168029
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000170
+      version_id: V1
+      url: https://doi.org/10.1126/science.1168029
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000170
+      version_id: V1
+      url: https://doi.org/10.1126/science.1168029
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000180
+  group: geodesy
+  role: 重力と地形からの地殻厚推定
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 裏側の盆地構造の違いは何で決まるか。
+    method: SELENEの重力場と地形から地殻厚を計算する。
+    contribution: 衝突前の地殻厚と衝突規模の比に着目して盆地構造を解釈した。
+  evidence_by_item:
+    question:
+    - paper_id: P000180
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039708
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000180
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039708
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000180
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039708
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000171
+  group: geology
+  role: TC画像による裏側火山活動の年代
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月裏側の火山活動はいつまで続いたか。
+    method: TC画像のクレーター頻度から海のモデル年代を推定する。
+    contribution: 一部の海で比較的若い年代を示し、裏側火山活動の継続期間を見直した。
+  evidence_by_item:
+    question:
+    - paper_id: P000171
+      version_id: V1
+      url: https://doi.org/10.1126/science.1163382
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000171
+      version_id: V1
+      url: https://doi.org/10.1126/science.1163382
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000171
+      version_id: V1
+      url: https://doi.org/10.1126/science.1163382
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000172
+  group: geology
+  role: MIによる純斜長岩の分布
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月高地の地殻はどの程度斜長石に富むか。
+    method: MIの斜長石吸収帯を使って全球の露出地点を調べる。
+    contribution: 高純度斜長岩の分布を示し、地殻形成モデルを制約した。
+  evidence_by_item:
+    question:
+    - paper_id: P000172
+      version_id: V1
+      url: https://www.nature.com/articles/nature08317
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000172
+      version_id: V1
+      url: https://www.nature.com/articles/nature08317
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000172
+      version_id: V1
+      url: https://www.nature.com/articles/nature08317
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000173
+  group: geology
+  role: SPによるかんらん石と深部物質の候補
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000174
+  group: geology
+  role: SPアーカイブによるイルメナイト分布
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000175
+  group: geology
+  role: GRSによるウランとU/Th比
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000176
+  group: geology
+  role: LRSと表面散乱計算による地下エコー探索
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 小さな地下構造からの反射を表面散乱と分けられるか。
+    method: 生成した高解像度DEMで散乱を計算し、LRSとの差から候補を抽出する。
+    contribution: 地下空洞または高空隙率の物質と整合する小規模エコーを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000176
+      version_id: V1
+      url: https://doi.org/10.3390/rs17101710
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000176
+      version_id: V1
+      url: https://doi.org/10.3390/rs17101710
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000176
+      version_id: V1
+      url: https://doi.org/10.3390/rs17101710
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000181
+  group: geology
+  role: LRSによる海の地下層序
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 月の海の下にどのような層があるか。
+    method: LRSの地下反射と表面地質を比較する。
+    contribution: 地下の反射層を噴出休止期の埋没レゴリスと解釈し、玄武岩の堆積史を調べた。
+  evidence_by_item:
+    question:
+    - paper_id: P000181
+      version_id: V1
+      url: https://doi.org/10.1126/science.1165988
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000181
+      version_id: V1
+      url: https://doi.org/10.1126/science.1165988
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000181
+      version_id: V1
+      url: https://doi.org/10.1126/science.1165988
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000182
+  group: geology
+  role: Moscovienseの玄武岩層厚と年代
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: Moscovienseの噴出期間と量はどの程度か。
+    method: TC画像から玄武岩の年代・層厚・体積を推定する。
+    contribution: 長期の火山活動と大きな噴出量を薄い地殻と関連付けて論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000182
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040472
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000182
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040472
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000182
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040472
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000183
+  group: geology
+  role: TC・MIによるMarius Hillsの縦孔
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: Marius Hillsの深い穴はどのような地形か。
+    method: TC・MIの画像を異なる照明条件で比較する。
+    contribution: 深さと直径、周囲の地質から溶岩チューブの開口という可能性を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000183
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040635
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000183
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040635
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000183
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl040635
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000195
+  group: geology
+  role: LRSによる溶岩チューブ候補
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: Marius Hillsの周囲に空洞と整合する地下反射があるか。
+    method: LRSのエコーとGRAILの質量欠損の位置を比較する。
+    contribution: 特徴的な二つ目の反射を複数地点で見いだし、溶岩チューブの可能性を論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000195
+      version_id: V1
+      url: https://doi.org/10.1002/2017gl074998
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000195
+      version_id: V1
+      url: https://doi.org/10.1002/2017gl074998
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000195
+      version_id: V1
+      url: https://doi.org/10.1002/2017gl074998
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000277
+  group: calibration
+  role: 観測機器間の放射輝度比較
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000278
+  group: calibration
+  role: 観測幾何と測光補正
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000279
+  group: calibration
+  role: MI・SP・M³の反射スペクトル比較
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000280
+  group: calibration
+  role: SPによる日陰の水氷粒子候補
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000177
+  group: plasma
+  role: PACEによる地球起源酸素の輸送
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000178
+  group: plasma
+  role: PACE・LMAGによる磁気リコネクションの候補
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000179
+  group: plasma
+  role: PACEによるC・N・Oイオンの日変化
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000184
+  group: plasma
+  role: PACEによる太陽風陽子の月面反射
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000185
+  group: plasma
+  role: PACEによる月起源イオン
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000103
+  group: plasma
+  role: 昼側散乱から夜側への陽子輸送
+  summary:
+    question: 太陽風陽子は、低高度の月ウェイク深部へどう到達するか。
+    method: かぐやの粒子観測と、昼側で散乱した陽子の軌道計算を比較。
+    contribution: 昼側散乱と太陽風電場による拾い上げを経て、陽子が深部へ回り込む経路を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000103
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039444
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000103
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039444
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000103
+      version_id: V1
+      url: https://doi.org/10.1029/2009gl039444
+      source_type: abstract
+      locator: 出版社PDF p.1 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000186
+  group: plasma
+  role: ウェイク内の陽子エネルギー変化
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000107
+  group: plasma
+  role: 月表面の磁場モデル
+  summary:
+    question: 月周回の磁場観測から、地表のベクトル磁場をどう復元するか。
+    method: かぐやとLunar Prospectorの低高度観測をsurface vector mappingで統合。
+    contribution: 全球の表面磁場3成分を提供し、明るい模様と磁場構造の対応を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000107
+      version_id: V1
+      url: https://doi.org/10.1002/2014je004785
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000111
+  group: plasma
+  role: 電子とイオンの同時計測
+  summary:
+    question: 磁気異常上空の電子加速とイオン減速は、どの電場に対応するか。
+    method: かぐやMAP-PACEで電子・陽子・アルファ粒子のエネルギー変化を比較。
+    contribution: 電荷当たりのエネルギー変化の対応から、月から外向きの電場を示した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000111
+      version_id: V1
+      url: https://link.springer.com/article/10.5047/eps.2011.07.011
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+review:
+- heading: 装置ごとの観測を、共通の月の姿へ結び付ける
+  paragraphs:
+  - かぐやは地形、重力、分光、レーダー、粒子・磁場を組み合わせて月を調べた。ミッションの全体像は[@P000168]、地下探査の装置と観測方法は[@P000276]を入口にできる。
+  - LALTの全球地形[@P000169]と、リレー衛星を使った裏側重力場[@P000170]は、地殻厚の推定[@P000180]へつながる。画像から得られる形と、重力から推定する内部構造を重ねる研究の流れである。
+- heading: 保存データの再解析で、観測できる対象を広げる
+  paragraphs:
+  - LRSが捉えた海の地下層序[@P000181]に対し、[@P000176]は表面からの散乱を計算し、小規模な地下エコー候補を探している。分光データの比較では、放射輝度[@P000277]、測光補正[@P000278]、反射率[@P000279]を分けて読むと、機器間の違いを追いやすい。
+  - PACEでは太陽風陽子の反射[@P000184]と月起源イオン[@P000185]が観測対象となった。地球起源酸素[@P000177]、月周辺のC・N・Oイオンの日変化[@P000179]へと対象が広がり、表面と周囲のプラズマを結ぶ研究に使われている。
+lineage:
+- title: 地形・重力から地殻構造へ
+  steps:
+  - paper_id: P000169
+    title: 全球の高さを測る
+    significance: LALTから全球地形を整備し、盆地や極域の形を比較する基盤を作った。
+  - paper_id: P000170
+    title: 月裏側の重力を測る
+    significance: リレー衛星を介した追跡で裏側重力場を制約した。
+    connection: 形状と重力という異なる観測量をそろえる
+  - paper_id: P000180
+    title: 地形と重力を統合する
+    significance: 両者を用いて地殻厚を推定し、裏側盆地の構造差を調べた。
+    connection: 二つの観測から内部構造を推定
+survey:
+  searched_at: '2026-09-22'
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。

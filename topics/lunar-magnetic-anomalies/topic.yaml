@@ -22,6 +22,9 @@ review:
     Pole–Aitkenの磁気群では、太陽風動圧への応答も異なる。
   - 長い時間にわたる照射の違いは、表面の明るいスワール模様や宇宙風化へとつながる。[@P000108]は磁場と反射スペクトルを比較し、太陽風遮蔽と微細ダスト集積の両方から模様の成因を論じた。粒子・電場を扱う研究と表面の分光観測を合わせて読むことで、瞬間的なプラズマ環境から表面変化へのつながりを追える。
   - 続く[@P000163]は、Chandrayaan-1の高度約100 kmで太陽風の偏向・加熱・減速が持続することを調べた。反射陽子との相互作用で生じる広域のproto-magnetosheathという解釈により、フラックスの再分配を上空の流れの変化へ結び付けている。
+- heading: 遮蔽を比べ、散乱粒子の行き先を追う
+  paragraphs:
+  - '[@P000274]は複数の磁気異常を比較し、単純な磁場構造で見られる遮蔽の傾向が、複雑な構造では一様に成り立たないことを示した。[@P000272]はARTEMISの統計から高高度・下流の圧縮構造を調べ、[@P000273]は磁気異常で散乱された陽子が月ウェイクへ届く経路を観測と軌道追跡から検討している。'
 lineage:
 - title: 遮蔽の観測から電荷分離へ
   steps:
@@ -67,6 +70,7 @@ navigation:
   - lunar-water
   - lunar-charging-observations
   - secondary-electron-emission
+  - kaguya
 groups:
 - id: field-and-swirls
   title: 磁場モデル・スワール
@@ -399,6 +403,129 @@ entries:
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-18'
+- paper_id: P000178
+  group: particles-and-potentials
+  role: PACE・LMAGによる磁気リコネクションの候補
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000274
+  group: particles-and-potentials
+  role: 複数磁気異常の中性原子による遮蔽比較
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 太陽風遮蔽の傾向は異なる磁気異常でも共通か。
+    method: SARAの中性原子観測を局所磁場と太陽風条件に対応させる。
+    contribution: 単純なGerasimovich異常と複雑な他の異常で、遮蔽と環境条件の関係が異なることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000274
+      version_id: V1
+      url: https://doi.org/10.1029/2012ja017553
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000274
+      version_id: V1
+      url: https://doi.org/10.1029/2012ja017553
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000274
+      version_id: V1
+      url: https://doi.org/10.1029/2012ja017553
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000272
+  group: surface-and-global
+  role: ARTEMISによる磁気異常周辺の圧縮構造
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 磁気異常周辺の圧縮構造はどこでどの条件で生じるか。
+    method: ARTEMISの5年間の粒子・磁場観測を統計解析する。
+    contribution: 太陽風条件と圧縮構造の位置・流れの偏向を関連付け、反射陽子との運動量交換から解釈した。
+  evidence_by_item:
+    question:
+    - paper_id: P000272
+      version_id: V1
+      url: https://doi.org/10.1002/2017ja023931
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000272
+      version_id: V1
+      url: https://doi.org/10.1002/2017ja023931
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000272
+      version_id: V1
+      url: https://doi.org/10.1002/2017ja023931
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000273
+  group: surface-and-global
+  role: 磁気異常からウェイクへの陽子輸送
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 磁気異常で散乱された陽子は月ウェイクへ届くか。
+    method: SARA/SWIM観測と粒子の逆向き軌道追跡を組み合わせる。
+    contribution: South Pole–Aitkenの磁気異常に由来する近傍ウェイクへの輸送経路を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000273
+      version_id: V1
+      url: https://doi.org/10.1029/2018gl079330
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000273
+      version_id: V1
+      url: https://doi.org/10.1029/2018gl079330
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000273
+      version_id: V1
+      url: https://doi.org/10.1029/2018gl079330
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000275
+  group: surface-and-global
+  role: ミニ磁気圏の実験とスワール形成
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
 relations: []
 view:
   sort:
@@ -410,16 +537,19 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-18'
+  searched_at: '2026-09-22'
   scope_period: 制限なし
   provider_names:
   - Paperpileライブラリ
   - Crossref
   - 出版社・機関リポジトリ
+  - 'GitHub Issues #2–#8'
+  - 出版社・公的機関の公開書誌
   queries: []
-  coverage_note: 書誌と要旨を中心に、各文献の比較軸と参照先を整理。
-  limitations: []
-  changes: 新規テーマの初版を作成。
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

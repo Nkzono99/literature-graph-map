@@ -1,0 +1,525 @@
+schema_version: 1
+topic_id: dust-adhesion
+title: ダストの付着・接触・離脱
+question: 表面エネルギー、粗さ、粒子形状と電荷から、接触の強さと離脱条件を調べる。
+public: true
+navigation:
+  parent: plasma-processes
+  related:
+  - dust-charging
+  - lunar-charging-dust
+  - lunar-charging-engineering
+  - plasma-cavities
+groups:
+- id: contact
+  title: 接触・付着の理論
+- id: roughness
+  title: 粗さ・形状・凝集体
+- id: measurements
+  title: 月試料・模擬粒子の測定
+- id: detachment
+  title: 帯電と離脱・輸送
+entries:
+- paper_id: P000198
+  group: contact
+  role: JKRの弾性付着理論
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 表面エネルギーは弾性体の接触をどう変えるか。
+    method: 弾性球の接触理論を導き、ゴムとゼラチン球の実験と比較する。
+    contribution: 接触寸法と付着力に表面エネルギーを取り入れるJKR理論を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000198
+      version_id: V1
+      url: https://doi.org/10.1098/rspa.1971.0141
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000198
+      version_id: V1
+      url: https://doi.org/10.1098/rspa.1971.0141
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000198
+      version_id: V1
+      url: https://doi.org/10.1098/rspa.1971.0141
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000199
+  group: contact
+  role: DMTの接触変形・付着理論
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000200
+  group: contact
+  role: JKRとDMTの遷移
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000205
+  group: contact
+  role: 球状粒子間のvan der Waals力
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000201
+  group: roughness
+  role: 表面粗さによる付着力の変化
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 小さな粗さは付着力にどれほど影響するか。
+    method: ゴム球と粗さを変えた硬い面の実験を、突起の統計モデルと比較する。
+    contribution: 粗さと弾性の競合から付着の低下を説明した。
+  evidence_by_item:
+    question:
+    - paper_id: P000201
+      version_id: V1
+      url: https://doi.org/10.1098/rspa.1975.0138
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000201
+      version_id: V1
+      url: https://doi.org/10.1098/rspa.1975.0138
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000201
+      version_id: V1
+      url: https://doi.org/10.1098/rspa.1975.0138
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000202
+  group: roughness
+  role: ナノ粗面の付着理論（第1報）
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000203
+  group: roughness
+  role: ナノ粗面の付着測定（第2報）
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000204
+  group: roughness
+  role: 突起の統計による多点接触
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000206
+  group: roughness
+  role: 付着接触の転がり抵抗
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000207
+  group: roughness
+  role: 粒子接触と凝集体の構造
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000212
+  group: roughness
+  role: フラクタル粗面上の微粒子付着
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000218
+  group: roughness
+  role: Apollo試料の三次元形状と空隙
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000281
+  group: roughness
+  role: FJS-1の三次元形状と離散要素法
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000208
+  group: measurements
+  role: 月ダストの付着・凝集機構
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000209
+  group: measurements
+  role: 月ダスト付着の技術報告
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000210
+  group: measurements
+  role: 遠心法による模擬粒子の付着測定
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000211
+  group: measurements
+  role: 真空・UV条件を含む付着試験
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000213
+  group: measurements
+  role: 付着測定用の遠心装置
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000214
+  group: measurements
+  role: ナノチューブ表面による付着低減
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000257
+  group: measurements
+  role: 受動的なダスト対策表面の比較
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000258
+  group: measurements
+  role: ZnO薄膜と立体テクスチャの付着試験
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000259
+  group: measurements
+  role: 導電性ポリイミドによる付着低減
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000026
+  group: detachment
+  role: プラズマ中のダスト移動実験
+  summary:
+    question: 粉体の中央と縁で、帯電と移動はどう変わるか。
+    method: 負にバイアスした導電板上のJSC-Mars-1粒子をプラズマ中で観察。
+    contribution: 正に帯電した粒子の外向き移動と、粉体層の縁で強まる帯電を報告。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000026
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013983
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000029
+  group: detachment
+  role: 電子ビームとダスト離脱
+  summary:
+    question: 電子照射は、粉体と基板の間にどのような電場を作るか。
+    method: 浮遊電位の黒鉛上に置いたJSC-Mars-1粒子へ、プラズマ中で電子を照射。
+    contribution: 二次電子放出の違いが水平・鉛直電場を強め、粒子の移動と離脱を促した。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000029
+      version_id: V1
+      url: https://doi.org/10.1029/2010ja015465
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000009
+  group: detachment
+  role: 空隙の電子再吸収
+  summary:
+    question: 粉体面の粒子は、離脱に必要な電荷をどう得るか。
+    method: 粉体の照射実験と、空隙内の電子再吸収モデルを比較。
+    contribution: 空隙の負帯電・反発力で粒子の跳躍を説明するPCMを提案。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000009
+      version_id: V1
+      url: https://doi.org/10.1002/2016GL069491
+      source_type: full_text
+      locator: §2–4（pp.6104–6109）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000010
+  group: detachment
+  role: 粒子間電場と導電性
+  summary:
+    question: 粒子間の局所電場はどこまで強くなるか。
+    method: 一次元で導電性を、三次元で固定粒子群の差動帯電を計算。
+    contribution: 導電性が局所電場の上限を左右する。粒子離脱は計算対象外。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000010
+      version_id: V1
+      url: https://doi.org/10.1002/2016JE005049
+      source_type: full_text
+      locator: 考察・§5（p.2163）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000013
+  group: detachment
+  role: 単粒子と基板の隙間
+  summary:
+    question: 基板上の単粒子も、電子の再捕集で帯電・移動するか。
+    method: Kapton上のSiO₂粒子を電子・紫外線で照射し、移動を画像計測。
+    contribution: PCMを粒子と基板の隙間へ拡張。計測した移動度は離脱率とは異なる。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000013
+      version_id: V1
+      url: https://doi.org/10.1103/PhysRevLett.133.115301
+      source_type: full_text
+      locator: PCM-SP・Figs.3–4（PDF pp.1–3）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000215
+  group: detachment
+  role: 光帯電と外部電場による離脱
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: false
+  summary:
+    question: 外部電場の向きは光帯電粒子の離脱をどう変えるか。
+    method: 導体上の絶縁粒子にUVと正負の外部電場を与える。
+    contribution: 光電子の軌道の違いが、正帯電に至る過程と粒子離脱の違いを生むことを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000215
+      version_id: V1
+      url: https://doi.org/10.1063/5.0210675
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000215
+      version_id: V1
+      url: https://doi.org/10.1063/5.0210675
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000215
+      version_id: V1
+      url: https://doi.org/10.1063/5.0210675
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-22'
+- paper_id: P000216
+  group: detachment
+  role: 電荷ゆらぎと静電離脱
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000217
+  group: detachment
+  role: 離脱後の打ち上げ速度の評価
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000014
+  group: detachment
+  role: 光とプラズマの同時照射
+  summary:
+    question: 光電子を放出する粉体に、プラズマ電子はどう作用するか。
+    method: 模擬粉体への真空紫外線・低密度Arプラズマの単独／同時照射を比較。
+    contribution: 同時照射で飛び出し・推定負電荷が増加。charge pumpingで説明。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000014
+      version_id: V1
+      url: https://doi.org/10.1029/2024GL113715
+      source_type: full_text
+      locator: 要旨・§3.2–3.3（PDF pp.1,5）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000250
+  group: detachment
+  role: 関連研究
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000249
+  group: detachment
+  role: 月ダストの生成・物性・輸送の総説
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000256
+  group: detachment
+  role: ダスト運動とレゴリス力学の総説
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+review:
+- heading: 接触モデルと表面粗さが、離脱に必要な力を変える
+  paragraphs:
+  - 粒子を表面から離すには、電場中の力と付着力を同じ条件で比べる必要がある。[@P000198]のJKR、[@P000199]のDMT、両者の遷移を扱う[@P000200]は、弾性変形と表面エネルギーから接触を考える基礎である。
+  - 実際の表面には凹凸がある。[@P000204]は突起の統計から接触を扱い、[@P000201]は粗さによって付着が大きく減ることを実験とモデルで調べた。ナノ粗面の理論[@P000202]と測定[@P000203]、Apollo粒子の三次元形状[@P000218]は、平滑な球の近似を使う条件を考える材料になる。
+- heading: 付着の測定を、帯電による離脱と結び付ける
+  paragraphs:
+  - 月ダスト付着を整理した[@P000208]と[@P000209]に対し、[@P000210]は遠心法、[@P000211]は模擬月環境の条件から付着を測る。環境、粒径、粗さ、接触履歴をそろえることが、異なる実験を比較する出発点となる。
+  - 表面上の局所帯電[@P000009]と単粒子の移動[@P000013]は、付着していた粒子が動き始める過程を扱う。[@P000215]ではUVと外部電場を組み合わせ、電場の向きによる光電子の動きと粒子離脱の違いを調べた。
+lineage:
+- title: 弾性付着から粗面の付着へ
+  steps:
+  - paper_id: P000198
+    title: 表面エネルギーを接触に加える
+    significance: 弾性球の接触寸法と引き離し力を表面エネルギーから求めた。
+  - paper_id: P000201
+    title: 粗さの効果を調べる
+    significance: 個々の突起の付着と圧縮を組み合わせ、粗面の付着低下を説明した。
+    connection: 平滑面の接触を突起の集まりへ拡張
+survey:
+  searched_at: '2026-09-22'
+  provider_names:
+  - 'GitHub Issues #2–#8'
+  - Crossref
+  - 出版社・公的機関の公開書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  limitations:
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。

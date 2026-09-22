@@ -9,7 +9,9 @@ review:
   - 粒子計算では、衝突のたびに何個の電子を、どのエネルギーで放出するかを決める必要がある。[@P000091]は銅とステンレス鋼の測定に合わせた確率モデルを示した。PICへ放出過程を組み込む際の出発点になり、材料の収率と放出電子の分布を一緒に扱える。
 - heading: 月試料を粉体・孤立粒子・軌道観測で比べる
   paragraphs:
-  - 月試料の初期測定として、[@P000150]はApollo 14の粉体を用い、放出収率とエネルギー分布を調べた。単粒子の材料比較では、[@P000166]がApollo 17・MLS-I・JSC-1の帯電を電子照射で測り、実月試料の収率がMLS-Iに近いと推定した。Apollo 16土壌を扱う[@P000151]は、40–2000 eVでの総電子収率と、10 keV照射下での粒子移動を測定している。一方、[@P000153]は0.2–13 µmの粒子を個別に保持して帯電を測った。孤立粒子と粉体層では電子が周囲の粒子へ戻る経路が異なるため、粒径と試料の置き方が比較の手掛かりになる。
+  - 月試料の初期測定として、[@P000150]はApollo 14の粉体を用い、放出収率とエネルギー分布を調べた。単粒子の材料比較では、[@P000166]がApollo
+    17・MLS-I・JSC-1の帯電を電子照射で測り、実月試料の収率がMLS-Iに近いと推定した。Apollo 16土壌を扱う[@P000151]は、40–2000
+    eVでの総電子収率と、10 keV照射下での粒子移動を測定している。一方、[@P000153]は0.2–13 µmの粒子を個別に保持して帯電を測った。孤立粒子と粉体層では電子が周囲の粒子へ戻る経路が異なるため、粒径と試料の置き方が比較の手掛かりになる。
   - 観測へ進むと、[@P000152]は月が地球磁気圏内にある夜側のデータから、月面を出入りする電子電流を比較した。推定した実効収率は、比較対象の実験室試料の約3分の1だった。模擬レゴリス層を測る[@P000053]と併せると、材料組成や微細構造から、表面を脱出する電子の量へ議論をつなげられる。
 - heading: 強い放出がシースの電位構造を変える
   paragraphs:
@@ -70,6 +72,7 @@ navigation:
   - spacecraft-plasma
   - plasma-processing
   - lunar-magnetic-anomalies
+  - dust-charging
 groups:
 - id: material-models
   title: 放出モデル・金属表面
@@ -716,6 +719,42 @@ entries:
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-18'
+- paper_id: P000243
+  group: lunar-materials
+  role: 月試料の光電子・二次電子放出
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000248
+  group: plasma-applications
+  role: エネルギー依存SEEとRF放電密度
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000250
+  group: grain-recapture
+  role: 斜入射電子ビームによる方向性輸送
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
+- paper_id: P000271
+  group: sheath-feedback
+  role: 強いSEEが励起するシース不安定性
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-22'
+    recheck: true
 relations: []
 view:
   sort:
@@ -727,7 +766,7 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-18'
+  searched_at: '2026-09-22'
   scope_period: 1967–2026
   provider_names:
   - 所蔵文献
@@ -735,16 +774,19 @@ survey:
   - Crossref
   - NASA ADS/NTRS
   - CERN
+  - 'GitHub Issues #2–#8'
+  - 出版社・公的機関の公開書誌
   queries:
   - secondary electron emission
   - electron emission lunar regolith
   - emitting sheath
   - ion-induced electron emission
-  coverage_note: 材料測定・月試料・放出シース・粒子間再捕集・放電応用を横断する文献を収録。
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
   limitations:
   - 主に要旨を参照。Hobbs & Wesson (1967)の内容はLangendorf & Walker (2015)による紹介に基づく。
   - 無料版・プレプリントの有無は、見つかった公開記録の範囲で整理。
-  changes: 二次電子放出の独立テーマを追加。
+  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

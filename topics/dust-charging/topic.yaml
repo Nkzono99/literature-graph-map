@@ -4,7 +4,7 @@ title: ダスト帯電の理論と粒子実験
 question: 孤立球の電流収支から、離散電荷、凝集体、表面上の不均一帯電へ進む。
 public: true
 navigation:
-  parent: plasma-processes
+  parent: dust-physics
   related:
   - dust-adhesion
   - lunar-charging-dust

@@ -1,6 +1,6 @@
 schema_version: 1
 topic_id: lunar-charging-observations
-title: 観測・宇宙環境
+title: 月面帯電の観測・宇宙環境
 question: ApolloからLunar Prospector、ARTEMIS、かぐや、IM-1へ。観測から読む月面の電気的環境。
 review:
 - heading: 電子観測から月面電位を推定する

@@ -4,7 +4,7 @@ title: ダストの付着・接触・離脱
 question: 表面エネルギー、粗さ、粒子形状と電荷から、接触の強さと離脱条件を調べる。
 public: true
 navigation:
-  parent: plasma-processes
+  parent: dust-physics
   related:
   - dust-charging
   - lunar-charging-dust

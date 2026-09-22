@@ -1,6 +1,6 @@
 schema_version: 1
 topic_id: lunar-charging-sheath
-title: 電流収支・光電子シース
+title: 月面の電流収支・光電子シース
 question: 月面の電位と、その上に広がる光電子シースを決める電流・材料特性・プラズマ条件。
 review:
 - heading: 電流の釣り合いと電子放出

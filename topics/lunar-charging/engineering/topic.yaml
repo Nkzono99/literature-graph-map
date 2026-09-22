@@ -1,6 +1,6 @@
 schema_version: 1
 topic_id: lunar-charging-engineering
-title: 帯電リスク・除塵技術
+title: 月探査の帯電リスク・除塵技術
 question: 探査機の差動帯電と静電放電、機器や宇宙服に付着したダストへの対策。
 review:
 - heading: 差動帯電を機体設計へつなげる
@@ -38,6 +38,8 @@ scope:
 navigation:
   parent: lunar-charging
   related:
+  - applications
+  - dust-physics
   - spacecraft-plasma
   - dust-adhesion
 groups:

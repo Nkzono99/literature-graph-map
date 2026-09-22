@@ -1,0 +1,9 @@
+topic_id: dust-physics
+title: ダストの基礎
+question: 粒子の電荷、表面との接触、付着面からの離脱を、理論と実験から調べる。
+navigation:
+  related:
+  - plasma-processes
+  - lunar-charging-dust
+  - lunar-charging-engineering
+entries: []

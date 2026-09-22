@@ -1,6 +1,6 @@
 schema_version: 1
 topic_id: lunar-charging-dust
-title: ダスト・材料・静電輸送
+title: 月ダストの帯電・付着・静電輸送
 question: 電子放出と粒子電荷、微小な隙間での帯電、付着面からの離脱と上空への輸送。
 review:
 - heading: 光電子と二次電子は、粒子ごとに出入りする
@@ -56,6 +56,7 @@ scope:
 navigation:
   parent: lunar-charging
   related:
+  - dust-physics
   - plasma-sheaths
   - secondary-electron-emission
   - dust-charging

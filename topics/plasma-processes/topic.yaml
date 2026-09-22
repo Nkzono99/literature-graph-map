@@ -1,4 +1,7 @@
 topic_id: plasma-processes
 title: プラズマの基礎過程
 question: 表面への粒子の流入、電子放出、真空への膨張から、電荷と電位の成り立ちをたどる。
+navigation:
+  related:
+  - dust-physics
 entries: []

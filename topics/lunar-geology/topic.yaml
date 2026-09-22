@@ -1,6 +1,6 @@
 schema_version: 1
 topic_id: lunar-geology
-title: 月の地形・地質
+title: 月の地形・地質・内部構造
 question: 地形、重力、鉱物、クレーター、地下構造から月の形成と表層の変化を読む。
 public: true
 navigation:

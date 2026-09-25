@@ -19,6 +19,12 @@ review:
 - heading: 地形と磁場が、水素供給と氷の損失を変える
   paragraphs:
   - 太陽風は水素の供給源であると同時に、表面氷をスパッタで失わせる要因でもある。[@P000144]は南極の実地形から水素の流束とエネルギーを地図化した。[@P000145]は極域磁場と露出氷の分布の対応を調べ、磁気異常がイオン流入と損失を弱める可能性を論じている。地形と磁場を同時に入れた[@P000146]の電磁PICでは、地形による流束変化が大きく、磁場はその分布をさらに調整する。平均太陽風と実験由来の収率を用いた氷の収支は、月面帯電の計算を揮発性物質の進化へつなぐ具体例になる。
+- heading: 氷の量と温度が、地盤への寄与を変える
+  paragraphs:
+  - 水の存在量を地盤の強さへつなぐには、氷が粒子を結び付ける条件を調べる必要がある。[@P000292]の模擬物実験では、約90 Kで静的安息角が増えるのは氷含有量30重量%を超える条件だった。数重量%の氷があるだけで強い凝集を仮定できるとは限らず、温度と混合状態をそろえて比較する。
+- heading: 着陸機の排気も、局所の水と極域の化学組成に影響する
+  paragraphs:
+  - '[@P000303]はChang''e-5/6の観測から、排気由来の水が粒子へ入り、徐々に放出される過程をモデル化した。[@P000305]はメタンの全球輸送を計算し、南極着陸に由来する分子が北極の永久影にも捕捉される可能性を示す。着陸地点の観測では局所的な残留を、極域の氷の解釈では遠方からの人工物質の供給も考慮する必要がある。'
 lineage:
 - title: 日照域の水と供給源
   steps:
@@ -46,6 +52,15 @@ lineage:
     title: 小さな永久影まで保持面積を数える
     significance: 微小地形が作る低温の影を評価し、氷を保持できる領域を細かなスケールへ広げた。
     connection: 氷が残る場所を微小地形まで探る
+- title: 排気の全球輸送と着陸地点の残留
+  steps:
+  - paper_id: P000305
+    title: 人工揮発性物質の行き先を計算する
+    significance: 排気メタンの弾道輸送と両極の永久影への捕捉を評価した。
+  - paper_id: P000303
+    title: 表面への水の注入と放出を調べる
+    significance: 着陸画像・分光と拡散計算から、排気の水が表面に残る過程を示した。
+    connection: 全球輸送に対し、別の分子種の局所的な出入りを補う
 public: true
 scope:
   include:
@@ -62,6 +77,7 @@ navigation:
   - plasma-expansion
   - pic
   - lunar-geology
+  - dust-adhesion
 groups:
 - id: observations
   title: 水和・分子水・氷の観測
@@ -71,6 +87,10 @@ groups:
   title: 温度・脱離・コールドトラップ
 - id: plasma-environment
   title: 太陽風・地形・磁場
+- id: ice-mechanics
+  title: 氷とレゴリスの力学
+- id: contamination
+  title: 探査機由来の揮発性物質
 entries:
 - paper_id: P000138
   group: observations
@@ -549,6 +569,111 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000292
+  group: ice-mechanics
+  role: 水氷によるレゴリス凝集の低温実験
+  summary:
+    question: 永久影の水氷はレゴリスを固め、斜面を安定させるか。
+    method: 約90 Kと約220 Kで氷と高地レゴリス模擬物を混ぜ、静的・動的安息角と崩壊様式を測る。
+    contribution: 約90 Kでは氷が30重量%を超えると静的安息角が増えた一方、動的安息角の変化は小さかった。実験条件下では数重量%の氷による凝集の寄与は限定的だった。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000292
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009785
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000292
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009785
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000292
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009785
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000303
+  group: contamination
+  role: 着陸機排気由来の水の注入と放出
+  summary:
+    question: 着陸時の排気に由来する水はレゴリスにどう入り、放出されるか。
+    method: Chang'e-5/6の分光・着陸画像と水の拡散計算を組み合わせる。
+    contribution: 排気の水が粒子へ付着してから放出されるモデルを提案した。高温・真空下でも人工の水が局所観測に影響し得ることを示した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000303
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009582
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000303
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009582
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000303
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009582
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000305
+  group: contamination
+  role: 排気由来有機物の全球輸送と極域捕捉
+  summary:
+    question: 南極への着陸で放出した揮発性物質は反対側の極域も汚染するか。
+    method: Argonautを例に排気メタンの弾道輸送と表面との相互作用、永久影への捕捉を計算する。
+    contribution: モデルでは放出分子のおよそ半数が月の昼夜7周期以内に両極の永久影へ捕捉された。南極由来の分子が北極にも届き、氷の化学組成の解釈に影響し得る。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000305
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009132
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000305
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009132
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000305
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009132
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
 relations: []
 view:
   sort:
@@ -560,7 +685,7 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-09-25'
   scope_period: 制限なし
   provider_names:
   - Paperpile
@@ -568,12 +693,16 @@ survey:
   - 出版社・著者公開記録
   - 'GitHub Issues #2–#8'
   - 出版社・公的機関の公開書誌
+  - 'GitHub Issues #9–#10'
+  - Crossref・出版社・機関公開記録の要旨
   queries: []
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
+    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
   limitations:
   - 全件の本文精読・図表確認は未実施。
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

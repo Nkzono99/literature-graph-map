@@ -330,7 +330,13 @@ entries:
     contribution: 電子に富む負電位のプラズマ領域と、底面・壁面へ回り込むイオン流を示した。
   evidence_by_item:
     question: []
-    method: []
+    method:
+    - paper_id: P000048
+      version_id: V1
+      url: https://doi.org/10.57760/sciencedb.space.01916
+      source_type: metadata
+      locator: 公開データ：極域クレーターのSPIS計算（Science Data Bank）
+      checked_at: '2026-09-25'
     contribution:
     - paper_id: P000048
       version_id: V1
@@ -354,7 +360,13 @@ entries:
     contribution: シースより大きな空洞では、底部への電子供給が増え正電位を緩和。
   evidence_by_item:
     question: []
-    method: []
+    method:
+    - paper_id: P000015
+      version_id: V1
+      url: https://doi.org/10.5281/zenodo.14018082
+      source_type: metadata
+      locator: 公開データ：空洞サイズ依存のPIC計算（Zenodo）
+      checked_at: '2026-09-25'
     contribution:
     - paper_id: P000015
       version_id: V1
@@ -378,7 +390,13 @@ entries:
     contribution: 流速がイオン・電子の熱速度を順に超すと、底部電位は負→正→ほぼゼロ。
   evidence_by_item:
     question: []
-    method: []
+    method:
+    - paper_id: P000016
+      version_id: V1
+      url: https://doi.org/10.5281/zenodo.15686147
+      source_type: metadata
+      locator: 公開データ：流速・熱速度比のPIC計算と半解析モデル（Zenodo）
+      checked_at: '2026-09-25'
     contribution:
     - paper_id: P000016
       version_id: V1
@@ -857,6 +875,6 @@ survey:
   - Crossref
   - 出版社・公的機関の公開書誌
   coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。

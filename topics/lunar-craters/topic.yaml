@@ -1,7 +1,7 @@
 schema_version: 1
 topic_id: lunar-craters
 title: 月の衝突クレーター・年代学
-question: クレーターの分布と生成・二次衝突から、表面年代とレゴリス更新をどう制約するか。
+question: クレーターの形成・分布・二次衝突から、盆地の構造と表面年代、レゴリス更新をどう制約するか。
 public: true
 navigation:
   parent: lunar-geology
@@ -10,6 +10,7 @@ navigation:
   - lunar-volcanism
   - lunar-charging-topography
   - lunar-water
+  - lunar-mineralogy
 groups:
 - id: chronology
   title: 年代尺度
@@ -17,6 +18,8 @@ groups:
   title: 全球分布・台帳
 - id: renewal
   title: 二次衝突・表層更新
+- id: formation
+  title: 複雑クレーター・盆地の形成
 entries:
 - paper_id: P000187
   group: chronology
@@ -115,14 +118,302 @@ entries:
       source_type: abstract
       locator: 公開要旨
       checked_at: '2026-09-22'
+- paper_id: P000283
+  group: renewal
+  role: 形成直後のMcGetchinクレーター
+  summary:
+    question: 現代の衝突は月面にどのような地形と表面変化を残すか。
+    method: LROC広角画像の時系列比較で新規衝突を検出し、狭角画像で形状と噴出物を調べる。
+    contribution: 2024年春に形成された直径222 mのクレーターを同定し、形成直後の地形と広域の表面変化を記録した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000283
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.aeh7812
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000283
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.aeh7812
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000283
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.aeh7812
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000284
+  group: renewal
+  role: 新規衝突による遠方の熱物性変化
+  summary:
+    question: 衝突の影響はクレーター外の浅部レゴリスへどこまで及ぶか。
+    method: McGetchinクレーター周囲のDiviner夜間温度を測り、他の新規クレーターとも比較する。
+    contribution: 幅約7 km、周囲より8〜9 K低温の領域を確認した。浅部の締まりが緩む解釈と整合し、遠方の表層更新が衝突による掘り返しに匹敵する可能性を示した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000284
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.aeh9568
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000284
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.aeh9568
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000284
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.aeh9568
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000286
+  group: renewal
+  role: Ni同位体から読む衝突物質の供給
+  summary:
+    question: 月裏側の微小隕石供給と衝突蒸発はNi同位体にどう記録されるか。
+    method: Chang'e-6のレゴリスと岩片のNi同位体組成を測定する。
+    contribution: 重い同位体への偏りと一部岩片の軽い組成を、累積的な蒸発と再凝縮で解釈した。同位体異常から、長期平均の供給物質は主に内太陽系起源と推定した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000286
+      version_id: V1
+      url: https://api.crossref.org/works/10.1038/s43247-026-04038-1
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000286
+      version_id: V1
+      url: https://api.crossref.org/works/10.1038/s43247-026-04038-1
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000286
+      version_id: V1
+      url: https://api.crossref.org/works/10.1038/s43247-026-04038-1
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000287
+  group: renewal
+  role: 衝突蒸気からの二次鉱物形成
+  summary:
+    question: 衝突による蒸発と堆積は月レゴリス中の元素をどう再分配するか。
+    method: Chang'e-5の宇宙風化したかんらん石片に付着するクロム鉄鉱ナノ粒子の形態と組織を調べる。
+    contribution: 粒子の特徴を気相からの凝縮で説明し、衝突時のCr・Fe・Oの局所的な蒸発と、その後の再堆積を示す鉱物学的証拠とした。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000287
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009807
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000287
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009807
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000287
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009807
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000298
+  group: formation
+  role: 中央丘からピークリングへの遷移計算
+  summary:
+    question: 複雑クレーターの中央丘はどの条件で環状の峰へ移るか。
+    method: SALEc-2Dで音響流動化モデルのパラメータを変え、350ケースの衝突・崩壊を計算する。
+    contribution: 観測される遷移径と深さ・直径関係を再現するパラメータ組を示した。ただし、試した全組合せで中央丘・環の直径は過大となる傾向が残った。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000298
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009537
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000298
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009537
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000298
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009537
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000301
+  group: renewal
+  role: 月裏側浅部の密度・空隙構造
+  summary:
+    question: 衝突を重ねた月裏側の浅部地殻は、どの密度構造を持つか。
+    method: GRAIL重力とLOLA地形に有効密度スペクトル法を適用し、二層モデルの密度と境界深度を推定する。
+    contribution: 平均厚4.7 km、密度約2,111 kg/m³の上層と、約2,739 kg/m³の下層を推定した。上層を衝突破砕と噴出物に由来する多孔質層と解釈した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000301
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009138
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000301
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009138
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000301
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009138
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000306
+  group: formation
+  role: ピークリング盆地の形成仮説と観測制約
+  summary:
+    question: 盆地内部の環状の峰は、壁の崩壊と中央隆起からどう形成されるか。
+    method: 月盆地の形態、分光、重力観測を統合し、二つの形成仮説と数値モデルを比較する。
+    contribution: 観測とモデルの一致点・不一致点を整理し、複雑クレーターから多重リング盆地への遷移を調べる制約を示した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000306
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103515005527
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000306
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103515005527
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000306
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103515005527
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+- paper_id: P000307
+  group: formation
+  role: Orientale多重リング盆地の形成計算
+  summary:
+    question: Orientaleの複数の環と地下構造は、衝突後の崩壊でどう作られるか。
+    method: 衝突流体力学コードで盆地形成を計算し、GRAILの高分解能重力が制約する地下構造と比較する。
+    contribution: 直径約390 kmの一時的な空洞の重力崩壊を再現した。深部の高温・低強度物質の流動と大規模な正断層が外側の環を作ると解釈した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000307
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/27789836/
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000307
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/27789836/
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000307
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/27789836/
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
 review:
 - heading: クレーター台帳が、表面の履歴を比較する基盤になる
   paragraphs:
-  - '[@P000187]はクレーターのサイズ別頻度を月の年代尺度へ結び付ける。LOLAによる大型クレーターの全球分布[@P000188]に対し、[@P000191]は1〜2
-    km以上を網羅する台帳を作り、小径側の地域差も比較できるようにした。'
+  - '[@P000187]はクレーターのサイズ別頻度を月の年代尺度へ結び付ける。LOLAによる大型クレーターの全球分布[@P000188]に対し、[@P000191]は1〜2 km以上を網羅する台帳を作り、小径側の地域差も比較できるようにした。'
 - heading: 新しい衝突と二次クレーターを見分ける
   paragraphs:
   - '[@P000189]は同じ場所の時系列画像から新しい衝突と表層の変化を調べる。一方、[@P000190]は一次衝突から飛び出した岩塊が作る二次クレーターを対象とし、岩塊の大きさと放出速度の関係を評価した。年代推定に使う個数には、地形の更新と二次衝突の両方が影響する。'
+- heading: 形成直後の衝突を、地形と熱の両方で追う
+  paragraphs:
+  - 時系列観測[@P000189]を個別の衝突へ絞った[@P000283]は、2024年春に形成された直径222 mのMcGetchinクレーターを捉えた。同じ場所を熱赤外で調べた[@P000284]は、幅約7
+    kmの低温域から浅部レゴリスの締まりが緩んだ可能性を示す。地形の変化と熱物性の変化を重ねることで、衝突点から離れた表層更新も追える。
+  - 長い時間にわたる衝突は、物質の組成と地下の空隙も変える。Chang'e-6のNi同位体[@P000286]とChang'e-5の二次鉱物[@P000287]は蒸発・再凝縮を調べ、GRAILの密度推定[@P000301]は破砕と堆積が残す多孔質な浅部地殻を扱う。
+- heading: 中央丘と環の形成を、崩壊モデルで説明する
+  paragraphs:
+  - '[@P000306]は盆地内部の環状の峰、ピークリングについて、壁の内向きの崩壊と中央隆起が相互作用する仮説を観測と比べた。[@P000298]は音響流動化の条件を変え、中央丘から環へ移る直径と最終的な深さを調べる。遷移径を再現できても峰や環の直径には過大評価が残り、複数の形状指標を同時に比べる必要がある。'
+  - より大きなOrientaleを扱う[@P000307]では、深部の流動と正断層が外側の環を作る。ピークリングの形成と多重リングの形成を区別して読むと、衝突規模や月内部の温度が地形へ与える影響を整理できる。
 lineage:
 - title: 全球の個数を大型から小径へ広げる
   steps:
@@ -133,13 +424,44 @@ lineage:
     title: 台帳をkm級へ拡張する
     significance: より小さなクレーターを含む全球台帳を作り、地域ごとの個数を比較した。
     connection: 共通の全球比較を小径側へ広げる
+- title: 新規衝突の検出から遠方の表層更新へ
+  steps:
+  - paper_id: P000189
+    title: 時系列画像で新しい衝突を探す
+    significance: 反復撮像から衝突と周囲の表面変化を捉えた。
+  - paper_id: P000283
+    title: 大きな現代衝突を詳しく測る
+    significance: McGetchinクレーターの形成直後の地形を調べた。
+    connection: 広域の検出から個別の形成過程へ
+  - paper_id: P000284
+    title: 遠方の熱物性変化を測る
+    significance: 同じ衝突が作った低温域から浅部の構造変化を推定した。
+    connection: 同一イベントを熱赤外で補う
+- title: ピークリングの観測制約と形成計算
+  steps:
+  - paper_id: P000306
+    title: 観測と形成仮説を照合する
+    significance: 形態・分光・重力からピークリングの形成条件を整理した。
+  - paper_id: P000298
+    title: 中央丘から環への遷移を計算する
+    significance: 流動化の条件を変え、遷移径と深さの再現性を調べた。
+    connection: 観測制約をパラメータ比較へつなぐ
+- title: 多重リングを作る深部流動
+  steps:
+  - paper_id: P000307
+    title: Orientaleの崩壊を再現する
+    significance: 重力に整合する地下構造と外側リングの正断層形成を計算した。
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-09-25'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 'GitHub Issues #9–#10'
+  - Crossref・出版社・機関公開記録の要旨
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
+    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。

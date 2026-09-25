@@ -10,6 +10,8 @@ navigation:
   - lunar-charging-dust
   - lunar-charging-engineering
   - plasma-cavities
+  - lunar-mineralogy
+  - lunar-water
 groups:
 - id: contact
   title: 接触・付着の理論
@@ -175,11 +177,43 @@ entries:
   group: roughness
   role: Apollo試料の三次元形状と空隙
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    method:
+    - paper_id: P000218
+      version_id: V1
+      url: https://catalog.data.gov/dataset/3d-shape-and-size-data-for-10084-and-14163-lunar-regolith-particles
+      source_type: metadata
+      locator: 公開データ：Apollo 11・14の三次元粒子形状（NIST）
+      checked_at: '2026-09-25'
+    - paper_id: P000218
+      version_id: V1
+      url: https://www.nist.gov/publications/three-dimensional-characterization-particle-size-shape-and-internal-porosity-apollo-11
+      source_type: abstract
+      locator: NIST公開要旨
+      checked_at: '2026-09-25'
+    question:
+    - paper_id: P000218
+      version_id: V1
+      url: https://www.nist.gov/publications/three-dimensional-characterization-particle-size-shape-and-internal-porosity-apollo-11
+      source_type: abstract
+      locator: NIST公開要旨
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000218
+      version_id: V1
+      url: https://www.nist.gov/publications/three-dimensional-characterization-particle-size-shape-and-internal-porosity-apollo-11
+      source_type: abstract
+      locator: NIST公開要旨
+      checked_at: '2026-09-25'
+  summary:
+    question: 実際の月レゴリスと模擬物では、粒子の三次元形状と内部空隙がどう異なるか。
+    method: Apollo 11・14試料とJSC-1A模擬物をX線CTと数学的解析で調べ、微小粒子には電子顕微鏡観察を加える。
+    contribution: 月試料約14,000粒子と模擬物約128,000粒子を特徴付けた。三次元形状の公開データを整備し、実粒子による光散乱計算や模擬物との定量比較に使えるようにした。
 - paper_id: P000281
   group: roughness
   role: FJS-1の三次元形状と離散要素法
@@ -494,6 +528,111 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000290
+  group: measurements
+  role: 鉱物・形状・付着からの安息角推定
+  summary:
+    question: 月裏側レゴリスの鉱物組成と粒子表面は安息角をどう変えるか。
+    method: Chang'e-6の5種・30粒子の形状、表面エネルギー、摩擦を調べ、粒子集団の安息角を実験とモデルで評価する。
+    contribution: 月重力では摩擦・形状が支配する領域と付着が支配する領域の境界が、地球の約100 μmから約200 μmへ移ると推定した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000290
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009536
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000290
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009536
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000290
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009536
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000292
+  group: measurements
+  role: 水氷によるレゴリス凝集の低温実験
+  summary:
+    question: 永久影の水氷はレゴリスを固め、斜面を安定させるか。
+    method: 約90 Kと約220 Kで氷と高地レゴリス模擬物を混ぜ、静的・動的安息角と崩壊様式を測る。
+    contribution: 約90 Kでは氷が30重量%を超えると静的安息角が増えた一方、動的安息角の変化は小さかった。実験条件下では数重量%の氷による凝集の寄与は限定的だった。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000292
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009785
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000292
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009785
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000292
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009785
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000293
+  group: roughness
+  role: 月裏側粒子の三次元形状と集団強度
+  summary:
+    question: 月裏側粒子の不規則な形状はレゴリスの強度へどう寄与するか。
+    method: Chang'e-6試料のX線CTと半教師あり学習で349,740粒子を再構成し、実形状を使う離散要素法で力学応答を計算する。
+    contribution: 拘束圧5〜15 kPaの計算で内部摩擦角47.96°、粘着力1.08 kPaを得た。強度増加を主に粒子のかみ合いで説明した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000293
+      version_id: V1
+      url: https://api.crossref.org/works/10.34133/research.1064
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000293
+      version_id: V1
+      url: https://api.crossref.org/works/10.34133/research.1064
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000293
+      version_id: V1
+      url: https://api.crossref.org/works/10.34133/research.1064
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
 review:
 - heading: 接触モデルと表面粗さが、離脱に必要な力を変える
   paragraphs:
@@ -503,6 +642,10 @@ review:
   paragraphs:
   - 月ダスト付着を整理した[@P000208]と[@P000209]に対し、[@P000210]は遠心法、[@P000211]は模擬月環境の条件から付着を測る。環境、粒径、粗さ、接触履歴をそろえることが、異なる実験を比較する出発点となる。
   - 表面上の局所帯電[@P000009]と単粒子の移動[@P000013]は、付着していた粒子が動き始める過程を扱う。[@P000215]ではUVと外部電場を組み合わせ、電場の向きによる光電子の動きと粒子離脱の違いを調べた。
+- heading: 実粒子の形と氷の量から、集団の流れやすさを調べる
+  paragraphs:
+  - Apollo粒子の三次元形状[@P000218]に対し、[@P000293]はChang'e-6の多数の粒子を再構成して離散要素法へ入力した。得られた粘着力や摩擦角は、粒子集団の計算結果である。[@P000290]は鉱物ごとの摩擦と表面エネルギーも調べ、低重力で付着の寄与が大きくなる粒径域を比較する。
+  - 永久影では氷の寄与も加わる。[@P000292]は低温の模擬物実験から、氷含有量と静的・動的安息角の関係を調べた。接触一つの引き離し力、粒子同士のかみ合い、氷による凝集を分けて評価すると、月面地盤の強度へつなげやすい。
 lineage:
 - title: 弾性付着から粗面の付着へ
   steps:
@@ -513,13 +656,31 @@ lineage:
     title: 粗さの効果を調べる
     significance: 個々の突起の付着と圧縮を組み合わせ、粗面の付着低下を説明した。
     connection: 平滑面の接触を突起の集まりへ拡張
+- title: Apolloの形状計測から月裏側の粒子集団へ
+  steps:
+  - paper_id: P000218
+    title: 実粒子の形状と空隙を測る
+    significance: Apollo粒子の三次元形状を測り、模擬物との比較基盤を作った。
+  - paper_id: P000293
+    title: 月裏側の形状を強度計算へ入れる
+    significance: Chang'e-6粒子を多数再構成し、かみ合いによる強度を評価した。
+    connection: 形状計測を集団の力学応答へつなぐ
+  - paper_id: P000290
+    title: 摩擦と付着の寄与を比べる
+    significance: 鉱物・粒径・重力に応じて安息角が変わる条件を検討した。
+    connection: 形状に表面特性と重力の効果を加える
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-09-25'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 'GitHub Issues #9–#10'
+  - Crossref・出版社・機関公開記録の要旨
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
+    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。
+    Goguen 2024のNIST公開要旨に基づく要約・確認状況を追記。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。

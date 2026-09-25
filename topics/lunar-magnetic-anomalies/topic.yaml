@@ -25,6 +25,9 @@ review:
 - heading: 遮蔽を比べ、散乱粒子の行き先を追う
   paragraphs:
   - '[@P000274]は複数の磁気異常を比較し、単純な磁場構造で見られる遮蔽の傾向が、複雑な構造では一様に成り立たないことを示した。[@P000272]はARTEMISの統計から高高度・下流の圧縮構造を調べ、[@P000273]は磁気異常で散乱された陽子が月ウェイクへ届く経路を観測と軌道追跡から検討している。'
+- heading: 磁化が記録した磁場と、磁化を担う物質を分けて調べる
+  paragraphs:
+  - 現在の磁気異常の背景には、過去の磁場と磁性鉱物の履歴がある。[@P000288]は裏側起源と推定される月隕石から約7億年前の弱い磁場を読み、全球ダイナモの停止時期を制約する。一方、[@P000297]は模擬物の加熱によるFeの再分配と磁性相の生成を追う。試料の磁化を解釈する際には、磁場の強さと、物質が磁化を保持する条件の両方を参照できる。
 lineage:
 - title: 遮蔽の観測から電荷分離へ
   steps:
@@ -52,6 +55,11 @@ lineage:
     title: 反射陽子が作る広域構造を考える
     significance: SPA上空の持続的な流れの擾乱から、proto-magnetosheathという相互作用領域を提案した。
     connection: フラックスの再分配から流れの変化へ
+- title: 月裏側の古地磁気からダイナモ史へ
+  steps:
+  - paper_id: P000288
+    title: 若い裏側試料の磁場を制約する
+    significance: 隕石の古地磁気をApollo試料と比較し、全球磁場の停止時期を検討した。
 public: true
 scope:
   include:
@@ -71,6 +79,8 @@ navigation:
   - lunar-charging-observations
   - secondary-electron-emission
   - kaguya
+  - lunar-geodesy-interior
+  - lunar-mineralogy
 groups:
 - id: field-and-swirls
   title: 磁場モデル・スワール
@@ -80,6 +90,8 @@ groups:
   title: 運動論的シミュレーション
 - id: surface-and-global
   title: 表面帯電・広域への影響
+- id: origin
+  title: 磁化の起源・磁性鉱物
 entries:
 - paper_id: P000107
   group: field-and-swirls
@@ -526,6 +538,76 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000288
+  group: origin
+  role: 月裏側試料によるダイナモ停止時期の制約
+  summary:
+    question: 若い月裏側の試料は全球磁場の停止時期をどう制約するか。
+    method: 裏側起源と推定される月隕石NWA 15528の古地磁気を測り、若いApollo試料と比較する。
+    contribution: 約7億年前の磁場を数百nT未満と推定した。表側試料と合わせ、過去約10億年間に全球的なダイナモ磁場がなかった可能性を支持した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000288
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000288
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000288
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000297
+  group: origin
+  role: 熱処理によるFe再分配と磁性相形成
+  summary:
+    question: 模擬レゴリス中のFeは加熱でどのような磁性相へ変わるか。
+    method: 低酸素分圧で玄武岩質模擬物を加熱し、磁化測定、Mössbauer分光、X線回折、透過電子顕微鏡で調べる。
+    contribution: 800°Cの加熱後に金属Feと磁鉄鉱に似た相が形成され、20 kOeでの質量磁化が約27.5%増えた。さらに高温では磁性相の保持と磁化が低下した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000297
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je010010
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000297
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je010010
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000297
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je010010
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
 relations: []
 view:
   sort:
@@ -537,7 +619,7 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-09-25'
   scope_period: 制限なし
   provider_names:
   - Paperpileライブラリ
@@ -545,11 +627,15 @@ survey:
   - 出版社・機関リポジトリ
   - 'GitHub Issues #2–#8'
   - 出版社・公的機関の公開書誌
+  - 'GitHub Issues #9–#10'
+  - Crossref・出版社・機関公開記録の要旨
   queries: []
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
+    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

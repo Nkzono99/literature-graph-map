@@ -1,7 +1,7 @@
 schema_version: 1
 topic_id: lunar-geodesy-interior
-title: 月の地形計測・重力・地殻
-question: 高度と重力を組み合わせて、表裏の地形と地殻構造をどう推定するか。
+title: 月の地形計測・重力・内部構造
+question: 地形・重力・月震と試料の記録から、月の地殻構造と内部活動の履歴をどう推定するか。
 public: true
 navigation:
   parent: lunar-geology
@@ -10,11 +10,16 @@ navigation:
   - lunar-craters
   - lunar-subsurface
   - lunar-volcanism
+  - lunar-magnetic-anomalies
 groups:
 - id: measurements
   title: LALT・重力計測
 - id: interior
   title: 地殻厚・内部構造
+- id: seismology
+  title: 月震・地震波探査
+- id: thermal
+  title: 浅部の温度構造
 entries:
 - paper_id: P000169
   group: measurements
@@ -156,6 +161,286 @@ entries:
       source_type: abstract
       locator: 公開要旨
       checked_at: '2026-09-22'
+- paper_id: P000288
+  group: interior
+  role: 月裏側試料によるダイナモ停止時期の制約
+  summary:
+    question: 若い月裏側の試料は全球磁場の停止時期をどう制約するか。
+    method: 裏側起源と推定される月隕石NWA 15528の古地磁気を測り、若いApollo試料と比較する。
+    contribution: 約7億年前の磁場を数百nT未満と推定した。表側試料と合わせ、過去約10億年間に全球的なダイナモ磁場がなかった可能性を支持した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000288
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000288
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000288
+      version_id: V1
+      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000289
+  group: interior
+  role: 大型楯状火山と浅部マグマ貯留域
+  summary:
+    question: 月に大型楯状火山と、それを供給した浅部マグマ貯留域が存在したか。
+    method: Prinz-HarbingerとTheophilusの地形を調べ、重力異常から地下の貫入岩体を推定する。
+    contribution: 直径約80 kmの二つの楯状火山候補を示した。一方の重力異常を深さ7〜32 kmの貫入岩体で説明し、浅部貯留域からの噴火を提案した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000289
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl121908
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000289
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl121908
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000289
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl121908
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000299
+  group: thermal
+  role: Apolloコアの熱ルミネッセンス温度推定
+  summary:
+    question: 返還試料から浅部レゴリスの温度と熱波の到達深度を復元できるか。
+    method: Apollo 17コアの深さ95〜291 cmの自然熱ルミネッセンスをピーク分離し、平衡温度を推定する。
+    contribution: 深さ133〜291 cmで平均248 ± 14 K、温度勾配1.0 ± 0.5 K/mを得た。年周期の熱波の到達は約135 cm以浅と推定した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000299
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009720
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000299
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009720
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000299
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009720
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000300
+  group: seismology
+  role: 単一観測点からの月震定位
+  summary:
+    question: 強い散乱を受ける月震波形から、単一観測点で震源を求められるか。
+    method: Apolloの3成分波形からP波の周波数依存偏波を解析し、S波とP波の到着時刻差を組み合わせる。
+    contribution: 信号対雑音比が2を超える人工衝突と自然イベントで定位手法を検証した。P波の入射角は震源深度や観測点下の浅部構造にも感度を持つ。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000300
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl122962
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000300
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl122962
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000300
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl122962
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000301
+  group: interior
+  role: 月裏側浅部の密度・空隙構造
+  summary:
+    question: 衝突を重ねた月裏側の浅部地殻は、どの密度構造を持つか。
+    method: GRAIL重力とLOLA地形に有効密度スペクトル法を適用し、二層モデルの密度と境界深度を推定する。
+    contribution: 平均厚4.7 km、密度約2,111 kg/m³の上層と、約2,739 kg/m³の下層を推定した。上層を衝突破砕と噴出物に由来する多孔質層と解釈した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000301
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009138
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000301
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009138
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000301
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009138
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000302
+  group: seismology
+  role: 空洞を調べる常時微動探査の比較
+  summary:
+    question: 月の常時微動から溶岩チューブの存在と寸法を推定できるか。
+    method: Marius Hillsを含む二次元浅部モデルで、地震波干渉法、水平・鉛直スペクトル比、分布型音響計測、回転計測を比較する。
+    contribution: 空洞と天井厚への感度を示したが、底部深度の制約は難しかった。深さ10 mを超える構造には、通常の熱月震より低い1 Hz未満の振動源が必要となる。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000302
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009576
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000302
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009576
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000302
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009576
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000304
+  group: seismology
+  role: 反復する浅発月震と断層すべり
+  summary:
+    question: 浅発月震は繰り返し起こり、その起動は潮汐に支配されるか。
+    method: 更新されたApollo月震データから反復イベントを同定し、波形の相対位相と震源特性を比較する。
+    contribution: 反対の潮汐位相でもすべり方向が一致する一組の浅発月震を見いだした。潮汐応力が主な起動要因ではない可能性と、地震に似た断層物理を示唆した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000304
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl122541
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000304
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl122541
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000304
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl122541
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000307
+  group: interior
+  role: Orientale多重リング盆地の形成計算
+  summary:
+    question: Orientaleの複数の環と地下構造は、衝突後の崩壊でどう作られるか。
+    method: 衝突流体力学コードで盆地形成を計算し、GRAILの高分解能重力が制約する地下構造と比較する。
+    contribution: 直径約390 kmの一時的な空洞の重力崩壊を再現した。深部の高温・低強度物質の流動と大規模な正断層が外側の環を作ると解釈した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000307
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/27789836/
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000307
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/27789836/
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000307
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/27789836/
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
 review:
 - heading: 高さと重力の組合せから、地殻の厚さを推定する
   paragraphs:
@@ -164,6 +449,16 @@ review:
 - heading: 重力の空間分解能が、探せる地下構造を変える
   paragraphs:
   - GRAIL重力を使った[@P000194]は、長く細い質量欠損を空洞の候補として抽出する。衛星軌道と検出法によって感度の高い方向・寸法が異なるため、縦孔の画像やLRSの地下反射との対応が解釈を補う。
+- heading: 密度構造から、衝突破砕とマグマの貫入を探る
+  paragraphs:
+  - '[@P000301]はGRAILとLOLAを二層モデルで解釈し、月裏側の多孔質な上層と密な下層を推定した。[@P000307]はOrientaleの地下構造を衝突後の流動と断層形成で説明する。[@P000289]では大型火山候補に伴う重力異常を貫入岩体と解釈しており、同じ重力でも地質条件に応じた密度モデルが必要になる。'
+- heading: 月震波形で震源と浅部構造を調べる
+  paragraphs:
+  - '[@P000304]は反復する浅発月震を見いだし、すべり方向と潮汐位相の関係を調べた。[@P000300]はP波の偏波とS波・P波の時刻差から、単一観測点で震源を求める。前者は断層の起動、後者は定位手法に焦点を置く。'
+  - 浅部探査を扱う[@P000302]は、空洞の検出に使う常時微動の周波数と寸法感度を比較した。試料の熱履歴を使う[@P000299]は、Apollo 17コアから地中の温度勾配を求める。地震波と熱の記録を合わせることで、重力だけでは決まらない浅部の性質を補える。
+- heading: 若い試料の磁化から全球磁場の停止を制約する
+  paragraphs:
+  - '[@P000288]は月裏側起源と推定される隕石の古地磁気を測り、若いApollo試料と比較した。約7億年前の弱い磁場の記録は、過去約10億年間に全球的なダイナモ磁場がなかった可能性を支持する。試料の起源と記録年代を踏まえて内部活動の時間史を読む。'
 lineage:
 - title: 月裏側の重力から地殻厚へ
   steps:
@@ -174,13 +469,30 @@ lineage:
     title: 地形を加えて地殻厚を求める
     significance: 重力場と全球地形を組み合わせ、盆地の構造差を解釈した。
     connection: 重力と地形の統合
+  - paper_id: P000301
+    title: 浅部の密度と空隙を推定する
+    significance: 高分解能重力と地形を二層モデルへ当てはめ、多孔質な上層を推定した。
+    connection: 地殻厚に加えて浅部の密度構造を調べる
+- title: 反復月震の識別と単一観測点での定位
+  steps:
+  - paper_id: P000304
+    title: 浅発月震の繰り返しを捉える
+    significance: 同一震源と考えられるイベントから断層すべりと潮汐の関係を検討した。
+  - paper_id: P000300
+    title: 一台の地震計で位置を求める
+    significance: 偏波解析と到着時刻差を使い、月震と衝突の位置を推定した。
+    connection: 震源物理の解析に定位手法を補う
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-09-25'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 'GitHub Issues #9–#10'
+  - Crossref・出版社・機関公開記録の要旨
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
+    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。

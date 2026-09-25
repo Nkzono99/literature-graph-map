@@ -16,6 +16,8 @@ groups:
   title: 画像・年代・噴出量
 - id: volatiles
   title: 水と噴火機構
+- id: reservoirs
+  title: 火山地形・マグマ貯留域
 entries:
 - paper_id: P000171
   group: chronology
@@ -140,6 +142,41 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000289
+  group: reservoirs
+  role: 大型楯状火山と浅部マグマ貯留域
+  summary:
+    question: 月に大型楯状火山と、それを供給した浅部マグマ貯留域が存在したか。
+    method: Prinz-HarbingerとTheophilusの地形を調べ、重力異常から地下の貫入岩体を推定する。
+    contribution: 直径約80 kmの二つの楯状火山候補を示した。一方の重力異常を深さ7〜32 kmの貫入岩体で説明し、浅部貯留域からの噴火を提案した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000289
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl121908
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000289
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl121908
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000289
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026gl121908
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
 review:
 - heading: クレーター数と層厚から、火山活動の時間と量を調べる
   paragraphs:
@@ -148,6 +185,9 @@ review:
 - heading: 水の研究を、マグマの噴火過程へつなぐ
   paragraphs:
   - '[@P000246]は水と爆発的火山活動の関係を扱う。表面での水の生成・保持を扱う研究と併せると、月内部からの供給と、その後に表面で起きる移動を別々の過程として追える。'
+- heading: 火山の地形と地下の貫入岩体を対応させる
+  paragraphs:
+  - 年代と噴出量の研究に対し、[@P000289]は直径約80 kmの二つの楯状火山候補を扱う。地形に加えて一方の重力異常を調べ、地下7〜32 kmの貫入岩体と浅部マグマ貯留域を提案した。噴火した時期に、マグマがどこに蓄えられたかという問いを加える。
 lineage:
 - title: 裏側の火山活動を年代と体積で読む
   steps:
@@ -158,13 +198,22 @@ lineage:
     title: Moscovienseの層厚と体積を加える
     significance: 活動期間と噴出量を地殻厚の違いへ結び付けた。
     connection: 広域の年代から地域の噴出史へ
+- title: 火山地形から浅部の供給源へ
+  steps:
+  - paper_id: P000289
+    title: 大型楯状火山の貯留域を推定する
+    significance: 火山形態と重力異常を組み合わせ、浅部貯留域からの噴火を検討した。
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-09-25'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 'GitHub Issues #9–#10'
+  - Crossref・出版社・機関公開記録の要旨
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
+    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。

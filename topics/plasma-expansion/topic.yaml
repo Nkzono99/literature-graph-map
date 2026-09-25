@@ -542,7 +542,13 @@ entries:
     contribution: 電子に富む負電位のプラズマ領域と、底面・壁面へ回り込むイオン流を示した。
   evidence_by_item:
     question: []
-    method: []
+    method:
+    - paper_id: P000048
+      version_id: V1
+      url: https://doi.org/10.57760/sciencedb.space.01916
+      source_type: metadata
+      locator: 公開データ：極域クレーターのSPIS計算（Science Data Bank）
+      checked_at: '2026-09-25'
     contribution:
     - paper_id: P000048
       version_id: V1
@@ -955,7 +961,7 @@ survey:
   coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

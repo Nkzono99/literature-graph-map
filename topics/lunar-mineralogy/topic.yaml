@@ -1,7 +1,7 @@
 schema_version: 1
 topic_id: lunar-mineralogy
 title: 月の鉱物・元素組成
-question: 鉱物スペクトルと元素分布から、地殻の形成・深部物質・資源候補をどう読むか。
+question: 軌道分光と返還試料、模擬物実験から、月の組成と衝突・加熱による物質変化をどう読み取るか。
 public: true
 navigation:
   parent: lunar-geology
@@ -9,11 +9,18 @@ navigation:
   - kaguya
   - lunar-water
   - lunar-volcanism
+  - lunar-craters
+  - dust-adhesion
+  - lunar-magnetic-anomalies
 groups:
 - id: composition
   title: 鉱物・元素分布
 - id: calibration
   title: 機器間比較・較正
+- id: samples
+  title: 返還試料・宇宙風化
+- id: materials
+  title: 熱履歴・磁性相
 entries:
 - paper_id: P000172
   group: composition
@@ -104,6 +111,181 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000286
+  group: samples
+  role: Ni同位体から読む衝突物質の供給
+  summary:
+    question: 月裏側の微小隕石供給と衝突蒸発はNi同位体にどう記録されるか。
+    method: Chang'e-6のレゴリスと岩片のNi同位体組成を測定する。
+    contribution: 重い同位体への偏りと一部岩片の軽い組成を、累積的な蒸発と再凝縮で解釈した。同位体異常から、長期平均の供給物質は主に内太陽系起源と推定した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000286
+      version_id: V1
+      url: https://api.crossref.org/works/10.1038/s43247-026-04038-1
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000286
+      version_id: V1
+      url: https://api.crossref.org/works/10.1038/s43247-026-04038-1
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000286
+      version_id: V1
+      url: https://api.crossref.org/works/10.1038/s43247-026-04038-1
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000287
+  group: samples
+  role: 衝突蒸気からの二次鉱物形成
+  summary:
+    question: 衝突による蒸発と堆積は月レゴリス中の元素をどう再分配するか。
+    method: Chang'e-5の宇宙風化したかんらん石片に付着するクロム鉄鉱ナノ粒子の形態と組織を調べる。
+    contribution: 粒子の特徴を気相からの凝縮で説明し、衝突時のCr・Fe・Oの局所的な蒸発と、その後の再堆積を示す鉱物学的証拠とした。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000287
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009807
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000287
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009807
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000287
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009807
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000290
+  group: samples
+  role: 鉱物・形状・付着からの安息角推定
+  summary:
+    question: 月裏側レゴリスの鉱物組成と粒子表面は安息角をどう変えるか。
+    method: Chang'e-6の5種・30粒子の形状、表面エネルギー、摩擦を調べ、粒子集団の安息角を実験とモデルで評価する。
+    contribution: 月重力では摩擦・形状が支配する領域と付着が支配する領域の境界が、地球の約100 μmから約200 μmへ移ると推定した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000290
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009536
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000290
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009536
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000290
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009536
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000293
+  group: samples
+  role: 月裏側粒子の三次元形状と集団強度
+  summary:
+    question: 月裏側粒子の不規則な形状はレゴリスの強度へどう寄与するか。
+    method: Chang'e-6試料のX線CTと半教師あり学習で349,740粒子を再構成し、実形状を使う離散要素法で力学応答を計算する。
+    contribution: 拘束圧5〜15 kPaの計算で内部摩擦角47.96°、粘着力1.08 kPaを得た。強度増加を主に粒子のかみ合いで説明した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000293
+      version_id: V1
+      url: https://api.crossref.org/works/10.34133/research.1064
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000293
+      version_id: V1
+      url: https://api.crossref.org/works/10.34133/research.1064
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000293
+      version_id: V1
+      url: https://api.crossref.org/works/10.34133/research.1064
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000297
+  group: materials
+  role: 熱処理によるFe再分配と磁性相形成
+  summary:
+    question: 模擬レゴリス中のFeは加熱でどのような磁性相へ変わるか。
+    method: 低酸素分圧で玄武岩質模擬物を加熱し、磁化測定、Mössbauer分光、X線回折、透過電子顕微鏡で調べる。
+    contribution: 800°Cの加熱後に金属Feと磁鉄鉱に似た相が形成され、20 kOeでの質量磁化が約27.5%増えた。さらに高温では磁性相の保持と磁化が低下した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000297
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je010010
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000297
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je010010
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000297
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je010010
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
 review:
 - heading: 鉱物の分布から、地殻と深部物質を考える
   paragraphs:
@@ -112,6 +294,13 @@ review:
 - heading: 機器の違いをそろえてから、組成を比べる
   paragraphs:
   - One Moon, Many Measurementsの3論文は、同じ月の観測を放射輝度[@P000277]、測光補正[@P000278]、反射率[@P000279]に分けて比較する。鉱物分布の差を読む前に、観測幾何と較正がそろっているかを確認するための文献群である。
+- heading: 返還試料から、衝突で動く元素と粒子の形を読む
+  paragraphs:
+  - Chang'e-6のNi同位体[@P000286]は、微小隕石の供給源と蒸発・再凝縮の履歴を制約する。Chang'e-5のかんらん石上に堆積したクロム鉄鉱[@P000287]は、衝突蒸気から二次鉱物が生じた証拠として解釈された。軌道から得る鉱物分布に、粒子の表面で起きる元素移動を補う研究である。
+  - 粒子の形や鉱物の組合せは地盤の力学にも関わる。[@P000293]は三次元形状から粒子同士のかみ合いを計算し、[@P000290]は形状・摩擦・付着と安息角の関係を調べる。分光から読む組成と、集団としての流れやすさを結び付ける際の比較材料になる。
+- heading: 加熱によるFeの移動が磁性を変える
+  paragraphs:
+  - '[@P000297]は低酸素分圧で加熱した玄武岩質模擬物について、Feの移動と磁性相の生成を追った。800°C付近での磁化増加と、さらに高温での低下を、Feを含む相の変化で説明する。実験の温度・酸素条件を踏まえることで、月面物質の熱履歴と磁気特性を考える基礎になる。'
 lineage:
 - title: 分光観測で異なる地質を読む
   steps:
@@ -126,13 +315,26 @@ lineage:
     title: 保存スペクトルを資源候補へつなぐ
     significance: SPのイルメナイトに富む地点を地形・地質と比較した。
     connection: 鉱物分布から堆積物の解釈へ
+- title: 粒子形状から集団の力学応答へ
+  steps:
+  - paper_id: P000293
+    title: 月裏側粒子の形状を再構成する
+    significance: 大規模な三次元形状データを離散要素法の強度評価へつないだ。
+  - paper_id: P000290
+    title: 鉱物と表面特性を加える
+    significance: 摩擦・形状と付着の寄与が粒径・重力で変わることを調べた。
+    connection: 形状の効果を鉱物・表面特性と比較する
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-09-25'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 'GitHub Issues #9–#10'
+  - Crossref・出版社・機関公開記録の要旨
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
+    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。

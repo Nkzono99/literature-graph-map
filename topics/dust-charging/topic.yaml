@@ -248,11 +248,43 @@ entries:
   group: aggregates
   role: Apollo試料の三次元形状と空隙
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    method:
+    - paper_id: P000218
+      version_id: V1
+      url: https://catalog.data.gov/dataset/3d-shape-and-size-data-for-10084-and-14163-lunar-regolith-particles
+      source_type: metadata
+      locator: 公開データ：Apollo 11・14の三次元粒子形状（NIST）
+      checked_at: '2026-09-25'
+    - paper_id: P000218
+      version_id: V1
+      url: https://www.nist.gov/publications/three-dimensional-characterization-particle-size-shape-and-internal-porosity-apollo-11
+      source_type: abstract
+      locator: NIST公開要旨
+      checked_at: '2026-09-25'
+    question:
+    - paper_id: P000218
+      version_id: V1
+      url: https://www.nist.gov/publications/three-dimensional-characterization-particle-size-shape-and-internal-porosity-apollo-11
+      source_type: abstract
+      locator: NIST公開要旨
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000218
+      version_id: V1
+      url: https://www.nist.gov/publications/three-dimensional-characterization-particle-size-shape-and-internal-porosity-apollo-11
+      source_type: abstract
+      locator: NIST公開要旨
+      checked_at: '2026-09-25'
+  summary:
+    question: 実際の月レゴリスと模擬物では、粒子の三次元形状と内部空隙がどう異なるか。
+    method: Apollo 11・14試料とJSC-1A模擬物をX線CTと数学的解析で調べ、微小粒子には電子顕微鏡観察を加える。
+    contribution: 月試料約14,000粒子と模擬物約128,000粒子を特徴付けた。三次元形状の公開データを整備し、実粒子による光散乱計算や模擬物との定量比較に使えるようにした。
 - paper_id: P000021
   group: emission
   role: 月試料と模擬粒子の帯電
@@ -860,7 +892,8 @@ survey:
   - Crossref
   - 出版社・公的機関の公開書誌
   coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。
+    Goguen 2024のNIST公開要旨に基づく要約・確認状況を追記。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   - 'Issue #5 C16: Dove et al. (2010) は正式題名がなく、既収録P000030との同一性を確定できないため保留。'

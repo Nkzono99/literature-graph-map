@@ -1,7 +1,7 @@
 schema_version: 1
 topic_id: lunar-subsurface
 title: 月の縦孔・地下構造・空洞
-question: 画像、レーダー、重力、熱観測が、それぞれ地下構造の何を制約するか。
+question: 画像・レーダー・重力・地震波と試料から、浅部の層序、空洞の寸法・安定性、温度構造をどう調べるか。
 public: true
 navigation:
   parent: lunar-geology
@@ -20,6 +20,10 @@ groups:
   title: レーダー・重力による空洞候補
 - id: thermal
   title: 照明・熱環境
+- id: mechanics
+  title: 空洞の構造安定性
+- id: in-situ
+  title: 現地探査・地震波
 entries:
 - paper_id: P000276
   group: radar
@@ -267,6 +271,251 @@ entries:
       source_type: abstract
       locator: 公開要旨
       checked_at: '2026-09-22'
+- paper_id: P000285
+  group: in-situ
+  role: 縦孔と溶岩チューブの現地探査構想
+  summary:
+    question: 軌道観測で推定された地下空洞と壁面の地層を現地でどう調べるか。
+    method: 縦孔・溶岩チューブ研究を整理し、重力計、地中レーダー、撮像、分光、脚による地盤試験を備える小型ロボットを検討する。
+    contribution: Marius Hillsの縦孔を対象とするLunarLeaper構想を示し、空洞の寸法と露頭を調べる観測を組み合わせた。
+  inspection:
+    level: abstract
+    version_id: V2
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000285
+      version_id: V2
+      url: https://arxiv.org/abs/2609.11453
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000285
+      version_id: V2
+      url: https://arxiv.org/abs/2609.11453
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000285
+      version_id: V2
+      url: https://arxiv.org/abs/2609.11453
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+- paper_id: P000291
+  group: mechanics
+  role: 層状天井と弱層を含む空洞安定性
+  summary:
+    question: 溶岩チューブ天井の層構造は破壊の広がりをどう変えるか。
+    method: CASRockを用い、玄武岩を弾性・脆性、弱層を弾塑性材料として、空洞幅と天井厚を変えて計算する。
+    contribution: 弱層が荷重を分散し、鉛直方向の亀裂進展を抑える条件を示した。空洞幅と岩石の構成則によって安定性評価が大きく変わる。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000291
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S001910352600120X
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000291
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S001910352600120X
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000291
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S001910352600120X
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+- paper_id: P000294
+  group: mechanics
+  role: 空洞内の破壊と地表亀裂の予測
+  summary:
+    question: 地下空洞の重力変形は、内部と地表にどのような亀裂を作るか。
+    method: 溶岩チューブ周囲の弾性変形を計算し、予測された地表形状を軌道画像と比較する。
+    contribution: 床・天井の破壊に加え、空洞軸に平行な地表亀裂と隆起を予測した。その位置と空洞幅の関係が、遠隔観測による寸法推定に使える可能性を示した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000294
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2024je008553
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000294
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2024je008553
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000294
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2024je008553
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000295
+  group: mechanics
+  role: 形成時の形態と構造安定性の統合
+  summary:
+    question: 月の溶岩チューブは、どの形状と強度なら安定に残るか。
+    method: 溶岩流と崩落口の解析、数値力学を組み合わせ、幅300〜4,000 mの空洞を比較する。
+    contribution: 幅約1 kmの空洞が安定に残る条件を示した。幅が増すほど大きな天井厚と引張強度が必要となる。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000295
+      version_id: V1
+      url: https://digitalcommons.usf.edu/kip_articles/6175/
+      source_type: abstract
+      locator: 機関公開記録の要旨
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000295
+      version_id: V1
+      url: https://digitalcommons.usf.edu/kip_articles/6175/
+      source_type: abstract
+      locator: 機関公開記録の要旨
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000295
+      version_id: V1
+      url: https://digitalcommons.usf.edu/kip_articles/6175/
+      source_type: abstract
+      locator: 機関公開記録の要旨
+      checked_at: '2026-09-25'
+- paper_id: P000296
+  group: mechanics
+  role: 月溶岩チューブ安定性の有限要素評価
+  summary:
+    question: 月重力下ではどの規模の空洞が構造的に安定か。
+    method: 幅と高さの比を3対1とする空洞をAbaqusの弾塑性有限要素モデルで計算し、天井の局所破壊を評価する。
+    contribution: 安定性が幅、天井厚、初期応力に依存することを示した。埋没深度500 mと初期静岩圧状態などの条件下では、幅5 kmまで安定となり得る。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000296
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103516303566
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000296
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103516303566
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000296
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103516303566
+      source_type: abstract
+      locator: 公開要旨
+      checked_at: '2026-09-25'
+- paper_id: P000299
+  group: thermal
+  role: Apolloコアの熱ルミネッセンス温度推定
+  summary:
+    question: 返還試料から浅部レゴリスの温度と熱波の到達深度を復元できるか。
+    method: Apollo 17コアの深さ95〜291 cmの自然熱ルミネッセンスをピーク分離し、平衡温度を推定する。
+    contribution: 深さ133〜291 cmで平均248 ± 14 K、温度勾配1.0 ± 0.5 K/mを得た。年周期の熱波の到達は約135 cm以浅と推定した。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000299
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009720
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000299
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009720
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000299
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2026je009720
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+- paper_id: P000302
+  group: in-situ
+  role: 空洞を調べる常時微動探査の比較
+  summary:
+    question: 月の常時微動から溶岩チューブの存在と寸法を推定できるか。
+    method: Marius Hillsを含む二次元浅部モデルで、地震波干渉法、水平・鉛直スペクトル比、分布型音響計測、回転計測を比較する。
+    contribution: 空洞と天井厚への感度を示したが、底部深度の制約は難しかった。深さ10 mを超える構造には、通常の熱月震より低い1 Hz未満の振動源が必要となる。
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-25'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000302
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009576
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    method:
+    - paper_id: P000302
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009576
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
+    contribution:
+    - paper_id: P000302
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029/2025je009576
+      source_type: abstract
+      locator: 出版社提供の公開要旨（Crossref）
+      checked_at: '2026-09-25'
 review:
 - heading: 画像に写る縦孔を、地下構造の手掛かりにする
   paragraphs:
@@ -275,6 +524,14 @@ review:
   paragraphs:
   - LRSの地下反射[@P000181]は海の層序を調べる手段となった。空洞候補を扱う[@P000195]は特徴的なエコーと、GRAILの質量欠損[@P000194]との対応を調べている。[@P000176]は表面散乱を計算して地下エコーを選別する。エコーの強さには空洞だけでなく、物質の誘電率や空隙率も関わる。
   - Mini-RFを用いた[@P000197]はMare Tranquillitatisの縦孔下の通路候補を扱う。Diviner観測と熱モデル[@P000196]は内部の温度環境を評価するが、地表の熱放射だけから奥の空洞の存在を判定する感度は限られる。
+- heading: 空洞の存在と、安定に残る条件をつなぐ
+  paragraphs:
+  - '[@P000296]は有限要素法で空洞幅、天井厚、初期応力を変え、km級の空洞が安定となる条件を調べた。[@P000295]は形成時の溶岩流や崩落口の形も考慮する。安定に残り得る幅は、岩石強度と天井の形状に応じた推定値である。'
+  - '[@P000294]は、空洞全体が崩壊しなくても床や天井に破壊が生じることを示し、地表の亀裂から幅を推定する手掛かりを与えた。[@P000291]は弱層を挟む天井を扱い、荷重の分散と亀裂の進展を計算する。均質な岩石を仮定するモデルから、層構造を含むモデルへ比較を広げられる。'
+- heading: 現地の物理探査と試料で、浅部の性質を絞る
+  paragraphs:
+  - '[@P000302]は常時微動による空洞探査を比較した。天井厚に感度がある一方、深さ10 mを超える構造には1 Hz未満の振動源が必要になる。[@P000285]のLunarLeaper構想は、重力計と地中レーダーに壁面の撮像・分光を組み合わせ、空洞形状と火山層序を現地で調べる。'
+  - 温度構造には試料からの制約もある。[@P000299]はApollo 17コアの熱ルミネッセンスから、深さ約1.3〜2.9 mの温度勾配を推定した。空洞の熱環境を扱う[@P000196]と対象を分けて参照すると、露出した縦孔と地中のレゴリスの熱構造を比較できる。
 lineage:
 - title: 縦孔の発見から地下エコーの検討へ
   steps:
@@ -289,13 +546,43 @@ lineage:
     title: 地下からの反射を重ねる
     significance: LRSの特徴的なエコーを空洞候補と関連付け、重力との空間対応を調べた。
     connection: 地表形状から地下の観測量へ
+- title: 均質な天井から層状構造の安定性へ
+  steps:
+  - paper_id: P000296
+    title: 空洞幅と天井厚の条件を計算する
+    significance: 初期応力を含む弾塑性モデルで最大安定寸法を評価した。
+  - paper_id: P000295
+    title: 形成と崩落の形態を加える
+    significance: 溶岩流と崩落口の解析を数値力学と組み合わせた。
+    connection: 力学的条件に形成過程の制約を加える
+  - paper_id: P000291
+    title: 天井内の弱層を扱う
+    significance: 岩石の層構造と脆性が破壊の進展を変える条件を示した。
+    connection: 均質な材料から層状材料へ広げる
+- title: 地表の手掛かりから現地検証へ
+  steps:
+  - paper_id: P000294
+    title: 空洞周辺の地表亀裂を予測する
+    significance: 重力変形を計算し、亀裂や隆起の位置と空洞幅を対応させた。
+  - paper_id: P000302
+    title: 地震波で探せる寸法を調べる
+    significance: 常時微動を使う複数の探査法の感度と周波数条件を比較した。
+    connection: 地表形態を補う地球物理観測を検討する
+  - paper_id: P000285
+    title: 複数の観測を現地探査へまとめる
+    significance: 縦孔周辺を移動するロボットに重力・レーダー・露頭観察を組み合わせた。
+    connection: 観測法の比較からミッション構想へ
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-09-25'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 'GitHub Issues #9–#10'
+  - Crossref・出版社・機関公開記録の要旨
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
+    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。

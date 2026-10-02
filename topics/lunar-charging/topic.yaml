@@ -26,6 +26,9 @@ review:
 - heading: 高エネルギー粒子は、表面の下にも電荷を残す
   paragraphs:
   - 極域の低温レゴリスでは電荷の散逸が遅い。[@P000310]はGCRとSEPの観測を使い、内部電場を時間依存で予測した。[@P000311]と[@P000312]は、絶縁破壊が細粒化・溶融・蒸発を通じて表層を変える可能性を評価している。水への接続を分子過程から調べた[@P000313]は、破壊で露出した酸素と太陽風由来水素の反応を計算した。いずれも、モデルが予測する作用と現地で確認された作用を区別して読む。
+- heading: 観測から光電子と散乱電子の寄与を分ける
+  paragraphs:
+  - 表面を出入りする電子の起源も、帯電を考える手掛かりになる。[@P000362]は酸素Auger電子を指標に光電子を選び、放出収率を制約した。[@P000363]は後方散乱電子が再び表面へ戻る磁場の効果を調べ、[@P000364]は光電子の統計をローブ中と太陽風中で比較した。これらの観測は、光電子シースや昼側電位のモデルへ入れる電子電流の基礎量を補う。
 lineage:
 - title: 電流収支から空間構造へ
   steps:
@@ -1826,6 +1829,72 @@ entries:
     checked_by: ai
     checked_at: '2026-10-02'
   group: topography
+- paper_id: P000362
+  group: photoelectron-sheath
+  role: ARTEMISによる光電子の識別と放出収率
+  summary:
+    question: 月面の光電子放出収率を、軌道上の電子観測からどこまで制約できるか。
+    method: ARTEMISとFISM2の太陽放射を比較し、酸素Auger電子を指標に月面由来の光電子を選別。
+    contribution: 約20 eVを超える入射光子の放出収率に10⁻³の下限を与えた。放出電子のエネルギー分布の仮定により、推定収率には約4桁の幅が残る。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000362
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020je006790
+      source_type: abstract
+      locator: 要旨・Plain Language Summary（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000363
+  group: photoelectron-sheath
+  role: 表面での電子後方散乱と再衝突
+  summary:
+    question: 月面で後方散乱された電子の割合は、磁場の向きとどう関わるか。
+    method: ARTEMISの電子スペクトルで光電子と後方散乱電子を区別し、後方散乱係数を推定。
+    contribution: 一次電子50–600 eVで代表的な推定係数は約0.3、純弾性散乱を仮定した下限は約0.1。推定値は光電子の補正条件に依存し、磁場の伏角による再衝突が宇宙へ戻る割合を変える。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000363
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023je007983
+      source_type: abstract
+      locator: 要旨・Plain Language Summary（本文全体は未精読）
+      checked_at: '2026-10-02'
+    - paper_id: P000363
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023JE007983
+      source_type: full_text
+      locator: §4：一次電子50–600 eVと光電子補正・散乱モデルの条件（該当箇所のみ確認。本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000364
+  group: photoelectron-sheath
+  role: 光電子流束・検出確率の環境依存
+  summary:
+    question: 月面の光電子流束と検出確率は、宇宙環境の違いにどう応答するか。
+    method: 酸素Auger電子のピークでARTEMISの光電子を選別し、磁気圏ローブ中と太陽風中で統計比較。
+    contribution: 光電子流束と検出確率の変動・環境依存を整理し、昼側の電流収支を制約する観測資料を整備した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000364
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026je009879
+      source_type: abstract
+      locator: 要旨・Plain Language Summary（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
 relations:
 - relation_id: R000001
   source: P000001
@@ -2363,16 +2432,22 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-10-02'
   scope_period: 1972–2026年（今回採用した文献の範囲）
   provider_names:
   - Bukan経由のPaperpileライブラリ
   - Bukanの既存研究ノート
   - 出版社・機関リポジトリ・Crossref
   - Bukan経由のPaperpile所蔵PDF
+  - 'GitHub Issue #23'
+  - Crossref
+  - 出版社の公開書誌・要旨
   queries:
   - charging
   - lunar
+  - 10.1029/2020JE006790
+  - 10.1029/2023JE007983
+  - 10.1029/2026JE009879
   coverage_note: 月面帯電の基礎、観測、地形、ダスト、工学を扱う58件。会議資料・特許・プレプリントを含む。 2026-09-22にP000026・P000029の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。
   limitations:
   - Manka 1973は所蔵ファイルの冒頭2頁のみ。Xiao 2026はarXiv v1のプレプリント
@@ -2380,8 +2455,10 @@ survey:
   - 参考文献の追跡と各枝の文献追加は今後の更新で行う
   - 今回の全文確認はP000026・P000029に限る。他の文献の確認状況は各entryのinspectionを参照。
   - Wang 2010は一部の電場値・式表記に原文内の不整合が残る。
-  changes: '提供された文献リストを基に41件を追加し、5つの子テーマへ分類。書誌記録に合わせて著者・年・資料種別・要点を調整。 対象文献の要約・根拠位置・本文確認状況を更新。 2026-09-25にIssue
-    #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。'
+  - 'Issue #23の追加文献は要旨・Plain Language Summaryで確認。本文全体と全図表は未精読。'
+  - P000363は§4のエネルギー範囲と光電子補正・散乱モデルの条件のみ本文で追加確認。inspectionは要旨確認のままとし、本文全体・全図表の精読は未実施。
+  changes: '提供された文献リストを基に41件を追加し、5つの子テーマへ分類。書誌記録に合わせて著者・年・資料種別・要点を調整。 対象文献の要約・根拠位置・本文確認状況を更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。
+    Issue #23の電子放出・後方散乱研究を追加し、概説と必要な系譜を補足。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

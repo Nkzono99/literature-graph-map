@@ -1,0 +1,680 @@
+schema_version: 1
+topic_id: electron-reflectometry
+title: 電子反射法による天体の磁場・電位推定
+question: 月の磁気ミラー・電位による電子反射を起点に、火星・ガニメデへの応用と推定条件を整理する。
+review:
+- heading: 戻ってくる電子から、磁場と電位を読む
+  paragraphs:
+  - 電子反射法（electron reflectometry）は、天体へ向かう電子と戻ってくる電子のエネルギー・方向分布を比べ、磁力線の先にある磁場や電位を推定する方法である。Apolloの月周回機で方法が整備され（[@P000347]、[@P000348]）、Lunar
+    Prospectorで月の全球磁場マップへ発展した（[@P000351]）。観測点より下の領域を調べられるため、軌道上の磁力計を補う。
+  - ここでいう反射には、強い磁場へ進む電子が磁気ミラーで引き返す場合と、負の電位に阻まれて引き返す場合がある。電子の進行方向と磁場のなす角をピッチ角という。表面まで達して吸収される電子は戻らず、戻りの分布に欠けた角度領域、ロスコーンを作る。入射側と戻り側を、同じ磁力線につながる観測として比較することが出発点になる。[@P000347]、[@P000025]
+- heading: 磁気ミラーの原理と、推定が成立する条件
+  paragraphs:
+  - 電位差を無視でき、電子の磁気モーメントが保存される理想的な場合、ロスコーンの境界角αcは sin²αc = B観測点 / B最大 に従う。ここでは天体へ向かう磁力線方向から測った0〜90°のピッチ角を考える。B最大は観測点から吸収境界までの磁力線上で最も強い磁場で、表面で最大なら表面磁場の強さを求められる。境界より大きいピッチ角の電子は磁気ミラーで戻り、小さい角度の電子は表面へ到達する。電位差があると境界にエネルギー依存が現れ、磁場と電位を同時に考える必要がある。[@P000025]、[@P000359]
+  - 電子の旋回半径が磁場の変化尺度に比べて小さいことも必要になる。[@P000352]は粒子の全軌道を追跡して月の推定を再検討し、用いたモデルでは約10 kmより大きい波長の磁場を捉えやすく、細かな磁化に対して感度が低下すると示した。この値は一律の地図解像度を表すものではなく、電子のエネルギーと磁場構造に依存する適用条件として読む。
+- heading: 月では局所の異常から全球の磁場へ
+  paragraphs:
+  - '[@P000348]はApollo 15・16の電子反射観測を地質と照合した。Lunar Prospectorでは磁力計と電子反射計を併用し、磁気異常と太陽風の相互作用が調べられた（[@P000349]）。[@P000350]は表側の地殻磁場を地質単位と対応付けた。[@P000351]の全球マップでは、大きな衝突盆地の内部で弱く、その対蹠域で強い磁場が集中する分布が示された。'
+  - 比較には、磁力計データから表面の磁場ベクトルを復元した[@P000107]も役立つ。電子反射法はロスコーンを通じた磁場の強さの制約、磁力計の逆解析は観測高度のベクトルから表面へ外挿するモデルである。推定高度、磁力線の接続位置、細かな磁場への感度をそろえて読むと、同じ異常に対する両手法の違いが分かる。
+- heading: 電位の推定では基準と電子の起源を確かめる
+  paragraphs:
+  - '[@P000003]はエネルギーに依存するロスコーンと二次電子ビームから、日陰の月面がLunar Prospectorより平均約35 V低い電位にあると推定した。探査機も帯電するため、周囲のプラズマを基準にするには補正が要る。[@P000025]は探査機電位を補正し、月面電位と入射電流を対応付けた。'
+  - 日照面でも、地球のプラズマシート中では大きな負電位の指標が現れる。[@P000033]は電子反射観測とPIC計算を比べ、表面上に電位の極小がある非単調なシースで説明した。ロスコーンだけから得た反射障壁の電位を表面電位へ対応付けるには、経路上の電位構造を考える必要がある。[@P000034]は月につながる磁力線上のARTEMISで、表面から加速されてくる放出電子も使い、日照域の負帯電と非単調シースの解釈を検討した。
+  - 放出電子の観測は、反射電子とは別の情報を与える。[@P000041]は光電子スペクトルと電流収支から昼側の帯電条件を調べ、[@P000051]はかぐやの光電子のエネルギーずれから場所ごとの相対電位を求めた。[@P000161]はARTEMISの光電子を放出モデルと比較して昼側電位を推定する。ロスコーン、放出電子ビーム、光電子スペクトルが、それぞれどの電位差を捉えるかを区別して使う。
+- heading: 火星では大気中の電子輸送を組み込む
+  paragraphs:
+  - 火星には大気があるため、月の表面吸収の扱いに、電子と中性粒子の衝突・エネルギー損失を加える。[@P000353]のMars Global Surveyorによる磁場推定から、[@P000354]の電子輸送モデル、[@P000355]の全球マップへと解析が発展した。このマップが示すのは地表ではなく高度185
+    kmでの地殻磁場の強さである。地殻磁場の研究全体と観測範囲の課題は、総説の[@P000361]で参照できる。
+  - '[@P000356]は電子のエネルギー・ピッチ角分布から、約185–400 kmの間にある磁力線方向の電位差を推定した。対象は外気圏下部から探査機までの領域であり、月面の帯電電位とは基準高度が異なる。磁場の接続状態、大気の密度、電位差を電子輸送の中で扱うことが、火星への応用の要点になる。'
+- heading: ガニメデへの応用と、天体間の比較
+  paragraphs:
+  - 固有磁場を持つガニメデでは、[@P000357]がGalileoの高エネルギー粒子のロスコーンから表面磁場を制約した。低エネルギー側の環境を知る資料として、JunoのJADEによるフライバイ観測（[@P000358]）もある。[@P000359]は表面帯電をモデル化し、将来のJUICEによる電子反射法では電位の影響を補正する必要を論じた。ここで示された負電位は計算結果であり、電子反射法による実測の電位マップではない。
+  - 水星の[@P000360]は、同じロスコーンの考え方をMESSENGERの陽子へ適用した関連手法である。天体間で比較する際には、粒子種とエネルギー、磁場の変化尺度、吸収される高度、大気の有無、探査機電位の補正を確認する。これらの条件が、磁場の推定と電位の推定をどこまで分離できるかを決める。
+- heading: 比較：表面で散乱された電子と、光電子を識別する
+  paragraphs:
+  - '[@P000363]が扱う後方散乱電子は、表面へ衝突してから宇宙へ戻る入射電子である。表面に達する前に磁気ミラーや電位で引き返す電子と、生成される場所が異なる。[@P000362]の酸素Auger電子による光電子の識別は、この成分を選び分ける手掛かりになった。[@P000364]は光電子の流束・検出確率を環境別に整理している。反射境界から磁場・電位を推定する際にも、電子の起源と表面への再衝突を併せて考える必要がある。'
+lineage:
+- title: 月の磁場を局所から全球へ、適用条件を再検討
+  steps:
+  - paper_id: P000347
+    title: 電子反射法の基礎を整理
+    significance: Apolloの観測と軌道計算から、反射の分布を磁場・電位へ結ぶ方法を示した。
+  - paper_id: P000351
+    title: 全球の地殻磁場を地図化
+    significance: Lunar Prospectorで盆地内部と対蹠域の磁場分布を比較した。
+    connection: 局所の観測から全球の磁場分布へ
+  - paper_id: P000352
+    title: 細かな磁場への感度を評価
+    significance: 全軌道計算で磁場の空間尺度と電子反射法の感度を対応付けた。
+    connection: 全球マップの解釈に適用条件を加える
+- title: 月面の負帯電から、電位の基準とシース構造へ
+  steps:
+  - paper_id: P000003
+    title: ロスコーンと二次電子で負帯電を捉える
+    significance: 探査機に対する日陰の月面電位を電子分布から推定した。
+  - paper_id: P000025
+    title: 探査機電位を補正
+    significance: 周囲のプラズマ基準で月面電位と入射電流を比較した。
+    connection: 探査機との電位差から周囲のプラズマ基準へ
+  - paper_id: P000034
+    title: ARTEMISで日照面からの放出電子を測る
+    significance: 遠方で測った加速電子から負電位を推定し、非単調シースの解釈を検討した。
+    connection: 基準を補正した電位推定を日照面のシース構造へ
+- title: 火星の大気中の反射から、上層の電位差へ
+  steps:
+  - paper_id: P000354
+    title: 電子の大気中輸送をモデル化
+    significance: 磁気ミラー・電位・衝突を含めて火星の電子分布を解析する枠組みを整理した。
+  - paper_id: P000356
+    title: 外気圏上の電位差を統計化
+    significance: MGSの電子反射から約185–400 km間の磁力線方向電位差を求めた。
+    connection: 電子輸送の解析を電位差の空間・時間変動へ
+- title: ガニメデの粒子観測から、将来解析の帯電補正へ
+  steps:
+  - paper_id: P000357
+    title: 高エネルギー粒子から固有磁場を制約
+    significance: Galileoのロスコーンでガニメデの表面磁場を制約した。
+  - paper_id: P000359
+    title: JUICEに向けて表面帯電を計算
+    significance: 将来の低エネルギー電子反射解析で必要になる電位補正をモデルで検討した。
+    connection: 磁気ミラーの観測から低エネルギー側の電位影響へ
+public: true
+scope:
+  include:
+  - 磁気ミラーとロスコーンによる磁場推定
+  - 電子反射・放出電子を使う電位推定
+  - 月・火星・ガニメデの解析条件と関連する陽子反射法
+  exclude:
+  - 物質の表面分析に用いる電子反射・回折
+  - 電子観測を使わない磁場推定の網羅的な一覧
+navigation:
+  parent: applications
+  related:
+  - lunar-magnetic-anomalies
+  - lunar-charging-observations
+  - lunar-charging-sheath
+  - kaguya
+  - spacecraft-plasma
+groups:
+- id: fundamentals
+  title: 原理と適用条件
+- id: lunar-magnetic
+  title: 月の地殻磁場マッピング
+- id: lunar-potential
+  title: 月面電位とシース構造
+- id: spectral-comparison
+  title: 比較：光電子と表面後方散乱
+- id: mars
+  title: 火星の大気・磁場・電位
+- id: other-bodies
+  title: ガニメデと関連する他天体の手法
+entries:
+- paper_id: P000347
+  group: fundamentals
+  role: 電子反射法の基礎
+  summary:
+    question: 軌道上の電子から月や惑星の弱い磁場を測れるか。
+    method: Apollo 15・16の観測と粒子軌道計算で、反射率と磁場・電位の関係を整理。
+    contribution: 月での方法を提示し、磁場の尺度や電場・探査機電位が推定に与える影響を論じた。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000347
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/19760042318
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000348
+  group: fundamentals
+  role: Apolloの電子反射観測と月の磁化
+  summary:
+    question: 月の表面磁場はどの地質と対応するか。
+    method: Apollo 15・16の電子反射による磁場分布を地質・表面年代と照合。
+    contribution: 海の表面年代や高地・盆地放出物との対応から、月の磁化の起源を制約した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000348
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/0031920179900505
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000352
+  group: fundamentals
+  role: 有限旋回半径と細かな磁場への感度
+  summary:
+    question: 電子反射法は小さい磁気異常をどこまで捉えられるか。
+    method: 異なる空間尺度の磁場中で電子の全軌道を計算し、通常の反射解析を再適用。
+    contribution: モデル上で約10 kmより短い波長への感度低下を示し、細かな磁化では磁場を過小評価しうるとした。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000352
+      version_id: V1
+      url: https://doi.org/10.1029/2009je003516
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000349
+  group: lunar-magnetic
+  role: Lunar Prospector初期の磁場と太陽風相互作用
+  summary:
+    question: 月の局所磁場はどこにあり、太陽風とどう相互作用するか。
+    method: Lunar Prospectorの磁力計と電子反射計を併用。
+    contribution: 盆地の対蹠域に強い磁化を認め、小規模な磁気圏形成を含む太陽風相互作用を示した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000349
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/9727969/
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000350
+  group: lunar-magnetic
+  role: 表側の地殻磁場マッピング
+  summary:
+    question: 表側の磁気異常と月面地質にはどの対応があるか。
+    method: Lunar Prospector電子反射計の磁場推定を地質分布と比較。
+    contribution: 海に覆われた盆地の弱い磁場と高地の強い磁場などを整理し、局所の磁場源を検討した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000350
+      version_id: V1
+      url: https://doi.org/10.1029/2000je001380
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000351
+  group: lunar-magnetic
+  role: 電子反射法による月の全球マップ
+  summary:
+    question: 全球の磁場分布は盆地形成の履歴をどう記録するか。
+    method: Lunar Prospector電子反射計から月の地殻磁場を全球マッピング。
+    contribution: 大盆地内の弱い磁場と対蹠域の強い磁場を対応付け、衝突の影響を広域で示した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000351
+      version_id: V1
+      url: https://experts.arizona.edu/en/publications/global-mapping-of-lunar-crustal-magnetic-fields-by-lunar-prospect/
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000107
+  group: lunar-magnetic
+  role: 比較：磁力計による表面ベクトル復元
+  summary:
+    question: 軌道上で測った磁場ベクトルを月面まで復元できるか。
+    method: かぐやとLunar Prospectorの磁力計データを表面ベクトルマッピング法で逆解析。
+    contribution: 月面の磁場強度と方向をモデルとして求め、電子反射による強度制約との比較基盤を与えた。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000107
+      version_id: V1
+      url: https://doi.org/10.1002/2014je004785
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000003
+  group: lunar-potential
+  role: 日陰の負帯電と電位の基準
+  summary:
+    question: 日陰の月面の負帯電を軌道上から推定できるか。
+    method: Lunar Prospectorのエネルギー依存ロスコーンと上向き二次電子ビームを解析。
+    contribution: 月面が探査機に対して平均約−35 Vと推定。周囲のプラズマ基準では探査機帯電の補正が必要になる。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000003
+      version_id: V1
+      url: https://doi.org/10.1029/2001GL014428
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000025
+  group: lunar-potential
+  role: 探査機電位の補正と入射電流
+  summary:
+    question: 月面電位は入射プラズマと放出電流にどう応答するか。
+    method: Lunar Prospectorの電子分布から探査機電位を補正し、月面電位と電流収支を照合。
+    contribution: 周囲のプラズマを基準にした電位を求め、日照・影・磁気圏環境による変化を整理した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000025
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013194
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+    - paper_id: P000025
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008JA013194
+      source_type: full_text
+      locator: §2.2の磁気ミラーの式と電位差の扱い（該当箇所のみ確認。本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000033
+  group: lunar-potential
+  role: 電子反射と非単調シースの計算
+  summary:
+    question: 日照面の大きな負電位の指標をどう説明するか。
+    method: 地球のプラズマシート中のLunar Prospector電子反射観測を一次元PIC計算と比較。
+    contribution: 表面上に電位の極小を持つ安定なシースが、観測された負電位の指標を説明すると示した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000033
+      version_id: V1
+      url: https://doi.org/10.1029/2010gl046119
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000034
+  group: lunar-potential
+  role: ARTEMISによる放出電子と遠隔電位推定
+  summary:
+    question: 月から遠い位置でも日照面の帯電を測れるか。
+    method: 磁気圏尾部で月面につながる磁力線上のARTEMIS観測を解析し、探査機電位と放出電子の加速を調べた。
+    contribution: 8,000 kmを超える距離から日照域の負電位を推定し、ローブとプラズマシートで非単調シースの解釈を支持した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000034
+      version_id: V1
+      url: https://doi.org/10.1029/2011ja016542
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000041
+  group: spectral-comparison
+  role: 比較：光電子スペクトルと電流収支
+  summary:
+    question: 磁気圏ローブ中の日照面では光放出が電位をどう決めるか。
+    method: ARTEMIS・Apolloの光電子を太陽放射に基づくモデルと比較し、電流収支を計算。
+    contribution: 昼側の正電位とフレアへの応答を推定し、表面から放出される電子の入力条件を与えた。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017gl073419
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000051
+  group: spectral-comparison
+  role: 比較：かぐやの光電子による相対電位
+  summary:
+    question: 地殻磁場の強さと日照面の電位分布はどう対応するか。
+    method: 磁気圏ローブ中のかぐやの光電子スペクトルを放出モデルと照合。
+    contribution: 光電子のエネルギーずれから相対電位の空間変化を求め、強い磁場の場所ほど正側になる傾向を示した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000051
+      version_id: V1
+      url: https://doi.org/10.1029/2024ja033545
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000161
+  group: spectral-comparison
+  role: 比較：観測と放出モデルによる昼側電位
+  summary:
+    question: 昼側電位の日照・プラズマ・磁場依存をどう分けるか。
+    method: ARTEMISで測った光電子を表面放出モデルと比較して電位を推定。
+    contribution: 天頂角・電子密度・温度・地殻磁場と昼側電位の統計的な対応を示した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000161
+      version_id: V1
+      url: https://doi.org/10.1029/2026gl123954
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000353
+  group: mars
+  role: 火星への電子反射法の拡張
+  summary:
+    question: 火星の地殻磁場を電子の反射から地図化できるか。
+    method: MGSの電子観測を磁気ミラーと大気中の輸送を含む運動論モデルで解析。
+    contribution: 初期の磁場分布を示し、北部低地の磁化と古い地殻の解釈へ応用した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000353
+      version_id: V1
+      url: https://doi.org/10.1029/2004gl020189
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000354
+  group: mars
+  role: 磁場・電位・大気中の衝突を含む輸送モデル
+  summary:
+    question: 火星の電子分布をどの輸送過程で説明すべきか。
+    method: 磁気ミラー、電位による加減速、ドリフト、中性粒子との衝突・エネルギー損失をモデル化。
+    contribution: 大気を持つ火星で電子反射から磁場や大気の状態を読むための枠組みを整理した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000354
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103507004940
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000355
+  group: mars
+  role: 高度185 kmの地殻磁場マップ
+  summary:
+    question: MGSの電子観測から地殻磁場の地図をどう改善できるか。
+    method: 改良した電子輸送モデルでピッチ角分布を適合し、選別・平均・誤差補正を行う。
+    contribution: 高度185 kmの磁場強度マップを作り、磁力計の全球マップに比べた感度と空間分解能を改善した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000355
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103507005465
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000356
+  group: mars
+  role: 外気圏上の磁力線方向電位差
+  summary:
+    question: 火星上層の電位差はどの場所・条件で変動するか。
+    method: 1999–2006年のMGS電子反射データ約360万件から、約185–400 km間の電位差を推定。
+    contribution: 開いた磁力線上の電位の空間構造と環境依存を整理した。地表帯電ではなく外気圏上の電位差を扱う。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000356
+      version_id: V1
+      url: https://doi.org/10.1002/2017je005395
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000361
+  group: mars
+  role: 総説：火星の地殻磁場と観測の制約
+  summary:
+    question: 火星の地殻磁場から磁気・地質履歴をどこまで読めるか。
+    method: 探査機観測、地殻磁場モデル、磁化と地質の解釈を総説。
+    contribution: 観測高度・分解能・観測範囲の制約を整理し、電子反射の地図を他手法と比較する背景を与える。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000361
+      version_id: V1
+      url: https://www.frontiersin.org/journals/astronomy-and-space-sciences/articles/10.3389/fspas.2022.895362/full
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000357
+  group: other-bodies
+  role: Galileoのロスコーンとガニメデ磁場
+  summary:
+    question: ガニメデ近傍の高エネルギー粒子は固有磁場をどう示すか。
+    method: Galileoの2回目の遭遇でイオン・電子の方向分布とロスコーンを解析。
+    contribution: 探査機軌跡に対応する表面磁場を制約し、ガニメデの固有磁場を支持する粒子観測を示した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000357
+      version_id: V1
+      url: https://doi.org/10.1029/97gl01931
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000358
+  group: other-bodies
+  role: 比較：Juno/JADEによるガニメデの低エネルギー環境
+  summary:
+    question: ガニメデの磁気圏・ウェイクではどのプラズマが観測されるか。
+    method: 2021年6月7日のJunoフライバイでJADEの電子・イオン分布を解析。
+    contribution: 低エネルギー電子の増加や開いた磁力線上のプラズマを測り、反射・帯電を解釈する環境条件を与えた。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000358
+      version_id: V1
+      url: https://doi.org/10.1029/2022gl098682
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000359
+  group: other-bodies
+  role: JUICEの電子反射解析に向けた帯電モデル
+  summary:
+    question: ガニメデの表面帯電は将来の磁場推定にどう影響するか。
+    method: 複数の大域プラズマ環境を入力に、半解析モデルとSPISで表面帯電を計算。
+    contribution: 主に0〜−100 Vの計算結果を示し、低エネルギー電子の反射を読む際の電位補正と入力環境の不確かさを論じた。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000359
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JA035016
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+    - paper_id: P000359
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JA035016
+      source_type: full_text
+      locator: §5.4の電子反射法への帯電の影響（該当節のみ確認。本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000360
+  group: other-bodies
+  role: 関連：水星の陽子反射による磁場推定
+  summary:
+    question: 水星の表面磁場を陽子のロスコーンから測れるか。
+    method: MESSENGERの陽子分布から北側カスプ・南側夜側のロスコーンを解析。
+    contribution: 表面磁場の強さを推定し、北へ偏った双極子を支持した。電子ではなく陽子を使う関連手法である。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000360
+      version_id: V1
+      url: https://doi.org/10.1002/2014gl060258
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000362
+  group: spectral-comparison
+  role: 比較：ARTEMISによる光電子の識別と放出収率
+  summary:
+    question: 月面の光電子放出収率を、軌道上の電子観測からどこまで制約できるか。
+    method: ARTEMISとFISM2の太陽放射を比較し、酸素Auger電子を指標に月面由来の光電子を選別。
+    contribution: 約20 eVを超える入射光子の放出収率に10⁻³の下限を与えた。放出電子のエネルギー分布の仮定により、推定収率には約4桁の幅が残る。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000362
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020je006790
+      source_type: abstract
+      locator: 要旨・Plain Language Summary（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000363
+  group: spectral-comparison
+  role: 比較：表面での電子後方散乱と再衝突
+  summary:
+    question: 月面で後方散乱された電子の割合は、磁場の向きとどう関わるか。
+    method: ARTEMISの電子スペクトルで光電子と後方散乱電子を区別し、後方散乱係数を推定。
+    contribution: 一次電子50–600 eVで代表的な推定係数は約0.3、純弾性散乱を仮定した下限は約0.1。推定値は光電子の補正条件に依存し、磁場の伏角による再衝突が宇宙へ戻る割合を変える。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000363
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023je007983
+      source_type: abstract
+      locator: 要旨・Plain Language Summary（本文全体は未精読）
+      checked_at: '2026-10-02'
+    - paper_id: P000363
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023JE007983
+      source_type: full_text
+      locator: §4：一次電子50–600 eVと光電子補正・散乱モデルの条件（該当箇所のみ確認。本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000364
+  group: spectral-comparison
+  role: 比較：光電子流束・検出確率の環境依存
+  summary:
+    question: 月面の光電子流束と検出確率は、宇宙環境の違いにどう応答するか。
+    method: 酸素Auger電子のピークでARTEMISの光電子を選別し、磁気圏ローブ中と太陽風中で統計比較。
+    contribution: 光電子流束と検出確率の変動・環境依存を整理し、昼側の電流収支を制約する観測資料を整備した。
+  evidence_by_item:
+    contribution:
+    - paper_id: P000364
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026je009879
+      source_type: abstract
+      locator: 要旨・Plain Language Summary（本文全体は未精読）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+relations: []
+survey:
+  searched_at: '2026-10-02'
+  scope_period: 1975–2026年の主要文献を選択
+  provider_names:
+  - Crossref
+  - NASA NTRS
+  - 出版社の公開ページ
+  - 著者所属機関の公開書誌・要旨
+  - 'GitHub Issue #23'
+  - 出版社の公開書誌・要旨
+  queries:
+  - lunar electron reflectometry magnetic mirror loss cone surface potential
+  - Mars electron reflectometry atmospheric transport
+  - Ganymede electron reflectometry Galileo Juno JUICE surface charging
+  - Mercury proton reflection magnetometry
+  - 10.1029/2020JE006790
+  - 10.1029/2023JE007983
+  - 10.1029/2026JE009879
+  coverage_note: 月の手法史を軸に主要な応用を選び、既存の光電子・磁力計研究を比較資料として再利用。
+  limitations:
+  - 新しい一覧の各文献は要旨確認。本文全体・全図表は未精読。
+  - 原理と解釈はHalekas (2008)とTsai (2026)の公開本文の該当節も参照。
+  - 網羅性は保証しない。測定値・モデル結果・将来計画は区別して記載。
+  - Paperpile登録結果と検索ログはリポジトリ外で保管。同期の確認とは区別する。
+  - 'Issue #23の追加文献は要旨・Plain Language Summaryで確認。本文全体と全図表は未精読。'
+  - P000363は§4のエネルギー範囲と光電子補正・散乱モデルの条件のみ本文で追加確認。inspectionは要旨確認のままとし、本文全体・全図表の精読は未実施。
+  changes: '電子反射法を中心とする新テーマを作成。新規15文献と既存8文献を整理し、関連テーマへ接続。 Issue #23の電子放出・後方散乱研究を追加し、概説と必要な系譜を補足。'
+  publication_status: draft
+reading_notes:
+- この一覧は要旨をもとに整理した。数式や推定条件の一部は公開本文の該当節も参照したが、本文全体・全図表の精読は未実施。

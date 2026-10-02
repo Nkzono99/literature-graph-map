@@ -74,6 +74,7 @@ scope:
 navigation:
   parent: lunar-environment
   related:
+  - electron-reflectometry
   - lunar-charging
   - pic
   - plasma-sheaths

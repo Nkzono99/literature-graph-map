@@ -64,6 +64,7 @@ scope:
 navigation:
   parent: applications
   related:
+  - electron-reflectometry
   - lunar-charging
   - pic
   - plasma-sheaths

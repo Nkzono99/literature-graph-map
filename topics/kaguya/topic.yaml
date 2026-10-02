@@ -6,6 +6,7 @@ public: true
 navigation:
   parent: lunar-environment
   related:
+  - electron-reflectometry
   - lunar-geodesy-interior
   - lunar-mineralogy
   - lunar-volcanism
@@ -45,7 +46,7 @@ entries:
     recheck: true
 - paper_id: P000169
   group: geodesy
-  role: LALTによる全球地形
+  role: LALT｜全球地形
   inspection:
     level: abstract
     version_id: V1
@@ -80,7 +81,7 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000170
   group: geodesy
-  role: リレー衛星による月裏側重力
+  role: RSAT｜リレー衛星による月裏側重力
   inspection:
     level: abstract
     version_id: V1
@@ -115,7 +116,7 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000180
   group: geodesy
-  role: 重力と地形からの地殻厚推定
+  role: RSAT・LALT｜重力と地形からの地殻厚推定
   inspection:
     level: abstract
     version_id: V1
@@ -185,7 +186,7 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000172
   group: geology
-  role: MIによる純斜長岩の分布
+  role: MI｜純斜長岩の分布
   inspection:
     level: abstract
     version_id: V1
@@ -282,7 +283,7 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000181
   group: geology
-  role: LRSによる海の地下層序
+  role: LRS｜海の地下層序
   inspection:
     level: abstract
     version_id: V1
@@ -317,7 +318,7 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000182
   group: geology
-  role: Moscovienseの玄武岩層厚と年代
+  role: TC｜Moscovienseの玄武岩層厚と年代
   inspection:
     level: abstract
     version_id: V1
@@ -352,7 +353,7 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000183
   group: geology
-  role: TC・MIによるMarius Hillsの縦孔
+  role: TC・MI｜Marius Hillsの縦孔
   inspection:
     level: abstract
     version_id: V1
@@ -485,7 +486,7 @@ entries:
     recheck: true
 - paper_id: P000184
   group: plasma
-  role: PACEによる太陽風陽子の月面反射
+  role: PACE｜太陽風陽子の月面反射
   inspection:
     level: metadata_only
     version_id: V1
@@ -494,7 +495,7 @@ entries:
     recheck: true
 - paper_id: P000185
   group: plasma
-  role: PACEによる月起源イオン
+  role: PACE・IMA｜月起源イオン
   inspection:
     level: metadata_only
     version_id: V1
@@ -503,7 +504,7 @@ entries:
     recheck: true
 - paper_id: P000103
   group: plasma
-  role: 昼側散乱から夜側への陽子輸送
+  role: PACE｜昼側散乱から夜側への陽子輸送
   summary:
     question: 太陽風陽子は、低高度の月ウェイク深部へどう到達するか。
     method: かぐやの粒子観測と、昼側で散乱した陽子の軌道計算を比較。
@@ -539,7 +540,7 @@ entries:
   locked_fields: []
 - paper_id: P000186
   group: plasma
-  role: ウェイク内の陽子エネルギー変化
+  role: PACE｜ウェイク内の陽子エネルギー変化
   inspection:
     level: metadata_only
     version_id: V1
@@ -674,6 +675,10 @@ review:
 - heading: ミッションをまたいで観測をそろえる
   paragraphs:
   - '[@P000329]のSomBenchはKaguyaを含む4ミッションの観測を位置合わせし、クレーター・火山・極域を共通のデータで解析する入口を用意した。[@P000330]はそのデータから複数観測種と解像度を扱う共通表現を学習する。ミッション別の機器較正に加え、地理的な訓練・評価分割や観測幾何をそろえることが、再解析結果を比較する条件になる。両者は別論文のプレプリントとして扱う。'
+- heading: 観測装置から代表研究をたどる
+  paragraphs:
+  - LALT（レーザー高度計）の地形観測は[@P000169]、RSATの4ウェイドップラーによる裏側重力観測は[@P000170]を入口にできる。両者を統合した地殻厚推定が[@P000180]である。TC（地形カメラ）の画像は火山活動の年代・層厚[@P000182]と縦孔の形態[@P000183]を調べる。MI（多波長撮像装置）の反射スペクトルは純斜長岩の分布[@P000172]へつながる。
+  - LRS（月レーダーサウンダー）は地下からの反射を測る。装置・観測方法[@P000276]から海の層序[@P000181]、表面散乱を考慮した保存データの再解析[@P000176]へ進める。PACEの粒子観測は陽子反射[@P000184]と、IMAによる月起源イオン[@P000185]を捉える。ウェイクへ届く陽子[@P000103]とそのエネルギー変化[@P000186]にもつながる。PACEとLMAG（月磁場観測装置）を組み合わせた研究は[@P000178]に収録している。
 lineage:
 - title: 地形・重力から地殻構造へ
   steps:
@@ -698,12 +703,18 @@ lineage:
     significance: 統合データから基盤モデルを学習し、複数の月科学課題で評価した。未査読。
     connection: SomBenchのデータ基盤から共通表現モデルへ
 survey:
-  searched_at: '2026-09-22'
+  searched_at: '2026-10-02'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
+  - 'GitHub Issues #3–#4'
+  - 既存文献の観測装置・観測量照合
+  - JAXAのRSAT・LALT装置説明
   coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #3–#4の残件として、観測装置・観測量・代表文献の入口を概説に追加。 コア11文献の役割に観測装置名を明示。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  queries:
+  - https://www.kaguya.jaxa.jp/en/equipment/rsat_e.htm
+  - https://www.kaguya.jaxa.jp/en/equipment/lalt_e.htm

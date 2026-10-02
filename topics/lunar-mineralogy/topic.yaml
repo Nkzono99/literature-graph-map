@@ -286,6 +286,210 @@ entries:
       source_type: abstract
       locator: 出版社提供の公開要旨（Crossref）
       checked_at: '2026-09-25'
+- paper_id: P000311
+  role: 極域レゴリスの絶縁破壊風化
+  summary:
+    question: 内部帯電による絶縁破壊は、極域レゴリスの微細構造を変え得るか。
+    method: 陽子フルエンスモデルとDivinerの温度を組み合わせ、破壊を起こし得るSEPイベントの履歴を推定する。
+    contribution: 永久影の低温条件で繰り返し破壊が起こる可能性を示し、細粒化や空隙構造への寄与を論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000311
+      version_id: V1
+      url: https://doi.org/10.1002/2014JE004710
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000311
+      version_id: V1
+      url: https://doi.org/10.1002/2014JE004710
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000311
+      version_id: V1
+      url: https://doi.org/10.1002/2014JE004710
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: samples
+- paper_id: P000312
+  role: 絶縁破壊と衝突風化の速度比較
+  summary:
+    question: 永久影での絶縁破壊による改変は、微隕石衝突と比べてどの程度か。
+    method: SEP観測とレゴリスの露出履歴を用い、絶縁破壊と衝突のエネルギー・溶融蒸発収支を比較する。
+    contribution: 最も低温な永久影では、破壊による溶融・蒸発が微隕石衝突に匹敵し得ると見積もった。
+  evidence_by_item:
+    question:
+    - paper_id: P000312
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20170002355
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000312
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20170002355
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000312
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20170002355
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: samples
+- paper_id: P000323
+  role: 月試料中のγ鉄と磁区構造
+  summary:
+    question: 月面温度で残るγ鉄は、どのような磁化を保持するか。
+    method: Chang’e-6衝突ガラスのナノ粒子を同定し、電子ホログラフィーで磁区構造を調べる。
+    contribution: 常温で安定なγ鉄の磁気ボルテックスを示し、急冷・微量元素による保存と衝撃磁化の記録可能性を論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000323
+      version_id: V1
+      url: https://doi.org/10.1073/pnas.2608395123
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000323
+      version_id: V1
+      url: https://doi.org/10.1073/pnas.2608395123
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000323
+      version_id: V1
+      url: https://doi.org/10.1073/pnas.2608395123
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: materials
+- paper_id: P000331
+  role: 熱伝導率による成熟度の推定
+  summary:
+    question: 粒子構造と充填状態から、熱伝導率をレゴリス成熟度の指標にできるか。
+    method: 粒子のボクセル特徴と熱物性をGaussian過程回帰で結び、熱抵抗ネットワークで試料全体へ接続する。
+    contribution: 成熟度に対応した実効熱伝導率の変化を示し、遠隔観測や磁気共鳴による評価と比較する補完指標を提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000331
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009847
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000331
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009847
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000331
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009847
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: materials
+- paper_id: P000336
+  role: 被覆率による水吸着機構の変化
+  summary:
+    question: 月面鉱物に吸着する水が増えると、保持を支配する要因はどう変わるか。
+    method: 代表的な四種のレゴリス鉱物表面で、単分子・複数分子の吸着を第一原理計算で比較する。
+    contribution: 低被覆率では金属サイトへの配位、高被覆率では水素結合の連結と表面形状が安定化を支配することを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000336
+      version_id: V1
+      url: https://doi.org/10.3390/ma19173805
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000336
+      version_id: V1
+      url: https://doi.org/10.3390/ma19173805
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000336
+      version_id: V1
+      url: https://doi.org/10.3390/ma19173805
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: composition
+- paper_id: P000337
+  role: Aristarchusの受動マイクロ波観測
+  summary:
+    question: 火砕堆積物の分布と地下熱環境を、受動マイクロ波からどう制約するか。
+    method: Chang’e-2のマイクロ波放射計から時刻別の輝度温度・規格化温度地図を作り、地質図と比較する。
+    contribution: 高い蓄熱能力と、光学・レーダー推定より広い火砕堆積物分布の可能性を示し、地下温度・熱流束も論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000337
+      version_id: V1
+      url: https://doi.org/10.3390/rs18183194
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000337
+      version_id: V1
+      url: https://doi.org/10.3390/rs18183194
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000337
+      version_id: V1
+      url: https://doi.org/10.3390/rs18183194
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: composition
 review:
 - heading: 鉱物の分布から、地殻と深部物質を考える
   paragraphs:
@@ -301,6 +505,9 @@ review:
 - heading: 加熱によるFeの移動が磁性を変える
   paragraphs:
   - '[@P000297]は低酸素分圧で加熱した玄武岩質模擬物について、Feの移動と磁性相の生成を追った。800°C付近での磁化増加と、さらに高温での低下を、Feを含む相の変化で説明する。実験の温度・酸素条件を踏まえることで、月面物質の熱履歴と磁気特性を考える基礎になる。'
+- heading: 電気的風化、水吸着、熱と磁性をつなぐ
+  paragraphs:
+  - '[@P000311]・[@P000312]は絶縁破壊によるレゴリス改変を推定した。表面での水保持を調べる[@P000336]は、鉱物の金属サイトと水素結合の寄与が被覆率で変わることを示す。[@P000331]は粒子構造と熱伝導率を成熟度へ接続し、[@P000323]は衝突ガラスに残るγ鉄の磁区構造を示した。鉱物相だけでなく、表面・粒子間の構造と熱履歴が、保持・熱輸送・磁化を左右する。'
 lineage:
 - title: 分光観測で異なる地質を読む
   steps:

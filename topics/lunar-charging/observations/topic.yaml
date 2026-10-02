@@ -14,6 +14,9 @@ review:
   paragraphs:
   - かぐやの光電子から相対電位を求めた[@P000051]は、地殻磁場の強さと電位分布を結び付けた。観測計画の資料としては月面電磁場計測を検討する[@P000032]がある。IM-1のROLSES（[@P000056]）は月面の電波・プラズマ波を測る装置であり、装置論文には設計と初期観測がまとまっている。
   - Chandrayaan-1の[@P000163]は、SPA磁気群上空で太陽風の偏向・加熱・減速が持続することを示した。著者らは反射陽子との相互作用によるproto-magnetosheathと解釈しており、上流で測った太陽風と月面近くの入射条件を結ぶ際に参照できる。
+- heading: 月起源イオンの供給から地球方向への輸送へ
+  paragraphs:
+  - '[@P000342]はTHEMIS-ARTEMISの長期観測から月近傍金属イオンの源を評価し、太陽活動より月位置への依存が強いことを示した。[@P000341]はMHD場と粒子追跡を組み合わせ、理想化した北向きIMFで月から地球の内側磁気圏へ戻る経路を計算した。局所の供給・存在量と大域輸送を分けて扱うことで、月起源の重イオンが地球環境へ及ぼす寄与を考えられる。'
 lineage:
 - title: 粒子計測から表面電位を推定する
   steps:
@@ -41,6 +44,15 @@ lineage:
     title: 日照とプラズマの依存を分ける
     significance: 別の放出モデルから昼側電位を推定し、天頂角・密度・温度・磁場との対応を調べた。
     connection: 別モデルで環境依存を比較
+- title: 月起源金属イオンの源から地球方向輸送へ
+  steps:
+  - paper_id: P000342
+    title: 月近傍のイオン源を長期観測で評価
+    significance: 月位置と太陽活動に対する生成・電離・流束の依存を調べた。
+  - paper_id: P000341
+    title: 地球磁気圏へ戻る経路を計算
+    significance: MHD場での粒子追跡から北向きIMF条件の輸送経路を示した。
+    connection: 局所の供給・環境依存から大域輸送のモデルへ
 public: true
 scope:
   include:
@@ -636,6 +648,74 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000341
+  role: 月金属イオンの地球方向輸送
+  summary:
+    question: 月起源の金属イオンは、どの条件で地球の内側磁気圏へ到達するか。
+    method: OpenGGCMの時間依存MHD場に粒子追跡を組み合わせ、磁気圏尾部で月位置とIMFを変える。
+    contribution: 理想化した北向きIMF条件で地球方向への輸送経路を示した。輸送確率は限定的で、全球供給量の直接測定ではない。
+  evidence_by_item:
+    question:
+    - paper_id: P000341
+      version_id: V1
+      url: https://doi.org/10.1029/2026JA035493
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000341
+      version_id: V1
+      url: https://doi.org/10.1029/2026JA035493
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000341
+      version_id: V1
+      url: https://doi.org/10.1029/2026JA035493
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: environment
+- paper_id: P000342
+  role: 月位置・太陽活動と金属イオン源
+  summary:
+    question: 月近傍の金属pickup ionの供給は、太陽活動と月位置にどう依存するか。
+    method: THEMIS-ARTEMISの12年の観測から、中性粒子の生成・電離率とイオン流束の変動を評価する。
+    contribution: 太陽活動より月位置への依存が強く、磁気圏内ではスパッタ・電離の低下により生成が抑えられることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000342
+      version_id: V1
+      url: https://doi.org/10.1029/2024JA033566
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000342
+      version_id: V1
+      url: https://doi.org/10.1029/2024JA033566
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000342
+      version_id: V1
+      url: https://doi.org/10.1029/2024JA033566
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: environment
 relations: []
 view:
   sort:

@@ -131,6 +131,13 @@ class Work(Model):
         identifiers = [v.doi for v in self.versions if v.doi]
         if len(set(identifiers)) != len(identifiers):
             raise ValueError("duplicate DOI within work")
+        if self.preprint_check == "found" and not any(
+            v.repository_id and v.kind in {"submitted", "accepted"} and v.locations
+            for v in self.versions
+        ):
+            raise ValueError(
+                "preprint_check=found requires an identified repository version and URL"
+            )
         for link in self.version_links:
             if link.source not in ids or link.target not in ids or link.source == link.target:
                 raise ValueError("version link must reference two distinct versions of this work")

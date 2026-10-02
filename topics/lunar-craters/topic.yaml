@@ -398,6 +398,278 @@ entries:
       source_type: abstract
       locator: 公開要旨
       checked_at: '2026-09-25'
+- paper_id: P000325
+  role: 極域クレーターの温度と氷の安定性
+  summary:
+    question: クレーター形状と熱物性は、露出氷・地下氷の保存条件をどう変えるか。
+    method: 日射周期、現実的なクレーター形状、可視・赤外の多重散乱、深さ・温度依存の熱物性をモデル化する。
+    contribution: 月と水星について表面・浅部の温度を計算し、露出氷と埋没氷の熱的安定性を区別した。
+  evidence_by_item:
+    question:
+    - paper_id: P000325
+      version_id: V1
+      url: https://www.lpl.arizona.edu/~shane/PTYS_395_MOON/reading/vasavada_etal_icarus_1999.pdf
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000325
+      version_id: V1
+      url: https://www.lpl.arizona.edu/~shane/PTYS_395_MOON/reading/vasavada_etal_icarus_1999.pdf
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000325
+      version_id: V1
+      url: https://www.lpl.arizona.edu/~shane/PTYS_395_MOON/reading/vasavada_etal_icarus_1999.pdf
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: formation
+- paper_id: P000327
+  role: 永久影の岩塊検出
+  summary:
+    question: 散乱光しか届かない永久影で、数m規模の岩塊を自動検出できるか。
+    method: ShadowCam画像の訓練データを作り、BoulderNetの転移学習と超解像を組み合わせる。
+    contribution: 約3.8 m以上の岩塊を抽出し、試験域でprecision・recallとも0.8超を報告した。氷候補の粗さ解釈や着陸条件の制約になる。
+  evidence_by_item:
+    question:
+    - paper_id: P000327
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103526001788
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000327
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103526001788
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000327
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103526001788
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: catalogs
+- paper_id: P000328
+  role: 極域レーダーの偏波分解
+  summary:
+    question: 極域クレーターのレーダー散乱から、氷候補と表面構造をどう評価するか。
+    method: Chandrayaan-2 DFSARのL帯完全偏波データを分解し、CPRと内外の散乱成分を比較する。
+    contribution: 内壁の体積散乱と高CPRを氷候補として評価した。粗さ・地形も散乱へ寄与するため、岩塊分布等と合わせて読む。
+  evidence_by_item:
+    question:
+    - paper_id: P000328
+      version_id: V1
+      url: https://doi.org/10.1007/s10686-026-10077-5
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000328
+      version_id: V1
+      url: https://doi.org/10.1007/s10686-026-10077-5
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000328
+      version_id: V1
+      url: https://doi.org/10.1007/s10686-026-10077-5
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: catalogs
+- paper_id: P000329
+  role: 月観測を統合した機械学習データ
+  summary:
+    question: 異なるミッション・装置の観測を、再現可能な月科学の機械学習へどうそろえるか。
+    method: 4ミッション・10装置の30層超を位置合わせし、複数解像度のタイルと地理的な訓練・評価分割を用意する。
+    contribution: 衝突・火山・極域揮発性物質の共通ベンチマークと基準モデルを提供した。データセット論文のプレプリント。
+  evidence_by_item:
+    question:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: catalogs
+- paper_id: P000330
+  role: 複数観測・解像度の月基盤モデル
+  summary:
+    question: 月の異なる観測と空間解像度を、共通の学習表現で扱えるか。
+    method: SomBenchの11観測種・二つの空間スケールを使い、観測幾何を含む基盤モデルを事前学習する。
+    contribution: クレーター検出、火山地形分割、氷有望度回帰で比較し、表現と学習方法の効果を示した。未査読の評価結果。
+  evidence_by_item:
+    question:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: catalogs
+- paper_id: P000331
+  role: 熱伝導率による成熟度の推定
+  summary:
+    question: 粒子構造と充填状態から、熱伝導率をレゴリス成熟度の指標にできるか。
+    method: 粒子のボクセル特徴と熱物性をGaussian過程回帰で結び、熱抵抗ネットワークで試料全体へ接続する。
+    contribution: 成熟度に対応した実効熱伝導率の変化を示し、遠隔観測や磁気共鳴による評価と比較する補完指標を提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000331
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009847
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000331
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009847
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000331
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009847
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: renewal
+- paper_id: P000333
+  role: 衛星画像からの岩塊自動計測
+  summary:
+    question: 惑星表面の岩塊の数・輪郭・形状を広い範囲でどう測るか。
+    method: 地球・月・火星の3万3千個超の岩塊を訓練データにし、Mask R-CNNで輪郭を抽出する。
+    contribution: BoulderNetによる岩塊検出と形状計測を示し、永久影向けの転移学習の前段となる方法を提供した。
+  evidence_by_item:
+    question:
+    - paper_id: P000333
+      version_id: V1
+      url: https://doi.org/10.1029/2023JE008013
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000333
+      version_id: V1
+      url: https://doi.org/10.1029/2023JE008013
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000333
+      version_id: V1
+      url: https://doi.org/10.1029/2023JE008013
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: catalogs
+- paper_id: P000334
+  role: Divinerの全球熱物性地図
+  summary:
+    question: 月面レゴリスの密度・熱伝導率と地域差を、温度観測からどう求めるか。
+    method: Divinerの赤外温度を熱モデルへ合わせ、深さ方向の密度・熱伝導率を全球で推定する。
+    contribution: 細粒層の広域的な均質性と若いクレーター等の局所差を示し、低温モデルや成熟度の比較基準を与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000334
+      version_id: V1
+      url: https://doi.org/10.1002/2017JE005387
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000334
+      version_id: V1
+      url: https://doi.org/10.1002/2017JE005387
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000334
+      version_id: V1
+      url: https://doi.org/10.1002/2017JE005387
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: renewal
 review:
 - heading: クレーター台帳が、表面の履歴を比較する基盤になる
   paragraphs:
@@ -414,6 +686,9 @@ review:
   paragraphs:
   - '[@P000306]は盆地内部の環状の峰、ピークリングについて、壁の内向きの崩壊と中央隆起が相互作用する仮説を観測と比べた。[@P000298]は音響流動化の条件を変え、中央丘から環へ移る直径と最終的な深さを調べる。遷移径を再現できても峰や環の直径には過大評価が残り、複数の形状指標を同時に比べる必要がある。'
   - より大きなOrientaleを扱う[@P000307]では、深部の流動と正断層が外側の環を作る。ピークリングの形成と多重リングの形成を区別して読むと、衝突規模や月内部の温度が地形へ与える影響を整理できる。
+- heading: 岩塊と熱物性で表層更新を調べる
+  paragraphs:
+  - '[@P000333]のBoulderNetは衛星画像から岩塊の輪郭を抽出する。これを散乱光条件へ進めた[@P000327]は、ShadowCamの永久影画像で約4 m以上の岩塊を検出した。岩塊分布はレーダーの粗さ解釈と着陸条件を補う。[@P000334]の全球熱物性は若いクレーターや噴出物の局所差を示し、[@P000331]は粒子構造から熱伝導率を成熟度指標へ結び付けた。温度観測、岩塊の分布、試料の成熟度はそれぞれ異なるスケールを測る。'
 lineage:
 - title: 全球の個数を大型から小径へ広げる
   steps:
@@ -451,6 +726,15 @@ lineage:
   - paper_id: P000307
     title: Orientaleの崩壊を再現する
     significance: 重力に整合する地下構造と外側リングの正断層形成を計算した。
+- title: 通常照明の岩塊検出から永久影へ
+  steps:
+  - paper_id: P000333
+    title: 岩塊の輪郭を自動抽出
+    significance: 惑星表面の画像で学習し、岩塊の大規模計測を可能にした。
+  - paper_id: P000327
+    title: 散乱光で照らされた岩塊を抽出
+    significance: ShadowCamの訓練データと超解像を加え、永久影へ検出を拡張した。
+    connection: BoulderNetを永久影の照明条件へ転移学習
 survey:
   searched_at: '2026-09-25'
   provider_names:

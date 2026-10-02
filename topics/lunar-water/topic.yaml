@@ -10,18 +10,23 @@ review:
 - heading: 極域の氷を、分光と衝突噴出物から捉える
   paragraphs:
   - 永久影の内部には周囲からの散乱光がわずかに届く。[@P000140]はその光の近赤外スペクトルから氷の吸収を抽出し、両極の光学的表層に露出した氷の分布を示した。一方、LCROSSの[@P000139]はCabeusクレーターへ衝突体を落とし、掘り出された物質の水蒸気・氷・OHを観測した。前者は露出氷の空間分布、後者は一地点の掘削された物質に含まれる水と揮発性成分を知る手掛かりになる。氷の存在とその場所の物質量を考える際に、二つの観測の違いが役立つ。
+  - '[@P000328]の偏波レーダーは散乱特性から氷候補を探る。高CPRには岩塊・粗さも寄与するため、[@P000327]の永久影岩塊検出と照合する。[@P000329]・[@P000330]は観測統合と機械学習へ進む方法であり、氷有望度の推定と氷の直接同定を区別する。'
 - heading: 太陽風の水素が入り、ガラスや鉱物に残る
   paragraphs:
   - 太陽風は月面へ水素を供給する。[@P000142]は陽子を注入したケイ酸塩へ微小隕石衝突を模した熱衝撃を加え、水が生成・放出される過程を実験で示した。粒子へ入った水素がどこに蓄えられるかについては、Chang’e-5の衝突ガラスを調べた[@P000148]が、水量・同位体比・内部濃度分布から太陽風由来水の保持と拡散を論じている。生成実験と試料分析を合わせると、入射した水素が表面反応を経て粒子内部に保持され、再び放出されるまでの経路を考えられる。
+  - '[@P000336]は鉱物表面の吸着を第一原理計算で調べ、被覆率が増えると金属サイトへの配位から水素結合ネットワークへ安定化の主因が移ることを示した。別の水形成経路として、[@P000313]は絶縁破壊で露出する酸素と注入水素の反応を分子動力学で計算している。'
 - heading: 粗さと温度が、残りやすい場所を作る
   paragraphs:
   - 水分子の脱離や氷の昇華は、表面温度に敏感である。[@P000143]は日照域でも凹凸が低温部分を作り、平坦面モデルより吸着水を保持しやすくすると示した。極域では[@P000147]がcm規模までの小さな影を評価し、微小コールドトラップも氷の安定領域に寄与すると見積もった。保持の条件は分子によって変わる。Divinerの長期温度データを使った[@P000149]は、さらに低温を要するCO2の安定域を計算している。温度の最大値だけでなく、時間平均した損失を扱う点も参照したい。
+  - 低温の保存を考える基礎には、[@P000324]の固相保持理論、[@P000325]のクレーター熱モデル、[@P000326]のDiviner観測がある。[@P000334]・[@P000335]・[@P000339]は熱物性を全球から極低温へつなぎ、[@P000338]は氷の形態によって熱伝導率が変わることを実験で示した。
 - heading: 地形と磁場が、水素供給と氷の損失を変える
   paragraphs:
   - 太陽風は水素の供給源であると同時に、表面氷をスパッタで失わせる要因でもある。[@P000144]は南極の実地形から水素の流束とエネルギーを地図化した。[@P000145]は極域磁場と露出氷の分布の対応を調べ、磁気異常がイオン流入と損失を弱める可能性を論じている。地形と磁場を同時に入れた[@P000146]の電磁PICでは、地形による流束変化が大きく、磁場はその分布をさらに調整する。平均太陽風と実験由来の収率を用いた氷の収支は、月面帯電の計算を揮発性物質の進化へつなぐ具体例になる。
+  - 低温域では高エネルギー粒子による内部帯電も考慮する。[@P000310]は電荷蓄積と内部電場を予測し、[@P000311]は絶縁破壊による粒子構造の改変を論じた。表面への平均流束を扱う系列に、レゴリス内部の長い電荷散逸時間を加える比較対象となる。
 - heading: 氷の量と温度が、地盤への寄与を変える
   paragraphs:
   - 水の存在量を地盤の強さへつなぐには、氷が粒子を結び付ける条件を調べる必要がある。[@P000292]の模擬物実験では、約90 Kで静的安息角が増えるのは氷含有量30重量%を超える条件だった。数重量%の氷があるだけで強い凝集を仮定できるとは限らず、温度と混合状態をそろえて比較する。
+  - '[@P000332]は円錐貫入試験で氷の形態を比較し、粒子を結ぶ氷と分散した氷では強度・掘削性が異なることを示した。[@P000338]の熱伝導測定と合わせると、同じ氷量でも力学応答と熱応答が変わる理由を粒子間構造から考えられる。'
 - heading: 着陸機の排気も、局所の水と極域の化学組成に影響する
   paragraphs:
   - '[@P000303]はChang''e-5/6の観測から、排気由来の水が粒子へ入り、徐々に放出される過程をモデル化した。[@P000305]はメタンの全球輸送を計算し、南極着陸に由来する分子が北極の永久影にも捕捉される可能性を示す。着陸地点の観測では局所的な残留を、極域の氷の解釈では遠方からの人工物質の供給も考慮する必要がある。'
@@ -61,6 +66,19 @@ lineage:
     title: 表面への水の注入と放出を調べる
     significance: 着陸画像・分光と拡散計算から、排気の水が表面に残る過程を示した。
     connection: 全球輸送に対し、別の分子種の局所的な出入りを補う
+- title: 固相の保持理論から極域温度の観測へ
+  steps:
+  - paper_id: P000324
+    title: 低温地点での固相保持を考える
+    significance: 揮発性物質の損失を固体の蒸発速度から扱う枠組みを示した。
+  - paper_id: P000325
+    title: クレーター形状と熱物性を組み込む
+    significance: 露出氷と地下氷の温度・保存条件をモデル化した。
+    connection: 保持の速度論から場所ごとの熱条件へ
+  - paper_id: P000326
+    title: Divinerで保存可能な温度を測る
+    significance: 表面・浅部の低温域を観測から制約した。
+    connection: 温度モデルを軌道観測による制約へ接続
 public: true
 scope:
   include:
@@ -674,6 +692,550 @@ entries:
       source_type: abstract
       locator: 出版社提供の公開要旨（Crossref）
       checked_at: '2026-09-25'
+- paper_id: P000310
+  role: 永久影の内部帯電
+  summary:
+    question: 高エネルギー粒子は、低温レゴリス内部にどの程度の電場を作るか。
+    method: CRaTERとACE/EPAMの粒子観測を、温度依存の電荷散逸を含む一次元時間依存モデルへ入力する。
+    contribution: GCRによる持続電場と、大規模SEPイベント時の絶縁破壊に達し得る一時的な電場を予測した。
+  evidence_by_item:
+    question:
+    - paper_id: P000310
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014JE004648
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000310
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014JE004648
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000310
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014JE004648
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: plasma-environment
+- paper_id: P000311
+  role: 極域レゴリスの絶縁破壊風化
+  summary:
+    question: 内部帯電による絶縁破壊は、極域レゴリスの微細構造を変え得るか。
+    method: 陽子フルエンスモデルとDivinerの温度を組み合わせ、破壊を起こし得るSEPイベントの履歴を推定する。
+    contribution: 永久影の低温条件で繰り返し破壊が起こる可能性を示し、細粒化や空隙構造への寄与を論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000311
+      version_id: V1
+      url: https://doi.org/10.1002/2014JE004710
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000311
+      version_id: V1
+      url: https://doi.org/10.1002/2014JE004710
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000311
+      version_id: V1
+      url: https://doi.org/10.1002/2014JE004710
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: plasma-environment
+- paper_id: P000313
+  role: 絶縁破壊と水形成の分子過程
+  summary:
+    question: 絶縁破壊は、太陽風由来水素からの水生成と保持にどう影響するか。
+    method: 分子動力学でレゴリスの結合破壊と、露出した酸素・注入水素の反応を計算する。
+    contribution: 破壊後に水が形成され、低温では粒子表面へ氷の分子構造として保持される計算結果を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000313
+      version_id: V1
+      url: https://doi.org/10.1029/2020GL091681
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000313
+      version_id: V1
+      url: https://doi.org/10.1029/2020GL091681
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000313
+      version_id: V1
+      url: https://doi.org/10.1029/2020GL091681
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: formation-storage
+- paper_id: P000324
+  role: コールドトラップの固相保持理論
+  summary:
+    question: 月面からの水の損失を律速するのは、どの過程か。
+    method: 固相・気相の速度論から、低温域への蓄積と固体の蒸発速度を計算する。
+    contribution: 最も低温な場所に集まる固体相の損失が保存を左右することを示し、水の長期保持を扱う枠組みを与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000324
+      version_id: V1
+      url: https://authors.library.caltech.edu/records/x4pdh-e3f38
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000324
+      version_id: V1
+      url: https://authors.library.caltech.edu/records/x4pdh-e3f38
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000324
+      version_id: V1
+      url: https://authors.library.caltech.edu/records/x4pdh-e3f38
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal-retention
+- paper_id: P000325
+  role: 極域クレーターの温度と氷の安定性
+  summary:
+    question: クレーター形状と熱物性は、露出氷・地下氷の保存条件をどう変えるか。
+    method: 日射周期、現実的なクレーター形状、可視・赤外の多重散乱、深さ・温度依存の熱物性をモデル化する。
+    contribution: 月と水星について表面・浅部の温度を計算し、露出氷と埋没氷の熱的安定性を区別した。
+  evidence_by_item:
+    question:
+    - paper_id: P000325
+      version_id: V1
+      url: https://www.lpl.arizona.edu/~shane/PTYS_395_MOON/reading/vasavada_etal_icarus_1999.pdf
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000325
+      version_id: V1
+      url: https://www.lpl.arizona.edu/~shane/PTYS_395_MOON/reading/vasavada_etal_icarus_1999.pdf
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000325
+      version_id: V1
+      url: https://www.lpl.arizona.edu/~shane/PTYS_395_MOON/reading/vasavada_etal_icarus_1999.pdf
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal-retention
+- paper_id: P000326
+  role: Divinerによる保存温度の観測
+  summary:
+    question: 月南極のどこが、水や他の揮発性物質を保持できるほど低温か。
+    method: Divinerの表面温度マップから、表面・浅部の低温域を評価する。
+    contribution: 永久影の境界を越えて低温域が広がることを示し、LCROSS地点を含む氷保存の熱条件を観測で制約した。
+  evidence_by_item:
+    question:
+    - paper_id: P000326
+      version_id: V1
+      url: https://authors.library.caltech.edu/records/d4acs-jm175
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000326
+      version_id: V1
+      url: https://authors.library.caltech.edu/records/d4acs-jm175
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000326
+      version_id: V1
+      url: https://authors.library.caltech.edu/records/d4acs-jm175
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal-retention
+- paper_id: P000327
+  role: 永久影の岩塊検出
+  summary:
+    question: 散乱光しか届かない永久影で、数m規模の岩塊を自動検出できるか。
+    method: ShadowCam画像の訓練データを作り、BoulderNetの転移学習と超解像を組み合わせる。
+    contribution: 約3.8 m以上の岩塊を抽出し、試験域でprecision・recallとも0.8超を報告した。氷候補の粗さ解釈や着陸条件の制約になる。
+  evidence_by_item:
+    question:
+    - paper_id: P000327
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103526001788
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000327
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103526001788
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000327
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0019103526001788
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: observations
+- paper_id: P000328
+  role: 極域レーダーの偏波分解
+  summary:
+    question: 極域クレーターのレーダー散乱から、氷候補と表面構造をどう評価するか。
+    method: Chandrayaan-2 DFSARのL帯完全偏波データを分解し、CPRと内外の散乱成分を比較する。
+    contribution: 内壁の体積散乱と高CPRを氷候補として評価した。粗さ・地形も散乱へ寄与するため、岩塊分布等と合わせて読む。
+  evidence_by_item:
+    question:
+    - paper_id: P000328
+      version_id: V1
+      url: https://doi.org/10.1007/s10686-026-10077-5
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000328
+      version_id: V1
+      url: https://doi.org/10.1007/s10686-026-10077-5
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000328
+      version_id: V1
+      url: https://doi.org/10.1007/s10686-026-10077-5
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: observations
+- paper_id: P000329
+  role: 月観測を統合した機械学習データ
+  summary:
+    question: 異なるミッション・装置の観測を、再現可能な月科学の機械学習へどうそろえるか。
+    method: 4ミッション・10装置の30層超を位置合わせし、複数解像度のタイルと地理的な訓練・評価分割を用意する。
+    contribution: 衝突・火山・極域揮発性物質の共通ベンチマークと基準モデルを提供した。データセット論文のプレプリント。
+  evidence_by_item:
+    question:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: observations
+- paper_id: P000330
+  role: 複数観測・解像度の月基盤モデル
+  summary:
+    question: 月の異なる観測と空間解像度を、共通の学習表現で扱えるか。
+    method: SomBenchの11観測種・二つの空間スケールを使い、観測幾何を含む基盤モデルを事前学習する。
+    contribution: クレーター検出、火山地形分割、氷有望度回帰で比較し、表現と学習方法の効果を示した。未査読の評価結果。
+  evidence_by_item:
+    question:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: observations
+- paper_id: P000332
+  role: 氷の形態と走行・掘削性
+  summary:
+    question: 氷量が同じでも、その形態によって地盤の強さと掘削エネルギーは変わるか。
+    method: 低温の模擬レゴリスを未焼結・圧力焼結・氷結合・蒸着で準備し、円錐貫入試験を行う。
+    contribution: 粒子間を結ぶ氷と分散した氷で強度・掘削性が大きく異なり、氷量に加えて微細構造を評価する必要を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000332
+      version_id: V1
+      url: https://doi.org/10.1007/s44461-026-00015-w
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000332
+      version_id: V1
+      url: https://doi.org/10.1007/s44461-026-00015-w
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000332
+      version_id: V1
+      url: https://doi.org/10.1007/s44461-026-00015-w
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: ice-mechanics
+- paper_id: P000334
+  role: Divinerの全球熱物性地図
+  summary:
+    question: 月面レゴリスの密度・熱伝導率と地域差を、温度観測からどう求めるか。
+    method: Divinerの赤外温度を熱モデルへ合わせ、深さ方向の密度・熱伝導率を全球で推定する。
+    contribution: 細粒層の広域的な均質性と若いクレーター等の局所差を示し、低温モデルや成熟度の比較基準を与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000334
+      version_id: V1
+      url: https://doi.org/10.1002/2017JE005387
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000334
+      version_id: V1
+      url: https://doi.org/10.1002/2017JE005387
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000334
+      version_id: V1
+      url: https://doi.org/10.1002/2017JE005387
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal-retention
+- paper_id: P000335
+  role: 極低温までの熱物性モデル
+  summary:
+    question: 100 K未満で従来モデルの熱慣性が合わない原因は何か。
+    method: 固体物理と模擬物の測定をもとに、20〜400 Kの比熱・熱伝導率を半経験的にモデル化する。
+    contribution: 極低温の固体熱伝導、組成、結晶性、密度・空隙率の寄与を示し、永久影温度の再評価と実験課題を与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000335
+      version_id: V1
+      url: https://doi.org/10.1029/2019JE005955
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000335
+      version_id: V1
+      url: https://doi.org/10.1029/2019JE005955
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000335
+      version_id: V1
+      url: https://doi.org/10.1029/2019JE005955
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal-retention
+- paper_id: P000336
+  role: 被覆率による水吸着機構の変化
+  summary:
+    question: 月面鉱物に吸着する水が増えると、保持を支配する要因はどう変わるか。
+    method: 代表的な四種のレゴリス鉱物表面で、単分子・複数分子の吸着を第一原理計算で比較する。
+    contribution: 低被覆率では金属サイトへの配位、高被覆率では水素結合の連結と表面形状が安定化を支配することを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000336
+      version_id: V1
+      url: https://doi.org/10.3390/ma19173805
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000336
+      version_id: V1
+      url: https://doi.org/10.3390/ma19173805
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000336
+      version_id: V1
+      url: https://doi.org/10.3390/ma19173805
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: formation-storage
+- paper_id: P000338
+  role: 氷の量・形態と熱伝導率
+  summary:
+    question: 氷含有模擬物の熱伝導率は、氷量と粒子間の氷構造にどう依存するか。
+    method: 低温・低圧で氷飽和度などを変え、粒子を結ぶ氷と分散した孔隙氷を比較する。
+    contribution: 分散氷では緩やかに、粒子間を結ぶ氷では急速に熱伝導率が増え、氷量だけで熱測定を解釈できないことを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000338
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009900
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000338
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009900
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000338
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009900
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal-retention
+- paper_id: P000339
+  role: 低温から全球へ一貫した熱伝導モデル
+  summary:
+    question: 赤道から極域まで、同じ熱物性モデルでDivinerの温度を説明できるか。
+    method: 低温レゴリスの固体物理を全球熱モデルへ組み込み、暖かい地域と永久影の観測傾向に照合する。
+    contribution: 夜間表面温度や極域地下温度を再評価し、従来モデルより極域浅部が約5〜10 K暖かくなる条件を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000339
+      version_id: V1
+      url: https://doi.org/10.1029/2021JE006829
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000339
+      version_id: V1
+      url: https://doi.org/10.1029/2021JE006829
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000339
+      version_id: V1
+      url: https://doi.org/10.1029/2021JE006829
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal-retention
 relations: []
 view:
   sort:

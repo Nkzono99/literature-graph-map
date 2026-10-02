@@ -4,12 +4,12 @@ import os
 import shutil
 from collections import defaultdict
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
-from .models import PAPER_CITATION, Entry, Topic, Work
+from .models import PAPER_CITATION, Entry, Evidence, Topic, Work
 from .storage import Snapshot, inside, write_files
 
 DISCLAIMER = "この文献マップには誤りや抜けが含まれる可能性があります。気づいた点をご指摘いただければ、その都度修正します。"
@@ -87,7 +87,16 @@ def preprint_cell(work: Work) -> Markup | str:
 
 def inspection_label(entry: Entry, work: Work) -> str:
     if entry.inspection.level == "metadata_only":
-        status = ""
+        refs = entry.evidence_by_item
+        status = (
+            "他文献による紹介（原著の要旨・本文は未確認）"
+            if any(
+                ref.paper_id != entry.paper_id
+                for items in (refs.question, refs.method, refs.contribution)
+                for ref in items
+            )
+            else "書誌情報のみ確認（要旨・本文は未確認）"
+        )
     elif entry.inspection.version_id is None:
         status = {
             "abstract": "要旨確認",
@@ -107,12 +116,46 @@ def inspection_label(entry: Entry, work: Work) -> str:
     return status
 
 
-def summary_block(entry: Entry, work: Work) -> Markup:
+def evidence_context(ref: Evidence, works: dict[str, Work], citations: dict[str, str]) -> dict:
+    work = works[ref.paper_id]
+    version = work.version(ref.version_id)
+    destination = next(
+        (
+            v
+            for v in work.versions
+            if any(location.url == ref.url for location in v.locations)
+            or (v.doi and unquote(ref.url).lower() == f"https://doi.org/{v.doi}")
+        ),
+        None,
+    )
+    return {
+        "ref": ref,
+        "citation": citations[work.paper_id],
+        "version": KIND_LABELS[version.kind],
+        "version_url": version.locations[0].url if version.locations else None,
+        "same_version": destination == version,
+        "link_label": (
+            f"{KIND_LABELS[destination.kind]}の書誌・公開先へ"
+            if destination
+            else "参考資料へ（リンク先の版未確認）"
+        ),
+    }
+
+
+def summary_block(entry: Entry, work: Work, works: dict[str, Work]) -> Markup:
+    citations = citation_labels(works)
     return Markup(
         TEMPLATES.get_template("summary.html").render(
             entry=entry,
             status=inspection_label(entry, work),
             labels=SUMMARY_LABELS,
+            refs={
+                key: [
+                    evidence_context(ref, works, citations)
+                    for ref in getattr(entry.evidence_by_item, key)
+                ]
+                for key in SUMMARY_LABELS
+            },
         )
     )
 
@@ -230,6 +273,25 @@ def topic_page(topic: Topic, snapshot: Snapshot) -> str:
         for key in keys:
             if snapshot.topics[key].public:
                 navigation[label].append(topic_link(snapshot, key, path))
+    subtree_papers = set()
+    pending = [topic.topic_id]
+    while pending:
+        key = pending.pop()
+        subtree_papers.update(e.paper_id for e in snapshot.topics[key].entries)
+        pending.extend(
+            k for k, t in snapshot.topics.items() if t.public and t.navigation.parent == key
+        )
+    paper_topics = defaultdict(list)
+    for key, other in sorted(snapshot.topics.items()):
+        if other.public and key != topic.topic_id:
+            for entry in other.entries:
+                paper_topics[entry.paper_id].append(
+                    {
+                        "title": other.title,
+                        "url": relative_url(path, snapshot.paths[key] / "index.html")
+                        + f"#{entry.paper_id}",
+                    }
+                )
     return TEMPLATES.get_template("topic.html").render(
         **page_context(snapshot, path),
         title=topic.title,
@@ -240,6 +302,8 @@ def topic_page(topic: Topic, snapshot: Snapshot) -> str:
         milestones={step.paper_id for track in topic.lineage for step in track.steps},
         is_collection=not topic.entries and bool(navigation["children"]),
         navigation=navigation,
+        subtree_count=len(subtree_papers),
+        paper_topics=paper_topics,
     )
 
 

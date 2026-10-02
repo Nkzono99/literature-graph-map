@@ -137,6 +137,7 @@ dd { margin: 0; }
 .sources { font-size: .75rem; color: var(--muted); margin: .75rem 0 0 4.1rem; }
 summary { cursor: pointer; }
 .sources p { margin-top: .5rem; }
+.paper-themes { font-size: .75rem; color: var(--muted); margin-top: .75rem; }
 .badge { display: inline-block; font-size: .75rem; color: #674b19; background: #f7f0df; border-radius: .2rem; padding: .1rem .5rem; margin-top: .5rem; }
 .theme-entry { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; border-bottom: 1px solid var(--line); padding: 1.25rem 0; }
 .theme-entry > div { min-width: 0; overflow-wrap: anywhere; }

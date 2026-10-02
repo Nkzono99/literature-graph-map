@@ -22,6 +22,9 @@ review:
   paragraphs:
   - Langmuir探針は、印加電圧を変えたときの捕集電流からプラズマを推定する。粒子軌道で捕集電流が決まるOML理論について、[@P000127]は球や円柱からさらに広い形状へ適用条件を整理した。
   - 機体のシース内に置いた小さな探針では、周囲の電位障壁が低エネルギー電子の到達を制限する。[@P000128]はこの効果を組み込んだモデルをCassiniのデータと比較し、電流電圧曲線の遷移領域と温度・電位推定への影響を論じた。探針の寸法と位置、機体の電位を同時に参照するための文献である。
+- heading: 帯電を近接飛行の力へ利用する
+  paragraphs:
+  - '[@P000340]のE-Gliderは、宇宙機の電位分布を調整し、天体との静電相互作用で平衡を作る構想である。周辺プラズマのPIC計算と機体全域の平衡計算を接続し、天体と機体の寸法に応じた必要電位を求めた。月では高い電位を要する条件があり、現在は計算上の提案として、帯電モデルと近接飛行の工学課題をつなぐ。'
 lineage:
 - title: 機体の帯電を空間分布で解く
   steps:
@@ -378,6 +381,40 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000340
+  role: 帯電を利用する静電飛行の平衡
+  summary:
+    question: 無大気天体の近くで、宇宙機帯電による人工平衡を形成できるか。
+    method: E-PICで周辺プラズマを計算し、E-QUIL-DERで機体全域の平衡に必要な電位分布を求める。
+    contribution: 必要電位の天体・機体寸法依存を示し、月では約千Vを要する条件を報告した。飛行実証へ向けた理論計算。
+  evidence_by_item:
+    question:
+    - paper_id: P000340
+      version_id: V1
+      url: https://doi.org/10.1007/s44205-026-00198-6
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000340
+      version_id: V1
+      url: https://doi.org/10.1007/s44205-026-00198-6
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000340
+      version_id: V1
+      url: https://doi.org/10.1007/s44205-026-00198-6
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: charging-models
 relations: []
 view:
   sort:

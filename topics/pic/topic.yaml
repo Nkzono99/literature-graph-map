@@ -16,6 +16,13 @@ review:
   paragraphs:
   - 月面地形や宇宙機の近傍では、表面形状に沿う格子や粒子の境界処理が効いてくる。CPIC（[@P000068]）は曲線格子とマルチグリッドを組み合わせ、複雑な物体とプラズマの相互作用に対応した。[@P000074]は宇宙機帯電を題材に、複数のPIC手法を整理して並列実行へつなぐソフトウェア構成を示している。
   - 大規模化では、格子数と粒子数の両方が費用を決める。OhHelp（[@P000069]）は粒子が集中する領域の仕事を他ノードへ分担し、[@P000070]は位相空間で近い粒子を統合する。FLEKS（[@P000071]）では、MHD計算に埋め込むPIC領域を動的に変え、必要な場所へ計算を集中させる。局所構造を細かく解く別の方向として、[@P000073]は疎格子のノイズ低減と適応的な格子細分化を組み合わせている。
+- heading: 粒子・格子の力計算にFMMを使う
+  paragraphs:
+  - '[@P000319]と[@P000320]は、RAMSESの粒子・格子計算でPoisson解法をFMMへ置き換える系列である。一様格子での精度・並列性の比較から、局所格子と時間刻みへの適応化へ進む。後者はプレプリントで、対象は重力場である。静電PICへの接続では、力の保存性に加えて電気的な物体境界を確認する。'
+- heading: 計算出力と図の再現へ進む
+  paragraphs:
+  - 論文から計算条件を追うために、公開出力も参照できる。[@P000344]は空洞サイズ依存の図に対応するHDF5とNotebook、[@P000345]は流速・熱速度比の計算出力と半解析コード、[@P000346]は極域クレーターのhybrid
+    PICのVTK・DAT出力を提供する。これらは関連論文とは別の公開データ記録であり、ここでは説明とファイル一覧を確認している。
 lineage:
 - title: 電荷と電場の整合性
   steps:
@@ -71,6 +78,8 @@ groups:
   title: 物体境界・コードの構成
 - id: scaling
   title: 負荷分散・粒子数・適応化
+- id: datasets
+  title: 公開シミュレーションデータ
 entries:
 - paper_id: P000059
   group: foundations
@@ -684,6 +693,176 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000319
+  role: RAMSESの格子上FMM
+  summary:
+    question: 格子上FMMは、一様格子のPoisson問題で精度と並列性能を両立できるか。
+    method: RAMSESの格子階層に多重極・局所展開を構成し、マルチグリッドと精度・性能を比較する。
+    contribution: 孤立境界での利点と良好な並列性を示した。重力計算であり、導体・誘電体境界を備えた静電PICへの適用は別途必要。
+  evidence_by_item:
+    question:
+    - paper_id: P000319
+      version_id: V1
+      url: https://doi.org/10.1093/mnras/stag1241
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000319
+      version_id: V1
+      url: https://doi.org/10.1093/mnras/stag1241
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000319
+      version_id: V1
+      url: https://doi.org/10.1093/mnras/stag1241
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: scaling
+- paper_id: P000320
+  role: FMMのAMR・適応時間刻みへの拡張
+  summary:
+    question: 局所的に異なる空間・時間解像度を使う計算へ、格子上FMMをどう拡張するか。
+    method: AMRレベルごとの木と統合木を使い、粗密境界での力の対称性を保つ処理を導入する。
+    contribution: 一様格子版から適応化へ進み、著者の試験でマルチグリッドとの一致、運動量保存と並列性の改善を報告した。未査読。
+  evidence_by_item:
+    question:
+    - paper_id: P000320
+      version_id: V1
+      url: https://arxiv.org/abs/2607.19489
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000320
+      version_id: V1
+      url: https://arxiv.org/abs/2607.19489
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000320
+      version_id: V1
+      url: https://arxiv.org/abs/2607.19489
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: scaling
+- paper_id: P000344
+  group: datasets
+  role: 公開データ：空洞サイズ依存の再現用データ
+  summary:
+    question: 空洞サイズを変えた計算の図と物理量を、どのデータから再現できるか。
+    method: 図に対応したHDF5の物理量・軸・単位・パラメータと、描画用Notebookを公開する。
+    contribution: サイズ依存の月面空洞帯電論文に対応する計算出力と図の再現手順を提供する。
+  evidence_by_item:
+    question:
+    - paper_id: P000344
+      version_id: V1
+      url: https://zenodo.org/records/14018082
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000344
+      version_id: V1
+      url: https://zenodo.org/records/14018082
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000344
+      version_id: V1
+      url: https://zenodo.org/records/14018082
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000345
+  group: datasets
+  role: 公開データ：流速・熱速度比の再現用データ
+  summary:
+    question: 流速と熱速度の比を変えた計算・半解析モデルを、どう再実行・比較できるか。
+    method: 実行パラメータ、HDF5、描画用Notebook、半解析コード、太陽風参照CSVを公開する。
+    contribution: 空洞帯電の3D PICと自由落下モデルを比較する公開データ・解析コードを提供する。
+  evidence_by_item:
+    question:
+    - paper_id: P000345
+      version_id: V1
+      url: https://zenodo.org/records/15686147
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000345
+      version_id: V1
+      url: https://zenodo.org/records/15686147
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000345
+      version_id: V1
+      url: https://zenodo.org/records/15686147
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000346
+  group: datasets
+  role: 公開データ：極域クレーターのhybrid PICデータ
+  summary:
+    question: 極域クレーターのmini-wake計算図を、どの出力から再現できるか。
+    method: SPISによる3D計算のVTK・DAT形式の17ファイルと、対応する5図を公開する。
+    contribution: クレーター周囲の粒子流入・電位計算を、図に対応する出力から比較する入口を提供する。
+  evidence_by_item:
+    question:
+    - paper_id: P000346
+      version_id: V1
+      url: https://www.scidb.cn/detail?dataSetId=ae7d9ab262fd48f59141af6062ae3318
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000346
+      version_id: V1
+      url: https://www.scidb.cn/detail?dataSetId=ae7d9ab262fd48f59141af6062ae3318
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000346
+      version_id: V1
+      url: https://www.scidb.cn/detail?dataSetId=ae7d9ab262fd48f59141af6062ae3318
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
 relations: []
 view:
   sort:

@@ -14,6 +14,9 @@ review:
 - heading: 受動表面とUV併用で除塵の選択肢を広げる
   paragraphs:
   - 受動的な表面技術の比較は[@P000257]、ZnO薄膜と立体テクスチャは[@P000258]、導電性ポリイミドは[@P000259]にまとまっている。電気力学的な除塵ではUVの併用[@P000260]と柔軟電極[@P000261]が加わる。各方式の効果は、真空・照射条件、粒径、表面形状と併せて比較する。
+- heading: 帯電を利用する飛行と、氷地盤の掘削条件
+  paragraphs:
+  - '[@P000340]は機体帯電を調整して静電飛行の平衡点を作る計算研究であり、帯電解析を位置制御へ広げる。極域の走行・掘削を扱う[@P000332]は、氷含有模擬物の円錐貫入試験から、氷の形態に応じた強度とエネルギーを求めた。帯電力の設計と地盤力学は別の評価軸で、いずれも機体寸法、温度、粒子・氷の構造に応じた条件設定が必要になる。'
 lineage:
 - title: 機体の帯電設計
   steps:
@@ -258,11 +261,37 @@ entries:
   group: removal
   role: ナノチューブ表面による付着低減
   inspection:
-    level: metadata_only
+    level: full_text
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+  summary:
+    question: Ti6Al4V上のナノチューブ配列は、模擬月塵の局所付着力と表面残留量をどう変えるか。
+    method: 陽極酸化電圧を変えた表面を、粒子付きAFM探針と粉体散布試験で比較する。
+    contribution: 未処理Ti-0と比べ、Ti-40の平均付着力は12.98から1.63 nNへ低下。投入量5 g・設置角60°の残留量は0.5420から0.1642 mg/cm²へ減った。ナノ構造の半径・直径表記は原文内で一致しない。
+  evidence_by_item:
+    question:
+    - paper_id: P000214
+      version_id: V1
+      url: https://doi.org/10.7527/S1000-6893.2024.31803
+      source_type: full_text
+      locator: PDF pp.1–2, Introduction
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000214
+      version_id: V1
+      url: https://doi.org/10.7527/S1000-6893.2024.31803
+      source_type: full_text
+      locator: PDF pp.2–4, §§1.1–1.3, Figs.1–4
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000214
+      version_id: V1
+      url: https://doi.org/10.7527/S1000-6893.2024.31803
+      source_type: full_text
+      locator: PDF pp.5–9, §§2.1–2.3, Figs.6,9,10,12; p.12 English abstract
+      checked_at: '2026-09-22'
 - paper_id: P000249
   group: removal
   role: 月ダストの生成・物性・輸送の総説
@@ -276,11 +305,37 @@ entries:
   group: removal
   role: ダスト運動とレゴリス力学の総説
   inspection:
-    level: metadata_only
+    level: full_text
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+  summary:
+    question: 月レゴリスの力学特性と帯電環境は、ダストの離脱・運動をどう制約するか。
+    method: Apollo試料の物性、土質力学試験、月面観測、帯電・軌道モデルを横断して整理した2007年の総説。
+    contribution: レゴリスの力学応答と帯電・輸送研究をつなぎ、離脱時の電荷分布や微小粒子の実験不足を当時の課題として挙げた。観測されるダストを安定浮遊だけで説明する必要はないと論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF pp.1–2, §1
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF pp.2–22, §§2–4, Tables 1–5b, Figs.1–13
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF p.21, §4.3 [74]; pp.22–23, §5 [81]–[84]
+      checked_at: '2026-09-22'
 - paper_id: P000257
   group: removal
   role: 受動的なダスト対策表面の比較
@@ -326,6 +381,74 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000332
+  role: 氷の形態と走行・掘削性
+  summary:
+    question: 氷量が同じでも、その形態によって地盤の強さと掘削エネルギーは変わるか。
+    method: 低温の模擬レゴリスを未焼結・圧力焼結・氷結合・蒸着で準備し、円錐貫入試験を行う。
+    contribution: 粒子間を結ぶ氷と分散した氷で強度・掘削性が大きく異なり、氷量に加えて微細構造を評価する必要を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000332
+      version_id: V1
+      url: https://doi.org/10.1007/s44461-026-00015-w
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000332
+      version_id: V1
+      url: https://doi.org/10.1007/s44461-026-00015-w
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000332
+      version_id: V1
+      url: https://doi.org/10.1007/s44461-026-00015-w
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: charging
+- paper_id: P000340
+  role: 帯電を利用する静電飛行の平衡
+  summary:
+    question: 無大気天体の近くで、宇宙機帯電による人工平衡を形成できるか。
+    method: E-PICで周辺プラズマを計算し、E-QUIL-DERで機体全域の平衡に必要な電位分布を求める。
+    contribution: 必要電位の天体・機体寸法依存を示し、月では約千Vを要する条件を報告した。飛行実証へ向けた理論計算。
+  evidence_by_item:
+    question:
+    - paper_id: P000340
+      version_id: V1
+      url: https://doi.org/10.1007/s44205-026-00198-6
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000340
+      version_id: V1
+      url: https://doi.org/10.1007/s44205-026-00198-6
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000340
+      version_id: V1
+      url: https://doi.org/10.1007/s44205-026-00198-6
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: charging
 relations: []
 view:
   sort:
@@ -343,11 +466,14 @@ survey:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
+  - Bukan経由のPaperpile所蔵PDF
   queries: []
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-22にP000214・P000256の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。'
   limitations:
-  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 今回の全文確認はP000214・P000256に限る。他の文献の確認状況は各entryのinspectionを参照。
+  - He 2026はナノ構造の半径・直径表記と試験環境の記載が不十分。
+  - Colwell 2007の引用先原著は未通読。Debye長の式の単位系と弱光源の帯電時間の記述は要再確認。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 対象文献の要約・根拠位置・本文確認状況を更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

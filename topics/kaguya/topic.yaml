@@ -594,6 +594,74 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000329
+  role: 月観測を統合した機械学習データ
+  summary:
+    question: 異なるミッション・装置の観測を、再現可能な月科学の機械学習へどうそろえるか。
+    method: 4ミッション・10装置の30層超を位置合わせし、複数解像度のタイルと地理的な訓練・評価分割を用意する。
+    contribution: 衝突・火山・極域揮発性物質の共通ベンチマークと基準モデルを提供した。データセット論文のプレプリント。
+  evidence_by_item:
+    question:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: calibration
+- paper_id: P000330
+  role: 複数観測・解像度の月基盤モデル
+  summary:
+    question: 月の異なる観測と空間解像度を、共通の学習表現で扱えるか。
+    method: SomBenchの11観測種・二つの空間スケールを使い、観測幾何を含む基盤モデルを事前学習する。
+    contribution: クレーター検出、火山地形分割、氷有望度回帰で比較し、表現と学習方法の効果を示した。未査読の評価結果。
+  evidence_by_item:
+    question:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: calibration
 review:
 - heading: 装置ごとの観測を、共通の月の姿へ結び付ける
   paragraphs:
@@ -603,6 +671,9 @@ review:
   paragraphs:
   - LRSが捉えた海の地下層序[@P000181]に対し、[@P000176]は表面からの散乱を計算し、小規模な地下エコー候補を探している。分光データの比較では、放射輝度[@P000277]、測光補正[@P000278]、反射率[@P000279]を分けて読むと、機器間の違いを追いやすい。
   - PACEでは太陽風陽子の反射[@P000184]と月起源イオン[@P000185]が観測対象となった。地球起源酸素[@P000177]、月周辺のC・N・Oイオンの日変化[@P000179]へと対象が広がり、表面と周囲のプラズマを結ぶ研究に使われている。
+- heading: ミッションをまたいで観測をそろえる
+  paragraphs:
+  - '[@P000329]のSomBenchはKaguyaを含む4ミッションの観測を位置合わせし、クレーター・火山・極域を共通のデータで解析する入口を用意した。[@P000330]はそのデータから複数観測種と解像度を扱う共通表現を学習する。ミッション別の機器較正に加え、地理的な訓練・評価分割や観測幾何をそろえることが、再解析結果を比較する条件になる。両者は別論文のプレプリントとして扱う。'
 lineage:
 - title: 地形・重力から地殻構造へ
   steps:
@@ -617,6 +688,15 @@ lineage:
     title: 地形と重力を統合する
     significance: 両者を用いて地殻厚を推定し、裏側盆地の構造差を調べた。
     connection: 二つの観測から内部構造を推定
+- title: 観測を統合したデータから共通学習表現へ
+  steps:
+  - paper_id: P000329
+    title: ミッションをまたぐ月データをそろえる
+    significance: Kaguya等の観測を位置合わせし、共通ベンチマークを提供した。未査読。
+  - paper_id: P000330
+    title: 複数観測・解像度から表現を学習
+    significance: 統合データから基盤モデルを学習し、複数の月科学課題で評価した。未査読。
+    connection: SomBenchのデータ基盤から共通表現モデルへ
 survey:
   searched_at: '2026-09-22'
   provider_names:

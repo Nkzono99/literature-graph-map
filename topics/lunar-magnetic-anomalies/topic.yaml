@@ -28,6 +28,9 @@ review:
 - heading: 磁化が記録した磁場と、磁化を担う物質を分けて調べる
   paragraphs:
   - 現在の磁気異常の背景には、過去の磁場と磁性鉱物の履歴がある。[@P000288]は裏側起源と推定される月隕石から約7億年前の弱い磁場を読み、全球ダイナモの停止時期を制約する。一方、[@P000297]は模擬物の加熱によるFeの再分配と磁性相の生成を追う。試料の磁化を解釈する際には、磁場の強さと、物質が磁化を保持する条件の両方を参照できる。
+- heading: 磁場源の地質と、磁化を担うナノ粒子
+  paragraphs:
+  - '[@P000322]はDewar領域の重力と磁場を共同逆解析し、埋没火成岩体と古いダイナモを結び付けた。[@P000323]はChang’e-6衝突ガラスのγ鉄と磁気ボルテックスを調べた。前者は磁場源の形状・年代のモデル制約、後者は磁化を担う相と衝撃記録の試料制約であり、両者を組み合わせて月の磁気履歴を考える。'
 lineage:
 - title: 遮蔽の観測から電荷分離へ
   steps:
@@ -608,6 +611,74 @@ entries:
       source_type: abstract
       locator: 出版社提供の公開要旨（Crossref）
       checked_at: '2026-09-25'
+- paper_id: P000322
+  role: Dewar磁気異常の埋没火成岩体
+  summary:
+    question: Dewarの磁場源はどのような構造で、古い月ダイナモをどう制約するか。
+    method: 軌道の重力・磁場を共同逆解析し、磁化量と重なる盆地噴出物による年代制約を組み合わせる。
+    contribution: 浅部の高密度・磁化体を埋没玄武岩として解釈し、約42億年前のダイナモを支持するモデル制約を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000322
+      version_id: V1
+      url: https://doi.org/10.1126/sciadv.aec0341
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000322
+      version_id: V1
+      url: https://doi.org/10.1126/sciadv.aec0341
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000322
+      version_id: V1
+      url: https://doi.org/10.1126/sciadv.aec0341
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: origin
+- paper_id: P000323
+  role: 月試料中のγ鉄と磁区構造
+  summary:
+    question: 月面温度で残るγ鉄は、どのような磁化を保持するか。
+    method: Chang’e-6衝突ガラスのナノ粒子を同定し、電子ホログラフィーで磁区構造を調べる。
+    contribution: 常温で安定なγ鉄の磁気ボルテックスを示し、急冷・微量元素による保存と衝撃磁化の記録可能性を論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000323
+      version_id: V1
+      url: https://doi.org/10.1073/pnas.2608395123
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000323
+      version_id: V1
+      url: https://doi.org/10.1073/pnas.2608395123
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000323
+      version_id: V1
+      url: https://doi.org/10.1073/pnas.2608395123
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: origin
 relations: []
 view:
   sort:

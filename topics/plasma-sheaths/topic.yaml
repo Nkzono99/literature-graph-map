@@ -18,6 +18,9 @@ review:
   paragraphs:
   - 球状ダストでは、電位によって曲がる粒子軌道が捕集電流を決める。[@P000094]は、電子を放出しない静止球について、軌道運動制限（OML）理論とPICを比較した。粒径とDebye長の比を変え、電荷、捕集電流、エネルギー流束を別々に評価している。表面電位から電荷を求めたい場合と、材料への粒子流入を求めたい場合では、参照する量を分けて読むと使いやすい。
   - 月面の光電子シース中を動く粒子へ進むと、[@P000167]は位置と電荷を連成して追跡する。非Maxwell型の電子分布を含め、電荷を連続量で扱う場合と電子1個ずつの出入りで扱う場合を比較し、希薄な条件で軌道や浮遊の成立が変わることを示した。
+- heading: 放出シースの基礎と、逆シースへの移行
+  paragraphs:
+  - '[@P000155]は電子放出を含むLangmuirシースと熱流の基礎理論に対応する。強い二次電子放出を扱う[@P000156]は、通常のDebyeシースが成立しない条件を示した。熱電子探針の[@P000343]は、電離・衝突を含め、イオン閉じ込めを伴う仮想陰極から単調な逆シースへ移る条件を調べている。放出の種類、流入電子の分布、プレシースの粒子生成・衝突条件を区別すると、各モデルの電位構造を比較しやすい。'
 lineage:
 - title: 放出電子とシース電位
   steps:
@@ -661,6 +664,112 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000343
+  role: 熱電子探針の空間電荷制限から逆シースへ
+  summary:
+    question: 強い熱電子放出を伴う探針は、どのように逆シースへ移るか。
+    method: 電離と衝突をプレシース形成過程に含め、仮想陰極と探針電位の変化を解析する。
+    contribution: イオン閉じ込めを伴う中間状態から、単調な逆シースと非加速プレシースへ至る条件を示した。要旨を確認。
+  evidence_by_item:
+    question:
+    - paper_id: P000343
+      version_id: V1
+      url: https://doi.org/10.3390/plasma9030029
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000343
+      version_id: V1
+      url: https://doi.org/10.3390/plasma9030029
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000343
+      version_id: V1
+      url: https://doi.org/10.3390/plasma9030029
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: emission
+- paper_id: P000155
+  group: emission
+  role: 放出電子を含むLangmuirシースの基礎
+  summary:
+    question: 壁から電子が出ると、シースを通る熱流と電位差はどう変わるか。
+    method: 電子放出を含む浮遊壁のシースを理論的に扱う。
+    contribution: 放出電子の空間電荷が正味の放出電流を制限するシースを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000090
+      version_id: V1
+      url: https://hpepl.ae.gatech.edu/papers/2015_Sam_PoP2.pdf
+      source_type: review
+      locator: Langendorf & Walker (2015), Introductionによる理論の紹介
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000090
+      version_id: V1
+      url: https://hpepl.ae.gatech.edu/papers/2015_Sam_PoP2.pdf
+      source_type: review
+      locator: Langendorf & Walker (2015), Introductionによる理論の紹介
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000090
+      version_id: V1
+      url: https://hpepl.ae.gatech.edu/papers/2015_Sam_PoP2.pdf
+      source_type: review
+      locator: Langendorf & Walker (2015), Introductionによる理論の紹介
+      checked_at: '2026-09-18'
+  inspection:
+    level: metadata_only
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
+- paper_id: P000156
+  group: emission
+  role: 強い二次電子放出と逆シース
+  summary:
+    question: 放出収率が1を超える壁に囲まれたプラズマは、どのように電流を釣り合わせるか。
+    method: 壁への入射電子が平均1個を超える二次電子を生む条件をPICで計算。
+    contribution: 壁が正になり、二次電子の一部を戻す逆シースが生じる状態を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000156
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.108.255001
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000156
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.108.255001
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000156
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.108.255001
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
 relations: []
 view:
   sort:

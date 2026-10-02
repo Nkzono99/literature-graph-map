@@ -19,6 +19,9 @@ review:
 - heading: 飛翔中の電荷と、離脱前の履歴
   paragraphs:
   - 粒子が動く間にも電子とイオンは出入りする。[@P000167]は光電子シース中の軌道を連続・離散帯電で比べ、希薄プラズマでの静止浮遊や繰り返す跳躍の成立条件を調べた。着陸時の[@P000165]では、噴射中の衝突で得た摩擦電荷が、停止後にプラズマとの平衡へ緩和する過程を追う。どちらも、運動と同じ時間軸で電荷を扱う点が比較の軸になる。
+- heading: 浮遊条件から、離脱初速と方向へ
+  paragraphs:
+  - 光電子シースと粒子運動を計算した[@P000007]は、飛翔中の電荷変化と浮遊条件を考える前段となる。動的帯電を扱う[@P000167]との比較では、表面接触の破断を別の過程として扱う。真空実験の[@P000314]・[@P000315]は、局所帯電と粒子間反発を初速・到達高度へ結び付ける。[@P000316]は射出角と粒径の分布を追加し、斜長石を使う[@P000317]は速度と直径の関係から帯電モデルを制約した。飛翔中の帯電、離脱の条件、離脱直後の速度を合わせることで、輸送計算の入力を具体化できる。
 lineage:
 - title: 飛翔中の帯電と輸送
   steps:
@@ -46,6 +49,23 @@ lineage:
     title: 光とプラズマの同時照射へ広げる
     significance: 同時照射で粒子の飛び出しと推定負電荷が増え、charge pumpingで説明できることを示した。
     connection: 単独照射から複合的な環境へ
+- title: 局所帯電から離脱初速・角度へ
+  steps:
+  - paper_id: P000314
+    title: 微小空洞の帯電と離脱高度を比較
+    significance: シリカの真空実験を粒子間反発と表面電場の予測へ照合した。
+  - paper_id: P000315
+    title: 初速の粒径・形状依存を測る
+    significance: 離脱直後の速度分散と最大初速の粒径依存を示した。
+    connection: 到達高度の評価から輸送の初期条件へ
+  - paper_id: P000316
+    title: 射出角と距離ごとの粒径を測る
+    significance: 高速度撮影と捕集から粒径・角度・距離を結び付けた。
+    connection: 初速に加え射出方向と運ばれる粒子を制約
+  - paper_id: P000317
+    title: 斜長石粒子で電荷モデルを比べる
+    significance: 速度と直径の関係から局所帯電・表面微細構造の寄与を絞った。
+    connection: シリカ等の実験から月面鉱物に近い試料へ
 public: true
 scope:
   include:
@@ -271,49 +291,73 @@ entries:
   group: mechanisms
   role: プラズマ中のダスト移動実験
   summary:
-    question: 粉体の中央と縁で、帯電と移動はどう変わるか。
-    method: 負にバイアスした導電板上のJSC-Mars-1粒子をプラズマ中で観察。
-    contribution: 正に帯電した粒子の外向き移動と、粉体層の縁で強まる帯電を報告。
+    question: プラズマ中で、導体上の絶縁性ダストはどこから動き始めるか。
+    method: 負にバイアスしたグラファイト上の25 µm未満の模擬粒子を撮影し、別条件の絶縁円板で電位と約100 µm粒子の電荷を測る。
+    contribution: 外縁から輪状に広がる移動と6 mm以上の到達を観察し、電位構造・粒子電荷の位置依存性と対応付けた。付着力の閾値は定量化していない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000026
+      version_id: V1
+      url: https://doi.org/10.1029/2008JA013983
+      source_type: full_text
+      locator: PDF pp.1–2, §§1–2
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000026
+      version_id: V1
+      url: https://doi.org/10.1029/2008JA013983
+      source_type: full_text
+      locator: PDF pp.2–4, §§2–4, Figs.1,4,5
+      checked_at: '2026-09-22'
     contribution:
     - paper_id: P000026
       version_id: V1
-      url: https://doi.org/10.1029/2008ja013983
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2008JA013983
+      source_type: full_text
+      locator: PDF pp.2–5, §§3–4, Figs.2–7
+      checked_at: '2026-09-22'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-09-22'
     recheck: false
   locked_fields: []
 - paper_id: P000029
   group: mechanisms
   role: 電子ビームとダスト離脱
   summary:
-    question: 電子照射は、粉体と基板の間にどのような電場を作るか。
-    method: 浮遊電位の黒鉛上に置いたJSC-Mars-1粒子へ、プラズマ中で電子を照射。
-    contribution: 二次電子放出の違いが水平・鉛直電場を強め、粒子の移動と離脱を促した。
+    question: 電子ビームとイオンの電流比は、ダスト層と基板の電位差・輸送をどう変えるか。
+    method: 浮遊グラファイト上のJSC-Mars-1に電子ビームを入射し、75–90 µm粒子層の電位と、別条件で25 µm未満の粒子の移動を測る。
+    contribution: 両電流が同程度でビームエネルギーが十分な条件では電場が増強し、小粒子の広がりと絶縁ブロック上面への堆積を観察した。無照射時に対する約1桁の増加は垂直電場の値である。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000029
+      version_id: V1
+      url: https://doi.org/10.1029/2010JA015465
+      source_type: full_text
+      locator: PDF p.1, §1
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000029
+      version_id: V1
+      url: https://doi.org/10.1029/2010JA015465
+      source_type: full_text
+      locator: PDF pp.1–4, §§2–4, Table 1
+      checked_at: '2026-09-22'
     contribution:
     - paper_id: P000029
       version_id: V1
-      url: https://doi.org/10.1029/2010ja015465
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2010JA015465
+      source_type: full_text
+      locator: PDF pp.3–6, §§3.1,4–5, Figs.2,5
+      checked_at: '2026-09-22'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
+    checked_at: '2026-09-22'
+    recheck: true
   locked_fields: []
 - paper_id: P000040
   group: mechanisms
@@ -878,11 +922,37 @@ entries:
   group: mechanisms
   role: 電荷ゆらぎと静電離脱
   inspection:
-    level: metadata_only
+    level: full_text
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+  summary:
+    question: 光電子放出・電子捕獲の局所的なゆらぎは、粒子の付着を超える静電力を作るか。
+    method: ナノ領域の電荷生成・消滅をMonte Carlo法で模擬し、帯電領域の配置から求めた電場と仮定した粒子電荷を、粗さ・清浄度を含む付着モデルと比較する。
+    contribution: 半径20 nmの粒子と半径10 nmの帯電領域に各+10eを仮定し、最隣接させた例で約10 pNを得た。離脱条件の成否は電荷・配置・粗さ・清浄度に依存し、有効面積の記載にも不整合が残る。
+  evidence_by_item:
+    question:
+    - paper_id: P000216
+      version_id: V1
+      url: https://doi.org/10.1016/j.epsl.2025.119544
+      source_type: full_text
+      locator: PDF pp.1–3, §§1–2.1
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000216
+      version_id: V1
+      url: https://doi.org/10.1016/j.epsl.2025.119544
+      source_type: full_text
+      locator: PDF pp.1–2, Eqs.1–2; pp.5–8, Eqs.3–22, Figs.7–10
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000216
+      version_id: V1
+      url: https://doi.org/10.1016/j.epsl.2025.119544
+      source_type: full_text
+      locator: PDF pp.2,5,7–8, Figs.1,8, Computational Space and Scheme
+      checked_at: '2026-09-22'
 - paper_id: P000218
   group: mechanisms
   role: Apollo試料の三次元形状と空隙
@@ -1000,11 +1070,37 @@ entries:
   group: transport
   role: ダスト運動とレゴリス力学の総説
   inspection:
-    level: metadata_only
+    level: full_text
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+  summary:
+    question: 月レゴリスの力学特性と帯電環境は、ダストの離脱・運動をどう制約するか。
+    method: Apollo試料の物性、土質力学試験、月面観測、帯電・軌道モデルを横断して整理した2007年の総説。
+    contribution: レゴリスの力学応答と帯電・輸送研究をつなぎ、離脱時の電荷分布や微小粒子の実験不足を当時の課題として挙げた。観測されるダストを安定浮遊だけで説明する必要はないと論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF pp.1–2, §1
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF pp.2–22, §§2–4, Tables 1–5b, Figs.1–13
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF p.21, §4.3 [74]; pp.22–23, §5 [81]–[84]
+      checked_at: '2026-09-22'
 - paper_id: P000263
   group: transport
   role: クレーター寸法とシースの実験
@@ -1076,6 +1172,166 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000314
+  role: 微小空洞・表面電場と離脱初速
+  summary:
+    question: 微小空洞の帯電と試料の充填状態は、シリカ粒子の初速・到達高度をどう変えるか。
+    method: 真空中の電子照射実験を高速度撮影し、粒子間反発を含む初速・高度の見積もりと比較する。
+    contribution: 多くの粒子で見積もりと整合する一方、圧縮試料や水平電場が離脱・輸送を変えることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000314
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0273117719300821
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000314
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0273117719300821
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000314
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0273117719300821
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: transport
+- paper_id: P000315
+  role: 離脱初速の粒径・形状依存
+  summary:
+    question: 静電的に離脱したダストの初速は、粒径と形状にどう依存するか。
+    method: 離脱初速・角度を室内測定し、局所帯電モデルとエネルギー保存から導く速度と粒径の関係を比較する。
+    contribution: 最大初速は粒径の増加とともに低下し、同じ粒径でも凝集力や形状による大きな速度分散を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000315
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103520303407
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000315
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103520303407
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000315
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103520303407
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: transport
+- paper_id: P000316
+  role: 離脱粒径と射出角の分布
+  summary:
+    question: 飛び出す粒子の大きさと方向は、輸送距離とどう関係するか。
+    method: 450 eVの電子ビームでシリカ粒子を離脱させ、高速度撮影と周囲の粘着面への捕集を組み合わせる。
+    contribution: 表面法線から約43.5〜45度の射出角にピークを見いだし、凝集体と単粒子の到達距離の違いを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000316
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0273117721002623
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000316
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0273117721002623
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000316
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0273117721002623
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: transport
+- paper_id: P000317
+  role: 斜長石粒子の電荷と速度
+  summary:
+    question: 二次電子放出で動く斜長石粒子の速度と粒径を、どの帯電モデルで説明できるか。
+    method: 350 eV電子照射下で、レーザーDoppler法により粒子の直径と水平・鉛直速度を測定する。
+    contribution: 鉛直輸送が優勢で、速度・粒径関係は電荷共有モデルで説明しにくく、表面微細構造と局所電位の寄与を示唆した。
+  evidence_by_item:
+    question:
+    - paper_id: P000317
+      version_id: V1
+      url: https://doi.org/10.3847/1538-4357/ac5d48
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000317
+      version_id: V1
+      url: https://doi.org/10.3847/1538-4357/ac5d48
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000317
+      version_id: V1
+      url: https://doi.org/10.3847/1538-4357/ac5d48
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: transport
+- paper_id: P000007
+  group: transport
+  role: 光電子シース内の帯電と浮遊条件
+  summary:
+    question: 電子分布と帯電の時間変化は、粒子の浮遊をどう変えるか。
+    method: 正午の平坦面を一次元PICで計算し、粒子の帯電・軌道を追跡。
+    contribution: 浮遊平衡点への到達は保証されない。表面からの剥離は対象外。
+  evidence_by_item:
+    question: []
+    method: []
+    contribution:
+    - paper_id: P000007
+      version_id: V1
+      url: https://doi.org/10.1029/2010JA015286
+      source_type: full_text
+      locator: §2.1・考察（PDF pp.2,8）
+      checked_at: '2026-09-18'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
 relations: []
 view:
   sort:
@@ -1093,11 +1349,15 @@ survey:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
+  - Bukan経由のPaperpile所蔵PDF
   queries: []
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-22にP000026・P000029・P000216・P000256の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。'
   limitations:
-  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。
+  - 今回の全文確認はP000026・P000029・P000216・P000256に限る。他の文献の確認状況は各entryのinspectionを参照。
+  - Wang 2010は一部の電場値・式表記に原文内の不整合が残る。
+  - Sana 2025は計算領域の有効面積式に不整合があり、粒子電荷を仮定している。
+  - Colwell 2007の引用先原著は未通読。Debye長の式の単位系と弱光源の帯電時間の記述は要再確認。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 対象文献の要約・根拠位置・本文確認状況を更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。
     Goguen 2024のNIST公開要旨に基づく要約・確認状況を追記。'
   publication_status: draft
   reviewed_at: null

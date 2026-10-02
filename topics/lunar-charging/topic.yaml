@@ -23,6 +23,9 @@ review:
   paragraphs:
   - 機器への影響を考える際は、表面間の電位差や材料の違いが問題になる。[@P000024]はNASCAP-2Kによる機体の帯電解析、[@P000054]は月ミッションの帯電環境を整理した。除塵には電極が作る電場を用いるEDS（[@P000028]）があり、イオン中和（[@P000049]）やEDSとUVを組み合わせたブラシ（[@P000050]）の特許もある。これらは、自然のダスト移動で扱う電荷と力の関係を、機器側から制御する技術として参照できる。
   - 電子ビームを使う[@P000164]では、VUVを併用すると布上の模擬ダストが動き出しやすくなった。太陽に似た波長分布を用い、照射強度は月面より高い条件で調べている。
+- heading: 高エネルギー粒子は、表面の下にも電荷を残す
+  paragraphs:
+  - 極域の低温レゴリスでは電荷の散逸が遅い。[@P000310]はGCRとSEPの観測を使い、内部電場を時間依存で予測した。[@P000311]と[@P000312]は、絶縁破壊が細粒化・溶融・蒸発を通じて表層を変える可能性を評価している。水への接続を分子過程から調べた[@P000313]は、破壊で露出した酸素と太陽風由来水素の反応を計算した。いずれも、モデルが予測する作用と現地で確認された作用を区別して読む。
 lineage:
 - title: 電流収支から空間構造へ
   steps:
@@ -50,6 +53,23 @@ lineage:
     title: 空隙の電子再吸収で離脱を説明
     significance: 粉体面の微小な空隙に電子が集まるPCMを提案し、粒子を押し出す局所電荷に着目した。
     connection: 離脱を生む局所帯電へ
+- title: 内部帯電から風化・水形成へ
+  steps:
+  - paper_id: P000310
+    title: 低温レゴリス内部の電場を予測
+    significance: GCR・SEP観測と電荷散逸を合わせ、永久影での内部帯電をモデル化した。
+  - paper_id: P000311
+    title: 絶縁破壊を表層改変へつなぐ
+    significance: 粒子の細粒化や空隙構造への影響を、SEPイベントの履歴から評価した。
+    connection: 内部電場の予測から物質の改変へ
+  - paper_id: P000312
+    title: 溶融・蒸発の速度を比較
+    significance: 絶縁破壊と微隕石衝突の累積作用を比較した。
+    connection: 発生可能性から風化の収支へ
+  - paper_id: P000313
+    title: 水形成を分子過程で計算
+    significance: 破壊で露出する酸素と水素の反応・低温保持を調べた。
+    connection: 粒子改変の系列に化学反応のモデルを加える
 public: true
 scope:
   include:
@@ -1010,49 +1030,73 @@ entries:
   group: grain-charging
   role: プラズマ中のダスト移動実験
   summary:
-    question: 粉体の中央と縁で、帯電と移動はどう変わるか。
-    method: 負にバイアスした導電板上のJSC-Mars-1粒子をプラズマ中で観察。
-    contribution: 正に帯電した粒子の外向き移動と、粉体層の縁で強まる帯電を報告。
+    question: プラズマ中で、導体上の絶縁性ダストはどこから動き始めるか。
+    method: 負にバイアスしたグラファイト上の25 µm未満の模擬粒子を撮影し、別条件の絶縁円板で電位と約100 µm粒子の電荷を測る。
+    contribution: 外縁から輪状に広がる移動と6 mm以上の到達を観察し、電位構造・粒子電荷の位置依存性と対応付けた。付着力の閾値は定量化していない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000026
+      version_id: V1
+      url: https://doi.org/10.1029/2008JA013983
+      source_type: full_text
+      locator: PDF pp.1–2, §§1–2
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000026
+      version_id: V1
+      url: https://doi.org/10.1029/2008JA013983
+      source_type: full_text
+      locator: PDF pp.2–4, §§2–4, Figs.1,4,5
+      checked_at: '2026-09-22'
     contribution:
     - paper_id: P000026
       version_id: V1
-      url: https://doi.org/10.1029/2008ja013983
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2008JA013983
+      source_type: full_text
+      locator: PDF pp.2–5, §§3–4, Figs.2–7
+      checked_at: '2026-09-22'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-09-22'
     recheck: false
   locked_fields: []
 - paper_id: P000029
   group: grain-charging
   role: 電子ビームとダスト離脱
   summary:
-    question: 電子照射は、粉体と基板の間にどのような電場を作るか。
-    method: 浮遊電位の黒鉛上に置いたJSC-Mars-1粒子へ、プラズマ中で電子を照射。
-    contribution: 二次電子放出の違いが水平・鉛直電場を強め、粒子の移動と離脱を促した。
+    question: 電子ビームとイオンの電流比は、ダスト層と基板の電位差・輸送をどう変えるか。
+    method: 浮遊グラファイト上のJSC-Mars-1に電子ビームを入射し、75–90 µm粒子層の電位と、別条件で25 µm未満の粒子の移動を測る。
+    contribution: 両電流が同程度でビームエネルギーが十分な条件では電場が増強し、小粒子の広がりと絶縁ブロック上面への堆積を観察した。無照射時に対する約1桁の増加は垂直電場の値である。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000029
+      version_id: V1
+      url: https://doi.org/10.1029/2010JA015465
+      source_type: full_text
+      locator: PDF p.1, §1
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000029
+      version_id: V1
+      url: https://doi.org/10.1029/2010JA015465
+      source_type: full_text
+      locator: PDF pp.1–4, §§2–4, Table 1
+      checked_at: '2026-09-22'
     contribution:
     - paper_id: P000029
       version_id: V1
-      url: https://doi.org/10.1029/2010ja015465
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2010JA015465
+      source_type: full_text
+      locator: PDF pp.3–6, §§3.1,4–5, Figs.2,5
+      checked_at: '2026-09-22'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
+    checked_at: '2026-09-22'
+    recheck: true
   locked_fields: []
 - paper_id: P000037
   group: grain-charging
@@ -1646,6 +1690,142 @@ entries:
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-18'
+- paper_id: P000310
+  role: 永久影の内部帯電
+  summary:
+    question: 高エネルギー粒子は、低温レゴリス内部にどの程度の電場を作るか。
+    method: CRaTERとACE/EPAMの粒子観測を、温度依存の電荷散逸を含む一次元時間依存モデルへ入力する。
+    contribution: GCRによる持続電場と、大規模SEPイベント時の絶縁破壊に達し得る一時的な電場を予測した。
+  evidence_by_item:
+    question:
+    - paper_id: P000310
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014JE004648
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000310
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014JE004648
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000310
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014JE004648
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: topography
+- paper_id: P000311
+  role: 極域レゴリスの絶縁破壊風化
+  summary:
+    question: 内部帯電による絶縁破壊は、極域レゴリスの微細構造を変え得るか。
+    method: 陽子フルエンスモデルとDivinerの温度を組み合わせ、破壊を起こし得るSEPイベントの履歴を推定する。
+    contribution: 永久影の低温条件で繰り返し破壊が起こる可能性を示し、細粒化や空隙構造への寄与を論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000311
+      version_id: V1
+      url: https://doi.org/10.1002/2014JE004710
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000311
+      version_id: V1
+      url: https://doi.org/10.1002/2014JE004710
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000311
+      version_id: V1
+      url: https://doi.org/10.1002/2014JE004710
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: topography
+- paper_id: P000312
+  role: 絶縁破壊と衝突風化の速度比較
+  summary:
+    question: 永久影での絶縁破壊による改変は、微隕石衝突と比べてどの程度か。
+    method: SEP観測とレゴリスの露出履歴を用い、絶縁破壊と衝突のエネルギー・溶融蒸発収支を比較する。
+    contribution: 最も低温な永久影では、破壊による溶融・蒸発が微隕石衝突に匹敵し得ると見積もった。
+  evidence_by_item:
+    question:
+    - paper_id: P000312
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20170002355
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000312
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20170002355
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000312
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20170002355
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: topography
+- paper_id: P000313
+  role: 絶縁破壊と水形成の分子過程
+  summary:
+    question: 絶縁破壊は、太陽風由来水素からの水生成と保持にどう影響するか。
+    method: 分子動力学でレゴリスの結合破壊と、露出した酸素・注入水素の反応を計算する。
+    contribution: 破壊後に水が形成され、低温では粒子表面へ氷の分子構造として保持される計算結果を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000313
+      version_id: V1
+      url: https://doi.org/10.1029/2020GL091681
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000313
+      version_id: V1
+      url: https://doi.org/10.1029/2020GL091681
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000313
+      version_id: V1
+      url: https://doi.org/10.1029/2020GL091681
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: topography
 relations:
 - relation_id: R000001
   source: P000001
@@ -2183,21 +2363,25 @@ view:
   graph_nodes: 20
   graph_edges: 30
 survey:
-  searched_at: '2026-09-18'
+  searched_at: '2026-09-22'
   scope_period: 1972–2026年（今回採用した文献の範囲）
   provider_names:
   - Bukan経由のPaperpileライブラリ
   - Bukanの既存研究ノート
   - 出版社・機関リポジトリ・Crossref
+  - Bukan経由のPaperpile所蔵PDF
   queries:
   - charging
   - lunar
-  coverage_note: 月面帯電の基礎、観測、地形、ダスト、工学を扱う58件。会議資料・特許・プレプリントを含む。
+  coverage_note: 月面帯電の基礎、観測、地形、ダスト、工学を扱う58件。会議資料・特許・プレプリントを含む。 2026-09-22にP000026・P000029の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。
   limitations:
   - Manka 1973は所蔵ファイルの冒頭2頁のみ。Xiao 2026はarXiv v1のプレプリント
   - 無料版やプレプリントの有無は一括調査していない。未確認は非公開を意味しない
   - 参考文献の追跡と各枝の文献追加は今後の更新で行う
-  changes: '提供された文献リストを基に41件を追加し、5つの子テーマへ分類。書誌記録に合わせて著者・年・資料種別・要点を調整。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。'
+  - 今回の全文確認はP000026・P000029に限る。他の文献の確認状況は各entryのinspectionを参照。
+  - Wang 2010は一部の電場値・式表記に原文内の不整合が残る。
+  changes: '提供された文献リストを基に41件を追加し、5つの子テーマへ分類。書誌記録に合わせて著者・年・資料種別・要点を調整。 対象文献の要約・根拠位置・本文確認状況を更新。 2026-09-25にIssue
+    #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

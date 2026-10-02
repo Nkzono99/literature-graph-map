@@ -19,6 +19,9 @@ review:
   paragraphs:
   - Debye長より小さな負帯電粒子の背後では、イオンの集束が周囲の電位や粒子間力を変える。[@P000097]は低速流中の2粒子を計算し、流速・衝突と整列力の関係を調べた。[@P000098]は動的遮蔽を求める理論と自己無撞着PICを比較しており、粒子の帯電と非線形性をどこまで扱うかを考える際に使える。
   - 地形の陰への膨張は、クレーターへの太陽風供給に直結する。[@P000008]は表面帯電と膨張のフィードバックを扱い、[@P000048]は三次元の地形で底面・壁面へ回り込むイオン流を計算した。月全体のウェイク、局所地形の陰、粒子周囲では、物体サイズとDebye長、流速、磁場をそろえて比較するとつながりが見える。
+- heading: ウェイクによる力と電荷変化を実験へつなぐ
+  paragraphs:
+  - '[@P000321]は流れの中のダストについて、遮蔽、ウェイク電位、イオンの運動量移行を分けて考える基礎文献である。[@P000318]は異なる粒径の粒子対を三次元追跡し、下流粒子の電荷変化とウェイク引力を推定した。粒子周囲の電位だけでなく、相手粒子の電荷も変わることが、相互作用モデルを比較する際の軸になる。'
 lineage:
 - title: 膨張の電荷分離と電子分布
   steps:
@@ -933,6 +936,74 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000318
+  role: イオンウェイク内の粒子電荷の実験
+  summary:
+    question: 上流粒子のウェイクは、下流粒子の電荷と粒子間力をどう変えるか。
+    method: 異なる粒径の粒子対の三次元運動から、シース内の電荷変化とウェイクによる引力を推定する。
+    contribution: ウェイク内の粒子電荷変化と追加の引力を運動から定量化した。実験室の複雑プラズマが対象。
+  evidence_by_item:
+    question:
+    - paper_id: P000318
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/9q9z-5d6k
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000318
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/9q9z-5d6k
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000318
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/9q9z-5d6k
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: grain-wakes
+- paper_id: P000321
+  role: 遮蔽・ウェイク・イオン運動量の区別
+  summary:
+    question: 静止プラズマと流れのあるプラズマで、粒子間相互作用はどう異なるか。
+    method: OMLと線形応答を用い、遮蔽電位・ウェイク電位・イオン衝撃による運動量移行を検討する。
+    contribution: 静止系の反発と、流れによる下流への引力・遮蔽力を整理し、粒子間力の比較の基礎を与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000321
+      version_id: V1
+      url: https://doi.org/10.1063/1.1288910
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000321
+      version_id: V1
+      url: https://doi.org/10.1063/1.1288910
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000321
+      version_id: V1
+      url: https://doi.org/10.1063/1.1288910
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: grain-wakes
 relations: []
 view:
   sort:

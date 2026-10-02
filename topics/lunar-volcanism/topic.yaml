@@ -177,6 +177,142 @@ entries:
       source_type: abstract
       locator: 出版社提供の公開要旨（Crossref）
       checked_at: '2026-09-25'
+- paper_id: P000322
+  role: Dewar磁気異常の埋没火成岩体
+  summary:
+    question: Dewarの磁場源はどのような構造で、古い月ダイナモをどう制約するか。
+    method: 軌道の重力・磁場を共同逆解析し、磁化量と重なる盆地噴出物による年代制約を組み合わせる。
+    contribution: 浅部の高密度・磁化体を埋没玄武岩として解釈し、約42億年前のダイナモを支持するモデル制約を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000322
+      version_id: V1
+      url: https://doi.org/10.1126/sciadv.aec0341
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000322
+      version_id: V1
+      url: https://doi.org/10.1126/sciadv.aec0341
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000322
+      version_id: V1
+      url: https://doi.org/10.1126/sciadv.aec0341
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: reservoirs
+- paper_id: P000329
+  role: 月観測を統合した機械学習データ
+  summary:
+    question: 異なるミッション・装置の観測を、再現可能な月科学の機械学習へどうそろえるか。
+    method: 4ミッション・10装置の30層超を位置合わせし、複数解像度のタイルと地理的な訓練・評価分割を用意する。
+    contribution: 衝突・火山・極域揮発性物質の共通ベンチマークと基準モデルを提供した。データセット論文のプレプリント。
+  evidence_by_item:
+    question:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000329
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13277
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: chronology
+- paper_id: P000330
+  role: 複数観測・解像度の月基盤モデル
+  summary:
+    question: 月の異なる観測と空間解像度を、共通の学習表現で扱えるか。
+    method: SomBenchの11観測種・二つの空間スケールを使い、観測幾何を含む基盤モデルを事前学習する。
+    contribution: クレーター検出、火山地形分割、氷有望度回帰で比較し、表現と学習方法の効果を示した。未査読の評価結果。
+  evidence_by_item:
+    question:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000330
+      version_id: V1
+      url: https://arxiv.org/abs/2609.13283
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: chronology
+- paper_id: P000337
+  role: Aristarchusの受動マイクロ波観測
+  summary:
+    question: 火砕堆積物の分布と地下熱環境を、受動マイクロ波からどう制約するか。
+    method: Chang’e-2のマイクロ波放射計から時刻別の輝度温度・規格化温度地図を作り、地質図と比較する。
+    contribution: 高い蓄熱能力と、光学・レーダー推定より広い火砕堆積物分布の可能性を示し、地下温度・熱流束も論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000337
+      version_id: V1
+      url: https://doi.org/10.3390/rs18183194
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000337
+      version_id: V1
+      url: https://doi.org/10.3390/rs18183194
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000337
+      version_id: V1
+      url: https://doi.org/10.3390/rs18183194
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: chronology
 review:
 - heading: クレーター数と層厚から、火山活動の時間と量を調べる
   paragraphs:
@@ -188,6 +324,9 @@ review:
 - heading: 火山の地形と地下の貫入岩体を対応させる
   paragraphs:
   - 年代と噴出量の研究に対し、[@P000289]は直径約80 kmの二つの楯状火山候補を扱う。地形に加えて一方の重力異常を調べ、地下7〜32 kmの貫入岩体と浅部マグマ貯留域を提案した。噴火した時期に、マグマがどこに蓄えられたかという問いを加える。
+- heading: 受動マイクロ波と磁場・重力から火成構造を見る
+  paragraphs:
+  - '[@P000337]はChang’e-2のマイクロ波輝度温度から、Aristarchusの火砕堆積物の熱的特徴と広がりを再評価した。[@P000322]はDewarの磁化した高密度体を埋没玄武岩として解釈する。表面の堆積物と地下の火成岩体を異なる観測から制約する系列として比較できる。[@P000329]・[@P000330]の統合データと基盤モデルは、火山地形の解析を他ミッションの観測へ接続する。'
 lineage:
 - title: 裏側の火山活動を年代と体積で読む
   steps:

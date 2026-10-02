@@ -16,6 +16,9 @@ review:
 - heading: 形状と局所解像度を、格子に反映する
   paragraphs:
   - 物体表面や細い構造の周囲では、全領域を一様に細分化する費用が大きくなる。[@P000078]は直交格子のセルを物体境界で切り分け、有限体積法の流束を通じて境界条件を与える。二次元の変係数Poisson問題で、マルチグリッドと適応格子を組み合わせた二次精度を示した。[@P000079]は非等間隔点のデータに対し、非等間隔FFT（NFFT）に基づく方法とマルチグリッドを比較する。表面形状をどう近似するか、電荷密度をどこで解像するか、場をどの位置へ戻すかを併せて考えると、PIC側の格子設計までつながる。
+- heading: 格子上FMMを、空間・時間の適応化へ進める
+  paragraphs:
+  - '[@P000319]はRAMSESの一様格子にFMMを実装し、孤立境界での精度とマルチグリッドに対する並列性を比較した。[@P000320]は別のプレプリントであり、AMR・適応時間刻みへ拡張する。粗密境界をまたぐ力の対称性と運動量保存が追加の課題となる。重力場を対象とするため、静電PICへ使う場合には導体・誘電体境界への対応を別に検討する。'
 lineage:
 - title: 自由空間のFFT
   steps:
@@ -43,6 +46,15 @@ lineage:
     title: 周期像を変換演算子で扱う
     significance: 近傍と遠方を分け、カーネル独立FMMに一方向から三方向までの周期性を導入した。
     connection: 周期境界へ広げる
+- title: 格子上FMMの一様格子から適応化へ
+  steps:
+  - paper_id: P000319
+    title: RAMSESの一様格子にFMMを実装
+    significance: 格子上の重力Poisson問題で精度と並列性を比較した。
+  - paper_id: P000320
+    title: AMRと適応時間刻みへ拡張
+    significance: 粗密境界の力の対称性と運動量保存を含む方法を提案した。未査読。
+    connection: 一様格子の実装から空間・時間の局所適応化へ
 public: true
 scope:
   include:
@@ -465,6 +477,74 @@ entries:
     checked_at: '2026-09-18'
     recheck: false
   locked_fields: []
+- paper_id: P000319
+  role: RAMSESの格子上FMM
+  summary:
+    question: 格子上FMMは、一様格子のPoisson問題で精度と並列性能を両立できるか。
+    method: RAMSESの格子階層に多重極・局所展開を構成し、マルチグリッドと精度・性能を比較する。
+    contribution: 孤立境界での利点と良好な並列性を示した。重力計算であり、導体・誘電体境界を備えた静電PICへの適用は別途必要。
+  evidence_by_item:
+    question:
+    - paper_id: P000319
+      version_id: V1
+      url: https://doi.org/10.1093/mnras/stag1241
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000319
+      version_id: V1
+      url: https://doi.org/10.1093/mnras/stag1241
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000319
+      version_id: V1
+      url: https://doi.org/10.1093/mnras/stag1241
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: multipole
+- paper_id: P000320
+  role: FMMのAMR・適応時間刻みへの拡張
+  summary:
+    question: 局所的に異なる空間・時間解像度を使う計算へ、格子上FMMをどう拡張するか。
+    method: AMRレベルごとの木と統合木を使い、粗密境界での力の対称性を保つ処理を導入する。
+    contribution: 一様格子版から適応化へ進み、著者の試験でマルチグリッドとの一致、運動量保存と並列性の改善を報告した。未査読。
+  evidence_by_item:
+    question:
+    - paper_id: P000320
+      version_id: V1
+      url: https://arxiv.org/abs/2607.19489
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000320
+      version_id: V1
+      url: https://arxiv.org/abs/2607.19489
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000320
+      version_id: V1
+      url: https://arxiv.org/abs/2607.19489
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: multipole
 relations: []
 view:
   sort:

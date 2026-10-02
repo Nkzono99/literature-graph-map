@@ -100,9 +100,126 @@ def test_summary_without_inspection_does_not_claim_review(snapshot):
     data["entries"][0].pop("inspection")
     data["entries"][0].pop("evidence_by_item")
     topic = Topic.model_validate(data)
-    text = summary_block(topic.entries[0], snapshot.works["P000001"])
+    text = summary_block(topic.entries[0], snapshot.works["P000001"], snapshot.works)
     assert "架空の問いを比較する。" in text
     assert "本文確認" not in text and "人間" not in text and "None" not in text
+    assert 'class="sources"' in text and "書誌情報のみ確認" in text
+    assert "要旨・本文は未確認" in text
+
+
+def test_empty_summary_does_not_add_sources(snapshot):
+    entry = snapshot.topics["demo"].entries[0]
+    entry.summary = None
+    text = summary_block(entry, snapshot.works[entry.paper_id], snapshot.works)
+    assert "要点は準備中" in text and 'class="sources"' not in text
+
+
+def test_sources_distinguish_reference_version_from_destination(snapshot):
+    entry = snapshot.topics["demo"].entries[0]
+    work = snapshot.works[entry.paper_id]
+    original = work.version()
+    manuscript = Version(version_id="V2", kind="accepted", year=original.year)
+    work.versions.append(manuscript)
+    entry.inspection.version_id = manuscript.version_id
+    ref = entry.evidence_by_item.method[0]
+    ref.version_id = manuscript.version_id
+    ref.url = f"https://doi.org/{original.doi.upper()}"
+    ref.locator = "著者最終稿 pp.11–12"
+    text = summary_block(entry, work, snapshot.works)
+    assert "本文確認（著者最終稿）" in text
+    assert "参照版：著者最終稿（公開先未記録）" in text
+    assert f'href="{ref.url}">出版版の書誌・公開先へ</a>' in text
+    assert f'href="{ref.url}">{ref.locator}</a>' not in text
+    manuscript.locations = [Location(url="https://example.org/accepted", host="著者機関")]
+    text = summary_block(entry, work, snapshot.works)
+    assert 'href="https://example.org/accepted">参照版の公開先へ</a>' in text
+    assert "著者最終稿（公開先未記録）" not in text
+    ref.url = manuscript.locations[0].url
+    text = summary_block(entry, work, snapshot.works)
+    assert f'href="{ref.url}">{ref.locator}</a>' in text
+
+
+def test_sources_keep_other_paper_introduction_separate(snapshot):
+    entry = snapshot.topics["demo"].entries[0]
+    work = snapshot.works[entry.paper_id]
+    entry.inspection.level = "metadata_only"
+    source = snapshot.works["P000002"]
+    source.citation_author = "Example"
+    ref = entry.evidence_by_item.method[0]
+    ref.paper_id = source.paper_id
+    ref.version_id = source.representative_version_id
+    ref.url = source.record_url
+    ref.source_type = "review"
+    text = summary_block(entry, work, snapshot.works)
+    assert "他文献による紹介（原著の要旨・本文は未確認）" in text
+    assert "Example 2002による紹介" in text and "総説・紹介" in text
+    assert f'href="{source.record_url}"' in text
+    assert "本文確認" not in text
+
+
+@pytest.mark.parametrize("kind", ["submitted", "accepted"])
+def test_identified_repository_version_is_linked(kind):
+    work = make_work(1, kind=kind)
+    version = work.version()
+    version.repository_id = "arXiv:2601.00001"
+    version.status = "preprint" if kind == "submitted" else "accepted"
+    version.locations = [
+        Location(url="https://arxiv.org/abs/2601.00001", host="arXiv", access_status="free")
+    ]
+    work.preprint_check = "found"
+    work = Work.model_validate(work.model_dump())
+    assert 'href="https://arxiv.org/abs/2601.00001"' in preprint_cell(work)
+    assert "未確認" not in preprint_cell(work)
+    if kind == "accepted":
+        assert "著者最終稿" in preprint_cell(work) and "著者最終稿" in access_cell(work)
+
+
+@pytest.mark.parametrize("missing", ["kind", "repository_id", "locations"])
+def test_found_preprint_requires_a_displayable_version(missing):
+    work = make_work(1, kind="submitted")
+    version = work.version()
+    version.repository_id = "arXiv:2601.00001"
+    version.locations = [Location(url="https://arxiv.org/abs/2601.00001", host="arXiv")]
+    work.preprint_check = "found"
+    setattr(version, missing, {"kind": "unknown", "repository_id": None, "locations": []}[missing])
+    with pytest.raises(ValidationError, match="preprint_check=found"):
+        Work.model_validate(work.model_dump())
+
+
+def test_parent_counts_and_paper_links_include_public_descendants_only(tmp_path, snapshot):
+    parent = snapshot.topics["demo"]
+    parent.entries = parent.entries[:1]
+    parent.relations = []
+    for key, parent_id, papers, public in [
+        ("child", "demo", ["P000001", "P000002"], True),
+        ("grandchild", "child", ["P000002", "P000003"], True),
+        ("private", "demo", ["P000001", "P000004"], False),
+    ]:
+        topic = Topic(
+            topic_id=key,
+            title=key.upper(),
+            question="検証用のテーマ",
+            public=public,
+            navigation={"parent": parent_id},
+            entries=[make_entry(snapshot.works[paper_id]) for paper_id in papers],
+        )
+        snapshot.topics[key] = topic
+        snapshot.paths[key] = Path(f"topics/{parent_id}/{key}")
+    render(tmp_path, snapshot)
+    page = (tmp_path / "_site/topics/demo/index.html").read_text(encoding="utf-8")
+    assert "このページの選定文献：<b>1</b> 文献" in page
+    assert "テーマ全体（子テーマを含む）：<b>3</b> 文献" in page
+    assert "このページの文献を検索" in page
+    assert "この一覧と検索は、このページの選定文献が対象" in page
+    assert page.count('class="paper"') == 1
+    assert 'href="child/index.html#P000001">CHILD</a>' in page
+    assert "PRIVATE" not in page and "P000004" not in page
+    child_page = (tmp_path / "_site/topics/demo/child/index.html").read_text(encoding="utf-8")
+    assert 'href="../index.html#P000001"' in child_page
+    assert 'href="../../child/grandchild/index.html#P000002"' in child_page
+    parent.entries = []
+    page = topic_page(parent, snapshot)
+    assert "テーマ全体：<b>3</b> 文献" in page and 'id="papers"' not in page
 
 
 def test_large_topic_keeps_all_papers(snapshot):

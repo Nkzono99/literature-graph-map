@@ -12,6 +12,9 @@ review:
   - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar
     Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]、イオン温度を組み込む最近の理論は[@P000055]に進める。
   - シース内を動く粒子には、場所ごとの電場と電子・イオン電流が同時に効く。[@P000167]は帯電と軌道を連成し、希薄な条件では電子1個ずつの出入りが運動を変えることを示した。
+- heading: 実験の光電子シースを計算と照合する
+  paragraphs:
+  - '[@P000030]は2010年の会議要旨、[@P000092]は2012年の雑誌論文として別に参照する。後者はUVを照射した金属面の探針計測と一次元PICを比較し、放出電子が作る電位構造を実験から検証する。金属面でのモデル実験と月面の粒子・材料条件の違いを踏まえ、月面シース計算の比較対象に使う。'
 lineage:
 - title: 放出測定から電位分布へ
   steps:
@@ -31,6 +34,10 @@ lineage:
   - paper_id: P000030
     title: 光電子シースを実験室で測る
     significance: UVで電子を放出させ、面の近傍の電気的構造を調べる実験系を示した。
+  - paper_id: P000092
+    title: 金属面の実験をPICと比較する
+    significance: UVで作った光電子シースの探針計測と一次元PICを照合する雑誌論文を示した。
+    connection: 会議要旨に対し、実験・PIC比較の雑誌論文を加える
   - paper_id: P000036
     title: 月周回の電子分布をPICと比べる
     significance: ARTEMISとPICから非単調な電位構造を調べ、イオン温度の影響も示した。
@@ -384,11 +391,73 @@ entries:
   group: structure
   role: ダスト運動とレゴリス力学の総説
   inspection:
-    level: metadata_only
+    level: full_text
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+  summary:
+    question: 月レゴリスの力学特性と帯電環境は、ダストの離脱・運動をどう制約するか。
+    method: Apollo試料の物性、土質力学試験、月面観測、帯電・軌道モデルを横断して整理した2007年の総説。
+    contribution: レゴリスの力学応答と帯電・輸送研究をつなぎ、離脱時の電荷分布や微小粒子の実験不足を当時の課題として挙げた。観測されるダストを安定浮遊だけで説明する必要はないと論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF pp.1–2, §1
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF pp.2–22, §§2–4, Tables 1–5b, Figs.1–13
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF p.21, §4.3 [74]; pp.22–23, §5 [81]–[84]
+      checked_at: '2026-09-22'
+- paper_id: P000092
+  group: structure
+  role: 金属面の光電子シース実験・PIC比較
+  summary:
+    question: UVを受ける面の上の光電子層を、室内でどう再現するか。
+    method: 真空中の金属面を172 nmのUVで照射し、探針計測と一次元PICを比較。
+    contribution: 光電子層の密度分布とPICの整合を示し、光電子シースを測る実験系を提示。
+  evidence_by_item:
+    question:
+    - paper_id: P000092
+      version_id: V1
+      url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    method:
+    - paper_id: P000092
+      version_id: V1
+      url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+    contribution:
+    - paper_id: P000092
+      version_id: V1
+      url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
+      source_type: abstract
+      locator: 要旨
+      checked_at: '2026-09-18'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-09-18'
+    recheck: false
+  locked_fields: []
 relations: []
 view:
   sort:
@@ -406,11 +475,13 @@ survey:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
+  - Bukan経由のPaperpile所蔵PDF
   queries: []
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-22にP000256の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。'
   limitations:
-  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - 今回の全文確認はP000256に限る。他の文献の確認状況は各entryのinspectionを参照。
+  - Colwell 2007の引用先原著は未通読。Debye長の式の単位系と弱光源の帯電時間の記述は要再確認。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 対象文献の要約・根拠位置・本文確認状況を更新。'
   publication_status: draft
   reviewed_at: null
 reading_notes: []

@@ -862,6 +862,210 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000308
+  role: 姿勢と接触帯電の停止状態
+  summary:
+    question: 振動面で跳ねる絶縁球の最終電荷は、なぜ試行ごとに異なるか。
+    method: 単一球の振動実験とシミュレーションで、姿勢・運動・電荷分布の結合を調べる。
+    contribution: 永久双極子が姿勢を固定して帯電を止める状態を示し、最終電荷のばらつきを動力学から説明した。
+  evidence_by_item:
+    question:
+    - paper_id: P000308
+      version_id: V1
+      url: https://doi.org/10.1103/37yf-n6f7
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000308
+      version_id: V1
+      url: https://doi.org/10.1103/37yf-n6f7
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000308
+      version_id: V1
+      url: https://doi.org/10.1103/37yf-n6f7
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: surface
+- paper_id: P000309
+  role: 二粒子の衝突ごとの電荷移動
+  summary:
+    question: 同じ材料の絶縁粒子が繰り返し衝突すると、電荷はどう蓄積するか。
+    method: 音響浮遊した二つのポリスチレン粒子を衝突させ、Faradayケージで電荷移動を測定する。
+    contribution: 各衝突の電荷移動は確率的だが、累積電荷はコンデンサーモデルの飽和則に従うことを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000309
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/p9zp-hf26
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000309
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/p9zp-hf26
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000309
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/p9zp-hf26
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: surface
+- paper_id: P000314
+  role: 微小空洞・表面電場と離脱初速
+  summary:
+    question: 微小空洞の帯電と試料の充填状態は、シリカ粒子の初速・到達高度をどう変えるか。
+    method: 真空中の電子照射実験を高速度撮影し、粒子間反発を含む初速・高度の見積もりと比較する。
+    contribution: 多くの粒子で見積もりと整合する一方、圧縮試料や水平電場が離脱・輸送を変えることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000314
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0273117719300821
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000314
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0273117719300821
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000314
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0273117719300821
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: surface
+- paper_id: P000317
+  role: 斜長石粒子の電荷と速度
+  summary:
+    question: 二次電子放出で動く斜長石粒子の速度と粒径を、どの帯電モデルで説明できるか。
+    method: 350 eV電子照射下で、レーザーDoppler法により粒子の直径と水平・鉛直速度を測定する。
+    contribution: 鉛直輸送が優勢で、速度・粒径関係は電荷共有モデルで説明しにくく、表面微細構造と局所電位の寄与を示唆した。
+  evidence_by_item:
+    question:
+    - paper_id: P000317
+      version_id: V1
+      url: https://doi.org/10.3847/1538-4357/ac5d48
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000317
+      version_id: V1
+      url: https://doi.org/10.3847/1538-4357/ac5d48
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000317
+      version_id: V1
+      url: https://doi.org/10.3847/1538-4357/ac5d48
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: surface
+- paper_id: P000318
+  role: イオンウェイク内の粒子電荷の実験
+  summary:
+    question: 上流粒子のウェイクは、下流粒子の電荷と粒子間力をどう変えるか。
+    method: 異なる粒径の粒子対の三次元運動から、シース内の電荷変化とウェイクによる引力を推定する。
+    contribution: ウェイク内の粒子電荷変化と追加の引力を運動から定量化した。実験室の複雑プラズマが対象。
+  evidence_by_item:
+    question:
+    - paper_id: P000318
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/9q9z-5d6k
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000318
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/9q9z-5d6k
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000318
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/9q9z-5d6k
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: collection
+- paper_id: P000321
+  role: 遮蔽・ウェイク・イオン運動量の区別
+  summary:
+    question: 静止プラズマと流れのあるプラズマで、粒子間相互作用はどう異なるか。
+    method: OMLと線形応答を用い、遮蔽電位・ウェイク電位・イオン衝撃による運動量移行を検討する。
+    contribution: 静止系の反発と、流れによる下流への引力・遮蔽力を整理し、粒子間力の比較の基礎を与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000321
+      version_id: V1
+      url: https://doi.org/10.1063/1.1288910
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000321
+      version_id: V1
+      url: https://doi.org/10.1063/1.1288910
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000321
+      version_id: V1
+      url: https://doi.org/10.1063/1.1288910
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: collection
 review:
 - heading: 平均電流の釣り合いから、電荷のゆらぎへ進む
   paragraphs:
@@ -871,6 +1075,9 @@ review:
   paragraphs:
   - 凝集体では他の粒子に遮られた方向からの流入が減る。[@P000239]はこの見通しをOMLに組み込み、[@P000240]は凝集体の帯電と電子放出を扱う。[@P000242]の不規則形状粒子の実験は、電荷をどの大きさの球で近似できるかを検討している。
   - 表面上では、放出電子の再捕集や接触帯電も加わる。[@P000009]、[@P000010]、[@P000013]を粒子実験[@P000005]や材料の放出特性[@P000243]と合わせて読むと、孤立粒子と粒子層で何を変える必要があるかを追える。
+- heading: 接触の履歴と、流れの中の粒子電荷
+  paragraphs:
+  - 接触帯電では、衝突回数に加えて粒子の姿勢と電荷分布も効く。[@P000308]は振動面上の単一球が帯電を止める姿勢へ移る過程を示した。二粒子を音響浮遊させた[@P000309]では、各衝突は確率的でも累積電荷は飽和則に従った。これらは月面固有の実験ではなく、接触帯電の履歴を理解する基礎となる。流れのあるプラズマでは、[@P000321]が遮蔽とウェイクによる粒子間力を整理し、[@P000318]がウェイク内の電荷変化を粒子運動から推定している。
 lineage:
 - title: 球の捕集から凝集体の形状へ
   steps:

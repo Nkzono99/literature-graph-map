@@ -25,6 +25,9 @@ review:
   paragraphs:
   - イオン衝撃による放出を計算する[@P000157]は、イオンの運動エネルギーが材料内の電子へ移る過程と、その電子が外へ逃げる過程を追跡した。Ar・Kr・XeとW・Feの組合せを扱い、電気推進の材料・試験設備へつながる。磁気異常を模擬した[@P000116]では、二次電子の流入が正の表面電位の上昇を抑えるという説明が示されている。
   - 放電開始を扱う[@P000158]は、放出のエネルギー依存と微小ギャップの効果をPIC/MCCに入れ、絶縁破壊電圧を実験と比較した。加工形状まで含む[@P000137]は、PMMAの表面粗さに対するイオン反射・帯電・二次電子放出の寄与を分けている。この計算条件では二次電子の影響は小さく、放出の有無だけでなく、入射粒子の条件と評価する量を対応させて読むと使いやすい。
+- heading: 斜長石粒子の輸送から電荷モデルを制約する
+  paragraphs:
+  - '[@P000317]は電子照射下で斜長石粒子の速度と直径を測定し、電荷共有モデルだけでは説明しにくい関係を示した。二次電子放出が起こる入射エネルギーで、粒子間の微細構造や局所電位が輸送へどう効くかを考える実験的な比較対象となる。'
 lineage:
 - title: 放出シースの電位構造
   steps:
@@ -755,6 +758,40 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000317
+  role: 斜長石粒子の電荷と速度
+  summary:
+    question: 二次電子放出で動く斜長石粒子の速度と粒径を、どの帯電モデルで説明できるか。
+    method: 350 eV電子照射下で、レーザーDoppler法により粒子の直径と水平・鉛直速度を測定する。
+    contribution: 鉛直輸送が優勢で、速度・粒径関係は電荷共有モデルで説明しにくく、表面微細構造と局所電位の寄与を示唆した。
+  evidence_by_item:
+    question:
+    - paper_id: P000317
+      version_id: V1
+      url: https://doi.org/10.3847/1538-4357/ac5d48
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000317
+      version_id: V1
+      url: https://doi.org/10.3847/1538-4357/ac5d48
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000317
+      version_id: V1
+      url: https://doi.org/10.3847/1538-4357/ac5d48
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: grain-recapture
 relations: []
 view:
   sort:

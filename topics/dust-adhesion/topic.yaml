@@ -272,11 +272,37 @@ entries:
   group: measurements
   role: ナノチューブ表面による付着低減
   inspection:
-    level: metadata_only
+    level: full_text
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+  summary:
+    question: Ti6Al4V上のナノチューブ配列は、模擬月塵の局所付着力と表面残留量をどう変えるか。
+    method: 陽極酸化電圧を変えた表面を、粒子付きAFM探針と粉体散布試験で比較する。
+    contribution: 未処理Ti-0と比べ、Ti-40の平均付着力は12.98から1.63 nNへ低下。投入量5 g・設置角60°の残留量は0.5420から0.1642 mg/cm²へ減った。ナノ構造の半径・直径表記は原文内で一致しない。
+  evidence_by_item:
+    question:
+    - paper_id: P000214
+      version_id: V1
+      url: https://doi.org/10.7527/S1000-6893.2024.31803
+      source_type: full_text
+      locator: PDF pp.1–2, Introduction
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000214
+      version_id: V1
+      url: https://doi.org/10.7527/S1000-6893.2024.31803
+      source_type: full_text
+      locator: PDF pp.2–4, §§1.1–1.3, Figs.1–4
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000214
+      version_id: V1
+      url: https://doi.org/10.7527/S1000-6893.2024.31803
+      source_type: full_text
+      locator: PDF pp.5–9, §§2.1–2.3, Figs.6,9,10,12; p.12 English abstract
+      checked_at: '2026-09-22'
 - paper_id: P000257
   group: measurements
   role: 受動的なダスト対策表面の比較
@@ -308,49 +334,73 @@ entries:
   group: detachment
   role: プラズマ中のダスト移動実験
   summary:
-    question: 粉体の中央と縁で、帯電と移動はどう変わるか。
-    method: 負にバイアスした導電板上のJSC-Mars-1粒子をプラズマ中で観察。
-    contribution: 正に帯電した粒子の外向き移動と、粉体層の縁で強まる帯電を報告。
+    question: プラズマ中で、導体上の絶縁性ダストはどこから動き始めるか。
+    method: 負にバイアスしたグラファイト上の25 µm未満の模擬粒子を撮影し、別条件の絶縁円板で電位と約100 µm粒子の電荷を測る。
+    contribution: 外縁から輪状に広がる移動と6 mm以上の到達を観察し、電位構造・粒子電荷の位置依存性と対応付けた。付着力の閾値は定量化していない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000026
+      version_id: V1
+      url: https://doi.org/10.1029/2008JA013983
+      source_type: full_text
+      locator: PDF pp.1–2, §§1–2
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000026
+      version_id: V1
+      url: https://doi.org/10.1029/2008JA013983
+      source_type: full_text
+      locator: PDF pp.2–4, §§2–4, Figs.1,4,5
+      checked_at: '2026-09-22'
     contribution:
     - paper_id: P000026
       version_id: V1
-      url: https://doi.org/10.1029/2008ja013983
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2008JA013983
+      source_type: full_text
+      locator: PDF pp.2–5, §§3–4, Figs.2–7
+      checked_at: '2026-09-22'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-09-22'
     recheck: false
   locked_fields: []
 - paper_id: P000029
   group: detachment
   role: 電子ビームとダスト離脱
   summary:
-    question: 電子照射は、粉体と基板の間にどのような電場を作るか。
-    method: 浮遊電位の黒鉛上に置いたJSC-Mars-1粒子へ、プラズマ中で電子を照射。
-    contribution: 二次電子放出の違いが水平・鉛直電場を強め、粒子の移動と離脱を促した。
+    question: 電子ビームとイオンの電流比は、ダスト層と基板の電位差・輸送をどう変えるか。
+    method: 浮遊グラファイト上のJSC-Mars-1に電子ビームを入射し、75–90 µm粒子層の電位と、別条件で25 µm未満の粒子の移動を測る。
+    contribution: 両電流が同程度でビームエネルギーが十分な条件では電場が増強し、小粒子の広がりと絶縁ブロック上面への堆積を観察した。無照射時に対する約1桁の増加は垂直電場の値である。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000029
+      version_id: V1
+      url: https://doi.org/10.1029/2010JA015465
+      source_type: full_text
+      locator: PDF p.1, §1
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000029
+      version_id: V1
+      url: https://doi.org/10.1029/2010JA015465
+      source_type: full_text
+      locator: PDF pp.1–4, §§2–4, Table 1
+      checked_at: '2026-09-22'
     contribution:
     - paper_id: P000029
       version_id: V1
-      url: https://doi.org/10.1029/2010ja015465
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2010JA015465
+      source_type: full_text
+      locator: PDF pp.3–6, §§3.1,4–5, Figs.2,5
+      checked_at: '2026-09-22'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
+    checked_at: '2026-09-22'
+    recheck: true
   locked_fields: []
 - paper_id: P000009
   group: detachment
@@ -463,11 +513,37 @@ entries:
   group: detachment
   role: 電荷ゆらぎと静電離脱
   inspection:
-    level: metadata_only
+    level: full_text
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+  summary:
+    question: 光電子放出・電子捕獲の局所的なゆらぎは、粒子の付着を超える静電力を作るか。
+    method: ナノ領域の電荷生成・消滅をMonte Carlo法で模擬し、帯電領域の配置から求めた電場と仮定した粒子電荷を、粗さ・清浄度を含む付着モデルと比較する。
+    contribution: 半径20 nmの粒子と半径10 nmの帯電領域に各+10eを仮定し、最隣接させた例で約10 pNを得た。離脱条件の成否は電荷・配置・粗さ・清浄度に依存し、有効面積の記載にも不整合が残る。
+  evidence_by_item:
+    question:
+    - paper_id: P000216
+      version_id: V1
+      url: https://doi.org/10.1016/j.epsl.2025.119544
+      source_type: full_text
+      locator: PDF pp.1–3, §§1–2.1
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000216
+      version_id: V1
+      url: https://doi.org/10.1016/j.epsl.2025.119544
+      source_type: full_text
+      locator: PDF pp.1–2, Eqs.1–2; pp.5–8, Eqs.3–22, Figs.7–10
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000216
+      version_id: V1
+      url: https://doi.org/10.1016/j.epsl.2025.119544
+      source_type: full_text
+      locator: PDF pp.2,5,7–8, Figs.1,8, Computational Space and Scheme
+      checked_at: '2026-09-22'
 - paper_id: P000217
   group: detachment
   role: 離脱後の打ち上げ速度の評価
@@ -523,11 +599,37 @@ entries:
   group: detachment
   role: ダスト運動とレゴリス力学の総説
   inspection:
-    level: metadata_only
+    level: full_text
     version_id: V1
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+  summary:
+    question: 月レゴリスの力学特性と帯電環境は、ダストの離脱・運動をどう制約するか。
+    method: Apollo試料の物性、土質力学試験、月面観測、帯電・軌道モデルを横断して整理した2007年の総説。
+    contribution: レゴリスの力学応答と帯電・輸送研究をつなぎ、離脱時の電荷分布や微小粒子の実験不足を当時の課題として挙げた。観測されるダストを安定浮遊だけで説明する必要はないと論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF pp.1–2, §1
+      checked_at: '2026-09-22'
+    method:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF pp.2–22, §§2–4, Tables 1–5b, Figs.1–13
+      checked_at: '2026-09-22'
+    contribution:
+    - paper_id: P000256
+      version_id: V1
+      url: https://doi.org/10.1029/2005RG000184
+      source_type: full_text
+      locator: PDF p.21, §4.3 [74]; pp.22–23, §5 [81]–[84]
+      checked_at: '2026-09-22'
 - paper_id: P000290
   group: measurements
   role: 鉱物・形状・付着からの安息角推定
@@ -633,6 +735,176 @@ entries:
       source_type: abstract
       locator: 出版社提供の公開要旨（Crossref）
       checked_at: '2026-09-25'
+- paper_id: P000308
+  role: 姿勢と接触帯電の停止状態
+  summary:
+    question: 振動面で跳ねる絶縁球の最終電荷は、なぜ試行ごとに異なるか。
+    method: 単一球の振動実験とシミュレーションで、姿勢・運動・電荷分布の結合を調べる。
+    contribution: 永久双極子が姿勢を固定して帯電を止める状態を示し、最終電荷のばらつきを動力学から説明した。
+  evidence_by_item:
+    question:
+    - paper_id: P000308
+      version_id: V1
+      url: https://doi.org/10.1103/37yf-n6f7
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000308
+      version_id: V1
+      url: https://doi.org/10.1103/37yf-n6f7
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000308
+      version_id: V1
+      url: https://doi.org/10.1103/37yf-n6f7
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: detachment
+- paper_id: P000309
+  role: 二粒子の衝突ごとの電荷移動
+  summary:
+    question: 同じ材料の絶縁粒子が繰り返し衝突すると、電荷はどう蓄積するか。
+    method: 音響浮遊した二つのポリスチレン粒子を衝突させ、Faradayケージで電荷移動を測定する。
+    contribution: 各衝突の電荷移動は確率的だが、累積電荷はコンデンサーモデルの飽和則に従うことを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000309
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/p9zp-hf26
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000309
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/p9zp-hf26
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000309
+      version_id: V1
+      url: https://journals.aps.org/pre/accepted/10.1103/p9zp-hf26
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: detachment
+- paper_id: P000315
+  role: 離脱初速の粒径・形状依存
+  summary:
+    question: 静電的に離脱したダストの初速は、粒径と形状にどう依存するか。
+    method: 離脱初速・角度を室内測定し、局所帯電モデルとエネルギー保存から導く速度と粒径の関係を比較する。
+    contribution: 最大初速は粒径の増加とともに低下し、同じ粒径でも凝集力や形状による大きな速度分散を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000315
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103520303407
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000315
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103520303407
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000315
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103520303407
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: detachment
+- paper_id: P000316
+  role: 離脱粒径と射出角の分布
+  summary:
+    question: 飛び出す粒子の大きさと方向は、輸送距離とどう関係するか。
+    method: 450 eVの電子ビームでシリカ粒子を離脱させ、高速度撮影と周囲の粘着面への捕集を組み合わせる。
+    contribution: 表面法線から約43.5〜45度の射出角にピークを見いだし、凝集体と単粒子の到達距離の違いを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000316
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0273117721002623
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000316
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0273117721002623
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000316
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0273117721002623
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: detachment
+- paper_id: P000332
+  role: 氷の形態と走行・掘削性
+  summary:
+    question: 氷量が同じでも、その形態によって地盤の強さと掘削エネルギーは変わるか。
+    method: 低温の模擬レゴリスを未焼結・圧力焼結・氷結合・蒸着で準備し、円錐貫入試験を行う。
+    contribution: 粒子間を結ぶ氷と分散した氷で強度・掘削性が大きく異なり、氷量に加えて微細構造を評価する必要を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000332
+      version_id: V1
+      url: https://doi.org/10.1007/s44461-026-00015-w
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000332
+      version_id: V1
+      url: https://doi.org/10.1007/s44461-026-00015-w
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000332
+      version_id: V1
+      url: https://doi.org/10.1007/s44461-026-00015-w
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: measurements
 review:
 - heading: 接触モデルと表面粗さが、離脱に必要な力を変える
   paragraphs:
@@ -642,10 +914,20 @@ review:
   paragraphs:
   - 月ダスト付着を整理した[@P000208]と[@P000209]に対し、[@P000210]は遠心法、[@P000211]は模擬月環境の条件から付着を測る。環境、粒径、粗さ、接触履歴をそろえることが、異なる実験を比較する出発点となる。
   - 表面上の局所帯電[@P000009]と単粒子の移動[@P000013]は、付着していた粒子が動き始める過程を扱う。[@P000215]ではUVと外部電場を組み合わせ、電場の向きによる光電子の動きと粒子離脱の違いを調べた。
+  - '[@P000214]は、Ti6Al4Vの表面をナノチューブ化し、粒子付きAFM探針の平均付着力を未処理面の12.98 nNから1.63 nNへ低減した。投入量5 g・設置角60°の散布試験では、残留量も0.5420から0.1642
+    mg/cm²へ減った。局所接触の力と散布後の残留量を分けて評価した結果であり、月面への適用には真空・帯電などの環境条件の検証が残る。'
+- heading: 電場の形成と、接触が破れる条件をつなぐ
+  paragraphs:
+  - '[@P000026]は負にバイアスした基板上の粉体が外縁から広がる様子を観察した。[@P000029]は浮遊基板へ電子ビームを加え、電子とイオンの電流が同程度になる条件で電場の増強と小粒子の移動を調べた。どちらも電位・電荷の測定と移動の撮影では粒径やプラズマ条件が異なり、個々の接触の付着力は直接測っていない。'
+  - '[@P000216]はナノ領域の電荷ゆらぎから局所電場を計算し、仮定した粒子電荷に働く力を付着モデルと比較した。半径20 nmの粒子と半径10 nmの帯電領域に各+10eを与え、最隣接させた例では約10
+    pNとなるが、離脱条件を満たすかは配置・粗さ・清浄度に依存する。[@P000256]の総説が整理した地盤のせん断強度、接触中の粒子電荷、離脱後の浮遊条件を区別すると、実験とモデルのどこをつなぐべきかが分かる。'
 - heading: 実粒子の形と氷の量から、集団の流れやすさを調べる
   paragraphs:
   - Apollo粒子の三次元形状[@P000218]に対し、[@P000293]はChang'e-6の多数の粒子を再構成して離散要素法へ入力した。得られた粘着力や摩擦角は、粒子集団の計算結果である。[@P000290]は鉱物ごとの摩擦と表面エネルギーも調べ、低重力で付着の寄与が大きくなる粒径域を比較する。
   - 永久影では氷の寄与も加わる。[@P000292]は低温の模擬物実験から、氷含有量と静的・動的安息角の関係を調べた。接触一つの引き離し力、粒子同士のかみ合い、氷による凝集を分けて評価すると、月面地盤の強度へつなげやすい。
+- heading: 離脱後の初速と、氷で結ばれた粒子の強度
+  paragraphs:
+  - 粒子が離れた後の移動範囲には、初速と射出方向が必要になる。[@P000315]は最大初速の粒径依存と、形状・凝集力による速度分散を測定した。[@P000316]はシリカ粒子の射出角と距離ごとの粒径を調べている。氷を含む地盤については、[@P000332]が円錐貫入試験で、粒子間を結ぶ氷と分散した氷の強度・掘削性の違いを定量化した。単粒子の付着力と、粒子集団の強度は測る量が異なるため、接触状態や温度をそろえて比較する。
 lineage:
 - title: 弾性付着から粗面の付着へ
   steps:
@@ -656,6 +938,15 @@ lineage:
     title: 粗さの効果を調べる
     significance: 個々の突起の付着と圧縮を組み合わせ、粗面の付着低下を説明した。
     connection: 平滑面の接触を突起の集まりへ拡張
+- title: 基板の電位から電子ビームによる差動帯電へ
+  steps:
+  - paper_id: P000026
+    title: 負バイアス基板上の移動を測る
+    significance: 粉体の外縁からの移動を、位置によって異なる電位構造と粒子電荷に結び付けた。
+  - paper_id: P000029
+    title: 電流の釣合いと表面特性を加える
+    significance: 浮遊基板上で電子ビームとイオンの電流比を変え、粉体と基板の電位差・電場と輸送を調べた。
+    connection: 先行実験を踏まえ、電子ビームと二次電子放出の差を取り入れる
 - title: Apolloの形状計測から月裏側の粒子集団へ
   steps:
   - paper_id: P000218
@@ -675,12 +966,18 @@ survey:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
+  - Bukan経由のPaperpile所蔵PDF
   - 'GitHub Issues #9–#10'
   - Crossref・出版社・機関公開記録の要旨
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
-    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。
-    Goguen 2024のNIST公開要旨に基づく要約・確認状況を追記。'
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-22にP000214・P000026・P000029・P000216・P000256の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。
+    2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 対象文献の要約・根拠位置・本文確認状況を更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。
+    2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。 Goguen 2024のNIST公開要旨に基づく要約・確認状況を追記。'
   limitations:
-  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  - 今回の全文確認はP000214・P000026・P000029・P000216・P000256に限る。他の文献の確認状況は各entryのinspectionを参照。
+  - He 2026はナノ構造の半径・直径表記と試験環境の記載が不十分。
+  - Wang 2010は一部の電場値・式表記に原文内の不整合が残る。
+  - Sana 2025は計算領域の有効面積式に不整合があり、粒子電荷を仮定している。
+  - Colwell 2007の引用先原著は未通読。Debye長の式の単位系と弱光源の帯電時間の記述は要再確認。
+  - Fuller & Tabor 1975の候補PDFは別論文だったため全文確認の対象外とし、既存の公開要旨に基づく要約を維持した。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。

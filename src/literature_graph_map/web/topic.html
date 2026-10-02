@@ -6,9 +6,9 @@
   <p class="lead">{{ topic.question }}</p>
   {% if topic.scope.include %}<details class="scope"><summary>対象範囲</summary><p>{{ topic.scope.include | join(' ／ ') }}</p></details>{% endif %}
   {% if is_collection %}
-  <div class="topic-meta"><span><b>{{ navigation.children | length }}</b> テーマ</span><a href="#subtopics">テーマを選ぶ <span aria-hidden="true">↓</span></a></div>
+  <div class="topic-meta"><span><b>{{ navigation.children | length }}</b> テーマ</span><span>テーマ全体：<b>{{ subtree_count }}</b> 文献</span><a href="#subtopics">テーマを選ぶ <span aria-hidden="true">↓</span></a></div>
   {% else %}
-  <div class="topic-meta"><span><b>{{ topic.entries | length }}</b> 文献</span><span><b>{{ groups | length }}</b> 分類</span><a href="#papers">文献一覧へ <span aria-hidden="true">↓</span></a></div>
+  <div class="topic-meta"><span>{{ 'このページの選定文献：' if navigation.children else '' }}<b>{{ topic.entries | length }}</b> 文献</span>{% if navigation.children %}<span>テーマ全体（子テーマを含む）：<b>{{ subtree_count }}</b> 文献</span>{% endif %}<span><b>{{ groups | length }}</b> 分類</span><a href="#papers">文献一覧へ <span aria-hidden="true">↓</span></a></div>
   {% endif %}
 </header>
 {% if navigation.children %}
@@ -34,8 +34,9 @@
 {% if not is_collection %}
 <section id="papers" aria-labelledby="papers-heading">
   <div class="section-heading"><h2 id="papers-heading">文献一覧</h2><span>{{ topic.entries | length }}件</span></div>
+  {% if navigation.children %}<p class="muted">この一覧と検索は、このページの選定文献が対象です。子テーマの文献は上の子テーマ一覧からたどれます。</p>{% endif %}
   <form class="paper-filter" role="search" hidden>
-    <div class="search-field"><label for="paper-search">文献を検索</label><input id="paper-search" type="search" placeholder="タイトル・著者・キーワード" autocomplete="off"></div>
+    <div class="search-field"><label for="paper-search">このページの文献を検索</label><input id="paper-search" type="search" placeholder="タイトル・著者・キーワード" autocomplete="off"></div>
     <div><label for="group-filter">分類</label><select id="group-filter"><option value="">すべての分類</option>{% for group in groups %}<option value="{{ group.id }}">{{ group.title }}</option>{% endfor %}</select></div>
     <div><label for="year-order">分類内の並び順</label><select id="year-order"><option value="oldest">年：古い順</option><option value="newest">年：新しい順</option></select></div>
     <div class="filter-status"><output id="paper-count" aria-live="polite">{{ topic.entries | length }} / {{ topic.entries | length }}件</output><button type="reset">リセット</button></div>
@@ -52,13 +53,15 @@
       <div class="paper-kicker"><a href="#{{ entry.paper_id }}">{{ citations[entry.paper_id] }}</a><span>{{ entry.role }}</span>{% if entry.paper_id in milestones %}<a class="milestone-tag" href="#lineage-{{ entry.paper_id }}">系譜の節目</a>{% endif %}</div>
       <h4><a href="{{ title_url(work) }}">{{ work.title }}</a></h4>
       {% if version.kind == 'submitted' or version.status == 'preprint' %}<p class="badge">{{ 'プレプリント・未査読' if version.status == 'preprint' else '査読状態未確認' }}</p>{% endif %}
+      {% if version.status == 'accepted' %}<p class="badge">採択済み・出版版は未確認</p>{% endif %}
       <dl class="bibliography">
         <div><dt>著者</dt><dd>{{ authors(work) }}</dd></div>
         <div><dt>掲載誌</dt><dd>{{ version.venue or '未確認' }}</dd></div>
         {% if version.publisher %}<div><dt>出版社</dt><dd>{{ version.publisher }}</dd></div>{% endif %}
         <div><dt>公開先</dt><dd class="paper-access"><span>OA・無料公開：{{ access(work) }}</span><span>Preprint：{{ preprint(work) }}</span></dd></div>
       </dl>
-      {{ summary(entry, work) }}
+      {{ summary(entry, work, works) }}
+      {% if paper_topics[entry.paper_id] %}<p class="paper-themes">この文献を扱う他のテーマ：{% for item in paper_topics[entry.paper_id] %}<a href="{{ item.url }}">{{ item.title }}</a>{% if not loop.last %} ／ {% endif %}{% endfor %}</p>{% endif %}
       </div>
     </article>
     {% endfor %}

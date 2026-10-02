@@ -18,6 +18,8 @@ groups:
   title: 月面クレーター・縦孔
 - id: features
   title: 微細構造・電子遮蔽
+- id: datasets
+  title: 公開シミュレーションデータ
 entries:
 - paper_id: P000219
   group: expansion
@@ -845,6 +847,108 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000344
+  group: datasets
+  role: 公開データ：空洞サイズ依存の再現用データ
+  summary:
+    question: 空洞サイズを変えた計算の図と物理量を、どのデータから再現できるか。
+    method: 図に対応したHDF5の物理量・軸・単位・パラメータと、描画用Notebookを公開する。
+    contribution: サイズ依存の月面空洞帯電論文に対応する計算出力と図の再現手順を提供する。
+  evidence_by_item:
+    question:
+    - paper_id: P000344
+      version_id: V1
+      url: https://zenodo.org/records/14018082
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000344
+      version_id: V1
+      url: https://zenodo.org/records/14018082
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000344
+      version_id: V1
+      url: https://zenodo.org/records/14018082
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000345
+  group: datasets
+  role: 公開データ：流速・熱速度比の再現用データ
+  summary:
+    question: 流速と熱速度の比を変えた計算・半解析モデルを、どう再実行・比較できるか。
+    method: 実行パラメータ、HDF5、描画用Notebook、半解析コード、太陽風参照CSVを公開する。
+    contribution: 空洞帯電の3D PICと自由落下モデルを比較する公開データ・解析コードを提供する。
+  evidence_by_item:
+    question:
+    - paper_id: P000345
+      version_id: V1
+      url: https://zenodo.org/records/15686147
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000345
+      version_id: V1
+      url: https://zenodo.org/records/15686147
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000345
+      version_id: V1
+      url: https://zenodo.org/records/15686147
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000346
+  group: datasets
+  role: 公開データ：極域クレーターのhybrid PICデータ
+  summary:
+    question: 極域クレーターのmini-wake計算図を、どの出力から再現できるか。
+    method: SPISによる3D計算のVTK・DAT形式の17ファイルと、対応する5図を公開する。
+    contribution: クレーター周囲の粒子流入・電位計算を、図に対応する出力から比較する入口を提供する。
+  evidence_by_item:
+    question:
+    - paper_id: P000346
+      version_id: V1
+      url: https://www.scidb.cn/detail?dataSetId=ae7d9ab262fd48f59141af6062ae3318
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000346
+      version_id: V1
+      url: https://www.scidb.cn/detail?dataSetId=ae7d9ab262fd48f59141af6062ae3318
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000346
+      version_id: V1
+      url: https://www.scidb.cn/detail?dataSetId=ae7d9ab262fd48f59141af6062ae3318
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
 review:
 - heading: 空間の陰が、電子とイオンの届き方を分ける
   paragraphs:
@@ -854,6 +958,10 @@ review:
   paragraphs:
   - '[@P000263]のクレーター実験は、デバイ長と地形寸法の比によって内部電場が変わることを示す。[@P000226]の管を使った実験は、入口と壁面による電子遮蔽に加え、イオン誘起二次電子が奥の正電位を抑える効果を調べた。'
   - 微細加工の[@P000230]は、斜めに入射する電子がパターンで遮られることで局所損傷が生じることを示した。[@P000227]は電子温度と溝底電流、[@P000228]は局所電位と側壁の削れを結び付ける。月面空洞との比較では、幾何形状と流入分布に加えて、衝突や材料の条件もそろえる。
+- heading: 計算出力と図の再現へ進む
+  paragraphs:
+  - 論文から計算条件を追うために、公開出力も参照できる。[@P000344]は空洞サイズ依存の図に対応するHDF5とNotebook、[@P000345]は流速・熱速度比の計算出力と半解析コード、[@P000346]は極域クレーターのhybrid
+    PICのVTK・DAT出力を提供する。これらは関連論文とは別の公開データ記録であり、ここでは説明とファイル一覧を確認している。
 lineage:
 - title: 電子遮蔽から局所的な加工形状へ
   steps:

@@ -4,16 +4,19 @@
   <li><strong>{{ label }}</strong><span>{{ entry.summary[key] }}</span></li>
   {% endfor %}
 </ul>
-{% set refs = entry.evidence_by_item %}
-{% if status or refs.question or refs.method or refs.contribution %}
 <details class="sources">
   <summary>出典・確認状況</summary>
   {% if status %}<p>{{ status }}</p>{% endif %}
   {% for key, label in labels.items() %}
   {% if refs[key] %}
-  <p>{{ label }}：{% for ref in refs[key] %}<a href="{{ ref.url }}">{{ ref.locator or '参考' }}</a>{% if not loop.last %} ／ {% endif %}{% endfor %}</p>
+  {% for item in refs[key] %}
+  <p>{{ label }}：{% if item.ref.paper_id != entry.paper_id %}{{ item.citation }}による紹介 ／ {% endif %}参照版：{{ item.version }}{% if not item.version_url and not item.same_version %}（公開先未記録）{% endif %}
+    {% if item.ref.source_type == 'review' %} ／ 総説・紹介{% endif %}
+    {% if item.same_version %} ／ <a href="{{ item.ref.url }}">{{ item.ref.locator or '参照版へ' }}</a>
+    {% else %}{% if item.ref.locator %} ／ {{ item.ref.locator }}{% endif %}{% if item.version_url %} ／ <a href="{{ item.version_url }}">参照版の公開先へ</a>{% endif %} ／ <a href="{{ item.ref.url }}">{{ item.link_label }}</a>{% endif %}
+  </p>
+  {% endfor %}
   {% endif %}
   {% endfor %}
 </details>
-{% endif %}
 {% else %}<p class="muted">要点は準備中です。</p>{% endif %}

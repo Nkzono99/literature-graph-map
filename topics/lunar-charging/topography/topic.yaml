@@ -9,6 +9,10 @@ review:
 - heading: 深い空洞と実地形への拡張
   paragraphs:
   - 深い空洞では、入口から底へ至る間に電子が側壁へ失われる。上方から太陽風が入る条件を扱った[@P000012]は、その選別によって底部が正に帯電しうることを示した。[@P000015]は空洞寸法とシース厚の比に注目し、大きな空洞では電子供給が増えて正電位が緩和されることを示した。[@P000016]は流速と熱速度の比を変え、底部電位が負から正、さらにほぼゼロへ移る条件を調べる。南極の実地形を含む[@P000017]は、理想化した形状の計算から、候補地点ごとの環境を読むための研究へつながる。
+- heading: 計算出力と図の再現へ進む
+  paragraphs:
+  - 論文から計算条件を追うために、公開出力も参照できる。[@P000344]は空洞サイズ依存の図に対応するHDF5とNotebook、[@P000345]は流速・熱速度比の計算出力と半解析コード、[@P000346]は極域クレーターのhybrid
+    PICのVTK・DAT出力を提供する。これらは関連論文とは別の公開データ記録であり、ここでは説明とファイル一覧を確認している。
 lineage:
 - title: 実地形と太陽風の侵入
   steps:
@@ -56,6 +60,8 @@ groups:
   title: 極域クレーターと実地形
 - id: cavities
   title: 深い空洞
+- id: datasets
+  title: 公開シミュレーションデータ
 entries:
 - paper_id: P000008
   group: craters
@@ -419,6 +425,108 @@ entries:
     checked_by: ai
     checked_at: '2026-09-22'
     recheck: true
+- paper_id: P000344
+  group: datasets
+  role: 公開データ：空洞サイズ依存の再現用データ
+  summary:
+    question: 空洞サイズを変えた計算の図と物理量を、どのデータから再現できるか。
+    method: 図に対応したHDF5の物理量・軸・単位・パラメータと、描画用Notebookを公開する。
+    contribution: サイズ依存の月面空洞帯電論文に対応する計算出力と図の再現手順を提供する。
+  evidence_by_item:
+    question:
+    - paper_id: P000344
+      version_id: V1
+      url: https://zenodo.org/records/14018082
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000344
+      version_id: V1
+      url: https://zenodo.org/records/14018082
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000344
+      version_id: V1
+      url: https://zenodo.org/records/14018082
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000345
+  group: datasets
+  role: 公開データ：流速・熱速度比の再現用データ
+  summary:
+    question: 流速と熱速度の比を変えた計算・半解析モデルを、どう再実行・比較できるか。
+    method: 実行パラメータ、HDF5、描画用Notebook、半解析コード、太陽風参照CSVを公開する。
+    contribution: 空洞帯電の3D PICと自由落下モデルを比較する公開データ・解析コードを提供する。
+  evidence_by_item:
+    question:
+    - paper_id: P000345
+      version_id: V1
+      url: https://zenodo.org/records/15686147
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000345
+      version_id: V1
+      url: https://zenodo.org/records/15686147
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000345
+      version_id: V1
+      url: https://zenodo.org/records/15686147
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+- paper_id: P000346
+  group: datasets
+  role: 公開データ：極域クレーターのhybrid PICデータ
+  summary:
+    question: 極域クレーターのmini-wake計算図を、どの出力から再現できるか。
+    method: SPISによる3D計算のVTK・DAT形式の17ファイルと、対応する5図を公開する。
+    contribution: クレーター周囲の粒子流入・電位計算を、図に対応する出力から比較する入口を提供する。
+  evidence_by_item:
+    question:
+    - paper_id: P000346
+      version_id: V1
+      url: https://www.scidb.cn/detail?dataSetId=ae7d9ab262fd48f59141af6062ae3318
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000346
+      version_id: V1
+      url: https://www.scidb.cn/detail?dataSetId=ae7d9ab262fd48f59141af6062ae3318
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000346
+      version_id: V1
+      url: https://www.scidb.cn/detail?dataSetId=ae7d9ab262fd48f59141af6062ae3318
+      source_type: abstract
+      locator: 公開データの説明・ファイル一覧
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
 relations: []
 view:
   sort:

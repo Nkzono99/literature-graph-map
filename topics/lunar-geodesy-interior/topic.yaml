@@ -441,6 +441,244 @@ entries:
       source_type: abstract
       locator: 公開要旨
       checked_at: '2026-09-25'
+- paper_id: P000322
+  role: Dewar磁気異常の埋没火成岩体
+  summary:
+    question: Dewarの磁場源はどのような構造で、古い月ダイナモをどう制約するか。
+    method: 軌道の重力・磁場を共同逆解析し、磁化量と重なる盆地噴出物による年代制約を組み合わせる。
+    contribution: 浅部の高密度・磁化体を埋没玄武岩として解釈し、約42億年前のダイナモを支持するモデル制約を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000322
+      version_id: V1
+      url: https://doi.org/10.1126/sciadv.aec0341
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000322
+      version_id: V1
+      url: https://doi.org/10.1126/sciadv.aec0341
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000322
+      version_id: V1
+      url: https://doi.org/10.1126/sciadv.aec0341
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: interior
+- paper_id: P000331
+  role: 熱伝導率による成熟度の推定
+  summary:
+    question: 粒子構造と充填状態から、熱伝導率をレゴリス成熟度の指標にできるか。
+    method: 粒子のボクセル特徴と熱物性をGaussian過程回帰で結び、熱抵抗ネットワークで試料全体へ接続する。
+    contribution: 成熟度に対応した実効熱伝導率の変化を示し、遠隔観測や磁気共鳴による評価と比較する補完指標を提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000331
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009847
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000331
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009847
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000331
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009847
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal
+- paper_id: P000334
+  role: Divinerの全球熱物性地図
+  summary:
+    question: 月面レゴリスの密度・熱伝導率と地域差を、温度観測からどう求めるか。
+    method: Divinerの赤外温度を熱モデルへ合わせ、深さ方向の密度・熱伝導率を全球で推定する。
+    contribution: 細粒層の広域的な均質性と若いクレーター等の局所差を示し、低温モデルや成熟度の比較基準を与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000334
+      version_id: V1
+      url: https://doi.org/10.1002/2017JE005387
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000334
+      version_id: V1
+      url: https://doi.org/10.1002/2017JE005387
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000334
+      version_id: V1
+      url: https://doi.org/10.1002/2017JE005387
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal
+- paper_id: P000335
+  role: 極低温までの熱物性モデル
+  summary:
+    question: 100 K未満で従来モデルの熱慣性が合わない原因は何か。
+    method: 固体物理と模擬物の測定をもとに、20〜400 Kの比熱・熱伝導率を半経験的にモデル化する。
+    contribution: 極低温の固体熱伝導、組成、結晶性、密度・空隙率の寄与を示し、永久影温度の再評価と実験課題を与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000335
+      version_id: V1
+      url: https://doi.org/10.1029/2019JE005955
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000335
+      version_id: V1
+      url: https://doi.org/10.1029/2019JE005955
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000335
+      version_id: V1
+      url: https://doi.org/10.1029/2019JE005955
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal
+- paper_id: P000337
+  role: Aristarchusの受動マイクロ波観測
+  summary:
+    question: 火砕堆積物の分布と地下熱環境を、受動マイクロ波からどう制約するか。
+    method: Chang’e-2のマイクロ波放射計から時刻別の輝度温度・規格化温度地図を作り、地質図と比較する。
+    contribution: 高い蓄熱能力と、光学・レーダー推定より広い火砕堆積物分布の可能性を示し、地下温度・熱流束も論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000337
+      version_id: V1
+      url: https://doi.org/10.3390/rs18183194
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000337
+      version_id: V1
+      url: https://doi.org/10.3390/rs18183194
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000337
+      version_id: V1
+      url: https://doi.org/10.3390/rs18183194
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal
+- paper_id: P000338
+  role: 氷の量・形態と熱伝導率
+  summary:
+    question: 氷含有模擬物の熱伝導率は、氷量と粒子間の氷構造にどう依存するか。
+    method: 低温・低圧で氷飽和度などを変え、粒子を結ぶ氷と分散した孔隙氷を比較する。
+    contribution: 分散氷では緩やかに、粒子間を結ぶ氷では急速に熱伝導率が増え、氷量だけで熱測定を解釈できないことを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000338
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009900
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000338
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009900
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000338
+      version_id: V1
+      url: https://doi.org/10.1029/2026JE009900
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal
+- paper_id: P000339
+  role: 低温から全球へ一貫した熱伝導モデル
+  summary:
+    question: 赤道から極域まで、同じ熱物性モデルでDivinerの温度を説明できるか。
+    method: 低温レゴリスの固体物理を全球熱モデルへ組み込み、暖かい地域と永久影の観測傾向に照合する。
+    contribution: 夜間表面温度や極域地下温度を再評価し、従来モデルより極域浅部が約5〜10 K暖かくなる条件を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000339
+      version_id: V1
+      url: https://doi.org/10.1029/2021JE006829
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    method:
+    - paper_id: P000339
+      version_id: V1
+      url: https://doi.org/10.1029/2021JE006829
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+    contribution:
+    - paper_id: P000339
+      version_id: V1
+      url: https://doi.org/10.1029/2021JE006829
+      source_type: abstract
+      locator: 要旨（本文全体は未確認）
+      checked_at: '2026-10-02'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-02'
+  group: thermal
 review:
 - heading: 高さと重力の組合せから、地殻の厚さを推定する
   paragraphs:
@@ -459,6 +697,9 @@ review:
 - heading: 若い試料の磁化から全球磁場の停止を制約する
   paragraphs:
   - '[@P000288]は月裏側起源と推定される隕石の古地磁気を測り、若いApollo試料と比較した。約7億年前の弱い磁場の記録は、過去約10億年間に全球的なダイナモ磁場がなかった可能性を支持する。試料の起源と記録年代を踏まえて内部活動の時間史を読む。'
+- heading: 低温の熱伝導と、火成岩体の制約
+  paragraphs:
+  - Divinerの全球熱物性を求めた[@P000334]に対し、[@P000335]は100 K未満まで固体熱伝導を拡張し、[@P000339]は赤道から永久影まで一貫して扱うモデルを作った。[@P000338]は氷含有模擬物の実験で、氷量と粒子間の氷構造がともに熱伝導へ効くことを示す。火成起源の制約には、重力・磁場を共同解析したDewarの[@P000322]と、マイクロ波温度からAristarchusを調べた[@P000337]を比較できる。
 lineage:
 - title: 月裏側の重力から地殻厚へ
   steps:
@@ -482,6 +723,23 @@ lineage:
     title: 一台の地震計で位置を求める
     significance: 偏波解析と到着時刻差を使い、月震と衝突の位置を推定した。
     connection: 震源物理の解析に定位手法を補う
+- title: 全球熱物性から極低温・氷構造へ
+  steps:
+  - paper_id: P000334
+    title: 全球の熱物性を温度観測から求める
+    significance: Divinerから密度・熱伝導率の深さ方向分布を推定した。
+  - paper_id: P000335
+    title: 極低温の固体熱伝導を加える
+    significance: 20〜400 Kの熱物性を組成・密度・固体物理からモデル化した。
+    connection: 全球推定の低温側を理論から補う
+  - paper_id: P000339
+    title: 低緯度と永久影を同じモデルで扱う
+    significance: Divinerに整合する全球低温熱伝導モデルを示した。
+    connection: 低温物理を全球の温度計算へ統合
+  - paper_id: P000338
+    title: 氷の形態を実験で変える
+    significance: 粒子間を結ぶ氷と分散した氷の熱伝導の違いを測った。
+    connection: 乾燥レゴリスのモデルに対し、氷含有物性を別条件で補う
 survey:
   searched_at: '2026-09-25'
   provider_names:

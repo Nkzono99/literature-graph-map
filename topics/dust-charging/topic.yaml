@@ -1066,6 +1066,42 @@ entries:
     checked_by: ai
     checked_at: '2026-10-02'
   group: collection
+- paper_id: P000368
+  group: surface
+  role: イオン照射によるEDSの帯電制御
+  summary:
+    question: イオン照射で粒子の帯電条件を変えると、EDSの除去率と清掃速度はどう変わるか。
+    method: EDSにイオナイザを組み込み、極性、粒径、照射タイミング、距離、相対湿度を変えて清掃性能を比較した。
+    contribution: 事前照射と動作中照射で除去率が改善し、動作中照射では清掃速度も上がった。気体中の帯電制御を性能変数として評価した結果で、月面真空下への適用は別途検証を要する。
+  evidence_by_item:
+    question:
+    - paper_id: P000368
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0032591024011483
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+    method:
+    - paper_id: P000368
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0032591024011483
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+    contribution:
+    - paper_id: P000368
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0032591024011483
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-05'
+    recheck: false
+  locked_fields: []
 review:
 - heading: 平均電流の釣り合いから、電荷のゆらぎへ進む
   paragraphs:
@@ -1078,6 +1114,9 @@ review:
 - heading: 接触の履歴と、流れの中の粒子電荷
   paragraphs:
   - 接触帯電では、衝突回数に加えて粒子の姿勢と電荷分布も効く。[@P000308]は振動面上の単一球が帯電を止める姿勢へ移る過程を示した。二粒子を音響浮遊させた[@P000309]では、各衝突は確率的でも累積電荷は飽和則に従った。これらは月面固有の実験ではなく、接触帯電の履歴を理解する基礎となる。流れのあるプラズマでは、[@P000321]が遮蔽とウェイクによる粒子間力を整理し、[@P000318]がウェイク内の電荷変化を粒子運動から推定している。
+- heading: 粒子の帯電条件を、電場による清掃へ利用する
+  paragraphs:
+  - '[@P000368]はEDSにイオナイザを組み込み、極性、照射タイミング、粒径、湿度などを変えて除去率と清掃速度を調べた。照射による電荷供給を調整することで、既存の表面接触や電子放出の研究に、帯電条件を能動的に選ぶ比較軸が加わる。これは気体中の清掃実験であり、月面の光電子・プラズマ環境への適用には電流源と環境条件の対応付けが必要になる。'
 lineage:
 - title: 球の捕集から凝集体の形状へ
   steps:

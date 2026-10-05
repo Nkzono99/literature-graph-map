@@ -516,6 +516,42 @@ entries:
       source_type: abstract
       locator: 出版社提供の公開要旨（Crossref）
       checked_at: '2026-09-25'
+- paper_id: P000366
+  group: in-situ
+  role: ガス掘削による月地下熱測定の実証
+  summary:
+    question: 小型着陸機の制約下で熱プローブを月地下へ送り、複数深度で測定できるか。
+    method: 窒素噴流で掘削しながらプローブを送り、荷重検知で上下動を調整した。測定時には噴流を停止し、センサーを未掘削の土へ挿入した。
+    contribution: 約1 mまで到達し、0.288〜0.971 mの8深度で温度と熱伝導率を測定した。設計深度3 mには達せず、停止原因も未確定。掘削・装置性能の報告で、熱流量の詳細解析は別論文に委ねている。
+  evidence_by_item:
+    question:
+    - paper_id: P000366
+      version_id: V1
+      url: https://elib.dlr.de/217457/1/Nagihara_2025_Planet._Sci._J._6_232.pdf
+      source_type: full_text
+      locator: 出版社版PDFの要旨・装置・方法・運用結果・考察・結論
+      checked_at: '2026-10-05'
+    method:
+    - paper_id: P000366
+      version_id: V1
+      url: https://elib.dlr.de/217457/1/Nagihara_2025_Planet._Sci._J._6_232.pdf
+      source_type: full_text
+      locator: 出版社版PDFの要旨・装置・方法・運用結果・考察・結論
+      checked_at: '2026-10-05'
+    contribution:
+    - paper_id: P000366
+      version_id: V1
+      url: https://elib.dlr.de/217457/1/Nagihara_2025_Planet._Sci._J._6_232.pdf
+      source_type: full_text
+      locator: 出版社版PDFの要旨・装置・方法・運用結果・考察・結論
+      checked_at: '2026-10-05'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-05'
+    recheck: false
+  locked_fields: []
 review:
 - heading: 画像に写る縦孔を、地下構造の手掛かりにする
   paragraphs:
@@ -537,6 +573,9 @@ review:
   - TC・MIの画像から縦孔の形を調べる入口は[@P000183]である。LROCの高解像度画像による壁・張り出しの追観測[@P000192]から、縦孔の分布と形成機構の比較[@P000193]へ進める。画像で見える開口と壁を起点に、地下へ続く構造を検討する。
   - LRSは地下の反射エコーを測り、海の層序[@P000181]からMarius Hillsの空洞候補[@P000195]へつながる。GRAILは重力場を測り、質量欠損から空洞を推定する[@P000194]。Mini-RFはレーダー散乱を測り、縦孔下の横方向の通路候補を検討する[@P000197]。反射・散乱と重力は地下の異なる性質に感度を持つため、位置の対応と各モデルの仮定を合わせて読む。
   - Divinerは熱放射を測る。[@P000196]は観測と熱モデルから縦孔・空洞の温度環境を調べており、地形や地下構造の候補を、照明と温度の条件へ結び付ける入口になる。
+- heading: 窒素ガス掘削で浅部へセンサーを届ける
+  paragraphs:
+  - '[@P000366]のLISTERはBlue Ghost Mission 1でガス掘削し、約1 mまでプローブを送った。噴流を止めて未掘削の土へセンサーを挿入し、8深度で温度と熱伝導率を測定した。Apollo 17コアから温度履歴を推定した[@P000299]と比較すると、試料の記録と現地の深度測定という異なる制約が得られる。本報告は掘削・運用を中心に扱い、停止原因と熱データの詳細な解釈は未確定である。'
 lineage:
 - title: 縦孔の発見から地下エコーの検討へ
   steps:

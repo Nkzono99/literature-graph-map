@@ -17,6 +17,13 @@ review:
 - heading: 帯電を利用する飛行と、氷地盤の掘削条件
   paragraphs:
   - '[@P000340]は機体帯電を調整して静電飛行の平衡点を作る計算研究であり、帯電解析を位置制御へ広げる。極域の走行・掘削を扱う[@P000332]は、氷含有模擬物の円錐貫入試験から、氷の形態に応じた強度とエネルギーを求めた。帯電力の設計と地盤力学は別の評価軸で、いずれも機体寸法、温度、粒子・氷の構造に応じた条件設定が必要になる。'
+- heading: 帯電・粒径・被覆をそろえてEDSを比べる
+  paragraphs:
+  - UV併用の[@P000260]に対し、[@P000368]はイオン照射でEDSの除去率と速度を改善した。照射で粒子電荷を変えるという比較軸を共有する一方、後者はイオナイザを使う気体中の実験で、月面真空での動作条件とは分けて読む。[@P000370]は粒径別の試験から、小粒子の付着、大粒子の重力・誘電泳動力と鎖状化を整理し、除去率を支配する力が粒径によって変わることを示した。
+  - '[@P000369]は機能性被覆を施したEDSを高真空の連続降塵下で比較し、微小放電、残留粒径、耐久性を合わせて評価した。被覆で付着を変える効果と電場駆動を同時に扱うため、事前に積もった粉体の清掃試験とは評価量が異なる。材料・粒径・照射・降塵方法を明示すると、受動表面と能動除塵の組合せを比較しやすい。'
+- heading: 地上で選んだ表面を、実月面の付着観察へつなぐ
+  paragraphs:
+  - '[@P000367]はRAC用の材料選定とレーザー表面加工を地上で評価した。これを材料クーポン選定の根拠に使った[@P000365]は、Blue Ghost Mission 1でガス採取と付着観察を行い、4回で累計約11 cm³のレゴリス捕集を画像等から推定した。クーポン像の基準面不足により付着量や加工効果を定量化できず、レンズ上のダスト除去でもガス流・粒子衝突・静電作用の寄与は分離されていない。実月面との比較には、捕集量、付着像、除去の機構をそれぞれ対応させる。'
 lineage:
 - title: 機体の帯電設計
   steps:
@@ -32,6 +39,24 @@ lineage:
     title: VUVと電子ビームを組み合わせる
     significance: 月面より強いVUVの照射下で、電子ビームによる布上ダストの除去効率が上がった。
     connection: 電極による搬送と電子照射を比較
+- title: 飛行前の材料評価から実月面の付着観察へ
+  steps:
+  - paper_id: P000367
+    title: 材料とレーザー加工面を選ぶ
+    significance: RAC用材料を地上で評価し、月面付着比較のための試料選定・加工手順を示した。
+  - paper_id: P000365
+    title: 月面で材料クーポンを観察する
+    significance: 選定研究を参照したクーポンで実月面の付着像を取得し、画像による定量評価の課題を明らかにした。
+    connection: 材料選定を参照し、地上試験を実月面の観察へつなぐ
+- title: EDS性能の粒径評価から被覆との組合せへ
+  steps:
+  - paper_id: P000370
+    title: 除去を妨げる力を粒径別に比べる
+    significance: 分級した模擬物で、小粒子の付着と大粒子の重力・分極の寄与を調べた。
+  - paper_id: P000369
+    title: 被覆と耐久性を同じ系で評価する
+    significance: 高真空の連続降塵下で、被覆に応じた蓄積抑制・微小放電・残留粒径を比較した。
+    connection: 粒径による力の比較に、被覆と試験方式の違いを加える
 public: true
 scope:
   include:
@@ -449,7 +474,205 @@ entries:
     checked_by: ai
     checked_at: '2026-10-02'
   group: charging
-relations: []
+- paper_id: P000365
+  group: removal
+  role: 実月面でのガス採取と付着観察
+  summary:
+    question: 月面でガス噴流によるレゴリスの採取・輸送・分級を実行できるか。
+    method: Blue Ghost Mission 1で窒素ガス式装置を運用し、内部撮像、光遮断センサー、外部映像で評価した。捕集量は画像、CAD、地上試験から推定した。
+    contribution: 非公称の接地姿勢でも4回の運用で累計約11 cm³の捕集を推定し、材料クーポンへの付着も観察した。クーポン像に校正用基準面がなく、付着量や表面加工の効果の定量化には限界がある。
+  evidence_by_item:
+    question:
+    - paper_id: P000365
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s44461-026-00012-z
+      source_type: full_text
+      locator: 要旨、装置・運用結果、材料クーポンの観察、考察
+      checked_at: '2026-10-05'
+    method:
+    - paper_id: P000365
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s44461-026-00012-z
+      source_type: full_text
+      locator: 要旨、装置・運用結果、材料クーポンの観察、考察
+      checked_at: '2026-10-05'
+    contribution:
+    - paper_id: P000365
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s44461-026-00012-z
+      source_type: full_text
+      locator: 要旨、装置・運用結果、材料クーポンの観察、考察
+      checked_at: '2026-10-05'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-05'
+    recheck: false
+  locked_fields: []
+- paper_id: P000367
+  group: removal
+  role: 飛行前の材料選定と表面加工評価
+  summary:
+    question: 月面での付着評価へ向け、どの構造材料と表面加工を選定すべきか。
+    method: Kapton HN、Teflon FEP、炭素繊維強化ビスマレイミド複合材、Ti–6Al–4Vを選び、レーザー加工面と比較面を準備した。模擬ダスト試験、顕微鏡・SEM、接触角、表面形状測定で地上評価した。
+    contribution: RAC搭載試料の材料選択・加工・評価手順を示し、実月面で表面特性と付着を比較するための基盤を提供した。飛行前の地上評価であり、材料別の月面付着低減率を示す結果ではない。
+  evidence_by_item:
+    question:
+    - paper_id: P000367
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576524001668
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+    method:
+    - paper_id: P000367
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576524001668
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+    contribution:
+    - paper_id: P000367
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576524001668
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-05'
+    recheck: false
+  locked_fields: []
+- paper_id: P000368
+  group: removal
+  role: イオン照射によるEDSの帯電制御
+  summary:
+    question: イオン照射で粒子の帯電条件を変えると、EDSの除去率と清掃速度はどう変わるか。
+    method: EDSにイオナイザを組み込み、極性、粒径、照射タイミング、距離、相対湿度を変えて清掃性能を比較した。
+    contribution: 事前照射と動作中照射で除去率が改善し、動作中照射では清掃速度も上がった。気体中の帯電制御を性能変数として評価した結果で、月面真空下への適用は別途検証を要する。
+  evidence_by_item:
+    question:
+    - paper_id: P000368
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0032591024011483
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+    method:
+    - paper_id: P000368
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0032591024011483
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+    contribution:
+    - paper_id: P000368
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0032591024011483
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-05'
+    recheck: false
+  locked_fields: []
+- paper_id: P000369
+  group: removal
+  role: EDS被覆の除去性能と耐久性
+  summary:
+    question: 機能性被覆は、EDSの微小放電、ダスト蓄積、耐久性をどう変えるか。
+    method: CMrGO電極とHDPE基板の二相EDSにPSまたはTPFSを被覆し、高真空下の連続降塵試験で電圧、残留粒径、表面損傷を比較した。
+    contribution: PSは放電を抑制し、TPFSは除去性能と耐久性の両面で良好な結果を示した。評価量は動的降塵下の蓄積抑制に基づき、事前堆積後の除去率との比較には試験方式をそろえる必要がある。
+  evidence_by_item:
+    question:
+    - paper_id: P000369
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S009457652500565X
+      source_type: full_text
+      locator: 公開HTML本文の実験方法・結果・限界・結論
+      checked_at: '2026-10-05'
+    method:
+    - paper_id: P000369
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S009457652500565X
+      source_type: full_text
+      locator: 公開HTML本文の実験方法・結果・限界・結論
+      checked_at: '2026-10-05'
+    contribution:
+    - paper_id: P000369
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S009457652500565X
+      source_type: full_text
+      locator: 公開HTML本文の実験方法・結果・限界・結論
+      checked_at: '2026-10-05'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-05'
+    recheck: false
+  locked_fields: []
+- paper_id: P000370
+  group: removal
+  role: 粒径別EDS性能と力の競合
+  summary:
+    question: 月レゴリス模擬物の粒径に応じて、EDSで除去しにくくなる原因は何か。
+    method: 模擬物を粒径群に分級して清掃実験と高速度撮影を行い、粒径依存の簡略化した力の釣り合い計算と比較した。
+    contribution: 当該条件では25 µm未満で付着力、250 µm超で誘電泳動力と重力が除去性能を低下させた。大粒子の鎖状化と基板への捕捉も観察し、粒径によって支配的な力が変わることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000370
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576524007756
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+    method:
+    - paper_id: P000370
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576524007756
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+    contribution:
+    - paper_id: P000370
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576524007756
+      source_type: abstract
+      locator: 要旨・公開本文抜粋
+      checked_at: '2026-10-05'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-05'
+    recheck: false
+  locked_fields: []
+relations:
+- relation_id: R000022
+  source: P000365
+  target: P000367
+  type: uses_method
+  basis: explicit
+  state: checked
+  aspect: 付着評価用材料クーポンの選定
+  reason: PlanetVac論文はDas 2024を材料クーポン選定の根拠として引用し、選んだ表面の月面付着像を報告した。
+  evidence:
+  - paper_id: P000365
+    version_id: V1
+    url: https://link.springer.com/article/10.1007/s44461-026-00012-z
+    source_type: full_text
+    locator: 要旨、装置・運用結果、材料クーポンの観察、考察
+    checked_at: '2026-10-05'
+  checked_by: ai
+  checked_at: '2026-10-05'
+  limitation: 地上試験と月面観察では条件が異なる。月面像には校正用基準面がなく、付着量や加工効果の定量比較はできない。
 view:
   sort:
   - year

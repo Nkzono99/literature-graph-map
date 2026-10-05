@@ -679,6 +679,42 @@ entries:
     checked_by: ai
     checked_at: '2026-10-02'
   group: thermal
+- paper_id: P000366
+  group: thermal
+  role: ガス掘削による月地下熱測定の実証
+  summary:
+    question: 小型着陸機の制約下で熱プローブを月地下へ送り、複数深度で測定できるか。
+    method: 窒素噴流で掘削しながらプローブを送り、荷重検知で上下動を調整した。測定時には噴流を停止し、センサーを未掘削の土へ挿入した。
+    contribution: 約1 mまで到達し、0.288〜0.971 mの8深度で温度と熱伝導率を測定した。設計深度3 mには達せず、停止原因も未確定。掘削・装置性能の報告で、熱流量の詳細解析は別論文に委ねている。
+  evidence_by_item:
+    question:
+    - paper_id: P000366
+      version_id: V1
+      url: https://elib.dlr.de/217457/1/Nagihara_2025_Planet._Sci._J._6_232.pdf
+      source_type: full_text
+      locator: 出版社版PDFの要旨・装置・方法・運用結果・考察・結論
+      checked_at: '2026-10-05'
+    method:
+    - paper_id: P000366
+      version_id: V1
+      url: https://elib.dlr.de/217457/1/Nagihara_2025_Planet._Sci._J._6_232.pdf
+      source_type: full_text
+      locator: 出版社版PDFの要旨・装置・方法・運用結果・考察・結論
+      checked_at: '2026-10-05'
+    contribution:
+    - paper_id: P000366
+      version_id: V1
+      url: https://elib.dlr.de/217457/1/Nagihara_2025_Planet._Sci._J._6_232.pdf
+      source_type: full_text
+      locator: 出版社版PDFの要旨・装置・方法・運用結果・考察・結論
+      checked_at: '2026-10-05'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-05'
+    recheck: false
+  locked_fields: []
 review:
 - heading: 高さと重力の組合せから、地殻の厚さを推定する
   paragraphs:
@@ -703,6 +739,9 @@ review:
 - heading: 高度と重力の観測を選ぶ
   paragraphs:
   - LALTのレーザー高度観測[@P000169]とRSATのドップラー追跡による重力観測[@P000170]は、かぐやによる地形・内部構造研究の入口である。LOLAもレーザー高度を測り、GRAILは衛星間の追跡から重力場を求める。LOLA地形とGRAIL重力を組み合わせた密度構造の解析は[@P000301]、GRAILの重力勾配から空洞候補を探す研究は[@P000194]を参照できる。高度、重力、推定された密度・空洞形状を順に対応させると、観測量と逆解析の結果を区別して読める。
+- heading: 軌道・試料からの推定に、ロボットの深度測定を加える
+  paragraphs:
+  - Divinerに基づく熱物性推定[@P000334]やApollo 17コアの熱履歴[@P000299]に対し、[@P000366]はBlue Ghost Mission 1のLISTERで窒素ガス掘削を実施し、0.288〜0.971 mの8深度で温度・熱伝導率を測った。測定場所と深さが分かる現地データを加える装置実証である。設計深度3 mへの到達と熱データの詳細解析は残るため、低温モデル[@P000339]との定量照合は解析結果を待って行う。
 lineage:
 - title: 月裏側の重力から地殻厚へ
   steps:
@@ -743,6 +782,15 @@ lineage:
     title: 氷の形態を実験で変える
     significance: 粒子間を結ぶ氷と分散した氷の熱伝導の違いを測った。
     connection: 乾燥レゴリスのモデルに対し、氷含有物性を別条件で補う
+- title: 試料の熱履歴と現地での深度測定
+  steps:
+  - paper_id: P000299
+    title: コアに残る浅部の熱履歴を読む
+    significance: Apollo 17コアから地中の温度勾配を推定し、深さ方向の温度構造を制約した。
+  - paper_id: P000366
+    title: ガス掘削で温度センサーを配置する
+    significance: 約1 mまで到達して8深度で測定し、現地の温度・熱伝導率データを得る手段を実証した。
+    connection: 試料履歴による推定と、その場の深度測定を比較する
 survey:
   searched_at: '2026-10-02'
   provider_names:

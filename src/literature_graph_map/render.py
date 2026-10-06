@@ -9,7 +9,7 @@ from urllib.parse import quote, unquote
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
-from .models import PAPER_CITATION, Entry, Evidence, Topic, Work
+from .models import PAPER_CITATION, TOPIC_CITATION, Entry, Evidence, Topic, Work
 from .storage import Snapshot, inside, write_files
 
 DISCLAIMER = "この文献マップには誤りや抜けが含まれる可能性があります。気づいた点をご指摘いただければ、その都度修正します。"
@@ -213,6 +213,13 @@ def review_paragraph(text: str, citations: dict[str, str]) -> Markup:
     )
 
 
+def overview_paragraph(text: str, topics: dict[str, dict]) -> Markup:
+    return Markup("").join(
+        link(topics[part]["title"], topics[part]["url"]) if index % 2 else part
+        for index, part in enumerate(TOPIC_CITATION.split(text))
+    )
+
+
 def topic_link(snapshot: Snapshot, key: str, path: Path) -> dict:
     topic = snapshot.topics[key]
     child_count = sum(t.public and t.navigation.parent == key for t in snapshot.topics.values())
@@ -311,6 +318,12 @@ def index_page(snapshot: Snapshot) -> str:
     return TEMPLATES.get_template("index.html").render(
         **page_context(snapshot, Path(".")),
         title="テーマ別文献マップ",
+        overview=snapshot.overview.review if snapshot.overview is not None else [],
+        overview_topics={
+            key: topic_link(snapshot, key, Path("."))
+            for key, topic in snapshot.topics.items()
+            if topic.public
+        },
     )
 
 
@@ -329,6 +342,7 @@ TEMPLATES.globals.update(
     authors=authors_label,
     title_url=title_url,
     review_paragraph=review_paragraph,
+    overview_paragraph=overview_paragraph,
 )
 
 

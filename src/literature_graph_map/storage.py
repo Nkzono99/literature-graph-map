@@ -12,7 +12,7 @@ from urllib.parse import unquote
 
 import yaml
 
-from .models import Model, Topic, Work
+from .models import TOPIC_CITATION, Model, Overview, Topic, Work
 
 
 class MapError(Exception):
@@ -85,8 +85,18 @@ class Snapshot:
     works: dict[str, Work] = field(default_factory=dict)
     topics: dict[str, Topic] = field(default_factory=dict)
     paths: dict[str, Path] = field(default_factory=dict)
+    overview: Overview | None = None
 
     def validate(self) -> None:
+        if self.overview is not None:
+            Overview.model_validate(self.overview.model_dump())
+            for section in self.overview.review:
+                for paragraph in section.paragraphs:
+                    for key in TOPIC_CITATION.findall(paragraph):
+                        if key not in self.topics or not self.topics[key].public:
+                            raise MapError(
+                                f"overview.yaml: citation requires a public topic: {key}"
+                            )
         normalized_paths = [path.as_posix().casefold() for path in self.paths.values()]
         if len(set(normalized_paths)) != len(normalized_paths):
             raise MapError("topic paths must be unique")
@@ -156,6 +166,11 @@ class Snapshot:
 
     def source_files(self, repo: Path) -> dict[Path, str]:
         return {
+            **(
+                {repo / "overview.yaml": yaml_text(self.overview)}
+                if self.overview is not None
+                else {}
+            ),
             repo / "data" / "works.jsonl": "".join(
                 self.works[key].model_dump_json() + "\n" for key in sorted(self.works)
             ),
@@ -168,6 +183,9 @@ class Snapshot:
 
 def load(repo: Path) -> Snapshot:
     snapshot = Snapshot()
+    overview = inside(repo, repo / "overview.yaml")
+    if overview.is_file():
+        snapshot.overview = Overview.model_validate(read_yaml(overview))
     ledger = inside(repo, repo / "data" / "works.jsonl")
     if ledger.exists():
         for index, line in enumerate(ledger.read_text(encoding="utf-8-sig").splitlines(), 1):

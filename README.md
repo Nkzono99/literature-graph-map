@@ -22,6 +22,8 @@
 
 共通書誌は `data/works.jsonl`、要点・分類・関係は `topics/**/topic.yaml` が正本です。HTMLを生成して表示します。
 
+テーマ一覧の「テーマの概観」は `overview.yaml` に記録しています。本文の `[@topic:テーマID]` がテーマ名の引用リンクになり、関連する研究分野のページへ進めます。
+
 ```powershell
 uv sync
 uv run lgm lint

@@ -4,7 +4,21 @@
   <p class="eyebrow">LITERATURE LIBRARY</p>
   <h1>テーマ一覧</h1>
   <p class="lead">テーマごとに文献と要点を整理しています。概説の引用から、各文献を参照できます。</p>
+  {% if overview %}<div class="topic-meta"><a href="#review">テーマの概観へ <span aria-hidden="true">↓</span></a><a href="#themes">テーマを選ぶ <span aria-hidden="true">↓</span></a></div>{% endif %}
 </header>
+{% if overview %}
+<section id="review" aria-labelledby="review-heading">
+  <div class="section-heading"><h2 id="review-heading">テーマの概観</h2></div>
+  <div class="topic-review">
+    {% for section in overview %}
+    <section aria-labelledby="overview-section-{{ loop.index }}">
+      <h3 id="overview-section-{{ loop.index }}">{{ section.heading }}</h3>
+      {% for paragraph in section.paragraphs %}<p>{{ overview_paragraph(paragraph, overview_topics) }}</p>{% endfor %}
+    </section>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 <section aria-labelledby="themes">
   <div class="section-heading"><h2 id="themes">収録テーマ</h2><span>{{ topic_count }}件</span></div>
   <ul class="theme-tree">

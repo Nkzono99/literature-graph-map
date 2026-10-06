@@ -697,4 +697,9 @@ def test_import_cli_and_schemas(tmp_path, packet):
     assert main(common + ["import", str(path)]) == 0
     assert main(common + ["check", "--public"]) == 0
     assert main(["schema", "--output", str(tmp_path / "schemas")]) == 0
-    assert len(list((tmp_path / "schemas").glob("*.schema.json"))) == 3
+    assert {p.name for p in (tmp_path / "schemas").glob("*.schema.json")} == {
+        "work.schema.json",
+        "topic.schema.json",
+        "import.schema.json",
+        "overview.schema.json",
+    }

@@ -9,7 +9,7 @@ import yaml
 from pydantic import ValidationError
 
 from .lint import review_citation_gaps, summary_gaps
-from .models import ImportPacket, Topic, Work
+from .models import ImportPacket, Overview, Topic, Work
 from .operations import (
     add_seeds,
     commit,
@@ -104,7 +104,12 @@ def run(args: argparse.Namespace) -> int:
             output,
             {
                 output / f"{name}.schema.json": json_text(model.model_json_schema())
-                for name, model in (("work", Work), ("topic", Topic), ("import", ImportPacket))
+                for name, model in (
+                    ("work", Work),
+                    ("topic", Topic),
+                    ("import", ImportPacket),
+                    ("overview", Overview),
+                )
             },
         )
         print(f"JSON Schemaを生成: {output}")
@@ -183,7 +188,12 @@ def run(args: argparse.Namespace) -> int:
             # Include original YAML comments and hand-written public prose.
             paths = list((repo / "topics").rglob("README.md"))
             paths += list((repo / "topics").rglob("topic.yaml"))
-            paths += [repo / "data/works.jsonl", repo / "COPYRIGHT.md", repo / "LICENSE"]
+            paths += [
+                repo / "data/works.jsonl",
+                repo / "overview.yaml",
+                repo / "COPYRIGHT.md",
+                repo / "LICENSE",
+            ]
             for path in paths:
                 inside(repo, path)
                 if path.is_file():

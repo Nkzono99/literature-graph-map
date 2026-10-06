@@ -49,6 +49,7 @@ DOI = Annotated[str, AfterValidator(normalize_doi)]
 Text = Annotated[str, Field(min_length=1)]
 PaperID = Annotated[str, Field(pattern=r"^P[0-9]{6,}$")]
 PAPER_CITATION = re.compile(r"\[@(P[0-9]{6,})\]")
+TOPIC_CITATION = re.compile(r"\[@topic:([a-z0-9]+(?:-[a-z0-9]+)*)\]")
 VersionID = Annotated[str, Field(pattern=r"^V[A-Za-z0-9_-]+$")]
 TopicID = Annotated[str, Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")]
 RelationID = Annotated[str, Field(pattern=r"^R[0-9]{6,}$")]
@@ -267,6 +268,10 @@ class Survey(Model):
 class ReviewSection(Model):
     heading: Text
     paragraphs: list[Text] = Field(min_length=1)
+
+
+class Overview(Model):
+    review: list[ReviewSection] = Field(default_factory=list)
 
 
 class LineageStep(Model):

@@ -478,6 +478,7 @@ def public_snapshot(snapshot: Snapshot) -> Snapshot:
         topics[key] = topic
     papers = {paper for topic in topics.values() for paper in referenced_papers(topic)}
     result = Snapshot(
+        overview=copy.deepcopy(snapshot.overview),
         works={key: snapshot.works[key] for key in sorted(papers)},
         topics=topics,
         paths={key: snapshot.paths[key] for key in topics},

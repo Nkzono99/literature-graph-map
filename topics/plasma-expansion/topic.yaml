@@ -644,66 +644,296 @@ entries:
 - paper_id: P000223
   group: lunar-wake
   role: Windによる月ウェイク観測
+  summary:
+    question: 太陽風を遮る月の後方では、プラズマ密度がどのように低下し、周囲の太陽風がどのような流れでウェイク内の空洞を埋め直すのかを調べる。
+    method: 1994年12月27日、月の後方6.5月半径でウェイクを横断したWINDのSWE観測を用い、プラズマ密度とイオン流の変化を調べ、単純な膨張理論と比較した。
+    contribution: 空洞を満たす二つの低温イオン流を観測し、磁場方向の電場による加速と解釈した。密度は中心へ指数関数的に低下し、密度低下域は光学的な影を越え、希薄波の伝播と整合した。
+  evidence_by_item:
+    question:
+    - paper_id: P000223
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96GL01069
+      source_type: abstract
+      locator: Abstract, sentences 1, 3–5
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000223
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96GL01069
+      source_type: abstract
+      locator: Abstract, sentences 1–4
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000223
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96GL01069
+      source_type: abstract
+      locator: Abstract, sentences 4–7
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000224
   group: lunar-wake
   role: Lunar Prospectorの電子・磁場観測
+  summary:
+    question: 月の近傍に生じるプラズマウェイクで、磁場・電子密度・電子温度・電位はどのような空間構造をもち、その構造は太陽風条件や月の地殻磁場にどう依存するか。
+    method: Lunar Prospectorの磁場・電子分布観測と、Windによる太陽風条件の観測を組み合わせ、電子密度・温度・電位と磁場の構造を調べた。カッパ分布を用いた空洞へのプラズマ膨張解とも比較した。
+    contribution: ウェイク内の電子密度低下、電子温度上昇、境界をまたぐ電位降下を確認した。磁場構造は高度によって太陽風条件や地殻磁場に左右され、電子と磁場の分布はカッパ分布を用いた膨張解でよく記述された。
+  evidence_by_item:
+    question:
+    - paper_id: P000224
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000224
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
+      source_type: full_text
+      locator: §1 Introduction [6]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000224
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000224
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
+      source_type: full_text
+      locator: §2.1 Data Sources [8–9]; §2.3 Calculating Electron Parameters [13–15]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000224
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000231
   group: lunar-wake
   role: ARTEMISによるウェイクの三次元再構成
+  summary:
+    question: 月の背後にできるプラズマ希薄領域では、密度・温度・圧力・磁場・流れが三次元的にどう分布し、その構造が太陽風と惑星間磁場の条件にどう応答するかを調べる。
+    method: ARTEMISの2機で近傍太陽風とウェイクのプラズマ・磁場を同時測定した。約600回の通過で得た両者の差を座標系に合わせて集約し、ウェイクの三次元構造を再構成した。
+    contribution: 希薄化の波が高速MHD波の速度で外へ広がり、内向きのプラズマ流入が磁場を圧縮することを示した。磁場変動の大きさは下流距離、太陽風イオンβ、太陽風と惑星間磁場のなす角に依存した。
+  evidence_by_item:
+    question:
+    - paper_id: P000231
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
+      source_type: abstract
+      locator: Abstract, first paragraph
+      checked_at: '2026-10-06'
+    - paper_id: P000231
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
+      source_type: full_text
+      locator: Section 1 Introduction, final paragraph
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000231
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
+      source_type: abstract
+      locator: Abstract, first three sentences
+      checked_at: '2026-10-06'
+    - paper_id: P000231
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
+      source_type: full_text
+      locator: Section 2 Instrumentation and Reconstruction Method, first two paragraphs and spatial-bin reconstruction paragraphs
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000231
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
+      source_type: abstract
+      locator: Abstract, rarefaction-wave sentence, inward-flow sentence, and field-perturbation-dependence sentence
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000232
   group: lunar-wake
   role: ARTEMISの静電衝撃波観測
+  summary:
+    question: 月の両側からウェイク中心へ流入する超音速イオンビームにより、予測された静電衝撃波が生じ、電子加熱とイオン減速を引き起こすかを観測で調べる。
+    method: ARTEMISの2機がウェイク内と背景太陽風を同時に観測した事例を選び、電場・磁場、電子とイオンの速度分布、密度を解析し、磁力線沿いの流入モデルと照合した。
+    contribution: ウェイク中心付近で、下流へ向かう電位上昇、電子の磁力線方向の加熱、イオン減速と密度増加を伴う静電衝撃波の観測証拠を得た。別事例は衝撃波の散逸が進んだ段階と整合した。
+  evidence_by_item:
+    question:
+    - paper_id: P000232
+      version_id: V1
+      url: https://research.ssl.berkeley.edu/~poppe/papers/Liu_et_al_2025.pdf
+      source_type: abstract
+      locator: PDF p.1, Abstract, sentences describing predicted shocks and ARTEMIS observations
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000232
+      version_id: V1
+      url: https://research.ssl.berkeley.edu/~poppe/papers/Liu_et_al_2025.pdf
+      source_type: full_text
+      locator: PDF p.2, Section 2 (Data), paragraphs 1–3
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000232
+      version_id: V1
+      url: https://research.ssl.berkeley.edu/~poppe/papers/Liu_et_al_2025.pdf
+      source_type: abstract
+      locator: PDF p.1, Abstract, Event 1 and Event 2 descriptions
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000184
   group: lunar-wake
   role: PACEによる太陽風陽子の月面反射
+  summary:
+    question: 月面に到来する太陽風陽子の一部は反射されるのか。また、月面から戻った陽子は月周辺でどのように加速されるのかを調べる。
+    method: かぐやのMAP-PACEで、昼側の月面へ向かう太陽風イオンと月面から来るイオンを同時に測定した。エネルギー・方向・イオン種を比べ、磁場観測も合わせて解析した。
+    contribution: 太陽風陽子の0.1〜1％に相当する反射成分を検出した。一部が太陽風より高エネルギーになる観測を、太陽風の対流電場による加速で説明した。
+  evidence_by_item:
+    question:
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: full_text
+      locator: Section 2, Instrumentation [3]
+      checked_at: '2026-10-06'
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: full_text
+      locator: Section 3 [5]–[6]; Section 4 [7]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: full_text
+      locator: Section 3 [5]–[6]; Section 4 [7]–[8]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000186
   group: lunar-wake
   role: ウェイク内の陽子エネルギー変化
+  summary:
+    question: 月のすぐ後方、高度約100 kmの希薄な領域（ウェイク）へ太陽風陽子はどの向きに入り、南北で対になるエネルギーの増減は何によって生じるか。
+    method: かぐやのMAP-PACE/IMAとMAP-LMAGで陽子と磁場を観測し、ウェイク境界の内向き電場を含む粒子軌道計算と理論解析でエネルギー変化を調べた。
+    contribution: 磁場に垂直な陽子の侵入と、月の静止系での半球ごとのエネルギー増減を捉えた。粒子軌道計算は、磁場周りの旋回運動とウェイク境界の内向き電場でこの特徴を再現した。
+  evidence_by_item:
+    question:
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: abstract
+      locator: Abstract, paragraph [1]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: abstract
+      locator: Abstract, paragraph [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: full_text
+      locator: Section 2. Instrumentation, paragraph [3]; Section 4. Model Calculations, paragraphs [7]–[9]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: abstract
+      locator: Abstract, paragraph [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: full_text
+      locator: Section 4. Model Calculations, paragraph [9]; Section 5. Theoretical Interpretation, paragraphs [10]–[11]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000247
   group: lunar-wake
   role: Chandrayaan-2電波観測による密度ゆらぎ
+  summary:
+    question: 月が太陽風と地球磁気尾を通る際、地球―月間の視線に沿った電子密度ゆらぎのスペクトルはどう変わり、地磁気活動とどの程度対応するかを調べる。
+    method: Chandrayaan-2の双方向S帯の電波掩蔽観測から幾何学的ドップラー成分を除き、電子密度ゆらぎを反映する周波数残差を得た。2022年の54区間でパワースペクトルを求め、磁気圏境界モデルで環境を分類した。
+    contribution: 得られたスペクトル指数はイオン運動論・散逸スケールに対応した。磁気圏境界内と太陽風などの指数差は標本が限られ統計的に有意でなく、地磁気活動との測定可能な相関も見られなかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000247
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
+      source_type: abstract
+      locator: Abstract 第1段落・第3段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000247
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
+      source_type: abstract
+      locator: Abstract 第1段落・第2段落
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000247
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
+      source_type: abstract
+      locator: Abstract 第2段落・第3段落
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000262
   group: lunar-wake
   role: 電子位相空間密度からの電位推定
@@ -812,12 +1042,44 @@ entries:
 - paper_id: P000221
   group: crater-wakes
   role: 日夜境界の電場とダスト運動
+  summary:
+    question: 月の日夜境界のウェイクで、プラズマの密度と電子温度の変化が表面電場とダスト加速をどう変えるかを調べた。夜側向きのダストの説明も目指した。
+    method: 表面帯電モデルにウェイクの密度・電子温度変化を組み込んで電場を求め、付着力を無視して試験粒子の運動を計算した。アポロ17着陸地の地形による遮蔽も検討した。
+    contribution: モデルでは日夜境界の夜側で表面にほぼ垂直な電場が強まり、小粒子を加速した。地形の風下の局所ウェイクが、アポロ17のLEAMが捉えた夜側向きダストを説明しうると提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000221
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      source_type: abstract
+      locator: Abstract [1]; §1 Introduction [2]–[3]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000221
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      source_type: full_text
+      locator: §2 [6]; §3 [7], [12]; §4 [14], [16]–[17]（選択的本文読解）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000221
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000221
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      source_type: full_text
+      locator: §3 [10]–[13]; §4 [16]–[17]; §5 [18]（選択的本文読解）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000222
   group: crater-wakes
   role: 太陽嵐中のクレーター帯電
@@ -856,12 +1118,38 @@ entries:
 - paper_id: P000225
   group: crater-wakes
   role: 縦孔周囲の三次元粒子計算
+  summary:
+    question: 月の日照側にある深い縦孔では、鉛直壁が太陽風電子や光電子の流れを変えることで、孔底の電流収支と表面電位が孔外とどう異なるかを調べた。
+    method: 太陽風プラズマ、光電子、帯電した月面の相互作用を三次元の粒子シミュレーション（PIC法）で計算し、数十メートル規模の縦孔内外の帯電を比較した。
+    contribution: 壁への損失で太陽風電子の孔底への流入が減り、孔底と壁を結ぶ光電子電流が電流収支を変えると示した。日向と影の強い帯電差に加え、孔内外の日向同士にも電位差が生じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000225
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
+      source_type: abstract
+      locator: Abstract 第1〜4文：dayside、vertical holes、greater depth-to-diameter ratios、hole-bottom current balance
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000225
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
+      source_type: abstract
+      locator: Abstract 第1〜2文：solar wind plasma/photoelectrons/charged lunar surface、three-dimensional particle-in-cell simulations
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000225
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
+      source_type: abstract
+      locator: Abstract 第4〜5文：limited solar wind electron penetration due to loss at the wall、photoelectron current path、differential charging and potential difference
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000226
   group: crater-wakes
   role: 溶岩チューブ内の帯電実験
@@ -935,12 +1223,50 @@ entries:
 - paper_id: P000282
   group: crater-wakes
   role: 日夜境界・極域での準中性破れ
+  summary:
+    question: 月の日夜境界・極域に続くウェイクの縁で、電子とイオンの密度が等しいという準中性がどう崩れ、夜側表面の帯電をどう変えるかを調べる。
+    method: 空隙へのプラズマ膨張を一次元の静電粒子シミュレーション（PIC）で計算した。月面は直接置かず、想定した表面位置の電子・イオンを用いて電流収支から表面電位を推定した。
+    contribution: モデルでは電子がイオンに先行し、電子雲とイオン過剰域の間に定常的な電気二重層が形成された。通常の太陽風条件では、電子雲に接する夜側表面の電位は準中性を仮定した値より負になると推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: full_text
+      locator: 1. Introduction [4], [6]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: full_text
+      locator: 2. Simulation Description [7], [8], [10]; 4. Surface Potential [17]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: full_text
+      locator: 3. Results [13]; 4. Surface Potential [20]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000318
   role: イオンウェイク内の粒子電荷の実験
   summary:

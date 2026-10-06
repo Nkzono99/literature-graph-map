@@ -423,12 +423,38 @@ entries:
 - paper_id: P000178
   group: particles-and-potentials
   role: PACE・LMAGによる磁気リコネクションの候補
+  summary:
+    question: 月の地殻磁気異常の付近で、イオンの噴流を伴わず電子だけが加速される磁気リコネクションが起きるかを、低高度での直接観測から調べる。
+    method: 南極エイトケン磁気異常付近を高度29 kmで通過した「かぐや」の電子データを1秒分解能で解析し、電流シート内の電子・イオンの噴流と磁場構造を調べた。
+    contribution: 電流シートの通過時に、イオン噴流を伴わない電子噴流と磁束ロープを見いだした。月の磁気異常付近で電子のみの磁気リコネクションが起こる可能性を支持する観測例を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000178
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
+      source_type: abstract
+      locator: Abstract, sentence 1
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000178
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
+      source_type: abstract
+      locator: Abstract, sentences 2–3
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000178
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
+      source_type: abstract
+      locator: Abstract, sentences 3–5
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000274
   group: particles-and-potentials
   role: 複数磁気異常の中性原子による遮蔽比較
@@ -537,12 +563,38 @@ entries:
 - paper_id: P000275
   group: surface-and-global
   role: ミニ磁気圏の実験とスワール形成
+  summary:
+    question: 月面上のミニ磁気圏と小規模な無衝突衝撃波はどのように形成され、太陽風イオンの減速・偏向を通じて月面スワールの模様に関与しうるかを問う。
+    method: 衛星による現場観測データ、理論、実験室での検証を組み合わせ、電子慣性長と同程度のスケールで生じる無衝突衝撃波とミニ磁気圏の形成を調べた。
+    contribution: 電子慣性長と同程度の小規模な無衝突衝撃波とミニ磁気圏の形成機構を示した。太陽風イオンの減速・偏向が、月面スワールの形成に関与する可能性を提示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000275
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.109.081101
+      source_type: abstract
+      locator: Abstract, first and second sentences
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000275
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.109.081101
+      source_type: abstract
+      locator: Abstract, first and second sentences
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000275
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.109.081101
+      source_type: abstract
+      locator: Abstract, first and second sentences
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000288
   group: origin
   role: 月裏側試料によるダイナモ停止時期の制約

@@ -323,12 +323,38 @@ entries:
 - paper_id: P000249
   group: removal
   role: 月ダストの生成・物性・輸送の総説
+  summary:
+    question: 月ダストの生成と粒子の物性は、隕石衝突・静電力・ロケット噴流による輸送や探査機の設計条件にどう結びつくか。海・高地・永久影などの環境差も整理する。
+    method: Apollo試料分析と月面・軌道観測を統合する総説。熱伝導モデルと電荷緩和則で温度・日照依存性を整理し、付着力と表面近傍の電場を考慮したダスト輸送の解析式を示す。
+    contribution: 生成・組成・物性から輸送経路と地域別の設計値へつながる関係をまとめた。付着を考慮した離脱閾値と表面近傍の輸送高度の解析式を示し、着陸機・ローバーの工学評価に使える形にした。
+  evidence_by_item:
+    question:
+    - paper_id: P000249
+      version_id: V1
+      url: https://journals.aps.org/prresearch/abstract/10.1103/hn1p-nx25
+      source_type: abstract
+      locator: 'Abstract, opening passage and paragraph beginning The review links: lunar dust properties; production→grain properties→mobilization→region-specific design ranges'
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000249
+      version_id: V1
+      url: https://journals.aps.org/prresearch/abstract/10.1103/hn1p-nx25
+      source_type: abstract
+      locator: 'Abstract, paragraphs beginning We synthesize, We also incorporate and We quantify: Apollo/in situ/orbital datasets; two-channel k(T,ρ) model and charge-relaxation scaling'
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000249
+      version_id: V1
+      url: https://journals.aps.org/prresearch/abstract/10.1103/hn1p-nx25
+      source_type: abstract
+      locator: 'Abstract, paragraph beginning The review links and closing paragraph (We provide; The result): region-specific design ranges; adhesion-aware lift thresholds; near-surface apex/hover transport heights as functions of sheath structure'
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000256
   group: removal
   role: ダスト運動とレゴリス力学の総説
@@ -367,48 +393,178 @@ entries:
 - paper_id: P000257
   group: removal
   role: 受動的なダスト対策表面の比較
+  summary:
+    question: 月ダストの付着を抑える表面と、ダストにさらされても機能を保つ表面について、受動技術の性能・環境耐久性と月面条件での検証不足を比較整理する。
+    method: 2006〜2026年に報告された32種の受動表面技術をレビューした。厚み増加、製造性、複雑さ、環境耐久性、ダストとの相互作用の5項目で重み付き採点し、技術成熟度も整理した。
+    contribution: 付着抑制表面は高い除塵効果が報告される一方、高真空での検証が乏しく、耐ダスト表面も繰り返すダスト曝露による摩耗データが不足する。両者の組合せと複合環境試験を次の課題として示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000257
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526003292
+      source_type: abstract
+      locator: Abstract, opening three sentences
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000257
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526003292
+      source_type: abstract
+      locator: Abstract, sentences 2–4
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000257
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526003292
+      source_type: abstract
+      locator: Abstract, sentences 5–9
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000258
   group: removal
   role: ZnO薄膜と立体テクスチャの付着試験
+  summary:
+    question: ZnO超薄膜の厚さと階層的な立体形状を組み合わせると、月ダスト模擬物LHS-1の付着量と残留粒子の位置をどう制御できるかを調べた。
+    method: 二光子リソグラフィで作る立体形状と原子層堆積によるZnO膜を組み合わせ、膜厚と層間の回転角を変更した。空気中で20秒振動させた後の残留量を比較し、膜の成長状態を原子間力顕微鏡で確認した。
+    contribution: ZnO膜の連続化が、振動後の残留量が大幅に減る条件と対応した。同じZnO条件でも、立体形状に応じて粒子が縁・谷・稜線の間に残る違いを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000258
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526001335
+      source_type: abstract
+      locator: Abstract, 第2文・最終文
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000258
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526001335
+      source_type: abstract
+      locator: Abstract, 第2–4文・第6文
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000258
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526001335
+      source_type: abstract
+      locator: Abstract, 第5–7文
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000259
   group: removal
   role: 導電性ポリイミドによる付着低減
+  summary:
+    question: シリカと導電性添加剤を含むポリイミド被膜の表面特性を調整することで、月ダスト模擬粒子の付着・残留を低減できるかを調べた。
+    method: シリカや多層カーボンナノチューブを加えた被膜を作製し、ぬれ性・表面エネルギー・粗さ・導電率を測定した。模擬粒子の残留を傾斜試験と顕微鏡で評価した。
+    contribution: 導電性と超撥水性を備える被膜を得て、良好な試料では90度の傾斜後に模擬粒子の残留質量がわずかとなった。表面の微視的な残留被覆も少なく、付着抑制用の有望な配合を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000259
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0169433226000784
+      source_type: abstract
+      locator: Abstract, sentences 2–3; Highlights, bullets 1–3
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000259
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0169433226000784
+      source_type: abstract
+      locator: Highlights, bullets 1–3; Abstract, sentences 3–6
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000259
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0169433226000784
+      source_type: abstract
+      locator: Abstract, sentences 4–7
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000260
   group: removal
   role: UV併用の電気力学的除塵
+  summary:
+    question: 月面の太陽電池や光学機器を想定した静電進行波による除塵で、紫外線照射の条件が模擬レゴリスの帯電状態と除去効率にどう影響するかを調べる。
+    method: 真空中で粒径別の模擬レゴリスに紫外線を照射し、波長・強度・距離・照射面積・照射手順を変えて電気力学的除塵装置の除去率を比較した。光電流と表面電位も測定した。
+    contribution: 多くの試験条件で紫外線併用により除塵率が向上し、25μm未満の模擬粒子も95％以上除去できた。帯電には光電子放出・捕獲とイオン化ガスによる中和が関わった。
+  evidence_by_item:
+    question:
+    - paper_id: P000260
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576525009191
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000260
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576525009191
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000260
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576525009191
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000261
   group: removal
   role: 柔軟な電気力学的ダストシールド
+  summary:
+    question: 月面で曲面や折り曲げ可能な機器を守るため、柔軟な電気力学的ダストシールドは、電極材料・形状と表面の湾曲に応じてどの程度除塵できるか。
+    method: 誘電体被覆を備えた銅・ポリイミド製と、化学修飾した還元酸化グラフェン電極を用いた柔軟シールドを比較した。高真空・紫外線照射下で二相・三相の電極配置を試験し、数値計算で湾曲の影響を調べた。
+    contribution: 最適化した銅製は3 kV超で90％超の除塵率を達成した。無被覆のグラフェン系は微小放電で制約されたが、堆積塵より連続落塵の除去で高性能を示した。試験範囲の適度な湾曲による性能への影響は小さかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000261
+      version_id: V1
+      url: https://www.researchgate.net/publication/400786571_Flexible_electrodynamic_dust_shields_for_lunar_missions
+      source_type: abstract
+      locator: 掲載版 p.393, Abstract：柔軟性・耐久性・性能の不足と二系統のEDS評価
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000261
+      version_id: V1
+      url: https://www.researchgate.net/publication/400786571_Flexible_electrodynamic_dust_shields_for_lunar_missions
+      source_type: abstract
+      locator: 掲載版 p.393, Abstract：銅・ポリイミド、CMrGO電極、らせん・櫛形、二相・三相、高真空・UV照射、湾曲のシミュレーション
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000261
+      version_id: V1
+      url: https://www.researchgate.net/publication/400786571_Flexible_electrodynamic_dust_shields_for_lunar_missions
+      source_type: abstract
+      locator: 掲載版 p.393, Abstract：最適化した銅製で3 kV超・90％超、CMrGO系の無被覆・微小放電、堆積済み塵と連続落塵の差、適度な湾曲の小さな影響
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000332
   role: 氷の形態と走行・掘削性
   summary:

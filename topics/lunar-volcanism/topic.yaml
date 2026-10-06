@@ -92,12 +92,38 @@ entries:
 - paper_id: P000187
   group: chronology
   role: クレーター数に基づく年代尺度
+  summary:
+    question: 月のクレーター径と個数の分布から衝突天体の集団と衝突史をどう復元し、月の年代尺度を火星などの地球型惑星に展開できるかを検討した。
+    method: 月のクレーターの大きさ別頻度から衝突天体のサイズ分布を推定し、小惑星の観測と比較した。放射年代の解釈とクレーター分布を改良して既存の月年代モデルを再検討した。
+    contribution: 衝突天体のサイズ分布は主帯小惑星に近く、過去40億年間で比較的安定していたと推定した。月のクレーター年代モデルを統合し、他の地球型惑星の年代推定の基準を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000187
+      version_id: V1
+      url: https://link.springer.com/article/10.1023/A:1011989004263
+      source_type: abstract
+      locator: Abstract、第1・3段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000187
+      version_id: V1
+      url: https://link.springer.com/article/10.1023/A:1011989004263
+      source_type: abstract
+      locator: Abstract、第1〜3段落
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000187
+      version_id: V1
+      url: https://link.springer.com/article/10.1023/A:1011989004263
+      source_type: abstract
+      locator: Abstract、第1〜3段落
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000181
   group: chronology
   role: LRSによる海の地下層序
@@ -136,12 +162,38 @@ entries:
 - paper_id: P000246
   group: volatiles
   role: 水と爆発的火山活動
+  summary:
+    question: 月の爆発的噴火を駆動する水・一酸化炭素・水素の役割は何か。気泡の成長や地殻内でのマグマの一時滞留は、噴火の爆発性にどう影響するか。
+    method: 気泡成長とマグマ上昇を連成したモデルで、炭素・水素を含む揮発性成分の影響を計算した。破砕時の水含有量を月の火山ガラスや火砕堆積物からの推定値と比較した。
+    contribution: 計算では水が主な駆動源となり、水約500 ppm以上・CO約20 ppm以下で浅部の脱ガスと気泡成長が破砕を起こした。深さ約17 km以内での一時滞留も爆発性に有利と示唆された。
+  evidence_by_item:
+    question:
+    - paper_id: P000246
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009318
+      source_type: abstract
+      locator: Abstract、第3–4文（水と気泡の役割）、第8文（地殻内の一時滞留）
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000246
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009318
+      source_type: abstract
+      locator: Abstract、第5–6文（連成モデルと水含有量の整合）；Plain Language Summary、第3文（C・Hを含む揮発性成分の評価）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000246
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009318
+      source_type: abstract
+      locator: Abstract、第5文（水が主な駆動源）、第7文（水≳500 ppm・CO≲20 ppm、数百mの浅部での脱ガス・気泡成長と破砕）、第8文（深さ≲17 kmでの一時滞留）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000289
   group: reservoirs
   role: 大型楯状火山と浅部マグマ貯留域

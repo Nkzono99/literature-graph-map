@@ -731,39 +731,143 @@ entries:
 - paper_id: P000243
   group: lunar-materials
   role: 月試料の光電子・二次電子放出
+  summary:
+    question: 月面試料の光電子・二次電子放出の収率とエネルギー分布はどのような特徴を持ち、月面上の光電子シースの電気的性質をどう見積もれるか。
+    method: Apollo 14・15のダスト試料に光子と電子を入射させ、放出収率と低エネルギー電子の分布を測定した。太陽照射下の光電子束を導き、オージェ電子分光で元素組成を調べた。
+    contribution: 測定した電子放出特性から、太陽照射下の光電子束と月面光電子シースの電気的性質を見積もった。試料の測定結果は、主として絶縁性を持つ細粒粉体としての挙動と整合した。
+  evidence_by_item:
+    question:
+    - paper_id: P000243
+      version_id: V1
+      url: https://link.springer.com/chapter/10.1007/978-94-010-2647-5_25
+      source_type: abstract
+      locator: Abstract、第1段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000243
+      version_id: V1
+      url: https://link.springer.com/chapter/10.1007/978-94-010-2647-5_25
+      source_type: abstract
+      locator: Abstract、第1・第2段落
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000243
+      version_id: V1
+      url: https://link.springer.com/chapter/10.1007/978-94-010-2647-5_25
+      source_type: abstract
+      locator: Abstract、第1段落第2文・第2段落末尾
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000248
   group: plasma-applications
   role: エネルギー依存SEEとRF放電密度
+  summary:
+    question: 容量結合型アルゴン放電で、入射粒子のエネルギーに依存する二次電子放出は、電子加熱と密度増幅をどう変えるか。とくに二周波駆動での増幅機構を調べた。
+    method: 二次電子の放出係数を入射イオン・電子のエネルギーに応じて変える二次元PIC計算を行い、駆動位相ごとのエネルギー分布と電流密度から電子の生成・輸送を解析した。
+    contribution: 一方の電極でイオン衝撃により生じた高エネルギー電子が、対向電極で電子衝撃による二次電子放出を誘発する。二周波駆動ではこの帰還が電離を強め、電子密度を非線形に増幅することを計算で示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000248
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1002/ppap.70232
+      source_type: abstract
+      locator: ABSTRACT, paragraph 1, sentences 1–2
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000248
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1002/ppap.70232
+      source_type: abstract
+      locator: ABSTRACT, paragraph 1, sentences 1–2; paragraph 2, sentence 1
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000248
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1002/ppap.70232
+      source_type: abstract
+      locator: ABSTRACT, paragraph 1, sentence 2; paragraph 2, sentences 1–2
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000250
   group: grain-recapture
   role: 斜入射電子ビームによる方向性輸送
+  summary:
+    question: 固体表面上のダストに浅い角度で電子ビームを当てたとき、粒子はどちらへ移動するか。二次電子放出率と、ビームに面する側・陰になる側の帯電差との関係を調べた。
+    method: 固体表面上のダストに電子ビームを浅い角度で照射し、二次電子放出率が1を上回る条件と下回る条件での移動を実験で比較した。結果を粒子セル法によるシミュレーションと照合した。
+    contribution: 二次電子放出率が1を上回ると粒子はビームと逆向きに移動し、著者は陰側の帯電量が大きくなることによる反発力で説明した。1を下回ると両側の電位が近づき、移動方向はランダムになった。
+  evidence_by_item:
+    question:
+    - paper_id: P000250
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/c8nd-1lxg
+      source_type: abstract
+      locator: Abstract、第1段落（行90）：斜入射電子ビーム下の固体表面上のダスト移動と、ビームに面する側・陰側の非対称帯電
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000250
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/c8nd-1lxg
+      source_type: abstract
+      locator: Abstract、第1・第3段落（行90、92）：実験、二次電子放出率による条件区分、末文の粒子セル法シミュレーションとの比較
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000250
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/c8nd-1lxg
+      source_type: abstract
+      locator: Abstract、第1–第3段落（行90–92）：放出率1超で逆向き移動、陰側の大きい帯電量と反発力、1未満で両側の類似電位とランダム方向
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000271
   group: sheath-feedback
   role: 強いSEEが励起するシース不安定性
+  summary:
+    question: 高エネルギーの一次電子が壁から強い二次電子放出を起こすと、プラズマと壁の間のシースがなぜ不安定になるのかを問う。
+    method: 二次電子放出の電子エネルギー依存性と、シース内での電子温度の変化を考慮するシース理論により、不安定性の発生を解析した。
+    contribution: 強い二次電子放出下のシース不安定性は、放出のエネルギー依存性とシース内の電子温度変化によって生じることを理論的に示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000271
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/d513-74fc
+      source_type: abstract
+      locator: Abstract, sentences 3–4
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000271
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/d513-74fc
+      source_type: abstract
+      locator: Abstract, sentences 4–5
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000271
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/d513-74fc
+      source_type: abstract
+      locator: Abstract, sentence 4
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000317
   role: 斜長石粒子の電荷と速度
   summary:

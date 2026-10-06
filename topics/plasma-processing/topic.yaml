@@ -538,21 +538,73 @@ entries:
 - paper_id: P000245
   group: resource-processing
   role: フッ素系プラズマによる酸素抽出
+  summary:
+    question: 月の海の土壌を模したレゴリスにSF6またはC4F8プラズマを当てると、どの鉱物が反応し、酸素を含む気体がどのような機構で放出されるか。
+    method: SF6・C4F8で処理した月の海の模擬レゴリスを、エネルギー分散型X線分析像、X線回折、X線光電子分光で調べ、元素分布と結晶・表面状態を比較した。
+    contribution: SF6は主に斜長岩成分に反応し、表面のフッ化物層形成が示唆された。C4F8の反応は同成分に限られず、両者の酸素抽出は半導体用SiO2エッチングの機構と整合した。
+  evidence_by_item:
+    question:
+    - paper_id: P000245
+      version_id: V1
+      url: https://www.nature.com/articles/s41598-026-67891-2
+      source_type: abstract
+      locator: Abstract、第1文
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000245
+      version_id: V1
+      url: https://www.nature.com/articles/s41598-026-67891-2
+      source_type: abstract
+      locator: Abstract、第1文
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000245
+      version_id: V1
+      url: https://www.nature.com/articles/s41598-026-67891-2
+      source_type: abstract
+      locator: Abstract、第2〜5文
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000248
   group: reactor-models
   role: エネルギー依存SEEとRF放電密度
+  summary:
+    question: 容量結合型アルゴン放電で、入射粒子のエネルギーに依存する二次電子放出は、電子加熱と密度増幅をどう変えるか。とくに二周波駆動での増幅機構を調べた。
+    method: 二次電子の放出係数を入射イオン・電子のエネルギーに応じて変える二次元PIC計算を行い、駆動位相ごとのエネルギー分布と電流密度から電子の生成・輸送を解析した。
+    contribution: 一方の電極でイオン衝撃により生じた高エネルギー電子が、対向電極で電子衝撃による二次電子放出を誘発する。二周波駆動ではこの帰還が電離を強め、電子密度を非線形に増幅することを計算で示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000248
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1002/ppap.70232
+      source_type: abstract
+      locator: ABSTRACT, paragraph 1, sentences 1–2
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000248
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1002/ppap.70232
+      source_type: abstract
+      locator: ABSTRACT, paragraph 1, sentences 1–2; paragraph 2, sentence 1
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000248
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1002/ppap.70232
+      source_type: abstract
+      locator: ABSTRACT, paragraph 1, sentence 2; paragraph 2, sentences 1–2
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 relations: []
 view:
   sort:

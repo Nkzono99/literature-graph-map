@@ -29,21 +29,85 @@ entries:
 - paper_id: P000168
   group: mission
   role: かぐやのミッション・観測装置
+  summary:
+    question: 月の起源・進化と月面環境を調べるため、かぐやはどのような観測構成を採用し、ミッション終了時点で何を明らかにしたか。
+    method: 主衛星と2機の子衛星で月全体を観測し、15の実験・観測から元素・鉱物・地形・地下構造・重力・磁場・プラズマの情報を組み合わせた。
+    contribution: 観測装置と研究目的を対応づけ、純粋斜長岩、地下反射面、裏側重力場、全球地形の確認、地殻厚と火山活動年代の再推定、太陽風相互作用などの初期成果を整理した。
+  evidence_by_item:
+    question:
+    - paper_id: P000168
+      version_id: V1
+      url: https://doi.org/10.1007/s11214-010-9678-3
+      source_type: full_text
+      locator: PDF pp.9、12–13；§§3.1、4–5
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000168
+      version_id: V1
+      url: https://doi.org/10.1007/s11214-010-9678-3
+      source_type: full_text
+      locator: PDF pp.3–9；§§2.1–2.2、3.1；Tables 1–2, Figures 3–4
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000168
+      version_id: V1
+      url: https://doi.org/10.1007/s11214-010-9678-3
+      source_type: full_text
+      locator: PDF pp.10–13；§§3.2–3.7、5–6；especially §6 initial-result list
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000276
   group: mission
   role: LRSの装置・観測方法
+  summary:
+    question: 月の地下層構造や太陽風と月の相互作用を調べるため、かぐや搭載LRSでどのようなレーダー探査と自然波観測を行うか。
+    method: 4～6 MHzのレーダーによる地下探査と、自然電波・プラズマ波の受動観測を行い、LRSの装置設計・運用と初期成果を整理した。
+    contribution: 月の表側の海で深さ数百mの反射面を検出し、玄武岩に覆われた埋没レゴリス層と解釈した。地球・木星の電波も捉え、月の後流境界を含む電子密度分布を推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000276
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s11214-010-9673-8
+      source_type: abstract
+      locator: Abstract, paragraphs 1 and 3
+      checked_at: '2026-10-06'
+    - paper_id: P000276
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s11214-010-9673-8
+      source_type: full_text
+      locator: Section 1 Introduction, p.148 (PDF file page 4), LRS purposes (1)–(3)
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000276
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s11214-010-9673-8
+      source_type: abstract
+      locator: Abstract, paragraphs 1 and 3
+      checked_at: '2026-10-06'
+    - paper_id: P000276
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s11214-010-9673-8
+      source_type: full_text
+      locator: Section 1 Introduction, p.150 (PDF file page 6), 4–6 MHz range and final paragraph introducing paper sections
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000276
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s11214-010-9673-8
+      source_type: abstract
+      locator: Abstract, paragraphs 2 and 4; published PDF pp.145–146 (PDF file pages 1–2)
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000169
   group: geodesy
   role: LALT｜全球地形
@@ -222,30 +286,126 @@ entries:
 - paper_id: P000173
   group: geology
   role: SPによるかんらん石と深部物質の候補
+  summary:
+    question: 月面のかんらん石露出はどこに分布し、その一部が衝突盆地が形成された際に掘り出されたマントル物質である可能性はあるか。全球分布と起源を調べた。
+    method: かぐや搭載のスペクトルプロファイラで月面を全球調査し、反射スペクトルからかんらん石の露出を探した。放射伝達モデルで盆地周辺の露出物の起源を検討した。
+    contribution: 地殻の薄い南極エイトケン、雨の海、モスクワの海の各盆地周辺に多くの露出を見いだした。一部は上部マントル起源と示唆されるが、マグネシウムに富む下部地殻の深成岩起源も候補に残る。
+  evidence_by_item:
+    question:
+    - paper_id: P000173
+      version_id: V1
+      url: https://www.nature.com/articles/ngeo897
+      source_type: abstract
+      locator: Abstract 第1文（月マントル組成・構造・進化の制約不足）、第4–7文（全球調査と起源）
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000173
+      version_id: V1
+      url: https://www.nature.com/articles/ngeo897
+      source_type: abstract
+      locator: Abstract 第4文（Spectral Profiler による月面全球調査）、第7文（radiative transfer modelling）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000173
+      version_id: V1
+      url: https://www.nature.com/articles/ngeo897
+      source_type: abstract
+      locator: Abstract 第5–7文（South Pole-Aitken、Imbrium、Moscoviense 盆地周辺の露出、二つの起源候補、一部の上部マントル起源）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000174
   group: geology
   role: SPアーカイブによるイルメナイト分布
+  summary:
+    question: 月面でイルメナイトに富むスペクトルを示す領域はどこに分布し、どのような地質や火砕堆積物と結びつくのかを調べた。
+    method: かぐやのスペクトルプロファイラ（SP）データから、1・2 µm帯のイルメナイト特有の反射特徴を持つ地点を抽出した。多波長画像と地形モデルで各地点の地質を調べた。
+    contribution: 該当領域は月表側の衝突盆地周縁に集中し、多くが高地を覆う火砕堆積物にあった。長石質高地や南極エイトケン盆地では検出されず、TiO₂に富む海の玄武岩の分布とも一致しなかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000174
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JE008663
+      source_type: abstract
+      locator: Abstract, sentence 1
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000174
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JE008663
+      source_type: abstract
+      locator: Abstract, sentences 2 and 4
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000174
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JE008663
+      source_type: abstract
+      locator: Abstract, sentences 3, 4 and 6
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000175
   group: geology
   role: GRSによるウランとU/Th比
+  summary:
+    question: 月面のウランは全球でどのように分布し、トリウムとの量比（U/Th比）は地域によって変わるのか。月の裏側の高地が組成的に均一かを調べた。
+    method: かぐやのガンマ線分光計でウラン由来の線を識別し、その強度から月面のウラン分布図を作成した。トリウムの分布と比較して、U/Th比の地域差を調べた。
+    contribution: 月全体のウラン分布図を初めて作成した。裏側ではU/Th比に有意な地域差が見られ、高地の組成が従来考えられたほど均一ではないことを示唆した。
+  evidence_by_item:
+    question:
+    - paper_id: P000175
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000175
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      source_type: full_text
+      locator: 1. Introduction [2]–[3]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000175
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000175
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      source_type: full_text
+      locator: 2. Observation and Analysis [5]–[7]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000175
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000175
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      source_type: full_text
+      locator: 3.2. Relative Distributions of U and Th [12]–[13]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000176
   group: geology
   role: LRSと表面散乱計算による地下エコー探索
@@ -424,84 +584,378 @@ entries:
 - paper_id: P000277
   group: calibration
   role: 観測機器間の放射輝度比較
+  summary:
+    question: 空間・分光分解能や観測時の照明条件が異なる、かぐやとチャンドラヤーン1号の光学機器は、月面の放射輝度をどこまで一致して測定するか。
+    method: 2008～2009年の両衛星の放射輝度データを機器間で相互検証し、較正用に系統的に取得した地上望遠鏡の観測データとも比較した。
+    contribution: 月物質の全体的なスペクトル特性は機器間で一致したが、小さな系統差が残った。着陸地点の遠隔観測輝度は持ち帰り土壌の室内測定からの推定値より低く、著者らは表層の微細構造の再現困難さを主因とした。
+  evidence_by_item:
+    question:
+    - paper_id: P000277
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513003096
+      source_type: abstract
+      locator: Abstract, sentences 1–3
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000277
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513003096
+      source_type: abstract
+      locator: Abstract, sentences 1 and 3
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000277
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513003096
+      source_type: abstract
+      locator: Abstract, sentences 5–7
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000278
   group: calibration
   role: 観測幾何と測光補正
+  summary:
+    question: かぐやとチャンドラヤーン1号の月面反射スペクトルに見られる違いは、観測時の照明条件を補正する測光モデルの違いによって、どこまで説明できるか。
+    method: M³とSPで使う測光モデルの位相関数を比較し、かぐやのMI・TCと地上のROLOも含む反射スペクトルの相違を調べた。
+    contribution: 位相角20〜75度では補正はよく一致し、小位相角の差には観測角度や地形の扱いが関わる可能性を示した。SPの急なスペクトル勾配とM³の低い反射率は補正の違いでは説明できず、解釈時の注意点となる。
+  evidence_by_item:
+    question:
+    - paper_id: P000278
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
+      source_type: abstract
+      locator: Abstract, sentences 1–2
+      checked_at: '2026-10-06'
+    - paper_id: P000278
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
+      source_type: full_text
+      locator: Introduction, paragraph 2
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000278
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
+      source_type: abstract
+      locator: Abstract, sentence 2
+      checked_at: '2026-10-06'
+    - paper_id: P000278
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
+      source_type: full_text
+      locator: Introduction, paragraph 3
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000278
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
+      source_type: abstract
+      locator: Abstract, sentences 3–10
+      checked_at: '2026-10-06'
+    - paper_id: P000278
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
+      source_type: abstract
+      locator: Highlights, bullets 2–5
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000279
   group: calibration
   role: MI・SP・M³の反射スペクトル比較
+  summary:
+    question: かぐやとチャンドラヤーン1号の月面反射率データは、観測条件や較正の違いを含めてどこまで一致し、組成推定に合わせて利用できるか。
+    method: 両衛星の5機器と地上望遠鏡のデータについて、放射輝度から反射率への変換手順と各データの特徴を整理し、異なる機器の反射スペクトルを比較した。
+    contribution: 絶対反射率には一部で小さな差が残る一方、スペクトル形状は機器間で対応し、複数機器のデータを組み合わせて各地質領域の組成を推定できることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000279
+      version_id: V1
+      url: https://okayama.elsevierpure.com/en/publications/one-moon-many-measurements-3-spectral-reflectance/
+      source_type: abstract
+      locator: Abstract、第1文
+      checked_at: '2026-10-06'
+    - paper_id: P000279
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002108
+      source_type: abstract
+      locator: Abstract、第1文
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000279
+      version_id: V1
+      url: https://okayama.elsevierpure.com/en/publications/one-moon-many-measurements-3-spectral-reflectance/
+      source_type: abstract
+      locator: Abstract、第2文
+      checked_at: '2026-10-06'
+    - paper_id: P000279
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002108
+      source_type: abstract
+      locator: Abstract、第2文
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000279
+      version_id: V1
+      url: https://okayama.elsevierpure.com/en/publications/one-moon-many-measurements-3-spectral-reflectance/
+      source_type: abstract
+      locator: Abstract、第3文
+      checked_at: '2026-10-06'
+    - paper_id: P000279
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002108
+      source_type: abstract
+      locator: Abstract、第3文
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000280
   group: calibration
   role: SPによる日陰の水氷粒子候補
+  summary:
+    question: 月の水の捕獲・拡散過程を理解するため、極域の永久影に限らず、さまざまな緯度・地方時の影で水氷が存在するか、その分布にどんな変化があるかを調べた。
+    method: かぐやのSPが取得した可視〜近赤外スペクトルを60領域の影で解析し、1.25・1.5 μmの吸収を評価した。氷粒子の大きさと量はスペクトルシミュレーションで推定した。
+    contribution: 多様な緯度の影で水氷を示す吸収を検出し、明暗境界に近づくほど1.5 μm吸収が強まった。氷は表面の霜層か浮遊粒子と解釈され、緯度方向の粒径・量の傾向はノイズのため未確定だった。
+  evidence_by_item:
+    question:
+    - paper_id: P000280
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X24004977
+      source_type: abstract
+      locator: Abstract, sentences 1–3（出版版PDF p.1）
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000280
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X24004977
+      source_type: abstract
+      locator: Abstract, sentences 3–7（出版版PDF p.1）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000280
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X24004977
+      source_type: abstract
+      locator: Abstract, sentences 5–10（出版版PDF p.1）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000177
   group: plasma
   role: PACEによる地球起源酸素の輸送
+  summary:
+    question: 月の金属に含まれる酸素同位体のうち、酸素16に乏しい成分はどこから来たのか。地球の生物活動に由来する酸素が、磁気圏を通じて月へ届くかを調べた。
+    method: かぐやが観測した酸素イオンのエネルギーと、月が地球のプラズマシート内にある条件を比較した。金属への侵入深さと地球上層大気の酸素同位体の特徴も合わせて検討した。
+    contribution: 月がプラズマシート内にあるときだけ、1〜10 keVの酸素イオンを多数検出した。地球起源の酸素が月の表土の浅部へ注入され、酸素16に乏しい成分の供給源になると解釈した。
+  evidence_by_item:
+    question:
+    - paper_id: P000177
+      version_id: V1
+      url: https://www.natureasia.com/ja-jp/natastron/abstracts/83526
+      source_type: abstract
+      locator: Research Abstract、英語要旨第1〜2文
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000177
+      version_id: V1
+      url: https://www.natureasia.com/ja-jp/natastron/abstracts/83526
+      source_type: abstract
+      locator: Research Abstract、英語要旨第3〜4文
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000177
+      version_id: V1
+      url: https://www.natureasia.com/ja-jp/natastron/abstracts/83526
+      source_type: abstract
+      locator: Research Abstract、英語要旨第3〜4文
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000178
   group: plasma
   role: PACE・LMAGによる磁気リコネクションの候補
+  summary:
+    question: 月の地殻磁気異常の付近で、イオンの噴流を伴わず電子だけが加速される磁気リコネクションが起きるかを、低高度での直接観測から調べる。
+    method: 南極エイトケン磁気異常付近を高度29 kmで通過した「かぐや」の電子データを1秒分解能で解析し、電流シート内の電子・イオンの噴流と磁場構造を調べた。
+    contribution: 電流シートの通過時に、イオン噴流を伴わない電子噴流と磁束ロープを見いだした。月の磁気異常付近で電子のみの磁気リコネクションが起こる可能性を支持する観測例を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000178
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
+      source_type: abstract
+      locator: Abstract, sentence 1
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000178
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
+      source_type: abstract
+      locator: Abstract, sentences 2–3
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000178
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
+      source_type: abstract
+      locator: Abstract, sentences 3–5
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000179
   group: plasma
   role: PACEによるC・N・Oイオンの日変化
+  summary:
+    question: 月外気圏の炭素・窒素・酸素イオンの組成と日変化はどのようで、供給源と生成機構をどこまで特定できるかを調べた。
+    method: かぐやのイオン質量分析器の観測でC+・N+・O+を分離し、C+/O+比とN+/O+比の時間変化や昼夜差を解析した。
+    contribution: イオン比の日変化から、窒素に富む供給源と窒素を含まないCO・CO2成分を示唆した。日中の主な生成過程を太陽風が窒素に富む月面物質を叩き出す作用と解釈し、流星雨直後のC+/O+比変化も報告した。
+  evidence_by_item:
+    question:
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: abstract
+      locator: Abstract, first three sentences
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: abstract
+      locator: Abstract, Kaguya ion mass analyser sentence
+      checked_at: '2026-10-06'
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: full_text
+      locator: Extended Data Fig. 2 caption
+      checked_at: '2026-10-06'
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: full_text
+      locator: Fig. 2 title; Extended Data Fig. 1 caption
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: abstract
+      locator: Abstract, C+/O+ and N+/O+ variations, sources and daytime mechanism sentences
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000184
   group: plasma
   role: PACE｜太陽風陽子の月面反射
+  summary:
+    question: 月面に到来する太陽風陽子の一部は反射されるのか。また、月面から戻った陽子は月周辺でどのように加速されるのかを調べる。
+    method: かぐやのMAP-PACEで、昼側の月面へ向かう太陽風イオンと月面から来るイオンを同時に測定した。エネルギー・方向・イオン種を比べ、磁場観測も合わせて解析した。
+    contribution: 太陽風陽子の0.1〜1％に相当する反射成分を検出した。一部が太陽風より高エネルギーになる観測を、太陽風の対流電場による加速で説明した。
+  evidence_by_item:
+    question:
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: full_text
+      locator: Section 2, Instrumentation [3]
+      checked_at: '2026-10-06'
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: full_text
+      locator: Section 3 [5]–[6]; Section 4 [7]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: full_text
+      locator: Section 3 [5]–[6]; Section 4 [7]–[8]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000185
   group: plasma
   role: PACE・IMA｜月起源イオン
+  summary:
+    question: 月周回軌道で測定した低エネルギーイオンは月面・外気圏に由来するのか、どの元素のイオンが含まれるのかを調べる。
+    method: かぐや搭載のイオンエネルギー質量分析器MAP-PACE IMAを用い、高度100 kmで低エネルギーイオンを観測して質量成分を調べた。
+    contribution: 月面・外気圏起源のイオンを検出し、少なくともHe⁺、C⁺、O⁺、Na⁺、K⁺を同定した。Na・Kに加えて、He・C・Oの月外気圏の存在を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000185
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009GL038185
+      source_type: abstract
+      locator: Abstract [1], first two sentences and origin/species result
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000185
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009GL038185
+      source_type: abstract
+      locator: Abstract [1], MAP-PACE IMA and 100-km-altitude observation sentence
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000185
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009GL038185
+      source_type: abstract
+      locator: Abstract [1], final two sentences
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000103
   group: plasma
   role: PACE｜昼側散乱から夜側への陽子輸送
@@ -541,12 +995,50 @@ entries:
 - paper_id: P000186
   group: plasma
   role: PACE｜ウェイク内の陽子エネルギー変化
+  summary:
+    question: 月のすぐ後方、高度約100 kmの希薄な領域（ウェイク）へ太陽風陽子はどの向きに入り、南北で対になるエネルギーの増減は何によって生じるか。
+    method: かぐやのMAP-PACE/IMAとMAP-LMAGで陽子と磁場を観測し、ウェイク境界の内向き電場を含む粒子軌道計算と理論解析でエネルギー変化を調べた。
+    contribution: 磁場に垂直な陽子の侵入と、月の静止系での半球ごとのエネルギー増減を捉えた。粒子軌道計算は、磁場周りの旋回運動とウェイク境界の内向き電場でこの特徴を再現した。
+  evidence_by_item:
+    question:
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: abstract
+      locator: Abstract, paragraph [1]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: abstract
+      locator: Abstract, paragraph [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: full_text
+      locator: Section 2. Instrumentation, paragraph [3]; Section 4. Model Calculations, paragraphs [7]–[9]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: abstract
+      locator: Abstract, paragraph [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: full_text
+      locator: Section 4. Model Calculations, paragraph [9]; Section 5. Theoretical Interpretation, paragraphs [10]–[11]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000107
   group: plasma
   role: 月表面の磁場モデル

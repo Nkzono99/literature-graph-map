@@ -24,21 +24,73 @@ entries:
 - paper_id: P000187
   group: chronology
   role: クレーター数に基づく年代尺度
+  summary:
+    question: 月のクレーター径と個数の分布から衝突天体の集団と衝突史をどう復元し、月の年代尺度を火星などの地球型惑星に展開できるかを検討した。
+    method: 月のクレーターの大きさ別頻度から衝突天体のサイズ分布を推定し、小惑星の観測と比較した。放射年代の解釈とクレーター分布を改良して既存の月年代モデルを再検討した。
+    contribution: 衝突天体のサイズ分布は主帯小惑星に近く、過去40億年間で比較的安定していたと推定した。月のクレーター年代モデルを統合し、他の地球型惑星の年代推定の基準を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000187
+      version_id: V1
+      url: https://link.springer.com/article/10.1023/A:1011989004263
+      source_type: abstract
+      locator: Abstract、第1・3段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000187
+      version_id: V1
+      url: https://link.springer.com/article/10.1023/A:1011989004263
+      source_type: abstract
+      locator: Abstract、第1〜3段落
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000187
+      version_id: V1
+      url: https://link.springer.com/article/10.1023/A:1011989004263
+      source_type: abstract
+      locator: Abstract、第1〜3段落
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000188
   group: catalogs
   role: LOLAによる大型クレーター全球分布
+  summary:
+    question: 月全体の大型クレーターの分布と大きさの統計から、地表の再形成履歴や衝突天体集団の変化をどこまで区別できるかを調べる。
+    method: 高分解能の月面高度観測を用い、直径20 km以上の衝突クレーターを全球でカタログ化した。分布と集団特性を解析し、高地・海・主要盆地を比較した。
+    contribution: 最もクレーターが密集する高地の飽和と、盆地形成による周囲の既存クレーター集団の変化を示した。海形成前後の集団差は、二つの衝突天体集団の交代がオリエンターレ盆地形成期付近に起きたという仮説を支持する。
+  evidence_by_item:
+    question:
+    - paper_id: P000188
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/20847265/
+      source_type: abstract
+      locator: Abstract, sentences 1, 3–5
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000188
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/20847265/
+      source_type: abstract
+      locator: Abstract, sentence 1; sentences 2, 4–5 identify compared terrains and basins
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000188
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/20847265/
+      source_type: abstract
+      locator: Abstract, sentences 2–3 and 5
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000191
   group: catalogs
   role: 1〜2 km以上の全球クレーター台帳
@@ -77,12 +129,56 @@ entries:
 - paper_id: P000189
   group: renewal
   role: LROC時系列画像による衝突と表層更新
+  summary:
+    question: 現在の月面でクレーターはどの頻度で形成され、衝突直後の噴流や遠方まで飛ぶ放出物は表層のレゴリスをどのように更新するか。
+    method: 月探査機LROの狭角カメラLROC NACが撮影した衝突前後の画像対を比較し、新しいクレーターと周囲の反射率変化、二次衝突の痕跡を調べた。
+    contribution: 直径10 m以上の新生クレーターは標準モデルの予測より多かった。周囲の反射率変化を地表に沿う噴流の痕跡と解釈し、二次衝突が表層2 cmを従来モデルより速く攪拌すると推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000189
+      version_id: V1
+      url: https://www.nature.com/articles/nature19829
+      source_type: abstract
+      locator: Abstract、第4文（questions still remainからregolithまで）
+      checked_at: '2026-10-06'
+    - paper_id: P000189
+      version_id: V1
+      url: https://experts.azregents.edu/en/publications/quantifying-crater-production-and-regolith-overturn-on-the-moon-w/
+      source_type: abstract
+      locator: Abstract、第2段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000189
+      version_id: V1
+      url: https://www.nature.com/articles/nature19829
+      source_type: abstract
+      locator: Abstract、第5文（Here we useからregolithまで）
+      checked_at: '2026-10-06'
+    - paper_id: P000189
+      version_id: V1
+      url: https://experts.azregents.edu/en/publications/quantifying-crater-production-and-regolith-overturn-on-the-moon-w/
+      source_type: abstract
+      locator: Abstract、第3段落
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000189
+      version_id: V1
+      url: https://www.nature.com/articles/nature19829
+      source_type: abstract
+      locator: Abstract、第6〜8文（From this temporal datasetから末尾）
+      checked_at: '2026-10-06'
+    - paper_id: P000189
+      version_id: V1
+      url: https://experts.azregents.edu/en/publications/quantifying-crater-production-and-regolith-overturn-on-the-moon-w/
+      source_type: abstract
+      locator: Abstract、第4〜5段落
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000190
   group: renewal
   role: 二次クレーターと噴出岩塊の寸法

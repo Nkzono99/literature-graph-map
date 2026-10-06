@@ -700,21 +700,73 @@ entries:
 - paper_id: P000233
   group: properties
   role: 軌道運動制限による捕集理論の起点
+  summary:
+    question: 電離した低圧気体中の球形・円筒形電極が捕集する電流は、粒子の速度分布と電極電位にどう依存するか。電流と電圧の関係から速度分布を求められるかを調べる。
+    method: シース内での荷電粒子と気体分子の衝突を無視し、軌道運動から捕集電流の一般式を導いた。等速で平行に進む流れ、等速で方向がランダムな分布、マクスウェル分布とそのドリフト付き分布について計算した。
+    contribution: シース半径が電極半径より十分大きいと、電流はシース半径にほぼ依存しないと示した。小さな球形・円筒形電極の電流と電圧の関係から、粒子の速度分布を求める式を与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000233
+      version_id: V1
+      url: https://journals.aps.org/pr/abstract/10.1103/PhysRev.28.727
+      source_type: abstract
+      locator: Abstract、第1段落および『Orbital Motion』段落の速度分布を電流と電圧の関係から求める記述
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000233
+      version_id: V1
+      url: https://journals.aps.org/pr/abstract/10.1103/PhysRev.28.727
+      source_type: abstract
+      locator: Abstract、第1段落の低圧・無衝突条件および『Orbital Motion』段落の一般式と(A)–(D)の計算対象
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000233
+      version_id: V1
+      url: https://journals.aps.org/pr/abstract/10.1103/PhysRev.28.727
+      source_type: abstract
+      locator: Abstract、『Orbital Motion』段落のシース半径への依存が小さくなる条件、および球・円筒の電流と電圧の関係から速度分布を求める一般式の記述
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000237
   group: properties
   role: 離散的な流入による電荷ゆらぎ
+  summary:
+    question: プラズマ中のダスト粒子が電子・イオンを一個ずつ吸収すると、平衡電荷の周囲でどれほどのゆらぎが生じ、粒子の大きさによりどう変わるかを調べた。
+    method: 粒子の電位に依存する捕集確率をモデル化し、電子・イオンを一個ずつ吸収する数値計算で電荷の時系列・スペクトル・分布を求めた。電子放出は含めない。
+    contribution: 相対的な電荷ゆらぎの実効値は平均電荷数の絶対値の平方根に反比例し、小さい粒子ほど大きかった。極小粒子は電子放出がなくても中性や正電荷に変動しうる。
+  evidence_by_item:
+    question:
+    - paper_id: P000237
+      version_id: V1
+      url: https://dusty.physics.uiowa.edu/~goree/papers/cui_IEEE_94_fluctuations_charge.pdf
+      source_type: abstract
+      locator: PDF file p.1 / printed p.151, Abstract
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000237
+      version_id: V1
+      url: https://dusty.physics.uiowa.edu/~goree/papers/cui_IEEE_94_fluctuations_charge.pdf
+      source_type: abstract
+      locator: PDF file p.1 / printed p.151, Abstract
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000237
+      version_id: V1
+      url: https://dusty.physics.uiowa.edu/~goree/papers/cui_IEEE_94_fluctuations_charge.pdf
+      source_type: abstract
+      locator: PDF file p.1 / printed p.151, Abstract
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000238
   group: properties
   role: 粒子電荷の平均と分散
@@ -753,30 +805,126 @@ entries:
 - paper_id: P000239
   group: properties
   role: 凝集体の見通しを考慮した帯電
+  summary:
+    question: プラズマ中で成長するミクロンサイズのフラクタルダスト凝集体について、形状に応じた電荷分布が同符号の粒子どうしの凝集にどう影響するかを調べた。
+    method: 粒子軌道を直線とみなし、凝集体内の粒子に遮られる電子・イオンの入射を除外するOML–LOSモデルで、総電荷と双極子モーメントを計算した。
+    contribution: 凝集体の電位が下がり、同符号粒子でも凝集が進みうることをモデル計算で示した。総電荷と双極子モーメントは、衝突時の電荷保存を仮定する計算より一般に小さかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000239
+      version_id: Vpre
+      url: https://arxiv.org/abs/0707.3816
+      source_type: abstract
+      locator: Abstract、第1段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000239
+      version_id: Vpre
+      url: https://arxiv.org/abs/0707.3816
+      source_type: abstract
+      locator: Abstract、第2段落（OML理論の修正、LOS、電荷・双極子）
+      checked_at: '2026-10-06'
+    - paper_id: P000239
+      version_id: Vpre
+      url: https://arxiv.org/pdf/0707.3816
+      source_type: full_text
+      locator: PDF p.2, II.B Line of Sight Approximation（冒頭）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000239
+      version_id: Vpre
+      url: https://arxiv.org/abs/0707.3816
+      source_type: abstract
+      locator: Abstract、最終文
+      checked_at: '2026-10-06'
+    - paper_id: P000239
+      version_id: Vpre
+      url: https://arxiv.org/pdf/0707.3816
+      source_type: full_text
+      locator: PDF p.2, III. RESULTS（冒頭）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
-    version_id: V1
+    level: abstract
+    version_id: Vpre
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-06'
     recheck: true
 - paper_id: P000240
   group: properties
   role: 凝集体の帯電と電子放出
+  summary:
+    question: 宇宙空間の不規則なダスト凝集体では、二次電子放出や光電子放出を含む帯電が、同じ質量の球形粒子とどう異なり、構造から推定できるかを調べた。
+    method: 太陽系の帯電環境を想定した三次元数値モデルに、プラズマ粒子の収集、二次電子放出、紫外線による光電子放出を組み込み、凝集体の平衡電荷を計算した。
+    contribution: 凝集体の平衡電荷は同質量の球形粒子と大きく異なり、環境ごとに構造特性から推定できた。ナノ粒子からなるミクロン級凝集体では、二次電子放出の小粒子効果も重要だった。
+  evidence_by_item:
+    question:
+    - paper_id: P000240
+      version_id: Varxiv2
+      url: https://arxiv.org/abs/1210.0459v2
+      source_type: abstract
+      locator: Abstract：球形粒子の従来仮定と不規則な凝集体の説明、および平衡電荷と構造特性について述べる部分
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000240
+      version_id: Varxiv2
+      url: https://arxiv.org/abs/1210.0459v2
+      source_type: abstract
+      locator: Abstract：一次プラズマ電流、二次電子放出、光電子放出を含めて検討すると述べる部分
+      checked_at: '2026-10-06'
+    - paper_id: P000240
+      version_id: Varxiv2
+      url: https://arxiv.org/pdf/1210.0459v2
+      source_type: full_text
+      locator: PDFファイルp.5、§1 Introduction 最終段落；p.6、§2 Charging Model 冒頭
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000240
+      version_id: Varxiv2
+      url: https://arxiv.org/abs/1210.0459v2
+      source_type: abstract
+      locator: Abstract：平衡電荷の球形粒子との差、環境と構造特性からの推定、ナノ粒子からなるミクロン級凝集体の小粒子効果について述べる末尾3文
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
-    version_id: V1
+    level: abstract
+    version_id: Varxiv2
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-06'
     recheck: true
 - paper_id: P000241
   group: properties
   role: 凝集体の確率的帯電
+  summary:
+    question: 微小粒子や希薄なプラズマでは、電子・イオンを一個ずつ受け取る際の電荷ゆらぎが、凝集体の電荷統計と成長後の形状にどう影響するかを調べる。
+    method: 凝集体表面への電子・イオンの捕集を離散的な確率過程として扱う数値帯電モデルを構築し、粒子運動モデルと連成して凝集体の成長を計算する。
+    contribution: 電荷の平均と標準偏差は等価半径の球と同じ傾向を示すが、予測値からのばらつきは凝集体で大きい。電荷ゆらぎの時間尺度が粒子の運動に影響する環境では、一定電荷の場合より細長い糸状の凝集体が形成されやすかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000241
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.053207
+      source_type: abstract
+      locator: Abstract, paragraphs 1–2
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000241
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.053207
+      source_type: abstract
+      locator: Abstract, paragraphs 2–3
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000241
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.053207
+      source_type: abstract
+      locator: Abstract, paragraphs 2–3
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000242
   group: properties
   role: 不規則形状粒子の電荷測定
@@ -815,84 +963,366 @@ entries:
 - paper_id: P000243
   group: properties
   role: 月試料の光電子・二次電子放出
+  summary:
+    question: 月面試料の光電子・二次電子放出の収率とエネルギー分布はどのような特徴を持ち、月面上の光電子シースの電気的性質をどう見積もれるか。
+    method: Apollo 14・15のダスト試料に光子と電子を入射させ、放出収率と低エネルギー電子の分布を測定した。太陽照射下の光電子束を導き、オージェ電子分光で元素組成を調べた。
+    contribution: 測定した電子放出特性から、太陽照射下の光電子束と月面光電子シースの電気的性質を見積もった。試料の測定結果は、主として絶縁性を持つ細粒粉体としての挙動と整合した。
+  evidence_by_item:
+    question:
+    - paper_id: P000243
+      version_id: V1
+      url: https://link.springer.com/chapter/10.1007/978-94-010-2647-5_25
+      source_type: abstract
+      locator: Abstract、第1段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000243
+      version_id: V1
+      url: https://link.springer.com/chapter/10.1007/978-94-010-2647-5_25
+      source_type: abstract
+      locator: Abstract、第1・第2段落
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000243
+      version_id: V1
+      url: https://link.springer.com/chapter/10.1007/978-94-010-2647-5_25
+      source_type: abstract
+      locator: Abstract、第1段落第2文・第2段落末尾
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000254
   group: properties
   role: 模擬レゴリス粒子同士の摩擦帯電
+  summary:
+    question: 月模擬レゴリスJSC-1では、粒子同士の接触だけで帯電が起こるか。また、粒径の違いが帯電の正負にどう関係するかを調べる。
+    method: 試料を75〜500 μmにふるい分け、容器壁との接触を避ける窒素流動床で混合した。帯電粒子を正負別に静電回収し、粒径分布を比較した。
+    contribution: ふるい分けた試料では、小さい粒子が負、大きい粒子が正に帯電する傾向を確認した。粒子同士の接触による粒径依存の電荷分離を月模擬レゴリスで示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000254
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009JA014559
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000254
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009JA014559
+      source_type: full_text
+      locator: §1 Introduction [4]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000254
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009JA014559
+      source_type: full_text
+      locator: §2 Experimental Method [5]; §3 Discussion and Results [6–7]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000254
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009JA014559
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000254
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009JA014559
+      source_type: full_text
+      locator: §3 Discussion and Results [8,11]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000255
   group: properties
   role: 模擬粒子と異種材料の接触帯電
+  summary:
+    question: 月・火星のレゴリス模擬粒子は、異なる材料の表面との接触でどの程度帯電するか。接触面の仕事関数、粒径、円板の振動回数が電荷に与える影響を調べる。
+    method: 真空中で月模擬土JSC-1と火星模擬土JSC-Mars-1を金属・シリカガラスの円板に接触させ、円板の振動で穴から落下させた粒子の電荷をファラデーカップで測定した。
+    contribution: 電荷の大きさは粒径と円板の反復振動で増え、平均電荷は接触面の仕事関数に線形に依存したが、酸化金属では依存性が見られなかった。外挿した有効仕事関数は月模擬土で5.8 eV、火星模擬土で5.6 eVだった。
+  evidence_by_item:
+    question:
+    - paper_id: P000255
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2002JE001897
+      source_type: abstract
+      locator: Abstract [1] 第1〜3文（レゴリス粒子の接触帯電とJSC-1・JSC-Mars-1を対象とする実験）、第7〜9文（調査した依存性）
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000255
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2002JE001897
+      source_type: abstract
+      locator: Abstract [1] 第4〜6文（既知の仕事関数を持つ金属・シリカガラス、真空中の円板、振動とファラデーカップ）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000255
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2002JE001897
+      source_type: abstract
+      locator: Abstract [1] 第7〜11文（粒径・反復振動・仕事関数への依存、酸化金属面、外挿による有効仕事関数）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000265
   group: properties
   role: 真空中の単粒子光帯電
+  summary:
+    question: 真空中のダストは、自らの光電子放出と近くの表面からの光電子の取り込みによって、どのような電荷を得るのかを調べた。
+    method: 亜鉛・銅・黒鉛・ガラスの単粒子を紫外線中と、照射したジルコニウム板の近くへ落とし、ファラデーカップで電荷分布を測定した。
+    contribution: 亜鉛・銅・黒鉛は単独照射で正、光電子を出す面の近くで負に帯電した。ガラスでは初期の摩擦帯電とみられる電荷が残り、光照射だけでは平衡電荷に達しなかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000265
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.84.6034
+      source_type: abstract
+      locator: Abstract, sentence 1
+      checked_at: '2026-10-06'
+    - paper_id: P000265
+      version_id: V1
+      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      source_type: full_text
+      locator: PDF p. 1 / printed p. 6034, paragraph beginning “We have performed experiments”
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000265
+      version_id: V1
+      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      source_type: full_text
+      locator: PDF pp. 1–2 / printed pp. 6034–6035, experimental setup and ultraviolet illumination paragraphs, Fig. 1
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000265
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.84.6034
+      source_type: abstract
+      locator: Abstract, sentences 2–3
+      checked_at: '2026-10-06'
+    - paper_id: P000265
+      version_id: V1
+      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      source_type: full_text
+      locator: PDF pp. 2–3 / printed pp. 6035–6036, conductor photoemission and sheath experiments paragraphs
+      checked_at: '2026-10-06'
+    - paper_id: P000265
+      version_id: V1
+      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      source_type: full_text
+      locator: PDF p. 4 / printed p. 6037, “The data for glass” paragraph and Fig. 6
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000266
   group: properties
   role: 光帯電と摩擦帯電の実験比較
+  summary:
+    question: 惑星表面から放出される単一ダスト粒子の帯電は、粒子自身の光電子放出、表面からの光電子の捕集、摩擦帯電でどう異なり、材質にどう依存するか。
+    method: 月・火星レゴリス模擬材を含む直径90〜106 μmの導電性・非導電性粒子を用い、紫外線照射、光電子放出面の近傍での落下、初期摩擦帯電の電位を実験で比較した。
+    contribution: 孤立した導電性粒子は紫外線で正電位、光電子放出面の近傍では負電位となった。非導電性粒子は光電子放出が弱く初期摩擦帯電が大きいため、ケイ酸塩模擬レゴリスでは摩擦帯電が支配的になりうる。
+  evidence_by_item:
+    question:
+    - paper_id: P000266
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000JA000364
+      source_type: abstract
+      locator: Abstract, first and final paragraphs
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000266
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000JA000364
+      source_type: abstract
+      locator: Abstract, paragraphs 1–3
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000266
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000JA000364
+      source_type: abstract
+      locator: Abstract, paragraphs 2–4
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000208
   group: mechanisms
   role: 月ダストの付着・凝集機構
+  summary:
+    question: 月面ダストの粒子間の凝集と異種材料への付着には、どの相互作用が働くか。粒径や帯電状態、ケイ酸塩主体の組成との関係を既刊研究から検討した。
+    method: 米国と旧ソ連の既刊研究をレビューし、月土壌の物理特性と組成、Apolloでのダスト障害を比較整理した。ファンデルワールス力・静電力・Lewis酸塩基相互作用から付着と凝集を考察した。
+    contribution: 月ダストではLewis酸塩基相互作用が重要と論じた。異種材料への付着は粒径で支配力が変わり、正帯電を想定する議論では、事前帯電すると粒径によらず静電力が優勢になると提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000208
+      version_id: V1
+      url: https://www.tandfonline.com/doi/abs/10.1163/156856195X00932
+      source_type: abstract
+      locator: Abstract：月土壌の組成、凝集・付着の相互作用、異種材料との付着、粒径と事前帯電についての記述
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000208
+      version_id: V1
+      url: https://www.tandfonline.com/doi/abs/10.1163/156856195X00932
+      source_type: abstract
+      locator: Abstract冒頭：米国・旧ソ連の多数の刊行物を用いたレビュー、Apolloでの障害、物理特性の比較と酸性・塩基性成分の整理
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000208
+      version_id: V1
+      url: https://www.tandfonline.com/doi/abs/10.1163/156856195X00932
+      source_type: abstract
+      locator: Abstract：ケイ酸塩とLewis酸塩基相互作用の記述、ファンデルワールス・静電相互作用の粒径依存性、事前帯電時に粒径によらず静電相互作用が優勢とする記述
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000209
   group: mechanisms
   role: 月ダスト付着の技術報告
+  summary:
+    question: 月面環境で微細なダストが機器などの表面に付着するとき、どの力が支配的になり、その強さは粒径・帯電状態・表面条件によってどう変わるのか。
+    method: 月ダストの物性と既存の付着研究を概説し、表面エネルギーに由来する力と帯電粒子が誘起する鏡像力の粒径依存性を比較した。測定法と除去法も検討した。
+    contribution: 接触後の付着ではファンデルワールス力などと静電的な鏡像力が有力と整理した。両者の相対的重要性は電荷と粒径の関係に左右され、表面の粗さや真空下の表面エネルギーが予測の不確かさを増す。
+  evidence_by_item:
+    question:
+    - paper_id: P000209
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20070020448/downloads/20070020448.pdf
+      source_type: abstract
+      locator: PDF file page 5 (printed p. 1), Abstract, opening scope and charge/size/surface-energy discussion
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000209
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20070020448/downloads/20070020448.pdf
+      source_type: abstract
+      locator: PDF file page 5 (printed p. 1), Abstract, review scope, charge/size scaling and closing measurement/model/removal discussion
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000209
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20070020448/downloads/20070020448.pdf
+      source_type: abstract
+      locator: PDF file page 5 (printed p. 1), Abstract, surface-energy and static-image forces; charge-size dependence and roughness/vacuum uncertainties
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000210
   group: mechanisms
   role: 遠心法による模擬粒子の付着測定
+  summary:
+    question: 月土壌模擬試料BHLD1000の微粒子は宇宙機材料にどの程度強く付着し、理論モデルの付着力と実験値はどの程度一致するか。
+    method: ファンデルワールス力・静電力・毛管力を含むモデルを作り、BHLD1000と4種類の宇宙機材料の付着を、地上の遠心法と画像処理で測定した。
+    contribution: 付着粒子の大きさは数µm、平均付着力は数nNで、理論値より約3桁小さかった。著者はこの差を粒子の不規則な形状と表面粗さで説明した。
+  evidence_by_item:
+    question:
+    - paper_id: P000210
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0032063322001210
+      source_type: abstract
+      locator: 'Abstract: theoretical model, BHLD1000 and four types of aerospace functional surfaces'
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000210
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0032063322001210
+      source_type: abstract
+      locator: 'Abstract: forces in model and centrifugal technique with image processing; Highlights, final bullet: laboratory environment'
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000210
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0032063322001210
+      source_type: abstract
+      locator: 'Abstract: particle size, average adhesion force, comparison with theoretical value and explanation'
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000211
   group: mechanisms
   role: 真空・UV条件を含む付着試験
+  summary:
+    question: 月面で使う材料への模擬月ダストの付着は、真空中の紫外線照射でどう変わるか。回転による粒子の離脱から、材料ごとの付着の強さを半定量的に評価する試験法を検証した。
+    method: 45 µm未満のJSC-1/1Aを、未処理・陽極酸化・Z93P塗装のアルミニウムとOrtho布に付着させた。真空中でUV照射の有無を変え、回転加速度を段階的に上げながら画像からダスト被覆率の変化を調べた。
+    contribution: 高い回転加速度では、未処理・陽極酸化アルミニウムの付着はUV照射時に弱まった。一方、Z93P塗装アルミニウムとOrtho布ではUV照射時に残留ダストが増え、照射の影響が材料によって逆になると示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000211
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S009457652200340X
+      source_type: abstract
+      locator: Abstract冒頭：月面用途材料へのJSC-1/1Aの付着を半定量測定する装置の設計と、高真空・UV条件での粒子離脱
+      checked_at: '2026-10-06'
+    - paper_id: P000211
+      version_id: V1
+      url: https://www.researchgate.net/publication/361942611_Adhesion_of_lunar_simulant_dust_to_materials_under_simulated_lunar_environment_conditions
+      source_type: abstract
+      locator: 著者公開出版版p.25 Abstract冒頭（公開ページlines 37、128–139）
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000211
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S009457652200340X
+      source_type: abstract
+      locator: Abstract：45 µm未満の模擬ダスト、4材料、12段階の加速度プロファイル、カメラによる被覆率記録と後処理
+      checked_at: '2026-10-06'
+    - paper_id: P000211
+      version_id: V1
+      url: https://www.researchgate.net/publication/361942611_Adhesion_of_lunar_simulant_dust_to_materials_under_simulated_lunar_environment_conditions
+      source_type: abstract
+      locator: 著者公開出版版p.25 Abstract（公開ページlines 37–38、128–146）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000211
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S009457652200340X
+      source_type: abstract
+      locator: Abstract結果：高い加速度でbare/anodized aluminumは真空のみの方が高付着、Z93P painted aluminum/Ortho fabricはUV照射で多くのダストを保持
+      checked_at: '2026-10-06'
+    - paper_id: P000211
+      version_id: V1
+      url: https://www.researchgate.net/publication/361942611_Adhesion_of_lunar_simulant_dust_to_materials_under_simulated_lunar_environment_conditions
+      source_type: abstract
+      locator: 著者公開出版版p.25 Abstract結果（公開ページlines 39、152–157）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000215
   group: mechanisms
   role: 光帯電と外部電場による離脱
@@ -1007,75 +1437,289 @@ entries:
 - paper_id: P000250
   group: mechanisms
   role: 斜入射電子ビームによる方向性輸送
+  summary:
+    question: 固体表面上のダストに浅い角度で電子ビームを当てたとき、粒子はどちらへ移動するか。二次電子放出率と、ビームに面する側・陰になる側の帯電差との関係を調べた。
+    method: 固体表面上のダストに電子ビームを浅い角度で照射し、二次電子放出率が1を上回る条件と下回る条件での移動を実験で比較した。結果を粒子セル法によるシミュレーションと照合した。
+    contribution: 二次電子放出率が1を上回ると粒子はビームと逆向きに移動し、著者は陰側の帯電量が大きくなることによる反発力で説明した。1を下回ると両側の電位が近づき、移動方向はランダムになった。
+  evidence_by_item:
+    question:
+    - paper_id: P000250
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/c8nd-1lxg
+      source_type: abstract
+      locator: Abstract、第1段落（行90）：斜入射電子ビーム下の固体表面上のダスト移動と、ビームに面する側・陰側の非対称帯電
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000250
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/c8nd-1lxg
+      source_type: abstract
+      locator: Abstract、第1・第3段落（行90、92）：実験、二次電子放出率による条件区分、末文の粒子セル法シミュレーションとの比較
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000250
+      version_id: V1
+      url: https://journals.aps.org/pre/abstract/10.1103/c8nd-1lxg
+      source_type: abstract
+      locator: Abstract、第1–第3段落（行90–92）：放出率1超で逆向き移動、陰側の大きい帯電量と反発力、1未満で両側の類似電位とランダム方向
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000257
   group: mechanisms
   role: 受動的なダスト対策表面の比較
+  summary:
+    question: 月ダストの付着を抑える表面と、ダストにさらされても機能を保つ表面について、受動技術の性能・環境耐久性と月面条件での検証不足を比較整理する。
+    method: 2006〜2026年に報告された32種の受動表面技術をレビューした。厚み増加、製造性、複雑さ、環境耐久性、ダストとの相互作用の5項目で重み付き採点し、技術成熟度も整理した。
+    contribution: 付着抑制表面は高い除塵効果が報告される一方、高真空での検証が乏しく、耐ダスト表面も繰り返すダスト曝露による摩耗データが不足する。両者の組合せと複合環境試験を次の課題として示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000257
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526003292
+      source_type: abstract
+      locator: Abstract, opening three sentences
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000257
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526003292
+      source_type: abstract
+      locator: Abstract, sentences 2–4
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000257
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526003292
+      source_type: abstract
+      locator: Abstract, sentences 5–9
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000258
   group: mechanisms
   role: ZnO薄膜と立体テクスチャの付着試験
+  summary:
+    question: ZnO超薄膜の厚さと階層的な立体形状を組み合わせると、月ダスト模擬物LHS-1の付着量と残留粒子の位置をどう制御できるかを調べた。
+    method: 二光子リソグラフィで作る立体形状と原子層堆積によるZnO膜を組み合わせ、膜厚と層間の回転角を変更した。空気中で20秒振動させた後の残留量を比較し、膜の成長状態を原子間力顕微鏡で確認した。
+    contribution: ZnO膜の連続化が、振動後の残留量が大幅に減る条件と対応した。同じZnO条件でも、立体形状に応じて粒子が縁・谷・稜線の間に残る違いを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000258
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526001335
+      source_type: abstract
+      locator: Abstract, 第2文・最終文
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000258
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526001335
+      source_type: abstract
+      locator: Abstract, 第2–4文・第6文
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000258
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0094576526001335
+      source_type: abstract
+      locator: Abstract, 第5–7文
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000259
   group: mechanisms
   role: 導電性ポリイミドによる付着低減
+  summary:
+    question: シリカと導電性添加剤を含むポリイミド被膜の表面特性を調整することで、月ダスト模擬粒子の付着・残留を低減できるかを調べた。
+    method: シリカや多層カーボンナノチューブを加えた被膜を作製し、ぬれ性・表面エネルギー・粗さ・導電率を測定した。模擬粒子の残留を傾斜試験と顕微鏡で評価した。
+    contribution: 導電性と超撥水性を備える被膜を得て、良好な試料では90度の傾斜後に模擬粒子の残留質量がわずかとなった。表面の微視的な残留被覆も少なく、付着抑制用の有望な配合を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000259
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0169433226000784
+      source_type: abstract
+      locator: Abstract, sentences 2–3; Highlights, bullets 1–3
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000259
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0169433226000784
+      source_type: abstract
+      locator: Highlights, bullets 1–3; Abstract, sentences 3–6
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000259
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0169433226000784
+      source_type: abstract
+      locator: Abstract, sentences 4–7
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000260
   group: mechanisms
   role: UV併用の電気力学的除塵
+  summary:
+    question: 月面の太陽電池や光学機器を想定した静電進行波による除塵で、紫外線照射の条件が模擬レゴリスの帯電状態と除去効率にどう影響するかを調べる。
+    method: 真空中で粒径別の模擬レゴリスに紫外線を照射し、波長・強度・距離・照射面積・照射手順を変えて電気力学的除塵装置の除去率を比較した。光電流と表面電位も測定した。
+    contribution: 多くの試験条件で紫外線併用により除塵率が向上し、25μm未満の模擬粒子も95％以上除去できた。帯電には光電子放出・捕獲とイオン化ガスによる中和が関わった。
+  evidence_by_item:
+    question:
+    - paper_id: P000260
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576525009191
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000260
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576525009191
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000260
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576525009191
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000217
   group: transport
   role: 離脱後の打ち上げ速度の評価
+  summary:
+    question: 日照下の月面で、光電帯電による微小領域の電場の揺らぎは付着力と重力を越えてダストを離脱させ、離脱直後にどの程度の速度を与えるか。
+    method: 微小領域の平均電荷と分散の時間発展から電場の揺らぎを求め、粒子運動と結合した。光電子放出・回収、レゴリスの実測粒径分布、典型的な太陽風プラズマをモデルに組み込んだ。
+    contribution: モデル解析では、強い局所電場の揺らぎがサブミクロン粒子を離脱させ、数m/sの初速を与える可能性を示した。離脱速度を電荷の統計的揺らぎから見積もる枠組みを提示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000217
+      version_id: V1
+      url: https://academic.oup.com/mnras/article-abstract/519/1/85/6843616
+      source_type: abstract
+      locator: ABSTRACT, paragraphs 1–2 (HTML lines 65–66)
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000217
+      version_id: V1
+      url: https://academic.oup.com/mnras/article-abstract/519/1/85/6843616
+      source_type: abstract
+      locator: ABSTRACT, paragraphs 1–2 (HTML lines 65–66)
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000217
+      version_id: V1
+      url: https://academic.oup.com/mnras/article-abstract/519/1/85/6843616
+      source_type: abstract
+      locator: ABSTRACT, paragraph 3 (HTML line 67); paragraph 2 (HTML line 66)
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000221
   group: transport
   role: 日夜境界の電場とダスト運動
+  summary:
+    question: 月の日夜境界のウェイクで、プラズマの密度と電子温度の変化が表面電場とダスト加速をどう変えるかを調べた。夜側向きのダストの説明も目指した。
+    method: 表面帯電モデルにウェイクの密度・電子温度変化を組み込んで電場を求め、付着力を無視して試験粒子の運動を計算した。アポロ17着陸地の地形による遮蔽も検討した。
+    contribution: モデルでは日夜境界の夜側で表面にほぼ垂直な電場が強まり、小粒子を加速した。地形の風下の局所ウェイクが、アポロ17のLEAMが捉えた夜側向きダストを説明しうると提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000221
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      source_type: abstract
+      locator: Abstract [1]; §1 Introduction [2]–[3]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000221
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      source_type: full_text
+      locator: §2 [6]; §3 [7], [12]; §4 [14], [16]–[17]（選択的本文読解）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000221
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000221
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      source_type: full_text
+      locator: §3 [10]–[13]; §4 [16]–[17]; §5 [18]（選択的本文読解）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000249
   group: transport
   role: 月ダストの生成・物性・輸送の総説
+  summary:
+    question: 月ダストの生成と粒子の物性は、隕石衝突・静電力・ロケット噴流による輸送や探査機の設計条件にどう結びつくか。海・高地・永久影などの環境差も整理する。
+    method: Apollo試料分析と月面・軌道観測を統合する総説。熱伝導モデルと電荷緩和則で温度・日照依存性を整理し、付着力と表面近傍の電場を考慮したダスト輸送の解析式を示す。
+    contribution: 生成・組成・物性から輸送経路と地域別の設計値へつながる関係をまとめた。付着を考慮した離脱閾値と表面近傍の輸送高度の解析式を示し、着陸機・ローバーの工学評価に使える形にした。
+  evidence_by_item:
+    question:
+    - paper_id: P000249
+      version_id: V1
+      url: https://journals.aps.org/prresearch/abstract/10.1103/hn1p-nx25
+      source_type: abstract
+      locator: 'Abstract, opening passage and paragraph beginning The review links: lunar dust properties; production→grain properties→mobilization→region-specific design ranges'
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000249
+      version_id: V1
+      url: https://journals.aps.org/prresearch/abstract/10.1103/hn1p-nx25
+      source_type: abstract
+      locator: 'Abstract, paragraphs beginning We synthesize, We also incorporate and We quantify: Apollo/in situ/orbital datasets; two-channel k(T,ρ) model and charge-relaxation scaling'
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000249
+      version_id: V1
+      url: https://journals.aps.org/prresearch/abstract/10.1103/hn1p-nx25
+      source_type: abstract
+      locator: 'Abstract, paragraph beginning The review links and closing paragraph (We provide; The result): region-specific design ranges; adhesion-aware lift thresholds; near-surface apex/hover transport heights as functions of sheath structure'
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000256
   group: transport
   role: ダスト運動とレゴリス力学の総説
@@ -1149,39 +1793,179 @@ entries:
 - paper_id: P000267
   group: transport
   role: シース中の粒子浮遊実験
+  summary:
+    question: 導電面上の低密度プラズマシースで、粒子の浮遊高さを帯電理論と力の釣り合いから説明できるか。紫外線照射が浮遊高さに及ぼす影響も調べた。
+    method: アルゴンプラズマ中で、ポリスチレン球・中空ガラス球・月模擬土JSC-1を浮遊させた。プローブでシース電位を測り、観測した高さをOML帯電理論と電気力・重力の釣り合いによる計算と比較した。
+    contribution: 粒径がそろったポリスチレン球の浮遊高さは理論計算とよく一致した。紫外線で高さがわずかに下がり、光電子放出による負電荷の減少が原因として示唆された。
+  evidence_by_item:
+    question:
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: full_text
+      locator: 1. Introduction, [5]–[7]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: full_text
+      locator: 1. Introduction, [5]–[6]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: abstract
+      locator: Abstract [1], results (2)–(3)
+      checked_at: '2026-10-06'
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: full_text
+      locator: 3.3.1 [26]; 3.3.2 [31]–[34]; 4. Conclusions [42]–[43]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000268
   group: transport
   role: 光電子シース中のダスト音波の非線形発展
+  summary:
+    question: 日照側の月面光電子シースで、正帯電ダストを含むプラズマの大振幅ダスト音波は、電子の高エネルギー成分と温度比に応じてどのように急峻化し、波形が崩れる砕波に至るか。
+    method: 正帯電ダストとκ分布電子を扱う流体モデルを用い、月の光電子シースではイオン密度を無視した。平衡電荷中性と行列の対角化から非粘性Burgers方程式を導き、波形の時間発展を数値解析した。
+    contribution: 計算では局在した対称パルスが時間とともに急峻化した。κが小さいほど振幅が大きくなり、砕波が早まった。ダスト対電子の温度比の増加も振幅を大きくし、最終的に砕波を生じさせた。
+  evidence_by_item:
+    question:
+    - paper_id: P000268
+      version_id: V1
+      url: https://pubs.aip.org/aip/pop/article-abstract/33/9/092104/3404455/Nonlinear-steepening-and-wave-breaking-in-a-sunlit
+      source_type: abstract
+      locator: Abstract, sentences 1, 5–9
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000268
+      version_id: V1
+      url: https://pubs.aip.org/aip/pop/article-abstract/33/9/092104/3404455/Nonlinear-steepening-and-wave-breaking-in-a-sunlit
+      source_type: abstract
+      locator: Abstract, sentences 1–3, 5–7
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000268
+      version_id: V1
+      url: https://pubs.aip.org/aip/pop/article-abstract/33/9/092104/3404455/Nonlinear-steepening-and-wave-breaking-in-a-sunlit
+      source_type: abstract
+      locator: Abstract, sentences 7–9
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000269
   group: transport
   role: 太陽系ダストプラズマの電荷変動と散逸
+  summary:
+    question: 月・水星・彗星などの周辺で、ダストの電荷変動が運動の減衰や加速をどう生み、粒子の集合がどの条件で結晶状に秩序化するかを整理する。
+    method: 既往の理論研究をレビューし、粒子の運動と帯電を結ぶモデル、暗所での電荷揺らぎの運動論、粒子間相互作用と熱運動の比や相図から、各環境を比較する。
+    contribution: 帯電に伴う振動の減衰と、暗所の十分小さな月ダストが電荷揺らぎで脱出し得ることを、理論研究から整理した。彗星核近傍の結晶形成も条件上可能とするが、実験と理論の検証が必要としている。
+  evidence_by_item:
+    question:
+    - paper_id: P000269
+      version_id: V1
+      url: https://link.springer.com/article/10.1134/S1063780X26600787
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-06'
+    - paper_id: P000269
+      version_id: V1
+      url: https://link.springer.com/article/10.1134/S1063780X26600787
+      source_type: full_text
+      locator: INTRODUCTION 最終段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000269
+      version_id: V1
+      url: https://link.springer.com/article/10.1134/S1063780X26600787
+      source_type: full_text
+      locator: 'INTRODUCTION 最終段落: review of studies'
+      checked_at: '2026-10-06'
+    - paper_id: P000269
+      version_id: V1
+      url: https://link.springer.com/article/10.1134/S1063780X26600787
+      source_type: full_text
+      locator: ANOMALOUS DISSIPATION, Eqs. (1)–(6); FLUCTUATION ACCELERATION, kinetic description の段落; PLASMA-DUST CRYSTAL, Eq. (23) と Fig. 4の説明
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000269
+      version_id: V1
+      url: https://link.springer.com/article/10.1134/S1063780X26600787
+      source_type: full_text
+      locator: ANOMALOUS DISSIPATION 冒頭; FLUCTUATION ACCELERATION 末尾2段落（暗所の月表面）
+      checked_at: '2026-10-06'
+    - paper_id: P000269
+      version_id: V1
+      url: https://link.springer.com/article/10.1134/S1063780X26600787
+      source_type: full_text
+      locator: PLASMA-DUST CRYSTAL, Fig. 4の説明に続く限界の段落; CONCLUSIONS
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000270
   group: transport
   role: 電荷ゆらぎによる微粒子の加速
+  summary:
+    question: 太陽光の影響が小さい月の夜間などに、粒子電荷のゆらぎが微粒子を加速し、月周囲のダスト系から離脱させる可能性を調べる。
+    method: 電子・イオンの微視的電流と粒子電荷のゆらぎを扱い、帯電過程を含む物質・エネルギーの交換が、粒子の平均エネルギー増加と加速につながる仕組みを検討する。
+    contribution: 電荷ゆらぎにより、ナノ粒子やサブミクロン粒子の速度が大きく増す可能性を示した。十分小さなナノ粒子は月の脱出速度を超えうる一方、静電相互作用で形成される系の大粒子の従来の見積もりは有効とした。
+  evidence_by_item:
+    question:
+    - paper_id: P000270
+      version_id: V1
+      url: https://link.springer.com/article/10.1134/S1063780X26600209
+      source_type: abstract
+      locator: Abstract、第1段落第1文および第3段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000270
+      version_id: V1
+      url: https://link.springer.com/article/10.1134/S1063780X26600209
+      source_type: abstract
+      locator: Abstract、第1段落第2文および第2段落
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000270
+      version_id: V1
+      url: https://link.springer.com/article/10.1134/S1063780X26600209
+      source_type: abstract
+      locator: Abstract、第3〜4段落
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000314
   role: 微小空洞・表面電場と離脱初速
   summary:

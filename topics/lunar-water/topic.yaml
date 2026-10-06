@@ -551,48 +551,208 @@ entries:
 - paper_id: P000280
   group: observations
   role: SPによる日陰の水氷粒子候補
+  summary:
+    question: 月の水の捕獲・拡散過程を理解するため、極域の永久影に限らず、さまざまな緯度・地方時の影で水氷が存在するか、その分布にどんな変化があるかを調べた。
+    method: かぐやのSPが取得した可視〜近赤外スペクトルを60領域の影で解析し、1.25・1.5 μmの吸収を評価した。氷粒子の大きさと量はスペクトルシミュレーションで推定した。
+    contribution: 多様な緯度の影で水氷を示す吸収を検出し、明暗境界に近づくほど1.5 μm吸収が強まった。氷は表面の霜層か浮遊粒子と解釈され、緯度方向の粒径・量の傾向はノイズのため未確定だった。
+  evidence_by_item:
+    question:
+    - paper_id: P000280
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X24004977
+      source_type: abstract
+      locator: Abstract, sentences 1–3（出版版PDF p.1）
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000280
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X24004977
+      source_type: abstract
+      locator: Abstract, sentences 3–7（出版版PDF p.1）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000280
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X24004977
+      source_type: abstract
+      locator: Abstract, sentences 5–10（出版版PDF p.1）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000244
   group: thermal-retention
   role: 氷の昇華と同位体分別
+  summary:
+    question: 月極域の氷が昇華して失われると、水素・酸素の同位体組成はどの程度変わるのか。水の起源や資源量を調べる探査で、試料採取中の変化をどう補正するかを問う。
+    method: 純粋な六方晶氷と平面状の表面を仮定し、昇華時の速度論的な同位体分別を計算するモデルを構築した。温度と氷の質量損失に応じた水素・酸素の同位体組成の変化を求めた。
+    contribution: 残る氷は重い同位体に富むレイリー型の変化を示し、低温ほど分別が強まると予測した。120 Kの計算では、HDOの分別は氷の質量損失が10％を超えると無視できなくなる。
+  evidence_by_item:
+    question:
+    - paper_id: P000244
+      version_id: V1
+      url: https://www.nature.com/articles/s41598-026-67615-6
+      source_type: abstract
+      locator: 'Abstract, paragraphs 1–2: sublimation, lunar resources, sampling chain and raw-data correction'
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000244
+      version_id: V1
+      url: https://www.nature.com/articles/s41598-026-67615-6
+      source_type: abstract
+      locator: 'Abstract, paragraph 2: kinetic isotope fractionation model for pure hexagonal ice and planar specific surface area; paragraph 4: temperature and mass-loss cases'
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000244
+      version_id: V1
+      url: https://www.nature.com/articles/s41598-026-67615-6
+      source_type: abstract
+      locator: 'Abstract, paragraphs 3–4: Rayleigh-like trend; lower temperatures; HDO mass-loss threshold at 120 K'
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000246
   group: formation-storage
   role: 水と爆発的火山活動
+  summary:
+    question: 月の爆発的噴火を駆動する水・一酸化炭素・水素の役割は何か。気泡の成長や地殻内でのマグマの一時滞留は、噴火の爆発性にどう影響するか。
+    method: 気泡成長とマグマ上昇を連成したモデルで、炭素・水素を含む揮発性成分の影響を計算した。破砕時の水含有量を月の火山ガラスや火砕堆積物からの推定値と比較した。
+    contribution: 計算では水が主な駆動源となり、水約500 ppm以上・CO約20 ppm以下で浅部の脱ガスと気泡成長が破砕を起こした。深さ約17 km以内での一時滞留も爆発性に有利と示唆された。
+  evidence_by_item:
+    question:
+    - paper_id: P000246
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009318
+      source_type: abstract
+      locator: Abstract、第3–4文（水と気泡の役割）、第8文（地殻内の一時滞留）
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000246
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009318
+      source_type: abstract
+      locator: Abstract、第5–6文（連成モデルと水含有量の整合）；Plain Language Summary、第3文（C・Hを含む揮発性成分の評価）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000246
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009318
+      source_type: abstract
+      locator: Abstract、第5文（水が主な駆動源）、第7文（水≳500 ppm・CO≲20 ppm、数百mの浅部での脱ガス・気泡成長と破砕）、第8文（深さ≲17 kmでの一時滞留）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000252
   group: plasma-environment
   role: Chang’E-6負イオンの太陽風依存性
+  summary:
+    question: 嫦娥6号が月面で観測した水素負イオン（H−）は、太陽風と月面の相互作用で生じるのか。その生成と月周辺での分布が、太陽風条件にどう依存するかを調べた。
+    method: NILSのH−スペクトルから200 eV超のフラックスと平均エネルギーを求め、ARTEMISの太陽風観測と比較した。さらにテスト粒子のモンテカルロ計算で月周辺の分布を推定した。
+    contribution: H−のフラックスと平均エネルギーが太陽風条件と正に相関し、太陽風と月面の相互作用による生成を支持した。計算では、昼側の薄いH−層と夜側に延びる尾を予測した。
+  evidence_by_item:
+    question:
+    - paper_id: P000252
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/41824584/
+      source_type: abstract
+      locator: 'Abstract: NILSによるH−のorigin and distributionとsolar wind–surface interaction'
+      checked_at: '2026-10-06'
+    - paper_id: P000252
+      version_id: V1
+      url: https://www.science.org/doi/10.1126/sciadv.adw1162
+      source_type: full_text
+      locator: 掲載版PDF file p.2, Introduction末尾（H−スペクトルの太陽風依存性と空間分布を研究目的として明記）
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000252
+      version_id: V1
+      url: https://www.science.org/doi/10.1126/sciadv.adw1162
+      source_type: full_text
+      locator: 掲載版PDF file p.2, Results冒頭（NILSとARTEMIS観測の対応）; p.3, Results第2段落（200 eV超、6区間、フラックスと平均エネルギー）; p.3, Distribution of H− ions around the Moon冒頭（test-particle Monte Carlo simulation）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000252
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/41824584/
+      source_type: abstract
+      locator: 'Abstract: positive correlation; thin dayside H− layer and long nightside H− tail predicted by simulations'
+      checked_at: '2026-10-06'
+    - paper_id: P000252
+      version_id: V1
+      url: https://www.science.org/doi/10.1126/sciadv.adw1162
+      source_type: full_text
+      locator: 掲載版PDF file p.3, Results第2段落・Fig.2C（H−フラックスと月面法線方向太陽風フラックス、H−平均エネルギーと太陽風エネルギーの正の相関）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000253
   group: plasma-environment
   role: Chang’E-6による月面負イオンの初観測
+  summary:
+    question: 太陽風が月面に衝突すると負イオンは生成されるのか。これまで未確認だった負イオンの存在と、月面近傍での量・広がりを調べた。
+    method: 月裏側に着陸した嫦娥6号のNILSで、月面から放出される負イオンの質量・エネルギー・方向を測定し、ARTEMIS-P2の太陽風観測と照合した。
+    contribution: 月面から戻る水素負イオンを直接検出した。放出角分布を反射陽子と同じと仮定すると、入射陽子の約2.5%が負イオンとして反射すると推定された。光による電子脱離が寿命を短くするため、昼側では月面近傍の層に限られると推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: abstract
+      locator: Abstract; publisher PDF p. 1
+      checked_at: '2026-10-06'
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: full_text
+      locator: Introduction, paragraphs beginning 'An open question' and 'Solar wind protons'; publisher PDF pp. 1–2
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: full_text
+      locator: Introduction, NILS instrument description; publisher PDF p. 2
+      checked_at: '2026-10-06'
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: full_text
+      locator: Results and discussion > Observations, observation site and ARTEMIS-P2 solar wind parameters; publisher PDF p. 2
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: abstract
+      locator: Abstract; publisher PDF p. 1
+      checked_at: '2026-10-06'
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: full_text
+      locator: Results and discussion > Observations and Backscattered negative hydrogen; publisher PDF pp. 2–3
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000292
   group: ice-mechanics
   role: 水氷によるレゴリス凝集の低温実験

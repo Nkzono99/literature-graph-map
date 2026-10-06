@@ -377,12 +377,38 @@ entries:
 - paper_id: P000225
   group: cavities
   role: 縦孔周囲の三次元粒子計算
+  summary:
+    question: 月の日照側にある深い縦孔では、鉛直壁が太陽風電子や光電子の流れを変えることで、孔底の電流収支と表面電位が孔外とどう異なるかを調べた。
+    method: 太陽風プラズマ、光電子、帯電した月面の相互作用を三次元の粒子シミュレーション（PIC法）で計算し、数十メートル規模の縦孔内外の帯電を比較した。
+    contribution: 壁への損失で太陽風電子の孔底への流入が減り、孔底と壁を結ぶ光電子電流が電流収支を変えると示した。日向と影の強い帯電差に加え、孔内外の日向同士にも電位差が生じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000225
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
+      source_type: abstract
+      locator: Abstract 第1〜4文：dayside、vertical holes、greater depth-to-diameter ratios、hole-bottom current balance
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000225
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
+      source_type: abstract
+      locator: Abstract 第1〜2文：solar wind plasma/photoelectrons/charged lunar surface、three-dimensional particle-in-cell simulations
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000225
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
+      source_type: abstract
+      locator: Abstract 第4〜5文：limited solar wind electron penetration due to loss at the wall、photoelectron current path、differential charging and potential difference
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000226
   group: cavities
   role: 溶岩チューブ内の帯電実験
@@ -421,12 +447,50 @@ entries:
 - paper_id: P000282
   group: craters
   role: 日夜境界・極域での準中性破れ
+  summary:
+    question: 月の日夜境界・極域に続くウェイクの縁で、電子とイオンの密度が等しいという準中性がどう崩れ、夜側表面の帯電をどう変えるかを調べる。
+    method: 空隙へのプラズマ膨張を一次元の静電粒子シミュレーション（PIC）で計算した。月面は直接置かず、想定した表面位置の電子・イオンを用いて電流収支から表面電位を推定した。
+    contribution: モデルでは電子がイオンに先行し、電子雲とイオン過剰域の間に定常的な電気二重層が形成された。通常の太陽風条件では、電子雲に接する夜側表面の電位は準中性を仮定した値より負になると推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: full_text
+      locator: 1. Introduction [4], [6]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: full_text
+      locator: 2. Simulation Description [7], [8], [10]; 4. Surface Potential [17]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000282
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
+      source_type: full_text
+      locator: 3. Results [13]; 4. Surface Potential [20]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000344
   group: datasets
   role: 公開データ：空洞サイズ依存の再現用データ

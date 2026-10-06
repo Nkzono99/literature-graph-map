@@ -521,57 +521,267 @@ entries:
 - paper_id: P000184
   group: measurements
   role: PACEによる太陽風陽子の月面反射
+  summary:
+    question: 月面に到来する太陽風陽子の一部は反射されるのか。また、月面から戻った陽子は月周辺でどのように加速されるのかを調べる。
+    method: かぐやのMAP-PACEで、昼側の月面へ向かう太陽風イオンと月面から来るイオンを同時に測定した。エネルギー・方向・イオン種を比べ、磁場観測も合わせて解析した。
+    contribution: 太陽風陽子の0.1〜1％に相当する反射成分を検出した。一部が太陽風より高エネルギーになる観測を、太陽風の対流電場による加速で説明した。
+  evidence_by_item:
+    question:
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: full_text
+      locator: Section 2, Instrumentation [3]
+      checked_at: '2026-10-06'
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: full_text
+      locator: Section 3 [5]–[6]; Section 4 [7]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000184
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      source_type: full_text
+      locator: Section 3 [5]–[6]; Section 4 [7]–[8]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000185
   group: measurements
   role: PACEによる月起源イオン
+  summary:
+    question: 月周回軌道で測定した低エネルギーイオンは月面・外気圏に由来するのか、どの元素のイオンが含まれるのかを調べる。
+    method: かぐや搭載のイオンエネルギー質量分析器MAP-PACE IMAを用い、高度100 kmで低エネルギーイオンを観測して質量成分を調べた。
+    contribution: 月面・外気圏起源のイオンを検出し、少なくともHe⁺、C⁺、O⁺、Na⁺、K⁺を同定した。Na・Kに加えて、He・C・Oの月外気圏の存在を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000185
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009GL038185
+      source_type: abstract
+      locator: Abstract [1], first two sentences and origin/species result
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000185
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009GL038185
+      source_type: abstract
+      locator: Abstract [1], MAP-PACE IMA and 100-km-altitude observation sentence
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000185
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009GL038185
+      source_type: abstract
+      locator: Abstract [1], final two sentences
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000186
   group: measurements
   role: ウェイク内の陽子エネルギー変化
+  summary:
+    question: 月のすぐ後方、高度約100 kmの希薄な領域（ウェイク）へ太陽風陽子はどの向きに入り、南北で対になるエネルギーの増減は何によって生じるか。
+    method: かぐやのMAP-PACE/IMAとMAP-LMAGで陽子と磁場を観測し、ウェイク境界の内向き電場を含む粒子軌道計算と理論解析でエネルギー変化を調べた。
+    contribution: 磁場に垂直な陽子の侵入と、月の静止系での半球ごとのエネルギー増減を捉えた。粒子軌道計算は、磁場周りの旋回運動とウェイク境界の内向き電場でこの特徴を再現した。
+  evidence_by_item:
+    question:
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: abstract
+      locator: Abstract, paragraph [1]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: abstract
+      locator: Abstract, paragraph [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: full_text
+      locator: Section 2. Instrumentation, paragraph [3]; Section 4. Model Calculations, paragraphs [7]–[9]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: abstract
+      locator: Abstract, paragraph [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000186
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
+      source_type: full_text
+      locator: Section 4. Model Calculations, paragraph [9]; Section 5. Theoretical Interpretation, paragraphs [10]–[11]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000247
   group: measurements
   role: Chandrayaan-2電波観測による密度ゆらぎ
+  summary:
+    question: 月が太陽風と地球磁気尾を通る際、地球―月間の視線に沿った電子密度ゆらぎのスペクトルはどう変わり、地磁気活動とどの程度対応するかを調べる。
+    method: Chandrayaan-2の双方向S帯の電波掩蔽観測から幾何学的ドップラー成分を除き、電子密度ゆらぎを反映する周波数残差を得た。2022年の54区間でパワースペクトルを求め、磁気圏境界モデルで環境を分類した。
+    contribution: 得られたスペクトル指数はイオン運動論・散逸スケールに対応した。磁気圏境界内と太陽風などの指数差は標本が限られ統計的に有意でなく、地磁気活動との測定可能な相関も見られなかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000247
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
+      source_type: abstract
+      locator: Abstract 第1段落・第3段落
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000247
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
+      source_type: abstract
+      locator: Abstract 第1段落・第2段落
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000247
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
+      source_type: abstract
+      locator: Abstract 第2段落・第3段落
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000252
   group: measurements
   role: Chang’E-6負イオンの太陽風依存性
+  summary:
+    question: 嫦娥6号が月面で観測した水素負イオン（H−）は、太陽風と月面の相互作用で生じるのか。その生成と月周辺での分布が、太陽風条件にどう依存するかを調べた。
+    method: NILSのH−スペクトルから200 eV超のフラックスと平均エネルギーを求め、ARTEMISの太陽風観測と比較した。さらにテスト粒子のモンテカルロ計算で月周辺の分布を推定した。
+    contribution: H−のフラックスと平均エネルギーが太陽風条件と正に相関し、太陽風と月面の相互作用による生成を支持した。計算では、昼側の薄いH−層と夜側に延びる尾を予測した。
+  evidence_by_item:
+    question:
+    - paper_id: P000252
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/41824584/
+      source_type: abstract
+      locator: 'Abstract: NILSによるH−のorigin and distributionとsolar wind–surface interaction'
+      checked_at: '2026-10-06'
+    - paper_id: P000252
+      version_id: V1
+      url: https://www.science.org/doi/10.1126/sciadv.adw1162
+      source_type: full_text
+      locator: 掲載版PDF file p.2, Introduction末尾（H−スペクトルの太陽風依存性と空間分布を研究目的として明記）
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000252
+      version_id: V1
+      url: https://www.science.org/doi/10.1126/sciadv.adw1162
+      source_type: full_text
+      locator: 掲載版PDF file p.2, Results冒頭（NILSとARTEMIS観測の対応）; p.3, Results第2段落（200 eV超、6区間、フラックスと平均エネルギー）; p.3, Distribution of H− ions around the Moon冒頭（test-particle Monte Carlo simulation）
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000252
+      version_id: V1
+      url: https://pubmed.ncbi.nlm.nih.gov/41824584/
+      source_type: abstract
+      locator: 'Abstract: positive correlation; thin dayside H− layer and long nightside H− tail predicted by simulations'
+      checked_at: '2026-10-06'
+    - paper_id: P000252
+      version_id: V1
+      url: https://www.science.org/doi/10.1126/sciadv.adw1162
+      source_type: full_text
+      locator: 掲載版PDF file p.3, Results第2段落・Fig.2C（H−フラックスと月面法線方向太陽風フラックス、H−平均エネルギーと太陽風エネルギーの正の相関）
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000253
   group: measurements
   role: Chang’E-6による月面負イオンの初観測
+  summary:
+    question: 太陽風が月面に衝突すると負イオンは生成されるのか。これまで未確認だった負イオンの存在と、月面近傍での量・広がりを調べた。
+    method: 月裏側に着陸した嫦娥6号のNILSで、月面から放出される負イオンの質量・エネルギー・方向を測定し、ARTEMIS-P2の太陽風観測と照合した。
+    contribution: 月面から戻る水素負イオンを直接検出した。放出角分布を反射陽子と同じと仮定すると、入射陽子の約2.5%が負イオンとして反射すると推定された。光による電子脱離が寿命を短くするため、昼側では月面近傍の層に限られると推定した。
+  evidence_by_item:
+    question:
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: abstract
+      locator: Abstract; publisher PDF p. 1
+      checked_at: '2026-10-06'
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: full_text
+      locator: Introduction, paragraphs beginning 'An open question' and 'Solar wind protons'; publisher PDF pp. 1–2
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: full_text
+      locator: Introduction, NILS instrument description; publisher PDF p. 2
+      checked_at: '2026-10-06'
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: full_text
+      locator: Results and discussion > Observations, observation site and ARTEMIS-P2 solar wind parameters; publisher PDF p. 2
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: abstract
+      locator: Abstract; publisher PDF p. 1
+      checked_at: '2026-10-06'
+    - paper_id: P000253
+      version_id: V1
+      url: https://www.nature.com/articles/s43247-025-02399-7
+      source_type: full_text
+      locator: Results and discussion > Observations and Backscattered negative hydrogen; publisher PDF pp. 2–3
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000262
   group: measurements
   role: 電子位相空間密度からの電位推定
@@ -645,30 +855,120 @@ entries:
 - paper_id: P000177
   group: environment
   role: PACEによる地球起源酸素の輸送
+  summary:
+    question: 月の金属に含まれる酸素同位体のうち、酸素16に乏しい成分はどこから来たのか。地球の生物活動に由来する酸素が、磁気圏を通じて月へ届くかを調べた。
+    method: かぐやが観測した酸素イオンのエネルギーと、月が地球のプラズマシート内にある条件を比較した。金属への侵入深さと地球上層大気の酸素同位体の特徴も合わせて検討した。
+    contribution: 月がプラズマシート内にあるときだけ、1〜10 keVの酸素イオンを多数検出した。地球起源の酸素が月の表土の浅部へ注入され、酸素16に乏しい成分の供給源になると解釈した。
+  evidence_by_item:
+    question:
+    - paper_id: P000177
+      version_id: V1
+      url: https://www.natureasia.com/ja-jp/natastron/abstracts/83526
+      source_type: abstract
+      locator: Research Abstract、英語要旨第1〜2文
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000177
+      version_id: V1
+      url: https://www.natureasia.com/ja-jp/natastron/abstracts/83526
+      source_type: abstract
+      locator: Research Abstract、英語要旨第3〜4文
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000177
+      version_id: V1
+      url: https://www.natureasia.com/ja-jp/natastron/abstracts/83526
+      source_type: abstract
+      locator: Research Abstract、英語要旨第3〜4文
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000178
   group: environment
   role: PACE・LMAGによる磁気リコネクションの候補
+  summary:
+    question: 月の地殻磁気異常の付近で、イオンの噴流を伴わず電子だけが加速される磁気リコネクションが起きるかを、低高度での直接観測から調べる。
+    method: 南極エイトケン磁気異常付近を高度29 kmで通過した「かぐや」の電子データを1秒分解能で解析し、電流シート内の電子・イオンの噴流と磁場構造を調べた。
+    contribution: 電流シートの通過時に、イオン噴流を伴わない電子噴流と磁束ロープを見いだした。月の磁気異常付近で電子のみの磁気リコネクションが起こる可能性を支持する観測例を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000178
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
+      source_type: abstract
+      locator: Abstract, sentence 1
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000178
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
+      source_type: abstract
+      locator: Abstract, sentences 2–3
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000178
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
+      source_type: abstract
+      locator: Abstract, sentences 3–5
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000179
   group: environment
   role: PACEによるC・N・Oイオンの日変化
+  summary:
+    question: 月外気圏の炭素・窒素・酸素イオンの組成と日変化はどのようで、供給源と生成機構をどこまで特定できるかを調べた。
+    method: かぐやのイオン質量分析器の観測でC+・N+・O+を分離し、C+/O+比とN+/O+比の時間変化や昼夜差を解析した。
+    contribution: イオン比の日変化から、窒素に富む供給源と窒素を含まないCO・CO2成分を示唆した。日中の主な生成過程を太陽風が窒素に富む月面物質を叩き出す作用と解釈し、流星雨直後のC+/O+比変化も報告した。
+  evidence_by_item:
+    question:
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: abstract
+      locator: Abstract, first three sentences
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: abstract
+      locator: Abstract, Kaguya ion mass analyser sentence
+      checked_at: '2026-10-06'
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: full_text
+      locator: Extended Data Fig. 2 caption
+      checked_at: '2026-10-06'
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: full_text
+      locator: Fig. 2 title; Extended Data Fig. 1 caption
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000179
+      version_id: V1
+      url: https://www.nature.com/articles/s41561-026-01933-2
+      source_type: abstract
+      locator: Abstract, C+/O+ and N+/O+ variations, sources and daytime mechanism sentences
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000341
   role: 月金属イオンの地球方向輸送
   summary:

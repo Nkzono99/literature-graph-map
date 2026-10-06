@@ -377,12 +377,62 @@ entries:
 - paper_id: P000251
   group: sheath-and-wake
   role: シース・ウェイク障壁と宇宙機電位計測
+  summary:
+    question: 太陽風にさらされる月周辺の宇宙機で、イオンウェイクと非単調シースの電位障壁はどの条件で生じ、自然放出電子による他機の電位計測をどう制約するか。
+    method: SPISのPIC法で、日照側と高度1.2万km超で月の影に入る太陽風環境をモデル化し、機体幅と表面電位を変えて障壁を調べた。二機の配置と測定機電位も変え、放出電子と検出電流を比較した。
+    contribution: 放出電子温度を2 eVとした計算では、機体幅が電子デバイ長の約半分以上で障壁が重要になった。正電位の測定機は電子を引き寄せたが、そのウェイク内に対象機が入ると信号が大幅に低下した。配置変更や測定機電位の低減を対策として提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: abstract
+      locator: PDF file p. 2 / printed p. 023508-1, Abstract
+      checked_at: '2026-10-06'
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file p. 3 / printed p. 023508-2, Sec. I final paragraph
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file pp. 5–6 / printed pp. 023508-4–5, Sec. III; Table I
+      checked_at: '2026-10-06'
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file p. 10 / printed p. 023508-9, Sec. V opening paragraphs
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: abstract
+      locator: PDF file p. 2 / printed p. 023508-1, Abstract
+      checked_at: '2026-10-06'
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file p. 10 / printed p. 023508-9, Sec. IV final paragraph; Table II
+      checked_at: '2026-10-06'
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file p. 13 / printed p. 023508-12, Sec. VI
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000340
   role: 帯電を利用する静電飛行の平衡
   summary:

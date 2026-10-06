@@ -531,48 +531,202 @@ entries:
 - paper_id: P000271
   group: emission
   role: 強いSEEが励起するシース不安定性
+  summary:
+    question: 高エネルギーの一次電子が壁から強い二次電子放出を起こすと、プラズマと壁の間のシースがなぜ不安定になるのかを問う。
+    method: 二次電子放出の電子エネルギー依存性と、シース内での電子温度の変化を考慮するシース理論により、不安定性の発生を解析した。
+    contribution: 強い二次電子放出下のシース不安定性は、放出のエネルギー依存性とシース内の電子温度変化によって生じることを理論的に示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000271
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/d513-74fc
+      source_type: abstract
+      locator: Abstract, sentences 3–4
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000271
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/d513-74fc
+      source_type: abstract
+      locator: Abstract, sentences 4–5
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000271
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/d513-74fc
+      source_type: abstract
+      locator: Abstract, sentence 4
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000251
   group: emission
   role: シース・ウェイク障壁と宇宙機電位計測
+  summary:
+    question: 太陽風にさらされる月周辺の宇宙機で、イオンウェイクと非単調シースの電位障壁はどの条件で生じ、自然放出電子による他機の電位計測をどう制約するか。
+    method: SPISのPIC法で、日照側と高度1.2万km超で月の影に入る太陽風環境をモデル化し、機体幅と表面電位を変えて障壁を調べた。二機の配置と測定機電位も変え、放出電子と検出電流を比較した。
+    contribution: 放出電子温度を2 eVとした計算では、機体幅が電子デバイ長の約半分以上で障壁が重要になった。正電位の測定機は電子を引き寄せたが、そのウェイク内に対象機が入ると信号が大幅に低下した。配置変更や測定機電位の低減を対策として提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: abstract
+      locator: PDF file p. 2 / printed p. 023508-1, Abstract
+      checked_at: '2026-10-06'
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file p. 3 / printed p. 023508-2, Sec. I final paragraph
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file pp. 5–6 / printed pp. 023508-4–5, Sec. III; Table I
+      checked_at: '2026-10-06'
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file p. 10 / printed p. 023508-9, Sec. V opening paragraphs
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: abstract
+      locator: PDF file p. 2 / printed p. 023508-1, Abstract
+      checked_at: '2026-10-06'
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file p. 10 / printed p. 023508-9, Sec. IV final paragraph; Table II
+      checked_at: '2026-10-06'
+    - paper_id: P000251
+      version_id: V1
+      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
+      source_type: full_text
+      locator: PDF file p. 13 / printed p. 023508-12, Sec. VI
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000233
   group: collection
   role: 軌道運動制限による捕集理論の起点
+  summary:
+    question: 電離した低圧気体中の球形・円筒形電極が捕集する電流は、粒子の速度分布と電極電位にどう依存するか。電流と電圧の関係から速度分布を求められるかを調べる。
+    method: シース内での荷電粒子と気体分子の衝突を無視し、軌道運動から捕集電流の一般式を導いた。等速で平行に進む流れ、等速で方向がランダムな分布、マクスウェル分布とそのドリフト付き分布について計算した。
+    contribution: シース半径が電極半径より十分大きいと、電流はシース半径にほぼ依存しないと示した。小さな球形・円筒形電極の電流と電圧の関係から、粒子の速度分布を求める式を与えた。
+  evidence_by_item:
+    question:
+    - paper_id: P000233
+      version_id: V1
+      url: https://journals.aps.org/pr/abstract/10.1103/PhysRev.28.727
+      source_type: abstract
+      locator: Abstract、第1段落および『Orbital Motion』段落の速度分布を電流と電圧の関係から求める記述
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000233
+      version_id: V1
+      url: https://journals.aps.org/pr/abstract/10.1103/PhysRev.28.727
+      source_type: abstract
+      locator: Abstract、第1段落の低圧・無衝突条件および『Orbital Motion』段落の一般式と(A)–(D)の計算対象
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000233
+      version_id: V1
+      url: https://journals.aps.org/pr/abstract/10.1103/PhysRev.28.727
+      source_type: abstract
+      locator: Abstract、『Orbital Motion』段落のシース半径への依存が小さくなる条件、および球・円筒の電流と電圧の関係から速度分布を求める一般式の記述
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000234
   group: collection
   role: 球状探針へのイオン捕集
+  summary:
+    question: 低圧プラズマに置いた球状探針が集める正イオン電流は何で決まり、探針周囲の電位分布や電流と電圧の関係をどう記述できるか。
+    method: 低圧プラズマでの正イオン捕集理論を整理・拡張し、球状探針の周囲の電位分布と正イオン電流の電流–電圧特性を計算した。
+    contribution: 低圧プラズマでは、シースの外縁を越えてプラズマ中へ及ぶ電場が、探針の集めるイオン電流を主に決めることを示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000234
+      version_id: V1
+      url: https://www.researchgate.net/publication/231044421_The_Collection_of_Positive_Ions_by_a_Probe_Immersed_in_a_Plasma
+      source_type: abstract
+      locator: Abstract, sentences 1 and 3
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000234
+      version_id: V1
+      url: https://www.researchgate.net/publication/231044421_The_Collection_of_Positive_Ions_by_a_Probe_Immersed_in_a_Plasma
+      source_type: abstract
+      locator: Abstract, sentences 1 and 3
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000234
+      version_id: V1
+      url: https://www.researchgate.net/publication/231044421_The_Collection_of_Positive_Ions_by_a_Probe_Immersed_in_a_Plasma
+      source_type: abstract
+      locator: Abstract, sentences 1 and 2
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000235
   group: collection
   role: 有限寸法の球・円筒探針理論
+  summary:
+    question: 静止した無衝突のマクスウェル分布プラズマ中で、球・円筒形の導電性探針が集める電流は、探針の半径と電位、イオンと電子の温度比によってどう変わるかを調べた。
+    method: 電子とイオンをともにマクスウェル速度分布とし、電荷密度を与える非線形積分方程式を反復計算で解いた。シースと準中性領域をあらかじめ分割せず、探針の電流―電位特性を求めた。
+    contribution: 球・円筒探針について、高温側粒子のデバイ長の100倍までの半径で電流―電位特性を求めた。探針に引かれる粒子を単一エネルギーとする近似が、マクスウェル分布の結果を十分に再現しない場合を示した。
+  evidence_by_item:
+    question:
+    - paper_id: P000235
+      version_id: V1
+      url: https://repository.tudelft.nl/file/File_8de7f51e-ff3f-40b8-9d81-3642191859eb
+      source_type: abstract
+      locator: Summary, PDF file p. 4 (printed iii), paragraph 1
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000235
+      version_id: V1
+      url: https://repository.tudelft.nl/file/File_8de7f51e-ff3f-40b8-9d81-3642191859eb
+      source_type: abstract
+      locator: Summary, PDF file p. 4 (printed iii), paragraph 2
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000235
+      version_id: V1
+      url: https://repository.tudelft.nl/file/File_8de7f51e-ff3f-40b8-9d81-3642191859eb
+      source_type: abstract
+      locator: Summary, PDF file p. 4 (printed iii), paragraphs 1 and 3
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000263
   group: collection
   role: クレーター寸法とシースの実験
@@ -646,30 +800,144 @@ entries:
 - paper_id: P000267
   group: collection
   role: シース中の粒子浮遊実験
+  summary:
+    question: 導電面上の低密度プラズマシースで、粒子の浮遊高さを帯電理論と力の釣り合いから説明できるか。紫外線照射が浮遊高さに及ぼす影響も調べた。
+    method: アルゴンプラズマ中で、ポリスチレン球・中空ガラス球・月模擬土JSC-1を浮遊させた。プローブでシース電位を測り、観測した高さをOML帯電理論と電気力・重力の釣り合いによる計算と比較した。
+    contribution: 粒径がそろったポリスチレン球の浮遊高さは理論計算とよく一致した。紫外線で高さがわずかに下がり、光電子放出による負電荷の減少が原因として示唆された。
+  evidence_by_item:
+    question:
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: full_text
+      locator: 1. Introduction, [5]–[7]
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: abstract
+      locator: Abstract [1]
+      checked_at: '2026-10-06'
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: full_text
+      locator: 1. Introduction, [5]–[6]
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: abstract
+      locator: Abstract [1], results (2)–(3)
+      checked_at: '2026-10-06'
+    - paper_id: P000267
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      source_type: full_text
+      locator: 3.3.1 [26]; 3.3.2 [31]–[34]; 4. Conclusions [42]–[43]
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000265
   group: photoemission
   role: 真空中の単粒子光帯電
+  summary:
+    question: 真空中のダストは、自らの光電子放出と近くの表面からの光電子の取り込みによって、どのような電荷を得るのかを調べた。
+    method: 亜鉛・銅・黒鉛・ガラスの単粒子を紫外線中と、照射したジルコニウム板の近くへ落とし、ファラデーカップで電荷分布を測定した。
+    contribution: 亜鉛・銅・黒鉛は単独照射で正、光電子を出す面の近くで負に帯電した。ガラスでは初期の摩擦帯電とみられる電荷が残り、光照射だけでは平衡電荷に達しなかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000265
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.84.6034
+      source_type: abstract
+      locator: Abstract, sentence 1
+      checked_at: '2026-10-06'
+    - paper_id: P000265
+      version_id: V1
+      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      source_type: full_text
+      locator: PDF p. 1 / printed p. 6034, paragraph beginning “We have performed experiments”
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000265
+      version_id: V1
+      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      source_type: full_text
+      locator: PDF pp. 1–2 / printed pp. 6034–6035, experimental setup and ultraviolet illumination paragraphs, Fig. 1
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000265
+      version_id: V1
+      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.84.6034
+      source_type: abstract
+      locator: Abstract, sentences 2–3
+      checked_at: '2026-10-06'
+    - paper_id: P000265
+      version_id: V1
+      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      source_type: full_text
+      locator: PDF pp. 2–3 / printed pp. 6035–6036, conductor photoemission and sheath experiments paragraphs
+      checked_at: '2026-10-06'
+    - paper_id: P000265
+      version_id: V1
+      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      source_type: full_text
+      locator: PDF p. 4 / printed p. 6037, “The data for glass” paragraph and Fig. 6
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000268
   group: photoemission
   role: 光電子シース中のダスト音波の非線形発展
+  summary:
+    question: 日照側の月面光電子シースで、正帯電ダストを含むプラズマの大振幅ダスト音波は、電子の高エネルギー成分と温度比に応じてどのように急峻化し、波形が崩れる砕波に至るか。
+    method: 正帯電ダストとκ分布電子を扱う流体モデルを用い、月の光電子シースではイオン密度を無視した。平衡電荷中性と行列の対角化から非粘性Burgers方程式を導き、波形の時間発展を数値解析した。
+    contribution: 計算では局在した対称パルスが時間とともに急峻化した。κが小さいほど振幅が大きくなり、砕波が早まった。ダスト対電子の温度比の増加も振幅を大きくし、最終的に砕波を生じさせた。
+  evidence_by_item:
+    question:
+    - paper_id: P000268
+      version_id: V1
+      url: https://pubs.aip.org/aip/pop/article-abstract/33/9/092104/3404455/Nonlinear-steepening-and-wave-breaking-in-a-sunlit
+      source_type: abstract
+      locator: Abstract, sentences 1, 5–9
+      checked_at: '2026-10-06'
+    method:
+    - paper_id: P000268
+      version_id: V1
+      url: https://pubs.aip.org/aip/pop/article-abstract/33/9/092104/3404455/Nonlinear-steepening-and-wave-breaking-in-a-sunlit
+      source_type: abstract
+      locator: Abstract, sentences 1–3, 5–7
+      checked_at: '2026-10-06'
+    contribution:
+    - paper_id: P000268
+      version_id: V1
+      url: https://pubs.aip.org/aip/pop/article-abstract/33/9/092104/3404455/Nonlinear-steepening-and-wave-breaking-in-a-sunlit
+      source_type: abstract
+      locator: Abstract, sentences 7–9
+      checked_at: '2026-10-06'
   inspection:
-    level: metadata_only
+    level: abstract
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
+    checked_at: '2026-10-06'
+    recheck: false
 - paper_id: P000343
   role: 熱電子探針の空間電荷制限から逆シースへ
   summary:

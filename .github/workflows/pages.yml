@@ -26,6 +26,7 @@ jobs:
       - run: uv run ruff check src tests
       - run: uv run ruff format --check src tests
       - run: uv run lgm check --public
+      - run: uv run lgm lint
       - run: uv run lgm render
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

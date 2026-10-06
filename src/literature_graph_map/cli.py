@@ -8,6 +8,7 @@ from pathlib import Path
 import yaml
 from pydantic import ValidationError
 
+from .lint import review_citation_gaps
 from .models import ImportPacket, Topic, Work
 from .operations import (
     add_seeds,
@@ -79,6 +80,9 @@ def parser() -> argparse.ArgumentParser:
     check.add_argument(
         "--public", action="store_true", help="公開対象フィールドと生成内容の漏えい検査も行う"
     )
+    lint = commands.add_parser("lint", help="研究の概観で引用されていない収録文献を検出")
+    lint.add_argument("topic_id", nargs="?", help="省略時は入れ子を含む全テーマを検査")
+    lint.add_argument("--json", action="store_true", help="検査結果をJSONで出力")
     export = commands.add_parser(
         "export", help="許可したフィールドだけを新しい公開スナップショットへ出力"
     )
@@ -106,6 +110,25 @@ def run(args: argparse.Namespace) -> int:
         print(f"JSON Schemaを生成: {output}")
         return 0
     repo = args.repo.resolve()
+    if args.command == "lint":
+        snapshot = load(repo)
+        gaps = review_citation_gaps(snapshot, args.topic_id)
+        count = len(snapshot.topics) if args.topic_id is None else 1
+        if args.json:
+            print(
+                json_text(
+                    {"topics_checked": count, "missing_count": len(gaps), "missing_citations": gaps}
+                ),
+                end="",
+            )
+        else:
+            for gap in gaps:
+                print(
+                    f"{gap['path']}: review: 未引用 {gap['paper_id']}"
+                    f" / {gap['citation']} / {gap['title']}"
+                )
+            print(f"概観の引用検査: {count}テーマ / 未引用{len(gaps)}件")
+        return 1 if gaps else 0
     private = private_directory(repo, args.private_dir)
     if args.command == "config":
         data = settings(private).model_dump()

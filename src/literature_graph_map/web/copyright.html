@@ -2,4 +2,5 @@
 {% block content %}
 <header class="page-header"><h1>著作権について</h1></header>
 {% for paragraph in paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+{% if license_url %}<p><a href="{{ license_url }}">ライセンス本文</a></p>{% endif %}
 {% endblock %}

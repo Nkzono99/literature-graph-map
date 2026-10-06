@@ -35,4 +35,8 @@ uv run python -m http.server 8000 --bind 127.0.0.1 --directory _site
 
 調査にはAI、検索、外部プラグインなど、テーマに合う方法を使えます。誤りや不足は気づいた時点で直していきます。
 
+## ライセンス
+
+コード、ドキュメント、独自の概説・要点・比較・分類には、管理者・寄稿者が保有し許諾できる権利の範囲で [MITライセンス](LICENSE) を適用します。参照先の論文や第三者資料は対象外です。AI生成を利用した文章の扱いと適用範囲は [COPYRIGHT.md](COPYRIGHT.md) に記載しています。
+
 [編集・公開の手順](docs/USAGE.md) ／ [仕様](THEME_LITERATURE_MAP_SPEC.md) ／ [HTMLテンプレート](src/literature_graph_map/web/topic.html) ／ [著作権について](COPYRIGHT.md)

@@ -1,11 +1,13 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.27"]
 build-backend = "hatchling.build"
 
 [project]
 name = "literature-graph-map"
 version = "0.1.0"
 description = "Literature maps as an HTML site for GitHub Pages"
+license = "MIT"
+license-files = ["LICENSE", "COPYRIGHT.md"]
 requires-python = ">=3.11"
 dependencies = [
     "pydantic>=2.10,<3",

@@ -215,7 +215,7 @@ uv run lgm config --max-candidates 30 --max-search-calls 8 --timeout-seconds 20
 
 `check --public` では、掲載対象の整合性に加え、秘密情報やローカルパス、データ用ディレクトリへの意図しないファイル混入を確認します。出典の有無や調査の完成度によって掲載を止めません。
 
-正本とHTMLサイトを別の場所へ保存する場合は `export` を使えます。スナップショットにはYAMLの編集記録も含まれます。Pagesへの公開対象は `_site/` だけです。既存の `LICENSE` があれば一緒に出力されます。CLIはGitへのコミットやpushを行いません。
+正本とHTMLサイトを別の場所へ保存する場合は `export` を使えます。スナップショットにはYAMLの編集記録も含まれます。Pagesへの公開対象は `_site/` だけです。`COPYRIGHT.md` の権利説明と既存の `LICENSE` は、HTMLサイトとエクスポート先にも反映されます。CLIはGitへのコミットやpushを行いません。
 
 ## GitHub Pagesへの公開
 

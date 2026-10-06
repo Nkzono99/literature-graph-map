@@ -60,6 +60,40 @@ def test_deterministic_render_and_all_papers(tmp_path, snapshot):
     assert "検証用の架空の節" in page and "本文確認（出版版）" in page
 
 
+@pytest.mark.parametrize(
+    "notice",
+    [
+        "# 権利説明\n\n架空データの再利用条件。\n\n第三者資料は対象外。\n",
+        "架空データの再利用条件。\n\n第三者資料は対象外。\n",
+        "架空データの再利用条件。第三者資料は対象外。\n",
+        "# 権利説明\n架空データの再利用条件。第三者資料は対象外。\n",
+    ],
+)
+def test_render_preserves_repository_rights_notice_and_license(tmp_path, snapshot, notice):
+    commit(tmp_path, snapshot)
+    license_text = "Fixture license for synthetic content.\n"
+    (tmp_path / "COPYRIGHT.md").write_text(notice, encoding="utf-8")
+    (tmp_path / "LICENSE").write_text(license_text, encoding="utf-8")
+    render(tmp_path, snapshot)
+    page = (tmp_path / "_site/copyright.html").read_text(encoding="utf-8")
+    assert "架空データの再利用条件。" in page and "第三者資料は対象外。" in page
+    assert 'href="LICENSE"' in page
+    assert (tmp_path / "_site/LICENSE").read_text(encoding="utf-8") == license_text
+    assert (tmp_path / "COPYRIGHT.md").read_text(encoding="utf-8") == notice
+    (tmp_path / "LICENSE").unlink()
+    render(tmp_path, snapshot)
+    assert not (tmp_path / "_site/LICENSE").exists()
+    assert 'href="LICENSE"' not in (tmp_path / "_site/copyright.html").read_text(encoding="utf-8")
+
+
+def test_render_without_rights_documents_uses_generic_notice(tmp_path, snapshot):
+    render(tmp_path, snapshot)
+    page = (tmp_path / "_site/copyright.html").read_text(encoding="utf-8")
+    assert "自作部分にのみ適用" in page
+    assert "MIT" not in page and 'href="LICENSE"' not in page
+    assert not (tmp_path / "_site/LICENSE").exists()
+
+
 def test_render_replaces_generated_html_and_removes_moved_pages(tmp_path, snapshot):
     commit(tmp_path, snapshot)
     (tmp_path / "README.md").write_text("リポジトリの操作案内", encoding="utf-8")
@@ -610,7 +644,10 @@ def test_export_only_public_allowlisted_data(tmp_path, snapshot):
     snapshot.paths["private"] = Path("topics/private")
     snapshot.works["P000999"] = make_work(999)
     commit(repo, snapshot)
-    (repo / "LICENSE").write_text("Fixture license for synthetic content.", encoding="utf-8")
+    license_text = "Fixture license for synthetic content.\n"
+    notice = "# 権利説明\n\n架空データの再利用条件。\n\n第三者資料は対象外。\n"
+    (repo / "LICENSE").write_text(license_text, encoding="utf-8")
+    (repo / "COPYRIGHT.md").write_text(notice, encoding="utf-8")
     (repo / "secret.pdf").write_bytes(b"not for publication")
     out = tmp_path / "public"
     assert export_snapshot(repo, snapshot, out) > 0
@@ -619,6 +656,12 @@ def test_export_only_public_allowlisted_data(tmp_path, snapshot):
     assert "P000999" not in (out / "data/works.jsonl").read_text(encoding="utf-8")
     assert "R000003" in (out / "topics/demo/topic.yaml").read_text(encoding="utf-8")
     assert (out / "_site/topics/demo/index.html").exists()
+    assert (out / "COPYRIGHT.md").read_text(encoding="utf-8") == notice
+    assert (out / "LICENSE").read_text(encoding="utf-8") == license_text
+    assert (out / "_site/LICENSE").read_text(encoding="utf-8") == license_text
+    page = (out / "_site/copyright.html").read_text(encoding="utf-8")
+    assert "架空データの再利用条件。" in page and "第三者資料は対象外。" in page
+    assert 'href="LICENSE"' in page
     with pytest.raises(MapError, match="already exists"):
         export_snapshot(repo, snapshot, out)
 

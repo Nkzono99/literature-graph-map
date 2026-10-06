@@ -332,15 +332,29 @@ TEMPLATES.globals.update(
 )
 
 
-def rendered_files(repo: Path, snapshot: Snapshot) -> dict[Path, str]:
+def copyright_text(repo: Path) -> str:
+    path = inside(repo, repo / "COPYRIGHT.md")
+    return path.read_text(encoding="utf-8-sig") if path.is_file() else COPYRIGHT
+
+
+def rendered_files(
+    repo: Path, snapshot: Snapshot, *, destination: Path | None = None
+) -> dict[Path, str]:
     snapshot.validate()
-    output = inside(repo, repo / "_site")
+    output_root = destination or repo
+    output = inside(output_root, output_root / "_site")
+    license_path = inside(repo, repo / "LICENSE")
+    license_text = license_path.read_text(encoding="utf-8-sig") if license_path.is_file() else None
+    notice = copyright_text(repo).strip()
+    if notice.startswith("# "):
+        notice = notice.partition("\n")[2]
     files = {
         output / "index.html": index_page(snapshot),
         output / "copyright.html": TEMPLATES.get_template("copyright.html").render(
             **page_context(snapshot, Path(".")),
             title="著作権について",
-            paragraphs=COPYRIGHT.split("\n\n")[1:],
+            paragraphs=notice.strip().split("\n\n"),
+            license_url="LICENSE" if license_text is not None else None,
         ),
         **{
             output / snapshot.paths[key] / "index.html": topic_page(topic, snapshot)
@@ -353,6 +367,8 @@ def rendered_files(repo: Path, snapshot: Snapshot) -> dict[Path, str]:
         },
         output / ".nojekyll": "",
     }
+    if license_text is not None:
+        files[output / "LICENSE"] = license_text
     for path in files:
         inside(output, path)
     return files

@@ -8,7 +8,7 @@ from pathlib import Path
 
 from .models import PAPER_CITATION, Entry, ImportPacket, Inspection, Topic, Work
 from .providers import Crossref, crossref_work, seed_identifiers
-from .render import COPYRIGHT, rendered_files
+from .render import COPYRIGHT, copyright_text, rendered_files
 from .storage import (
     MapError,
     Snapshot,
@@ -497,10 +497,10 @@ def export_snapshot(repo: Path, snapshot: Snapshot, destination: Path) -> int:
     if not public.topics:
         raise MapError("no topics are marked public: true")
     files = public.source_files(destination)
-    files.update(rendered_files(destination, public))
-    files[destination / "COPYRIGHT.md"] = COPYRIGHT
+    files.update(rendered_files(repo, public, destination=destination))
+    files[destination / "COPYRIGHT.md"] = copyright_text(repo)
     if license_path.is_file():
-        files[destination / "LICENSE"] = license_path.read_text(encoding="utf-8")
+        files[destination / "LICENSE"] = license_path.read_text(encoding="utf-8-sig")
     for path, text in files.items():
         problems = publication_issues(text)
         if problems:

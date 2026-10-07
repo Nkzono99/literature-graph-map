@@ -18,6 +18,8 @@ groups:
   title: 水と噴火機構
 - id: reservoirs
   title: 火山地形・マグマ貯留域
+- id: petrology
+  title: 試料組成・マグマ分化
 entries:
 - paper_id: P000171
   group: chronology
@@ -365,6 +367,146 @@ entries:
     checked_by: ai
     checked_at: '2026-10-02'
   group: chronology
+- paper_id: P000371
+  group: petrology
+  role: 低Ti玄武岩のマントル源・浅部分化
+  summary:
+    question: 若いChang’e-5玄武岩の供給源をどう制約するか。
+    method: 一試料の鉱物像とラマン組成を比較した。
+    contribution: 混合マントル源と浅部貯留域での分化を示唆した。
+  evidence_by_item:
+    question:
+    - paper_id: P000371
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
+      source_type: abstract
+      locator: Abstract, sentences 1–2
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000371
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
+      source_type: abstract
+      locator: Abstract, sentence 2 (one basalt sample)
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000371
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
+      source_type: abstract
+      locator: Abstract, sentences 3–5
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000372
+  group: petrology
+  role: 高Ti玄武岩のLiとマントル相互作用
+  summary:
+    question: 高Ti玄武岩の重いLiは何を記録するか。
+    method: 月隕石を既報試料・分化モデルと比較した。
+    contribution: イルメナイト含有集積岩由来メルトとマントルの相互作用を提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000372
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
+      source_type: abstract
+      locator: Abstract, sentence 1
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000372
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
+      source_type: abstract
+      locator: Abstract, sentences 1–4
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000372
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
+      source_type: abstract
+      locator: Abstract, sentences 5–7
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000377
+  group: petrology
+  role: マグマオーシャン結晶化とLi分別
+  summary:
+    question: 高Ti・低Ti玄武岩のLi差は何に由来するか。
+    method: Apollo・LaPaz試料の同位体を比較した。
+    contribution: 高Ti側の重いLiを、大規模な結晶分化と結び付けた。
+  evidence_by_item:
+    question:
+    - paper_id: P000377
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
+      source_type: full_text
+      locator: Abstract; Introduction
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000377
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
+      source_type: full_text
+      locator: 'Methods: bulk-rock MC-ICP-MS and mineral LA-ICP-MS'
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000377
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
+      source_type: full_text
+      locator: Abstract; discussion of high-temperature differentiation
+      checked_at: '2026-10-07'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000378
+  group: petrology
+  role: Chang’e-5鉱物の組成・分化
+  summary:
+    question: Chang’e-5月壌の母岩組成をどう読むか。
+    method: ラマン分光で鉱物・ガラスを分類した。
+    contribution: 鉱物組成を示した。玄武岩質ガラスの火山・衝突起源はラマンだけでは分けられない。
+  evidence_by_item:
+    question:
+    - paper_id: P000378
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
+      source_type: full_text
+      locator: Abstract; 1. Introduction
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000378
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
+      source_type: full_text
+      locator: '2. Materials and Methods: 127 + 1132 Raman points'
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000378
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
+      source_type: full_text
+      locator: Abstract; 4. Discussion; 5. Conclusions
+      checked_at: '2026-10-07'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
 review:
 - heading: クレーター数と層厚から、火山活動の時間と量を調べる
   paragraphs:
@@ -379,6 +521,10 @@ review:
 - heading: 受動マイクロ波と磁場・重力から火成構造を見る
   paragraphs:
   - '[@P000337]はChang’e-2のマイクロ波輝度温度から、Aristarchusの火砕堆積物の熱的特徴と広がりを再評価した。[@P000322]はDewarの磁化した高密度体を埋没玄武岩として解釈する。表面の堆積物と地下の火成岩体を異なる観測から制約する系列として比較できる。[@P000329]・[@P000330]の統合データと基盤モデルは、火山地形の解析を他ミッションの観測へ接続する。'
+- heading: 試料の鉱物と同位体からマグマの履歴を読む
+  paragraphs:
+  - 地形・重力に加え、[@P000378]と[@P000371]のChang’e-5鉱物分析は試料スケールで分化を調べる。前者は鉱物集団、後者は一つの玄武岩を対象とする。
+  - Li同位体について、[@P000377]の高温結晶化の解釈に対し、[@P000372]は高Ti玄武岩のメルト・マントル相互作用を重視する。分化段階を比較する制約となる。
 lineage:
 - title: 裏側の火山活動を年代と体積で読む
   steps:
@@ -395,16 +541,18 @@ lineage:
     title: 大型楯状火山の貯留域を推定する
     significance: 火山形態と重力異常を組み合わせ、浅部貯留域からの噴火を検討した。
 survey:
-  searched_at: '2026-09-25'
+  searched_at: '2026-10-07'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
   - 'GitHub Issues #9–#10'
   - Crossref・出版社・機関公開記録の要旨
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
-    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
+  - 'GitHub Issue #25'
+  - 出版社の公開要旨・本文と著者所属機関の書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。 2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue #25の要点・項目別出典と概説引用を追加。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
+  - 2026-10-07の追加分はLin・Tianを公開要旨、Day・Caoを本文の関連節まで確認。解釈の比較であり、同一試料の再解析ではない。

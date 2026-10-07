@@ -20,6 +20,8 @@ groups:
   title: 月震・地震波探査
 - id: thermal
   title: 浅部の温度構造
+- id: geochemistry
+  title: 試料による内部組成
 entries:
 - paper_id: P000169
   group: measurements
@@ -715,6 +717,111 @@ entries:
     checked_at: '2026-10-05'
     recheck: false
   locked_fields: []
+- paper_id: P000372
+  group: geochemistry
+  role: 月マントルのLi同位体組成
+  summary:
+    question: 地球と月のマントルはLi同位体比が異なるか。
+    method: 月隕石とApolloなどの既報値を統合した。
+    contribution: δ⁷Li=3.8±1.3‰と見積もり、地球との差を認めなかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000372
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
+      source_type: abstract
+      locator: Abstract, sentence 1
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000372
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
+      source_type: abstract
+      locator: Abstract, sentences 1–4
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000372
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
+      source_type: abstract
+      locator: Abstract, sentences 5–7
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000375
+  group: geochemistry
+  role: 惑星間Li比較による月内部の基準
+  summary:
+    question: 月のLi組成は地球マントルと共通か。
+    method: 始原的な玄武岩・ガラスを他天体と比較した。
+    contribution: 月の代表値は地球に近く、玄武岩内の変動には分化の寄与を検討した。
+  evidence_by_item:
+    question:
+    - paper_id: P000375
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000375
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000375
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000376
+  group: geochemistry
+  role: 月のリザーバー間のLi比較
+  summary:
+    question: 月のリザーバー間でLi組成が違うか。
+    method: 玄武岩・高地角礫岩・火山ガラスを比較した。
+    contribution: 大半は地球マントルに近く、部分溶融による大きな分別を支持しなかった。
+  evidence_by_item:
+    question:
+    - paper_id: P000376
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000376
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000376
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
 review:
 - heading: 高さと重力の組合せから、地殻の厚さを推定する
   paragraphs:
@@ -745,6 +852,9 @@ review:
   - Divinerに基づく熱物性推定[@P000334]やApollo 17コアの熱履歴[@P000299]に対し、[@P000366]はBlue Ghost
     Mission 1のLISTERで窒素ガス掘削を実施し、0.288〜0.971 mの8深度で温度・熱伝導率を測った。測定場所と深さが分かる現地データを加える装置実証である。設計深度3
     mへの到達と熱データの詳細解析は残るため、低温モデル[@P000339]との定量照合は解析結果を待って行う。
+- heading: 試料のLi同位体で内部組成を補う
+  paragraphs:
+  - 重力が捉える密度構造に、[@P000375]と[@P000376]のLi同位体比較を加えると、月内部の組成を別の観点から検討できる。[@P000372]は月隕石から地球に近いマントル値を支持した。
 lineage:
 - title: 月裏側の重力から地殻厚へ
   steps:
@@ -795,7 +905,7 @@ lineage:
     significance: 約1 mまで到達して8深度で測定し、現地の温度・熱伝導率データを得る手段を実証した。
     connection: 試料履歴による推定と、その場の深度測定を比較する
 survey:
-  searched_at: '2026-10-02'
+  searched_at: '2026-10-07'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
@@ -804,8 +914,11 @@ survey:
   - Crossref・出版社・機関公開記録の要旨
   - 'GitHub Issues #3–#4'
   - 既存文献の観測装置・観測量照合
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue #3–#4の残件として、観測装置・観測量・代表文献の入口を概説に追加。'
+  - 'GitHub Issue #25'
+  - 出版社の公開要旨・本文と著者所属機関の書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。 2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue #3–#4の残件として、観測装置・観測量・代表文献の入口を概説に追加。 Issue #25の要点・項目別出典と概説引用を追加。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
+  - 2026-10-07の追加分はTian・Magna・Seitzの公開要旨を確認。試料地球化学による制約と、重力による密度構造の推定を区別する。

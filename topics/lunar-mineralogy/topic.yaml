@@ -21,6 +21,8 @@ groups:
   title: 返還試料・宇宙風化
 - id: materials
   title: 熱履歴・磁性相
+- id: isotopes
+  title: Li同位体・分化
 entries:
 - paper_id: P000172
   group: composition
@@ -700,6 +702,286 @@ entries:
     checked_by: ai
     checked_at: '2026-10-02'
   group: composition
+- paper_id: P000371
+  group: samples
+  role: 単一玄武岩の鉱物・衝撃記録
+  summary:
+    question: Chang’e-5玄武岩の鉱物は、マグマの形成と衝撃履歴をどう記録するか。
+    method: 一つの玄武岩試料を走査電子顕微鏡と顕微ラマン分光で非破壊分析した。
+    contribution: 低Ti組成を確認し、衝撃圧力の下限を5.2 GPa、上限を20～25 GPaと推定した。混合マントル源と浅部での分別結晶化を提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000371
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
+      source_type: abstract
+      locator: Abstract, sentences 1–2
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000371
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
+      source_type: abstract
+      locator: Abstract, sentence 2 (one basalt sample)
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000371
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
+      source_type: abstract
+      locator: Abstract, sentences 3–5
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000372
+  group: isotopes
+  role: 月隕石によるLi同位体の再評価
+  summary:
+    question: 月のLi同位体比を、内部の分化と衝突改変からどう分けて読むか。
+    method: 玄武岩・Mg-suite・斜長岩を含む12個の月隕石を測定し、分化モデルと比較した。
+    contribution: 月マントルのδ⁷Liを3.8±1.3‰と推定した。高Ti玄武岩にはメルトとマントルの相互作用、斜長岩の散らばりには衝突再分配を提案した。
+  evidence_by_item:
+    question:
+    - paper_id: P000372
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
+      source_type: abstract
+      locator: Abstract, sentence 1
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000372
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
+      source_type: abstract
+      locator: Abstract, sentences 1–4
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000372
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
+      source_type: abstract
+      locator: Abstract, sentences 5–7
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000373
+  group: samples
+  role: アグルチネート構造と集団強度
+  summary:
+    question: ガラス質アグルチネートの構造は、模擬レゴリスの強度をどう変えるか。
+    method: 高温真空焼結で粒子を作り、単粒子圧縮、安息角、小型三軸試験で評価した。
+    contribution: 密度をそろえると、溶融・ガラス含有の多い粒子ほどせん断強度の増加とひずみ軟化が顕著になった。
+  evidence_by_item:
+    question:
+    - paper_id: P000373
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009810
+      source_type: abstract
+      locator: Abstract, sentences 1–2
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000373
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009810
+      source_type: abstract
+      locator: Abstract, sentences 2–4
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000373
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009810
+      source_type: abstract
+      locator: Abstract, sentences 5–7
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000374
+  group: samples
+  role: 粒径・金属鉄の光学効果
+  summary:
+    question: 粒径と表面の金属鉄が、月模擬物の反射・偏光へ及ぼす効果をどう分けるか。
+    method: JSC-1AとKLS-1を分級し、水素還元の前後で反射スペクトルと偏光を測った。
+    contribution: 還元で暗化と正の偏光増加が起きた。粒径間の反射率差は縮小したが、偏光とアルベドの関係には粒径依存が残った。
+  evidence_by_item:
+    question:
+    - paper_id: P000374
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009905
+      source_type: abstract
+      locator: Abstract, sentences 1–3
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000374
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009905
+      source_type: abstract
+      locator: Abstract, sentences 4–5
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000374
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009905
+      source_type: abstract
+      locator: Abstract, sentences 6–7
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000375
+  group: isotopes
+  role: 月・地球・分化天体のLi同位体比較
+  summary:
+    question: 月と他の分化天体はLi同位体組成が共通か。
+    method: 月・地球・火星・ベスタ由来試料の高精度Li分析を比較した。
+    contribution: 月の代表値をδ⁷Li=3.8±0.4‰と推定し、地球との類似性と月内変動の分化起源を検討した。
+  evidence_by_item:
+    question:
+    - paper_id: P000375
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000375
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000375
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000376
+  group: isotopes
+  role: 月・火星のLiリザーバー比較
+  summary:
+    question: 月・火星のLi同位体比はリザーバー間で異なるか。
+    method: 月試料12点と火星隕石7点をMC-ICP-MSで測定した。
+    contribution: 大半は地球マントルに近く、部分溶融での大きな分別を支持しなかった。KREEPに富む角礫岩に例外を認めた。
+  evidence_by_item:
+    question:
+    - paper_id: P000376
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000376
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000376
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
+      source_type: abstract
+      locator: Abstract
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000377
+  group: isotopes
+  role: 月マグマオーシャンの高温Li分別
+  summary:
+    question: 高Ti・低Ti玄武岩のLi差は月の高温分化を記録するか。
+    method: Apollo・LaPaz試料のLi同位体をO・Fe同位体と比較し、鉱物内Liも測った。
+    contribution: 高Ti玄武岩の重いLiを示し、月マグマオーシャンの大規模な結晶分化で説明できると論じた。
+  evidence_by_item:
+    question:
+    - paper_id: P000377
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
+      source_type: full_text
+      locator: Abstract; Introduction
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000377
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
+      source_type: full_text
+      locator: 'Methods: bulk-rock MC-ICP-MS and mineral LA-ICP-MS'
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000377
+      version_id: V1
+      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
+      source_type: full_text
+      locator: Abstract; discussion of high-temperature differentiation
+      checked_at: '2026-10-07'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000378
+  group: samples
+  role: Chang’e-5の鉱物モード・衝撃記録
+  summary:
+    question: Chang’e-5月壌は母岩と衝撃の履歴をどう残すか。
+    method: 月壌・角礫岩のラマン点計数1259点と顕微像を分析した。
+    contribution: 鉱物・ガラス組成から外来物質の混合と再加工を示唆し、石英・マスケリナイトで衝撃を制約した。
+  evidence_by_item:
+    question:
+    - paper_id: P000378
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
+      source_type: full_text
+      locator: Abstract; 1. Introduction
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000378
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
+      source_type: full_text
+      locator: '2. Materials and Methods: 127 + 1132 Raman points'
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000378
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
+      source_type: full_text
+      locator: Abstract; 4. Discussion; 5. Conclusions
+      checked_at: '2026-10-07'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
 review:
 - heading: 鉱物の分布から、地殻と深部物質を考える
   paragraphs:
@@ -709,16 +991,22 @@ review:
 - heading: 機器の違いをそろえてから、組成を比べる
   paragraphs:
   - One Moon, Many Measurementsの3論文は、同じ月の観測を放射輝度[@P000277]、測光補正[@P000278]、反射率[@P000279]に分けて比較する。鉱物分布の差を読む前に、観測幾何と較正がそろっているかを確認するための文献群である。
+  - 較正後の光学特性の解釈に関わる[@P000374]は、粒径と金属鉄を操作して反射・偏光を比較した。天然土壌との違いから、実験試料にないアグルチネートの役割も課題とした。
 - heading: 返還試料から、衝突で動く元素と粒子の形を読む
   paragraphs:
   - Chang'e-6のNi同位体[@P000286]は、微小隕石の供給源と蒸発・再凝縮の履歴を制約する。Chang'e-5のかんらん石上に堆積したクロム鉄鉱[@P000287]は、衝突蒸気から二次鉱物が生じた証拠として解釈された。軌道から得る鉱物分布に、粒子の表面で起きる元素移動を補う研究である。
   - 粒子の形や鉱物の組合せは地盤の力学にも関わる。[@P000293]は三次元形状から粒子同士のかみ合いを計算し、[@P000290]は形状・摩擦・付着と安息角の関係を調べる。分光から読む組成と、集団としての流れやすさを結び付ける際の比較材料になる。
+  - ガラス質結合に着目した[@P000373]は、焼結粒子を含む模擬地盤の強化と軟化を測定した。粒子形状の計算へ、結合構造の実験制約を補う。
 - heading: 加熱によるFeの移動が磁性を変える
   paragraphs:
   - '[@P000297]は低酸素分圧で加熱した玄武岩質模擬物について、Feの移動と磁性相の生成を追った。800°C付近での磁化増加と、さらに高温での低下を、Feを含む相の変化で説明する。実験の温度・酸素条件を踏まえることで、月面物質の熱履歴と磁気特性を考える基礎になる。'
 - heading: 電気的風化、水吸着、熱と磁性をつなぐ
   paragraphs:
   - '[@P000311]・[@P000312]は絶縁破壊によるレゴリス改変を推定した。表面での水保持を調べる[@P000336]は、鉱物の金属サイトと水素結合の寄与が被覆率で変わることを示す。[@P000331]は粒子構造と熱伝導率を成熟度へ接続し、[@P000323]は衝突ガラスに残るγ鉄の磁区構造を示した。鉱物相だけでなく、表面・粒子間の構造と熱履歴が、保持・熱輸送・磁化を左右する。'
+- heading: 試料の鉱物とLi同位体から、分化と改変を分ける
+  paragraphs:
+  - Chang’e-5試料の鉱物モードと衝撃記録をラマン分光で調べた[@P000378]に対し、[@P000371]は一つの玄武岩の詳細分析からマグマ源と衝撃圧力を検討する。対象粒子数と組織の違いを踏まえて読み合わせる。
+  - Li同位体の基準値を調べた[@P000375]と[@P000376]を踏まえ、[@P000377]は高温分化に伴う分別を検討した。[@P000372]は月隕石へ試料範囲を広げ、マントルの代表値と地殻の二次改変を分けて再評価している。
 lineage:
 - title: 分光観測で異なる地質を読む
   steps:
@@ -742,17 +1030,45 @@ lineage:
     title: 鉱物と表面特性を加える
     significance: 摩擦・形状と付着の寄与が粒径・重力で変わることを調べた。
     connection: 形状の効果を鉱物・表面特性と比較する
+- title: Chang’e-5のラマン分析で鉱物と衝撃を読む
+  steps:
+  - paper_id: P000378
+    title: 多粒子の鉱物と衝撃を調べる
+    significance: ラマン分光と顕微像で返還試料の鉱物学を整理した。
+  - paper_id: P000371
+    title: 一つの玄武岩を詳しく調べる
+    significance: 鉱物の組織と組成をマグマ履歴へ接続した。
+    connection: 同じ手法系列で、対象を個別岩石へ絞る
+- title: Li同位体の基準値から分化・改変へ
+  steps:
+  - paper_id: P000375
+    title: 惑星間比較の基準を得る
+    significance: 月のLiを他天体と比較する出発点を示した。
+  - paper_id: P000376
+    title: 月内部の試料間差を比べる
+    significance: 試料のリザーバーごとに同位体を比較した。
+    connection: 同年の独立研究を比較軸として並べる
+  - paper_id: P000377
+    title: 高温分化の効果を調べる
+    significance: 玄武岩の違いから同位体分別を検討した。
+    connection: 組成比較から結晶化過程の解釈へ
+  - paper_id: P000372
+    title: 月隕石で代表値を再評価
+    significance: 内部の分化と表層での改変を分けた。
+    connection: 採取地点の異なる試料へ比較を広げる
 survey:
-  searched_at: '2026-09-25'
+  searched_at: '2026-10-07'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
   - 'GitHub Issues #9–#10'
   - Crossref・出版社・機関公開記録の要旨
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
-    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
+  - 'GitHub Issue #25'
+  - 出版社の公開要旨・本文と著者所属機関の書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。 2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue #25の要点・項目別出典と概説引用を追加。 ラマン分析とLi同位体の比較系譜を追加。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
+  - 2026-10-07の追加分は、新着4件とMagna・Seitzを公開要旨、Day・Caoを本文の関連節まで確認。系譜には編集上の比較を含む。

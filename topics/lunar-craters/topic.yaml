@@ -20,6 +20,8 @@ groups:
   title: 二次衝突・表層更新
 - id: formation
   title: 複雑クレーター・盆地の形成
+- id: shock-records
+  title: 試料の衝撃記録
 entries:
 - paper_id: P000187
   group: chronology
@@ -766,6 +768,76 @@ entries:
     checked_by: ai
     checked_at: '2026-10-02'
   group: renewal
+- paper_id: P000371
+  group: shock-records
+  role: 返還玄武岩の衝撃圧力
+  summary:
+    question: 返還玄武岩にどの強さの衝撃が残るか。
+    method: 一試料の石英・斜長石のラマン特徴を分析した。
+    contribution: 衝撃圧力を下限5.2、上限20～25 GPaと制約した。
+  evidence_by_item:
+    question:
+    - paper_id: P000371
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
+      source_type: abstract
+      locator: Abstract, sentences 1–2
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000371
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
+      source_type: abstract
+      locator: Abstract, sentence 2 (one basalt sample)
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000371
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
+      source_type: abstract
+      locator: Abstract, sentences 3–5
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
+- paper_id: P000378
+  group: shock-records
+  role: ラマン分光で読む衝撃記録
+  summary:
+    question: 月壌の鉱物にどのような衝撃が残るか。
+    method: 石英・マスケリナイトのラマン特徴を調べた。
+    contribution: 衝撃変成と微小隕石によるレゴリス再加工を検討した。
+  evidence_by_item:
+    question:
+    - paper_id: P000378
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
+      source_type: full_text
+      locator: Abstract; 1. Introduction
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000378
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
+      source_type: full_text
+      locator: '2. Materials and Methods: 127 + 1132 Raman points'
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000378
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
+      source_type: full_text
+      locator: Abstract; 4. Discussion; 5. Conclusions
+      checked_at: '2026-10-07'
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+    recheck: false
 review:
 - heading: クレーター台帳が、表面の履歴を比較する基盤になる
   paragraphs:
@@ -792,6 +864,9 @@ review:
   paragraphs:
   - LOLAのレーザー高度データを使った大型クレーターの全球分布は[@P000188]、LROCの時系列画像による新しい衝突とレゴリス更新の研究は[@P000189]を入口にできる。前者は地形に残る集団を、後者は観測期間内の変化を扱う。クレーター数から年代を推定する際には、観測の分解能と期間に加え、二次クレーターや表層更新の影響を考える。
   - 観測を統合するプレプリント[@P000329]のSomBenchは、複数ミッションを位置合わせしたデータと地理的な訓練・評価分割を提供する。これを用いる[@P000330]は複数観測種・解像度の共通表現を学習し、クレーター検出などで比較した。従来の台帳との比較では、画像の分解能に加え、学習・評価地域と検出対象の定義をそろえる必要がある。
+- heading: 鉱物に残る衝撃を読み取る
+  paragraphs:
+  - 地形観測に対し、[@P000378]と[@P000371]はChang’e-5試料に残る衝撃の鉱物学的制約を与える。粒子が経験した衝撃と、特定クレーターの形成史との対応は別途検証が必要になる。
 lineage:
 - title: 全球の個数を大型から小径へ広げる
   steps:
@@ -839,7 +914,7 @@ lineage:
     significance: ShadowCamの訓練データと超解像を加え、永久影へ検出を拡張した。
     connection: BoulderNetを永久影の照明条件へ転移学習
 survey:
-  searched_at: '2026-10-02'
+  searched_at: '2026-10-07'
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
@@ -848,8 +923,11 @@ survey:
   - Crossref・出版社・機関公開記録の要旨
   - 'GitHub Issues #3–#4'
   - 既存文献の観測装置・観測量照合
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue #3–#4の残件として、観測装置・観測量・代表文献の入口を概説に追加。'
+  - 'GitHub Issue #25'
+  - 出版社の公開要旨・本文と著者所属機関の書誌
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。 2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue #3–#4の残件として、観測装置・観測量・代表文献の入口を概説に追加。 Issue #25の要点・項目別出典と概説引用を追加。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
+  - 2026-10-07の追加分はLinを公開要旨、Caoを本文の関連節まで確認。鉱物が記録した衝撃を特定クレーターへ対応付ける解析は未実施。

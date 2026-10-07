@@ -1,7 +1,7 @@
 schema_version: 1
 topic_id: electron-reflectometry
-title: 電子反射法による天体の磁場・電位推定
-question: 月の磁気ミラー・電位による電子反射を起点に、火星・ガニメデへの応用と推定条件を整理する。
+title: 電子反射法による天体の磁場・電位・大気推定
+question: 月の磁気ミラー・電位による電子反射を起点に、火星の磁場・熱圏密度とガニメデへの応用、装置・推定条件を整理する。
 review:
 - heading: 戻ってくる電子から、磁場と電位を読む
   paragraphs:
@@ -12,6 +12,9 @@ review:
   paragraphs:
   - 電位差を無視でき、電子の磁気モーメントが保存される理想的な場合、ロスコーンの境界角αcは sin²αc = B観測点 / B最大 に従う。ここでは天体へ向かう磁力線方向から測った0〜90°のピッチ角を考える。B最大は観測点から吸収境界までの磁力線上で最も強い磁場で、表面で最大なら表面磁場の強さを求められる。境界より大きいピッチ角の電子は磁気ミラーで戻り、小さい角度の電子は表面へ到達する。電位差があると境界にエネルギー依存が現れ、磁場と電位を同時に考える必要がある。[@P000025]、[@P000359]
   - 電子の旋回半径が磁場の変化尺度に比べて小さいことも必要になる。[@P000352]は粒子の全軌道を追跡して月の推定を再検討し、用いたモデルでは約10 kmより大きい波長の磁場を捉えやすく、細かな磁化に対して感度が低下すると示した。この値は一律の地図解像度を表すものではなく、電子のエネルギーと磁場構造に依存する適用条件として読む。
+- heading: 装置は電子分布と磁場を同時に測る
+  paragraphs:
+  - 自然のプラズマを使う電子反射法では、電子分析器がエネルギー・方向を測り、磁力計がピッチ角へ変換する基準を与える。MGSの[@P000380]はこの組合せで電離圏と閉磁力線領域を調べた。かぐやの[@P000386]は、反対向きの半球視野を持つESA-S1/S2で3次元電子分布を取得する構成を示す。エネルギー範囲や視野を確認することは、電子の反射境界をどこまで識別できるかの判断につながる。
 - heading: 月では局所の異常から全球の磁場へ
   paragraphs:
   - '[@P000348]はApollo 15・16の電子反射観測を地質と照合した。Lunar Prospectorでは磁力計と電子反射計を併用し、磁気異常と太陽風の相互作用が調べられた（[@P000349]）。[@P000350]は表側の地殻磁場を地質単位と対応付けた。[@P000351]の全球マップでは、大きな衝突盆地の内部で弱く、その対蹠域で強い磁場が集中する分布が示された。'
@@ -19,13 +22,21 @@ review:
 - heading: 電位の推定では基準と電子の起源を確かめる
   paragraphs:
   - '[@P000003]はエネルギーに依存するロスコーンと二次電子ビームから、日陰の月面がLunar Prospectorより平均約35 V低い電位にあると推定した。探査機も帯電するため、周囲のプラズマを基準にするには補正が要る。[@P000025]は探査機電位を補正し、月面電位と入射電流を対応付けた。'
+  - '[@P000379]は、推定電位と磁場の傾きの関係を有限旋回半径の効果として調べ、粒子追跡と比べて夜側の電位構造の平均尺度を約1〜2 kmと制約した。磁場形状と電位分布を仮定した推定であり、電子反射の適用誤差そのものを空間構造の診断に使う例である。'
+  - 強い負帯電を扱う枝では、[@P000004]が日照・日陰の大負電位を電子ビームから抽出し、[@P000006]が太陽高エネルギー粒子イベントの極端な事例を示した。探査機電位の補正を用いた[@P000027]では、11イベント中8件を電流収支モデルが再現した一方、3件には説明が残った。平均的な帯電とイベント時の予測性能を分けて評価する必要がある。
   - 日照面でも、地球のプラズマシート中では大きな負電位の指標が現れる。[@P000033]は電子反射観測とPIC計算を比べ、表面上に電位の極小がある非単調なシースで説明した。ロスコーンだけから得た反射障壁の電位を表面電位へ対応付けるには、経路上の電位構造を考える必要がある。[@P000034]は月につながる磁力線上のARTEMISで、表面から加速されてくる放出電子も使い、日照域の負帯電と非単調シースの解釈を検討した。
   - 放出電子の観測は、反射電子とは別の情報を与える。[@P000041]は光電子スペクトルと電流収支から昼側の帯電条件を調べ、[@P000051]はかぐやの光電子のエネルギーずれから場所ごとの相対電位を求めた。[@P000161]はARTEMISの光電子を放出モデルと比較して昼側電位を推定する。ロスコーン、放出電子ビーム、光電子スペクトルが、それぞれどの電位差を捉えるかを区別して使う。
 - heading: 火星では大気中の電子輸送を組み込む
   paragraphs:
-  - 火星には大気があるため、月の表面吸収の扱いに、電子と中性粒子の衝突・エネルギー損失を加える。[@P000353]のMars Global Surveyorによる磁場推定から、[@P000354]の電子輸送モデル、[@P000355]の全球マップへと解析が発展した。このマップが示すのは地表ではなく高度185
-    kmでの地殻磁場の強さである。地殻磁場の研究全体と観測範囲の課題は、総説の[@P000361]で参照できる。
+  - 火星には大気があるため、月の表面吸収の扱いに、電子と中性粒子の衝突・エネルギー損失を加える。[@P000353]の磁場推定から、[@P000382]の高度170 kmの全球マップ、[@P000354]の電子輸送モデルと[@P000355]の高度185
+    kmの改良マップへ発展した。170 kmと185 kmは各解析の参照高度であり、地表磁場や観測機の高度とは異なる。地殻磁場の研究全体は総説の[@P000361]で参照できる。
   - '[@P000356]は電子のエネルギー・ピッチ角分布から、約185–400 kmの間にある磁力線方向の電位差を推定した。対象は外気圏下部から探査機までの領域であり、月面の帯電電位とは基準高度が異なる。磁場の接続状態、大気の密度、電位差を電子輸送の中で扱うことが、火星への応用の要点になる。'
+  - 反射解析が使える場所は磁場の接続にも左右される。[@P000383]は片側・両側ロスコーンや電子の欠乏域などを分類し、開いた磁力線と閉じた磁力線の分布・変動を調べた。磁気的に閉じた領域で入射電子が得られないことと、磁場が弱いことを区別して地図を読む。
+- heading: 同じ反射電子から、火星の熱圏密度を調べる
+  paragraphs:
+  - 大気吸収は磁場推定の入力条件である一方、磁場を独立に与えれば中性密度を調べる信号にもなる。[@P000381]は強い地殻磁場の既知の形状を使って約160〜230 kmの密度を推定した。[@P000384]は南半球の限られた領域で主感度高度180
+    km・地方時午前2時の変動を4火星年にわたって追跡し、[@P000385]は高度185 kmの系列を大循環モデルと比較した。参照高度・地方時・観測可能な地域が異なるため、これらを全火星の瞬時密度としては扱わない。
+  - この系列には多エネルギー・誤差評価の先例がある。[@P000381]は3エネルギーを用い、装置の角度ビンへモデルを畳み込んでχ²の誤差楕円体から密度の幅を評価した。同時に組成と温度には強い縮退が残る。後の[@P000385]でも個々の推定の不確かさにより数週以上の平均化が必要であり、測定器の時間分解能と物理量を安定して推定できる時間尺度を分ける。
 - heading: ガニメデへの応用と、天体間の比較
   paragraphs:
   - 固有磁場を持つガニメデでは、[@P000357]がGalileoの高エネルギー粒子のロスコーンから表面磁場を制約した。低エネルギー側の環境を知る資料として、JunoのJADEによるフライバイ観測（[@P000358]）もある。[@P000359]は表面帯電をモデル化し、将来のJUICEによる電子反射法では電位の影響を補正する必要を論じた。ここで示された負電位は計算結果であり、電子反射法による実測の電位マップではない。
@@ -33,6 +44,10 @@ review:
 - heading: 比較：表面で散乱された電子と、光電子を識別する
   paragraphs:
   - '[@P000363]が扱う後方散乱電子は、表面へ衝突してから宇宙へ戻る入射電子である。表面に達する前に磁気ミラーや電位で引き返す電子と、生成される場所が異なる。[@P000362]の酸素Auger電子による光電子の識別は、この成分を選び分ける手掛かりになった。[@P000364]は光電子の流束・検出確率を環境別に整理している。反射境界から磁場・電位を推定する際にも、電子の起源と表面への再衝突を併せて考える必要がある。'
+- heading: 残る課題：何を独立に制約できるか
+  paragraphs:
+  - 今後の比較軸は、磁場・電位・大気密度を変えたときの電子分布の違いが、装置応答と観測誤差を含めても区別できるかである。月では有限旋回半径とシース構造（[@P000379]、[@P000352]）、火星では既知磁場に依存する密度と電位の推定（[@P000381]、[@P000356]）、ガニメデでは帯電補正（[@P000359]）が具体的な検証対象になる。これらを共通の模擬観測で比較し、推定量の相関と適用範囲を報告することは研究方向の一つである。
+  - 研究のつながりとしては、Lin・Mitchell・Halekasらの月での磁場・帯電解析から、Lillis・Brainらの火星輸送・接続診断へ進む流れがある（[@P000347]、[@P000380]、[@P000383]）。熱圏への展開ではBougherらの大気モデルとの比較（[@P000385]）、かぐやではSaitoらの粒子計測（[@P000386]）が加わる。系譜では手法の継承と相補的な計測を区別し、年代順だけで直接の引用関係を仮定しない。
 lineage:
 - title: 月の磁場を局所から全球へ、適用条件を再検討
   steps:
@@ -52,6 +67,10 @@ lineage:
   - paper_id: P000003
     title: ロスコーンと二次電子で負帯電を捉える
     significance: 探査機に対する日陰の月面電位を電子分布から推定した。
+  - paper_id: P000379
+    title: 電位構造の厚さを制約
+    significance: 有限旋回半径による推定電位の角度依存を、夜側の空間尺度の診断に使った。
+    connection: ロスコーンの電位推定から、断熱近似の限界を利用した構造推定へ
   - paper_id: P000025
     title: 探査機電位を補正
     significance: 周囲のプラズマ基準で月面電位と入射電流を比較した。
@@ -69,6 +88,32 @@ lineage:
     title: 外気圏上の電位差を統計化
     significance: MGSの電子反射から約185–400 km間の磁力線方向電位差を求めた。
     connection: 電子輸送の解析を電位差の空間・時間変動へ
+- title: 火星の磁場推定を全球地図へ
+  steps:
+  - paper_id: P000353
+    title: 大気を持つ火星へ適用
+    significance: 電子の大気吸収を組み込んで地殻磁場を推定した。
+  - paper_id: P000382
+    title: 高度170 kmの全球分布を整理
+    significance: 北部低地の弱い磁場源と盆地の磁気的特徴を地図化した。
+    connection: 初期の手法実証から全球の地質比較へ
+  - paper_id: P000355
+    title: 輸送モデルと処理を改良
+    significance: 高度185 kmの改良マップを火山活動と古ダイナモの議論へ用いた。
+    connection: 大気輸送・補正の改善を全球磁場の解釈へ
+- title: 反射電子の吸収を熱圏の密度観測へ
+  steps:
+  - paper_id: P000381
+    title: 既知磁場から中性密度を推定
+    significance: 磁気反射の大気減衰を逆に利用し、夜側密度の季節変動を求めた。
+  - paper_id: P000384
+    title: 南半球で4火星年を追跡
+    significance: 手法を改善して密度変動の長期系列を得た。
+    connection: 初期の密度推定から観測期間と解析法を拡張
+  - paper_id: P000385
+    title: 大循環モデルを検証
+    significance: 夜側の季節・年々変動をモデルと比較し、冷却・循環の再現性を検討した。
+    connection: 長期ER密度を大気モデルの制約へ
 - title: ガニメデの粒子観測から、将来解析の帯電補正へ
   steps:
   - paper_id: P000357
@@ -84,9 +129,12 @@ scope:
   - 磁気ミラーとロスコーンによる磁場推定
   - 電子反射・放出電子を使う電位推定
   - 月・火星・ガニメデの解析条件と関連する陽子反射法
+  - 電子の大気吸収を用いた火星熱圏の中性密度推定
+  - 反射解析に用いる電子分析器と磁場接続の診断
   exclude:
   - 物質の表面分析に用いる電子反射・回折
   - 電子観測を使わない磁場推定の網羅的な一覧
+  - 材料・半導体の寸法計測で同名を用いるelectron reflectometry、LEER・LEEM・RSAES
 navigation:
   parent: applications
   related:
@@ -98,6 +146,8 @@ navigation:
 groups:
 - id: fundamentals
   title: 原理と適用条件
+- id: instrumentation
+  title: 装置と電子分布の計測
 - id: lunar-magnetic
   title: 月の地殻磁場マッピング
 - id: lunar-potential
@@ -647,9 +697,461 @@ entries:
     version_id: V1
     checked_by: ai
     checked_at: '2026-10-02'
-relations: []
+- paper_id: P000379
+  group: lunar-potential
+  role: 有限旋回半径を利用した夜側電位構造の推定
+  summary:
+    question: 電子反射から求めた電位が磁場の傾きに依存するのはなぜか。
+    method: Lunar Prospectorのロスコーンからの推定値を、準断熱近似と非断熱の粒子軌道計算で比較。
+    contribution: 推定電位の角度依存を旋回半径と電位構造の尺度の比で説明し、仮定した場の形状の下で夜側の平均尺度を約1〜2 kmと制約した。
+  evidence_by_item:
+    question:
+    - paper_id: P000379
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2003GL018421
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000379
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2003GL018421
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000379
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2003GL018421
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    - paper_id: P000379
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2003GL018421
+      source_type: full_text
+      locator: §§3–6：場の仮定、粒子追跡、平均尺度の推定（該当節のみ確認）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000380
+  group: instrumentation
+  role: MGS電子反射計と電離圏・閉磁力線の初期観測
+  summary:
+    question: 電子のエネルギー・角度分布から火星の磁場接続と電離圏をどう調べるか。
+    method: MGSの電子反射計と磁力計を併用し、エアロブレーキ期と約400 kmの周回軌道の電子分布を解析。
+    contribution: 夜側の閉磁力線領域で電子流束の大幅な減少、日照時には電離圏プラズマの流入を示し、後続の磁場・大気推定に必要な接続条件を整理した。
+  evidence_by_item:
+    question:
+    - paper_id: P000380
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000JE001435
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000380
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000JE001435
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000380
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000JE001435
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000381
+  group: mars
+  role: 電子反射を熱圏中性密度の推定へ拡張
+  summary:
+    question: 電子の大気吸収から火星夜側の中性密度を推定できるか。
+    method: 既知の強い地殻磁場を用い、116・191・313 eVのロスコーンを、装置の角度ビンに畳み込んだ輸送モデルで当てはめる。
+    contribution: 南半球の限られた領域で高度約160〜230 kmの密度と季節変動を求めた。χ²の誤差楕円体で密度の上下限を評価し、組成・温度の個別推定には縮退が残るとした。
+  evidence_by_item:
+    question:
+    - paper_id: P000381
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL024337
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000381
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL024337
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    - paper_id: P000381
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL024337
+      source_type: full_text
+      locator: §3：3エネルギー、角度応答、χ²誤差楕円体と組成・温度の縮退（該当節のみ確認）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000381
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL024337
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    - paper_id: P000381
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL024337
+      source_type: full_text
+      locator: §3：3エネルギー、角度応答、χ²誤差楕円体と組成・温度の縮退（該当節のみ確認）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000382
+  group: mars
+  role: 高度170 kmの火星全球磁場マップ
+  summary:
+    question: 軌道磁力計だけでは弱い火星の地殻磁場分布をどう補うか。
+    method: MGSの電子反射観測から高度170 kmの磁場強度を推定し、地形・衝突盆地・火山地域と比較。
+    contribution: 北部低地の弱い磁場源やUtopia盆地周囲の環状構造を捉えた。後の高度185 kmの改良マップを読む際の前段となる。
+  evidence_by_item:
+    question:
+    - paper_id: P000382
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2005JE002564
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000382
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2005JE002564
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000382
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2005JE002564
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000383
+  group: mars
+  role: ピッチ角分布による磁場接続の分類
+  summary:
+    question: 火星付近の開いた磁力線と閉じた磁力線を電子観測で区別できるか。
+    method: MGSの約7年分、115 eV電子の約6300万ピッチ角分布を形状で分類。
+    contribution: 片側・両側ロスコーン、電子の欠乏域、光電子を使って接続を制約し、その変動を示した。反射解析に使える領域の選別と欠測の解釈に関わる。
+  evidence_by_item:
+    question:
+    - paper_id: P000383
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007JA012435
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000383
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007JA012435
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000383
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007JA012435
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000384
+  group: mars
+  role: 4火星年にわたる南半球夜側密度の監視
+  summary:
+    question: 熱圏の密度は季節やダスト活動にどう応答するか。
+    method: 開いた強い地殻磁場を球面調和モデルで与え、MGSの反射電子の減衰から中性密度を推定。
+    contribution: 主感度高度180 km・地方時午前2時の南半球密度を4火星年追跡し、季節変動を整理した。対象領域は南半球の約2.5%で、平均化による長期変動の観測である。
+  evidence_by_item:
+    question:
+    - paper_id: P000384
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103507005106
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000384
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103507005106
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    - paper_id: P000384
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103507005106
+      source_type: full_text
+      locator: 公開Introduction：2005年手法からの拡張、既知磁場の利用と平均化条件（公開部分のみ確認）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000384
+      version_id: V1
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103507005106
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000385
+  group: mars
+  role: 熱圏密度推定の拡張と大循環モデル比較
+  summary:
+    question: 夜側密度の長期観測を大循環モデルは再現できるか。
+    method: 1999年4月〜2006年11月、地方時午前2時・高度185 kmのER密度をMTGCMとLMDの計算と比較。
+    contribution: 季節・年々変動を捉え、比較した季節範囲で両モデルに異なる密度のずれを見いだした。個々の測定の不確かさが大きく、時間変動は数週以上で評価する。
+  evidence_by_item:
+    question:
+    - paper_id: P000385
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029%2F2009JE003529
+      source_type: abstract
+      locator: Crossrefに出版社が登録した要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000385
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029%2F2009JE003529
+      source_type: abstract
+      locator: Crossrefに出版社が登録した要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000385
+      version_id: V1
+      url: https://api.crossref.org/works/10.1029%2F2009JE003529
+      source_type: abstract
+      locator: Crossrefに出版社が登録した要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000386
+  group: instrumentation
+  role: かぐやPACEの3次元電子計測
+  summary:
+    question: 月周辺の低エネルギー電子分布を三軸安定衛星でどう測るか。
+    method: かぐやPACEの対向する半球視野の電子分析器ESA-S1/S2を飛行前較正・軌道上動作とともに評価。
+    contribution: S1は6 eV〜9 keV、S2は9 eV〜16 keVを測り、2台で3次元分布を取得する構成を示した。磁力計と組み合わせる反射・帯電解析の装置的基盤になる。
+  evidence_by_item:
+    question:
+    - paper_id: P000386
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s11214-010-9647-x
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000386
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s11214-010-9647-x
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000386
+      version_id: V1
+      url: https://link.springer.com/article/10.1007/s11214-010-9647-x
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000004
+  group: lunar-potential
+  role: 日照・日陰での強い負帯電
+  summary:
+    question: 月面には通常より大きい負電位がどの条件で現れるか。
+    method: 地球磁気圏尾部のLunar Prospector電子観測で、上向き電子ビームを強い負帯電の指標として統計化。
+    contribution: 500 Vを超える負電位の事例はまれだが日照・日陰の双方に現れ、主にプラズマシートと入射電子スペクトルに対応するとした。
+  evidence_by_item:
+    question:
+    - paper_id: P000004
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL022627
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000004
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL022627
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000004
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL022627
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000006
+  group: lunar-potential
+  role: 太陽高エネルギー粒子イベント時の極端な帯電
+  summary:
+    question: 極端な粒子環境は月面の負帯電をどこまで強めるか。
+    method: 1998年4〜5月のLunar Prospector電子観測を高エネルギー粒子の流入と比較し、全観測期間の大きな負帯電も検索。
+    contribution: 最大約−4.5 kVの事例を示し、大きな負帯電が磁気圏尾部通過と太陽高エネルギー粒子イベントに集中することを報告した。
+  evidence_by_item:
+    question:
+    - paper_id: P000006
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006GL028517
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000006
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006GL028517
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000006
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006GL028517
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+- paper_id: P000027
+  group: lunar-potential
+  role: 極端な帯電の探査機補正と予測限界
+  summary:
+    question: イベント中の月面電位を電流収支モデルで再現できるか。
+    method: 探査機電位を補正したLunar Prospector電位・電子流束と上流の高エネルギー粒子を用い、11イベントをモデルと比較。
+    contribution: 8イベントでは熱的・高エネルギー粒子と二次電子を含むモデルが電位を再現したが、3イベントは再現できず、イオン・放出特性などの追加制約が必要とした。
+  evidence_by_item:
+    question:
+    - paper_id: P000027
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009JA014113
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    method:
+    - paper_id: P000027
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009JA014113
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+    contribution:
+    - paper_id: P000027
+      version_id: V1
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009JA014113
+      source_type: abstract
+      locator: 要旨（本文全体は未精読）
+      checked_at: '2026-10-07'
+  inspection:
+    level: abstract
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-07'
+relations:
+- relation_id: R026001
+  source: P000381
+  target: P000353
+  type: uses_method
+  basis: explicit
+  state: checked
+  aspect: 大気中の電子輸送
+  reason: 磁場推定に用いた電子の大気吸収モデルを、既知磁場の下で中性密度を推定する向きに利用する。
+  evidence:
+  - paper_id: P000381
+    version_id: V1
+    url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL024337
+    source_type: full_text
+    locator: §1 [3]：Lillis et al. (2004)の輸送モデルから密度推定への展開
+    checked_at: '2026-10-07'
+  checked_by: ai
+  checked_at: '2026-10-07'
+  limitation: 公開された該当箇所を確認。全文・全図表の精読は未実施。
+- relation_id: R026002
+  source: P000384
+  target: P000381
+  type: extends
+  basis: explicit
+  state: checked
+  aspect: 熱圏密度の長期観測
+  reason: 2005年の初期結果に対し、解析方法を改善して観測期間を延ばす。
+  evidence:
+  - paper_id: P000384
+    version_id: V1
+    url: https://www.sciencedirect.com/science/article/abs/pii/S0019103507005106
+    source_type: full_text
+    locator: Introduction：2005年の手法、改善点と21か月のデータ追加
+    checked_at: '2026-10-07'
+  checked_by: ai
+  checked_at: '2026-10-07'
+  limitation: 公開された該当箇所を確認。全文・全図表の精読は未実施。
+- relation_id: R026003
+  source: P000384
+  target: P000354
+  type: uses_method
+  basis: explicit
+  state: checked
+  aspect: 火星のロスコーン輸送モデル
+  reason: 同時期の理論論文の輸送モデルを使い、既知磁場で夜側中性密度を求める。
+  evidence:
+  - paper_id: P000384
+    version_id: V1
+    url: https://www.sciencedirect.com/science/article/abs/pii/S0019103507005106
+    source_type: full_text
+    locator: 公開Loss cone model節の冒頭：Lillis et al. (2008a)の理論を参照
+    checked_at: '2026-10-07'
+  checked_by: ai
+  checked_at: '2026-10-07'
+  limitation: 公開された該当箇所を確認。全文・全図表の精読は未実施。
 survey:
-  searched_at: '2026-10-02'
+  searched_at: '2026-10-07'
   scope_period: 1975–2026年の主要文献を選択
   provider_names:
   - Crossref
@@ -658,6 +1160,9 @@ survey:
   - 著者所属機関の公開書誌・要旨
   - 'GitHub Issue #23'
   - 出版社の公開書誌・要旨
+  - 既存の包括調査・ギャップ分析（追加候補の抽出のみ）
+  - Crossref（出版社登録書誌・要旨）
+  - AGU/Wiley・Elsevier・Springerの公開本文・要旨
   queries:
   - lunar electron reflectometry magnetic mirror loss cone surface potential
   - Mars electron reflectometry atmospheric transport
@@ -666,7 +1171,15 @@ survey:
   - 10.1029/2020JE006790
   - 10.1029/2023JE007983
   - 10.1029/2026JE009879
-  coverage_note: 月の手法史を軸に主要な応用を選び、既存の光電子・磁力計研究を比較資料として再利用。
+  - Inferring the scale height of the lunar nightside double layer
+  - Probing Mars crustal magnetic field ionosphere MGS Electron Reflectometer
+  - Probing upper thermospheric neutral densities at Mars using electron reflectometry
+  - Continuous monitoring nightside upper thermospheric mass densities electron reflectometry
+  - Four Martian years nightside upper thermospheric mass densities
+  - electron pitch angle distributions magnetic field topology Mars
+  - Kaguya PACE in-flight performance electron analyzer
+  - electron reflection magnetometry PERM loss cone
+  coverage_note: 既存26文献と2件の先行調査を照合し、DOI・題名で共通台帳の重複を排除。月の電位構造・極端な帯電、火星の装置・接続・熱圏密度の欠落枝を優先した限定拡張。1975〜2026年の既存中核を維持し、公開一次資料で確認できた8文献と既存台帳3文献を追加。
   limitations:
   - 新しい一覧の各文献は要旨確認。本文全体・全図表は未精読。
   - 原理と解釈はHalekas (2008)とTsai (2026)の公開本文の該当節も参照。
@@ -674,7 +1187,12 @@ survey:
   - Paperpile登録結果と検索ログはリポジトリ外で保管。同期の確認とは区別する。
   - 'Issue #23の追加文献は要旨・Plain Language Summaryで確認。本文全体と全図表は未精読。'
   - P000363は§4のエネルギー範囲と光電子補正・散乱モデルの条件のみ本文で追加確認。inspectionは要旨確認のままとし、本文全体・全図表の精読は未実施。
-  changes: '電子反射法を中心とする新テーマを作成。新規15文献と既存8文献を整理し、関連テーマへ接続。 Issue #23の電子放出・後方散乱研究を追加し、概説と必要な系譜を補足。'
+  - 2026-10-07の差分調査は先行調査の候補を一次資料へ戻して確認したもの。Scopus・Web of Science等の全件検索や、2026年までの網羅的な引用追跡は未実施。
+  - 材料・ナノ構造計測の同名手法は対象外。会議予稿は今回選んだ査読版で代表させ、教科書・全装置論文の網羅的追加は行っていない。
+  - 未解決課題は確認した論文の適用条件と不確かさから整理した研究方向。「多エネルギー解析・不確かさ評価・統一逆解析の先行研究が存在しない」とは判定しない。
+  - 追加項目は原則要旨確認。P000379・P000381・P000384の方法と関係は公開本文の該当箇所も確認。P000385の要旨はCrossrefの出版社登録内容を使用。
+  changes: '電子反射法を中心とする新テーマを作成。新規15文献と既存8文献を整理し、関連テーマへ接続。 Issue #23の電子放出・後方散乱研究を追加し、概説と必要な系譜を補足。 Issue
+    #26の差分として新規8文献・既存3文献を追加。装置、夜側電位尺度、極端な帯電、火星熱圏密度・磁場接続、系譜と出典付き関係を拡張。'
   publication_status: draft
 reading_notes:
 - この一覧は要旨をもとに整理した。数式や推定条件の一部は公開本文の該当節も参照したが、本文全体・全図表の精読は未実施。

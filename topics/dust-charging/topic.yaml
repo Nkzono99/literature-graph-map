@@ -165,38 +165,38 @@ entries:
     recheck: false
 - paper_id: P000094
   group: collection
-  role: 球状ダストのOMLとPIC
+  role: 遮蔽を解く修正OMLとPICの比較
   summary:
-    question: 球状粒子の電荷と捕集電流を、軌道運動制限理論でどこまで予測できるか。
-    method: 電子放出のない静止球について、改良OML理論とPICを比較。
-    contribution: 無衝突・無磁場かつ電子とイオンが等温の条件で、粒径に対する電荷・電流の誤差を評価。
+    question: 電子放出のない静止球について、浮遊電位、電荷、捕集電流、加熱をOMLでどこまで予測できるか。
+    method: "無衝突・無磁場で電子・イオン温度が等しい（Te/Ti＝1）水素プラズマに球形導体を置き、修正OMLと球対称PICを比較した。読解対象はarXiv:1611.08658v1で、半径と電子Debye長の比を0.25–10で変えた。"
+    contribution: 遮蔽電位を解いて求めた電荷は、PICを基準とする誤差が半径比5まで約8%以下、比10で約20%だった。浮遊電位の一致だけでは電荷・電流の一致を保証しない。電流・加熱誤差には本文の概括と表からの換算に差があり、最大半径比の一部では約37%となる。
   evidence_by_item:
     question:
     - paper_id: P000094
       version_id: V2
-      url: https://arxiv.org/abs/1611.08658
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/pdf/1611.08658v1
+      source_type: full_text
+      locator: arXiv:1611.08658v1、PDF pp.1–3、§I
+      checked_at: '2026-10-08'
     method:
     - paper_id: P000094
       version_id: V2
-      url: https://arxiv.org/abs/1611.08658
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/pdf/1611.08658v1
+      source_type: full_text
+      locator: 同版PDF pp.4–7、§II–III、式(6)–(16)、PIC条件
+      checked_at: '2026-10-08'
     contribution:
     - paper_id: P000094
       version_id: V2
-      url: https://arxiv.org/abs/1611.08658
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/pdf/1611.08658v1
+      source_type: full_text
+      locator: 同版PDF pp.5–11、§III、Table I–III、式(16)のPIC基準誤差
+      checked_at: '2026-10-08'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V2
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-08'
     recheck: false
   locked_fields: []
 - paper_id: P000237
@@ -591,26 +591,38 @@ entries:
     checked_at: '2026-09-18'
 - paper_id: P000005
   group: emission
-  role: 単粒子の光電子放出
+  role: 単粒子の光電子効率と推定収率
   summary:
-    question: 単粒子の光電子放出効率は、粒径・粒子電位にどう依存するか。
-    method: 月試料・模擬物の単粒子を保持し、紫外線による帯電を測定。
-    contribution: 放出効率・推定収率の粒径依存と、バルク試料との差を報告。
+    question: 月試料と模擬土の単粒子では、光電子放出の効率が粒径、照射波長、粒子電位にどう依存するか。
+    method: Apollo 17・Luna 24・JSC-1の負に帯電した単粒子を電気力学天秤で保持し、120・140・160 nm照射による電荷減少を測定した。入射光子当たりの効率から、中性極限への外挿と吸収モデルを介して収率を推定した。
+    contribution: 調べたサブミクロン粒子では小さいほど推定収率が低く、大粒子では漸近する傾向と、材料・波長による違いを示した。電荷変化から求める効率と、吸収を仮定する収率は異なる。正電位での平衡例はポリスチレンであり、月試料の平衡電位や付着面からの離脱を測った結果には含めない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000005
+      version_id: V1
+      url: https://doi.org/10.1016/j.pss.2006.12.007
+      source_type: full_text
+      locator: PDF pp.1–2（印刷953–954）、研究目的
+      checked_at: '2026-10-08'
+    method:
+    - paper_id: P000005
+      version_id: V1
+      url: https://doi.org/10.1016/j.pss.2006.12.007
+      source_type: full_text
+      locator: PDF pp.2–6（954–958）、§2–3、式(1)–(9)、Fig.1–4
+      checked_at: '2026-10-08'
     contribution:
     - paper_id: P000005
       version_id: V1
       url: https://doi.org/10.1016/j.pss.2006.12.007
       source_type: full_text
-      locator: 要旨・結論（pp.953–954,964）
-      checked_at: '2026-09-18'
+      locator: PDF pp.6–12（958–964）、§4–6、Fig.5–10、粒径・材料・電荷依存と収率推定
+      checked_at: '2026-10-08'
   inspection:
     level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-08'
     recheck: false
   locked_fields: []
 - paper_id: P000153
@@ -950,56 +962,38 @@ entries:
   locked_fields: []
 - paper_id: P000265
   group: emission
-  role: 真空中の単粒子光帯電
+  role: 孤立粒子と光電子層で変わる帯電符号
   summary:
-    question: 真空中のダストは、自らの光電子放出と近くの表面からの光電子の取り込みによって、どのような電荷を得るのかを調べた。
-    method: 亜鉛・銅・黒鉛・ガラスの単粒子を紫外線中と、照射したジルコニウム板の近くへ落とし、ファラデーカップで電荷分布を測定した。
-    contribution: 亜鉛・銅・黒鉛は単独照射で正、光電子を出す面の近くで負に帯電した。ガラスでは初期の摩擦帯電とみられる電荷が残り、光照射だけでは平衡電荷に達しなかった。
+    question: 自ら光電子を放出する粒子と、近くの面から光電子を集める粒子では、帯電の符号がどう変わるか。
+    method: 真空中の直径90–106 µmの亜鉛・銅・黒鉛・ガラス粒子をUV照射し、ジルコニウム面からの光電子層を通る場合も比較した。落下後のファラデーカップで正味電荷の分布を測り、検出下限は約±2×10⁴電子相当だった。
+    contribution: "導体粒子は孤立照射で正、光電子を出す面の近くで負に帯電した。ガラスでは接触帯電に由来する幅広い初期電荷が残り、照射中に一様な平衡へ達しなかった。電位は測定電荷からの球形近似であり、検出下限以下を含む全粒子の平均や電荷は確定していない。"
   evidence_by_item:
     question:
     - paper_id: P000265
       version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.84.6034
-      source_type: abstract
-      locator: Abstract, sentence 1
-      checked_at: '2026-10-06'
-    - paper_id: P000265
-      version_id: V1
-      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      url: https://doi.org/10.1103/PhysRevLett.84.6034
       source_type: full_text
-      locator: PDF p. 1 / printed p. 6034, paragraph beginning “We have performed experiments”
-      checked_at: '2026-10-06'
+      locator: PDF p.1（印刷6034）、研究目的
+      checked_at: '2026-10-08'
     method:
     - paper_id: P000265
       version_id: V1
-      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      url: https://doi.org/10.1103/PhysRevLett.84.6034
       source_type: full_text
-      locator: PDF pp. 1–2 / printed pp. 6034–6035, experimental setup and ultraviolet illumination paragraphs, Fig. 1
-      checked_at: '2026-10-06'
+      locator: PDF pp.1–2（6034–6035）、実験系・Fig.1・UVと電荷検出
+      checked_at: '2026-10-08'
     contribution:
     - paper_id: P000265
       version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.84.6034
-      source_type: abstract
-      locator: Abstract, sentences 2–3
-      checked_at: '2026-10-06'
-    - paper_id: P000265
-      version_id: V1
-      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      url: https://doi.org/10.1103/PhysRevLett.84.6034
       source_type: full_text
-      locator: PDF pp. 2–3 / printed pp. 6035–6036, conductor photoemission and sheath experiments paragraphs
-      checked_at: '2026-10-06'
-    - paper_id: P000265
-      version_id: V1
-      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
-      source_type: full_text
-      locator: PDF p. 4 / printed p. 6037, “The data for glass” paragraph and Fig. 6
-      checked_at: '2026-10-06'
+      locator: PDF pp.2–4（6035–6037）、Fig.2–6、導体の符号差とガラスの分布
+      checked_at: '2026-10-08'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-08'
     recheck: false
 - paper_id: P000037
   group: surface
@@ -1206,73 +1200,73 @@ entries:
     recheck: false
 - paper_id: P000255
   group: surface
-  role: 模擬粒子と異種材料の接触帯電
+  role: 接触材料と反復振動による帯電履歴
   summary:
-    question: 月・火星のレゴリス模擬粒子は、異なる材料の表面との接触でどの程度帯電するか。接触面の仕事関数、粒径、円板の振動回数が電荷に与える影響を調べる。
-    method: 真空中で月模擬土JSC-1と火星模擬土JSC-Mars-1を金属・シリカガラスの円板に接触させ、円板の振動で穴から落下させた粒子の電荷をファラデーカップで測定した。
-    contribution: 電荷の大きさは粒径と円板の反復振動で増え、平均電荷は接触面の仕事関数に線形に依存したが、酸化金属では依存性が見られなかった。外挿した有効仕事関数は月模擬土で5.8 eV、火星模擬土で5.6 eVだった。
+    question: 月・火星の模擬土粒子の正味電荷は、接触材料、粒径、反復振動の履歴にどう依存するか。
+    method: 真空中の接地円板でJSC-1・JSC-Mars-1を振動させ、穴から落下してファラデーカップに入る粒子の電荷分布を測った。金属・酸化面・シリカガラスと、振動回数・粒径を比較した。
+    contribution: 反復振動で電荷量が増え、非酸化金属の仕事関数との回帰から有効値5.8 eV・5.6 eVを推定したが、材質ごとの例外がある。平均電荷がゼロでも正負粒子が共存し、接触回数そのものや帯電の飽和は確認していない。局所電荷分布やUV・プラズマ中の平衡を直接測った結果ではない。
   evidence_by_item:
     question:
     - paper_id: P000255
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2002JE001897
-      source_type: abstract
-      locator: Abstract [1] 第1〜3文（レゴリス粒子の接触帯電とJSC-1・JSC-Mars-1を対象とする実験）、第7〜9文（調査した依存性）
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1029/2002JE001897
+      source_type: full_text
+      locator: PDF p.1、研究目的
+      checked_at: '2026-10-08'
     method:
     - paper_id: P000255
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2002JE001897
-      source_type: abstract
-      locator: Abstract [1] 第4〜6文（既知の仕事関数を持つ金属・シリカガラス、真空中の円板、振動とファラデーカップ）
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1029/2002JE001897
+      source_type: full_text
+      locator: "PDF pp.2–4、§3 Experimental Technique、実験系・選別・Fig.1–2"
+      checked_at: '2026-10-08'
     contribution:
     - paper_id: P000255
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2002JE001897
-      source_type: abstract
-      locator: Abstract [1] 第7〜11文（粒径・反復振動・仕事関数への依存、酸化金属面、外挿による有効仕事関数）
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1029/2002JE001897
+      source_type: full_text
+      locator: "PDF pp.4–7、§4 Experimental Results and Discussion、Fig.3–6、仕事関数・振動履歴・粒径・局所電荷の推定"
+      checked_at: '2026-10-08'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-08'
     recheck: false
 - paper_id: P000266
   group: surface
-  role: 光帯電と摩擦帯電の実験比較
+  role: 光電子の出入りと接触帯電の初期履歴
   summary:
-    question: 惑星表面から放出される単一ダスト粒子の帯電は、粒子自身の光電子放出、表面からの光電子の捕集、摩擦帯電でどう異なり、材質にどう依存するか。
-    method: 月・火星レゴリス模擬材を含む直径90〜106 μmの導電性・非導電性粒子を用い、紫外線照射、光電子放出面の近傍での落下、初期摩擦帯電の電位を実験で比較した。
-    contribution: 孤立した導電性粒子は紫外線で正電位、光電子放出面の近傍では負電位となった。非導電性粒子は光電子放出が弱く初期摩擦帯電が大きいため、ケイ酸塩模擬レゴリスでは摩擦帯電が支配的になりうる。
+    question: 単粒子の電荷は、光電子放出、近傍面からの光電子捕集、接触帯電の履歴でどう変わるか。
+    method: 直径90–106 µmの導体・絶縁体・月火星模擬土を真空中で落下させ、UV照射時間や光電子放出面との距離を変えて、ファラデーカップによる電荷分布を比較した。電位は電荷から球形容量を仮定して換算した。
+    contribution: 導体は孤立照射で正、光電子層内では負に帯電した。絶縁体・模擬土は70 msの照射でも幅広い初期電荷を保持し、この時間尺度では接触履歴の寄与が残る。照射なしと照射ありの別集団の比較であり、個々の粒子の時間変化や月面での平衡電荷を直接確定した測定ではない。
   evidence_by_item:
     question:
     - paper_id: P000266
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000JA000364
-      source_type: abstract
-      locator: Abstract, first and final paragraphs
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1029/2000JA000364
+      source_type: full_text
+      locator: PDF pp.1–2（印刷8343–8344）、§1
+      checked_at: '2026-10-08'
     method:
     - paper_id: P000266
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000JA000364
-      source_type: abstract
-      locator: Abstract, paragraphs 1–3
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1029/2000JA000364
+      source_type: full_text
+      locator: "PDF pp.3–6（印刷8345–8348）、§3 Experimental Techniques、Fig.1–4、電荷検出と照射・距離条件"
+      checked_at: '2026-10-08'
     contribution:
     - paper_id: P000266
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000JA000364
-      source_type: abstract
-      locator: Abstract, paragraphs 2–4
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1029/2000JA000364
+      source_type: full_text
+      locator: "PDF pp.7–13（印刷8349–8355）、§4–5、導体・非導体の電荷分布と照射時間"
+      checked_at: '2026-10-08'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-08'
     recheck: false
 - paper_id: P000308
   role: 姿勢と接触帯電の停止状態
@@ -1514,27 +1508,63 @@ entries:
     checked_at: '2026-10-05'
     recheck: false
   locked_fields: []
+- paper_id: P000391
+  group: surface
+  locked_fields: []
+  role: 照射後に回収した粒子の大きな負電荷
+  summary:
+    question: UVや電子ビームで帯電した絶縁性粉体から、引き出せる粒子はどの符号・大きさの正味電荷を持つか。
+    method: 火星模擬土とシリカをUV・電子ビーム・プラズマの条件で照射し、照射を止めてから最大±3 kVの外部電圧で粒子を引き出した。ファラデーカップに到達し検出された粒子の電荷分布を測定した。
+    contribution: 回収できた火星模擬土は3条件、シリカは電子ビーム系2条件で大きな負電荷を示し、電子再捕集を含むpatched charge modelと整合した。UVシリカの非検出は電荷ゼロを意味せず、抽出・輸送・検出の選別を伴う。局所パッチ電荷や照射中の自然離脱を直接測った結果ではない。
+  inspection:
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-08'
+    recheck: false
+  evidence_by_item:
+    question:
+    - paper_id: P000391
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL072909
+      source_type: full_text
+      locator: PDF pp.1–2（3059–3060）、§1
+      checked_at: '2026-10-08'
+    method:
+    - paper_id: P000391
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL072909
+      source_type: full_text
+      locator: PDF pp.3–4（3061–3062）、§2–3、Fig.1–2、照射停止・抽出・検出下限
+      checked_at: '2026-10-08'
+    contribution:
+    - paper_id: P000391
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL072909
+      source_type: full_text
+      locator: PDF pp.4–6（3062–3064）、§3–4、Fig.2–3、試料・条件ごとの負電荷と選別
+      checked_at: '2026-10-08'
 review:
 - heading: 平均電流の釣り合いから、電荷のゆらぎへ進む
   paragraphs:
-  - '[@P000233]の捕集理論を起点に、[@P000234]と[@P000235]は探針に届く粒子電流を扱う。小さな粒子を孤立球として近似するOMLと、有限寸法のシースを含む扱いを比較する際の基準となる。
-    星間粒子の衝突帯電を扱う[@P000236]へ進むと、粒子を取り巻く環境に応じた捕集電流を考えられる。[@P000094]は電子放出のない静止球について改良OMLとPICを比較し、無衝突・無磁場・電子とイオンが等温の条件で、粒径による電荷と電流の誤差を評価した。'
-  - 流入する電子・イオンは離散的なので、同じ環境でも粒子電荷は変動する。[@P000237]は個々の捕集による電荷ゆらぎをモデル化し、[@P000238]は電荷分布の平均と分散をプラズマの条件へ結び付けた。
-    凝集体へ離散帯電を広げる[@P000241]、光電子シース中で帯電と軌道を連成する[@P000167]、月面上の微粒子加速を電荷ゆらぎから論じる[@P000270]は、平均電荷から運動を予測する際の条件を考える系列になる。
+  - '[@P000233]の捕集理論を起点に、[@P000234]と[@P000235]は探針に届く粒子電流を扱う。小粒子を孤立球として近似するOMLと有限寸法のシースを比較する基準となり、星間粒子の衝突帯電[@P000236]へ進むと環境に応じた捕集を考えられる。[@P000094]の読了したarXiv版では、電子・イオン温度が等しい無衝突・無磁場の水素プラズマ中の非放出静止球について、修正OMLが遮蔽を解いて電荷を求めた。電子Debye長に対する半径比5まで電荷差は約8%以下、比10で約20%だが、電流・加熱には表から換算して約37%の差もある。浮遊電位、電荷、捕集電流の一致をそれぞれ評価する必要がある。'
+  - "流入する電子・イオンは離散的なので、同じ環境でも粒子電荷は変動する。[@P000237]は個々の捕集によるゆらぎをモデル化し、[@P000238]は電荷分布の平均と分散をプラズマ条件へ結び付けた。凝集体の離散帯電[@P000241]と光電子シース中の帯電・軌道連成[@P000167]は、平均電荷から運動を予測する条件を考える基礎となる。[@P000270]は電荷ゆらぎによる月面上の微粒子加速を論じている。"
 - heading: 非球形・凝集体では、粒子ごとの捕集経路が変わる
   paragraphs:
   - 凝集体では他の粒子に遮られた方向からの流入が減る。[@P000239]はこの見通しをOMLに組み込み、[@P000240]は凝集体の帯電と電子放出を扱う。[@P000242]の不規則形状粒子の実験は、電荷をどの大きさの球で近似できるかを検討している。
     Apollo試料とJSC-1Aの粒径・形状・内部空隙を三次元計測した[@P000218]は、球の近似や凝集体モデルへ与える形状の比較材料となる。
 - heading: 材料の電子放出を、粉体と孤立粒子で比べる
   paragraphs:
-  - 月試料の光電子放出を測る[@P000001]と二次電子放出を測る[@P000150]、両者を扱う[@P000243]は、帯電モデルへ入れる材料特性の基礎となる。[@P000021]と[@P000166]は月試料・模擬粒子の電子照射帯電を比較した。[@P000153]は粒子を個別に保持して粒径依存を測り、[@P000151]はApollo
-    16土壌の総電子収率と粒子移動を扱う。単粒子と粉体層では、放出電子が隣の粒子へ戻る経路が異なる。
-  - 真空中の単粒子光帯電[@P000265]と月ダスト単粒子の光電子放出[@P000005]に対し、[@P000007]は表面近くの光電子シースと飛翔中の粒子を計算した。放出の強い表面では、[@P000155]の空間電荷制限、[@P000156]の逆シース、[@P000089]の放出電子温度を含む運動論が電位分布の比較に役立つ。[@P000091]の確率モデルを使う際も、材料の放出特性と、実際に周囲へ逃げる電子量を対応させる必要がある。
+  - 月試料の光電子放出[@P000001]、二次電子放出[@P000150]、両者を扱う[@P000243]は、帯電モデルへ入れる材料特性の基礎となる。[@P000021]と[@P000166]は月試料・模擬粒子の電子照射帯電を比較した。[@P000153]は個別に保持した粒子の粒径依存、[@P000151]はApollo
+    16土壌の総電子収率と移動を扱う。単粒子と粉体層では、電子が隣の粒子へ戻る経路が異なる。
+  - '[@P000265]は真空中の導体粒子が孤立照射で正、光電子放出面の近くで負になる符号差を測った。[@P000005]は月ダストの負に帯電した単粒子へUVを当て、電荷減少から効率を求めた。吸収光子当たりの収率には中性極限への外挿と光吸収モデルが入るため、直接測る電荷・効率と区別する。月試料の平衡電位や付着面からの離脱をこの実験だけで確定することはできない。'
+  - '[@P000007]は表面近くの光電子シースと飛翔中の粒子を計算した。強い放出では、[@P000155]の空間電荷制限、[@P000156]の逆シース、[@P000089]の放出電子温度を含む運動論が電位分布の比較に役立つ。[@P000091]の確率モデルを使う際も、材料の放出特性と周囲へ逃げる電子量を対応させる必要がある。'
 - heading: 粒子層の局所帯電と、接触による電荷移動を追う
   paragraphs:
-  - 表面上の粒子では、[@P000009]の電子再捕集、[@P000010]の差動帯電と導電損失、[@P000013]の粒子と基板の隙間が論点になる。[@P000037]は模擬レゴリス上の電荷を定量化し、VUV照射下の[@P000052]は正負両方の粒子を測った。光とプラズマを併用する[@P000014]、模擬物層の電子収率を測る[@P000053]を合わせると、平均電位と粒子ごとの電荷の関係を考えられる。
-  - 接触でも電荷が移る。[@P000254]は模擬レゴリス粒子同士、[@P000255]は模擬粒子と異種材料の接触帯電を扱い、[@P000266]は光帯電と摩擦帯電を比較する。接触相手と照射条件をそろえることが、放出・再捕集で生じた電荷と接触履歴による電荷を整理する出発点になる。
-  - 帯電を移動へ結び付ける[@P000314]は、シリカ粒子の初速・到達高度を微小空洞の帯電と粒子間反発から調べた。[@P000317]は斜長石粒子の速度と直径を測り、電荷共有モデルで説明しにくい関係を示した。電荷を測る実験と、運動から帯電モデルを制約する実験を対応させて読める。
+  - 表面上の粒子では、[@P000009]の電子再捕集、[@P000010]の差動帯電と導電損失、[@P000013]の粒子と基板の隙間が論点になる。[@P000037]は模擬レゴリス上の電荷、VUV照射下の[@P000052]は正負の粒子を測った。[@P000391]は照射停止後に外部電圧で回収できた粒子の負電荷を測り、再捕集モデルと比較した。抽出・輸送・検出の選別を伴う正味電荷なので、局所パッチ電荷や粉体全体の平均へはそのまま移せない。光とプラズマを併用する[@P000014]、模擬物層の電子収率[@P000053]も、測定量をそろえて比較する。
+  - 接触でも電荷が移る。[@P000254]は模擬レゴリス粒子同士、[@P000255]は模擬粒子と異種材料の接触を扱う。後者では反復振動で電荷量が増えるが、接触回数や飽和を直接確定していない。仕事関数との回帰にも材料ごとの例外がある。[@P000266]では絶縁体・模擬土に70
+    msのUV照射でも初期電荷が残った。これは接触履歴を含む電荷分布であり、照射後の平衡電荷を一般に与える値ではない。
+  - 帯電を移動へ結び付ける[@P000314]は、シリカの初速・到達高度を微小空洞の帯電と粒子間反発から調べた。[@P000317]は斜長石の速度と直径を測り、電荷共有モデルで説明しにくい関係を示した。電荷を測る実験と運動から帯電モデルを制約する実験を、試料と場の条件に沿って対応させて読める。
 - heading: 接触の履歴と、流れの中の粒子電荷
   paragraphs:
   - 接触帯電では、衝突回数に加えて粒子の姿勢と電荷分布も効く。[@P000308]は振動面上の単一球が帯電を止める姿勢へ移る過程を示した。二粒子を音響浮遊させた[@P000309]では、各衝突は確率的でも累積電荷は飽和則に従った。これらは月面固有の実験ではなく、接触帯電の履歴を理解する基礎となる。流れのあるプラズマでは、[@P000321]が遮蔽とウェイクによる粒子間力を整理し、[@P000318]がウェイク内の電荷変化を粒子運動から推定している。
@@ -1561,9 +1591,8 @@ survey:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。
-    Goguen 2024のNIST公開要旨に基づく要約・確認状況を追記。'
+  coverage_note: "Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
+  changes: "Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。 Goguen 2024のNIST公開要旨に基づく要約・確認状況を追記。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
   limitations:
-  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  - "2026-09-22のIssue #2–#8整理では新規文献の全文を未精読として記録した。2026-10-08にはP000005・P000094・P000255・P000265・P000266・P000391の該当版を全文確認した。他の文献の確認状況は各entryのinspectionを参照。"
   - 'Issue #5 C16: Dove et al. (2010) は正式題名がなく、既収録P000030との同一性を確定できないため保留。'

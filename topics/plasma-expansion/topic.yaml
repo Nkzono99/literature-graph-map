@@ -22,7 +22,7 @@ review:
   paragraphs:
   - Debye長より小さな負帯電粒子の背後では、イオンの集束が周囲の電位や粒子間力を変える。[@P000097]は低速流中の2粒子を計算し、流速・衝突と整列力の関係を調べた。[@P000098]は動的遮蔽を求める理論と自己無撞着PICを比較しており、粒子の帯電と非線形性をどこまで扱うかを考える際に使える。
   - 地形の陰への膨張は、クレーターへの太陽風供給に直結する。[@P000008]は表面帯電と膨張のフィードバックを扱い、[@P000048]は三次元の地形で底面・壁面へ回り込むイオン流を計算した。月全体のウェイク、局所地形の陰、粒子周囲では、物体サイズとDebye長、流速、磁場をそろえて比較するとつながりが見える。
-    日夜境界の電場とダスト運動[@P000221]、日夜境界・極域での準中性破れ[@P000282]も、同じ粒子供給の違いを表面近くへつなぐ文献となる。
+    日夜境界の電場とダスト運動[@P000221]、日夜境界・極域での準中性破れ[@P000282]も、同じ粒子供給の違いを表面近くへつなぐ文献となる。 [@P000221]の計算は定常・準中性ウェイクと滑らかな月面の鉛直電場を扱う。地形の陰による水平電場は定性的な提案で、局所電場の数値解やダストとの自己無撞着な連成計算は行っていない。
   - 太陽嵐中のクレーターと物体帯電を扱う[@P000222]は、運動論計算を等価回路へ接続した。縦孔周囲の三次元の粒子計算[@P000225]と、ガラス管で溶岩チューブを模した実験[@P000226]は、奥へ届く粒子と壁からの電子放出を比較する。膨張前線の下の電子雲を解く[@P000264]は、クレーター内の非中性領域を解析的に扱う。地形・材料と流入条件を対応させることで、膨張理論を具体的な空洞へ適用する筋道を追える。
 - heading: ウェイクによる力と電荷変化を実験へつなぐ
   paragraphs:
@@ -1041,44 +1041,38 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000221
   group: crater-wakes
-  role: 日夜境界の電場とダスト運動
+  role: 日夜境界の鉛直電場と地形ウェイクの仮説
   summary:
-    question: 月の日夜境界のウェイクで、プラズマの密度と電子温度の変化が表面電場とダスト加速をどう変えるかを調べた。夜側向きのダストの説明も目指した。
-    method: 表面帯電モデルにウェイクの密度・電子温度変化を組み込んで電場を求め、付着力を無視して試験粒子の運動を計算した。アポロ17着陸地の地形による遮蔽も検討した。
-    contribution: モデルでは日夜境界の夜側で表面にほぼ垂直な電場が強まり、小粒子を加速した。地形の風下の局所ウェイクが、アポロ17のLEAMが捉えた夜側向きダストを説明しうると提案した。
+    question: 月の日夜境界でプラズマ供給の偏りが作る電場は、ダスト加速や夜側への輸送を説明しうるか。
+    method: 定常・準中性ウェイクの密度と電子温度を表面の電流収支へ組み込み、滑らかな月面の電位と鉛直電場を計算した。完全帯電した孤立球を仮定し、付着力を省いた試験粒子を追跡した。Apollo 17周辺の地形の陰も模式的に検討した。
+    contribution: モデルは日夜境界の夜側で強まる鉛直電場と、小粒子の加速を予測した。地形の陰で夜側向きの水平電場が生じる説明は定性的な仮説で、局所電場・軌道の数値計算やLEAMの再解析はない。本文と図の速度・単位表記の不整合が残るため、具体的な速度値は確定結果として使わない。
   evidence_by_item:
     question:
     - paper_id: P000221
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
-      source_type: abstract
-      locator: Abstract [1]; §1 Introduction [2]–[3]
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1029/2007GL029312
+      source_type: full_text
+      locator: PDF p.1、§1 [2]–[3]
+      checked_at: '2026-10-08'
     method:
     - paper_id: P000221
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      url: https://doi.org/10.1029/2007GL029312
       source_type: full_text
-      locator: §2 [6]; §3 [7], [12]; §4 [14], [16]–[17]（選択的本文読解）
-      checked_at: '2026-10-06'
+      locator: "PDF pp.2–4、§2–3 [4]–[13]、Fig.1–2、電流収支・完全帯電・付着力を省く試験粒子条件"
+      checked_at: '2026-10-08'
     contribution:
     - paper_id: P000221
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000221
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL029312
+      url: https://doi.org/10.1029/2007GL029312
       source_type: full_text
-      locator: §3 [10]–[13]; §4 [16]–[17]; §5 [18]（選択的本文読解）
-      checked_at: '2026-10-06'
+      locator: PDF pp.3–5、§3–5、Fig.2–4、速度表記と地形ウェイクの議論
+      checked_at: '2026-10-08'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-08'
     recheck: false
 - paper_id: P000222
   group: crater-wakes
@@ -1360,10 +1354,10 @@ survey:
   - plasma expansion
   - wake
   - plume electron kinetic
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  coverage_note: "Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
   limitations:
-  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。'
+  - "2026-09-22のIssue #2–#8整理では新規文献の全文を未精読として記録した。2026-10-08にはP000221の該当版を全文確認した。他の文献の確認状況は各entryのinspectionを参照。"
+  changes: "Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
   publication_status: draft
   reviewed_at: null
 reading_notes: []

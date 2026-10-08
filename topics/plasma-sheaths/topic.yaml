@@ -16,9 +16,9 @@ review:
   - 日照面ではUVによる光電子放出が加わる。[@P000092]は真空中の金属面を照らして光電子層を作り、電子密度の分布を一次元PICと比較した。月面の平坦な日照面を扱う[@P000007]では、光電子シースとその中のダスト運動を計算している。[@P000011]は太陽風電子の流れを半解析モデルに含め、PICとの比較や電子分布を変えた計算へ進む。実験の照射・材料条件と、月面のプラズマ・放出条件を対応させると、同じシースの議論を両者で参照しやすい。
 - heading: 平面から小さな粒子へ
   paragraphs:
-  - 球状ダストでは、電位によって曲がる粒子軌道が捕集電流を決める。[@P000233]の捕集理論、球状探針の[@P000234]、有限寸法の球・円筒探針の[@P000235]は、形状とシースを含む電流の基礎になる。[@P000094]は、電子を放出しない静止球について、軌道運動制限（OML）理論とPICを比較した。粒径とDebye長の比を変え、電荷、捕集電流、エネルギー流束を別々に評価している。表面電位から電荷を求めたい場合と、材料への粒子流入を求めたい場合では、参照する量を分けて読むと使いやすい。
+  - 球状ダストでは、電位によって曲がる粒子軌道が捕集電流を決める。[@P000233]の理論、球状探針の[@P000234]、有限寸法の球・円筒探針の[@P000235]が形状とシースを含む電流の基礎になる。[@P000094]の読了したarXiv版では、非放出・静止球の修正OMLが遮蔽を解いて電荷を求め、電子・イオン温度が等しい無衝突・無磁場の水素プラズマでPICと比較した。電子Debye長に対する半径比5まで電荷差は約8%以下、比10で約20%だが、電流・加熱には約37%の差もある。浮遊電位、表面電場からの電荷、捕集電流を分けて評価する必要がある。
   - 月面の光電子シース中を動く粒子へ進むと、[@P000167]は位置と電荷を連成して追跡する。非Maxwell型の電子分布を含め、電荷を連続量で扱う場合と電子1個ずつの出入りで扱う場合を比較し、希薄な条件で軌道や浮遊の成立が変わることを示した。
-  - 真空中の単粒子光帯電[@P000265]と、シース中の粒子浮遊実験[@P000267]は、粒子に入る電流と電場中の力を測る比較対象になる。日照月面のダスト音波を扱う[@P000268]へ進むと、単粒子の軌道から集団の非線形な波動へ対象が広がる。
+  - '[@P000265]の真空実験では、導体の孤立UV照射と光電子放出面の近傍で帯電符号が逆になった。電位は測定電荷からの球形換算で、検出下限と初期接触履歴が電荷分布に効く。シース中の粒子浮遊実験[@P000267]とは、放出・捕集の配置と電場中の力を対応させて比較する。日照月面のダスト音波[@P000268]は、単粒子の軌道から集団の非線形な波動へ対象を広げる。'
 - heading: 放出シースの基礎と、逆シースへの移行
   paragraphs:
   - '[@P000155]は電子放出を含むLangmuirシースと熱流の基礎理論に対応する。強い二次電子放出を扱う[@P000156]は、通常のDebyeシースが成立しない条件を示した。熱電子探針の[@P000343]は、電離・衝突を含め、イオン閉じ込めを伴う仮想陰極から単調な逆シースへ移る条件を調べている。放出の種類、流入電子の分布、プレシースの粒子生成・衝突条件を区別すると、各モデルの電位構造を比較しやすい。'
@@ -412,38 +412,38 @@ entries:
   locked_fields: []
 - paper_id: P000094
   group: collection
-  role: 球状ダストのOMLとPIC
+  role: 遮蔽を解く修正OMLとPICの比較
   summary:
-    question: 球状粒子の電荷と捕集電流を、軌道運動制限理論でどこまで予測できるか。
-    method: 電子放出のない静止球について、改良OML理論とPICを比較。
-    contribution: 無衝突・無磁場かつ電子とイオンが等温の条件で、粒径に対する電荷・電流の誤差を評価。
+    question: 電子放出のない静止球について、浮遊電位、電荷、捕集電流、加熱をOMLでどこまで予測できるか。
+    method: "無衝突・無磁場で電子・イオン温度が等しい（Te/Ti＝1）水素プラズマに球形導体を置き、修正OMLと球対称PICを比較した。読解対象はarXiv:1611.08658v1で、半径と電子Debye長の比を0.25–10で変えた。"
+    contribution: 遮蔽電位を解いて求めた電荷は、PICを基準とする誤差が半径比5まで約8%以下、比10で約20%だった。浮遊電位の一致だけでは電荷・電流の一致を保証しない。電流・加熱誤差には本文の概括と表からの換算に差があり、最大半径比の一部では約37%となる。
   evidence_by_item:
     question:
     - paper_id: P000094
       version_id: V2
-      url: https://arxiv.org/abs/1611.08658
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/pdf/1611.08658v1
+      source_type: full_text
+      locator: arXiv:1611.08658v1、PDF pp.1–3、§I
+      checked_at: '2026-10-08'
     method:
     - paper_id: P000094
       version_id: V2
-      url: https://arxiv.org/abs/1611.08658
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/pdf/1611.08658v1
+      source_type: full_text
+      locator: 同版PDF pp.4–7、§II–III、式(6)–(16)、PIC条件
+      checked_at: '2026-10-08'
     contribution:
     - paper_id: P000094
       version_id: V2
-      url: https://arxiv.org/abs/1611.08658
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/pdf/1611.08658v1
+      source_type: full_text
+      locator: 同版PDF pp.5–11、§III、Table I–III、式(16)のPIC基準誤差
+      checked_at: '2026-10-08'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V2
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-08'
     recheck: false
   locked_fields: []
 - paper_id: P000007
@@ -852,56 +852,38 @@ entries:
     recheck: false
 - paper_id: P000265
   group: photoemission
-  role: 真空中の単粒子光帯電
+  role: 孤立粒子と光電子層で変わる帯電符号
   summary:
-    question: 真空中のダストは、自らの光電子放出と近くの表面からの光電子の取り込みによって、どのような電荷を得るのかを調べた。
-    method: 亜鉛・銅・黒鉛・ガラスの単粒子を紫外線中と、照射したジルコニウム板の近くへ落とし、ファラデーカップで電荷分布を測定した。
-    contribution: 亜鉛・銅・黒鉛は単独照射で正、光電子を出す面の近くで負に帯電した。ガラスでは初期の摩擦帯電とみられる電荷が残り、光照射だけでは平衡電荷に達しなかった。
+    question: 自ら光電子を放出する粒子と、近くの面から光電子を集める粒子では、帯電の符号がどう変わるか。
+    method: 真空中の直径90–106 µmの亜鉛・銅・黒鉛・ガラス粒子をUV照射し、ジルコニウム面からの光電子層を通る場合も比較した。落下後のファラデーカップで正味電荷の分布を測り、検出下限は約±2×10⁴電子相当だった。
+    contribution: "導体粒子は孤立照射で正、光電子を出す面の近くで負に帯電した。ガラスでは接触帯電に由来する幅広い初期電荷が残り、照射中に一様な平衡へ達しなかった。電位は測定電荷からの球形近似であり、検出下限以下を含む全粒子の平均や電荷は確定していない。"
   evidence_by_item:
     question:
     - paper_id: P000265
       version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.84.6034
-      source_type: abstract
-      locator: Abstract, sentence 1
-      checked_at: '2026-10-06'
-    - paper_id: P000265
-      version_id: V1
-      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      url: https://doi.org/10.1103/PhysRevLett.84.6034
       source_type: full_text
-      locator: PDF p. 1 / printed p. 6034, paragraph beginning “We have performed experiments”
-      checked_at: '2026-10-06'
+      locator: PDF p.1（印刷6034）、研究目的
+      checked_at: '2026-10-08'
     method:
     - paper_id: P000265
       version_id: V1
-      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      url: https://doi.org/10.1103/PhysRevLett.84.6034
       source_type: full_text
-      locator: PDF pp. 1–2 / printed pp. 6034–6035, experimental setup and ultraviolet illumination paragraphs, Fig. 1
-      checked_at: '2026-10-06'
+      locator: PDF pp.1–2（6034–6035）、実験系・Fig.1・UVと電荷検出
+      checked_at: '2026-10-08'
     contribution:
     - paper_id: P000265
       version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.84.6034
-      source_type: abstract
-      locator: Abstract, sentences 2–3
-      checked_at: '2026-10-06'
-    - paper_id: P000265
-      version_id: V1
-      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
+      url: https://doi.org/10.1103/PhysRevLett.84.6034
       source_type: full_text
-      locator: PDF pp. 2–3 / printed pp. 6035–6036, conductor photoemission and sheath experiments paragraphs
-      checked_at: '2026-10-06'
-    - paper_id: P000265
-      version_id: V1
-      url: https://occult.mit.edu/_assets/documents/publications/Sickafoose2000PRL84.6034.pdf
-      source_type: full_text
-      locator: PDF p. 4 / printed p. 6037, “The data for glass” paragraph and Fig. 6
-      checked_at: '2026-10-06'
+      locator: PDF pp.2–4（6035–6037）、Fig.2–6、導体の符号差とガラスの分布
+      checked_at: '2026-10-08'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-08'
     recheck: false
 - paper_id: P000268
   group: photoemission
@@ -1069,10 +1051,10 @@ survey:
   - sheath
   - electron emission
   - OML PIC
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
+  coverage_note: "Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
   limitations:
-  - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  - "2026-09-22のIssue #2–#8整理では新規文献の全文を未精読として記録した。2026-10-08にはP000094・P000265の該当版を全文確認した。他の文献の確認状況は各entryのinspectionを参照。"
+  changes: "Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
   publication_status: draft
   reviewed_at: null
 reading_notes: []

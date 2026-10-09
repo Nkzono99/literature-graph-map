@@ -12,6 +12,9 @@ review:
 - heading: 時間スケールの差を、陰解法で扱う
   paragraphs:
   - 速い電子運動と遅い変化を同時に追うと、時間刻みが計算費用を左右する。[@P000064]は陰的モーメント法で粒子と流体を結び、衝突を伴う電子輸送を扱った。電磁・運動論的な実装の基本は[@P000065]にまとまっている。そこからエネルギー保存に重点を移したのがECSIM（[@P000066]）で、非線形反復を使わずに粒子と場のエネルギー交換を釣り合わせる。相対論的な完全陰解法（[@P000067]）も併せると、結合の解き方と保存性を比較できる。計算条件を選ぶ際には、安定性とともに対象現象の時間・空間分解能を考える。
+- heading: 粒子と流体の分け方を選ぶ
+  paragraphs:
+  - ハイブリッドPIC法では、イオンを粒子・電子を流体にする構成、静電場とBoltzmann電子を組み合わせる構成、大域MHDと局所PICを領域で結ぶ構成を区別する。電子慣性や圧力閉包、準中性近似とPoisson方程式の違いは、再現できるスケールを決める。子テーマの「ハイブリッドPIC法・粒子と流体の結合」で、数値更新・保存則・分散誤差と宇宙への応用を比較する。衝突性プラズマの集団分割（[@P000064]）と、FLEKSの領域結合（[@P000071]）も、この観点で読み直せる。
 - heading: 物体形状と計算規模に合わせて構成を選ぶ
   paragraphs:
   - 月面地形や宇宙機の近傍では、表面形状に沿う格子や粒子の境界処理が効いてくる。CPIC（[@P000068]）は曲線格子とマルチグリッドを組み合わせ、複雑な物体とプラズマの相互作用に対応した。[@P000074]は宇宙機帯電を題材に、複数のPIC手法を整理して並列実行へつなぐソフトウェア構成を示している。
@@ -58,6 +61,7 @@ scope:
 navigation:
   parent: numerical-methods
   related:
+  - hybrid-pic
   - mhd
   - poisson-solvers
   - plasma-sheaths
@@ -302,36 +306,36 @@ entries:
   group: implicit
   role: 衝突と粒子・流体の結合
   summary:
-    question: 衝突性が大きく変わるプラズマの電子輸送をどう計算するか。
-    method: 粒子と流体を組み合わせ、陰的モーメント法で電場を求める。
-    contribution: レーザー生成の高エネルギー電子と背景プラズマを一つの計算で扱う。
+    question: 強衝突の標的と弱衝突のコロナで、高温電子と背景の輸送をどう同時に追うか。
+    method: 高温電子を衝突付きPIC、熱電子とイオンを有限質量の二流体で解き、陰的モーメント式とPoissonから静電場を求める。
+    contribution: 粒子・流体の集団分割でレーザー電子輸送と箔の膨張を計算。電子Courant制約、保存誤差、縮小質量比による限界も示した。
   evidence_by_item:
     question:
     - paper_id: P000064
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/0021999183901651
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/0021-9991(83)90165-1
+      source_type: full_text
+      locator: 出版PDF pp.2–3、§1–2A
+      checked_at: '2026-10-10'
     method:
     - paper_id: P000064
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/0021999183901651
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/0021-9991(83)90165-1
+      source_type: full_text
+      locator: 出版PDF pp.3–9、§2A–C、式4–9
+      checked_at: '2026-10-10'
     contribution:
     - paper_id: P000064
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/0021999183901651
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/0021-9991(83)90165-1
+      source_type: full_text
+      locator: 出版PDF pp.9–17、§2E・§3–4、Fig.2–4
+      checked_at: '2026-10-10'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-10'
     recheck: false
   locked_fields: []
 - paper_id: P000065

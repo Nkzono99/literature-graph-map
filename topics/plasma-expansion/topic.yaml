@@ -10,7 +10,7 @@ review:
 - heading: 電子の分布から計算モデルを選ぶ
   paragraphs:
   - 電子を流体に置き換えるハイブリッドPICは、大きな空間を計算する際によく用いられる。[@P000099]は平板背後のウェイクについて、解析解・ハイブリッドPIC・完全運動論PICを比較した。電子が平衡に近い領域では結果が近く、速度分布が強く歪む領域では電子の扱いが電位や流入量の差につながる。
-  - プルームを扱う[@P000100]では、電子が冷却する領域と等温に近い領域が現れ、電位井戸との相互作用が電子分布を変える。[@P000101]はXe推進機の条件でモデルを比較し、密度分布の近さに比べて電位の差が大きいことを示した。必要な出力が密度・電位・電子分布のどれかによって、モデル比較で見るべき量も変わる。
+  - プルームを扱う[@P000100]では、電子が冷却する領域と等温に近い領域が現れ、電位井戸との相互作用が電子分布を変える。[@P000101]はXe推進機の条件でモデルを比較し、密度の大まかな形が似ていても、外縁の局所密度と電位には大きな差が残ることを示した。必要な出力が密度・電位・電子分布のどれかによって、モデル比較で見るべき量も変わる。
 - heading: 月ウェイクは流入経路と再充填の段階で読む
   paragraphs:
   - 月ウェイクの観測は、Windの横断観測[@P000223]、Lunar Prospectorの電子・磁場観測[@P000224]、ARTEMISの三次元再構成[@P000231]をたどれる。[@P000220]は空隙断面の一次元静電PICをWind観測と比べ、境界電場で加速される対向イオン流を再現した。観測位置と膨張の段階を対応させると、理想化した空隙モデルが説明する構造を見分けられる。
@@ -305,36 +305,36 @@ entries:
   group: electron-models
   role: 推進機プルームのモデル比較
   summary:
-    question: ハイブリッドPICは、推進機プルームの電位をどの程度再現するか。
-    method: 実際のXeイオン・電子質量比を用いる完全運動論PICと比較。
-    contribution: 比較条件では密度構造が似ていても電位に差が生じ、電子の異方性と中和領域が影響した。
+    question: 等温Boltzmann電子の静電hybridは、無衝突プルームの密度・電位をどこまで再現するか。
+    method: 実際のXe⁺・電子質量比による二次元PICと比較。hybridはBoltzmann密度から非線形Poissonを解き、放出部の中和条件も比較する。
+    contribution: 密度の大まかな形が似ていても、外縁の密度と横方向の電位に差が残った。電子温度の異方性と中和条件を分けて検証する根拠を示した。
   evidence_by_item:
     question:
     - paper_id: P000101
       version_id: V1
       url: https://doi.org/10.1063/1.5111791
-      source_type: abstract
-      locator: 出版社PDF p.1 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: 出版PDF pp.2–3（印刷103502-1–2）、§I、式1–3
+      checked_at: '2026-10-10'
     method:
     - paper_id: P000101
       version_id: V1
       url: https://doi.org/10.1063/1.5111791
-      source_type: abstract
-      locator: 出版社PDF p.1 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: 出版PDF pp.3–4、§II、Fig.1、式4–7
+      checked_at: '2026-10-10'
     contribution:
     - paper_id: P000101
       version_id: V1
       url: https://doi.org/10.1063/1.5111791
-      source_type: abstract
-      locator: 出版社PDF p.1 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: 出版PDF pp.5–8、Fig.2–7、式9–13、§IV
+      checked_at: '2026-10-10'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-10'
     recheck: false
   locked_fields: []
 - paper_id: P000102

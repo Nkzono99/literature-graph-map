@@ -58,6 +58,7 @@ scope:
 navigation:
   parent: numerical-methods
   related:
+  - mhd
   - poisson-solvers
   - plasma-sheaths
   - spacecraft-plasma

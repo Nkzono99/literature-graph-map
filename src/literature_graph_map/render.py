@@ -62,12 +62,18 @@ def access_cell(work: Work) -> Markup | str:
                 "unknown": "公開版あり・版未確認",
             }[version.kind]
         return link(label, location.url)
-    return "無料版未検出" if work.access_check == "not_found" else "未確認"
+    return {
+        "not_found": "無料版未検出",
+        "limited_not_found": "調査範囲で無料版未検出",
+        "failed": "確認失敗",
+    }.get(work.access_check, "未確認")
 
 
 def preprint_cell(work: Work) -> Markup | str:
+    if work.preprint_check == "not_applicable":
+        return "対象外"
     if work.preprint_check == "uncertain":
-        return "対応未確定"
+        return "版・対応未確定"
     records = [
         (version, location)
         for version in work.versions
@@ -82,7 +88,11 @@ def preprint_cell(work: Work) -> Markup | str:
             "あり（プレプリント）" if version.kind == "submitted" else "公開記録あり（著者最終稿）"
         )
         return link(label, location.url)
-    return "未検出" if work.preprint_check == "not_found" else "未確認"
+    return {
+        "not_found": "未検出",
+        "limited_not_found": "調査範囲で未検出",
+        "failed": "確認失敗",
+    }.get(work.preprint_check, "未確認")
 
 
 def inspection_label(entry: Entry, work: Work) -> str:

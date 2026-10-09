@@ -107,10 +107,18 @@ class Work(Model):
     versions: list[Version] = Field(min_length=1)
     metadata_sources: list[MetadataSource] = Field(default_factory=list)
     record_url: URL
-    access_check: Literal["not_checked", "not_found", "checked", "failed"] = "not_checked"
-    preprint_check: Literal["not_checked", "not_found", "found", "uncertain", "failed"] = (
+    access_check: Literal["not_checked", "not_found", "limited_not_found", "checked", "failed"] = (
         "not_checked"
     )
+    preprint_check: Literal[
+        "not_checked",
+        "not_found",
+        "limited_not_found",
+        "found",
+        "uncertain",
+        "failed",
+        "not_applicable",
+    ] = "not_checked"
     version_links: list[VersionLink] = Field(default_factory=list)
     missing_note: str = "未取得の書誌項目は未確認。"
     locked_fields: list[

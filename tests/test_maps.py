@@ -453,7 +453,34 @@ def test_access_displays_available_links(snapshot):
     work.preprint_check = "not_found"
     assert access_cell(work) == "無料版未検出" and preprint_cell(work) == "未検出"
     work.access_check = "failed"
-    assert access_cell(work) == "未確認"
+    work.preprint_check = "failed"
+    assert access_cell(work) == "確認失敗" and preprint_cell(work) == "確認失敗"
+    work.access_check = "not_checked"
+    work.preprint_check = "not_checked"
+    assert access_cell(work) == "未確認" and preprint_cell(work) == "未確認"
+
+
+def test_preprint_not_applicable_survives_storage_and_render(tmp_path, snapshot):
+    snapshot.works["P000001"].preprint_check = "not_applicable"
+    commit(tmp_path, snapshot)
+    loaded = load(tmp_path)
+    assert loaded.works["P000001"].preprint_check == "not_applicable"
+    render(tmp_path, loaded)
+    page = (tmp_path / "_site/topics/demo/index.html").read_text(encoding="utf-8")
+    assert "対象外" in page
+
+
+def test_scoped_search_status_survives_storage_and_render(tmp_path, snapshot):
+    work = snapshot.works["P000001"]
+    work.versions[0].locations = []
+    work.access_check = "limited_not_found"
+    work.preprint_check = "limited_not_found"
+    commit(tmp_path, snapshot)
+    loaded = load(tmp_path)
+    render(tmp_path, loaded)
+    page = (tmp_path / "_site/topics/demo/index.html").read_text(encoding="utf-8")
+    assert "調査範囲で無料版未検出" in page
+    assert "調査範囲で未検出" in page
 
 
 def test_multiple_versions_do_not_require_provenance(snapshot):

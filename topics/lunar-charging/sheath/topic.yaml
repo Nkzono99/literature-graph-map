@@ -6,11 +6,12 @@ review:
 - heading: 電流の釣り合いと電子放出
   paragraphs:
   - '[@P000002]の電流収支は、プラズマの電子・イオンが運ぶ電荷と、光電子・二次電子として出ていく電荷を釣り合わせる。放出特性を測る[@P000001]と、月面電場やシースを整理する[@P000020]を併せて読むと、材料特性から表面電位へ進む筋道が分かる。[@P000038]は太陽風と太陽放射を変え、環境条件への応答を調べた。'
+  - '[@P000020]は、観測で推定した地表電位を遮蔽長で割ってシース電場の規模を整理した。昼側の+10 Vと有効遮蔽長1 mは約10 V/mと整合し、終端では約10 mを仮定して内向き約1～10 V/mを見積もる。終端イオンシースの模式図にはλD≫10 mと記され、遠夜側の約100 mと約1 V/mは推測に残る。この整理から、後続のシース研究では電位分布と有効遮蔽長をどの粒子集団が決めるかが課題になる。'
   - 磁気圏ローブ中の昼側について、[@P000162]は太陽活動に応じた放出電流から電位を予測し、[@P000161]は観測光電子のエネルギーずれから電位を推定する。放出モデルと観測を往復して電流収支を調べる研究として読める。
 - heading: 単一の表面電位から、空間構造へ
   paragraphs:
-  - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar
-    Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]、イオン温度を組み込む最近の理論は[@P000055]に進める。
+  - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]、イオン温度を組み込む最近の理論は[@P000055]に進める。
+  - Lunar Prospectorによる非単調シースの議論に続き、[@P000036]はARTEMIS P1の電子だけでなくイオン温度も用いて、磁気圏尾部の日照側シースを一次元PICと照合した。イオン温度を上げると電位極小への落差が浅くなり、電子温度が低下してTi/Teが臨界比を超える時間帯には冷たいビームが消える。残る低エネルギーの上向きフラックス、探査機電位による汚染範囲、初期時間帯の予測との差も比較条件に含める。
   - シース内を動く粒子には、場所ごとの電場と電子・イオン電流が同時に効く。[@P000167]は帯電と軌道を連成し、希薄な条件では電子1個ずつの出入りが運動を変えることを示した。
   - シース内の力をダスト輸送へ結び付ける際には、表面から離れるまでの接触も条件になる。[@P000256]の総説はレゴリスの力学と帯電・運動を横断し、離脱時の電荷分布と微小粒子の実験を課題として整理した。シースが与える電場と、粒子を保持する力を対応させるための入口となる。
 - heading: 実験の光電子シースを計算と照合する
@@ -131,20 +132,38 @@ entries:
   locked_fields: []
 - paper_id: P000020
   group: balance
-  role: 月面電場とシースの初期像
+  role: 電位観測と遮蔽長からシース電場を見積もる
   summary:
-    question: 月面電位・電場・プラズマシースは、どのように結び付くか。
-    method: 初期の月面観測を踏まえ、帯電とシースの理論を整理。
-    contribution: 昼夜の電気的環境を、表面電位と周辺プラズマの両面から論じた。
+    question: 太陽風・磁気圏尾部中の月面電位は、SIDE観測と先行理論からどこまで定まり、近地表シースの電場へどう結び付くか。
+    method: SIDEの電圧走査共鳴と終端の低エネルギーイオンから電位を推定し、先行研究を比較。電場は電位と仮定した遮蔽長から概算。
+    contribution: 昼側の正電位と終端の負電位をSIDE観測から推定し、電位と遮蔽長から昼側外向き・終端内向きの電場を概算。夜側と有効遮蔽長の未確定性を残した。
   evidence_by_item:
-    question: []
-    method: []
-    contribution: []
+    question:
+    - paper_id: P000020
+      version_id: V1
+      url: https://doi.org/10.1007/BF00562976
+      locator: PDF pp.1–4,10–12; title/abstract, Tables I–II and closing discussion
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000020
+      version_id: V1
+      url: https://doi.org/10.1007/BF00562976
+      locator: PDF pp.4–5 Eq.(1), Fig.3–4; pp.7–9 Fig.7–8; pp.10–11 electric-field estimates
+      source_type: full_text
+      checked_at: '2026-10-11'
+    contribution:
+    - paper_id: P000020
+      version_id: V1
+      url: https://doi.org/10.1007/BF00562976
+      locator: PDF pp.6–7 Fig.5–6 (dayside); pp.7–9 Fig.7–8 (terminator); pp.10–11 Fig.9 (fields and nightside assumptions)
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000038
@@ -257,26 +276,38 @@ entries:
   locked_fields: []
 - paper_id: P000036
   group: structure
-  role: ARTEMISとPICの比較
+  role: ARTEMISの電子・イオン観測とPICの比較
   summary:
-    question: 磁気圏尾部の光電子シースを、観測と計算で説明できるか。
-    method: ARTEMIS-P1の電子観測を、一次元PICシース計算と比較。
-    contribution: 非単調な電位分布を再現し、電子温度に加えてイオン温度の影響を示した。
+    question: 地球磁気圏尾部の日照側月面上空で見られる電子ビームとロスコーンの時間変化を、非単調な光電子シースと入射電子・イオン温度から説明できるか。
+    method: 2011年7月16日11:50–12:25 UTCのARTEMIS P1の電子・イオン・電磁場観測を、実測Te・Tiを与えた一次元PICシースモデルと比較。直線外挿で月面との磁気接続を判定し、探査機電位を加えてビームエネルギーを照合した。
+    contribution: 実測イオン温度を加えて、非単調シースの極小への電位落差とビームの一時的消失を説明した。Te=500 eV・nps=10⁵ m⁻³の計算例ではTiの増加で落差が減り、観測時の温度比がモデル臨界値を超える区間にビーム消失が対応した。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000036
+      version_id: V1
+      url: https://doi.org/10.1029/2011gl050321
+      locator: PDF pp.1–2, §§1–2, ¶3–7
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000036
+      version_id: V1
+      url: https://doi.org/10.1029/2011gl050321
+      locator: PDF pp.1–3, §2 ¶4–6; §3.1 ¶7; Eq.(1), Fig.1 (p.3, caption p.2)
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000036
       version_id: V1
       url: https://doi.org/10.1029/2011gl050321
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      locator: PDF pp.2–5, §3.1–3.2 ¶7–11; Eqs.(1),(2); Figs.2–4; §4 ¶12
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000055

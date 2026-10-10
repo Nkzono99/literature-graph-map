@@ -13,6 +13,7 @@ review:
   - 小さな磁気異常では、電子は磁場の影響を強く受ける一方、イオンの旋回半径は異常の寸法より大きくなる。この応答の違いから電荷が分かれ、電場が生じる。かぐやによる[@P000111]では電子の加速と陽子・アルファ粒子の減速が同時に観測され、電場の存在を粒子エネルギーから調べている。
   - 三次元PICの[@P000112]は、電子の偏向、反射イオン、周囲の密度増加を一つの計算で追跡した。[@P000114]は境界層に焦点を絞り、電子のドリフトと旋回運動から電流の構造を説明する。双極子を垂直に向けた[@P000113]では、カスプへの流入と周囲の電場によって反射や表面照射の形が変わる。磁場の形状は、遮蔽の強さと同じくらい重要な比較軸になる。
   - ミニ磁気圏の実験とスワール形成を結ぶ[@P000275]は、局所磁場による遮蔽を室内でも調べる研究として参照できる。かぐや低高度観測の[@P000178]は電子のみが関わる磁気リコネクションの候補を検討する。表面への粒子到達に加え、磁場近傍でのエネルギー変換も比較の対象となる。
+  - Bamford（2012）[@P000275]は、磁化された電子と十分に磁化されないイオンの応答差が作る電位障壁を、既報の衛星観測とプラズマ風洞の空洞形成につないだ。太陽風イオンが減速・偏向されることで、局所磁場の勾配に応じた照射と風化の差がスワールの明暗を作りうると論じる。ただし読んだarXiv v1では、実験電位と電子慣性長の数値を印刷値から再現できず、定量的一致と表面形成の実証は区別して扱う必要がある。
 - heading: 実際の磁場配置と表面帯電へ広げる
   paragraphs:
   - Reiner Gammaの観測に基づく磁場を使った[@P000115]は、太陽風の入射角や磁気シース通過を含む8条件を比較した。高度によっても粒子分布が大きく変わるため、周回機と着陸機の観測を結び付ける際に参照できる。
@@ -26,6 +27,7 @@ review:
 - heading: 遮蔽を比べ、散乱粒子の行き先を追う
   paragraphs:
   - '[@P000274]は複数の磁気異常を比較し、単純な磁場構造で見られる遮蔽の傾向が、複雑な構造では一様に成り立たないことを示した。[@P000272]はARTEMISの統計から高高度・下流の圧縮構造を調べ、[@P000273]は磁気異常で散乱された陽子が月ウェイクへ届く経路を観測と軌道追跡から検討している。'
+  - '[@P000274]はCENAの複数磁気異常を比較し、Gerasimovichでは、異常より広い地表視野を持つ外側セクターを除くと、磁場が強いほど中性水素の減少率が高く、同程度の磁場では太陽風動圧が低い群の減少率が高いことを示した。外側セクターのみの1領域を除いた9領域中4領域で磁場との相関が見られたが、他の領域には相関が見えない例や観測不足があった。ENA減少には表面の反射効率の違いも重なるため、地域間の比較には磁場構造、観測視野、太陽風条件を合わせる必要がある。'
 - heading: 磁化が記録した磁場と、磁化を担う物質を分けて調べる
   paragraphs:
   - 現在の磁気異常の背景には、過去の磁場と磁性鉱物の履歴がある。[@P000288]は裏側起源と推定される月隕石から約7億年前の弱い磁場を読み、全球ダイナモの停止時期を制約する。一方、[@P000297]は模擬物の加熱によるFeの再分配と磁性相の生成を追う。試料の磁化を解釈する際には、磁場の強さと、物質が磁化を保持する条件の両方を参照できる。
@@ -457,39 +459,39 @@ entries:
     recheck: false
 - paper_id: P000274
   group: particles-and-potentials
-  role: 複数磁気異常の中性原子による遮蔽比較
+  role: 観測視野と太陽風条件を考慮した複数磁気異常のENA遮蔽比較
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-11'
     recheck: false
   summary:
-    question: 太陽風遮蔽の傾向は異なる磁気異常でも共通か。
-    method: SARAの中性原子観測を局所磁場と太陽風条件に対応させる。
-    contribution: 単純なGerasimovich異常と複雑な他の異常で、遮蔽と環境条件の関係が異なることを示した。
+    question: CENAが観測した月の10磁気異常では、150–600 eVの中性水素フラックスの減少が常に現れるか。また、その減少率は地殻磁場・太陽風動圧・惑星間磁場とどう関係するか。
+    method: Chandrayaan-1/CENAの昼側・緯度±60°の87軌道を解析し、ENAフラックスを時間補正したWINDの太陽風陽子フラックスで規格化する。振幅を適合させた角度散乱関数からの減少率を求め、Lunar Prospectorの高度30 km磁場地図と比較する。異常より広い視野を持つセクター1・5を除いた2–4で磁場との相関を調べる。
+    contribution: Gerasimovichでは、視野の広い外側セクターを除くと磁場が強いほどENA減少率が高く、同程度の磁場では低動圧群の減少率が高かった。外側セクターのみの1領域を除いた9領域中4領域で磁場との相関が見られ、2領域は有効観測が各1件、3領域には相関が見えなかった。表面反射効率との交絡と、小規模磁場構造の解釈の限界を示した。
   evidence_by_item:
     question:
     - paper_id: P000274
       version_id: V1
-      url: https://doi.org/10.1029/2012ja017553
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://doi.org/10.1029/2012JA017553
+      locator: PDF p.2, §1 ¶3
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000274
       version_id: V1
-      url: https://doi.org/10.1029/2012ja017553
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://doi.org/10.1029/2012JA017553
+      locator: PDF pp.2–4, §§2–3 ¶4–11, Eqs.1–2; p.6 ¶14, Fig.4
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000274
       version_id: V1
-      url: https://doi.org/10.1029/2012ja017553
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://doi.org/10.1029/2012JA017553
+      locator: PDF pp.6–9, §4 ¶14–18, Figs.4–5, Tables1–3; §5 ¶19–23,25
+      source_type: full_text
+      checked_at: '2026-10-11'
 - paper_id: P000272
   group: surface-and-global
   role: ARTEMISによる磁気異常周辺の圧縮構造
@@ -562,38 +564,38 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000275
   group: surface-and-global
-  role: ミニ磁気圏の実験とスワール形成
+  role: 電子・イオンの応答差と風洞の空洞形成
   summary:
-    question: 月面上のミニ磁気圏と小規模な無衝突衝撃波はどのように形成され、太陽風イオンの減速・偏向を通じて月面スワールの模様に関与しうるかを問う。
-    method: 衛星による現場観測データ、理論、実験室での検証を組み合わせ、電子慣性長と同程度のスケールで生じる無衝突衝撃波とミニ磁気圏の形成を調べた。
-    contribution: 電子慣性長と同程度の小規模な無衝突衝撃波とミニ磁気圏の形成機構を示した。太陽風イオンの減速・偏向が、月面スワールの形成に関与する可能性を提示した。
+    question: イオンの旋回半径より小さい月面磁気異常の上で、何が太陽風イオンを減速・反射し、密度空洞とスワールの明暗差を作りうるか。
+    method: Lunar Prospector・Kaguya・Chandrayaan-1・Nozomiの既報の異なる事例を、電子が磁化されイオンが磁化されない二流体の電位障壁モデルでまとめ、超音速水素流を二つの双極子磁石へ当てる風洞の写真・Langmuir probe分布と比較した。観測・風洞データは引用文献に依存し、全無次元数をそろえた相似ではない。
+    contribution: 小規模な磁気異常でも、電子とイオンの応答差による電荷分離の電場がイオンを偏向する機構を提案し、風洞での密度空洞と浮遊電位変化につないだ。複雑な局所磁場勾配が太陽風照射と風化を変えることでスワールの明暗差を生む可能性を論じる。実験電位予測と電子慣性長には原稿内の数値不整合があり、定量的一致は未確認。
   evidence_by_item:
     question:
     - paper_id: P000275
-      version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.109.081101
-      source_type: abstract
-      locator: Abstract, first and second sentences
-      checked_at: '2026-10-06'
+      version_id: Vaccess1
+      url: https://arxiv.org/pdf/1207.2076v1
+      locator: PDF pp.1–2, Fig.2
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000275
-      version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.109.081101
-      source_type: abstract
-      locator: Abstract, first and second sentences
-      checked_at: '2026-10-06'
+      version_id: Vaccess1
+      url: https://arxiv.org/pdf/1207.2076v1
+      locator: PDF pp.2–4, Eqs.(1–4), Table I, Figs.3–5
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000275
-      version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.109.081101
-      source_type: abstract
-      locator: Abstract, first and second sentences
-      checked_at: '2026-10-06'
+      version_id: Vaccess1
+      url: https://arxiv.org/pdf/1207.2076v1
+      locator: PDF pp.3–5, Eq.(2), Figs.4–5, interpretation/conclusion
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: Vaccess1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-11'
     recheck: false
 - paper_id: P000288
   group: origin

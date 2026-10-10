@@ -164,38 +164,38 @@ entries:
     recheck: false
 - paper_id: P000223
   group: expansion
-  role: Windによる月ウェイク観測
+  role: WIND観測による磁場方向の月ウェイク充填
   summary:
-    question: 太陽風を遮る月の後方では、プラズマ密度がどのように低下し、周囲の太陽風がどのような流れでウェイク内の空洞を埋め直すのかを調べる。
-    method: 1994年12月27日、月の後方6.5月半径でウェイクを横断したWINDのSWE観測を用い、プラズマ密度とイオン流の変化を調べ、単純な膨張理論と比較した。
-    contribution: 空洞を満たす二つの低温イオン流を観測し、磁場方向の電場による加速と解釈した。密度は中心へ指数関数的に低下し、密度低下域は光学的な影を越え、希薄波の伝播と整合した。
+    question: 月後方のプラズマ空洞を太陽風がどのように埋めるか、密度減少、二つの陽子流、磁場方向、密度低下境界を通じて調べた。
+    method: 1994年12月27日、月中心から下流6.5月半径を横断したWINDのSWEによる粒子分布・密度・温度・速度とMFIの磁場を調べ、磁場に沿う一次元真空膨張解と比較した。
+    contribution: 密度の最小値は流入直前の太陽風の約1/20となり、二つの低温陽子流が同時に現れた。流入側の密度減少と速度勾配は単純な膨張解と概ね合い、斜めの磁場による非対称な充填と解釈された。約2×10⁻⁴ V/mの電場は速度変化から得た粗い推定で、流出側の密度回復は指数関数への適合が弱かった。
   evidence_by_item:
     question:
     - paper_id: P000223
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96GL01069
-      source_type: abstract
-      locator: Abstract, sentences 1, 3–5
-      checked_at: '2026-10-06'
+      url: https://discovery.ucl.ac.uk/id/eprint/1349829/1/96GL01069.pdf
+      locator: PDF pp.1–2／誌面pp.1255–1256, Introduction; Observations and Interpretation
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000223
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96GL01069
-      source_type: abstract
-      locator: Abstract, sentences 1–4
-      checked_at: '2026-10-06'
+      url: https://discovery.ucl.ac.uk/id/eprint/1349829/1/96GL01069.pdf
+      locator: PDF pp.1,3／誌面pp.1255,1257, Instrumentation and Data; equations (1)–(2) and downstream-time/field-angle mapping
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000223
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96GL01069
-      source_type: abstract
-      locator: Abstract, sentences 4–7
-      checked_at: '2026-10-06'
+      url: https://discovery.ucl.ac.uk/id/eprint/1349829/1/96GL01069.pdf
+      locator: PDF pp.1–4／誌面pp.1255–1258, Figs.1–3; density-entry/exit comparison; inferred potential/electric field and velocity-difference alignment
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-11'
     recheck: false
 - paper_id: P000224
   group: expansion
@@ -328,39 +328,39 @@ entries:
     recheck: false
 - paper_id: P000262
   group: expansion
-  role: 関連研究
+  role: 月ウェイク内の電子分布によるプラズマ電位推定
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-11'
     recheck: false
   summary:
-    question: 電子分布から月ウェイクの電位を復元できるか。
-    method: Hamiltonian inversionを領域別に適用し、PICとARTEMISで検証する。
-    contribution: ストラール非対称性と中心部の衝撃波を含む電位分布を推定した。
+    question: 月の陰へ再充填するプラズマで、左右の非対称性と中央衝撃波を含む電位構造を電子分布から推定できるか。
+    method: 磁場強度が安定し電子が準静的平衡にあると仮定して左右の分布を独立に最適化し、中央は平坦な分布の端の速度から電位差を求めて接続する。質量比100の一次元PICの2時点で既知電位と比べ、ARTEMIS P1の2横断へ適用した。
+    contribution: 電子分布の左右別最適化と中央の捕捉幅を組み合わせ、PICで局所電位を検証し、月ウェイクの2横断で約800 V・約200 Vの電位降下を推定した。対象は磁力線沿いのウェイク内プラズマで、空洞壁面の帯電計算ではない。
   evidence_by_item:
     question:
     - paper_id: P000262
       version_id: V1
-      url: https://arxiv.org/abs/2604.17825
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://arxiv.org/pdf/2604.17825v1
+      locator: PDF p.3, Introduction; pp.4–7, Section 2; Eqs.1–8
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000262
       version_id: V1
-      url: https://arxiv.org/abs/2604.17825
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://arxiv.org/pdf/2604.17825v1
+      locator: PDF pp.4–8, Sections 2–3; Eqs.2–8; pp.14–15, Section 4
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000262
       version_id: V1
-      url: https://arxiv.org/abs/2604.17825
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://arxiv.org/pdf/2604.17825v1
+      locator: PDF pp.8–14, Sections 3.1–3.2; Figs.2–7; pp.15–19, Section 4; Figs.8–11
+      source_type: full_text
+      checked_at: '2026-10-11'
 - paper_id: P000058
   group: lunar
   role: 永久影クレーターの電気的環境
@@ -771,39 +771,39 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000228
   group: features
-  role: 局所帯電とノッチ形状の計算
+  role: 局所帯電・露出酸化膜の電位更新とノッチ成長の計算
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-11'
     recheck: false
   summary:
-    question: 局所帯電は側壁のノッチ形成を説明できるか。
-    method: 帯電過渡、イオン軌道、エッチングと散乱を組み合わせる。
-    contribution: 配線の接続状態や開口幅に応じたノッチ形状を計算で説明した。
+    question: 電子とイオンの入射方向差で帯電する微細溝では、導体の電荷再分配と開口幅が局所電場・側壁損傷をどう変えるか。
+    method: Cl₂ ECR条件の二次元Monte Carlo計算で非線形RFシースの入射分布、絶縁面帯電、ポリシリコンの等電位化、反応とSiO₂前方散乱をつなぎ、新しく露出したノッチ底の電位を近似更新する。
+    contribution: 初期の局所電場が側壁底部へイオンを偏向・加速し、電子流を省いた近似で露出SiO₂の帯電がノッチ成長を支える。基準Cl₂条件での開口幅増大による深さの飽和と、4本の接続配線でのほぼ対称なノッチを既報実験との比較で説明した。
   evidence_by_item:
     question:
     - paper_id: P000228
       version_id: V1
       url: https://doi.org/10.1116/1.589258
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      locator: PDF pp.1–2, Secs.I–II
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000228
       version_id: V1
       url: https://doi.org/10.1116/1.589258
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      locator: PDF pp.3–5, 9–11, Secs.III A–D, IV A–C; Eqs.4.1–4.4
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000228
       version_id: V1
       url: https://doi.org/10.1116/1.589258
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      locator: PDF pp.11–17, Secs.IV D–G, V–VII; Figs.13–19
+      source_type: full_text
+      checked_at: '2026-10-11'
 - paper_id: P000229
   group: features
   role: 粒子の入射方向差によるノッチ形成
@@ -1172,14 +1172,15 @@ review:
   paragraphs:
   - '[@P000219]の真空膨張と[@P000220]のウェイクPICは、希薄な領域へプラズマが入る過程を扱う。[@P000096]のイオン先端とエネルギーの理論も、電荷分離による加速を考える基礎となる。地形が流れを遮る場合には、空洞寸法、デバイ長、流速と熱速度の比が、流入する粒子と電位を比較する軸になる。'
   - '[@P000008]はクレーターへの流入と表面帯電の相互作用を扱い、[@P000222]は太陽嵐中へ広げた。深い空洞では[@P000012]、寸法の違いは[@P000015]、流速と熱速度の比は[@P000016]からたどれる。'
-  - 月全体のウェイクでは、Wind[@P000223]、Lunar Prospector[@P000224]、ARTEMISの三次元再構成[@P000231]が観測から空隙の構造を調べる。静電衝撃波の観測[@P000232]と、電子分布から電位を復元するプレプリント[@P000262]は、再充填に伴う局所構造へ論点を広げる。日夜境界の電場とダスト[@P000221]、日夜境界・極域での準中性破れ[@P000282]を合わせると、大域ウェイクと地形による陰を粒子供給の差から読み比べられる。
-    [@P000221]の計算は定常・準中性ウェイクと滑らかな月面の鉛直電場を扱う。地形の陰による水平電場は定性的な提案で、局所電場の数値解やダストとの自己無撞着な連成計算は行っていない。
+  - 月全体のウェイクでは、Wind[@P000223]、Lunar Prospector[@P000224]、ARTEMISの三次元再構成[@P000231]が観測から空隙の構造を調べる。静電衝撃波の観測[@P000232]と、電子分布から電位を復元するプレプリント[@P000262]は、再充填に伴う局所構造へ論点を広げる。日夜境界の電場とダスト[@P000221]、日夜境界・極域での準中性破れ[@P000282]を合わせると、大域ウェイクと地形による陰を粒子供給の差から読み比べられる。 [@P000221]の計算は定常・準中性ウェイクと滑らかな月面の鉛直電場を扱う。地形の陰による水平電場は定性的な提案で、局所電場の数値解やダストとの自己無撞着な連成計算は行っていない。
+  - この月ウェイク通過では、著者は周囲のプラズマが磁場に沿って両側から入り込み、太陽風に斜めの磁場によって非対称に充填されると解釈した。OgilvieらのWIND観測は下流6.5月半径で二つの低温陽子流を捉え、速度差と磁場の整列を示した。密度低下域は光学的な影より広く、希薄波が周囲へ伝わる解釈と概ね整合した。約2×10⁻⁴ V/mの電場は速度変化からの粗い推定であり、この通過の上流太陽風にも時間変化があった[@P000223]。
+  - 月全体の陰を満たす対向流では、局所的な衝撃波と捕捉電子が電位構造を変える。[@P000262]は左右の電子分布を別々に最適化し、中央では平坦な分布の幅から電位を求めて、初期と後期のPICおよびARTEMISの2横断を比較した。空洞への粒子供給を考える際には、安定した磁場、電子の準平衡、分布端の検出という診断条件を参照できる。ウェイク内のプラズマ電位を壁面の帯電電位へつなぐには、表面の電流収支と局所シースを別途扱う必要がある。
   - 永久影クレーターへの供給を見積もる[@P000058]に対し、[@P000048]は三次元の底面・壁面へのイオン流を計算する。縦孔周辺の[@P000225]は深い地形へ対象を広げ、[@P000264]は膨張前線と表面の間の電子雲を解析した。形状の違いと非中性領域の扱いをそろえることが、負のクレーター電位と正になりうる深い空洞の電位を比較する条件になる。
 - heading: 実験と微細加工の研究から、形状の効果を比較する
   paragraphs:
   - '[@P000263]のクレーター実験は、デバイ長と地形寸法の比によって内部電場が変わることを示す。[@P000226]の管を使った実験は、入口と壁面による電子遮蔽に加え、イオン誘起二次電子が奥の正電位を抑える効果を調べた。'
-  - 微細加工の[@P000230]は、斜めに入射する電子がパターンで遮られることで局所損傷が生じることを示した。[@P000227]は電子温度と溝底電流、[@P000228]は局所電位と側壁の削れを結び付ける。月面空洞との比較では、幾何形状と流入分布に加えて、衝突や材料の条件もそろえる。
-    アスペクト比による底面帯電[@P000133]と、一様なプラズマ中でも生じるノッチの計算[@P000229]を加えると、上流の一様性と局所の電流収支を区別して比較できる。
+  - 微細加工の[@P000230]は、斜めに入射する電子がパターンで遮られることで局所損傷が生じることを示した。[@P000227]は電子温度と溝底電流、[@P000228]は局所電位と側壁の削れを結び付ける。月面空洞との比較では、幾何形状と流入分布に加えて、衝突や材料の条件もそろえる。 アスペクト比による底面帯電[@P000133]と、一様なプラズマ中でも生じるノッチの計算[@P000229]を加えると、上流の一様性と局所の電流収支を区別して比較できる。
+  - 微細溝の帯電では、絶縁面に届く粒子だけでなく、導体へ捕集された電荷の移動先も局所場を変える。Hwang and Giapis (1997)は、最外配線へ入った電子を等電位条件に従って再分配し、内側底部の強い電位勾配とノッチ成長を計算した。全体電流の均衡後も溝底電位は変わり、開口幅によるノッチ深さは基準条件のW≳5 µmで飽和する。接続配線では局所場がほぼ対称になり、両側にノッチができる。この例は、見通しと電荷移動を同時に扱う必要を示す。ノッチ底の更新は電子流を省いた近似であり、空隙形状の帯電値へ使う際は放出・漏れ電流と材料の接続条件を改めて与える。[@P000228]
   - 加工中の溝では、流入粒子が形状そのものを変える。[@P000129]の照射と表面反応の実験、[@P000131]のRFシースと装置計算の接続、[@P000132]の輸送・反応・場のハイブリッド計算は、溝へ与える入射条件を考える前段になる。[@P000136]は帯電とエッチング、粗さの更新を結合した。形状を固定する月面空洞の計算と比較する際には、表面更新の時間スケールも条件に含める。
 - heading: 計算出力と図の再現へ進む
   paragraphs:

@@ -14,9 +14,10 @@ review:
 - heading: 月ウェイクは流入経路と再充填の段階で読む
   paragraphs:
   - 月ウェイクの観測は、Windの横断観測[@P000223]、Lunar Prospectorの電子・磁場観測[@P000224]、ARTEMISの三次元再構成[@P000231]をたどれる。[@P000220]は空隙断面の一次元静電PICをWind観測と比べ、境界電場で加速される対向イオン流を再現した。観測位置と膨張の段階を対応させると、理想化した空隙モデルが説明する構造を見分けられる。
+  - 真空への一次元膨張を月ウェイクと比べたOgilvieらは、入口側の指数関数的な密度減少、線形の陽子速度増加、光学的影の外へ広がる密度低下域を観測した。下流距離と太陽風速度に基づく膨張時間約24秒は、速度勾配からの約22秒と近い。一方、入口の密度適合に用いた音速40 km/sは実測電子温度からの35 km/sとずれ、出口側の回復も広域では単純な指数関数に合いにくかった。磁場方向の補正と上流条件の変化を含めて、単純解が観測のどの特徴を捉えるかを示す例である[@P000223]。
   - 月の背後では、両側から入るプラズマと夜側表面の帯電が相互に作用する。[@P000102]の二次元PICは、近傍の電荷分離とイオン加速を調べ、下流で両側のイオン流が重なるまでを追った。観測では、[@P000103]が昼側で散乱した陽子の回り込みを示している。どの粒子群がどこから来たかを区別すると、局所的な膨張と表面を介した輸送を整理しやすい。
-  - '[@P000104]はARTEMISの電子分布から電位を推定し、太陽風の電子温度・流速と、磁場の傾きに応じた非対称性を調べた。さらに[@P000105]は、対向イオン流が出会う中央で静電衝撃波と波動が生じる過程を計算した。プレプリントの[@P000106]は、大域的な膨張電位と局所的な衝撃波の電位を通じたエネルギー変換をまとめ、観測される粒子分布へつないでいる。
-    ARTEMISで静電衝撃波を捉えた[@P000232]、電子分布から電位を復元するプレプリント[@P000262]は、計算が予測する局所的な電位構造を観測へ結び付ける。'
+  - '[@P000104]はARTEMISの電子分布から電位を推定し、太陽風の電子温度・流速と、磁場の傾きに応じた非対称性を調べた。さらに[@P000105]は、対向イオン流が出会う中央で静電衝撃波と波動が生じる過程を計算した。プレプリントの[@P000106]は、大域的な膨張電位と局所的な衝撃波の電位を通じたエネルギー変換をまとめ、観測される粒子分布へつないでいる。 ARTEMISで静電衝撃波を捉えた[@P000232]、電子分布から電位を復元するプレプリント[@P000262]は、計算が予測する局所的な電位構造を観測へ結び付ける。'
+  - 電子分布からの電位診断では、[@P000262]がボルツマン電位を初期値に使いつつ、左右の分布を独立に最適化し、衝撃波のある中央は捕捉電子の平坦な分布幅で解く。質量比100の一次元PICで、衝撃波のない初期（r/R_l=1.65）と衝撃波のある後期（r/R_l=5.5）を分けて検証した。ARTEMISの初期観測例にはすでに中央衝撃波があり、3領域を用いる点が初期PICと異なる。約800 Vと約200 Vは2観測事例の逆推定値であり、境界での残差と上流の定常性を条件として読む。
   - 流入する陽子には表面で反射・散乱された成分もある。かぐやPACEの反射陽子[@P000184]と近傍ウェイクのエネルギー変化[@P000186]、磁気異常からウェイクへの輸送経路[@P000273]を、ARTEMISの広域圧縮構造[@P000272]と読み比べる。Chandrayaan-2の電波観測[@P000247]は、太陽風中と磁気圏尾部の密度ゆらぎを調べる。大域的な流入・偏向と局所的な膨張を組にして扱う研究群である。
 - heading: ダストとクレーターでは、物体の尺度が効く
   paragraphs:
@@ -643,38 +644,38 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000223
   group: lunar-wake
-  role: Windによる月ウェイク観測
+  role: WIND観測による磁場方向の月ウェイク充填
   summary:
-    question: 太陽風を遮る月の後方では、プラズマ密度がどのように低下し、周囲の太陽風がどのような流れでウェイク内の空洞を埋め直すのかを調べる。
-    method: 1994年12月27日、月の後方6.5月半径でウェイクを横断したWINDのSWE観測を用い、プラズマ密度とイオン流の変化を調べ、単純な膨張理論と比較した。
-    contribution: 空洞を満たす二つの低温イオン流を観測し、磁場方向の電場による加速と解釈した。密度は中心へ指数関数的に低下し、密度低下域は光学的な影を越え、希薄波の伝播と整合した。
+    question: 月後方のプラズマ空洞を太陽風がどのように埋めるか、密度減少、二つの陽子流、磁場方向、密度低下境界を通じて調べた。
+    method: 1994年12月27日、月中心から下流6.5月半径を横断したWINDのSWEによる粒子分布・密度・温度・速度とMFIの磁場を調べ、磁場に沿う一次元真空膨張解と比較した。
+    contribution: 密度の最小値は流入直前の太陽風の約1/20となり、二つの低温陽子流が同時に現れた。流入側の密度減少と速度勾配は単純な膨張解と概ね合い、斜めの磁場による非対称な充填と解釈された。約2×10⁻⁴ V/mの電場は速度変化から得た粗い推定で、流出側の密度回復は指数関数への適合が弱かった。
   evidence_by_item:
     question:
     - paper_id: P000223
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96GL01069
-      source_type: abstract
-      locator: Abstract, sentences 1, 3–5
-      checked_at: '2026-10-06'
+      url: https://discovery.ucl.ac.uk/id/eprint/1349829/1/96GL01069.pdf
+      locator: PDF pp.1–2／誌面pp.1255–1256, Introduction; Observations and Interpretation
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000223
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96GL01069
-      source_type: abstract
-      locator: Abstract, sentences 1–4
-      checked_at: '2026-10-06'
+      url: https://discovery.ucl.ac.uk/id/eprint/1349829/1/96GL01069.pdf
+      locator: PDF pp.1,3／誌面pp.1255,1257, Instrumentation and Data; equations (1)–(2) and downstream-time/field-angle mapping
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000223
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96GL01069
-      source_type: abstract
-      locator: Abstract, sentences 4–7
-      checked_at: '2026-10-06'
+      url: https://discovery.ucl.ac.uk/id/eprint/1349829/1/96GL01069.pdf
+      locator: PDF pp.1–4／誌面pp.1255–1258, Figs.1–3; density-entry/exit comparison; inferred potential/electric field and velocity-difference alignment
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-11'
     recheck: false
 - paper_id: P000224
   group: lunar-wake
@@ -936,39 +937,39 @@ entries:
     recheck: false
 - paper_id: P000262
   group: lunar-wake
-  role: 電子位相空間密度からの電位推定
+  role: 非対称な電子分布と捕捉幅からの電位反転
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-11'
     recheck: false
   summary:
-    question: 電子分布から月ウェイクの電位を復元できるか。
-    method: Hamiltonian inversionを領域別に適用し、PICとARTEMISで検証する。
-    contribution: ストラール非対称性と中心部の衝撃波を含む電位分布を推定した。
+    question: ストラールによる左右非対称と中央の捕捉電子・衝撃波を含む月ウェイクで、電子位相空間密度から磁力線沿いの電位を復元できるか。
+    method: 磁場強度が安定し電子が準静的平衡にあると仮定して左右の分布を独立に最適化し、中央は平坦な分布の端の速度から電位差を求めて接続する。質量比100の一次元PICの2時点で既知電位と比べ、ARTEMIS P1の2横断へ適用した。
+    contribution: 初期・後期PICで非対称な電位と衝撃波に伴う上昇をおおむね復元し、ARTEMISでは太陽風から中央への電位降下を約800 Vと約200 Vと推定した。衝撃波境界の分布端と、非定常な観測区間には手法間の差が残る。
   evidence_by_item:
     question:
     - paper_id: P000262
       version_id: V1
-      url: https://arxiv.org/abs/2604.17825
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://arxiv.org/pdf/2604.17825v1
+      locator: PDF p.3, Introduction; pp.4–7, Section 2; Eqs.1–8
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000262
       version_id: V1
-      url: https://arxiv.org/abs/2604.17825
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://arxiv.org/pdf/2604.17825v1
+      locator: PDF pp.4–8, Sections 2–3; Eqs.2–8; pp.14–15, Section 4
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000262
       version_id: V1
-      url: https://arxiv.org/abs/2604.17825
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://arxiv.org/pdf/2604.17825v1
+      locator: PDF pp.8–14, Sections 3.1–3.2; Figs.2–7; pp.15–19, Section 4; Figs.8–11
+      source_type: full_text
+      checked_at: '2026-10-11'
 - paper_id: P000272
   group: lunar-wake
   role: ARTEMISによる磁気異常周辺の圧縮構造

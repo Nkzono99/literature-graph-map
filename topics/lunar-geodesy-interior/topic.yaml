@@ -512,38 +512,39 @@ entries:
     checked_at: '2026-10-02'
   group: thermal
 - paper_id: P000334
-  role: Divinerの全球熱物性地図
+  role: 浅部断熱層の深さ・温度依存モデル
   summary:
-    question: 月面レゴリスの密度・熱伝導率と地域差を、温度観測からどう求めるか。
-    method: Divinerの赤外温度を熱モデルへ合わせ、深さ方向の密度・熱伝導率を全球で推定する。
-    contribution: 細粒層の広域的な均質性と若いクレーター等の局所差を示し、低温モデルや成熟度の比較基準を与えた。
+    question: 月の浅部断熱層を、地表温度観測とApolloの密度・地中温度に整合する形でどう表せるか。
+    method: Divinerの128 ppd分離済み夜間レゴリス温度を1次元熱モデルへ合わせた。表面/深部の密度と接触伝導率を固定し、指数分布の尺度Hを推定して、上部4–7 cmの273 K換算熱慣性を地図化する。
+    contribution: 密度・接触伝導率の固定端点と温度依存の放射伝導・比熱を持つ浅部モデルを示した。全球のH平均6.8 cmを得た一方、密度と伝導率を独立に推定する適合の非一意性を明示した。
   evidence_by_item:
     question:
     - paper_id: P000334
-      version_id: V1
-      url: https://doi.org/10.1002/2017JE005387
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.00977v1
+      locator: PDF pp.3–6, §§1,3.1
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000334
-      version_id: V1
-      url: https://doi.org/10.1002/2017JE005387
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.00977v1
+      locator: PDF pp.6–13, §§3.1,3.3.2; pp.41–52, Appendix A, Tables A1–A2
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000334
-      version_id: V1
-      url: https://doi.org/10.1002/2017JE005387
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.00977v1
+      locator: PDF pp.11–14,17; pp.42–44,51–52; Fig.6, Table1, TableA1
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-10-02'
+    checked_at: '2026-10-11'
+    recheck: false
   group: thermal
 - paper_id: P000335
   role: 極低温までの熱物性モデル
@@ -843,6 +844,7 @@ review:
 - heading: 低温の熱伝導と、火成岩体の制約
   paragraphs:
   - Divinerの全球熱物性を求めた[@P000334]に対し、[@P000335]は100 K未満まで固体熱伝導を拡張し、[@P000339]は赤道から永久影まで一貫して扱うモデルを作った。[@P000338]は氷含有模擬物の実験で、氷量と粒子間の氷構造がともに熱伝導へ効くことを示す。火成起源の制約には、重力・磁場を共同解析したDewarの[@P000322]と、マイクロ波温度からAristarchusを調べた[@P000337]を比較できる。
+  - 浅部の断熱層は、月の内部からの熱を地表温度へ結び付ける際の境界条件になる。[@P000334]は表面・深部の密度と接触伝導率を固定した1次元モデルで夜間温度へ適合させ、物性分布の尺度Hと273 K換算熱慣性を地図化した。日周赤外観測の感度は主にcm深さにあり、密度・伝導率を独立に求める適合は非一意だった。モデルの地熱流0.018 W m⁻²は仮定した底面境界値なので、内部熱流の新しい全球測定とは区別する。
   - 熱伝導率は温度だけでなく粒子構造にも応答する。[@P000331]は粒子の形と充填を熱抵抗ネットワークへつなぎ、レゴリス成熟度の補完指標を提案した。全球の熱物性推定と比較する際に、試料の粒子構造が測定量へどう反映されるかを調べる研究となる。
 - heading: 高度と重力の観測を選ぶ
   paragraphs:
@@ -881,8 +883,8 @@ lineage:
 - title: 全球熱物性から極低温・氷構造へ
   steps:
   - paper_id: P000334
-    title: 全球の熱物性を温度観測から求める
-    significance: Divinerから密度・熱伝導率の深さ方向分布を推定した。
+    title: 深さと温度に依存する浅部断熱層を地図化
+    significance: 固定密度/接触伝導率の端点をつなぐHをDiviner夜間温度から推定し、273 K換算の浅部熱慣性を全球比較した。
   - paper_id: P000335
     title: 極低温の固体熱伝導を加える
     significance: 20〜400 Kの熱物性を組成・密度・固体物理からモデル化した。

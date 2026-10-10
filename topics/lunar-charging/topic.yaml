@@ -5,13 +5,19 @@ question: 月面の電位、光電子シース、ダストの帯電と移動を�
 review:
 - heading: 月面電位から、表面の上に広がるシースへ
   paragraphs:
-  - 月面にはプラズマの電子とイオンが流れ込み、紫外線や粒子の衝突で電子が放出される。その電流の釣り合いが表面電位を決める。月試料の光電子放出を測った[@P000001]と、電流収支を整理した[@P000002]が基礎になる。初期の月面電場・シースを整理した[@P000020]は、電位と周辺プラズマを結ぶ理論の入口になる。放出電子が表面近くにとどまると、電位が空間的に変わる層、シースが生じる。粒子と電場を追跡する[@P000007]のPIC計算、[@P000030]の室内計測、[@P000036]の観測との比較は、この構造をそれぞれ異なる方法で調べている。
+  - 月面にはプラズマの電子とイオンが流れ込み、紫外線や粒子の衝突で電子が放出される。その電流の釣り合いが表面電位を決める。月試料の光電子放出を測った[@P000001]と、電流収支を整理した[@P000002]が基礎になる。[@P000020]はApolloのSIDEが測る月面電位を、電子密度と遮蔽長から見積もるシース・電場へつないだ。放出電子が表面近くにとどまると、電位が空間的に変わる層、シースが生じる。粒子と電場を追跡する[@P000007]のPIC計算、[@P000030]の室内計測、[@P000036]の観測との比較は、この構造をそれぞれ異なる方法で調べている。
+  - Freemanら[@P000020]は、SIDEイオンデータから太陽風中の昼側約+10 Vと終端付近の負電位を整理し、光電子放出に依存する理論予測を観測像へ結びつけた。Apollo 15地点では午後に約+18 Vとなる特徴も報告する。電場の大きさは仮定した遮蔽長からの概算で、遠夜側の約−100 Vと約1 V/mは条件付きの推測として扱う。
+  - 磁気圏尾部では、日照側でも非単調なシースが問題になる。[@P000036]はARTEMIS P1の35分間の電子・イオン観測を一次元PICと比較し、実測イオン温度を加えることで、光電子ビームのエネルギー変化と一時的な消失を説明した。比較量は無限遠から電位極小までの落差に対応するビームエネルギーで、探査機電位を加えて観測と照合している。ダスト浮揚への含意は示すが、粒子の離脱や輸送を直接測った研究ではない。
   - 太陽風電子の流れを含む[@P000011]は半解析解を一次元PICと比較し、電子分布による違いも調べた。有限のイオン温度を組み込む[@P000055]は、シース厚と電位分布、光電子の捕捉を検討する。日照面上空でも、磁気圏プラズマシート中の[@P000033]のように非単調な電位構造が問題になる。
 - heading: 月面電位を変える宇宙環境
   paragraphs:
   - ApolloのCPLEEなどによる初期の粒子計測（[@P000018]）に続き、Lunar Prospectorは軌道上の電子から夜側の負帯電や、磁気圏尾部・太陽活動に伴う強い帯電を捉えた（[@P000003]、[@P000004]、[@P000006]）。[@P000025]は探査機電位の補正を含めて入射電流との対応を定量化し、[@P000027]はSEPイベントの観測と予測を比較した。ARTEMISでは昼側シースの遠隔計測（[@P000034]）や、微小隕石衝突による電流の寄与（[@P000045]）へと論点が広がる。かぐやによる地殻磁場と相対電位の研究（[@P000051]）、IM-1のROLSESによる電波・プラズマ波観測（[@P000056]）も、月面の電気的環境を知る手掛かりになる。
+  - '[@P000034]は、ARTEMIS-P2の電子分布と探査機電位から、磁気圏尾部ローブで−30〜−60 V、プラズマシートの短い接続区間で−180〜−450 Vの月面電位を推定した。入射熱電子電流が予想光電子電流よりローブで2桁以上、プラズマシートで約2桁小さい条件での負電位は、表面上の電位極小が光電子を閉じ込める非単調シースの解釈を支持する。シースの高度分布は直接測っておらず、プラズマシート後半には夜側接続も排除できない。'
+  - Halekas (2008) の選択観測では、夜側の負電位は尾部ローブで約−100 V、プラズマシートで数百V～約−1 kVとなる一方、通常ウェイクでは中央より境界付近の負電位が大きい。日照下の負帯電は光電子放出の低下と非単調シースの両方を候補として残し、夜側の温度依存は条件付きで最大二次電子収率δM約1.1～1.2と整合する。[@P000025]
+  - 月面で局所プラズマとダストを測る装置設計へ進んだのが[@P000056]のROLSESである。狭帯域のプラズマ振動から電子密度を、帯電粒子とアンテナの接触パルスからダストを識別する構想を示す。IM-1では転倒と短い運用時間で月面データが36分に限られ、本稿の初期結果は主に輸送中の地球送信電波と機器雑音を扱う。シース密度・ダスト検出は測定結果として提示されていない。
   - 昼側の正電位も、環境に応じて変わる。[@P000162]は太陽活動による光電子放出の変動を調べ、[@P000161]は別の光電子モデルとARTEMIS観測から日照・プラズマ条件への依存を推定した。太陽風の流入側では、[@P000163]が磁気異常の反射陽子による広域の擾乱を論じている。
   - 環境への依存を整理する[@P000038]は、太陽風と照射条件を変えて電流収支を計算した。[@P000023]はLunar Prospectorから全球の帯電環境を整理する。[@P000041]はローブ中の光電子と昼側電位を推定し、[@P000046]はARTEMIS・OMNIの観測条件を帯電モデルへ渡した。この流れを現地の計測へつなぐ資料として、月面での電磁場観測を計画する[@P000032]がある。
+  - '[@P000041]は、ローブ中の弱地殻磁場の日照面から得た829の電子スペクトルと太陽光子流束から、高エネルギー光電子の経験式を作った。光電子と流入電子の電流釣り合いは一事例で+22～41 Vを予測し、イオン反射の+15～25 Vよりやや高かった。流入電子を固定し1–5 nmの光子流束を10倍にした+70～98 Vという予測は、強いフレアへの感度を表す。高エネルギー放出成分をダスト帯電モデルへ渡す資料になる。'
 - heading: 極域と空洞では、地形が粒子の到達を変える
   paragraphs:
   - 永久影では光電子が出にくく、地形が太陽風も遮る。[@P000058]は電子とイオンの入り込み方の違いから、クレーター内の電気的環境を論じた。LOLA地形を使う[@P000031]、表面帯電とプラズマを解く[@P000008]、三次元のミニウェイクを扱う[@P000048]は、形状と流入条件を具体化している。深い空洞では、側壁で電子が失われると底へイオンが届きやすくなり、底部が正に帯電する場合がある（[@P000012]）。空洞寸法とシース厚の比による正電位の緩和は[@P000015]、流速と熱速度の比による底部電位の変化は[@P000016]へとつながる。南極の実地形を含む計算は[@P000017]が扱う。
@@ -25,12 +31,14 @@ review:
   - 粒子と基板の隙間へ再捕集モデルを広げる[@P000013]と、光・低密度プラズマの同時照射[@P000014]は、表面上の電荷分布を具体化する。UVと付着を扱う[@P000040]、太陽風・UVを変える[@P000042]、微小空洞の帯電を加える[@P000043]は離脱条件の比較対象となる。粗い表面の局所電場を整理する[@P000047]へ進むと、粒子スケールで必要な計測を考えられる。
 - heading: 探査機の帯電と、付着ダストへの対策
   paragraphs:
-  - 機器への影響を考える際は、表面間の電位差や材料の違いが問題になる。[@P000024]はNASCAP-2Kによる機体の帯電解析、[@P000054]は月ミッションの帯電環境を整理した。除塵には電極が作る電場を用いるEDS（[@P000028]）があり、イオン中和（[@P000049]）やEDSとUVを組み合わせたブラシ（[@P000050]）の特許もある。これらは、自然のダスト移動で扱う電荷と力の関係を、機器側から制御する技術として参照できる。
-    気体中の誘電体バリア放電で流れを作る[@P000035]は、太陽電池除塵の周辺技術として収録している。媒質と作用する力を対応させて各方式の条件を比較する。
+  - 機器への影響を考える際は、表面間の電位差や材料の違いが問題になる。[@P000024]はNASCAP-2Kによる機体の帯電解析、[@P000054]は月ミッションの帯電環境を整理した。除塵には電極が作る電場を用いるEDS（[@P000028]）があり、イオン中和と再帯電による捕集（[@P000049]）やEDSとUVを組み合わせたブラシ（[@P000050]）の特許もある。これらは、自然のダスト移動で扱う電荷と力の関係を、機器側から制御する技術として参照できる。 気体中の誘電体バリア放電で流れを作る[@P000035]は、太陽電池除塵の周辺技術として収録している。媒質と作用する力を対応させて各方式の条件を比較する。
+  - '[@P000028]は、粒子の帯電・分極を除塵に使う電気力学的ダストシールド（EDS）を透明電極で実装した。約10⁻⁶ kPaで50–75 µmのJSC-1Aを散布した太陽電池では、作動後に電圧が基準の91.6–99.4%へ戻った。媒質より誘電率が高い中性粒子には、分極で電極へ引かれ、接触によって帯電してから離脱する経路を考えるが、本稿で粒子電荷や力の分担は測っていない。自然環境の帯電研究と比較する際には、初期電荷に加え、電極が作る電場と表面接触を条件として揃える必要がある。'
+  - 宇宙服の除塵を提案する[@P000049]は、正負のイオンでダストを中和した後、回収器へ取り込み、負に帯電させ直して正の板へ捕集する構成を示す。床下フィルタによる回収も併設し、居住区への持ち込みを防ぐことを狙う。エアロック内の案は気体充填と送風を含み、外部梯子型の真空動作や定量的な除去性能は検証されていない。
   - 電子ビームを使う[@P000164]では、VUVを併用すると布上の模擬ダストが動き出しやすくなった。太陽に似た波長分布を用い、照射強度は月面より高い条件で調べている。
 - heading: 高エネルギー粒子は、表面の下にも電荷を残す
   paragraphs:
   - 極域の低温レゴリスでは電荷の散逸が遅い。[@P000057]は入射粒子の侵入深さ、電荷保持、伝導を電荷連続式とPoisson方程式で結び、表面収支へ内部帯電を加える枠組みを提案した。[@P000310]はGCRとSEPの観測を使い、内部電場を時間依存で予測した。[@P000311]と[@P000312]は、絶縁破壊が細粒化・溶融・蒸発を通じて表層を変える可能性を評価している。水への接続を分子過程から調べた[@P000313]は、破壊で露出した酸素と太陽風由来水素の反応を計算した。いずれも、モデルが予測する作用と現地で確認された作用を区別して読む。
+  - Kim et al. (2026) は、永久影領域の地下帯電を扱う既存モデルに対し、入射粒子1個・単位深さ当たりの平均符号付き保持電荷を、粒子種とエネルギー別に求める必要を整理した。停止・反射・透過した一次粒子と、再結合・再吸収・捕獲・脱出した電子を合わせて数えるため、エネルギー付与分布だけでは電荷源が決まらない。この応答を入射フラックスへ結び、伝導・誘電緩和・Poisson方程式へ渡す接続を提案するが、平均化スケール、線形重ね合わせ、時間尺度の分離と、月レゴリスでの応答値は未確定である。[@P000057]
 - heading: 観測から光電子と散乱電子の寄与を分ける
   paragraphs:
   - 表面を出入りする電子の起源も、帯電を考える手掛かりになる。[@P000362]は酸素Auger電子を指標に光電子を選び、放出収率を制約した。[@P000363]は後方散乱電子が再び表面へ戻る磁場の効果を調べ、[@P000364]は光電子の統計をローブ中と太陽風中で比較した。これらの観測は、光電子シースや昼側電位のモデルへ入れる電子電流の基礎量を補う。
@@ -544,20 +552,38 @@ entries:
   locked_fields: []
 - paper_id: P000020
   group: photoelectron-sheath
-  role: 月面電場とシースの初期像
+  role: 月面電位の観測を電場の初期像へ結ぶ
   summary:
-    question: 月面電位・電場・プラズマシースは、どのように結び付くか。
-    method: 初期の月面観測を踏まえ、帯電とシースの理論を整理。
-    contribution: 昼夜の電気的環境を、表面電位と周辺プラズマの両面から論じた。
+    question: 太陽風・磁気圏尾部中の月面電位は、SIDE観測と先行理論からどこまで定まり、近地表シースの電場へどう結び付くか。
+    method: SIDEの電圧走査共鳴と終端の低エネルギーイオンから電位を推定し、先行研究を比較。電場は電位と仮定した遮蔽長から概算。
+    contribution: 太陽風中の昼側約+10 VとApollo 15午後の約+18 V、終端の負電位を整理し、昼側外向き・終端内向きの電場像を示した。遠夜側は条件付き推測。
   evidence_by_item:
-    question: []
-    method: []
-    contribution: []
+    question:
+    - paper_id: P000020
+      version_id: V1
+      url: https://doi.org/10.1007/BF00562976
+      locator: PDF pp.1–4,10–12; title/abstract, Tables I–II and closing discussion
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000020
+      version_id: V1
+      url: https://doi.org/10.1007/BF00562976
+      locator: PDF pp.4–5 Eq.(1), Fig.3–4; pp.7–9 Fig.7–8; pp.10–11 electric-field estimates
+      source_type: full_text
+      checked_at: '2026-10-11'
+    contribution:
+    - paper_id: P000020
+      version_id: V1
+      url: https://doi.org/10.1007/BF00562976
+      locator: PDF pp.6–7 Fig.5–6 (dayside); pp.7–9 Fig.7–8 (terminator); pp.10–11 Fig.9 (fields and nightside assumptions)
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000030
@@ -604,26 +630,38 @@ entries:
   locked_fields: []
 - paper_id: P000036
   group: photoelectron-sheath
-  role: ARTEMISとPICの比較
+  role: ARTEMISの電子・イオン観測とPICの比較
   summary:
-    question: 磁気圏尾部の光電子シースを、観測と計算で説明できるか。
-    method: ARTEMIS-P1の電子観測を、一次元PICシース計算と比較。
-    contribution: 非単調な電位分布を再現し、電子温度に加えてイオン温度の影響を示した。
+    question: 地球磁気圏尾部の日照側月面上空で見られる電子ビームとロスコーンの時間変化を、非単調な光電子シースと入射電子・イオン温度から説明できるか。
+    method: 2011年7月16日11:50–12:25 UTCのARTEMIS P1の電子・イオン・電磁場観測を、実測Te・Tiを与えた一次元PICシースモデルと比較。直線外挿で月面との磁気接続を判定し、探査機電位を加えてビームエネルギーを照合した。
+    contribution: 実測イオン温度を加えて、非単調シースの極小への電位落差とビームの一時的消失を説明した。Te=500 eV・nps=10⁵ m⁻³の計算例ではTiの増加で落差が減り、観測時の温度比がモデル臨界値を超える区間にビーム消失が対応した。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000036
+      version_id: V1
+      url: https://doi.org/10.1029/2011gl050321
+      locator: PDF pp.1–2, §§1–2, ¶3–7
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000036
+      version_id: V1
+      url: https://doi.org/10.1029/2011gl050321
+      locator: PDF pp.1–3, §2 ¶4–6; §3.1 ¶7; Eq.(1), Fig.1 (p.3, caption p.2)
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000036
       version_id: V1
       url: https://doi.org/10.1029/2011gl050321
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      locator: PDF pp.2–5, §3.1–3.2 ¶7–11; Eqs.(1),(2); Figs.2–4; §4 ¶12
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000038
@@ -720,24 +758,36 @@ entries:
   group: environment
   role: 入射電流と月面電位
   summary:
-    question: 入射粒子の電流は、実際の月面電位をどこまで説明するか。
-    method: 探査機電位を補正したLunar Prospectorの電子分布と電流収支を解析。
-    contribution: 周囲のプラズマを基準とする月面電位を求め、入射電流への応答を示した。
+    question: 月面の電位は日照とプラズマ環境、二次電子・光電子放出にどう応答するか。
+    method: LPの選択観測期間を再解析し、通常の磁気圏・ウェイク期間では探査機帯電を補正して電流平衡モデルと比較。SEP期間は探査機電位未補正で比較した。
+    contribution: 夜側の数百V規模の負電位、日照プラズマシートの負帯電、ウェイク中央での負電位低下を示し、実効電子放出収率と非単調シースに条件付きの制約を与えた。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000025
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013194
+      locator: PDF pp.1–3 §§1–2; p.14 §9
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000025
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013194
+      locator: PDF pp.3–8 §§2–5, Eq.1, Figs.1–5
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000025
       version_id: V1
       url: https://doi.org/10.1029/2008ja013194
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      locator: PDF pp.9–14 §§6–9, Figs.6–15; SEP p.13 ¶57 is uncorrected
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000027
@@ -784,50 +834,92 @@ entries:
   locked_fields: []
 - paper_id: P000034
   group: environment
-  role: ARTEMISによる遠隔電位測定
+  role: 日照面負電位と非単調シースの条件付き遠隔観測
   summary:
-    question: 月から離れた探査機で、月面近傍の電位を推定できるか。
-    method: 月面と磁力線でつながったARTEMIS-P2の電子分布を解析。
-    contribution: 昼側シースに電位の極小を持つ構造を、遠隔観測から示した。
+    question: 探査機電位を補正した電子反射と放出ビームから、月面から8,000 km以上離れた位置でも日照面の帯電を定量化できるか。
+    method: 2010年3月28日の磁気圏尾部フライバイでARTEMIS-P2のESA電子分布、FGM磁場、EFI探査機電位を使用。入射成分で規格化した上下方向分布に、探査機電位で補正した損失円錐と放出ビームを最小二乗で同時に合わせ、表面電位と磁場比を推定した。表面電位と経路上最低電位を等しいと仮定した。
+    contribution: ローブで−30〜−60 V、プラズマシートの約07:27 UTの短い接続区間で−180〜−450 Vを推定した。入射電子電流が予想光電子電流よりローブで2桁以上、プラズマシートで約2桁小さいのに負電位が現れ、日照面上の非単調シースの解釈を支持した。プラズマシート後半は磁力線曲率により夜側接続を排除できない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000034
+      version_id: V1
+      url: https://doi.org/10.1029/2011JA016542
+      locator: PDF pp.1–2, §1 ¶4–8
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000034
+      version_id: V1
+      url: https://doi.org/10.1029/2011JA016542
+      locator: PDF pp.7–8, §3 ¶19; Figs.5,7
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000034
       version_id: V1
-      url: https://doi.org/10.1029/2011ja016542
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2011JA016542
+      locator: PDF pp.4–5, ¶14; pp.6–8, ¶18–22; p.10, ¶25
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000041
   group: environment
-  role: 太陽放射と光電子の対応
+  role: ローブ中の高エネルギー光電子と正電位の経験モデル
   summary:
-    question: 太陽放射の変動は、昼側の光電子と電位をどう変えるか。
-    method: ARTEMISとApolloの光電子観測を、太陽放射モデルと組み合わせて解析。
-    contribution: 光電子フラックスと太陽放射の対応を示し、ローブ中の昼側電位を推定。
+    question: 磁気圏尾部ローブの弱い地殻磁場を持つ日照月面で、高エネルギー光電子の放出は太陽放射とどう対応し、流入電子との釣り合いが正電位をどう決めるか。
+    method: ARTEMISの粒子・磁場・探査機電位を用い、一事例のイオン静電反射から表面電位を制約して光電子の表面エネルギーを補正。2011年7月～2016年9月の2機の829スペクトルをFISMの1–5 nm光子流束と比較し、既報Apolloスペクトルとの比較も含む経験式を電流釣り合いへ組み込んだ。
+    contribution: 観測80–300 eV電子と1–5 nm光子の相関0.77、平均フラックス比5.0×10⁻³（2標準偏差1.6×10⁻³）を示した。一事例のUMはイオン反射で+15～25 V、経験モデルで+22～41 Vとなり、流入電子を固定した光子流束10倍の例では+70～98 Vを予測した。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF pp.1–2、§1、Fig.1
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF pp.3–4、§2.1、Fig.2h–k
+      checked_at: '2026-10-11'
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF pp.4–5、§2.2、Fig.3a–b
+      checked_at: '2026-10-11'
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF pp.5–6、§3、式1–5
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000041
       version_id: V1
-      url: https://doi.org/10.1002/2017gl073419
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF pp.4–5、§2.2、Fig.3a–b
+      checked_at: '2026-10-11'
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF p.6、§3–4、Fig.3c
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000045
@@ -898,26 +990,38 @@ entries:
   locked_fields: []
 - paper_id: P000056
   group: environment
-  role: IM-1搭載ROLSES
+  role: ROLSESの設計と初期観測の制約
   summary:
-    question: 月面の電波・プラズマ波環境を、着陸機でどう測るか。
-    method: IM-1搭載の4本のモノポールアンテナで、2 kHz–30 MHzを観測。
-    contribution: ROLSESの装置設計と、着陸後に得られた初期観測を報告。
+    question: 月面近傍の電波と局所プラズマ・ダストの信号を、着陸機搭載アンテナでどう識別できるか。
+    method: IM-1の4本の2.5 mモノポールで2 kHz–30 MHzのスペクトルと生波形を取得。輸送中83分・月面36分の取得条件と機器雑音を整理し、輸送中のピーク周波数を同時刻の地上AJ4COと比較した。
+    contribution: 輸送中の16–22 MHzの強い電波線を、地上観測との周波数対応から地球送信電波と解釈した。全区間10 dBの低利得とDSP平均化エラーなどの制約を報告し、シース密度・ダストの測定目標は達成結果として提示していない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000056
+      version_id: V1
+      url: https://arxiv.org/pdf/2603.22600v2
+      locator: §2–2.4（arXiv v2 PDF pp.3,6–7）
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000056
+      version_id: V1
+      url: https://arxiv.org/pdf/2603.22600v2
+      locator: §3–3.3・§4–5・§6.1（arXiv v2 PDF pp.8–13,18–24）
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000056
       version_id: V1
-      url: https://arxiv.org/abs/2603.22600
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/pdf/2603.22600v2
+      locator: §4–6.3（arXiv v2 PDF pp.20–26、Figs.19–22）；目標の達成範囲はp.7
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000031
@@ -1326,24 +1430,36 @@ entries:
   group: grain-charging
   role: レゴリス内部の電荷保持
   summary:
-    question: 入射粒子が残す電荷は、低温のレゴリス内部にどう蓄積するか。
-    method: 粒子の侵入深さ・電荷保持を、電荷連続式・伝導・Poisson方程式で記述。
-    contribution: 永久影を念頭に、表面収支に内部の電荷蓄積と緩和を加える枠組みを提案。
+    question: 高エネルギー粒子の照射後、月レゴリスの地下に正負の電荷がどこへ分離して残り、その保持電荷を巨視的な電荷源へどう接続するか。
+    method: 月面環境・物性・観測・既存PSRモデルを概説し、一次粒子と二次電子の輸送、再結合、再捕獲、再吸収、捕獲、脱出を粒子・空隙・バルクの境界で整理する。入射粒子1個・単位深さ当たりの平均符号付き保持電荷を種・エネルギー別に定義する。
+    contribution: エネルギー付与と保持電荷を区別し、深さ別の保持応答を入射フラックスと組み合わせて体積電荷源にし、既存の伝導・緩和・Poissonモデルへ渡す接続を提案した。応答値や新規地下電場を求める前段の、必要入力と成立条件の整理である。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000057
+      version_id: V1
+      url: https://arxiv.org/pdf/2609.06496v1
+      locator: PDF pp.7–9 §1; pp.29–35 §§2.2–2.6
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000057
+      version_id: V1
+      url: https://arxiv.org/pdf/2609.06496v1
+      locator: PDF pp.16–35 §§1.4–2.6; pp.43–44 scope
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000057
       version_id: V1
-      url: https://arxiv.org/abs/2609.06496
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/pdf/2609.06496v1
+      locator: PDF pp.29–35 §§2.2–2.6, Fig.15; pp.43–44
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000024
@@ -1372,20 +1488,38 @@ entries:
   locked_fields: []
 - paper_id: P000028
   group: engineering
-  role: 電場による除塵
+  role: 透明EDSによる真空中の太陽電池電圧回復
   summary:
-    question: 月探査装置に付着したダストを、電気力で除去できるか。
-    method: 電極による静電力・誘電泳動力を使った除塵方式を検討。
-    contribution: 電場で粒子を動かすEDSの設計と、月探査機器への適用を示した。
+    question: 高真空中で模擬月ダストの付着により低下した太陽電池電圧を、透明な電気力学的ダストシールド（EDS）で回復させられるか。
+    method: 透明ITOのらせん電極をガラス上に設け、三相矩形波で駆動する。約10⁻⁶ kPaで50–75 µmのJSC-1Aを約20 mgずつ散布し、電極のない領域を覆った市販セルの電圧を無散布の基準と比較した。
+    contribution: 4種類の電極間隔で、散布後に基準の11.0–22.5%まで低下した電圧がEDS作動後91.6–99.4%へ回復した。透明電極による真空中の除塵を太陽電池の電圧回復で示した。
   evidence_by_item:
-    question: []
-    method: []
-    contribution: []
+    question:
+    - paper_id: P000028
+      version_id: V2
+      url: https://ntrs.nasa.gov/api/citations/20130012970/downloads/20130012970.pdf
+      locator: PDF pp.1–2, §1; pp.5–6, §3
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000028
+      version_id: V2
+      url: https://ntrs.nasa.gov/api/citations/20130012970/downloads/20130012970.pdf
+      locator: PDF pp.5–7, §3, Figs2–3; pressure/thickness symbols checked visually
+      source_type: full_text
+      checked_at: '2026-10-11'
+    contribution:
+    - paper_id: P000028
+      version_id: V2
+      url: https://ntrs.nasa.gov/api/citations/20130012970/downloads/20130012970.pdf
+      locator: PDF pp.7–9, §3, Figs4–5, Table1; voltage metric and order-2% stated error
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
+    level: full_text
+    version_id: V2
+    checked_by: ai
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000035
@@ -1414,26 +1548,38 @@ entries:
   locked_fields: []
 - paper_id: P000049
   group: engineering
-  role: イオン中和・特許
+  role: イオン中和・粒子回収の特許
   summary:
-    question: 宇宙服に付着した帯電ダストを、どう除去するか。
-    method: 正負のイオンシャワーによる中和と、外部での粒子回収を組み合わせる。
-    contribution: 船内への持ち込みを減らすための、宇宙服の除塵装置を提案。
+    question: 宇宙服に付着したダストを離脱させた後に回収し、居住区への持ち込みをどう防ぐか。
+    method: 正負のイオンシャワーによる中和と、粒子を再帯電して正の板へ捕集する回収器、床下フィルタを組み合わせる。エアロック内の気体供給・送風、リングや旋回アーム、施設外の梯子配置を例示する。
+    contribution: 中和だけでなく回収まで含めた宇宙服除塵の運用・装置構成を提案した登録特許。除去率や真空下の動作性能は本文で検証されていない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000049
+      version_id: V1
+      url: https://patents.google.com/patent/US11866203B2/en
+      locator: PDF10ページ、第3欄10〜26行（課題と先行方式の回収不足）
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000049
+      version_id: V1
+      url: https://patents.google.com/patent/US11866203B2/en
+      locator: PDF10ページ、第4欄10〜25、44〜56行; PDF11ページ、第5欄2〜15行; 図1〜6
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000049
       version_id: V1
       url: https://patents.google.com/patent/US11866203B2/en
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      locator: PDF11ページ、第6欄・請求項1; PDF12ページ・請求項2〜20
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000050

@@ -9,8 +9,9 @@ review:
     μm帯を使ったSOFIAの[@P000141]は、日照のある高緯度の観測域でH2Oを識別した。観測波長と、どの深さを捉える観測かを確認すると、表面の水和、粒子に保持された水、氷の分布を整理できる。
 - heading: 極域の氷を、分光と衝突噴出物から捉える
   paragraphs:
-  - 永久影の内部には周囲からの散乱光がわずかに届く。[@P000140]はその光の近赤外スペクトルから氷の吸収を抽出し、両極の光学的表層に露出した氷の分布を示した。一方、LCROSSの[@P000139]はCabeusクレーターへ衝突体を落とし、掘り出された物質の水蒸気・氷・OHを観測した。前者は露出氷の空間分布、後者は一地点の掘削された物質に含まれる水と揮発性成分を知る手掛かりになる。氷の存在とその場所の物質量を考える際に、二つの観測の違いが役立つ。
-    かぐやSPの[@P000280]は、異なる地方時・緯度の日陰で水氷粒子候補を検討した。永久影の長期保存と、一時的な日陰での分光解釈を、温度と照明の条件から読み比べられる。
+  - 永久影の内部には周囲からの散乱光がわずかに届く。[@P000140]はその光の近赤外スペクトルから氷の吸収を抽出し、両極の光学的表層に露出した氷の分布を示した。一方、LCROSSの[@P000139]はCabeusクレーターへ衝突体を落とし、掘り出された物質の水蒸気・氷・OHを観測した。前者は露出氷の空間分布、後者は一地点の掘削された物質に含まれる水と揮発性成分を知る手掛かりになる。氷の存在とその場所の物質量を考える際に、二つの観測の違いが役立つ。 かぐやSPの[@P000280]は、異なる地方時・緯度の日陰で水氷粒子候補を検討した。永久影の長期保存と、一時的な日陰での分光解釈を、温度と照明の条件から読み比べられる。
+  - LCROSSの[@P000139]はCabeusの永久影へ衝突体を落とし、噴出物の1.5・2.0 μm帯から氷、1.87 μm帯から水蒸気を識別した。視野内の水蒸気と氷は最大155±12 kgで、推定した日照噴出ダスト量に対する平均水量は5.6±2.9%だった。露出氷の分布を調べる観測に対し、一地点の掘削された物質の化学形態と水量を与える。
+  - この水量は、粒径・密度・照明と視野充填率を仮定したダスト質量に依存する。衝突で温まった地面からの蒸気も加わり、噴出氷粒子の昇華と分けにくい。中性子観測と比べる場合は、掘削深さと10 km以上の観測範囲の違いも含めて読む。氷の存在の分光的識別と、濃度・極域貯蔵量の推定を分けると、保持や輸送の研究へつなぎやすい。[@P000139]
   - '[@P000328]の偏波レーダーは散乱特性から氷候補を探る。高CPRには岩塊・粗さも寄与するため、[@P000327]の永久影岩塊検出と照合する。[@P000329]・[@P000330]は観測統合と機械学習へ進む方法であり、氷有望度の推定と氷の直接同定を区別する。'
 - heading: 太陽風の水素が入り、ガラスや鉱物に残る
   paragraphs:
@@ -24,6 +25,8 @@ review:
   paragraphs:
   - 水分子の脱離や氷の昇華は、表面温度に敏感である。[@P000143]は日照域でも凹凸が低温部分を作り、平坦面モデルより吸着水を保持しやすくすると示した。極域では[@P000147]がcm規模までの小さな影を評価し、微小コールドトラップも氷の安定領域に寄与すると見積もった。保持の条件は分子によって変わる。Divinerの長期温度データを使った[@P000149]は、さらに低温を要するCO2の安定域を計算している。温度の最大値だけでなく、時間平均した損失を扱う点も参照したい。
   - 低温の保存を考える基礎には、[@P000324]の固相保持理論、[@P000325]のクレーター熱モデル、[@P000326]のDiviner観測がある。[@P000334]・[@P000335]・[@P000339]は熱物性を全球から極低温へつなぎ、[@P000338]は氷の形態によって熱伝導率が変わることを実験で示した。
+  - 氷の保存温度を計算する基準として、[@P000334]は乾燥レゴリスの密度・接触伝導率・比熱の深さ/温度依存を整理した。上部4–7 cmの273 K換算熱慣性は平均約55 J m⁻² K⁻¹ s⁻¹ᐟ²だが、傾斜補正が良好なのは約±60°までで、30 K未満の比熱には追加実験が必要とする。永久影や氷を含む粒子間構造を扱う研究へつなぐ際は、この基準モデルの低温物性と地形条件を改めて検証する。
+  - 低温域へ集まった氷の保持を考える基礎に、[@P000324]の固相・気相の収支モデルがある。希薄大気での弾道移動と再凝結を組み合わせ、cold trapの氷損失に蒸発流束による上限を与えた。120 K・永久影面積0.5%の代表計算では損失が全月面平均で約4 g cm⁻²／10億年となり、100 Kでは約4桁減る。後続のクレーター熱モデルや温度観測へは、cold trap温度と面積を場所ごとの分布へ置き換える問題としてつながる。
   - 氷が失われる過程は、起源推定にも影響する。[@P000244]は純粋な六方晶氷と平面の比表面積を仮定し、昇華によるO・H同位体の分別をモデル化した。残った氷の同位体比を供給源へ結び付ける際には、温度と失われた割合に加え、採取中の昇華も考慮する必要がある。
 - heading: 地形と磁場が、水素供給と氷の損失を変える
   paragraphs:
@@ -156,36 +159,36 @@ entries:
   group: observations
   role: LCROSS衝突噴出物中の水
   summary:
-    question: 永久影のレゴリスには、どれほど水と揮発性物質が含まれるか。
-    method: Cabeusへの衝突で生じた噴出物を、近赤外・紫外分光などで観測。
-    contribution: 水蒸気・氷・OHの信号を検出し、掘削域の水氷量を質量比5.6±2.9%と推定。
+    question: Cabeusの永久影から掘り出した物質に氷・水蒸気が含まれるか、それぞれの水量を日照噴出ダスト量と結び付けられるか。
+    method: 2009年10月9日のLCROSS衝突後4分をNIR/UV・可視分光で観測。1.5・2.0 μm氷帯、1.87 μm水蒸気帯、約0.309 μm OH発光を識別し、線形混合モデル・HITRAN断面積とDISORT/Mie粒子モデルで視野内の水・ダスト質量を推定した。
+    contribution: Cabeus衝突噴出物の一部を氷として同定し、水蒸気も検出した。視野内の水蒸気＋氷は最大155±12 kg、日照噴出ダストを分母にした平均水量は5.6±2.9%と推定した。
   evidence_by_item:
     question:
     - paper_id: P000139
       version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/20966242/
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1126/science.1186986
+      locator: 'PDF p1 / Science p463: introduction and target geometry'
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000139
       version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/20966242/
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1126/science.1186986
+      locator: 'PDF pp2–5 / Science pp464–467: Figs2–3, spectral fitting, dust radiative-transfer model; notes14/24/27'
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000139
       version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/20966242/
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1126/science.1186986
+      locator: 'PDF pp3–5 / Science pp465–467: Table1, Figs3–6 and caveats; PDF p6 note36'
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000140
@@ -961,38 +964,39 @@ entries:
     checked_at: '2026-10-02'
   group: formation-storage
 - paper_id: P000324
-  role: コールドトラップの固相保持理論
+  role: 固相蒸発・再凝結と弾道移動を組み合わせるコールドトラップ保持理論
   summary:
-    question: 月面からの水の損失を律速するのは、どの過程か。
-    method: 固相・気相の速度論から、低温域への蓄積と固体の蒸発速度を計算する。
-    contribution: 最も低温な場所に集まる固体相の損失が保存を左右することを示し、水の長期保持を扱う枠組みを与えた。
+    question: 月の希薄な気相から分子が逃げやすいとき、永久影に集まる水氷の長期損失と、新たに放出された水の捕捉を何が決めるか。
+    method: 固相の蒸気圧から蒸発流束を求め、未相関の弾道跳躍に脱出確率と冷たい表面への付着確率を与えて、再凝結・移動中の損失・cold trapの収支を導く。地上写真から永久影面積を間接推定し、120 Kを代表上限として機構別の損失を比較する。
+    contribution: cold trapの固相損失に蒸発流束による上限があることを示した。120 K・永久影面積0.5%の代表計算では、水氷の損失は全月面平均で約4 g cm⁻²／10億年、収支を補う新規放出は約7 g cm⁻²／10億年となり、100 Kでは損失が約4桁減る。
   evidence_by_item:
     question:
     - paper_id: P000324
       version_id: V1
-      url: https://authors.library.caltech.edu/records/x4pdh-e3f38
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      url: https://authors.library.caltech.edu/records/x4pdh-e3f38/files/jgr1929.pdf
+      locator: PDF p.1、§1–2；p.4、§2.3
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000324
       version_id: V1
-      url: https://authors.library.caltech.edu/records/x4pdh-e3f38
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      url: https://authors.library.caltech.edu/records/x4pdh-e3f38/files/jgr1929.pdf
+      locator: PDF pp.2–4、式1–13；pp.6–8、Fig.3・Tables 1–2
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000324
       version_id: V1
-      url: https://authors.library.caltech.edu/records/x4pdh-e3f38
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      url: https://authors.library.caltech.edu/records/x4pdh-e3f38/files/jgr1929.pdf
+      locator: PDF p.4、式7–10；pp.8–9、§3.4；pp.11–12、§3.6
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-02'
+    checked_at: '2026-10-11'
+    recheck: false
   group: thermal-retention
 - paper_id: P000325
   role: 極域クレーターの温度と氷の安定性
@@ -1233,38 +1237,39 @@ entries:
     checked_at: '2026-10-02'
   group: ice-mechanics
 - paper_id: P000334
-  role: Divinerの全球熱物性地図
+  role: 乾燥レゴリスの熱モデルの基準と極低温の限界
   summary:
-    question: 月面レゴリスの密度・熱伝導率と地域差を、温度観測からどう求めるか。
-    method: Divinerの赤外温度を熱モデルへ合わせ、深さ方向の密度・熱伝導率を全球で推定する。
-    contribution: 細粒層の広域的な均質性と若いクレーター等の局所差を示し、低温モデルや成熟度の比較基準を与えた。
+    question: 氷の保存を計算する基礎として、月の乾燥レゴリスの浅部熱物性をどこまで温度観測で拘束できるか。
+    method: Divinerの128 ppd分離済み夜間レゴリス温度を1次元熱モデルへ合わせた。表面/深部の密度と接触伝導率を固定し、指数分布の尺度Hを推定して、上部4–7 cmの273 K換算熱慣性を地図化する。
+    contribution: 浅部の熱物性と温度依存を基準化した。ただし傾斜補正は約±60°まで良好で、30 K未満の比熱には追加実験が必要とするため、永久影の氷保存モデルには低温物性の再検証を要する。
   evidence_by_item:
     question:
     - paper_id: P000334
-      version_id: V1
-      url: https://doi.org/10.1002/2017JE005387
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.00977v1
+      locator: PDF pp.8–13; p.42, Appendix A1; pp.49–52, model definition/validation
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000334
-      version_id: V1
-      url: https://doi.org/10.1002/2017JE005387
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.00977v1
+      locator: PDF pp.5–10, §§3.1–3.2; pp.41–44, Appendix A1
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000334
-      version_id: V1
-      url: https://doi.org/10.1002/2017JE005387
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.00977v1
+      locator: PDF pp.9–10,31,42; Eqs.2–6; Appendix A1 low-temperature heat-capacity caveat
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-10-02'
+    checked_at: '2026-10-11'
+    recheck: false
   group: thermal-retention
 - paper_id: P000335
   role: 極低温までの熱物性モデル

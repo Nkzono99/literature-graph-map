@@ -6,14 +6,18 @@ review:
 - heading: 電子観測から月面電位を推定する
   paragraphs:
   - 月面の粒子環境はApollo 14のCPLEE（[@P000018]）などで測られ、その後は軌道からの電子観測が蓄積された。Lunar Prospectorでは電子のロスコーンやビームが夜側電位の手掛かりになる（[@P000003]）。[@P000025]は探査機自身の電位を補正し、周囲のプラズマに対する月面電位と入射電流の関係を求めた。[@P000023]はその環境の違いを全球的に整理している。
-  - 電子の速度分布から電位構造を復元するプレプリント[@P000262]は、月ウェイクを領域ごとに解析し、PICとARTEMISで検証した。表面電位の推定に加え、観測点までの電子の経路に沿う電位分布を扱うことで、中心部の衝撃波や分布の非対称性を調べられる。
+  - Halekas (2008) は探査機電位を補正したLP電子分布から月面負電位と入射電子電流を対応づけ、日照プラズマシートでも数百Vの負電位を報告した。通常ウェイクの境界付近約−200 V、中央部の絶対値100 V未満は局所ウェイクプラズマを基準とする。1998年5月6日のSEPでは約−4 kVに達したが、この期間には探査機電位補正を適用できておらず、局所プラズマ基準と解釈するには探査機電位が小さいという仮定が加わる。[@P000025]
+  - 電子スペクトルのエネルギーずれを使う電位診断に対し、[@P000262]は左右で異なる分布を独立に最適化し、中央の衝撃波では捕捉電子の平坦な分布幅を使う。ARTEMIS P1の2016年7月29日と2011年10月23日の横断で、太陽風から中央への電位降下を約800 Vと約200 Vと推定した。安定した磁場と上流の定常性が適用条件となり、地球フォアショックとの接続が疑われる区間や、中央の分布端が曖昧な境界には手法間の差が残る。これらはウェイク内プラズマの電位差であり、表面帯電へつなぐには別の電流収支とシースの検討が必要となる。
 - heading: 磁気圏・太陽活動・衝突で変わる電流
   paragraphs:
   - 磁気圏尾部では日照域も強く負に帯電しうる（[@P000004]）。太陽高エネルギー粒子イベントを扱う[@P000006]、[@P000027]はkV級の負帯電を観測と電流収支で比較する。ARTEMISでは遠隔のシース推定（[@P000034]）、太陽放射と光電子の対応（[@P000041]）、微小隕石衝突が供給する電流（[@P000045]）が調べられた。[@P000046]はARTEMISとOMNIの条件を帯電予測へ組み込む。
+  - Lunar Prospectorの帯電観測で残った探査機電位の未知のずれに対し、[@P000034]はEFIで測ったARTEMIS-P2の電位を補正に使った。2010年3月28日に月面から8,000 km以上離れた位置から、ローブの−30〜−60 Vとプラズマシートの−180〜−450 Vを推定し、ローブの日照面負帯電に初めて定量的な証拠を与えた。低エネルギー分解能と磁力線曲率は依然として制限となり、後者の区間後半は夜側接続を排除できない。
+  - '[@P000041]は、2011年7月～2016年9月のARTEMISから、ローブ・低高度・ほぼ太陽直下の弱磁場域に限った829スペクトルを選んだ。観測80–300 eVの上向き電子とFISMの1–5 nm光子の相関は0.77で、平均流束比は5.0×10⁻³だった。表面電位を各区間で得られるとは限らないため、この統計は観測エネルギーで比較する。2012年12月29日の+15～25 Vは、冷たいイオンの反射が測れた一事例の制約である。'
   - 太陽活動が高まると、光電子電流も増える。[@P000162]はARTEMISの長期観測をモデルと照合し、フレア時の磁気圏ローブで+100 Vを超える正電位を予測した。[@P000161]は別の放出モデルで光電子のエネルギーずれを読み、昼側電位の日照・プラズマ依存を統計化している。
 - heading: 場所の違いと、新しい月面計測
   paragraphs:
   - かぐやの光電子から相対電位を求めた[@P000051]は、地殻磁場の強さと電位分布を結び付けた。観測計画の資料としては月面電磁場計測を検討する[@P000032]がある。IM-1のROLSES（[@P000056]）は月面の電波・プラズマ波を測る装置であり、装置論文には設計と初期観測がまとまっている。
+  - アンテナの電場信号から局所密度とダストを調べるROLSESの設計・運用を[@P000056]が報告した。4本のモノポールでスペクトルと生波形を返したが、全区間10 dBの低利得、DSP平均化エラー、機体雑音が測定を制限した。輸送中の16–22 MHzの電波線は地上AJ4COとの周波数対応から地球送信電波と解釈された。月面36分のデータからシース密度や帯電ダストを測った結果は本稿に含まれない。
   - Chandrayaan-1の[@P000163]は、SPA磁気群上空で太陽風の偏向・加熱・減速が持続することを示した。著者らは反射陽子との相互作用によるproto-magnetosheathと解釈しており、上流で測った太陽風と月面近くの入射条件を結ぶ際に参照できる。
   - かぐやPACEの太陽風陽子の反射[@P000184]と、近傍ウェイクでの陽子エネルギー変化[@P000186]は、表面との相互作用を周囲の粒子分布へ結び付ける。磁気異常で散乱された陽子がウェイクへ届く経路は[@P000273]が観測と逆向き軌道追跡で調べた。低高度のPACE・LMAGによる[@P000178]は磁気リコネクションの候補を扱い、局所磁場による粒子加速を検討する。
   - Chandrayaan-2の電波観測[@P000247]は、太陽風中と磁気圏尾部での密度ゆらぎを比較する。粒子のエネルギーや電位を測る研究に対し、電波の伝播からプラズマの変動を調べる観測として位置づけられる。
@@ -41,7 +45,7 @@ lineage:
     connection: 現地の粒子計測から軌道上の推定へ
   - paper_id: P000025
     title: 入射電流と月面電位を対応付ける
-    significance: 探査機電位を補正して周囲のプラズマを基準にし、電流収支への応答を調べた。
+    significance: 通常区間では探査機電位を補正して電流収支と照合した。SEP区間の約−4 kVは探査機電位未補正である。
     connection: 電位の基準を補正し電流収支と照合
 - title: 光電子から昼側電位の変動を読む
   steps:
@@ -173,24 +177,36 @@ entries:
   group: measurements
   role: 入射電流と月面電位
   summary:
-    question: 入射粒子の電流は、実際の月面電位をどこまで説明するか。
-    method: 探査機電位を補正したLunar Prospectorの電子分布と電流収支を解析。
-    contribution: 周囲のプラズマを基準とする月面電位を求め、入射電流への応答を示した。
+    question: LPの軌道観測から、局所プラズマを基準とする月面負電位をどこまで定量化できるか。
+    method: 1999年4月29日の磁気圏、1998年3月23日の太陽風・ウェイク、1998年5月6日のSEPを電子分布フィットと電流平衡で比較。
+    contribution: 環境ごとの負電位と入射電子の対応を示した。通常期間の探査機電位補正、約20 Vの検出閾値、SEPの未補正、ウェイクの局所基準を区別して解釈できる。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000025
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013194
+      locator: PDF pp.1–3 §§1–2; p.14 §9
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000025
+      version_id: V1
+      url: https://doi.org/10.1029/2008ja013194
+      locator: PDF pp.3–8 §§2–5, Eq.1, Figs.1–5
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000025
       version_id: V1
       url: https://doi.org/10.1029/2008ja013194
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      locator: PDF pp.9–14 §§6–9, Figs.6–15; SEP p.13 ¶57 is uncorrected
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000032
@@ -213,50 +229,74 @@ entries:
   locked_fields: []
 - paper_id: P000034
   group: measurements
-  role: ARTEMISによる遠隔電位測定
+  role: ARTEMISによるローブ・プラズマシート電位の遠隔定量化
   summary:
-    question: 月から離れた探査機で、月面近傍の電位を推定できるか。
-    method: 月面と磁力線でつながったARTEMIS-P2の電子分布を解析。
-    contribution: 昼側シースに電位の極小を持つ構造を、遠隔観測から示した。
+    question: Lunar Prospectorに残った探査機電位の未知のずれを減らし、低密度ローブでも月面負帯電を推定できるか。
+    method: 2010年3月28日の磁気圏尾部フライバイでARTEMIS-P2のESA電子分布、FGM磁場、EFI探査機電位を使用。入射成分で規格化した上下方向分布に、探査機電位で補正した損失円錐と放出ビームを最小二乗で同時に合わせ、表面電位と磁場比を推定した。表面電位と経路上最低電位を等しいと仮定した。
+    contribution: ローブで−30〜−60 V、プラズマシートの約07:27 UTの短い接続区間で−180〜−450 Vを推定した。入射電子電流が予想光電子電流よりローブで2桁以上、プラズマシートで約2桁小さいのに負電位が現れ、日照面上の非単調シースの解釈を支持した。プラズマシート後半は磁力線曲率により夜側接続を排除できない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000034
+      version_id: V1
+      url: https://doi.org/10.1029/2011JA016542
+      locator: PDF pp.1–2, §1 ¶4–8
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000034
+      version_id: V1
+      url: https://doi.org/10.1029/2011JA016542
+      locator: PDF pp.7–8, §3 ¶19; Figs.5,7
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000034
       version_id: V1
-      url: https://doi.org/10.1029/2011ja016542
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2011JA016542
+      locator: PDF pp.4–5, ¶14; pp.6–8, ¶18–22; p.10, ¶25
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000056
   group: measurements
-  role: IM-1搭載ROLSES
+  role: ROLSESの設計と初期観測の制約
   summary:
-    question: 月面の電波・プラズマ波環境を、着陸機でどう測るか。
-    method: IM-1搭載の4本のモノポールアンテナで、2 kHz–30 MHzを観測。
-    contribution: ROLSESの装置設計と、着陸後に得られた初期観測を報告。
+    question: 月面近傍の電波と局所プラズマ・ダストの信号を、着陸機搭載アンテナでどう識別できるか。
+    method: IM-1の4本の2.5 mモノポールで2 kHz–30 MHzのスペクトルと生波形を取得。輸送中83分・月面36分の取得条件と機器雑音を整理し、輸送中のピーク周波数を同時刻の地上AJ4COと比較した。
+    contribution: 輸送中の16–22 MHzの強い電波線を、地上観測との周波数対応から地球送信電波と解釈した。全区間10 dBの低利得とDSP平均化エラーなどの制約を報告し、シース密度・ダストの測定目標は達成結果として提示していない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000056
+      version_id: V1
+      url: https://arxiv.org/pdf/2603.22600v2
+      locator: §2–2.4（arXiv v2 PDF pp.3,6–7）
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000056
+      version_id: V1
+      url: https://arxiv.org/pdf/2603.22600v2
+      locator: §3–3.3・§4–5・§6.1（arXiv v2 PDF pp.8–13,18–24）
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000056
       version_id: V1
-      url: https://arxiv.org/abs/2603.22600
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/pdf/2603.22600v2
+      locator: §4–6.3（arXiv v2 PDF pp.20–26、Figs.19–22）；目標の達成範囲はp.7
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000004
@@ -333,26 +373,50 @@ entries:
   locked_fields: []
 - paper_id: P000041
   group: environment
-  role: 太陽放射と光電子の対応
+  role: 光電子と太陽光子の対応、および一事例の正電位制約
   summary:
-    question: 太陽放射の変動は、昼側の光電子と電位をどう変えるか。
-    method: ARTEMISとApolloの光電子観測を、太陽放射モデルと組み合わせて解析。
-    contribution: 光電子フラックスと太陽放射の対応を示し、ローブ中の昼側電位を推定。
+    question: ローブ中の近い太陽直下・弱地殻磁場域で、観測した高エネルギー光電子の強度は太陽光子流束とどう対応するか。
+    method: 2011年7月～2016年9月の2機のARTEMISから8条件で829スペクトルを選び、観測80–300 eV上向き電子と60秒分解能FISMの1–5 nm光子を比較。一事例はイオン反射でUMを独立制約した。
+    contribution: 相関係数0.77、平均電子／光子流束比5.0×10⁻³（2標準偏差1.6×10⁻³）を得た。毎回のUMが得られない統計と、一事例の+15～25 Vの観測制約を分けて示す。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF pp.1–2、§1、Fig.1
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF p.4、§2.2、選別条件とエネルギー不確かさ
+      checked_at: '2026-10-11'
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF p.5、§2.2、Fig.3a–b
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000041
       version_id: V1
-      url: https://doi.org/10.1002/2017gl073419
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF p.5、§2.2、Fig.3a–b
+      checked_at: '2026-10-11'
+    - paper_id: P000041
+      version_id: V1
+      url: https://doi.org/10.1002/2017GL073419
+      source_type: full_text
+      locator: PDF pp.3–4、§2.1、Fig.2h–i
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000045
@@ -789,39 +853,39 @@ entries:
     recheck: false
 - paper_id: P000262
   group: measurements
-  role: 電子位相空間密度からの電位推定
+  role: ARTEMIS電子分布からのウェイク内プラズマ電位推定
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-11'
     recheck: false
   summary:
-    question: 電子分布から月ウェイクの電位を復元できるか。
-    method: Hamiltonian inversionを領域別に適用し、PICとARTEMISで検証する。
-    contribution: ストラール非対称性と中心部の衝撃波を含む電位分布を推定した。
+    question: 月ウェイクの電子分布から、左右非対称と中央衝撃波を含むプラズマ電位を間接的に推定できるか。
+    method: 安定した磁場と上流定常性を条件としてARTEMIS P1の時系列を空間列へ読み替える。左右では電子の準平衡を使って分布を最適化し、中央では捕捉電子分布の幅を電位差へ換算する。既知電位との精度比較は別の一次元PICで行う。
+    contribution: 2016年7月29日と2011年10月23日の横断から、太陽風と中央の電位差をそれぞれ約800 Vと約200 Vと推定した。非定常区間と中央境界では従来shift法と差が生じる。月面・宇宙機表面の帯電電位を直接測った値ではない。
   evidence_by_item:
     question:
     - paper_id: P000262
       version_id: V1
-      url: https://arxiv.org/abs/2604.17825
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://arxiv.org/pdf/2604.17825v1
+      locator: PDF p.3, Introduction; pp.4–7, Section 2; Eqs.1–8
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000262
       version_id: V1
-      url: https://arxiv.org/abs/2604.17825
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://arxiv.org/pdf/2604.17825v1
+      locator: PDF pp.4–8, Sections 2–3; Eqs.2–8; pp.14–15, Section 4
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000262
       version_id: V1
-      url: https://arxiv.org/abs/2604.17825
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      url: https://arxiv.org/pdf/2604.17825v1
+      locator: PDF pp.8–14, Sections 3.1–3.2; Figs.2–7; pp.15–19, Section 4; Figs.8–11
+      source_type: full_text
+      checked_at: '2026-10-11'
 - paper_id: P000273
   group: measurements
   role: 磁気異常からウェイクへの陽子輸送

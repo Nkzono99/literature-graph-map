@@ -271,38 +271,38 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000241
   group: stochastic
-  role: 凝集体の確率的帯電
+  role: 凝集体表面の離散確率帯電と形状変化
   summary:
-    question: 微小粒子や希薄なプラズマでは、電子・イオンを一個ずつ受け取る際の電荷ゆらぎが、凝集体の電荷統計と成長後の形状にどう影響するかを調べる。
-    method: 凝集体表面への電子・イオンの捕集を離散的な確率過程として扱う数値帯電モデルを構築し、粒子運動モデルと連成して凝集体の成長を計算する。
-    contribution: 電荷の平均と標準偏差は等価半径の球と同じ傾向を示すが、予測値からのばらつきは凝集体で大きい。電荷ゆらぎの時間尺度が粒子の運動に影響する環境では、一定電荷の場合より細長い糸状の凝集体が形成されやすかった。
+    question: 電子・イオンの個別捕集が、凝集体の電荷統計・ゆらぎ時間と、局所電荷から受ける力・トルクを通じた成長形状をどう変えるか。
+    method: 一次電子・一価イオン捕集をOMLとモノマーによる見通し遮蔽で計算し、表面パッチへ一個ずつ付着させるMarkov/Gillespie型モデルを構築した。Ar実験室プラズマと電子欠乏Hプラズマで球・凝集体を検証し、単一モノマーの追加成長を25個まで計算。PPDでは抽出した電荷を衝突中固定し、LABでは衝突中も更新した。
+    contribution: PPDの凝集体電荷は平均・分散とも等価半径の球と似た傾向だが、負電荷の大きさは最大約20%増えた。LAB・PPDでゆらぎ時間は等価球よりおおむね約3倍短い。成長では表面分布を保持するPatchが両条件で最も細長くなり、SphereとPatchの充填度は区別できなかった。
   evidence_by_item:
     question:
     - paper_id: P000241
-      version_id: V1
-      url: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.053207
-      source_type: abstract
-      locator: Abstract, paragraphs 1–2
-      checked_at: '2026-10-06'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.06340v1
+      locator: PDF p.2, §I; pp.13–14, §V
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000241
-      version_id: V1
-      url: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.053207
-      source_type: abstract
-      locator: Abstract, paragraphs 2–3
-      checked_at: '2026-10-06'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.06340v1
+      locator: PDF pp.2–7, §§II–III, Eqs.1–11; pp.14–16, §V, Fig.9
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000241
-      version_id: V1
-      url: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.053207
-      source_type: abstract
-      locator: Abstract, paragraphs 2–3
-      checked_at: '2026-10-06'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.06340v1
+      locator: PDF pp.10–13, §IV.B, Figs.5–7; pp.16–19, §V–VI, Figs.10–13 (Fig.12 actual axis R/Rσ)
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-11'
     recheck: false
 - paper_id: P000167
   group: stochastic
@@ -424,43 +424,49 @@ entries:
   group: aggregates
   role: 凝集体の帯電と電子放出
   summary:
-    question: 宇宙空間の不規則なダスト凝集体では、二次電子放出や光電子放出を含む帯電が、同じ質量の球形粒子とどう異なり、構造から推定できるかを調べた。
-    method: 太陽系の帯電環境を想定した三次元数値モデルに、プラズマ粒子の収集、二次電子放出、紫外線による光電子放出を組み込み、凝集体の平衡電荷を計算した。
-    contribution: 凝集体の平衡電荷は同質量の球形粒子と大きく異なり、環境ごとに構造特性から推定できた。ナノ粒子からなるミクロン級凝集体では、二次電子放出の小粒子効果も重要だった。
+    question: 同質量の球と比べて、凝集体の見通し遮蔽、放出電子の再捕集、構成粒子の粒径が帯電にどう影響し、電荷を粒子数や疎密から推定できるかを調べた。
+    method: 中性環境でPCA/CCAにより作った単分散silicate凝集体をOML_LOS法で帯電させた。直線入射とパッチの電荷・双極子を用い、二次電子放出が重要なヘリオシース条件と、光電子供給を変えた1 AU条件で同質量球を比較した。
+    contribution: ヘリオシース条件では電荷がN^0.413、compactness factorの−1.3乗で整理され、5–10 nmの構成粒子の二次電子放出の小粒子効果も残った。1 AUの例では光電子供給次第で球との電荷の大小が変わり、帯電履歴中の符号差も生じた。正電荷の固定供給条件ではN^0.42、compactness factorの−1.3乗を報告した。
   evidence_by_item:
     question:
     - paper_id: P000240
       version_id: Varxiv2
-      url: https://arxiv.org/abs/1210.0459v2
-      source_type: abstract
-      locator: Abstract：球形粒子の従来仮定と不規則な凝集体の説明、および平衡電荷と構造特性について述べる部分
-      checked_at: '2026-10-06'
+      url: https://arxiv.org/pdf/1210.0459v2
+      locator: PDF pp.4–5, §1 Introduction（球近似、凝集体、研究目的）
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000240
       version_id: Varxiv2
-      url: https://arxiv.org/abs/1210.0459v2
-      source_type: abstract
-      locator: Abstract：一次プラズマ電流、二次電子放出、光電子放出を含めて検討すると述べる部分
-      checked_at: '2026-10-06'
+      url: https://arxiv.org/pdf/1210.0459v2
+      locator: PDF pp.6–13, §§2.1–2.5（Maxwell/OML_LOS、放出電子の再捕集、Eq.16、中性PCA/CCA生成）
+      source_type: full_text
+      checked_at: '2026-10-11'
     - paper_id: P000240
       version_id: Varxiv2
       url: https://arxiv.org/pdf/1210.0459v2
+      locator: PDF pp.14–15 §3.1、pp.20–21 §3.2（環境と構成球半径）
       source_type: full_text
-      locator: PDFファイルp.5、§1 Introduction 最終段落；p.6、§2 Charging Model 冒頭
-      checked_at: '2026-10-06'
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000240
       version_id: Varxiv2
-      url: https://arxiv.org/abs/1210.0459v2
-      source_type: abstract
-      locator: Abstract：平衡電荷の球形粒子との差、環境と構造特性からの推定、ナノ粒子からなるミクロン級凝集体の小粒子効果について述べる末尾3文
-      checked_at: '2026-10-06'
+      url: https://arxiv.org/pdf/1210.0459v2
+      locator: PDF pp.17–20, Figs.5–7, Eqs.19–21（構造fit、小粒子効果、同質量比較）
+      source_type: full_text
+      checked_at: '2026-10-11'
+    - paper_id: P000240
+      version_id: Varxiv2
+      url: https://arxiv.org/pdf/1210.0459v2
+      locator: PDF pp.21–24, Figs.8–9, Eqs.22–23（大小・符号差、UV fit、単分散制限）
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: preprint
     version_id: Varxiv2
     checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: true
+    checked_at: '2026-10-11'
+    recheck: false
 - paper_id: P000242
   group: aggregates
   role: 不規則形状粒子の電荷測定
@@ -1371,38 +1377,39 @@ entries:
     checked_at: '2026-10-02'
   group: surface
 - paper_id: P000317
-  role: 斜長石粒子の電荷と速度
+  role: 粒径・速度から粒子電荷モデルの必要条件を比較
   summary:
-    question: 二次電子放出で動く斜長石粒子の速度と粒径を、どの帯電モデルで説明できるか。
-    method: 350 eV電子照射下で、レーザーDoppler法により粒子の直径と水平・鉛直速度を測定する。
-    contribution: 鉛直輸送が優勢で、速度・粒径関係は電荷共有モデルで説明しにくく、表面微細構造と局所電位の寄与を示唆した。
+    question: 350 eV電子照射で斜長石粉体から動く粒子の粒径・速度関係を、共有電荷・孤立球・局所帯電モデルはどの条件で説明できるか。
+    method: 斜長石を体積比90%超含む粉体を、背景プラズマのない約10⁻⁶ Paで350 eV・500 µAの電子ビームに照射し、PDPA/LDVで表面上6 mmの粒径と鉛直速度を同時測定。10回の実験の分布・検出率と、電流収支・運動モデルを比較する。
+    contribution: 粒径信号の79.11%は5 µm未満で、高速側の粒径・速度包絡線は共有電荷モデルでは電場作用距離の仮定と両立しない。孤立球モデルは負の表面電位約−350–−119 Vで包絡線を覆い、局所帯電モデルも従来より大きい経験係数を要する。表面電位・粒子電荷・電場は未測定で、機構の特定は残る。
   evidence_by_item:
     question:
     - paper_id: P000317
-      version_id: V1
-      url: https://doi.org/10.3847/1538-4357/ac5d48
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: Vaccess1
+      url: https://arxiv.org/pdf/2203.08817v1
+      locator: PDF pp.1–3 §1; pp.11–14 §4.2–4.3(1)
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000317
-      version_id: V1
-      url: https://doi.org/10.3847/1538-4357/ac5d48
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: Vaccess1
+      url: https://arxiv.org/pdf/2203.08817v1
+      locator: PDF pp.3–6 §2–3; p.9 §4.1; Figs.1–2, Eqs.1–3
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000317
-      version_id: V1
-      url: https://doi.org/10.3847/1538-4357/ac5d48
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: Vaccess1
+      url: https://arxiv.org/pdf/2203.08817v1
+      locator: PDF pp.6–8 §3.2–3.3; pp.12–16 §4.3–5; Figs.3–8
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: Vaccess1
     checked_by: ai
-    checked_at: '2026-10-02'
+    checked_at: '2026-10-11'
+    recheck: false
   group: surface
 - paper_id: P000318
   role: イオンウェイク内の粒子電荷の実験
@@ -1548,11 +1555,12 @@ review:
 - heading: 平均電流の釣り合いから、電荷のゆらぎへ進む
   paragraphs:
   - '[@P000233]の捕集理論を起点に、[@P000234]と[@P000235]は探針に届く粒子電流を扱う。小粒子を孤立球として近似するOMLと有限寸法のシースを比較する基準となり、星間粒子の衝突帯電[@P000236]へ進むと環境に応じた捕集を考えられる。[@P000094]の読了したarXiv版では、電子・イオン温度が等しい無衝突・無磁場の水素プラズマ中の非放出静止球について、修正OMLが遮蔽を解いて電荷を求めた。電子Debye長に対する半径比5まで電荷差は約8%以下、比10で約20%だが、電流・加熱には表から換算して約37%の差もある。浮遊電位、電荷、捕集電流の一致をそれぞれ評価する必要がある。'
-  - "流入する電子・イオンは離散的なので、同じ環境でも粒子電荷は変動する。[@P000237]は個々の捕集によるゆらぎをモデル化し、[@P000238]は電荷分布の平均と分散をプラズマ条件へ結び付けた。凝集体の離散帯電[@P000241]と光電子シース中の帯電・軌道連成[@P000167]は、平均電荷から運動を予測する条件を考える基礎となる。[@P000270]は電荷ゆらぎによる月面上の微粒子加速を論じている。"
+  - 流入する電子・イオンは離散的なので、同じ環境でも粒子電荷は変動する。[@P000237]は個々の捕集によるゆらぎをモデル化し、[@P000238]は電荷分布の平均と分散をプラズマ条件へ結び付けた。凝集体の離散帯電[@P000241]と光電子シース中の帯電・軌道連成[@P000167]は、平均電荷から運動を予測する条件を考える基礎となる。[@P000270]は電荷ゆらぎによる月面上の微粒子加速を論じている。
+  - 凝集体の離散帯電[@P000241]は、見通しで補正した捕集率から次の電子・イオンと表面位置を選び、全電荷に加えて局所分布を残す。読了した2017年arXiv稿では、LAB・PPD条件の凝集体のゆらぎ時間は等価球よりおおむね約3倍短かった。単一モノマーを25個まで加える成長計算では、衝突中に電荷を更新するLABと、事前に抽出した電荷を固定するPPDの双方で、パッチ分布を保持した凝集体が最も細長くなった。全電荷の変動、表面の非対称性、運動に対する時間比を分けることで、平均電荷から形状を予測する条件が具体化する。
 - heading: 非球形・凝集体では、粒子ごとの捕集経路が変わる
   paragraphs:
-  - 凝集体では他の粒子に遮られた方向からの流入が減る。[@P000239]はこの見通しをOMLに組み込み、[@P000240]は凝集体の帯電と電子放出を扱う。[@P000242]の不規則形状粒子の実験は、電荷をどの大きさの球で近似できるかを検討している。
-    Apollo試料とJSC-1Aの粒径・形状・内部空隙を三次元計測した[@P000218]は、球の近似や凝集体モデルへ与える形状の比較材料となる。
+  - 凝集体では他の粒子に遮られた方向からの流入が減る。[@P000239]はこの見通しをOMLに組み込み、[@P000240]は凝集体の帯電と電子放出を扱う。[@P000242]の不規則形状粒子の実験は、電荷をどの大きさの球で近似できるかを検討している。 Apollo試料とJSC-1Aの粒径・形状・内部空隙を三次元計測した[@P000218]は、球の近似や凝集体モデルへ与える形状の比較材料となる。
+  - 凝集体の見通し遮蔽に電子放出を組み込んだMa et al. (2013)は、ヘリオシース条件で構成粒子数・疎密と正電荷のべき則を示し、5–10 nmの構成粒子の二次電子放出の粒径効果も残るとした。一方、1 AUの光電子放出の例では、光電子供給を変えると同質量球より電荷が大きくも小さくもなり、帯電履歴中の符号も異なる。形状による放出電子の再捕集と、外へ逃げる量を対応させて読む必要がある。光電子の数値比較には、原稿内の式と供給率の不一致が残る。[@P000240]
 - heading: 材料の電子放出を、粉体と孤立粒子で比べる
   paragraphs:
   - 月試料の光電子放出[@P000001]、二次電子放出[@P000150]、両者を扱う[@P000243]は、帯電モデルへ入れる材料特性の基礎となる。[@P000021]と[@P000166]は月試料・模擬粒子の電子照射帯電を比較した。[@P000153]は個別に保持した粒子の粒径依存、[@P000151]はApollo
@@ -1562,9 +1570,9 @@ review:
 - heading: 粒子層の局所帯電と、接触による電荷移動を追う
   paragraphs:
   - 表面上の粒子では、[@P000009]の電子再捕集、[@P000010]の差動帯電と導電損失、[@P000013]の粒子と基板の隙間が論点になる。[@P000037]は模擬レゴリス上の電荷、VUV照射下の[@P000052]は正負の粒子を測った。[@P000391]は照射停止後に外部電圧で回収できた粒子の負電荷を測り、再捕集モデルと比較した。抽出・輸送・検出の選別を伴う正味電荷なので、局所パッチ電荷や粉体全体の平均へはそのまま移せない。光とプラズマを併用する[@P000014]、模擬物層の電子収率[@P000053]も、測定量をそろえて比較する。
-  - 接触でも電荷が移る。[@P000254]は模擬レゴリス粒子同士、[@P000255]は模擬粒子と異種材料の接触を扱う。後者では反復振動で電荷量が増えるが、接触回数や飽和を直接確定していない。仕事関数との回帰にも材料ごとの例外がある。[@P000266]では絶縁体・模擬土に70
-    msのUV照射でも初期電荷が残った。これは接触履歴を含む電荷分布であり、照射後の平衡電荷を一般に与える値ではない。
+  - 接触でも電荷が移る。[@P000254]は模擬レゴリス粒子同士、[@P000255]は模擬粒子と異種材料の接触を扱う。後者では反復振動で電荷量が増えるが、接触回数や飽和を直接確定していない。仕事関数との回帰にも材料ごとの例外がある。[@P000266]では絶縁体・模擬土に70 msのUV照射でも初期電荷が残った。これは接触履歴を含む電荷分布であり、照射後の平衡電荷を一般に与える値ではない。
   - 帯電を移動へ結び付ける[@P000314]は、シリカの初速・到達高度を微小空洞の帯電と粒子間反発から調べた。[@P000317]は斜長石の速度と直径を測り、電荷共有モデルで説明しにくい関係を示した。電荷を測る実験と運動から帯電モデルを制約する実験を、試料と場の条件に沿って対応させて読める。
+  - '[@P000317]は350 eV電子照射下の斜長石で、表面上6 mmの粒径と速度を同時に測った。高速側の上限は、共有電荷モデルでは仮定した電場作用距離と両立せず、孤立球モデルは負の表面電位約−350–−119 V、局所帯電モデルも従来より大きい帯電係数を必要とする。粒子電荷・粉体表面電位・電場は未測定であり、運動からモデルの必要条件を絞る研究として、電荷を直接測る実験と対応させられる。'
 - heading: 接触の履歴と、流れの中の粒子電荷
   paragraphs:
   - 接触帯電では、衝突回数に加えて粒子の姿勢と電荷分布も効く。[@P000308]は振動面上の単一球が帯電を止める姿勢へ移る過程を示した。二粒子を音響浮遊させた[@P000309]では、各衝突は確率的でも累積電荷は飽和則に従った。これらは月面固有の実験ではなく、接触帯電の履歴を理解する基礎となる。流れのあるプラズマでは、[@P000321]が遮蔽とウェイクによる粒子間力を整理し、[@P000318]がウェイク内の電荷変化を粒子運動から推定している。

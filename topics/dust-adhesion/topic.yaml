@@ -304,56 +304,38 @@ entries:
     recheck: false
 - paper_id: P000206
   group: roughness
-  role: 付着接触の転がり抵抗
+  role: 付着接触の弾性曲げと不可逆な転がり抵抗
   summary:
-    question: 付着した二つの弾性球が互いに転がろうとすると、接触はどのように抵抗するか。微小粒子の凝集体を支える接触の曲げ剛性を調べる。
-    method: 付着接触を扱うJKR理論と接触面の原子構造に基づく議論を組み合わせ、弾性球の接触に生じる転がり抵抗を理論的に計算した。
-    contribution: モデルでは、接触は臨界曲げ角まで弾性的に応答し、それを超えると不可逆な転がりが起きる。弾性域の抵抗モーメントは曲げ角と引き離し力に比例する。
+    question: 付着した二つの弾性球が互いに転がろうとすると、接触面の遅れと非対称な圧力分布はどのような抵抗を生み、粒子鎖の変形・安定性をどう変えるか。
+    method: 接触域内だけに引力を認めるJKRS理論と、原子間距離程度で接触が更新される仮定を組み合わせた。滑りを抑え、ずれた接触領域を二つの半円に近似して小変位の抵抗モーメントを求め、粒子鎖の曲率、重力下の支持数、振動と衝突後の転がりを計算した。
+    contribution: 小変位では抵抗モーメントが引き離し力と接触のずれに比例し、仮定した臨界ずれを超えると接触更新でエネルギーを失うモデルを示した。同一球・外力ゼロの近似では転がり開始の接線力は6πγξ_yieldとなる。臨界ずれ0.2 nmは測定値ではなく、三次元接触の解も近似である。
   evidence_by_item:
     question:
     - paper_id: P000206
       version_id: V1
-      url: https://www.tandfonline.com/doi/abs/10.1080/01418619508243800
-      source_type: abstract
-      locator: Abstract, first two sentences
-      checked_at: '2026-10-06'
-    - paper_id: P000206
-      version_id: V1
       url: https://ntrs.nasa.gov/api/citations/19980018487/downloads/19980018487.pdf
-      source_type: abstract
-      locator: PDF file page 1 / printed p.783, Abstract, first two sentences
-      checked_at: '2026-10-06'
+      locator: PDF p.2 / printed p.784, §1末尾–§2; p.4–6 / printed p.786–788, §3 and Fig.2
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000206
       version_id: V1
-      url: https://www.tandfonline.com/doi/abs/10.1080/01418619508243800
-      source_type: abstract
-      locator: Abstract, sentence beginning 'We use the description of contact forces'
-      checked_at: '2026-10-06'
-    - paper_id: P000206
-      version_id: V1
       url: https://ntrs.nasa.gov/api/citations/19980018487/downloads/19980018487.pdf
-      source_type: abstract
-      locator: PDF file page 1 / printed p.783, Abstract, sentence beginning 'We use the description of contact forces'
-      checked_at: '2026-10-06'
+      locator: PDF p.2 / printed p.784, §2のJKRS条件; p.4 / printed p.786, no-sliding assumption; p.6–8 / printed p.788–790, §3.1, Eq.(12)–(25)
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000206
       version_id: V1
-      url: https://www.tandfonline.com/doi/abs/10.1080/01418619508243800
-      source_type: abstract
-      locator: Abstract, sentences beginning 'It is shown', 'Beyond that', and 'In the elastic regime'
-      checked_at: '2026-10-06'
-    - paper_id: P000206
-      version_id: V1
       url: https://ntrs.nasa.gov/api/citations/19980018487/downloads/19980018487.pdf
-      source_type: abstract
-      locator: PDF file page 1 / printed p.783, Abstract, sentences beginning 'It is shown', 'Beyond that', and 'In the elastic regime'
-      checked_at: '2026-10-06'
+      locator: PDF p.8–10 / printed p.790–792, Eq.(25)–(28), ξyield仮定; p.13 / printed p.795, §4.2.2, Eq.(43); p.15 / printed p.797, §5
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-11'
     recheck: false
 - paper_id: P000207
   group: roughness
@@ -1784,9 +1766,9 @@ review:
 - heading: 接触モデルと表面粗さが、離脱に必要な力を変える
   paragraphs:
   - 粒子を表面から離すには、電場中の力と付着力を同じ条件で比べる必要がある。球状粒子間のvan der Waals引力を扱う[@P000205]は、接触を支える分子間力の入口になる。[@P000198]のJKR、[@P000199]のDMT、両者の遷移を扱う[@P000200]は、弾性変形と表面エネルギーから接触を考える基礎である。
-  - 実際の表面には凹凸がある。[@P000204]は突起の統計から接触を扱い、[@P000201]は粗さによって付着が大きく減ることを実験とモデルで調べた。ナノ粗面の理論[@P000202]と測定[@P000203]、Apollo粒子の三次元形状[@P000218]は、平滑な球の近似を使う条件を考える材料になる。
-    フラクタル粗面と微粒子付着を扱う[@P000212]、FJS-1の三次元形状を離散要素法へ入力する[@P000281]は、粗さと粒子形状を具体的に与える研究として参照できる。
+  - 実際の表面には凹凸がある。[@P000204]は突起の統計から接触を扱い、[@P000201]は粗さによって付着が大きく減ることを実験とモデルで調べた。ナノ粗面の理論[@P000202]と測定[@P000203]、Apollo粒子の三次元形状[@P000218]は、平滑な球の近似を使う条件を考える材料になる。 フラクタル粗面と微粒子付着を扱う[@P000212]、FJS-1の三次元形状を離散要素法へ入力する[@P000281]は、粗さと粒子形状を具体的に与える研究として参照できる。
   - 接触した粒子は、引き離される前に転がることもある。[@P000206]の付着接触の転がり抵抗と、[@P000207]のダスト凝集体の構造を合わせると、接触一つの力から粒子集団の変形へ論点を広げられる。
+  - 付着した粒子が接触を保って動く場合には、引き離し力と転がり開始の力を分けて考える。Dominik（1995）は、滑りを抑えたJKRS接触で、粒子の回転に接触面が遅れると弾性の抵抗モーメントが生じ、原子径程度の臨界ずれを超えると不可逆な転がりへ移るモデルを示した。臨界ずれを0.2 nmと置けば半径100 nm球の鎖の最小弾性曲率半径は50 µmとなるが、このずれは測定値ではなく、三次元接触も近似解である。粗い非球形粒子や帯電した実ダストへの適用では、接触形状と荷重の条件を別途検証する。[@P000206]
 - heading: 付着の測定を、帯電による離脱と結び付ける
   paragraphs:
   - 月ダスト付着を整理した[@P000208]と[@P000209]に対し、[@P000210]は遠心法、[@P000211]は模擬月環境の条件から付着を測る。遠心測定装置を扱う[@P000213]も、測定方法を選ぶための文献となる。環境、粒径、粗さ、接触履歴をそろえることが、異なる実験を比較する出発点となる。

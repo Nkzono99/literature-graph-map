@@ -10,7 +10,9 @@ review:
   - 対策へ入力する粒子条件は、レゴリス力学と帯電・輸送を結ぶ[@P000256]、生成・物性・移動経路を整理する[@P000249]の総説から見渡せる。機器に届く量、接触時の電荷、付着力を同じ環境条件へ対応させることが、自然環境の研究と工学試験を結ぶ出発点になる。
 - heading: 電場・中和・ブラシによる除塵
   paragraphs:
-  - '[@P000028]のEDSは、電極が作る電場と静電力・誘電泳動力で粒子を移動させる。特許には、宇宙服のダストを正負のイオンで中和する[@P000049]と、ブラシへEDS・UVを組み合わせる[@P000050]がある。周辺技術として収録した[@P000035]は、気体中の誘電体バリア放電が生む流れを使う太陽電池除塵である。作用する媒体と力を押さえると、各方式の対象環境を見分けやすい。'
+  - '[@P000028]のEDSは、電極が作る電場と静電力・誘電泳動力で粒子を移動させる。特許には、宇宙服のダストを正負のイオンで中和した後、気流で吸い込み再帯電させて捕集する[@P000049]と、ブラシへEDS・UVを組み合わせる[@P000050]がある。周辺技術として収録した[@P000035]は、気体中の誘電体バリア放電が生む流れを使う太陽電池除塵である。作用する媒体と力を押さえると、各方式の対象環境を見分けやすい。'
+  - '[@P000028]の透明EDSは、ガラス上のITOらせん電極を三相矩形波で駆動する。約10⁻⁶ kPaの真空中で50–75 µmのJSC-1Aを約20 mgずつ散布すると、市販太陽電池の電圧は基準の11.0–22.5%へ落ち、作動後には91.6–99.4%へ回復した。これは電極のない領域を覆った試験配置での電圧比で、発電電力や除去質量の比は報告されていない。電気系統全体へ組み込む際の電磁干渉・電磁両立性は追加解析が必要とされた。'
+  - '[@P000049]の登録特許は、宇宙服上のダストの中和と、その後の回収を一つの運用へつなぐ。図2の回収器では中和粒子を再び負に帯電させて正の板に集め、床下フィルタでは濾過空気を再循環する。リングや旋回アームによる走査、施設外の梯子への仮設も例示するが、除去率・捕集率や外部真空での動作条件は示されない。比較には宇宙服に残る量と、施設内部へ入る量を分けた評価が必要になる。'
   - 電子照射で粒子を動かす[@P000164]は、宇宙服用の布と模擬レゴリスを用い、VUVの併用による除去効率の向上を測った。太陽に似た波長分布を再現し、光強度は月面より高く設定している。電極配置に加え、照射と材料の組合せも除塵の設計変数になる。
 - heading: 受動表面とUV併用で除塵の選択肢を広げる
   paragraphs:
@@ -36,8 +38,8 @@ lineage:
 - title: 付着ダストの除去
   steps:
   - paper_id: P000028
-    title: 電場で粒子を動かして除塵
-    significance: 静電力・誘電泳動力を使うEDSを検討し、月探査機器の表面からダストを取り除く設計を示した。
+    title: 透明電極で太陽電池電圧を回復
+    significance: 透明ITOの三相EDSを高真空のJSC-1A散布試験で評価し、基準電圧の91.6–99.4%への回復を報告した。
   - paper_id: P000164
     title: VUVと電子ビームを組み合わせる
     significance: 月面より強いVUVの照射下で、電子ビームによる布上ダストの除去効率が上がった。
@@ -129,20 +131,38 @@ entries:
   locked_fields: []
 - paper_id: P000028
   group: removal
-  role: 電場による除塵
+  role: 透明EDSによる真空中の太陽電池電圧回復
   summary:
-    question: 月探査装置に付着したダストを、電気力で除去できるか。
-    method: 電極による静電力・誘電泳動力を使った除塵方式を検討。
-    contribution: 電場で粒子を動かすEDSの設計と、月探査機器への適用を示した。
+    question: 高真空中で模擬月ダストの付着により低下した太陽電池電圧を、透明な電気力学的ダストシールド（EDS）で回復させられるか。
+    method: 透明ITOのらせん電極をガラス上に設け、三相矩形波で駆動する。約10⁻⁶ kPaで50–75 µmのJSC-1Aを約20 mgずつ散布し、電極のない領域を覆った市販セルの電圧を無散布の基準と比較した。
+    contribution: 4種類の電極間隔で、散布後に基準の11.0–22.5%まで低下した電圧がEDS作動後91.6–99.4%へ回復した。透明電極による真空中の除塵を太陽電池の電圧回復で示した。
   evidence_by_item:
-    question: []
-    method: []
-    contribution: []
+    question:
+    - paper_id: P000028
+      version_id: V2
+      url: https://ntrs.nasa.gov/api/citations/20130012970/downloads/20130012970.pdf
+      locator: PDF pp.1–2, §1; pp.5–6, §3
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000028
+      version_id: V2
+      url: https://ntrs.nasa.gov/api/citations/20130012970/downloads/20130012970.pdf
+      locator: PDF pp.5–7, §3, Figs2–3; pressure/thickness symbols checked visually
+      source_type: full_text
+      checked_at: '2026-10-11'
+    contribution:
+    - paper_id: P000028
+      version_id: V2
+      url: https://ntrs.nasa.gov/api/citations/20130012970/downloads/20130012970.pdf
+      locator: PDF pp.7–9, §3, Figs4–5, Table1; voltage metric and order-2% stated error
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
+    level: full_text
+    version_id: V2
+    checked_by: ai
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000035
@@ -171,26 +191,38 @@ entries:
   locked_fields: []
 - paper_id: P000049
   group: removal
-  role: イオン中和・特許
+  role: 中和と回収を組み合わせる特許
   summary:
-    question: 宇宙服に付着した帯電ダストを、どう除去するか。
-    method: 正負のイオンシャワーによる中和と、外部での粒子回収を組み合わせる。
-    contribution: 船内への持ち込みを減らすための、宇宙服の除塵装置を提案。
+    question: 宇宙服に付着したダストを離脱させた後に回収し、居住区への持ち込みをどう防ぐか。
+    method: 正負のイオンシャワーによる中和と、粒子を再帯電して正の板へ捕集する回収器、床下フィルタを組み合わせる。エアロック内の気体供給・送風、リングや旋回アーム、施設外の梯子配置を例示する。
+    contribution: 中和だけでなく回収まで含めた宇宙服除塵の運用・装置構成を提案した登録特許。除去率や真空下の動作性能は本文で検証されていない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000049
+      version_id: V1
+      url: https://patents.google.com/patent/US11866203B2/en
+      locator: PDF10ページ、第3欄10〜26行（課題と先行方式の回収不足）
+      source_type: full_text
+      checked_at: '2026-10-11'
+    method:
+    - paper_id: P000049
+      version_id: V1
+      url: https://patents.google.com/patent/US11866203B2/en
+      locator: PDF10ページ、第4欄10〜25、44〜56行; PDF11ページ、第5欄2〜15行; 図1〜6
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000049
       version_id: V1
       url: https://patents.google.com/patent/US11866203B2/en
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      locator: PDF11ページ、第6欄・請求項1; PDF12ページ・請求項2〜20
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-11'
     recheck: false
   locked_fields: []
 - paper_id: P000050

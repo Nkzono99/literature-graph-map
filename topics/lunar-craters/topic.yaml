@@ -735,38 +735,39 @@ entries:
     checked_at: '2026-10-02'
   group: catalogs
 - paper_id: P000334
-  role: Divinerの全球熱物性地図
+  role: 浅部レゴリスの熱物性地図と衝突後の変化
   summary:
-    question: 月面レゴリスの密度・熱伝導率と地域差を、温度観測からどう求めるか。
-    method: Divinerの赤外温度を熱モデルへ合わせ、深さ方向の密度・熱伝導率を全球で推定する。
-    contribution: 細粒層の広域的な均質性と若いクレーター等の局所差を示し、低温モデルや成熟度の比較基準を与えた。
+    question: 月面の浅い微粒子レゴリスの熱物性はどの程度均質で、衝突噴出物・コールドスポット・火砕堆積物の違いを夜間温度からどう区別できるか。
+    method: Divinerの128 ppd分離済み夜間レゴリス温度を1次元熱モデルへ合わせた。表面/深部の密度と接触伝導率を固定し、指数分布の尺度Hを推定して、上部4–7 cmの273 K換算熱慣性を地図化する。
+    contribution: 緯度±60°で熱慣性の平均約55、空間標準偏差約2 J m⁻² K⁻¹ s⁻¹ᐟ²という均質な背景を示し、若い噴出物の高熱慣性、コールドスポットの低熱慣性、広域火砕堆積物の特徴を区別した。9クレーターの既存年代との経験関係を年代推定の候補として提示する。
   evidence_by_item:
     question:
     - paper_id: P000334
-      version_id: V1
-      url: https://doi.org/10.1002/2017JE005387
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.00977v1
+      locator: PDF pp.3–6, Introduction, Dataset, Approach
+      source_type: full_text
+      checked_at: '2026-10-11'
     method:
     - paper_id: P000334
-      version_id: V1
-      url: https://doi.org/10.1002/2017JE005387
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.00977v1
+      locator: PDF pp.5–13, §§3.1–3.3; pp.41–52, Appendix A, Tables A1–A2
+      source_type: full_text
+      checked_at: '2026-10-11'
     contribution:
     - paper_id: P000334
-      version_id: V1
-      url: https://doi.org/10.1002/2017JE005387
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      version_id: V2
+      url: https://arxiv.org/pdf/1711.00977v1
+      locator: PDF pp.17, 23–30, 31–32; Figs.9,13–17; Eqs.8; Fig.14の平均範囲に本文との不一致あり
+      source_type: full_text
+      checked_at: '2026-10-11'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-10-02'
+    checked_at: '2026-10-11'
+    recheck: false
   group: renewal
 - paper_id: P000371
   group: shock-records
@@ -857,8 +858,8 @@ review:
   - より大きなOrientaleを扱う[@P000307]では、深部の流動と正断層が外側の環を作る。ピークリングの形成と多重リングの形成を区別して読むと、衝突規模や月内部の温度が地形へ与える影響を整理できる。
 - heading: 岩塊と熱物性で表層更新を調べる
   paragraphs:
-  - '[@P000333]のBoulderNetは衛星画像から岩塊の輪郭を抽出する。これを散乱光条件へ進めた[@P000327]は、ShadowCamの永久影画像で約4
-    m以上の岩塊を検出した。岩塊分布はレーダーの粗さ解釈と着陸条件を補う。[@P000334]の全球熱物性は若いクレーターや噴出物の局所差を示し、[@P000331]は粒子構造から熱伝導率を成熟度指標へ結び付けた。温度観測、岩塊の分布、試料の成熟度はそれぞれ異なるスケールを測る。'
+  - '[@P000333]のBoulderNetは衛星画像から岩塊の輪郭を抽出する。これを散乱光条件へ進めた[@P000327]は、ShadowCamの永久影画像で約4 m以上の岩塊を検出した。岩塊分布はレーダーの粗さ解釈と着陸条件を補う。[@P000334]の全球熱物性は若いクレーターや噴出物の局所差を示し、[@P000331]は粒子構造から熱伝導率を成熟度指標へ結び付けた。温度観測、岩塊の分布、試料の成熟度はそれぞれ異なるスケールを測る。'
+  - '[@P000334]はDivinerの夜間温度から上部4–7 cmの熱慣性を地図化し、若いクレーターの岩石質噴出物と、さらに新しい衝突を囲む低熱慣性のコールドスポットを区別した。9クレーターの既存年代に対するHの増加を年代推定の候補として提案するが、適用下限と精度は未確定で、平均半径範囲の本文・図注にも不一致がある。露出大岩石の存在量と、微小岩片・浅い埋没岩石を含む熱慣性は異なる粒径・感度深度を捉えるため、岩塊検出や光学成熟度と合わせると表層更新を比較しやすい。'
   - 極域クレーターでは、形状が日射と多重散乱を変え、氷の保存条件にも関わる。[@P000325]は表面・浅部温度を計算し、露出氷と埋没氷の安定性を区別した。Chandrayaan-2の偏波レーダー[@P000328]は内外の散乱成分とCPRを比較して氷候補を評価する。氷と粗さの寄与を考える際に、岩塊分布と熱モデルを合わせて参照できる。
 - heading: 地形と時系列画像からクレーターを調べる
   paragraphs:

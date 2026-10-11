@@ -1553,7 +1553,7 @@ entries:
   summary:
     question: 機能性被覆は、EDSの微小放電、ダスト蓄積、耐久性をどう変えるか。
     method: CMrGO電極とHDPE基板の二相EDSにPSまたはTPFSを被覆し、高真空下の連続降塵試験で電圧、残留粒径、表面損傷を比較した。
-    contribution: PSは放電を抑制し、TPFSは除去性能と耐久性の両面で良好な結果を示した。評価量は動的降塵下の蓄積抑制に基づき、事前堆積後の除去率との比較には試験方式をそろえる必要がある。
+    contribution: 両被覆は微小放電を抑える一方、同じ電圧での蓄積抑制は未被覆より低下した。TPFSはPSより高電圧域の蓄積抑制と耐久性が良好で、1000–1500 Vでは未被覆に近い除去性能を示した。評価量は動的降塵下の蓄積抑制に基づき、事前堆積後の除去率との比較には試験方式をそろえる必要がある。
   evidence_by_item:
     question:
     - paper_id: P000369
@@ -1875,8 +1875,8 @@ survey:
   - 2026-10-07に追加したWangの文献は公開要旨を確認。模擬地盤の集団強度を扱い、接触一つの付着力を直接測定した研究としては扱わない。
 relations:
 - relation_id: R000022
-  source: P000365
-  target: P000367
+  source: P000367
+  target: P000365
   type: uses_method
   basis: explicit
   state: checked

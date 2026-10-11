@@ -34,8 +34,9 @@ review:
 - heading: 再結合では、抵抗性MHDからHall・運動論へ進む
   paragraphs:
   - '[@P000395]は反平行な磁場を押し合わせ、流入・流出と拡散を伴う再結合を調べた。磁場配置とエネルギーの変化を流体で考える基礎になる。無衝突の電流層へ進むと、電子とイオンの運動の違いをどこまでモデルへ含めるかが問題になる。'
-  - GEMの比較（[@P000410]）は、共通のHarris電流層と初期摂動でPICから抵抗性MHDまでを試験し、Hall効果を含むモデルがこの条件下で近い再結合率を示すことを報告した。この結果を適用する際は、初期条件と採用したOhm則を対応させる。大域MHDの中へ運動論の領域を埋め込む計算には、PIC領域を動的に変えるFLEKS（[@P000071]）がある。大域の流れを流体で追い、局所の電流層を粒子で扱う研究へつながる。
+  - GEMの比較（[@P000410]）は、共通のHarris電流層と初期摂動でPICから抵抗性MHDまでを試験し、Hall効果を含むモデルがこの条件下で近い再結合率を示すことを報告した。この結果を適用する際は、初期条件と採用したOhm則を対応させる。
   - イオン粒子・電子流体のhybridと、MHD–PICの領域結合では、電子の記述と境界で交換する量が異なる。関連テーマの「ハイブリッドPIC法・粒子と流体の結合」で、電子慣性と圧力閉包、保存性・波動精度、月ウェイクやガニメデ磁気圏への適用を比較する。
+  - ChenほかのFLEKSは、電子・イオンをともに粒子として解くPICを大域MHDへ動的に埋め込む基盤である。本稿で説明する典型的なMHD側はHall項と独立電子圧力方程式を使う。新規活性セルと境界はMHD情報で初期化し、磁気圏界面やcuspの形に合わせてPICの範囲を近似する。MHD/PIC変換の詳細は原著が引用する結合モデルの説明に委ねられ、粒子再サンプリングの保存則と結合計算全体の保存性は区別する必要がある。[@P000071]
 lineage:
 - title: 波動の理論から太陽風の観測へ
   steps:
@@ -553,27 +554,27 @@ entries:
   role: Athenaのアルゴリズムと検証問題
   summary:
     question: 理想MHDを保存的に解き、磁場の発散制約を多次元で保つAthenaをどう実装・検証するか。
-    method: 体積平均Godunov流束、面平均磁場のCT、方向非分割CTU、PLM／PPMとRoe／HLL系解法を組み合わせ、1D～3Dの波・衝撃波・ループ移流で試す。
+    method: セル平均の保存量を更新するGodunov法、面平均磁場のCT、方向非分割CTU、PLM／PPMとRoe／HLL系解法を組み合わせ、1D～3Dの波・衝撃波・ループ移流で試す。
     contribution: 発散の特定の離散形を維持する更新と二次収束を実装・検証し、強い衝撃波の補正、並列費用、AMR実演まで示した。
   evidence_by_item:
     question:
     - paper_id: P000405
       version_id: V2
-      url: https://doi.org/10.1086/588755
+      url: https://arxiv.org/abs/0804.0402v1
       locator: PDF pp.1–5, §§1–3, Eqs.1–28
       source_type: full_text
       checked_at: '2026-10-11'
     method:
     - paper_id: P000405
       version_id: V2
-      url: https://doi.org/10.1086/588755
-      locator: PDF pp.6–13, §§4–6; Appendices A–B pp.56–61
+      url: https://arxiv.org/abs/0804.0402v1
+      locator: PDF pp.3–5, §3, Eqs.(11)–(28); pp.6–13, §§4–6; Appendices A–B pp.56–61
       source_type: full_text
       checked_at: '2026-10-11'
     contribution:
     - paper_id: P000405
       version_id: V2
-      url: https://doi.org/10.1086/588755
+      url: https://arxiv.org/abs/0804.0402v1
       locator: PDF pp.15–20, §8; Figs.7–36 pp.28–55; Table1 p.22
       source_type: full_text
       checked_at: '2026-10-11'
@@ -797,36 +798,36 @@ entries:
   group: magnetosphere
   role: FLEKS・流体との領域結合
   summary:
-    question: 大域計算の中で、運動論が必要な領域をどう追い続けるか。
-    method: PIC領域の動的な切り替え、時間刻み調整、粒子の分割・統合を実装。
-    contribution: MHDとの結合に向け、形状が変わるPIC領域を扱う計算基盤を提供。
+    question: 大域MHDの内部で、形が変わる電子・イオン運動論領域をどう効率よく追い、粒子数と刻み幅を調整するか。
+    method: 非相対論的GL-ECSIMを一様直交格子上で用い、各方向N≥2セルの活性パッチを動的に切り替える。新旧Δtを使い分けて時間配置を保ち、セル内の分割と、位置・速度を継承して5保存量に合わせ、正の重みが得られる場合の6→5統合で粒子数を調整する。
+    contribution: 動的PIC領域をMHD-AEPICへ埋め込む実装を提供し、波・非対称再結合・Frontera並列試験で動作と性能を検証した。統合の総量保存を保ちながらppc偏りを減らせるが、統計雑音は増え、計算全体の厳密保存とは区別する。
   evidence_by_item:
     question:
     - paper_id: P000071
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0010465523000590
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.cpc.2023.108714
+      source_type: full_text
+      locator: PDF pp.1–3、§1–2
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000071
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0010465523000590
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.cpc.2023.108714
+      source_type: full_text
+      locator: PDF pp.3–7、§2–5、式1–5
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000071
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0010465523000590
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.cpc.2023.108714
+      source_type: full_text
+      locator: PDF pp.7–13、§6、図6–14
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 relations: []

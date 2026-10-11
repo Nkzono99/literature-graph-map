@@ -329,18 +329,32 @@ entries:
     method: Lunar Prospectorのエネルギー依存ロスコーンと上向き二次電子ビームを解析。
     contribution: 月面が探査機に対して平均約−35 Vと推定。周囲のプラズマ基準では探査機帯電の補正が必要になる。
   evidence_by_item:
+    question:
+    - paper_id: P000003
+      version_id: V1
+      url: https://doi.org/10.1029/2001GL014428
+      source_type: full_text
+      locator: PDF p.1, Introduction
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000003
+      version_id: V1
+      url: https://doi.org/10.1029/2001GL014428
+      source_type: full_text
+      locator: PDF pp.1–2 §2–3 ¶4–9, Figs.1–2
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000003
       version_id: V1
       url: https://doi.org/10.1029/2001GL014428
-      source_type: abstract
-      locator: 要旨（本文全体は未精読）
-      checked_at: '2026-10-02'
+      source_type: full_text
+      locator: PDF p.1 Abstract; p.2 §3 ¶9; p.3 §7 Conclusions ¶19（平均約−35 VはLP基準）
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-02'
+    checked_at: '2026-10-12'
 - paper_id: P000025
   group: lunar-potential
   role: 探査機電位の補正と入射電流
@@ -491,21 +505,35 @@ entries:
   role: 比較：観測と放出モデルによる昼側電位
   summary:
     question: 昼側電位の日照・プラズマ・磁場依存をどう分けるか。
-    method: ARTEMISで測った光電子を表面放出モデルと比較して電位を推定。
-    contribution: 天頂角・電子密度・温度・地殻磁場と昼側電位の統計的な対応を示した。
+    method: ARTEMISの光電子位相空間密度を放出モデルと50–250 eVで比較して電位を推定し、イオン観測による局所密度などへの依存を統計解析。
+    contribution: 昼側電位は太陽天頂角と局所プラズマ密度に応答し、その影響を除くと電子温度との依存も現れた。ARTEMISが観測した範囲では地殻磁場への明瞭な依存は認められなかった。
   evidence_by_item:
+    question:
+    - paper_id: P000161
+      version_id: V1
+      url: https://doi.org/10.1029/2026gl123954
+      source_type: full_text
+      locator: PDF pp.1–3, Introduction
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000161
+      version_id: V1
+      url: https://doi.org/10.1029/2026gl123954
+      source_type: full_text
+      locator: PDF pp.4–5, §2.3–3, Fig.2; density from ion flux
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000161
       version_id: V1
       url: https://doi.org/10.1029/2026gl123954
-      source_type: abstract
-      locator: 要旨（本文全体は未精読）
-      checked_at: '2026-10-02'
+      source_type: full_text
+      locator: PDF pp.6–9, §3–4, Figs.4–5; crustal-field null and sampling limits p.9
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-02'
+    checked_at: '2026-10-12'
 - paper_id: P000353
   group: mars
   role: 大気後方散乱を分離した火星の弱い地殻磁場推定
@@ -707,7 +735,7 @@ entries:
   role: 関連：水星の陽子反射による平均表面磁場と降下の推定
   summary:
     question: 水星の表面磁場を陽子の損失円錐から推定し、北に偏った双極子構造と表面への陽子降下を検証できるか。
-    method: MESSENGERのMAGとFIPSの1年間の陽子観測を視野・効率について補正し、異なる時刻の入射・反射PADを領域ごとに合成。拡散モデルで切断角を適合し、Bₛ=B₀/sin²αcで表面磁場を求め、垂直陽子圧による反磁性低下を補正した。
+    method: MESSENGERのMAGとFIPSの1年間の陽子観測を視野・効率について補正し、異なる時刻の入射・反射PADを領域ごとに合成。拡散モデルで切断角を適合し、Bₛ=B₀/sin²αcで表面磁場を求め、磁場に垂直な方向の陽子圧による反磁性低下を補正した。
     contribution: 北カスプで412±98 nT、南半球低緯度夜側で113（+87/−61）nTを推定した。反磁性補正後の北／南比3.2（+3.0/−1.6）は北偏位双極子と整合する。夜面の損失円錐は南側低緯度への陽子降下を示す。
   evidence_by_item:
     question:
@@ -1105,68 +1133,68 @@ entries:
   summary:
     question: 月面には通常より大きい負電位がどの条件で現れるか。
     method: 地球磁気圏尾部のLunar Prospector電子観測で、上向き電子ビームを強い負帯電の指標として統計化。
-    contribution: 500 Vを超える負電位の事例はまれだが日照・日陰の双方に現れ、主にプラズマシートと入射電子スペクトルに対応するとした。
+    contribution: 500 eV超の上向き電子ビームで選んだ強い月面–LP間の負電位差は、日照・日陰の双方で主にプラズマシートに現れた。周囲プラズマ基準の月面電位にはLPの帯電補正が要る。
   evidence_by_item:
     question:
     - paper_id: P000004
       version_id: V1
       url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL022627
-      source_type: abstract
-      locator: 要旨（本文全体は未精読）
-      checked_at: '2026-10-07'
+      source_type: full_text
+      locator: PDF p.1, Introduction
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000004
       version_id: V1
       url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL022627
-      source_type: abstract
-      locator: 要旨（本文全体は未精読）
-      checked_at: '2026-10-07'
+      source_type: full_text
+      locator: PDF pp.1-2, sections 2-3, Figs.1-2
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000004
       version_id: V1
       url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005GL022627
-      source_type: abstract
-      locator: 要旨（本文全体は未精読）
-      checked_at: '2026-10-07'
+      source_type: full_text
+      locator: PDF p.2 section 2 paragraph 5, section 3 paragraph 6; pp.2-3 section 4 paragraphs 7-9; pp.3-4 section 5 paragraph 11; Figs.1-5; potential relative to LP
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-07'
+    checked_at: '2026-10-12'
 - paper_id: P000006
   group: lunar-potential
   role: 太陽高エネルギー粒子イベント時の極端な帯電
   summary:
     question: 極端な粒子環境は月面の負帯電をどこまで強めるか。
     method: 1998年4〜5月のLunar Prospector電子観測を高エネルギー粒子の流入と比較し、全観測期間の大きな負帯電も検索。
-    contribution: 最大約−4.5 kVの事例を示し、大きな負帯電が磁気圏尾部通過と太陽高エネルギー粒子イベントに集中することを報告した。
+    contribution: 月面–LP間の電位差が約−4.5 kVとなる事例を示した。LPも負に帯電すると見込まれるため、周囲プラズマに対する月面負電位の絶対値はこれ以上となる。大きな負帯電は磁気圏尾部通過とSEPイベントに集中した。
   evidence_by_item:
     question:
     - paper_id: P000006
       version_id: V1
       url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006GL028517
-      source_type: abstract
-      locator: 要旨（本文全体は未精読）
-      checked_at: '2026-10-07'
+      source_type: full_text
+      locator: PDF p.1, Introduction
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000006
       version_id: V1
       url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006GL028517
-      source_type: abstract
-      locator: 要旨（本文全体は未精読）
-      checked_at: '2026-10-07'
+      source_type: full_text
+      locator: PDF pp.1-4, sections 2-5, Figs.1-3
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000006
       version_id: V1
       url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006GL028517
-      source_type: abstract
-      locator: 要旨（本文全体は未精読）
-      checked_at: '2026-10-07'
+      source_type: full_text
+      locator: PDF pp.2–4, §2, §5–6; −4.5 kV relative to LP
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-07'
+    checked_at: '2026-10-12'
 - paper_id: P000027
   group: lunar-potential
   role: 極端な帯電の探査機補正と予測限界
@@ -1203,8 +1231,8 @@ entries:
     checked_at: '2026-10-07'
 relations:
 - relation_id: R026001
-  source: P000381
-  target: P000353
+  source: P000353
+  target: P000381
   type: uses_method
   basis: explicit
   state: checked
@@ -1221,8 +1249,8 @@ relations:
   checked_at: '2026-10-07'
   limitation: 公開された該当箇所を確認。全文・全図表の精読は未実施。
 - relation_id: R026002
-  source: P000384
-  target: P000381
+  source: P000381
+  target: P000384
   type: extends
   basis: explicit
   state: checked
@@ -1239,8 +1267,8 @@ relations:
   checked_at: '2026-10-07'
   limitation: 公開された該当箇所を確認。全文・全図表の精読は未実施。
 - relation_id: R026003
-  source: P000384
-  target: P000354
+  source: P000354
+  target: P000384
   type: uses_method
   basis: explicit
   state: checked
@@ -1301,4 +1329,4 @@ survey:
     #26の差分として新規8文献・既存3文献を追加。装置、夜側電位尺度、極端な帯電、火星熱圏密度・磁場接続、系譜と出典付き関係を拡張。'
   publication_status: draft
 reading_notes:
-- この一覧は要旨をもとに整理した。数式や推定条件の一部は公開本文の該当節も参照したが、本文全体・全図表の精読は未実施。
+- 本文の確認範囲は文献ごとに表示する。全文確認済みの文献に加え、要旨や公開本文の一部だけを確認した文献も含む。

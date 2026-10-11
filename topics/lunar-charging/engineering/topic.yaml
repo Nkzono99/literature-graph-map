@@ -5,9 +5,10 @@ question: 探査機の差動帯電と静電放電、機器や宇宙服に付着�
 review:
 - heading: 差動帯電を機体設計へつなげる
   paragraphs:
-  - 同じプラズマ環境でも、材質や日照が異なる表面は別々の電位になりうる。[@P000024]はNASCAP-2Kで候補宇宙機を計算し、導電性材料による電位差の低減を検討した。[@P000054]の発表資料は、月ミッションの自然・誘起帯電環境をまとめており、設計時に考えるハザードを見渡せる。
+  - 同じプラズマ環境でも、材質や日照が異なる表面は別々の電位になりうる。[@P000054]の発表資料は、月ミッションの自然・誘起帯電環境をまとめており、設計時に考えるハザードを見渡せる。
   - 着陸機の噴射は、周囲のダストに運動量と電荷を与える。[@P000165]は気固流れ・摩擦帯電・プラズマ帯電を結合し、噴射停止後も残る電荷が微粒子の輸送を変えると予測した。噴射後の付着先を考える際にも、離脱時の電荷が条件になる。
   - 対策へ入力する粒子条件は、レゴリス力学と帯電・輸送を結ぶ[@P000256]、生成・物性・移動経路を整理する[@P000249]の総説から見渡せる。機器に届く量、接触時の電荷、付着力を同じ環境条件へ対応させることが、自然環境の研究と工学試験を結ぶ出発点になる。
+  - 候補周回機体の計算では、機体全体の電位と材料間の差動電位を分けて評価する必要がある。Parkerらの低速太陽風ウェイクのケースは約−236 Vまたは−154 Vまで負に帯電したが、差動帯電はほとんど生じなかった。実機材料の完全な再現や着陸後の地面との接触は詳述されず、既定の二次電子収率とMaxwell分布を用いた結果である。設計への適用には、非熱的分布への拡張と数値ノイズの評価が残る。[@P000024]
 - heading: 電場・中和・ブラシによる除塵
   paragraphs:
   - '[@P000028]のEDSは、電極が作る電場と静電力・誘電泳動力で粒子を移動させる。特許には、宇宙服のダストを正負のイオンで中和した後、気流で吸い込み再帯電させて捕集する[@P000049]と、ブラシへEDS・UVを組み合わせる[@P000050]がある。周辺技術として収録した[@P000035]は、気体中の誘電体バリア放電が生む流れを使う太陽電池除塵である。作用する媒体と力を押さえると、各方式の対象環境を見分けやすい。'
@@ -33,8 +34,8 @@ lineage:
 - title: 機体の帯電設計
   steps:
   - paper_id: P000024
-    title: 材質と形状から帯電リスクを減らす
-    significance: 月面の候補機体をNASCAP-2Kで計算し、導電性材料による電位差の低減を示した。
+    title: 軌道上の機体帯電をモデルで見積もる
+    significance: 低速太陽風では機体全体が約−236 Vまたは−154 Vとなる一方、差動帯電は小さかった。境界層・磁気シース・高速太陽風の小さな正電位を太陽電池の二次電子放出とMaxwell分布に結び付け、非熱的分布を扱う月専用モデルへの拡張を提案した。
 - title: 付着ダストの除去
   steps:
   - paper_id: P000028
@@ -83,26 +84,38 @@ groups:
 entries:
 - paper_id: P000024
   group: charging
-  role: 宇宙機の差動帯電
+  role: 月ウェイクでの宇宙機帯電モデル比較
   summary:
-    question: 月面の宇宙機で、材質や形状は帯電をどう変えるか。
-    method: NASCAP-2Kで候補機体の軌道・着陸時の帯電を計算。
-    contribution: 導電性材料の利用が、表面間の電位差と静電放電リスクの低減に有効とした。
+    question: 月の深いウェイクで、既存の宇宙機帯電計算法と材料の二次電子放出特性は機体電位・電場をどう変えるか。
+    method: Lunar Prospectorを模した混合材料機体をNASCAP-2Kでモデル化し、高度100 kmの無日照ウェイク5環境についてinterplanetaryとGEOの計算法を比較した。
+    contribution: 低速太陽風では機体全体が約−236 Vまたは−154 Vとなる一方、差動帯電は小さかった。境界層・磁気シース・高速太陽風の小さな正電位を太陽電池の二次電子放出とMaxwell分布に結び付け、非熱的分布を扱う月専用モデルへの拡張を提案した。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000024
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20070031940
+      source_type: full_text
+      locator: PDF p2 §1
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000024
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20070031940
+      source_type: full_text
+      locator: PDF p2–4 §2–4, Table1
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000024
       version_id: V1
       url: https://ntrs.nasa.gov/citations/20070031940
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF p4–8 §4–5, Fig6, Table2
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000054
@@ -779,7 +792,7 @@ entries:
   summary:
     question: 機能性被覆は、EDSの微小放電、ダスト蓄積、耐久性をどう変えるか。
     method: CMrGO電極とHDPE基板の二相EDSにPSまたはTPFSを被覆し、高真空下の連続降塵試験で電圧、残留粒径、表面損傷を比較した。
-    contribution: PSは放電を抑制し、TPFSは除去性能と耐久性の両面で良好な結果を示した。評価量は動的降塵下の蓄積抑制に基づき、事前堆積後の除去率との比較には試験方式をそろえる必要がある。
+    contribution: 両被覆は微小放電を抑える一方、同じ電圧での蓄積抑制は未被覆より低下した。TPFSはPSより高電圧域の蓄積抑制と耐久性が良好で、1000–1500 Vでは未被覆に近い除去性能を示した。評価量は動的降塵下の蓄積抑制に基づき、事前堆積後の除去率との比較には試験方式をそろえる必要がある。
   evidence_by_item:
     question:
     - paper_id: P000369
@@ -847,8 +860,8 @@ entries:
   locked_fields: []
 relations:
 - relation_id: R000022
-  source: P000365
-  target: P000367
+  source: P000367
+  target: P000365
   type: uses_method
   basis: explicit
   state: checked

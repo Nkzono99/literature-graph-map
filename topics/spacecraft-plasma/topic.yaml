@@ -8,8 +8,9 @@ review:
   - 宇宙機には電子とイオンが流入し、表面からは光電子や二次電子が出ていく。その電流収支で機体の電位が決まると、周囲の粒子軌道と密度分布も変わる。電位が変化するシースと、流れの後方にできるウェイクを含めて扱うことが、宇宙機とプラズマの相互作用を理解する基礎になる。[@P000118]は帯電過程・シース理論・観測を概観し、[@P000119]は式の導出から帯電対策までを調べるための教科書である。
 - heading: 材料と形状を入れて、機体の帯電を計算する
   paragraphs:
-  - 実際の機体では、部位ごとの日照、材質、電気的な接続が電位差を作る。[@P000120]のNASCAP-2Kは、形状を含む表面帯電や粒子軌道、シース・ウェイクを扱う計算機能を整理している。月面の候補機体を解析した[@P000024]は、導電性材料の利用と表面間の電位差を具体的に結び付けた。
+  - 実際の機体では、部位ごとの日照、材質、電気的な接続が電位差を作る。[@P000120]のNASCAP-2Kは、形状を含む表面帯電や粒子軌道、シース・ウェイクを扱う計算機能を整理している。
   - 太陽近傍を想定した[@P000121]は5つの計算モデルを比較し、浮遊電位、捕集・放出電流、密度と電位の空間分布を調べた。同じ物理過程を同様に扱う条件では予測がよく一致し、放出電子や背景磁場の扱いを変えると結果も変わる。数値手法を選ぶ際には、取り込む物理過程と幾何形状を併せて確認したい。
+  - Parkerらは同じ月ウェイク環境にNASCAP-2KのinterplanetaryとGEOの計算法を適用し、材料間電位差と計算法間の違いを比較した。低速太陽風で機体全体の負電位は約−236 Vと−154 Vに分かれたが、両者とも差動帯電は小さかった。電場出力の差とGEOの数値ノイズ、太陽電池の二次電子収率とMaxwell分布への依存を示し、計算オプションの選択と非熱的分布の扱いを課題として残した。[@P000024]
 - heading: 光電子と細いブームが、シースとウェイクを変える
   paragraphs:
   - 日照が強くても、放出された光電子が電位障壁で機体へ戻ると、負の浮遊電位が維持される場合がある。[@P000122]は太陽近傍を想定し、光電子密度、機体寸法、電子温度と障壁形成の関係を示した。イオンウェイクによる放出電子の再捕集も、機体電位に影響する。
@@ -352,26 +353,38 @@ entries:
   locked_fields: []
 - paper_id: P000024
   group: charging-models
-  role: 宇宙機の差動帯電
+  role: 月ウェイクでの宇宙機帯電モデル比較
   summary:
-    question: 月面の宇宙機で、材質や形状は帯電をどう変えるか。
-    method: NASCAP-2Kで候補機体の軌道・着陸時の帯電を計算。
-    contribution: 導電性材料の利用が、表面間の電位差と静電放電リスクの低減に有効とした。
+    question: 月の深いウェイクで、既存の宇宙機帯電計算法と材料の二次電子放出特性は機体電位・電場をどう変えるか。
+    method: Lunar Prospectorを模した混合材料機体をNASCAP-2Kでモデル化し、高度100 kmの無日照ウェイク5環境についてinterplanetaryとGEOの計算法を比較した。
+    contribution: 低速太陽風では機体全体が約−236 Vまたは−154 Vとなる一方、差動帯電は小さかった。境界層・磁気シース・高速太陽風の小さな正電位を太陽電池の二次電子放出とMaxwell分布に結び付け、非熱的分布を扱う月専用モデルへの拡張を提案した。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000024
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20070031940
+      source_type: full_text
+      locator: PDF p2 §1
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000024
+      version_id: V1
+      url: https://ntrs.nasa.gov/citations/20070031940
+      source_type: full_text
+      locator: PDF p2–4 §2–4, Table1
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000024
       version_id: V1
       url: https://ntrs.nasa.gov/citations/20070031940
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF p4–8 §4–5, Fig6, Table2
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000251

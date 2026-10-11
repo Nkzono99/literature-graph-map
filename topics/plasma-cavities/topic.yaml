@@ -58,38 +58,38 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000096
   group: expansion
-  role: 電荷分離とイオンの加速限界
+  role: 有限時刻のイオン先端とエネルギー端
   summary:
-    question: 真空へ膨張するプラズマのイオン先端とエネルギーはどう決まるか。
-    method: 無衝突プラズマの膨張で生じる電荷分離を理論的に解析。
-    contribution: イオン先端の構造、エネルギースペクトル、最大イオンエネルギーを求めた。
+    question: 鋭い境界を持つプラズマが真空へ膨張するとき、準中性が破れるイオン先端の電場・密度構造と、有限時刻の最大イオンエネルギーはどう決まるか。
+    method: 一次元・無衝突・静電場で、初期静止の冷イオンと一定温度のBoltzmann電子を仮定。Poisson方程式とイオン流体方程式をLagrange型コードで解き、先端電場の補間式と長時間漸近式を比較した。
+    contribution: 先端電場が長時間には内部自己相似電場の約2倍になることを示し、先端速度・位置と有限時刻のエネルギー端を近似式で求めた。長時間の先端ではZnᵢ/nₑ≈2となり、本紙の鋭い初期境界ではイオン密度の盛り上がりがない。
   evidence_by_item:
     question:
     - paper_id: P000096
       version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.90.185002
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1103/PhysRevLett.90.185002
+      source_type: full_text
+      locator: PDF p.1 introduction and initial-condition paragraph; right-column validity discussion
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000096
       version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.90.185002
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1103/PhysRevLett.90.185002
+      source_type: full_text
+      locator: PDF pp.1–2, Eqs.(1),(2),(4),(5),(8), code/boundary-condition paragraphs
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000096
       version_id: V1
-      url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.90.185002
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1103/PhysRevLett.90.185002
+      source_type: full_text
+      locator: PDF pp.2–4, Eqs.(9)–(22), Figs.1–7
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000220
@@ -365,24 +365,36 @@ entries:
   group: lunar
   role: 永久影クレーターの電気的環境
   summary:
-    question: 永久影クレーターでは、電子とイオンの届き方がどう異なるか。
-    method: 地形による太陽風遮蔽とプラズマの膨張を用いて帯電を推定。
-    contribution: イオンが届きにくい領域での負帯電と、探査機・ダストへの影響を論じた。
+    question: 永久影クレーターへ膨張する太陽風の電子・イオンはどこまで到達し、地形上の表面電位と探査物体の帯電をどう決めるか。
+    method: 600 m分解能のGoldstone南極地形へ定常・Maxwell分布の両極性膨張近似を適用し、局所斜面へのイオン入射と薄い平面シースの電流収支を接続。イオン非入射点では一定の負帯電ダスト電流を仮定する。
+    contribution: 通常条件のShoemaker断面で合計電位約−90 Vを計算し、追加ダスト電流を置いた電子雲地点では約−180 Vを得る。物体の表面相対電位差・摩擦電荷緩和・氷スパッタを同じ低電流環境で論じた。ダスト放出は未検証で、採用電流の換算に本文内の不整合が残る。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000058
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20110013543/downloads/20110013543.pdf
+      source_type: full_text
+      locator: PDF pp.2,5–6,13; Fig1; 式(5)–(6); [51]–[54]
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000058
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20110013543/downloads/20110013543.pdf
+      source_type: full_text
+      locator: PDF pp.2,5–6,13; Fig1; 式(5)–(6); [51]–[54]
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000058
       version_id: V1
-      url: https://doi.org/10.1029/2009je003464
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://ntrs.nasa.gov/api/citations/20110013543/downloads/20110013543.pdf
+      source_type: full_text
+      locator: PDF pp.2,5–6,13; Fig1; 式(5)–(6); [51]–[54]
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000008
@@ -391,7 +403,7 @@ entries:
   summary:
     question: 極域クレーターへの太陽風侵入と帯電はどう影響し合うか。
     method: 影の段差を二次元で計算し、表面電荷と二次電子放出を追跡。
-    contribution: 帯電と両極性膨張が相互に抑制し、二次電子放出が陽子流入を調整。
+    contribution: 表面帯電と流入プラズマの負のフィードバックを示し、二次電子放出が電位と陽子の到達位置を変える。
   evidence_by_item:
     question: []
     method: []
@@ -507,30 +519,36 @@ entries:
   group: lunar
   role: 極域クレーターのミニウェイク
   summary:
-    question: 極域クレーターの陰へ、太陽風はどのように入り込むか。
-    method: 三次元静電ハイブリッドPICで、km規模のクレーター周辺を計算。
-    contribution: 電子に富む負電位のプラズマ領域と、底面・壁面へ回り込むイオン流を示した。
+    question: Debye長より大きい極域クレーターへ、太陽風のどの速度成分が入り、壁・底のフラックスを変えるか。
+    method: SPISの三次元静電hybrid PICで、イオンを粒子、電子をBoltzmann関係で閉じた質量なし流体として扱い、陰的な非線形Poisson方程式を解く。直径1.2 km、光電子・二次電子放出を省いた6条件を20 s計算する。
+    contribution: 標準条件で余剰電子を伴うイオン空乏域と約−60 Vの準平衡電位、底から100 mの下降フラックス約4%、壁法線フラックス約18%を示した。上流のシース擾乱と約±40 km s−1の横方向流れを三次元で捉えた。
   evidence_by_item:
-    question: []
+    question:
+    - paper_id: P000048
+      version_id: V1
+      url: https://doi.org/10.1029/2024JA032764
+      source_type: full_text
+      locator: PDF pp.1–2, Introduction
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000048
       version_id: V1
-      url: https://doi.org/10.57760/sciencedb.space.01916
-      source_type: metadata
-      locator: 公開データ：極域クレーターのSPIS計算（Science Data Bank）
-      checked_at: '2026-09-25'
+      url: https://doi.org/10.1029/2024JA032764
+      source_type: full_text
+      locator: PDF pp.2–3, §2, Fig.1, Table 1; p.8 §4 (20 s)
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000048
       version_id: V1
-      url: https://doi.org/10.1029/2024ja032764
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2024JA032764
+      source_type: full_text
+      locator: PDF pp.4–8, §3–4, Figs.2–5; p.9 §4 (magnetic limit)
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000015
@@ -1170,12 +1188,15 @@ entries:
 review:
 - heading: 空間の陰が、電子とイオンの届き方を分ける
   paragraphs:
-  - '[@P000219]の真空膨張と[@P000220]のウェイクPICは、希薄な領域へプラズマが入る過程を扱う。[@P000096]のイオン先端とエネルギーの理論も、電荷分離による加速を考える基礎となる。地形が流れを遮る場合には、空洞寸法、デバイ長、流速と熱速度の比が、流入する粒子と電位を比較する軸になる。'
+  - '[@P000219]の真空膨張と[@P000220]のウェイクPICは、希薄な領域へプラズマが入る過程を扱う。地形が流れを遮る場合には、空洞寸法、デバイ長、流速と熱速度の比が、流入する粒子と電位を比較する軸になる。'
   - '[@P000008]はクレーターへの流入と表面帯電の相互作用を扱い、[@P000222]は太陽嵐中へ広げた。深い空洞では[@P000012]、寸法の違いは[@P000015]、流速と熱速度の比は[@P000016]からたどれる。'
   - 月全体のウェイクでは、Wind[@P000223]、Lunar Prospector[@P000224]、ARTEMISの三次元再構成[@P000231]が観測から空隙の構造を調べる。静電衝撃波の観測[@P000232]と、電子分布から電位を復元するプレプリント[@P000262]は、再充填に伴う局所構造へ論点を広げる。日夜境界の電場とダスト[@P000221]、日夜境界・極域での準中性破れ[@P000282]を合わせると、大域ウェイクと地形による陰を粒子供給の差から読み比べられる。 [@P000221]の計算は定常・準中性ウェイクと滑らかな月面の鉛直電場を扱う。地形の陰による水平電場は定性的な提案で、局所電場の数値解やダストとの自己無撞着な連成計算は行っていない。
   - この月ウェイク通過では、著者は周囲のプラズマが磁場に沿って両側から入り込み、太陽風に斜めの磁場によって非対称に充填されると解釈した。OgilvieらのWIND観測は下流6.5月半径で二つの低温陽子流を捉え、速度差と磁場の整列を示した。密度低下域は光学的な影より広く、希薄波が周囲へ伝わる解釈と概ね整合した。約2×10⁻⁴ V/mの電場は速度変化からの粗い推定であり、この通過の上流太陽風にも時間変化があった[@P000223]。
   - 月全体の陰を満たす対向流では、局所的な衝撃波と捕捉電子が電位構造を変える。[@P000262]は左右の電子分布を別々に最適化し、中央では平坦な分布の幅から電位を求めて、初期と後期のPICおよびARTEMISの2横断を比較した。空洞への粒子供給を考える際には、安定した磁場、電子の準平衡、分布端の検出という診断条件を参照できる。ウェイク内のプラズマ電位を壁面の帯電電位へつなぐには、表面の電流収支と局所シースを別途扱う必要がある。
-  - 永久影クレーターへの供給を見積もる[@P000058]に対し、[@P000048]は三次元の底面・壁面へのイオン流を計算する。縦孔周辺の[@P000225]は深い地形へ対象を広げ、[@P000264]は膨張前線と表面の間の電子雲を解析した。形状の違いと非中性領域の扱いをそろえることが、負のクレーター電位と正になりうる深い空洞の電位を比較する条件になる。
+  - 縦孔周辺の[@P000225]は深い地形へ対象を広げ、[@P000264]は膨張前線と表面の間の電子雲を解析した。形状の違いと非中性領域の扱いをそろえることが、負のクレーター電位と正になりうる深い空洞の電位を比較する条件になる。
+  - クレーターへの流入を三次元化したXie et al. (2024)は、直径1.2 kmの穴で下降流に加えて約±40 km s−1の横方向バルク速度を得た。標準条件では底から100 mの面の下降フラックスが上流の約4%、イオンを受ける壁の法線フラックスが約18%となる。局所成分別の流束であり、穴全体の積分捕獲率とは区別する。モデルは電子旋回半径より小さいクレーターと、放出電流を省いた短時間の準平衡を扱う。[@P000048]
+  - kmスケールの永久影クレーターでは、熱電子が先行して作る両極性電場が太陽風イオンを底面へ曲げるため、幾何学的な遮蔽だけでは流入量を決められない。Farrell et al. は膨張則に局所斜面への入射角を加え、イオン流入がある面と電子雲内の非入射面で表面電流収支を分けた。垂直方向の解析近似で、山の側方からの回り込みは含まない。この適用条件を、微小空隙の寸法とDebye長の関係に合わせて吟味する必要がある。[@P000058]
+  - 真空側へ先行する電子雲と追随するイオンの違いを示す基礎モデルとして、Mora（2003）は冷イオン・一定温度のBoltzmann電子の一次元自由膨張を扱う。長時間には、イオン先端の電場が内部自己相似電場の約2倍となり、先端密度もZnᵢ≈2nₑで準中性が破れる。先端速度から有限時刻のエネルギー端を定めるが、その端は固定電子温度のもとで増え続ける。空洞への流入を考える際は、この先端機構に壁・曲率・対向流・電子の供給や冷却の条件を加える必要がある。[@P000096]
 - heading: 実験と微細加工の研究から、形状の効果を比較する
   paragraphs:
   - '[@P000263]のクレーター実験は、デバイ長と地形寸法の比によって内部電場が変わることを示す。[@P000226]の管を使った実験は、入口と壁面による電子遮蔽に加え、イオン誘起二次電子が奥の正電位を抑える効果を調べた。'

@@ -8,30 +8,41 @@ review:
   - PIC（Particle-in-Cell）では、多数の実粒子を代表する計算粒子を動かし、その電荷や電流を格子に集めて場を求める。得られた場を粒子位置へ戻すことで、粒子の運動と集団としての応答が結び付く。[@P000059]はこの数値実験で分布関数、非線形現象、輸送を調べる考え方をまとめている。実装から学ぶなら、一次元の静電・電磁コードを出発点とする[@P000060]の教科書と、KEMPO1の教材[@P000061]が入口になる。静電場を解く部分は、Poissonソルバのテーマともつながる。
 - heading: 保存則とノイズは、別々に確かめる
   paragraphs:
-  - 粒子数を増やすと統計的な揺らぎは小さくなるが、場と粒子の離散化に由来する誤差も調べる必要がある。[@P000062]は電磁PICで生じるGauss則のずれを拡散的な補正で抑えた。[@P000159]は粒子の移動から電流を構成し、離散的な連続の式を割り付けの段階で満たす方法を示した。小さな不安定性を追いたいときには、初期配置の揺らぎを減らす方法や、分布関数の摂動だけを粒子で表すδf法が役立つ。[@P000063]はその構成と電磁不安定性の試験を扱う。さらに[@P000072]のSICは、位相空間の分布をつながったシートで表す。一次元の標準問題におけるPICとの比較から、追跡点の数とノイズの関係を読み取れる。
+  - 粒子数を増やすと統計的な揺らぎは小さくなるが、場と粒子の離散化に由来する誤差も調べる必要がある。[@P000159]は粒子の移動から電流を構成し、離散的な連続の式を割り付けの段階で満たす方法を示した。
+  - 格子に割り付けた電荷と電流が離散の連続の式を満たさない場合、Maxwell方程式を時間発展させるだけではGauss残差が蓄積しうる。Marder (1987)は、無次元表示の残差F=div E−ρの勾配をAmpèreの式に加え、境界でF=0となる条件のもとで誤差を局所的に拡散させる方法を示した。楕円型求解を加えず割り付け方法を固定しない一方、拡散係数は安定性と対象物理に合わせて選ぶ必要がある。2次元マグネトロン例では無次元係数d=0.001が残差を小さくほぼ一定に保ち、d=0.01は発振開始を遅らせたため、残差の大きさと物理への影響をともに確認する精度管理として位置づけられる[@P000062]。
+  - 弱い不安定性では、初期粒子配置を静かにする方法と、平衡分布を解析的に扱って摂動だけを粒子で追う方法が重要になる。Sydora（1999）はモーメント補正とHammersley系列のquiet startを電磁δf法と比較した。δfマーカーは全非線形軌道を進み、重みの発展から摂動電荷・電流を求める。周期1D3Vの温度異方性whistler試験では線形成長と飽和が明瞭になり、異方性比2の例では同等のtotal-f結果にはほぼ3桁多い粒子が必要になると著者は見積もる。この比較は当該試験の粒子数を対象とする。[@P000063]
+  - Kates-Harbeckら（2016）は、追跡点の間を接続した位相空間シートから電荷を格子へ投影するSICを、1Dの冷プラズマ振動、二流不安定性、Landau減衰でPICと比較した。滑らかな分布では少数追跡点でも粒子ノイズが少なく、区分線形密度は区分一定密度より速く収束した。ただし多数点では格子・有限流数が誤差を制限し、二流不安定性の非線形折り畳みでは再分割による点数増大が必要になる。水平／垂直シートの接続選択も、多ビーム不安定性と線分伸長のどちらが精度を制限するかを変える。[@P000072]
 - heading: 時間スケールの差を、陰解法で扱う
   paragraphs:
-  - 速い電子運動と遅い変化を同時に追うと、時間刻みが計算費用を左右する。[@P000064]は陰的モーメント法で粒子と流体を結び、衝突を伴う電子輸送を扱った。電磁・運動論的な実装の基本は[@P000065]にまとまっている。そこからエネルギー保存に重点を移したのがECSIM（[@P000066]）で、非線形反復を使わずに粒子と場のエネルギー交換を釣り合わせる。相対論的な完全陰解法（[@P000067]）も併せると、結合の解き方と保存性を比較できる。計算条件を選ぶ際には、安定性とともに対象現象の時間・空間分解能を考える。
+  - 速い電子運動と遅い変化を同時に追うと、時間刻みが計算費用を左右する。[@P000064]は陰的モーメント法で粒子と流体を結び、衝突を伴う電子輸送を扱った。相対論的な完全陰解法（[@P000067]）も併せると、結合の解き方と保存性を比較できる。計算条件を選ぶ際には、安定性とともに対象現象の時間・空間分解能を考える。
+  - Lapenta (2008)は、CELESTE3Dの陰的モーメント法で補間関数の展開から密度・電流の閉包を作り、新しい場を求めてから粒子を進める手順を整理した。これにより粒子・場結合の反復を避け、電子プラズマ振動やDebye長に固定された陽解法の安定性制約を緩和する。ただし、平均電子移動の精度条件 v_th,e Δt/Δx<1 と有限格子不安定性の条件 Δx/Δt<ςv_th,e が残り、格子幅と時間刻みは関心尺度に合わせて同時に選ぶ。時間精度はθ=1/2で2次、1/2<θ≤1で1次となる。磁気圏尾部の8桁の節約は代表的な刻み幅からの丸めた概算であり、1日対80万年を精確な速度比として一般化しない。[@P000065]
+  - LapentaのECSIMは、半ステップずらした既知の粒子位置と平均速度による電流を使い、粒子の電場応答を質量行列で線形場方程式へ組み込む。θ＝1/2で粒子と場の仕事を一致させるため、完全陰解法の非線形連成反復を省きながらエネルギーを保存する。直接線形解法の1次元試験では誤差が丸め誤差水準となるが、反復線形解法では許容誤差に依存し、運動量・電荷の厳密保存や物理解の精度は別に確認する必要がある。[@P000066]
 - heading: 粒子と流体の分け方を選ぶ
   paragraphs:
-  - ハイブリッドPIC法では、イオンを粒子・電子を流体にする構成、静電場とBoltzmann電子を組み合わせる構成、大域MHDと局所PICを領域で結ぶ構成を区別する。電子慣性や圧力閉包、準中性近似とPoisson方程式の違いは、再現できるスケールを決める。子テーマの「ハイブリッドPIC法・粒子と流体の結合」で、数値更新・保存則・分散誤差と宇宙への応用を比較する。衝突性プラズマの集団分割（[@P000064]）と、FLEKSの領域結合（[@P000071]）も、この観点で読み直せる。
+  - ハイブリッドPIC法では、イオンを粒子・電子を流体にする構成、静電場とBoltzmann電子を組み合わせる構成、大域MHDと局所PICを領域で結ぶ構成を区別する。電子慣性や圧力閉包、準中性近似とPoisson方程式の違いは、再現できるスケールを決める。子テーマの「ハイブリッドPIC法・粒子と流体の結合」で、数値更新・保存則・分散誤差と宇宙への応用を比較する。衝突性プラズマの集団分割（[@P000064]）も、この観点で読み直せる。
+  - FLEKSでは一様な直交PIC格子の活性パッチを切り替え、時間刻みの配置を保った調整と、質量・運動量・運動エネルギーを保存する6→5の粒子統合で長時間計算の負荷を抑える。波・再結合試験では主要な非Maxwell分布を保持したが、粒子を減らした部分の雑音は増えた。空間AMRはこの刊行版では開発中である。[@P000071]
 - heading: 物体形状と計算規模に合わせて構成を選ぶ
   paragraphs:
-  - 月面地形や宇宙機の近傍では、表面形状に沿う格子や粒子の境界処理が効いてくる。CPIC（[@P000068]）は曲線格子とマルチグリッドを組み合わせ、複雑な物体とプラズマの相互作用に対応した。[@P000074]は宇宙機帯電を題材に、複数のPIC手法を整理して並列実行へつなぐソフトウェア構成を示している。
-  - 大規模化では、格子数と粒子数の両方が費用を決める。OhHelp（[@P000069]）は粒子が集中する領域の仕事を他ノードへ分担し、[@P000070]は位相空間で近い粒子を統合する。FLEKS（[@P000071]）では、MHD計算に埋め込むPIC領域を動的に変え、必要な場所へ計算を集中させる。局所構造を細かく解く別の方向として、[@P000073]は疎格子のノイズ低減と適応的な格子細分化を組み合わせている。
+  - 月面地形や宇宙機の近傍では、表面形状に沿う格子や粒子の境界処理が効いてくる。[@P000074]は宇宙機帯電を題材に、複数のPIC手法を整理して並列実行へつなぐソフトウェア構成を示している。
+  - 大規模化では、格子数と粒子数の両方が費用を決める。局所構造を細かく解く方向として、[@P000073]は疎格子のノイズ低減と適応的な格子細分化を組み合わせている。
+  - Delzannoほか（2013）は、物体に沿う非一様構造格子を一様な論理格子へ写し、曲線格子の静電PICを構成した。粒子の位置を論理空間、速度を物理空間で持つhybrid moverにより、物理格子上のセル探索を省く。非直交格子の時間2次精度は、半ステップ予測と計量再補間を加えて維持する。場は保存的な空間2次離散化とBoxMGで解き、球殻の人工解で2次収束と格子数にほぼ比例するserial計算量を示した。平面壁と導体球の吸収境界では、帯電・遮蔽を解析解、OML近似、球対称PICと比較した。一様磁場の球では電子の赤道捕集が減り、負の浮遊電位が浅くなる例も示す。本論文の検証は対称性を使った2D3Vであり、複雑な宇宙機を扱う多block格子と3-D並列化は拡張計画として記述される。[@P000068]
+  - 粒子の偏りと格子保持量を同時に扱う方法として、Nakashima et al. (2009) は等サイズの主領域を固定し、各プロセスが最大一つの副領域を援助するOhHelpを提案した。重い領域の粒子を複数の援助者に渡し、格子複製を一プロセス最大二領域に抑える。既存の援助関係で許容担当数を満たせる間は局所移送で維持し、満たせなくなった時に全体再割当てする。[@P000069]
+  - T2K256コアの純PIC評価では、均一分布と局所集中分布の強スケーリング速度比が粒子分割参照コードの逐次に対して180.38倍・158.98倍だった。試験は、同数・等絶対値の正負電荷を持つ粒子を置いた電荷中性の系が、外部場なしでほぼ等速に動く周期境界・α=0.2の設定であり、導体を含むPoisson解法や衝突計算は拡張課題として残る。[@P000069]
+  - Luuらは、同じセルの粒子を位置・運動量の広がりに応じて分割し、各集合を重み付き重心へ置き換えることで粒子数を減らした。二流不安定性では32万粒子を17.8万へ減らし、結合なしに対する最大エネルギー相対誤差は0.006、磁気シャワーの標準設定では計算時間を約6倍短縮した。総重みと運動量を保ちながら位相空間の異なる流れを混ぜる誤差を抑えるが、エネルギーは厳密保存せず、位置・運動量許容差を問題ごとに検証して選ぶ。[@P000070]
 - heading: 粒子・格子の力計算にFMMを使う
   paragraphs:
   - '[@P000319]と[@P000320]は、RAMSESの粒子・格子計算でPoisson解法をFMMへ置き換える系列である。一様格子での精度・並列性の比較から、局所格子と時間刻みへの適応化へ進む。後者はプレプリントで、対象は重力場である。静電PICへの接続では、力の保存性に加えて電気的な物体境界を確認する。'
 - heading: 計算出力と図の再現へ進む
   paragraphs:
-  - 論文から計算条件を追うために、公開出力も参照できる。[@P000344]は空洞サイズ依存の図に対応するHDF5とNotebook、[@P000345]は流速・熱速度比の計算出力と半解析コード、[@P000346]は極域クレーターのhybrid
-    PICのVTK・DAT出力を提供する。これらは関連論文とは別の公開データ記録であり、ここでは説明とファイル一覧を確認している。
+  - 論文から計算条件を追うために、公開出力も参照できる。[@P000344]は空洞サイズ依存の図に対応するHDF5とNotebook、[@P000345]は流速・熱速度比の計算出力と半解析コード、[@P000346]は極域クレーターのhybrid PICのVTK・DAT出力を提供する。これらは関連論文とは別の公開データ記録であり、ここでは説明とファイル一覧を確認している。
+  - Marderの補正は、境界でGauss残差F=0となる条件で、連続の式の数値誤差による発生と拡散による散逸を釣り合わせ、残差の蓄積を抑える。ECSIMはθ=1/2、整合した電場補間と平均速度電流、離散curlの積分関係を用いて粒子と場の仕事を相殺する設計で、付録の1次元周期境界ではPoynting流束の正味収支がゼロになる。保存精度は線形場方程式の求解精度にも依存する。ただし、この原稿のエネルギー証明には係数・符号の不整合が残る。Gauss残差と総エネルギー誤差は、別々の拘束・収支を点検する指標として扱う。 [@P000062][@P000066]
+  - CPICは物理空間の曲線格子を論理空間へ写し、粒子の位置を論理座標、速度を物理座標で扱う。FLEKSの2023年刊行版は、一様Cartesian PIC格子のパッチを有効・無効化し、MHDと結合する運動論領域を動かす。曲線格子による形状への対応と、一様な格子幅を保ったまま計算対象領域を選ぶ方式を区別すると、境界の表現、空間分解能、計算負荷を比較しやすい。 [@P000068][@P000071]
 lineage:
 - title: 電荷と電場の整合性
   steps:
   - paper_id: P000062
     title: Gauss則のずれを局所的に補正
-    significance: 場の更新に誤差を拡散させる項を加え、電磁PICの制約違反を抑えた。
+    significance: 楕円型求解を追加せず、電荷・電流の割り付けを固定しない局所拡散補正を提示した。2次元マグネトロン例では無次元係数d=0.001でGauss誤差が小さくほぼ一定になり、d=0.01では発振開始が遅れ、補正の強さが物理に影響することも示す。
   - paper_id: P000159
     title: 電荷を保存する電流を構成
     significance: 粒子の移動に伴う電荷変化と格子電流を整合させ、離散的な連続の式を満たした。
@@ -43,7 +54,7 @@ lineage:
     significance: 衝突性が大きく異なる電子を同じ計算で扱い、輸送計算の時間スケールを広げた。
   - paper_id: P000066
     title: 半陰解法でエネルギーを保存
-    significance: ECSIMにより、非線形反復を使わずに粒子と場のエネルギー交換を釣り合わせた。
+    significance: 周期境界・整合する補間とcurl演算子の下で保存機構を導き、直接線形解法の1D1V/1D3V試験で全エネルギー誤差約10⁻¹⁴–10⁻¹⁵を示す。無ドリフトMaxwell平衡ではDebye長を大幅に未解像にしても数値加熱を抑える。
     connection: 陰解法の保存性を高める
   - paper_id: P000067
     title: 相対論的な保存計算を構成
@@ -198,108 +209,108 @@ entries:
   group: accuracy
   role: Gauss則の誤差補正
   summary:
-    question: 粒子から格子への割り付けで生じるGauss則のずれをどう抑えるか。
-    method: Maxwell方程式に誤差を拡散させる項を加える。
-    contribution: 電磁PICでGauss則の大きな逸脱を抑える局所補正法を提示。
+    question: 電磁PICの格子上で連続の式を厳密に満たさない粒子割り付けから生じるGauss残差の蓄積を、楕円型方程式の求解を加えずどう抑えるか。
+    method: 論文の無次元表示で残差F=div E−ρを定義し、Ampèreの式に+d grad Fを加える。Fは連続の式の残差を発生源とする拡散方程式に従うため、境界F=0と安定性を満たす範囲でdを選び、誤差の発生と散逸を釣り合わせる。
+    contribution: 楕円型求解を追加せず、電荷・電流の割り付けを固定しない局所拡散補正を提示した。2次元マグネトロン例では無次元係数d=0.001でGauss誤差が小さくほぼ一定になり、d=0.01では発振開始が遅れ、補正の強さが物理に影響することも示す。
   evidence_by_item:
     question:
     - paper_id: P000062
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/002199918790043X
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/0021-9991(87)90043-x
+      source_type: full_text
+      locator: PDF pp.2–4, Eqs.(5)–(8); PDF pp.5–8, Figs.3–6
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000062
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/002199918790043X
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/0021-9991(87)90043-x
+      source_type: full_text
+      locator: PDF pp.2–4, Eqs.(5)–(8); PDF pp.5–8, Figs.3–6
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000062
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/002199918790043X
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/0021-9991(87)90043-x
+      source_type: full_text
+      locator: PDF pp.2–4, Eqs.(5)–(8); PDF pp.5–8, Figs.3–6
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000063
   group: accuracy
   role: 低ノイズPIC・δf法
   summary:
-    question: 小振幅の不安定性を、粒子ノイズに埋もれず計算するには。
-    method: 静かな初期配置と、分布関数の摂動を追うδf法を整理・検証。
-    contribution: 温度異方性による電磁不安定性で、低ノイズ手法の有用性を示す。
+    question: 熱・磁気エネルギーより小さい波の線形成長と飽和を、全分布の粒子標本化ノイズに埋もれず捉えるには。
+    method: Fourier空間で縦横場を分ける電磁PICとBoris型粒子更新を整理し、モーメント補正・Hammersley/Sobol系列のquiet startと、全非線形軌道に沿って摂動重みを更新する電磁δf法を比較する。
+    contribution: 周期1D3Vの温度異方性whistler試験で、低ノイズ化により線形成長・飽和が明瞭になる。異方性比2では同等のtotal-f結果にはほぼ3桁多い粒子が必要になると著者は見積もる。相対論拡張は定式化の提示。
   evidence_by_item:
     question:
     - paper_id: P000063
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0377042799001612
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/s0377-0427(99)00161-2
+      source_type: full_text
+      locator: PDF pp8–12 / §§3–4; PDF pp13–15 / §5, Fig2
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000063
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0377042799001612
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/s0377-0427(99)00161-2
+      source_type: full_text
+      locator: PDF pp8–12 / §§3–4; PDF pp13–15 / §5, Fig2
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000063
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0377042799001612
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/s0377-0427(99)00161-2
+      source_type: full_text
+      locator: PDF pp8–12 / §§3–4; PDF pp13–15 / §5, Fig2
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000072
   group: accuracy
   role: SICとの比較
   summary:
-    question: 分布関数の表現を変えると、粒子ノイズと収束はどう変わるか。
-    method: 位相空間のシートを格子へ投影し、一次元の標準問題でPICと比較。
-    contribution: SICは試験問題で少ない追跡点でも高精度に収束した。
+    question: 位相空間の分布を接続したシートで表すと、PICの粒子ノイズと収束はどう変わり、折り畳み・有限温度の条件で何が精度と費用を制限するか。
+    method: 固定電荷を持つ1D線分を追跡点間に置き、区分一定／区分線形密度をセルへの重なりから投影するSICを実装。電荷投影以外を共通にしたPICと、周期境界の冷プラズマ振動、二流不安定性、20冷シートで表す温プラズマのLandau減衰を比較し、線分長基準の再分割と接続方向も調べる。
+    contribution: SICは滑らかな1D分布の試験で少数点から低ノイズ・小誤差となり、区分線形密度は点間隔誤差の収束を速めた。高点数ではPICと共通の格子誤差下限へ近づく。二流の非線形折り畳みでは再分割が必要で点数はほぼ指数的に増え、Landau減衰では流数とシート接続も精度を制限した。
   evidence_by_item:
     question:
     - paper_id: P000072
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999115006816
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.jcp.2015.10.017
+      source_type: full_text
+      locator: PDF pp.2–7, Introduction and Sections 2.1–2.3
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000072
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999115006816
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.jcp.2015.10.017
+      source_type: full_text
+      locator: PDF pp.4–10, Sections 2.1–2.6; pp.11–18, Sections 3.1–3.3
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000072
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999115006816
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.jcp.2015.10.017
+      source_type: full_text
+      locator: PDF pp.12–18, Figs.3–10, Sections 3.1–3.3; p.19, Section 4
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000064
@@ -342,72 +353,72 @@ entries:
   group: implicit
   role: 陰的モーメント法の解説
   summary:
-    question: 異なる時空間スケールを陰的PICでどう扱うか。
-    method: CELESTE3Dの電磁・運動論モデルを用いてアルゴリズムを説明。
-    contribution: 粒子応答と場を結ぶ陰的モーメント法の基礎を整理。
+    question: 完全電磁・運動論PICで粒子と場の陰的結合をどう近似して、関心の時空間尺度に合わせた格子幅と時間刻みを選ぶか。
+    method: CELESTE3Dの粒子更新とθ重みMaxwell方程式を示し、補間関数の級数展開による密度・電流モーメントの閉包で場を先に求め、粒子を1回進める陰的モーメント法を概説する。
+    contribution: 粒子・場の反復結合を避ける閉包、θに依存する時間精度、陽解法の安定性制約の緩和後も残るv_th,e Δt/Δx<1とΔx/Δt<ςv_th,eを整理し、磁気圏尾部で関心尺度へ粗視化するコスト節約の概算を示す。
   evidence_by_item:
     question:
     - paper_id: P000065
       version_id: V1
       url: https://arxiv.org/abs/0801.4134
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp. 1–3, §§1–2
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000065
       version_id: V1
       url: https://arxiv.org/abs/0801.4134
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp. 2–4, Eqs. (4)–(12)
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000065
       version_id: V1
       url: https://arxiv.org/abs/0801.4134
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp. 4–7, Eqs. (13)–(14), Fig. 1
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000066
   group: implicit
   role: エネルギー保存半陰解法
   summary:
-    question: 粒子と場の更新で、エネルギーを厳密に釣り合わせるには。
-    method: 非線形反復を使わない半陰的PICで、離散エネルギー保存を導出・検証。
-    contribution: ECSIMを提案し、エネルギー保存と数値安定性をベンチマークで示す。
+    question: 陽的PICに似た計算順を保ち、粒子・場の非線形反復なしに離散エネルギーを保存できるか。
+    method: 既知の半ステップ粒子位置と旧時刻磁場を用いるmoverから、平均速度電流を未知電場の線形関数として質量行列で表し、線形Maxwell方程式を解く。θ＝1/2で仕事を整合させる。
+    contribution: 周期境界・整合する補間とcurl演算子の下で保存機構を導き、直接線形解法の1D1V/1D3V試験で全エネルギー誤差約10⁻¹⁴–10⁻¹⁵を示す。無ドリフトMaxwell平衡ではDebye長を大幅に未解像にしても数値加熱を抑える。
   evidence_by_item:
     question:
     - paper_id: P000066
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0021999117300128
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/abs/1602.06326
+      source_type: full_text
+      locator: PDF pp2–5 §§2–3; PDF pp6,8 Tables1–2; PDF pp10–12 §§6/AppendicesA–C
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000066
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0021999117300128
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/abs/1602.06326
+      source_type: full_text
+      locator: PDF pp2–5 §§2–3; PDF pp6,8 Tables1–2; PDF pp10–12 §§6/AppendicesA–C
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000066
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0021999117300128
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/abs/1602.06326
+      source_type: full_text
+      locator: PDF pp2–5 §§2–3; PDF pp6,8 Tables1–2; PDF pp10–12 §§6/AppendicesA–C
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000067
@@ -450,36 +461,36 @@ entries:
   group: boundaries
   role: 曲線格子と物体表面
   summary:
-    question: 複雑な物体形状と、近傍の細かなプラズマ構造をどう扱うか。
-    method: 曲線格子を論理座標へ写し、マルチグリッドと粒子移動を組み合わせる。
-    contribution: 形状に沿う格子を使った静電PICを、プラズマと物体の相互作用へ適用。
+    question: 物体寸法とプラズマの長さが大きく異なる静電PICで、物体に沿う非一様構造格子、粒子のセル探索、Poisson解法の計算量をどう両立するか。
+    method: 物理格子を一様な論理格子へ写し、計量を含む保存形Poisson方程式を空間2次で離散化してBoxMGで解く。粒子の速度は物理空間、位置は論理空間に置き、予測修正付きhybrid moverで更新する。平面導体壁と球を2D3Vで検証する。
+    contribution: 物体形状に沿う静電PICの構成を、格子収束・粒子更新時間・帯電遮蔽のベンチマークで示した。人工解では十分細かい格子で2次収束とほぼ一定のPoisson反復数を得た。半径が電子Debye長に等しい無磁場球の浮遊電位は、電子温度で規格化すると約−2.54で、OML近似の−2.50に近い。磁場は電子の赤道捕集を減らして負電位を浅くした。
   evidence_by_item:
     question:
     - paper_id: P000068
       version_id: V1
-      url: https://laro.lanl.gov/esploro/outputs/journalArticle/CPIC-A-Curvilinear-Particle-in-Cell-Code-for/9916369934703761
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1109/tps.2013.2290060
+      source_type: full_text
+      locator: PDF pp.1–2, Sec.I
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000068
       version_id: V1
-      url: https://laro.lanl.gov/esploro/outputs/journalArticle/CPIC-A-Curvilinear-Particle-in-Cell-Code-for/9916369934703761
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1109/tps.2013.2290060
+      source_type: full_text
+      locator: PDF pp.2–6, Secs.II-A–B, Eqs.1–27
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000068
       version_id: V1
-      url: https://laro.lanl.gov/esploro/outputs/journalArticle/CPIC-A-Curvilinear-Particle-in-Cell-Code-for/9916369934703761
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1109/tps.2013.2290060
+      source_type: full_text
+      locator: PDF pp.4–5, Table I; pp.7–8, Figs.1–5; pp.9–10, Sec.III-C and Fig.7
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000074
@@ -522,108 +533,108 @@ entries:
   group: scaling
   role: OhHelpによる負荷分散
   summary:
-    question: 粒子が局所へ集まっても、並列計算の負荷をどう均すか。
-    method: 均等な領域分割を保ち、重い領域の粒子処理を他ノードへ分担。
-    contribution: 粒子の偏りが大きい三次元PICでも、動的な負荷分散と拡張性を示す。
+    question: 粒子が局所に集中した三次元PICで、粒子処理負荷と各プロセスが保持する領域格子の両方をどう抑えるか。
+    method: 等サイズの主領域を固定し、根以外の各プロセスに一つの副領域を割り当てるOhHelp。主・副粒子を分担し、援助木の可否検査と局所移送で許容担当数を維持、必要時だけ全体再割当てする。
+    contribution: 一プロセス最大二領域の格子保持と粒子分担を組み合わせた。T2K256コアの純PIC評価で、粒子分割方式の逐次速度に対し強スケーリング180.38倍（均一）・158.98倍（局所集中）、弱スケーリング189.69倍・166.44倍。
   evidence_by_item:
     question:
     - paper_id: P000069
       version_id: V1
-      url: https://www.researchgate.net/publication/221236040_OhHelp_A_scalable_domain-decomposing_dynamic_load_balancing_for_particle-in-cell_simulations
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1145/1542275.1542293
+      source_type: full_text
+      locator: PDF p.3 §1–2.1
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000069
       version_id: V1
-      url: https://www.researchgate.net/publication/221236040_OhHelp_A_scalable_domain-decomposing_dynamic_load_balancing_for_particle-in-cell_simulations
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1145/1542275.1542293
+      source_type: full_text
+      locator: PDF pp.3–6 §2, Eqs.1–2, b1–b5, e1–e4, d1–d6
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000069
       version_id: V1
-      url: https://www.researchgate.net/publication/221236040_OhHelp_A_scalable_domain-decomposing_dynamic_load_balancing_for_particle-in-cell_simulations
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1145/1542275.1542293
+      source_type: full_text
+      locator: PDF pp.7–8 §4.1–4.2, Tables 1–2, Fig.7
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000070
   group: scaling
   role: 粒子の統合
   summary:
-    question: 計算粒子を減らしながら、位相空間分布をどこまで保てるか。
-    method: 近い粒子をVoronoi型の領域にまとめ、位置・運動量の許容差で統合。
-    contribution: 二流不安定性などで、計算量削減と精度の調整方法を示す。
+    question: 位相空間の異なる流れを混ぜずに計算粒子数を減らし、位置・運動量の許容差で精度と費用を調整できるか。
+    method: セルごとに位置・運動量の重み付き変動係数を計算し、最大変動成分の軸に垂直な重心通過平面で再帰的に二分する。6成分が位置TX・運動量TPの許容差を満たした集合を1重心粒子へ置換する。
+    contribution: 二流不安定性では32万から17.8万粒子へ減らして最大総エネルギー相対誤差0.006、磁気シャワーの標準設定では約7265秒から1172秒へ短縮した。重み・運動量は保存するがエネルギーは近似保存で、許容差走査による調整が必要。
   evidence_by_item:
     question:
     - paper_id: P000070
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S001046551600028X
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/pdf/1504.00636v2
+      source_type: full_text
+      locator: PDF pp.1–2 §1
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000070
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S001046551600028X
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/pdf/1504.00636v2
+      source_type: full_text
+      locator: PDF pp.4–7 §3 Steps1–7, Eqs4–11
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000070
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S001046551600028X
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/pdf/1504.00636v2
+      source_type: full_text
+      locator: PDF pp.11–14 Table1/Figs5–6; pp.15–21 Table2/Figs7–11
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000071
   group: scaling
   role: FLEKS・流体との領域結合
   summary:
-    question: 大域計算の中で、運動論が必要な領域をどう追い続けるか。
-    method: PIC領域の動的な切り替え、時間刻み調整、粒子の分割・統合を実装。
-    contribution: MHDとの結合に向け、形状が変わるPIC領域を扱う計算基盤を提供。
+    question: 大域MHDの内部で、形が変わる電子・イオン運動論領域をどう効率よく追い、粒子数と刻み幅を調整するか。
+    method: 非相対論的GL-ECSIMを一様直交格子上で用い、各方向N≥2セルの活性パッチを動的に切り替える。新旧Δtを使い分けて時間配置を保ち、セル内の分割と、位置・速度を継承して5保存量に合わせ、正の重みが得られる場合の6→5統合で粒子数を調整する。
+    contribution: 動的PIC領域をMHD-AEPICへ埋め込む実装を提供し、波・非対称再結合・Frontera並列試験で動作と性能を検証した。統合の総量保存を保ちながらppc偏りを減らせるが、統計雑音は増え、計算全体の厳密保存とは区別する。
   evidence_by_item:
     question:
     - paper_id: P000071
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0010465523000590
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.cpc.2023.108714
+      source_type: full_text
+      locator: PDF pp.1–3、§1–2
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000071
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0010465523000590
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.cpc.2023.108714
+      source_type: full_text
+      locator: PDF pp.3–7、§2–5、式1–5
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000071
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0010465523000590
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.cpc.2023.108714
+      source_type: full_text
+      locator: PDF pp.7–13、§6、図6–14
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000073

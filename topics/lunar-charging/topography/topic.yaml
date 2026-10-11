@@ -5,8 +5,10 @@ question: 永久影、クレーター、縦孔・地下空洞で、太陽風の�
 review:
 - heading: 永久影へ入り込むプラズマ
   paragraphs:
-  - 極域の低い太陽高度では、クレーターの壁が光と太陽風を遮る。電子とイオンは質量や速度分布が違うため、陰への到達もそろわない。[@P000058]はこの差から永久影の負帯電を考え、[@P000031]はLOLA地形を使って遮蔽を具体化した。[@P000008]は表面帯電が流入粒子へ及ぼす作用も計算する。[@P000048]の三次元ハイブリッドPICでは、クレーター近傍の負電位のプラズマ領域と、底や壁へ回り込むイオン流が描かれている。
+  - 極域の低い太陽高度では、クレーターの壁が光と太陽風を遮る。電子とイオンは質量や速度分布が違うため、陰への到達もそろわない。[@P000031]はLOLA地形を使って遮蔽を具体化し、[@P000008]は表面帯電が流入粒子へ及ぼす作用も計算する。
   - 日夜境界・影の極域で準中性が破れる条件を扱う[@P000282]は、電子とイオンの到達差を読む入口になる。太陽嵐中の[@P000222]は運動論計算を物体の等価回路へつなぎ、低電流環境での帯電緩和を評価した。[@P000264]は膨張前線と表面の間の電子雲をPoisson方程式で求め、[@P000263]の実験はデバイ長と地形寸法の比による内部電場・二重層の変化を調べる。非中性領域の解析と、形状を変える実験を比較できる。
+  - 直径1.2 kmの極域クレーターを扱うXie et al. (2024)では、深さ200から300 mへの変更は電子雲近傍の準平衡電位を約4 V負にし、規格化下降フラックスを減らした。斜面60から30°への変更では電位は約5 V正側へ変わるが、流入フラックスの差は結果節で明瞭でないとされる。地形による遮蔽と三次元の側壁流入を示す一方、−60 Vなどの電位は放出電流を省いた20秒計算の値であり、永久影の長期平衡の条件が残る。[@P000048]
+  - Farrell et al. はGoldstone地形を用い、永久影の帯電を両極性膨張電位と表面シース電位の二段階で求めた。Shoemakerの通常条件では約−90 V、一定ダスト電流を置くイオン非入射点では約−180 Vとなるが、後者は非一意な閉鎖条件に依存し、電流換算にも本文の不整合がある。低い環境電流は小物体の摩擦電荷緩和を遅らせ、氷のスパッタ侵食にも地形依存性を与える。これらは固定流向・Maxwell分布・垂直膨張のモデルであり、側方流入や粒子放出の確認が必要になる。[@P000058]
 - heading: 深い空洞と実地形への拡張
   paragraphs:
   - 深い空洞では、入口から底へ至る間に電子が側壁へ失われる。上方から太陽風が入る条件を扱った[@P000012]は、その選別によって底部が正に帯電しうることを示した。[@P000015]は空洞寸法とシース厚の比に注目し、大きな空洞では電子供給が増えて正電位が緩和されることを示した。[@P000016]は流速と熱速度の比を変え、底部電位が負から正、さらにほぼゼロへ移る条件を調べる。南極の実地形を含む[@P000017]は、理想化した形状の計算から、候補地点ごとの環境を読むための研究へつながる。
@@ -71,7 +73,7 @@ entries:
   summary:
     question: 極域クレーターへの太陽風侵入と帯電はどう影響し合うか。
     method: 影の段差を二次元で計算し、表面電荷と二次電子放出を追跡。
-    contribution: 帯電と両極性膨張が相互に抑制し、二次電子放出が陽子流入を調整。
+    contribution: 表面帯電と流入プラズマの負のフィードバックを示し、二次電子放出が電位と陽子の到達位置を変える。
   evidence_by_item:
     question: []
     method: []
@@ -135,54 +137,72 @@ entries:
   group: craters
   role: 極域クレーターのミニウェイク
   summary:
-    question: 極域クレーターの陰へ、太陽風はどのように入り込むか。
-    method: 三次元静電ハイブリッドPICで、km規模のクレーター周辺を計算。
-    contribution: 電子に富む負電位のプラズマ領域と、底面・壁面へ回り込むイオン流を示した。
+    question: 極域クレーターの深さと斜面は、電子雲の電位と底・壁へのイオン侵入をどう変えるか。
+    method: SPISの三次元静電hybrid PICで、イオンを粒子、電子をBoltzmann関係で閉じた質量なし流体として扱い、陰的な非線形Poisson方程式を解く。直径1.2 km、光電子・二次電子放出を省いた6条件を20 s計算する。
+    contribution: 標準条件で余剰電子を伴うイオン空乏域と約−60 Vの準平衡電位、底から100 mの下降フラックス約4%、壁法線フラックス約18%を示した。上流のシース擾乱と約±40 km s−1の横方向流れを三次元で捉えた。
   evidence_by_item:
-    question: []
+    question:
+    - paper_id: P000048
+      version_id: V1
+      url: https://doi.org/10.1029/2024JA032764
+      source_type: full_text
+      locator: PDF pp.1–2, Introduction
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000048
       version_id: V1
-      url: https://doi.org/10.57760/sciencedb.space.01916
-      source_type: metadata
-      locator: 公開データ：極域クレーターのSPIS計算（Science Data Bank）
-      checked_at: '2026-09-25'
+      url: https://doi.org/10.1029/2024JA032764
+      source_type: full_text
+      locator: PDF pp.2–3, §2, Fig.1, Table 1; p.8 §4 (20 s)
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000048
       version_id: V1
-      url: https://doi.org/10.1029/2024ja032764
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2024JA032764
+      source_type: full_text
+      locator: PDF pp.4–8, §3–4, Figs.2–5; p.9 §4 (magnetic limit)
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000058
   group: craters
   role: 永久影クレーターの電気的環境
   summary:
-    question: 永久影クレーターでは、電子とイオンの届き方がどう異なるか。
-    method: 地形による太陽風遮蔽とプラズマの膨張を用いて帯電を推定。
-    contribution: イオンが届きにくい領域での負帯電と、探査機・ダストへの影響を論じた。
+    question: 永久影クレーターへ膨張する太陽風の電子・イオンはどこまで到達し、地形上の表面電位と探査物体の帯電をどう決めるか。
+    method: 600 m分解能のGoldstone南極地形へ定常・Maxwell分布の両極性膨張近似を適用し、局所斜面へのイオン入射と薄い平面シースの電流収支を接続。イオン非入射点では一定の負帯電ダスト電流を仮定する。
+    contribution: 通常条件のShoemaker断面で合計電位約−90 Vを計算し、追加ダスト電流を置いた電子雲地点では約−180 Vを得る。物体の表面相対電位差・摩擦電荷緩和・氷スパッタを同じ低電流環境で論じた。ダスト放出は未検証で、採用電流の換算に本文内の不整合が残る。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000058
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20110013543/downloads/20110013543.pdf
+      source_type: full_text
+      locator: PDF pp.3–8,10–13; Table1; Fig6; Fig11; Table2
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000058
+      version_id: V1
+      url: https://ntrs.nasa.gov/api/citations/20110013543/downloads/20110013543.pdf
+      source_type: full_text
+      locator: PDF pp.3–8,10–13; Table1; Fig6; Fig11; Table2
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000058
       version_id: V1
-      url: https://doi.org/10.1029/2009je003464
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://ntrs.nasa.gov/api/citations/20110013543/downloads/20110013543.pdf
+      source_type: full_text
+      locator: PDF pp.3–8,10–13; Table1; Fig6; Fig11; Table2
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000012

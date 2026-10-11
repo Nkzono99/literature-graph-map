@@ -635,36 +635,36 @@ entries:
   group: emission
   role: 孤立した月ダスト粒子の帯電
   summary:
-    question: 単独の微粒子は、バルク材料と同じ二次電子放出特性で帯電するか。
-    method: Apollo 11・17試料とシリカの0.2–13 µm粒子を保持し、10–200 eV電子による帯電を測定。
-    contribution: 帯電速度の大きさ・符号の粒径依存を示し、バルク材料の測定やモデルとの差を報告。
+    question: 孤立した月ダストの電子衝突帯電はバルク材料と同じ特性で記述できるか。粒径・初期極性・入射エネルギーは帯電方向をどう変えるか。
+    method: Apollo11/17の有効径0.25–13.4 µm粒子と球形シリカ（最小0.20 µm）をEDBに保持し、10⁻⁵–10⁻⁶ torrで10–200 eV電子を照射。保持DC電圧から電荷時系列を評価し、付着効率1と調整した局所流束からSEE収率を逆算。
+    contribution: 多くの小さな正帯電粒子は10–25 eVで正電荷を増やし100 eVで減らす一方、大きな正粒子と掲載された負粒子は電荷の大きさを減らした。シリカにも似た傾向が見られ、孤立粒子へバルク収率を直接適用する難しさを示す。
   evidence_by_item:
     question:
     - paper_id: P000153
       version_id: V1
-      url: https://ntrs.nasa.gov/citations/20100035256
-      source_type: abstract
-      locator: NASA NTRS Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1088/0004-637x/718/2/795
+      source_type: full_text
+      locator: PDF2–7頁 §§2–3 Eqs1–13; PDF5–11頁 Tables1–4 Figs4–8; PDF11–14頁 §§5–7; PDF14–15頁
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000153
       version_id: V1
-      url: https://ntrs.nasa.gov/citations/20100035256
-      source_type: abstract
-      locator: NASA NTRS Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1088/0004-637x/718/2/795
+      source_type: full_text
+      locator: PDF2–7頁 §§2–3 Eqs1–13; PDF5–11頁 Tables1–4 Figs4–8; PDF11–14頁 §§5–7; PDF14–15頁
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000153
       version_id: V1
-      url: https://ntrs.nasa.gov/citations/20100035256
-      source_type: abstract
-      locator: NASA NTRS Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1088/0004-637x/718/2/795
+      source_type: full_text
+      locator: PDF2–7頁 §§2–3 Eqs1–13; PDF5–11頁 Tables1–4 Figs4–8; PDF11–14頁 §§5–7; PDF14–15頁
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000007
@@ -696,8 +696,8 @@ entries:
   role: 月試料の光電子放出
   summary:
     question: 月試料の光電子放出は、どのようなシースを作るか。
-    method: 月試料の放出収率・電子分布を測り、シースを近似計算。
-    contribution: 月試料の電子分布とMaxwell近似の高エネルギー側のずれを示した。
+    method: 月試料14259,116の単色光下の収率・電子分布を測り、太陽スペクトルと合わせた放出分布からシースを近似計算。
+    contribution: 実測した放出特性から算出した太陽照射下の光電子分布は、同じ平均エネルギーのMaxwell近似より高エネルギー側が弱かった。
   evidence_by_item:
     question: []
     method: []
@@ -790,72 +790,72 @@ entries:
   group: emission
   role: 粉体層の総電子収率
   summary:
-    question: 月高地土壌からの総電子放出と、粒子ごとの帯電はどう結び付くか。
-    method: Apollo 16土壌61241を超高真空で照射し、40–2000 eVの収率・分布と10 keVでの粒子運動を測定。
-    contribution: 総放出収率が約1となるデータを提示し、電子照射下での帯電差に伴う粒子移動を捉えた。
+    question: 低ガラス含有の月高地土壌の粉体層はどれだけ電子を放出し、その分布と粒子ごとの帯電差はどう結び付くか。
+    method: Apollo 16土壌61241の清浄化した粉体層を超高真空で測定。40–2000 eVの放出分布はAr+で帯電補償し、総収率は低nAパルスで測る。別の10 keV走査像で移動を観察。
+    contribution: 総収率の本文最大値1.13、第一交差80 eV、第二交差>2 keVと、Ep>100 eVで放出分布ピーク1.2±0.2 eVを報告。10 keVでは粒子移動と定性的な帯電差を捉え、粉体層での再吸収と反発・衝突機構を議論した。
   evidence_by_item:
     question:
     - paper_id: P000151
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0032063313000937
-      source_type: abstract
-      locator: Abstract / Highlights
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.pss.2013.04.011
+      source_type: full_text
+      locator: PDF pp.1–2, §§1.1–1.2
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000151
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0032063313000937
-      source_type: abstract
-      locator: Abstract / Highlights
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.pss.2013.04.011
+      source_type: full_text
+      locator: PDF pp.2–4, §§2–3.3, Eq.(1), Figs.1–3
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000151
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0032063313000937
-      source_type: abstract
-      locator: Abstract / Highlights
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/j.pss.2013.04.011
+      source_type: full_text
+      locator: PDF pp.4–6, §§4.1–5, Figs.4–6
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000091
   group: emission
   role: 二次電子の確率モデル
   summary:
-    question: 放出率と放出エネルギー分布を、粒子計算にどう組み込むか。
-    method: 実測の放出特性を再現する現象論的な確率モデルと生成アルゴリズムを構築。
-    contribution: 銅とステンレス鋼のデータに対応する、放出電子モデルのパラメータを提示。
+    question: 測定した放出収率と個々の電子のエネルギースペクトルから、一次電子1個の衝突で生じる電子数・同時エネルギー・放出方向を、確率の正規化とエネルギー上限を保ってどう生成するか。
+    method: 弾性反射・再拡散・真の二次電子を分け、侵入電子に条件付けたPoisson／二項分布と合計エネルギーを制限したガンマ型同時分布を構築。逆累積によるMonte Carlo生成法を示し、化学処理済みCuと304鋼の特定データへ較正し解析式と生成結果を比較。
+    contribution: 平均収率、単電子スペクトル、その積分、個別・合計放出エネルギー上限が一致する現象論的粒子境界モデルを提示。旧較正のjet spectrum取り違えを修正し、Cu・鋼の表面状態別パラメータと電子数分布の差を示す。
   evidence_by_item:
     question:
     - paper_id: P000091
       version_id: V1
       url: https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.5.124404
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp.1–3, Secs.I–II, Eqs.5–11
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000091
       version_id: V1
       url: https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.5.124404
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp.4,6–8,14–15, Eqs.17,33–46,52; Appendix D
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000091
       version_id: V1
       url: https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.5.124404
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp.9–11,13,16–17, Tables I–II, Figs.8–10; Appendix B
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000155
@@ -934,36 +934,36 @@ entries:
   group: emission
   role: 放出電子の温度を含む理論
   summary:
-    question: 放出電子の温度は、シースの電位差をどの程度変えるか。
-    method: 平面放出面の運動論をPICと、RF放電の残光中の熱電子放出実験で検証。
-    contribution: 周囲の電子温度が放出電子温度に近づくと、シース電位差が消えることを示した。
+    question: 壁へ失われる電子と放出電子の有限温度を運動論で含めると、浮遊平面のSCLシース電位とシース端条件は温度比に対してどう変わるか。
+    method: 一次元無衝突・冷イオンのSCL運動論を、壁損失を含むMaxwell電子と半Maxwell放出電子、浮遊電流釣り合い、一般化Bohm条件から構築。ArのEDIPICで超音速流に合わせた理論と比較し、HeのRF残光中の平面熱電子放出実験で温度比依存を測定。
+    contribution: 壁損失と有限放出温度を含むSCLシース理論では、温度比5で規格化電位0.51、同温度極限で0を得た。超音速流に合わせたPIC比較は一致し、残光実験は同温度極限の傾向を支持したが、中間温度比で差が残った。
   evidence_by_item:
     question:
     - paper_id: P000089
       version_id: V1
       url: https://w3.pppl.gov/~ikaganov/Kinetic%20Theory%20of%20Plasma%20Sheaths.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF p.2, Eqs.(1)–(5); PDF p.2, Eqs.(1),(2),(4),(5); PDF pp.2–3, Fig.1, p.3第1段落; PDF p.3第2段落; p.2 Fig.1; PDF p.3 EDIPIC手法; PDF p.3, Fig.2・右段比較; PDF pp.3–4 実験条件; PDF p.4 左段診断・右段不確かさ; PDF p.4, Fig.3・右段; PDF p.4右段・Fig.3; p.3不安定性
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000089
       version_id: V1
       url: https://w3.pppl.gov/~ikaganov/Kinetic%20Theory%20of%20Plasma%20Sheaths.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF p.2, Eqs.(1)–(5); PDF p.2, Eqs.(1),(2),(4),(5); PDF pp.2–3, Fig.1, p.3第1段落; PDF p.3第2段落; p.2 Fig.1; PDF p.3 EDIPIC手法; PDF p.3, Fig.2・右段比較; PDF pp.3–4 実験条件; PDF p.4 左段診断・右段不確かさ; PDF p.4, Fig.3・右段; PDF p.4右段・Fig.3; p.3不安定性
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000089
       version_id: V1
       url: https://w3.pppl.gov/~ikaganov/Kinetic%20Theory%20of%20Plasma%20Sheaths.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF p.2, Eqs.(1)–(5); PDF p.2, Eqs.(1),(2),(4),(5); PDF pp.2–3, Fig.1, p.3第1段落; PDF p.3第2段落; p.2 Fig.1; PDF p.3 EDIPIC手法; PDF p.3, Fig.2・右段比較; PDF pp.3–4 実験条件; PDF p.4 左段診断・右段不確かさ; PDF p.4, Fig.3・右段; PDF p.4右段・Fig.3; p.3不安定性
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000265
@@ -1095,18 +1095,36 @@ entries:
   group: surface
   role: VUV照射下の双極性帯電
   summary:
-    question: 光照射された粉体では、全粒子が同じ符号に帯電するか。
-    method: VUV照射した月ダスト模擬物の粒子電荷分布を測定。
-    contribution: 同じ照射条件で正負両方の粒子を測定し、平均電位だけでは表せない帯電を示した。
+    question: VUV照射で層の巨視的表面電位が正になった月ダスト模擬物でも、個々の粒子は正負に帯電するか。強電場で取り出した粒子の電荷符号・大きさはどう分布するか。
+    method: 高真空のJSC-1A粉体層を120/160 nmピークのVUVで5分照射し、Kelvin probeで層電位を測定。層上5 mmのFaraday cup検出器に±2.5/±3.5 kVを加えて逆符号粒子を動員し、8分の誘導電流信号を積分して個別電荷を求めた（検出下限約1 fC）。
+    contribution: 照射後の層電位+3〜+5 Vと、バイアス動員粒子の正負両電荷が共存することを示した。逆極性バイアスの別測定を合算して、±3.5 kVで正498・負396 counts、各符号の57/59%が|Q|<10 fC、最大+423/−691 fC。強電場での導電や再落下摩擦帯電がVUV起源の分布に混ざり得ることも指摘した。
   evidence_by_item:
-    question: []
-    method: []
-    contribution: []
+    question:
+    - paper_id: P000052
+      version_id: V1
+      url: https://orfeo.belnet.be/bitstream/handle/internal/14652/Pacaud%282025a%29.pdf?isAllowed=y&sequence=1
+      source_type: full_text
+      locator: PDF p.2 §1; PDF p.3 §1–2
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000052
+      version_id: V1
+      url: https://orfeo.belnet.be/bitstream/handle/internal/14652/Pacaud%282025a%29.pdf?isAllowed=y&sequence=1
+      source_type: full_text
+      locator: PDF p.3 §2–2.1 and Fig.1; PDF p.4 §2.1–2.2, Eq.1 and §3
+      checked_at: '2026-10-12'
+    contribution:
+    - paper_id: P000052
+      version_id: V1
+      url: https://orfeo.belnet.be/bitstream/handle/internal/14652/Pacaud%282025a%29.pdf?isAllowed=y&sequence=1
+      source_type: full_text
+      locator: PDF p.4 §3; PDF p.5 §3 and Figs.2–3; PDF p.6 §3–4 and Fig.4
+      checked_at: '2026-10-12'
   inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000014
@@ -1137,24 +1155,36 @@ entries:
   group: surface
   role: 模擬レゴリスの電子放出収率
   summary:
-    question: 粒状レゴリスの電子放出は、組成や形状でどう変わるか。
-    method: 模擬物層などの二次電子・後方散乱電子の収率を広い入射エネルギーで測定。
-    contribution: 粒状材料の電子収率を定量化し、表面の組成・微細構造の影響を示した。
+    question: 高絶縁性の固定月模擬レゴリス層の電子収率を測定中の帯電を抑えて得られるか。4調製試料で収率はどう異なり、成分曲線の混合で説明できるか。
+    method: ExolithのLHS-1D/G1、LHS-1/G6・G7、LMS-1/G12を導電性炭素テープに固定。室温・10⁻⁶ Pa未満・垂直入射、約10–20 eVから5 keVの低照射量パルスをHGRFAで測り、50 eVでSEY/BSEYを区分し毎パルス間に中和。SEY/BSEYを経験式、TEYを成分patchモデルでフィット。
+    contribution: 帯電を抑えた模擬物層のSEYピーク約1.4–2.0・Emax約430–670 eVと交差エネルギーを提示。中和なしの反復照射でTEYが1へ近づくことを実証。patchモデルの曲線再現と組成同定の限界を明示。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000053
+      version_id: V1
+      url: https://digitalcommons.usu.edu/mp_facpub/68
+      source_type: full_text
+      locator: PDF p.1 Abstract/I; PDF pp.3–5 IV
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000053
+      version_id: V1
+      url: https://digitalcommons.usu.edu/mp_facpub/68
+      source_type: full_text
+      locator: PDF pp.3–5 IV; PDF pp.6–7 V-B
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000053
       version_id: V1
-      url: https://doi.org/10.1109/tps.2025.3615913
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://digitalcommons.usu.edu/mp_facpub/68
+      source_type: full_text
+      locator: PDF p.3 Table I; PDF pp.6–7 V-B/Tables II–III; PDF p.8 V-C/Fig.7
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000254
@@ -1210,7 +1240,7 @@ entries:
   summary:
     question: 月・火星の模擬土粒子の正味電荷は、接触材料、粒径、反復振動の履歴にどう依存するか。
     method: 真空中の接地円板でJSC-1・JSC-Mars-1を振動させ、穴から落下してファラデーカップに入る粒子の電荷分布を測った。金属・酸化面・シリカガラスと、振動回数・粒径を比較した。
-    contribution: 反復振動で電荷量が増え、非酸化金属の仕事関数との回帰から有効値5.8 eV・5.6 eVを推定したが、材質ごとの例外がある。平均電荷がゼロでも正負粒子が共存し、接触回数そのものや帯電の飽和は確認していない。局所電荷分布やUV・プラズマ中の平衡を直接測った結果ではない。
+    contribution: 反復振動で電荷量が増えた。非酸化金属との比較では、JSC-1の有効仕事関数を回帰の外挿から5.8 eV、JSC-Mars-1をPt上で平均電荷がほぼゼロになることから5.6 eVと推定したが、材質ごとの例外がある。平均電荷がゼロでも正負粒子が共存し、接触回数そのものや帯電の飽和は確認していない。局所電荷分布やUV・プラズマ中の平衡を直接測った結果ではない。
   evidence_by_item:
     question:
     - paper_id: P000255
@@ -1224,14 +1254,14 @@ entries:
       version_id: V1
       url: https://doi.org/10.1029/2002JE001897
       source_type: full_text
-      locator: "PDF pp.2–4、§3 Experimental Technique、実験系・選別・Fig.1–2"
+      locator: PDF pp.2–4、§3 Experimental Technique、実験系・選別・Fig.1–2
       checked_at: '2026-10-08'
     contribution:
     - paper_id: P000255
       version_id: V1
       url: https://doi.org/10.1029/2002JE001897
       source_type: full_text
-      locator: "PDF pp.4–7、§4 Experimental Results and Discussion、Fig.3–6、仕事関数・振動履歴・粒径・局所電荷の推定"
+      locator: PDF pp.4–7、§4 Experimental Results and Discussion、Fig.3–6、仕事関数・振動履歴・粒径・局所電荷の推定
       checked_at: '2026-10-08'
   inspection:
     level: full_text
@@ -1244,7 +1274,7 @@ entries:
   role: 光電子の出入りと接触帯電の初期履歴
   summary:
     question: 単粒子の電荷は、光電子放出、近傍面からの光電子捕集、接触帯電の履歴でどう変わるか。
-    method: 直径90–106 µmの導体・絶縁体・月火星模擬土を真空中で落下させ、UV照射時間や光電子放出面との距離を変えて、ファラデーカップによる電荷分布を比較した。電位は電荷から球形容量を仮定して換算した。
+    method: 直径90–106 µmの導体・絶縁体・月火星模擬土を真空中で落下させ、UV照射の有無や光電子放出面との距離を変えて、ファラデーカップによる電荷分布を比較した。電位は電荷から球形容量を仮定して換算した。
     contribution: 導体は孤立照射で正、光電子層内では負に帯電した。絶縁体・模擬土は70 msの照射でも幅広い初期電荷を保持し、この時間尺度では接触履歴の寄与が残る。照射なしと照射ありの別集団の比較であり、個々の粒子の時間変化や月面での平衡電荷を直接確定した測定ではない。
   evidence_by_item:
     question:
@@ -1259,14 +1289,14 @@ entries:
       version_id: V1
       url: https://doi.org/10.1029/2000JA000364
       source_type: full_text
-      locator: "PDF pp.3–6（印刷8345–8348）、§3 Experimental Techniques、Fig.1–4、電荷検出と照射・距離条件"
+      locator: PDF pp.3–6（印刷8345–8348）、§3 Experimental Techniques、Fig.1–4、電荷検出と照射・距離条件
       checked_at: '2026-10-08'
     contribution:
     - paper_id: P000266
       version_id: V1
       url: https://doi.org/10.1029/2000JA000364
       source_type: full_text
-      locator: "PDF pp.7–13（印刷8349–8355）、§4–5、導体・非導体の電荷分布と照射時間"
+      locator: PDF pp.7–13（印刷8349–8355）、§4–5、導体・非導体の電荷分布と照射時間
       checked_at: '2026-10-08'
   inspection:
     level: full_text
@@ -1563,22 +1593,28 @@ review:
   - 凝集体の見通し遮蔽に電子放出を組み込んだMa et al. (2013)は、ヘリオシース条件で構成粒子数・疎密と正電荷のべき則を示し、5–10 nmの構成粒子の二次電子放出の粒径効果も残るとした。一方、1 AUの光電子放出の例では、光電子供給を変えると同質量球より電荷が大きくも小さくもなり、帯電履歴中の符号も異なる。形状による放出電子の再捕集と、外へ逃げる量を対応させて読む必要がある。光電子の数値比較には、原稿内の式と供給率の不一致が残る。[@P000240]
 - heading: 材料の電子放出を、粉体と孤立粒子で比べる
   paragraphs:
-  - 月試料の光電子放出[@P000001]、二次電子放出[@P000150]、両者を扱う[@P000243]は、帯電モデルへ入れる材料特性の基礎となる。[@P000021]と[@P000166]は月試料・模擬粒子の電子照射帯電を比較した。[@P000153]は個別に保持した粒子の粒径依存、[@P000151]はApollo
-    16土壌の総電子収率と移動を扱う。単粒子と粉体層では、電子が隣の粒子へ戻る経路が異なる。
+  - 月試料の光電子放出[@P000001]、二次電子放出[@P000150]、両者を扱う[@P000243]は、帯電モデルへ入れる材料特性の基礎となる。[@P000021]と[@P000166]は月試料・模擬粒子の電子照射帯電を比較した。
   - '[@P000265]は真空中の導体粒子が孤立照射で正、光電子放出面の近くで負になる符号差を測った。[@P000005]は月ダストの負に帯電した単粒子へUVを当て、電荷減少から効率を求めた。吸収光子当たりの収率には中性極限への外挿と光吸収モデルが入るため、直接測る電荷・効率と区別する。月試料の平衡電位や付着面からの離脱をこの実験だけで確定することはできない。'
-  - '[@P000007]は表面近くの光電子シースと飛翔中の粒子を計算した。強い放出では、[@P000155]の空間電荷制限、[@P000156]の逆シース、[@P000089]の放出電子温度を含む運動論が電位分布の比較に役立つ。[@P000091]の確率モデルを使う際も、材料の放出特性と周囲へ逃げる電子量を対応させる必要がある。'
+  - '[@P000007]は表面近くの光電子シースと飛翔中の粒子を計算した。強い放出では、[@P000155]の空間電荷制限と[@P000156]の逆シースが電位分布の比較に役立つ。'
+  - Sheehanらは、壁へ失う電子と放出電子の有限温度を含む平面SCLシース運動論を構築した。温度比5では規格化電位が0.51となり、著者が比較に用いる冷放出流体基準1.02の約半分になる。同温度極限ではシース電位がゼロへ向かうため、放出電子を常に冷たいと置く近似は低温環境で大きな差を生みうる。解析は浮遊平面・無衝突・半Maxwell放出を仮定し、球形ダストの曲率や収集軌道への適用には別途検討が必要である。[@P000089]
+  - ダスト帯電を衝突ごとの電子数まで追う場合、Furman・Pivi（2002）の条件付き確率モデルは、平均二次電子収率に加えて電子数の揺らぎと放出エネルギーを記述する候補になる。反射・再拡散と真の二次電子の割合が変わると、総収率が近くても生成電子数分布は異なる。ただし本論文は加速器金属壁の較正であり、絶縁ダストの有限サイズや月レゴリスへの適用には材料・表面状態に応じた再較正が必要となる。[@P000091]
+  - Dukes and BaragiolaはApollo 16高地土壌61241の粉体層で総電子収率を測り、本文最大値1.13、第一交差80 eV、第二交差>2 keVを報告した。低nAパルスで得た層の収率とは別に、10 keV・3 nAの走査照射下では25分差の画像に多数の粒子移動と粒子間の帯電差が現れた。電荷緩和時間が不明なため帯電像は定性的であり、負に帯電した粒子の反発が付着力を超え、衝突で法線方向の運動量を得て放出するという連鎖は著者の機構解釈として位置づけられる。固定・清浄化した一試料から月面の浮遊頻度を直接与えることはできない。[@P000151]
+  - Abbasらは、Apollo11・17の孤立した正・負帯電粒子を電気力学的天秤に保持し、10–200eV電子による電荷変化を追った。多くの正帯電サブミクロン粒子が10–25eVでさらに正に帯電し、100eVでは放電する一方、大きな正粒子と掲載された負粒子は電荷の大きさを減らした。球形シリカにも似た傾向があり、粒径・初期電位・電子エネルギーを含む条件が帯電の方向を変えることを示す。ただし、小粒子の正方向増加は捕捉限界で測定が終わる場合があり、終電荷を平衡値とは扱えない。SEE収率は付着効率1と調整した入射流束を用いる逆算値である[@P000153]。
 - heading: 粒子層の局所帯電と、接触による電荷移動を追う
   paragraphs:
-  - 表面上の粒子では、[@P000009]の電子再捕集、[@P000010]の差動帯電と導電損失、[@P000013]の粒子と基板の隙間が論点になる。[@P000037]は模擬レゴリス上の電荷、VUV照射下の[@P000052]は正負の粒子を測った。[@P000391]は照射停止後に外部電圧で回収できた粒子の負電荷を測り、再捕集モデルと比較した。抽出・輸送・検出の選別を伴う正味電荷なので、局所パッチ電荷や粉体全体の平均へはそのまま移せない。光とプラズマを併用する[@P000014]、模擬物層の電子収率[@P000053]も、測定量をそろえて比較する。
+  - 表面上の粒子では、[@P000009]の電子再捕集、[@P000010]の差動帯電と導電損失、[@P000013]の粒子と基板の隙間が論点になる。[@P000037]は模擬レゴリス上の電荷、[@P000391]は照射停止後に外部電圧で回収できた粒子の負電荷を測り、再捕集モデルと比較した。抽出・輸送・検出の選別を伴う正味電荷なので、局所パッチ電荷や粉体全体の平均へはそのまま移せない。光とプラズマを併用する[@P000014]も、測定量をそろえて比較する。
   - 接触でも電荷が移る。[@P000254]は模擬レゴリス粒子同士、[@P000255]は模擬粒子と異種材料の接触を扱う。後者では反復振動で電荷量が増えるが、接触回数や飽和を直接確定していない。仕事関数との回帰にも材料ごとの例外がある。[@P000266]では絶縁体・模擬土に70 msのUV照射でも初期電荷が残った。これは接触履歴を含む電荷分布であり、照射後の平衡電荷を一般に与える値ではない。
   - 帯電を移動へ結び付ける[@P000314]は、シリカの初速・到達高度を微小空洞の帯電と粒子間反発から調べた。[@P000317]は斜長石の速度と直径を測り、電荷共有モデルで説明しにくい関係を示した。電荷を測る実験と運動から帯電モデルを制約する実験を、試料と場の条件に沿って対応させて読める。
   - '[@P000317]は350 eV電子照射下の斜長石で、表面上6 mmの粒径と速度を同時に測った。高速側の上限は、共有電荷モデルでは仮定した電場作用距離と両立せず、孤立球モデルは負の表面電位約−350–−119 V、局所帯電モデルも従来より大きい帯電係数を必要とする。粒子電荷・粉体表面電位・電場は未測定であり、運動からモデルの必要条件を絞る研究として、電荷を直接測る実験と対応させられる。'
+  - Pacaudら（2025）は、VUV照射後のJSC-1A層が+3〜+5 Vの巨視的電位でも、強電場で取り出した個粒子には正負両方の電荷があることを示した。±3.5 kVで検出した正498・負396 countsの各符号で半数以上が|Q|<10 fCだった。これはパッチ帯電・微小空隙のモデルと比較できる粒子測定であるが、光照射後の動員・捕集に加え、誘起導電と再落下時の摩擦帯電が観測分布へ混ざり得る。 [@P000052]
+  - Vegaほかは、3種類の月模擬レゴリスから調製し、導電性基板へ固定した4試料を低照射量の電子パルスで測り、各パルスの間に中和を行った。Table Iの二次電子収率フィットでは、ピークは約1.4〜2.0、ピーク入射エネルギーは約430〜670 eVとなった。中和なしの400 eV反復照射では全収率が1へ近づき、粒子層の収率測定自体が生む帯電を管理する重要性を示す。組成・粒径・固定方法が同時に異なるため、個々の粒子形状の効果は独立に決まっていない。[@P000053]
 - heading: 接触の履歴と、流れの中の粒子電荷
   paragraphs:
   - 接触帯電では、衝突回数に加えて粒子の姿勢と電荷分布も効く。[@P000308]は振動面上の単一球が帯電を止める姿勢へ移る過程を示した。二粒子を音響浮遊させた[@P000309]では、各衝突は確率的でも累積電荷は飽和則に従った。これらは月面固有の実験ではなく、接触帯電の履歴を理解する基礎となる。流れのあるプラズマでは、[@P000321]が遮蔽とウェイクによる粒子間力を整理し、[@P000318]がウェイク内の電荷変化を粒子運動から推定している。
 - heading: 粒子の帯電条件を、電場による清掃へ利用する
   paragraphs:
   - '[@P000368]はEDSにイオナイザを組み込み、極性、照射タイミング、粒径、湿度などを変えて除去率と清掃速度を調べた。照射による電荷供給を調整することで、既存の表面接触や電子放出の研究に、帯電条件を能動的に選ぶ比較軸が加わる。これは気体中の清掃実験であり、月面の光電子・プラズマ環境への適用には電流源と環境条件の対応付けが必要になる。'
+  - Dukes・Baragiolaは粉体層の総電子収率σ（二次電子δと後方散乱・再拡散電子ηの和）を、帯電を抑えた短時間・低電流照射で試料電流と収集電流から求めた。AbbasらはEDBに保持した孤立粒子の電荷変化率を電流モデルへ当てはめ、付着効率ηst=1を仮定し、電荷収支に合わせてビーム幅を調整して二次電子収率を逆算した。両者を比較するには、放出成分の定義、粒子電位による再捕捉、粒子位置での入射電子数の推定条件をそろえる必要がある。 [@P000151][@P000153]
 lineage:
 - title: 球の捕集から凝集体の形状へ
   steps:

@@ -5,18 +5,21 @@ question: 月面の電位と、その上に広がる光電子シースを決め�
 review:
 - heading: 電流の釣り合いと電子放出
   paragraphs:
-  - '[@P000002]の電流収支は、プラズマの電子・イオンが運ぶ電荷と、光電子・二次電子として出ていく電荷を釣り合わせる。放出特性を測る[@P000001]と、月面電場やシースを整理する[@P000020]を併せて読むと、材料特性から表面電位へ進む筋道が分かる。[@P000038]は太陽風と太陽放射を変え、環境条件への応答を調べた。'
+  - '[@P000002]の電流収支は、プラズマの電子・イオンが運ぶ電荷と、光電子・二次電子として出ていく電荷を釣り合わせる。放出特性を測る[@P000001]と、月面電場やシースを整理する[@P000020]を併せて読むと、材料特性から表面電位へ進む筋道が分かる。'
   - '[@P000020]は、観測で推定した地表電位を遮蔽長で割ってシース電場の規模を整理した。昼側の+10 Vと有効遮蔽長1 mは約10 V/mと整合し、終端では約10 mを仮定して内向き約1～10 V/mを見積もる。終端イオンシースの模式図にはλD≫10 mと記され、遠夜側の約100 mと約1 V/mは推測に残る。この整理から、後続のシース研究では電位分布と有効遮蔽長をどの粒子集団が決めるかが課題になる。'
   - 磁気圏ローブ中の昼側について、[@P000162]は太陽活動に応じた放出電流から電位を予測し、[@P000161]は観測光電子のエネルギーずれから電位を推定する。放出モデルと観測を往復して電流収支を調べる研究として読める。
+  - 電流収支を入力条件ごとに調べたStubbs et al. (2014) では、光放出電流JP0の増加が光電子密度を増やしてDebye長を短くし、表面電場を電位以上に強める。JP0を固定した光電子温度Tpの変化では電位とDebye長がともに増え、ゼロ電位角は変わらないが、光電子密度np0を固定すれば放出電流も変わり、この不変性は成り立たない。さらに非単調PICとの著者比較では、単調モデルの電位は周囲プラズマ基準の表面電位より電位障壁差に近かった。[@P000038]
 - heading: 単一の表面電位から、空間構造へ
   paragraphs:
-  - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]、イオン温度を組み込む最近の理論は[@P000055]に進める。
+  - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]に進める。
   - Lunar Prospectorによる非単調シースの議論に続き、[@P000036]はARTEMIS P1の電子だけでなくイオン温度も用いて、磁気圏尾部の日照側シースを一次元PICと照合した。イオン温度を上げると電位極小への落差が浅くなり、電子温度が低下してTi/Teが臨界比を超える時間帯には冷たいビームが消える。残る低エネルギーの上向きフラックス、探査機電位による汚染範囲、初期時間帯の予測との差も比較条件に含める。
   - シース内を動く粒子には、場所ごとの電場と電子・イオン電流が同時に効く。[@P000167]は帯電と軌道を連成し、希薄な条件では電子1個ずつの出入りが運動を変えることを示した。
   - シース内の力をダスト輸送へ結び付ける際には、表面から離れるまでの接触も条件になる。[@P000256]の総説はレゴリスの力学と帯電・運動を横断し、離脱時の電荷分布と微小粒子の実験を課題として整理した。シースが与える電場と、粒子を保持する力を対応させるための入口となる。
+  - 電子・光電子の速度分布に加え、イオンの熱圧力と境界から入る速度も電流収支・遮蔽を変える。Sana（2026）はMaxwell分布の電子と一次元定常イオン流を連立し、法線入射速度がBohm速度を十分上回るθ=40°・60°では温度効果が小さく、θ=80°では低温側に電位の初期低下、θ=85°では負の電位極小と光電子障壁の弱化が生じることを示した。さらに、シース端のBohm条件を満たしても正電位層に実数のイオン解がない場合を指摘し、通過条件に合わせた境界速度の修正を提案した。[@P000055]
 - heading: 実験の光電子シースを計算と照合する
   paragraphs:
-  - '[@P000030]は2010年の会議要旨、[@P000092]は2012年の雑誌論文として別に参照する。後者はUVを照射した金属面の探針計測と一次元PICを比較し、放出電子が作る電位構造を実験から検証する。金属面でのモデル実験と月面の粒子・材料条件の違いを踏まえ、月面シース計算の比較対象に使う。'
+  - '[@P000030]は2010年の会議要旨として参照する。真空中の金属面で作るモデル実験と月面の粒子・材料条件の違いを踏まえ、月面シース計算の比較対象を選ぶ。'
+  - Dove et al. (2012)の真空・金属面実験は、放出電子の返還と別の放出面から来る電子が、光電子層の密度を変えることを示した。負のグリッドに対する浮遊面の電位は約+1.5 Vへ近づき、二面からの電子を含む1D PICが密度分布を概ね再現する。外部の太陽風プラズマやレゴリスを含む月面条件への値の移行には条件差があり、この論文では電位極小やダスト浮上を直接測っていない。[@P000092]
 - heading: 電流収支へ入れる放出・散乱特性を観測で制約する
   paragraphs:
   - 光電子電流を計算するには、入射光子1個から何個の電子が出るかを知る必要がある。[@P000362]はARTEMISと太陽放射モデルから収率の下限を求めたが、放出電子のエネルギー分布の仮定による幅も示した。[@P000363]は後方散乱電子の表面への再衝突を扱い、[@P000364]は光電子の流束と検出確率を環境別に整理した。表面で生成された量と、シースや磁場を通って観測点へ届く量の対応が、電流収支の比較条件になる。
@@ -41,7 +44,7 @@ lineage:
     significance: UVで電子を放出させ、面の近傍の電気的構造を調べる実験系を示した。
   - paper_id: P000092
     title: 金属面の実験をPICと比較する
-    significance: UVで作った光電子シースの探針計測と一次元PICを照合する雑誌論文を示した。
+    significance: バイアスによる密度分布の変化を、表面へ戻る電子とグリッド由来電子を含むPICで概ね再現した。浮遊電位は負グリッドに対して約+1.5 Vで、シース電位極小の直接測定は未達だった。
     connection: 会議要旨に対し、実験・PIC比較の雑誌論文を加える
   - paper_id: P000036
     title: 月周回の電子分布をPICと比べる
@@ -87,8 +90,8 @@ entries:
   role: 月試料の光電子放出
   summary:
     question: 月試料の光電子放出は、どのようなシースを作るか。
-    method: 月試料の放出収率・電子分布を測り、シースを近似計算。
-    contribution: 月試料の電子分布とMaxwell近似の高エネルギー側のずれを示した。
+    method: 月試料14259,116の単色光下の収率・電子分布を測り、太陽スペクトルと合わせた放出分布からシースを近似計算。
+    contribution: 実測した放出特性から算出した太陽照射下の光電子分布は、同じ平均エネルギーのMaxwell近似より高エネルギー側が弱かった。
   evidence_by_item:
     question: []
     method: []
@@ -168,20 +171,38 @@ entries:
   locked_fields: []
 - paper_id: P000038
   group: balance
-  role: 太陽風・日照条件への応答
+  role: 三電流収支と光電子条件の感度
   summary:
-    question: 太陽風と日照の変化は、月面電位にどう効くか。
-    method: プラズマ条件と太陽放射を変えて、表面の電流収支を計算。
-    contribution: 電子・イオンの条件と照射条件に対する帯電の感度を整理。
+    question: 太陽風の密度・電子温度・イオン温度・流速と光電子放出の強さ・温度は、昼側と明暗境界の平衡電位・遮蔽距離・鉛直電場をどう変えるか。
+    method: 定常・局所平面・単調シースを仮定し、流れるMaxwellian電子・プロトンと光電子の三電流収支を数値探索。六つの入力を一つずつ変え、二電流解析近似と比較し、Debye長から電場を近似する。
+    contribution: 昼側の光放出量・光電子温度と境界の電子温度が主要因となること、冷たい電子や高速流ではイオンを省く二電流近似が外れることを示した。非単調シースでは予測電位が障壁差に近くなり、電場評価にも制約が残る。
   evidence_by_item:
-    question: []
-    method: []
-    contribution: []
+    question:
+    - paper_id: P000038
+      version_id: V1
+      url: https://doi.org/10.1016/j.pss.2013.07.008
+      source_type: full_text
+      locator: PDF p.6 3.1, Table 1 PIC column, Eq. 11; PDF p.9 4, Table 3; PDF p.10 4.5; PDF p.11 4.6, Eq. 12; PDF p.14 5.4
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000038
+      version_id: V1
+      url: https://doi.org/10.1016/j.pss.2013.07.008
+      source_type: full_text
+      locator: PDF p.6 3.1, Table 1 PIC column, Eq. 11; PDF p.9 4, Table 3; PDF p.10 4.5; PDF p.11 4.6, Eq. 12; PDF p.14 5.4
+      checked_at: '2026-10-12'
+    contribution:
+    - paper_id: P000038
+      version_id: V1
+      url: https://doi.org/10.1016/j.pss.2013.07.008
+      source_type: full_text
+      locator: PDF p.6 3.1, Table 1 PIC column, Eq. 11; PDF p.9 4, Table 3; PDF p.10 4.5; PDF p.11 4.6, Eq. 12; PDF p.14 5.4
+      checked_at: '2026-10-12'
   inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000007
@@ -214,7 +235,7 @@ entries:
   summary:
     question: 太陽風電子の流れを含むシースを半解析解で再現できるか。
     method: 半解析解を一次元PICで検証し、Maxwell・κ分布の差も比較。
-    contribution: 半解析解とPICが整合。平均的な太陽風で電子分布による差も小さい。
+    contribution: Maxwell分布の半解析解と一次元PICが整合し、平均太陽風条件ではκ=4.5の電子分布との差も小さかった。
   evidence_by_item:
     question: []
     method: []
@@ -314,24 +335,36 @@ entries:
   group: structure
   role: イオン温度と光電子シース
   summary:
-    question: 有限のイオン温度は、光電子シースをどう変えるか。
-    method: イオンの熱圧力を含む運動方程式とPoisson方程式を解く。
-    contribution: シースの厚さと電位分布、光電子の捕捉がイオン温度で変わることを示した。
+    question: 有限のイオン温度は、法線入射速度と太陽天頂角によって月面光電子シースをどう変えるか。
+    method: 熱圧力を含む一次元定常イオン流とMaxwell分布の電子・光電子をPoisson方程式に結び、準中性・電流収支・非単調電位の極小条件を連立する。θ、Ti/Te=0–10、圧力係数ψ=1・3を比較し、正電位層での実数イオン解の存在条件に応じた境界速度の修正も導入する。
+    contribution: 温度効果が高い太陽天頂角で大きくなり、θ=89°の負電位シースが薄くなる一方、θ=85°の非単調シースでは負の電位極小と光電子障壁が弱まることを示した。表面電場・極小高度には非単調な応答があり、シース端のBohm条件だけでは正電位層を通過できない場合も示す。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000055
+      version_id: V1
+      url: https://arxiv.org/abs/2608.19926v1
+      source_type: full_text
+      locator: PDF pp.1–2, §§I–II
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000055
+      version_id: V1
+      url: https://arxiv.org/abs/2608.19926v1
+      source_type: full_text
+      locator: PDF p.2 Eqs.(1)–(6), pp.6–9 Appendices A–E
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000055
       version_id: V1
-      url: https://arxiv.org/abs/2608.19926
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2608.19926v1
+      source_type: full_text
+      locator: PDF pp.3–5 Figs.2–9, pp.8–9 Eqs.(E1)–(E8)
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000161
@@ -339,8 +372,8 @@ entries:
   role: 昼側電位の統計と環境依存
   summary:
     question: 磁気圏ローブ中の昼側電位は、日照と周囲のプラズマにどう応答するか。
-    method: ARTEMISの光電子スペクトルをモデルと比較し、表面電位を統計的に推定。
-    contribution: 太陽天頂角・密度・電子温度・地殻磁場に対する電位の依存を整理した。
+    method: ARTEMISの光電子位相空間密度を放出モデルと50–250 eVで比較して電位を推定し、イオン観測による局所密度などへの依存を統計解析。
+    contribution: 昼側電位は太陽天頂角と局所プラズマ密度に応答し、その影響を除くと電子温度との依存も現れた。ARTEMISが観測した範囲では地殻磁場への明瞭な依存は認められなかった。
   evidence_by_item:
     question:
     - paper_id: P000161
@@ -373,7 +406,7 @@ entries:
   role: 太陽活動と昼側の正電位
   summary:
     question: 太陽活動の変化は、月面の光電子放出と正電位をどこまで高めるか。
-    method: ARTEMIS長期観測と光電子モデルを照合し、電流収支から電位を計算。
+    method: ARTEMIS長期観測と光電子モデルを照合し、単調シースを仮定した電流収支から+50 V超の電位を計算。
     contribution: 磁気圏ローブでフレア時に+100 Vを超える正電位を予測した。
   evidence_by_item:
     question:
@@ -388,8 +421,8 @@ entries:
       version_id: V1
       url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
       source_type: full_text
-      locator: Abstract; §4 Conclusions
-      checked_at: '2026-09-18'
+      locator: PDF pp.2-7, sections 2-3; Fig.4c (p.6); monotonic potential and >+50 V restriction (p.7)
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000162
       version_id: V1
@@ -475,36 +508,36 @@ entries:
   group: structure
   role: 金属面の光電子シース実験・PIC比較
   summary:
-    question: UVを受ける面の上の光電子層を、室内でどう再現するか。
-    method: 真空中の金属面を172 nmのUVで照射し、探針計測と一次元PICを比較。
-    contribution: 光電子層の密度分布とPICの整合を示し、光電子シースを測る実験系を提示。
+    question: UV照射面がつくる光電子層で、他面からの電子と戻り電子を分けながら、密度・有効温度・浮遊電位をどう測るか。
+    method: 約10⁻⁶ TorrでZr平面を172 nm VUV照射し、負のNiグリッドと正のcollectorで壁電子を抑制。阻止電位解析と円筒Langmuir探針を、二面のMaxwellian放出を含む1D PICと比較する。
+    contribution: バイアスによる密度分布の変化を、表面へ戻る電子とグリッド由来電子を含むPICで概ね再現した。浮遊電位は負グリッドに対して約+1.5 Vで、シース電位極小の直接測定は未達だった。
   evidence_by_item:
     question:
     - paper_id: P000092
       version_id: V1
       url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp.1–2 I/II
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000092
       version_id: V1
       url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp.2–3 II/II.B/III.A; p.5 IV
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000092
       version_id: V1
       url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF p.4 III.A/Fig.4; pp.5–6 IV/Figs.6–7; p.5 III.B
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000362

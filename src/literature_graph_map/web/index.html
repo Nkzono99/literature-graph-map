@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <header class="page-header">
-  <p class="eyebrow">LITERATURE LIBRARY</p>
   <h1>テーマ一覧</h1>
   <p class="lead">テーマごとに文献と要点を整理しています。概説の引用から、各文献を参照できます。</p>
-  {% if overview %}<div class="topic-meta"><a href="#review">テーマの概観へ <span aria-hidden="true">↓</span></a><a href="#themes">テーマを選ぶ <span aria-hidden="true">↓</span></a></div>{% endif %}
+  {% if overview %}<div class="topic-meta"><span><b>{{ topic_count }}</b>テーマ</span><nav class="jump-links" aria-label="ページ内"><a href="#review">テーマの概観へ</a><a href="#themes">テーマを選ぶ</a></nav></div>{% endif %}
 </header>
 {% if overview %}
 <section id="review" aria-labelledby="review-heading">
@@ -21,15 +20,12 @@
 {% endif %}
 <section aria-labelledby="themes">
   <div class="section-heading"><h2 id="themes">収録テーマ</h2><span>{{ topic_count }}件</span></div>
-  <ul class="theme-tree">
+  <ul class="theme-tree theme-index">
   {% for item in topic_links recursive %}
   <li>
   <article class="theme-entry">
-    <div>
-      <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
-      <p>{{ item.question }}</p>
-    </div>
-    <a class="theme-entry-link" href="{{ item.url }}"><span>{{ item.count }} {{ 'テーマ' if item.is_collection else '文献' }}</span><span class="sr-only">：{{ item.title }}を開く</span><span aria-hidden="true">→</span></a>
+    <h3><a href="{{ item.url }}">{{ item.title }}</a><span class="leader" aria-hidden="true"></span><span class="theme-count">{{ item.count }} {{ 'テーマ' if item.is_collection else '文献' }}</span></h3>
+    <p>{{ item.question }}</p>
   </article>
   {% if item.children %}<ul>{{ loop(item.children) }}</ul>{% endif %}
   </li>

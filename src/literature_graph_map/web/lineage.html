@@ -1,6 +1,6 @@
 <section id="lineage" aria-labelledby="lineage-heading">
   <div class="section-heading"><h2 id="lineage-heading">研究の系譜</h2><span>{{ milestones | length }}件の節目</span></div>
-  <p class="lineage-intro">収録文献から、考え方・観測・手法の変化をたどる。</p>
+  <p class="lineage-intro">収録文献から、考え方・観測・手法の変化をたどる。節目を選ぶと文献一覧の該当箇所へ移動する。</p>
   <div class="lineage-tracks">
     {% for track in topic.lineage %}
     <section class="lineage-track" aria-labelledby="lineage-track-{{ loop.index }}">
@@ -14,7 +14,6 @@
             <span class="lineage-citation">{{ citations[step.paper_id] }}{% if version.kind == 'submitted' or version.status == 'preprint' %}<span class="badge">{{ 'プレプリント・未査読' if version.status == 'preprint' else '査読状態未確認' }}</span>{% endif %}</span>
             <h4>{{ step.title }}</h4>
             <p>{{ step.significance }}</p>
-            <span class="lineage-jump">文献一覧へ <span aria-hidden="true">↓</span></span>
           </a>
         </li>
         {% endfor %}

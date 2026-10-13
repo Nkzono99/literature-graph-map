@@ -5,25 +5,32 @@ question: 地殻磁場が太陽風の粒子軌道・電位・表面照射をど�
 review:
 - heading: 局所的な磁場が、太陽風の届き方を変える
   paragraphs:
-  - 全球SVMモデルは強度に加えて方向を復元し、Reiner Gammaなどのスワールが半径方向成分ゼロ付近や低～中傾斜の領域に多いことを示した。ただし、局所的な水平場の強い面積と高アルベド域は一致せず、遮蔽や静電ダスト輸送の機構を確定した結果ではない。孤立中心異常の双極子近似からは3.3–3.5 Gaより前の極移動を推定するが、磁源の形状と磁化が海玄武岩より古いという形成順序の仮定に依存する[@P000107]。
+  - 全球SVMモデルは強度に加えて方向を復元し、Reiner Gammaなどのスワールが半径方向成分ゼロ付近や低～中傾斜の領域に多いことを示した。ただし、局所的な水平場の強い面積と高アルベド域は一致せず、遮蔽や静電ダスト輸送の機構を確定した結果ではない。孤立中心異常の双極子近似からは3.3–3.5
+    Gaより前の極移動を推定するが、磁源の形状と磁化が海玄武岩より古いという形成順序の仮定に依存する[@P000107]。
   - Chandrayaan-1が測った月面からの水素中性原子は、太陽風の到達を画像として見る手段になった。[@P000109]は磁気異常の上に粒子フラックスが減る領域と、その周囲の増加域を捉えた。[@P000110]は中性原子のエネルギー分布へ着目し、入射陽子が減速する分から正の電位を推定している。
 - heading: 電子とイオンの運動の違いが、電場と境界電流を作る
   paragraphs:
-  - Saito et al. (2012)の約25 km高度の同時計測は、粒子のエネルギー変化から磁気異常上空の静的な月外向き電場を推定した。電子加速とB²/nの相関0.798は、イオン慣性長程度の規模で電子とイオンの運動が分離するHall電場の説明と整合する。一方、反射イオンは磁場増強域より広く、入射太陽風より高温・低速であり、著者はかぐやより下の非断熱散乱と加熱領域を考えた。この上方の減速・加速と下方の反射・加熱の区別が、磁気異常周辺のプラズマ構造を読む手掛かりになる。[@P000111]
-  - Deca et al. (2015)は、月面下の水平双極子と太陽風を質量比256の三次元・全運動論的電磁PICで計算し、磁化された電子と非磁化イオンの侵入差が作る法線電場、電子のE×Bドリフト、イオンの偏向・逆流を結び付けた。密度3 cm⁻³、Ti=Te=35 eV、350 km/sの基準条件では、高度約13 kmに密度約1.6倍のハローが生じる。ただし表面へのイオン到達は最良遮蔽域で約8%、中心で最大約60%と位置に依存する。低速風ではハローと逆流イオンが消えても局所的な入射抑制が残り、IMFを倍にすると反射割合が下がっても表面遮蔽は強まる。反射率と表面遮蔽を分ける必要がある。月面は電荷を蓄積しない完全吸収境界で、光電子・二次電子・帯電ダストを含まないため、表面帯電やダスト輸送への接続には追加の境界物理が要る。[@P000112]
-  - Usuiら（2017）は、Reiner Gamma南西側を模した水平単一双極子と正面入射太陽風を三次元全粒子PICで計算し、電子が担う境界電流が赤道と高緯度で向きを変える構造を示した。外側の平均電子速度はE×Bドリフトでおおむね説明できるが、内縁では電荷分離電場で加速されたリング分布の旋回位相が偏り、約8倍の上流流速を持つ粒子の負方向流が強くなる。局所電子旋回半径約0.08Lは内縁幅約0.1Lと近かった。これは質量比100、固定IMF、光電子放出なしという縮約条件の結果であり、表面帯電と電流閉路の定量解析は課題として残る。[@P000114]
-  - Decaら（2016）は、表面法線方向の単一双極子を三次元の全運動論的電磁PICで計算し、中心カスプへ太陽風が流れ込み、その周囲に部分遮蔽の環ができることを示した。IMFを省き、上流密度3 cm⁻³、電子・イオン温度35 eV、太陽風速度350 km/s、縮約質量比mi/me=256を用いた事例である。最も強い環状遮蔽部では電子71%、イオン28%が表面到達を阻まれる一方、中心には高密度のhaloに囲まれた密度空洞が表面を守る従来型小磁気圏は形成されない。カスプ直上の局所分布では反射イオン成分が約21%を占め、著者は既報の水平双極子の約4倍と比較する。この値は限定された集計体積から得た割合であり、異常域全体の積分反射率ではない。環状の風化模様との関連は、この粒子照射・遮蔽の分布から示唆される。[@P000113]
+  - '[@P000111]の約25 km高度の同時計測は、粒子のエネルギー変化から磁気異常上空の静的な月外向き電場を推定した。電子加速とB²/nの相関0.798は、イオン慣性長程度の規模で電子とイオンの運動が分離するHall電場の説明と整合する。一方、反射イオンは磁場増強域より広く、入射太陽風より高温・低速であり、著者はかぐやより下の非断熱散乱と加熱領域を考えた。この上方の減速・加速と下方の反射・加熱の区別が、磁気異常周辺のプラズマ構造を読む手掛かりになる。'
+  - '[@P000112]は、月面下の水平双極子と太陽風を質量比256の三次元・全運動論的電磁PICで計算し、磁化された電子と非磁化イオンの侵入差が作る法線電場、電子のE×Bドリフト、イオンの偏向・逆流を結び付けた。密度3
+    cm⁻³、Ti=Te=35 eV、350 km/sの基準条件では、高度約13 kmに密度約1.6倍のハローが生じる。ただし表面へのイオン到達は最良遮蔽域で約8%、中心で最大約60%と位置に依存する。低速風ではハローと逆流イオンが消えても局所的な入射抑制が残り、IMFを倍にすると反射割合が下がっても表面遮蔽は強まる。反射率と表面遮蔽を分ける必要がある。月面は電荷を蓄積しない完全吸収境界で、光電子・二次電子・帯電ダストを含まないため、表面帯電やダスト輸送への接続には追加の境界物理が要る。'
+  - '[@P000114]は、Reiner Gamma南西側を模した水平単一双極子と正面入射太陽風を三次元全粒子PICで計算し、電子が担う境界電流が赤道と高緯度で向きを変える構造を示した。外側の平均電子速度はE×Bドリフトでおおむね説明できるが、内縁では電荷分離電場で加速されたリング分布の旋回位相が偏り、約8倍の上流流速を持つ粒子の負方向流が強くなる。局所電子旋回半径約0.08Lは内縁幅約0.1Lと近かった。これは質量比100、固定IMF、光電子放出なしという縮約条件の結果であり、表面帯電と電流閉路の定量解析は課題として残る。'
+  - '[@P000113]は、表面法線方向の単一双極子を三次元の全運動論的電磁PICで計算し、中心カスプへ太陽風が流れ込み、その周囲に部分遮蔽の環ができることを示した。IMFを省き、上流密度3
+    cm⁻³、電子・イオン温度35 eV、太陽風速度350 km/s、縮約質量比mi/me=256を用いた事例である。最も強い環状遮蔽部では電子71%、イオン28%が表面到達を阻まれる一方、中心には高密度のhaloに囲まれた密度空洞が表面を守る従来型小磁気圏は形成されない。カスプ直上の局所分布では反射イオン成分が約21%を占め、著者は既報の水平双極子の約4倍と比較する。この値は限定された集計体積から得た割合であり、異常域全体の積分反射率ではない。環状の風化模様との関連は、この粒子照射・遮蔽の分布から示唆される。'
   - ミニ磁気圏の実験とスワール形成を結ぶ[@P000275]は、局所磁場による遮蔽を室内でも調べる研究として参照できる。かぐや低高度観測の[@P000178]は電子のみが関わる磁気リコネクションの候補を検討する。表面への粒子到達に加え、磁場近傍でのエネルギー変換も比較の対象となる。
-  - Bamford（2012）[@P000275]は、磁化された電子と十分に磁化されないイオンの応答差が作る電位障壁を、既報の衛星観測とプラズマ風洞の空洞形成につないだ。太陽風イオンが減速・偏向されることで、局所磁場の勾配に応じた照射と風化の差がスワールの明暗を作りうると論じる。ただし読んだarXiv v1では、実験電位と電子慣性長の数値を印刷値から再現できず、定量的一致と表面形成の実証は区別して扱う必要がある。
+  - '[@P000275][@P000275]は、磁化された電子と十分に磁化されないイオンの応答差が作る電位障壁を、既報の衛星観測とプラズマ風洞の空洞形成につないだ。太陽風イオンが減速・偏向されることで、局所磁場の勾配に応じた照射と風化の差がスワールの明暗を作りうると論じる。ただし読んだarXiv
+    v1では、実験電位と電子慣性長の数値を印刷値から再現できず、定量的一致と表面形成の実証は区別して扱う必要がある。'
 - heading: 実際の磁場配置と表面帯電へ広げる
   paragraphs:
   - Reiner Gammaの観測に基づく磁場を使った[@P000115]は、太陽風の入射角や磁気シース通過を含む8条件を比較した。高度によっても粒子分布が大きく変わるため、周回機と着陸機の観測を結び付ける際に参照できる。
-  - Yeoら（2022）は、電子が磁化されイオンが非磁化となる垂直双極子と絶縁板に100–800 eVの窒素プラズマを照射した。ローブの正電位は100–200 eVではイオン停止の期待値に近づくが、400–800 eVでは下回り、ローブ内の電子電流も増えた。測定場の試験粒子計算では上空電子を電場だけで引き込む説明は不十分で、近傍で生まれたイオン誘起二次電子の輸送が有力な機構となる。ただし自己無撞着な電位再現は未了で、月面への適用には磁場形状、イオン種・表面材質、光電子環境を考慮する必要がある。[@P000116]
+  - '[@P000116]は、電子が磁化されイオンが非磁化となる垂直双極子と絶縁板に100–800 eVの窒素プラズマを照射した。ローブの正電位は100–200
+    eVではイオン停止の期待値に近づくが、400–800 eVでは下回り、ローブ内の電子電流も増えた。測定場の試験粒子計算では上空電子を電場だけで引き込む説明は不十分で、近傍で生まれたイオン誘起二次電子の輸送が有力な機構となる。ただし自己無撞着な電位再現は未了で、月面への適用には磁場形状、イオン種・表面材質、光電子環境を考慮する必要がある。'
   - Katoらは、ローブ様プラズマ中のかぐや光電子を表面磁場強度図と比較し、強い地殻磁場ほど光電子が減速する統計的傾向を示した。Reiner Gammaのswirlを横切る事例でも、電子フラックスの低下と負側のエネルギーずれが局所的に対応した。Fe重量比で高地・海側を分けても磁場強度への依存が残るが、磁場方向や空間的広がりは解析していない。磁化表面が相対的に正側となる解釈を支持する一方、電場の機構や全プラズマ環境への一般化には既報との比較とモデル仮定が伴う。[@P000051]
 - heading: 局所の遮蔽から、広域の照射とスワールへ
   paragraphs:
-  - Maynadié et al.（2025）はChandrayaan-1/SARAのENAと反射陽子を集積し、主要磁気異常の欠乏域の周囲に1,000 kmを超えるENA増強域を示した。ENA観測/予測比を陽子降下量の指標とするには、表面の後方散乱比と経験的散乱モデルの仮定がある。動圧が高いほどGerasimovich・Orientale Antipodeの遮蔽は弱まる一方、広いSPA磁気群では欠乏と周辺増強が強まる。著者は反射陽子の再入射と、反射陽子群による太陽風の偏向を説明機構として提案した。SWIMの領域平均反射比は視野・空間分解能に影響され、高緯度のENA定量解釈にも制約がある。[@P000117]
-  - Blewettほか（2011）はClementineの多波長画像と高度30 kmにそろえたLunar Prospector磁場を15地点で比較した。調査したスワールはすべて磁化地殻と対応し、明るい部分は光学的に未成熟だったが、Abelなど4磁場異常では明確なスワールを認めなかった。海ではFeO推定値が周囲より約1–4 wt.%低い一方、高地では差が小さく、Gerasimovichでは周囲とほぼ同じ値になる。FeOは絶対精度約±1–2 wt.%の分光推定であり、著者は低FeOの外来放出物や斜長石に富む微粒子の集積に加え、遮蔽下の異常風化が見かけのFeOを下げる可能性を示した。この解析では太陽風遮蔽と静電ダスト集積を明確には区別できない。[@P000108]
+  - '[@P000117]はChandrayaan-1/SARAのENAと反射陽子を集積し、主要磁気異常の欠乏域の周囲に1,000 kmを超えるENA増強域を示した。ENA観測/予測比を陽子降下量の指標とするには、表面の後方散乱比と経験的散乱モデルの仮定がある。動圧が高いほどGerasimovich・Orientale
+    Antipodeの遮蔽は弱まる一方、広いSPA磁気群では欠乏と周辺増強が強まる。著者は反射陽子の再入射と、反射陽子群による太陽風の偏向を説明機構として提案した。SWIMの領域平均反射比は視野・空間分解能に影響され、高緯度のENA定量解釈にも制約がある。'
+  - '[@P000108]はClementineの多波長画像と高度30 kmにそろえたLunar Prospector磁場を15地点で比較した。調査したスワールはすべて磁化地殻と対応し、明るい部分は光学的に未成熟だったが、Abelなど4磁場異常では明確なスワールを認めなかった。海ではFeO推定値が周囲より約1–4
+    wt.%低い一方、高地では差が小さく、Gerasimovichでは周囲とほぼ同じ値になる。FeOは絶対精度約±1–2 wt.%の分光推定であり、著者は低FeOの外来放出物や斜長石に富む微粒子の集積に加え、遮蔽下の異常風化が見かけのFeOを下げる可能性を示した。この解析では太陽風遮蔽と静電ダスト集積を明確には区別できない。'
   - 続く[@P000163]は、Chandrayaan-1の夕方側57周回の観測から、高度約100 kmのSPA磁気群上空で太陽風の偏向・加熱・減速が繰り返し現れることを調べた。反射陽子との相互作用で生じる広域のproto-magnetosheathという解釈により、フラックスの再分配を上空の流れの変化へ結び付けている。
 - heading: 遮蔽を比べ、散乱粒子の行き先を追う
   paragraphs:
@@ -41,6 +48,7 @@ lineage:
   - paper_id: P000109
     title: 中性原子で太陽風の遮蔽を撮る
     significance: 磁気異常上のフラックス減少と周囲の増加を画像化し、小規模な磁気圏を観測した。
+    connection: ''
   - paper_id: P000110
     title: 磁気異常上の電位を遠隔推定
     significance: 戻ってくる中性水素のエネルギーから入射陽子の減速を読み、正電位の分布を求めた。
@@ -54,6 +62,7 @@ lineage:
   - paper_id: P000115
     title: Reiner Gammaの環境を計算
     significance: 観測に基づく磁場で、太陽風の入射や磁気シース通過に伴う局所プラズマの変化を調べた。
+    connection: ''
   - paper_id: P000117
     title: 粒子の再分配を全球へ広げる
     significance: 主要磁気異常のENA欠乏と周囲1,000 km超の増強を示し、小異常では高動圧で遮蔽が弱まる一方、SPAでは強まる統計的応答を得た。反射陽子の再入射と太陽風偏向を、その広域差を説明する機構として提案した。
@@ -67,6 +76,7 @@ lineage:
   - paper_id: P000288
     title: 若い裏側試料の磁場を制約する
     significance: 隕石の古地磁気をApollo試料と比較し、全球磁場の停止時期を検討した。
+    connection: ''
 public: true
 scope:
   include:
@@ -104,756 +114,162 @@ entries:
 - paper_id: P000107
   group: field-and-swirls
   role: 表面ベクトル磁場と磁源・スワール形態の比較
-  summary:
-    question: かぐやとLunar Prospectorの低高度磁場観測から月面の磁場ベクトルを全球で復元し、スワールと磁源の形態・方向を比較できるか。
-    method: 高度10–45 kmの約500万件の磁場観測を選別・平均・外部場除去し、軌道に沿う一階微分を入力して230領域のSVM境界値逆解析を行った。平均半径1737.4 kmの球面上の半径方向成分をABICで正則化し、水平2成分を勾配補正付き境界積分から求めた。0.2°は格子間隔で、代表分解能は約1°の波長。
-    contribution: 平均月半径球面上の3成分と全強度の暫定全球モデルを提供し、最大718 nT、電子反射法との5°×5°平均全強度相関0.671を得た。スワールの明るい部分と低～中傾斜・半径方向ゼロ等値線の対応を示し、中心異常の磁極と伸長異常の方向から、条件付きで極移動年代と磁源候補を議論した。
   evidence_by_item:
     question:
     - paper_id: P000107
       version_id: V1
       url: https://doi.org/10.1002/2014je004785
       source_type: full_text
-      locator: PDF pp.3–4; §3.1, Fig.1 PDF p.4; §3.1, Fig.1b PDF p.6; §4.2, Fig.4 PDF p.7; §4.2 PDF pp.16–18; §5.3.1, Fig.12 PDF pp.12,14–16; §5.2.2, Table 2 PDF pp.19–21; §5.4.1, Fig.13 PDF p.19; §5.4.1–5.4.2 PDF pp.12,14–18; §§5.2.2,5.3
+      locator: PDF pp.3–4; §3.1, Fig.1 PDF p.4; §3.1, Fig.1b PDF p.6; §4.2, Fig.4
+        PDF p.7; §4.2 PDF pp.16–18; §5.3.1, Fig.12 PDF pp.12,14–16; §5.2.2, Table
+        2 PDF pp.19–21; §5.4.1, Fig.13 PDF p.19; §5.4.1–5.4.2 PDF pp.12,14–18; §§5.2.2,5.3
       checked_at: '2026-10-13'
     method:
     - paper_id: P000107
       version_id: V1
       url: https://doi.org/10.1002/2014je004785
       source_type: full_text
-      locator: PDF pp.3–4; §3.1, Fig.1 PDF p.4; §3.1, Fig.1b PDF p.6; §4.2, Fig.4 PDF p.7; §4.2 PDF pp.16–18; §5.3.1, Fig.12 PDF pp.12,14–16; §5.2.2, Table 2 PDF pp.19–21; §5.4.1, Fig.13 PDF p.19; §5.4.1–5.4.2 PDF pp.12,14–18; §§5.2.2,5.3
+      locator: PDF pp.3–4; §3.1, Fig.1 PDF p.4; §3.1, Fig.1b PDF p.6; §4.2, Fig.4
+        PDF p.7; §4.2 PDF pp.16–18; §5.3.1, Fig.12 PDF pp.12,14–16; §5.2.2, Table
+        2 PDF pp.19–21; §5.4.1, Fig.13 PDF p.19; §5.4.1–5.4.2 PDF pp.12,14–18; §§5.2.2,5.3
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000107
       version_id: V1
       url: https://doi.org/10.1002/2014je004785
       source_type: full_text
-      locator: PDF pp.3–4; §3.1, Fig.1 PDF p.4; §3.1, Fig.1b PDF p.6; §4.2, Fig.4 PDF p.7; §4.2 PDF pp.16–18; §5.3.1, Fig.12 PDF pp.12,14–16; §5.2.2, Table 2 PDF pp.19–21; §5.4.1, Fig.13 PDF p.19; §5.4.1–5.4.2 PDF pp.12,14–18; §§5.2.2,5.3
+      locator: PDF pp.3–4; §3.1, Fig.1 PDF p.4; §3.1, Fig.1b PDF p.6; §4.2, Fig.4
+        PDF p.7; §4.2 PDF pp.16–18; §5.3.1, Fig.12 PDF pp.12,14–16; §5.2.2, Table
+        2 PDF pp.19–21; §5.4.1, Fig.13 PDF p.19; §5.4.1–5.4.2 PDF pp.12,14–18; §§5.2.2,5.3
       checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000108
   group: field-and-swirls
   role: スワールと宇宙風化
-  summary:
-    question: 月のスワールと地殻磁場異常はどこで対応し、周囲との分光的な差から太陽風遮蔽とダスト集積を区別できるか。
-    method: Clementine UV-Visの200 m/画素・5波長反射率からFeO推定値とOMATを作り、15地点の画像・地質と、高度30 kmにそろえたLunar Prospector磁場マップ・軌道通過を比較。4代表地点のROI平均と950/750 nm比対750 nm反射率を解析した。
-    contribution: 調査した11スワール地点は磁場異常と対応し、すべて明るい部分が光学的に未成熟だったが、4磁場異常では明確なスワールが未確認。低FeO推定には海と高地の差やGerasimovichの例外があり、異常風化による推定偏り、外来放出物、斜長石に富む微粒子の集積を検討して、両起源仮説の判別は保留した。
-  evidence_by_item:
-    question:
-    - paper_id: P000108
-      version_id: V1
-      url: https://doi.org/10.1029/2010je003656
-      source_type: full_text
-      locator: PDF pp.1–3, Table 1; pp.7–11 §§4.4–4.7; p.27 ¶88 PDF pp.2–4; p.12 ¶50; Table 1 PDF p.15 ¶58; p.18 Fig.17; p.27 ¶88 PDF p.15, §7.2 ¶¶58–60; p.19 Table 2; p.17 §7.6; p.27 §9 PDF p.17 §7.6; p.19 Table 2; pp.25–26 Figs.24–25 PDF pp.19–20 Figs.18–19, Table 2 PDF pp.21–23 ¶¶77–80; p.27 Fig.26 PDF pp.24–28 §§8.3–9, ¶¶82–93 PDF pp.2–3 §2/Table 1 PDF pp.15–19 §7.2–7.6/Table 2 PDF pp.21–28 §§8–9/Fig.26
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000108
-      version_id: V1
-      url: https://doi.org/10.1029/2010je003656
-      source_type: full_text
-      locator: PDF pp.1–3, Table 1; pp.7–11 §§4.4–4.7; p.27 ¶88 PDF pp.2–4; p.12 ¶50; Table 1 PDF p.15 ¶58; p.18 Fig.17; p.27 ¶88 PDF p.15, §7.2 ¶¶58–60; p.19 Table 2; p.17 §7.6; p.27 §9 PDF p.17 §7.6; p.19 Table 2; pp.25–26 Figs.24–25 PDF pp.19–20 Figs.18–19, Table 2 PDF pp.21–23 ¶¶77–80; p.27 Fig.26 PDF pp.24–28 §§8.3–9, ¶¶82–93 PDF pp.2–3 §2/Table 1 PDF pp.15–19 §7.2–7.6/Table 2 PDF pp.21–28 §§8–9/Fig.26
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000108
-      version_id: V1
-      url: https://doi.org/10.1029/2010je003656
-      source_type: full_text
-      locator: PDF pp.1–3, Table 1; pp.7–11 §§4.4–4.7; p.27 ¶88 PDF pp.2–4; p.12 ¶50; Table 1 PDF p.15 ¶58; p.18 Fig.17; p.27 ¶88 PDF p.15, §7.2 ¶¶58–60; p.19 Table 2; p.17 §7.6; p.27 §9 PDF p.17 §7.6; p.19 Table 2; pp.25–26 Figs.24–25 PDF pp.19–20 Figs.18–19, Table 2 PDF pp.21–23 ¶¶77–80; p.27 Fig.26 PDF pp.24–28 §§8.3–9, ¶¶82–93 PDF pp.2–3 §2/Table 1 PDF pp.15–19 §7.2–7.6/Table 2 PDF pp.21–28 §§8–9/Fig.26
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000109
   group: particles-and-potentials
   role: 中性原子による遮蔽の画像化
-  summary:
-    question: 磁気異常による太陽風の遮蔽を、月面から戻る中性原子で捉えられるか。
-    method: Chandrayaan-1/SARAで後方散乱する水素原子を画像化。
-    contribution: 直径約360 kmのフラックス減少域と、その周囲の増加域を観測した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000109
-      version_id: V1
-      url: https://doi.org/10.1029/2009gl041721
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000110
   group: particles-and-potentials
   role: ENAによる電位推定
-  summary:
-    question: 磁気異常上空の電位を、離れた場所から面として推定できるか。
-    method: Chandrayaan-1/CENAの水素中性原子スペクトルから入射陽子の減速を推定。
-    contribution: Gerasimovic磁気異常内に+135 Vを超える電位を推定した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000110
-      version_id: V1
-      url: https://doi.org/10.1002/grl.50135
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000111
   group: particles-and-potentials
   role: 磁気異常上空の電場と低高度反射・加熱
-  summary:
-    question: 月の昼側磁気異常上空で電子加速と陽子・アルファ粒子の減速は同じ電位差で説明でき、反射イオンの加熱はどこで生じるか。
-    method: かぐやMAP-PACEの対向電子・イオンセンサーとLMAGで、南極エイトケン盆地上空約25 kmの電子ピッチ角・粒子スペクトル・密度/速度/温度を比較。2009年4月23日の13事例で電子加速と陽子減速、最大磁場Bと太陽風密度nを用いたB²/nの相関を調べた。
-    contribution: 電子の約+150 eV/qの加速と陽子・アルファ粒子の約−150 eV/qの減速の対応から、かぐやより上の静的な月外向き電場を推定した。13事例の陽子減速と電子加速は比例係数0.98・相関0.965で対応し、B²/nとの相関0.798はHall電場の解釈と整合した。反射イオンの高温・低速・広い分布から、約25 kmより下の非断熱散乱と加熱を論じた。
   evidence_by_item:
     question:
     - paper_id: P000111
       version_id: V1
       url: https://doi.org/10.5047/eps.2011.07.011
       source_type: full_text
-      locator: PDF pp. 2–3, §2–3, Fig. 1 PDF p. 2 §3 and p. 4 Fig. 2 PDF pp. 2–5 §3 and p. 6 Fig. 4; date visible in Fig. 3 and 4 PDF p. 4 §3; p. 6 Fig. 5 PDF p. 5 §4; pp. 4, 6 Figs. 4–5 PDF p. 4 §3; p. 7 Fig. 6 PDF p. 6 §4; p. 7 Figs. 6–7; p. 9 concluding discussion PDF pp. 7–8 §4; p. 8 Fig. 8 PDF p. 8 §4 PDF pp. 8–9 §4, eqs. (1)–(2); p. 8 Fig. 9 PDF p. 9 §4 PDF pp.4–9 §3–4, Figs.4–9 PDF p.8 eqs.(1)–(2); p.9 Hall/1D applicability discussion
+      locator: PDF pp. 2–3, §2–3, Fig. 1 PDF p. 2 §3 and p. 4 Fig. 2 PDF pp. 2–5 §3
+        and p. 6 Fig. 4; date visible in Fig. 3 and 4 PDF p. 4 §3; p. 6 Fig. 5 PDF
+        p. 5 §4; pp. 4, 6 Figs. 4–5 PDF p. 4 §3; p. 7 Fig. 6 PDF p. 6 §4; p. 7 Figs.
+        6–7; p. 9 concluding discussion PDF pp. 7–8 §4; p. 8 Fig. 8 PDF p. 8 §4 PDF
+        pp. 8–9 §4, eqs. (1)–(2); p. 8 Fig. 9 PDF p. 9 §4 PDF pp.4–9 §3–4, Figs.4–9
+        PDF p.8 eqs.(1)–(2); p.9 Hall/1D applicability discussion
       checked_at: '2026-10-13'
     method:
     - paper_id: P000111
       version_id: V1
       url: https://doi.org/10.5047/eps.2011.07.011
       source_type: full_text
-      locator: PDF pp. 2–3, §2–3, Fig. 1 PDF p. 2 §3 and p. 4 Fig. 2 PDF pp. 2–5 §3 and p. 6 Fig. 4; date visible in Fig. 3 and 4 PDF p. 4 §3; p. 6 Fig. 5 PDF p. 5 §4; pp. 4, 6 Figs. 4–5 PDF p. 4 §3; p. 7 Fig. 6 PDF p. 6 §4; p. 7 Figs. 6–7; p. 9 concluding discussion PDF pp. 7–8 §4; p. 8 Fig. 8 PDF p. 8 §4 PDF pp. 8–9 §4, eqs. (1)–(2); p. 8 Fig. 9 PDF p. 9 §4 PDF pp.4–9 §3–4, Figs.4–9 PDF p.8 eqs.(1)–(2); p.9 Hall/1D applicability discussion
+      locator: PDF pp. 2–3, §2–3, Fig. 1 PDF p. 2 §3 and p. 4 Fig. 2 PDF pp. 2–5 §3
+        and p. 6 Fig. 4; date visible in Fig. 3 and 4 PDF p. 4 §3; p. 6 Fig. 5 PDF
+        p. 5 §4; pp. 4, 6 Figs. 4–5 PDF p. 4 §3; p. 7 Fig. 6 PDF p. 6 §4; p. 7 Figs.
+        6–7; p. 9 concluding discussion PDF pp. 7–8 §4; p. 8 Fig. 8 PDF p. 8 §4 PDF
+        pp. 8–9 §4, eqs. (1)–(2); p. 8 Fig. 9 PDF p. 9 §4 PDF pp.4–9 §3–4, Figs.4–9
+        PDF p.8 eqs.(1)–(2); p.9 Hall/1D applicability discussion
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000111
       version_id: V1
       url: https://doi.org/10.5047/eps.2011.07.011
       source_type: full_text
-      locator: PDF pp. 2–3, §2–3, Fig. 1 PDF p. 2 §3 and p. 4 Fig. 2 PDF pp. 2–5 §3 and p. 6 Fig. 4; date visible in Fig. 3 and 4 PDF p. 4 §3; p. 6 Fig. 5 PDF p. 5 §4; pp. 4, 6 Figs. 4–5 PDF p. 4 §3; p. 7 Fig. 6 PDF p. 6 §4; p. 7 Figs. 6–7; p. 9 concluding discussion PDF pp. 7–8 §4; p. 8 Fig. 8 PDF p. 8 §4 PDF pp. 8–9 §4, eqs. (1)–(2); p. 8 Fig. 9 PDF p. 9 §4 PDF pp.4–9 §3–4, Figs.4–9 PDF p.8 eqs.(1)–(2); p.9 Hall/1D applicability discussion
+      locator: PDF pp. 2–3, §2–3, Fig. 1 PDF p. 2 §3 and p. 4 Fig. 2 PDF pp. 2–5 §3
+        and p. 6 Fig. 4; date visible in Fig. 3 and 4 PDF p. 4 §3; p. 6 Fig. 5 PDF
+        p. 5 §4; pp. 4, 6 Figs. 4–5 PDF p. 4 §3; p. 7 Fig. 6 PDF p. 6 §4; p. 7 Figs.
+        6–7; p. 9 concluding discussion PDF pp. 7–8 §4; p. 8 Fig. 8 PDF p. 8 §4 PDF
+        pp. 8–9 §4, eqs. (1)–(2); p. 8 Fig. 9 PDF p. 9 §4 PDF pp.4–9 §3–4, Figs.4–9
+        PDF p.8 eqs.(1)–(2); p.9 Hall/1D applicability discussion
       checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000112
   group: kinetic-models
   role: 電子の電荷分離電場と三次元の遮蔽構造
-  summary:
-    question: イオン旋回半径より小さな月磁気異常で、電子とイオンの応答差は密度空洞・ハロー・表面遮蔽をどう作り、IMFと太陽風速度・方向で何が変わるか。
-    method: iPic3Dによる三次元・全運動論的電磁PIC。月面下13 kmの水平単一双極子、完全吸収月面、電子/イオン質量比1/256、低減光速を用い、漂移Maxwellianの太陽風についてIMF方向/振幅と風速/45°入射を一因子ずつ比較する。
-    contribution: 基準Run Aでは電子とイオンの侵入差が作る法線電場によりイオンが減速・偏向し、電子のE×Bドリフトが非対称なハローを生む。低速風でハロー・逆流イオンが消えても局所的な表面入射抑制が残り、IMF倍増で反射割合が下がっても表面遮蔽が改善するため、構造・反射・表面到達を分けて評価する必要を示す。
-  evidence_by_item:
-    question:
-    - paper_id: P000112
-      version_id: V1
-      url: https://doi.org/10.1002/2015ja021070
-      source_type: full_text
-      locator: PDF p4 §2.3; p12 Table2 PDF pp3–4 §2.2 PDF pp4–5 §3.1; Tables1–2 PDF p7 §3.1; p8 Fig5; p19 §5 PDF pp5–8 §3.1, Figs2–5 PDF p7 §3.1,Fig4; p19 §5 PDF pp8–10 §3.2.1,Eqs1–2,Figs6–7 PDF pp10–12 §3.2.1–3.2.2,Figs6,8–9 PDF p13 §3.2.2,Fig10; p14 Fig11 PDF pp7,10–11 §3.1–3.2.1 PDF pp12,14–15 Table2,§4.1.1,Fig12 PDF pp15–16 §4.1.2,Fig13;Table2 PDF p16 §4.2.1,Figs14–15;Table2 PDF pp16–17 §4.2.1,Figs14–15;Table2 PDF pp17–18 §4.2.2,Fig16;Table2 PDF pp4–5 §2.2–3.1 PDF pp7–10 §3.1–3.2.1 PDF pp15–17 §4.1.2–4.2.1
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000112
-      version_id: V1
-      url: https://doi.org/10.1002/2015ja021070
-      source_type: full_text
-      locator: PDF p4 §2.3; p12 Table2 PDF pp3–4 §2.2 PDF pp4–5 §3.1; Tables1–2 PDF p7 §3.1; p8 Fig5; p19 §5 PDF pp5–8 §3.1, Figs2–5 PDF p7 §3.1,Fig4; p19 §5 PDF pp8–10 §3.2.1,Eqs1–2,Figs6–7 PDF pp10–12 §3.2.1–3.2.2,Figs6,8–9 PDF p13 §3.2.2,Fig10; p14 Fig11 PDF pp7,10–11 §3.1–3.2.1 PDF pp12,14–15 Table2,§4.1.1,Fig12 PDF pp15–16 §4.1.2,Fig13;Table2 PDF p16 §4.2.1,Figs14–15;Table2 PDF pp16–17 §4.2.1,Figs14–15;Table2 PDF pp17–18 §4.2.2,Fig16;Table2 PDF pp4–5 §2.2–3.1 PDF pp7–10 §3.1–3.2.1 PDF pp15–17 §4.1.2–4.2.1
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000112
-      version_id: V1
-      url: https://doi.org/10.1002/2015ja021070
-      source_type: full_text
-      locator: PDF p4 §2.3; p12 Table2 PDF pp3–4 §2.2 PDF pp4–5 §3.1; Tables1–2 PDF p7 §3.1; p8 Fig5; p19 §5 PDF pp5–8 §3.1, Figs2–5 PDF p7 §3.1,Fig4; p19 §5 PDF pp8–10 §3.2.1,Eqs1–2,Figs6–7 PDF pp10–12 §3.2.1–3.2.2,Figs6,8–9 PDF p13 §3.2.2,Fig10; p14 Fig11 PDF pp7,10–11 §3.1–3.2.1 PDF pp12,14–15 Table2,§4.1.1,Fig12 PDF pp15–16 §4.1.2,Fig13;Table2 PDF p16 §4.2.1,Figs14–15;Table2 PDF pp16–17 §4.2.1,Figs14–15;Table2 PDF pp17–18 §4.2.2,Fig16;Table2 PDF pp4–5 §2.2–3.1 PDF pp7–10 §3.1–3.2.1 PDF pp15–17 §4.1.2–4.2.1
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000113
   group: kinetic-models
   role: 双極子の向きによる中心流入と環状遮蔽の違い
-  summary:
-    question: 表面法線方向の双極子は、電子とイオンの運動の分離、局所反射、中心カスプと周囲の表面遮蔽をどう変えるか。
-    method: IMFを省いた三次元の全運動論的電磁PIC（iPic3D）で、表面下13 kmの単一法線方向双極子を計算する。上流はn=3 cm⁻³、Ti=Te=35 eV、v=(-350,0,0) km/s、縮約質量比mi/me=256。電磁場の開放境界と完全吸収する月面を用いる。
-    contribution: 中心カスプには従来型の小磁気圏が形成されず、周囲に部分遮蔽の環ができる。最も強い局所遮蔽は電子71%、イオン28%。カスプ直上の限定された分布で反射イオン成分が約21%を占める。
-  evidence_by_item:
-    question:
-    - paper_id: P000113
-      version_id: V1
-      url: https://doi.org/10.1002/2016gl068535
-      source_type: full_text
-      locator: PDF p.2, §2, unnumbered dipole-field equation PDF p.2, §2 PDF p.3, §3, Fig.1a–c PDF pp.3–4, §3, Fig.2a–c PDF pp.3–4, §3, Fig.3a–c PDF p.5, §4–4.1, Fig.4a–d PDF p.6, §4.1, Fig.4f and local cylindrical aperture definition PDF p.6, §4.1, definition of minimagnetosphere PDF p.6, §4.1; Fig.1c on PDF p.3 PDF pp.6–7, §4.2, Fig.5 on PDF p.5 PDF pp.6–7, §4.2, Fig.6 on PDF p.6 PDF pp.3–4, §3, Fig.1–3 PDF p.6, §4.1 PDF p.7, §5
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000113
-      version_id: V1
-      url: https://doi.org/10.1002/2016gl068535
-      source_type: full_text
-      locator: PDF p.2, §2, unnumbered dipole-field equation PDF p.2, §2 PDF p.3, §3, Fig.1a–c PDF pp.3–4, §3, Fig.2a–c PDF pp.3–4, §3, Fig.3a–c PDF p.5, §4–4.1, Fig.4a–d PDF p.6, §4.1, Fig.4f and local cylindrical aperture definition PDF p.6, §4.1, definition of minimagnetosphere PDF p.6, §4.1; Fig.1c on PDF p.3 PDF pp.6–7, §4.2, Fig.5 on PDF p.5 PDF pp.6–7, §4.2, Fig.6 on PDF p.6 PDF pp.3–4, §3, Fig.1–3 PDF p.6, §4.1 PDF p.7, §5
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000113
-      version_id: V1
-      url: https://doi.org/10.1002/2016gl068535
-      source_type: full_text
-      locator: PDF p.2, §2, unnumbered dipole-field equation PDF p.2, §2 PDF p.3, §3, Fig.1a–c PDF pp.3–4, §3, Fig.2a–c PDF pp.3–4, §3, Fig.3a–c PDF p.5, §4–4.1, Fig.4a–d PDF p.6, §4.1, Fig.4f and local cylindrical aperture definition PDF p.6, §4.1, definition of minimagnetosphere PDF p.6, §4.1; Fig.1c on PDF p.3 PDF pp.6–7, §4.2, Fig.5 on PDF p.5 PDF pp.6–7, §4.2, Fig.6 on PDF p.6 PDF pp.3–4, §3, Fig.1–3 PDF p.6, §4.1 PDF p.7, §5
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000114
   group: kinetic-models
   role: 電子境界電流の三次元構造と有限旋回半径
-  summary:
-    question: ミニ磁気圏の電子境界電流はどの三次元構造を持ち、密度が急減する内縁の強い電子流はE×Bドリフトだけで説明できるか。
-    method: Reiner Gamma南西側を模す地下0.2Lの水平単一双極子に太陽風を正面入射させ、電子・イオンを粒子として解く三次元EM-PICを実施。mi/me=100、vc/vflow=20、Mach数5、圧力釣合い位置でのriL/L=4へ縮約し、固定+z IMF・光電子なしの条件で電流と電子速度分布を比較した。
-    contribution: 電子が担う境界電流の赤道・高緯度での折り返しを示した。内縁では電荷分離電場で加速されたリング分布の旋回位相が偏り、約8vflowの粒子速度を持つ強い負方向電子流が生じると説明し、局所電子旋回半径約0.08Lと内縁幅約0.1Lの近い対応を得た。
-  evidence_by_item:
-    question:
-    - paper_id: P000114
-      version_id: V1
-      url: https://doi.org/10.1002/2016ja022927
-      source_type: full_text
-      locator: PDF pp.3–4、Tables 1–2、§2 PDF pp.4–5、§2、Fig.1 PDF pp.5–7、§3、Figs.2–3 PDF pp.6–11、Figs.4–8 PDF pp.11–13、Eqs.4–6、Fig.9 PDF pp.13–14、Figs.10–11 PDF pp.14–15、§4 PDF pp.3–4、§2、Table 2 PDF pp.7–11、Figs.4–8 PDF pp.12–15、§4、Figs.9–11
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000114
-      version_id: V1
-      url: https://doi.org/10.1002/2016ja022927
-      source_type: full_text
-      locator: PDF pp.3–4、Tables 1–2、§2 PDF pp.4–5、§2、Fig.1 PDF pp.5–7、§3、Figs.2–3 PDF pp.6–11、Figs.4–8 PDF pp.11–13、Eqs.4–6、Fig.9 PDF pp.13–14、Figs.10–11 PDF pp.14–15、§4 PDF pp.3–4、§2、Table 2 PDF pp.7–11、Figs.4–8 PDF pp.12–15、§4、Figs.9–11
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000114
-      version_id: V1
-      url: https://doi.org/10.1002/2016ja022927
-      source_type: full_text
-      locator: PDF pp.3–4、Tables 1–2、§2 PDF pp.4–5、§2、Fig.1 PDF pp.5–7、§3、Figs.2–3 PDF pp.6–11、Figs.4–8 PDF pp.11–13、Eqs.4–6、Fig.9 PDF pp.13–14、Figs.10–11 PDF pp.14–15、§4 PDF pp.3–4、§2、Table 2 PDF pp.7–11、Figs.4–8 PDF pp.12–15、§4、Figs.9–11
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000115
   group: kinetic-models
   role: Reiner Gammaの局所環境
-  summary:
-    question: Reiner Gamma付近のプラズマは、高度や月の軌道位置によってどう変わるか。
-    method: 観測に基づく磁場モデルを使い、8条件を全運動論的PICで計算。
-    contribution: 高度・太陽風入射角・磁気シース通過による違いを整理し、現地計測の条件を論じた。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000115
-      version_id: V1
-      url: https://doi.org/10.1029/2021ja029180
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000116
   group: surface-and-global
   role: 電子遮蔽領域の正電位を制限する表面電子の実験
-  summary:
-    question: 電子が磁化されイオンが非磁化の双極子ローブでは、100–800 eVの流れが作る正電位がどこまで上がり、高エネルギー側の電子流入を何が担うか。
-    method: 窒素プラズマ（100–800 eV、1–100 mA）を垂直双極子の上の絶縁板へ照射し、放出探針で電位、Langmuir探針で電子電流を測定。測定場を用いる試験粒子計算で上空電子とイオン誘起二次電子の侵入を比較した。
-    contribution: ローブの正電位は100–200 eVではイオンエネルギーに近づくが、400–800 eVでは下回り、電子電流も増した。測定場を与える試験粒子計算では上空電子を電場だけで引き込む説明は不十分で、近傍のイオン誘起二次電子の輸送が電位を下げる説明を支持した。
-  evidence_by_item:
-    question:
-    - paper_id: P000116
-      version_id: V1
-      url: https://doi.org/10.1029/2021ja029821
-      source_type: full_text
-      locator: PDF pp. 2–3, §2, Fig. 1, Table 1 PDF pp. 3–4, §3.1, Fig. 2–3; p. 7, §4 PDF p. 4, §3.2, Fig. 4 PDF pp. 4–5, §3.3.1, Fig. 5–7 PDF pp. 5–6, §3.3.1, Fig. 8 PDF pp. 5–7, §3.3.2, Fig. 9–10 PDF pp. 2–4, §2–3.2, Table 1, Figs. 1–4 PDF pp. 5–7, §3.3–4, Figs. 8–10
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000116
-      version_id: V1
-      url: https://doi.org/10.1029/2021ja029821
-      source_type: full_text
-      locator: PDF pp. 2–3, §2, Fig. 1, Table 1 PDF pp. 3–4, §3.1, Fig. 2–3; p. 7, §4 PDF p. 4, §3.2, Fig. 4 PDF pp. 4–5, §3.3.1, Fig. 5–7 PDF pp. 5–6, §3.3.1, Fig. 8 PDF pp. 5–7, §3.3.2, Fig. 9–10 PDF pp. 2–4, §2–3.2, Table 1, Figs. 1–4 PDF pp. 5–7, §3.3–4, Figs. 8–10
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000116
-      version_id: V1
-      url: https://doi.org/10.1029/2021ja029821
-      source_type: full_text
-      locator: PDF pp. 2–3, §2, Fig. 1, Table 1 PDF pp. 3–4, §3.1, Fig. 2–3; p. 7, §4 PDF p. 4, §3.2, Fig. 4 PDF pp. 4–5, §3.3.1, Fig. 5–7 PDF pp. 5–6, §3.3.1, Fig. 8 PDF pp. 5–7, §3.3.2, Fig. 9–10 PDF pp. 2–4, §2–3.2, Table 1, Figs. 1–4 PDF pp. 5–7, §3.3–4, Figs. 8–10
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000117
   group: surface-and-global
   role: 磁気異常の広域への影響
-  summary:
-    question: 月磁気異常は表面への陽子降下をどこまで再分配し、その広がりと遮蔽は太陽風動圧にどう応答するか。
-    method: Chandrayaan-1/SARAのCENA水素ENAとSWIM反射陽子を、装置応答・上流太陽風・軌道ごとの無擾乱フィットを用いて1°格子へ集積。ENA観測/予測比を降下量の代理指標とし、0.7 nPaを境にしたマップと20動圧ビンでOA・Gerasimovich・SPAを比較した。
-    contribution: 主要磁気異常のENA欠乏と周囲1,000 km超の増強を示し、小異常では高動圧で遮蔽が弱まる一方、SPAでは強まる統計的応答を得た。反射陽子の再入射と太陽風偏向を、その広域差を説明する機構として提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000117
-      version_id: V1
-      url: https://doi.org/10.1029/2025ja034163
-      source_type: full_text
-      locator: PDF pp.3–5,7; §§3.1–3.1.3,4; Eqs.1–8 PDF pp.7–8; §4; Fig.3 PDF pp.1,7,9,12; Abstract; §§4–5 PDF pp.10–11; §4; Figs.4–5 PDF pp.10,12; Figs.4c–d; §§4–5 PDF pp.9,11; §4; Fig.5; Eq.12 PDF pp.4,11; §§3.1.2,5 PDF p.12; §5 PDF p.13; §5; Eqs.13–14; Fig.6 PDF pp.3–6; §§3.1–3.2; Eqs.1–11 PDF pp.7–11; §4; Figs.3–5 PDF pp.12–14; §§5–6; Eqs.13–14; Fig.6
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000117
-      version_id: V1
-      url: https://doi.org/10.1029/2025ja034163
-      source_type: full_text
-      locator: PDF pp.3–5,7; §§3.1–3.1.3,4; Eqs.1–8 PDF pp.7–8; §4; Fig.3 PDF pp.1,7,9,12; Abstract; §§4–5 PDF pp.10–11; §4; Figs.4–5 PDF pp.10,12; Figs.4c–d; §§4–5 PDF pp.9,11; §4; Fig.5; Eq.12 PDF pp.4,11; §§3.1.2,5 PDF p.12; §5 PDF p.13; §5; Eqs.13–14; Fig.6 PDF pp.3–6; §§3.1–3.2; Eqs.1–11 PDF pp.7–11; §4; Figs.3–5 PDF pp.12–14; §§5–6; Eqs.13–14; Fig.6
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000117
-      version_id: V1
-      url: https://doi.org/10.1029/2025ja034163
-      source_type: full_text
-      locator: PDF pp.3–5,7; §§3.1–3.1.3,4; Eqs.1–8 PDF pp.7–8; §4; Fig.3 PDF pp.1,7,9,12; Abstract; §§4–5 PDF pp.10–11; §4; Figs.4–5 PDF pp.10,12; Figs.4c–d; §§4–5 PDF pp.9,11; §4; Fig.5; Eq.12 PDF pp.4,11; §§3.1.2,5 PDF p.12; §5 PDF p.13; §5; Eqs.13–14; Fig.6 PDF pp.3–6; §§3.1–3.2; Eqs.1–11 PDF pp.7–11; §4; Figs.3–5 PDF pp.12–14; §§5–6; Eqs.13–14; Fig.6
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000051
   group: surface-and-global
   role: 磁場強度・swirlと光電子減速
-  summary:
-    question: 地球磁気圏ローブ中の月の日照面で、地殻磁場の強さは光電子の減速と相対表面電位の空間分布にどう対応するか。
-    method: 2008年1月–2009年6月のかぐやLMAG・PACE/ESA-S1から336軌道・43,670点のローブ様日照面観測を選ぶ。α=0.420に固定したK23放出モデルを10 eV幅で平滑化し装置応答と畳み込んで、上向き電子の60–150 eVをχ²フィットする。直線磁力線外挿足点をLP電子反射法の5°×5°表面磁場図と照合し、欠測を除いた42,197点で磁場強度とΔEを比較する。
-    contribution: 強い地殻磁場から来る光電子ほど負側の相対エネルギーずれを持つ統計的傾向を示し、静電減速を仮定すると磁化表面が相対的に正側となる解釈を支持した。地域間電位差はおおむねΔU≲10 Vの規模と推定され、Fe組成で二分しても磁場依存が残る。固定放出効率とエネルギーずれの縮退、未測定の探査機電位は明示的な限界である。
   evidence_by_item:
     question:
     - paper_id: P000051
       version_id: V1
       url: https://doi.org/10.1029/2024ja033545
       source_type: full_text
-      locator: PDF pp.7–8, §3, Fig.5 PDF pp.8–9, §4 PDF pp.4–6, §2, Eq.(1), Figs.2–3 PDF pp.5–6, Fig.3 PDF pp.6–7, Fig.4 PDF pp.9–10, §4, Table 1 PDF p.10, §4末尾 PDF pp.9–10, §§4–5 PDF pp.6–10, Figs.4–5, Table 1, §§2–4
+      locator: PDF pp.7–8, §3, Fig.5 PDF pp.8–9, §4 PDF pp.4–6, §2, Eq.(1), Figs.2–3
+        PDF pp.5–6, Fig.3 PDF pp.6–7, Fig.4 PDF pp.9–10, §4, Table 1 PDF p.10, §4末尾
+        PDF pp.9–10, §§4–5 PDF pp.6–10, Figs.4–5, Table 1, §§2–4
       checked_at: '2026-10-13'
     method:
     - paper_id: P000051
       version_id: V1
       url: https://doi.org/10.1029/2024ja033545
       source_type: full_text
-      locator: PDF pp.7–8, §3, Fig.5 PDF pp.8–9, §4 PDF pp.4–6, §2, Eq.(1), Figs.2–3 PDF pp.5–6, Fig.3 PDF pp.6–7, Fig.4 PDF pp.9–10, §4, Table 1 PDF p.10, §4末尾 PDF pp.9–10, §§4–5 PDF pp.6–10, Figs.4–5, Table 1, §§2–4
+      locator: PDF pp.7–8, §3, Fig.5 PDF pp.8–9, §4 PDF pp.4–6, §2, Eq.(1), Figs.2–3
+        PDF pp.5–6, Fig.3 PDF pp.6–7, Fig.4 PDF pp.9–10, §4, Table 1 PDF p.10, §4末尾
+        PDF pp.9–10, §§4–5 PDF pp.6–10, Figs.4–5, Table 1, §§2–4
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000051
       version_id: V1
       url: https://doi.org/10.1029/2024ja033545
       source_type: full_text
-      locator: PDF pp.7–8, §3, Fig.5 PDF pp.8–9, §4 PDF pp.4–6, §2, Eq.(1), Figs.2–3 PDF pp.5–6, Fig.3 PDF pp.6–7, Fig.4 PDF pp.9–10, §4, Table 1 PDF p.10, §4末尾 PDF pp.9–10, §§4–5 PDF pp.6–10, Figs.4–5, Table 1, §§2–4
+      locator: PDF pp.7–8, §3, Fig.5 PDF pp.8–9, §4 PDF pp.4–6, §2, Eq.(1), Figs.2–3
+        PDF pp.5–6, Fig.3 PDF pp.6–7, Fig.4 PDF pp.9–10, §4, Table 1 PDF p.10, §4末尾
+        PDF pp.9–10, §§4–5 PDF pp.6–10, Figs.4–5, Table 1, §§2–4
       checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000163
   group: surface-and-global
   role: 反射陽子による広域の太陽風擾乱
-  summary:
-    question: 磁気異常で反射された陽子は、周囲の太陽風をどこまで変えるか。
-    method: 2009年3月29日–4月5日の夕方側57周回で、Chandrayaan-1/SWIMのイオン分布をWindの上流計測と比較し、SPA磁気群上空の偏向・加熱・減速を解析。
-    contribution: 高度約100 kmの夕方側、南緯15–70度で頻発する擾乱から、反射陽子と太陽風の相互作用による広域のproto-magnetosheathを提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000163
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
-      source_type: full_text
-      locator: Abstract; §6 Conclusions
-      checked_at: '2026-09-18'
-    method:
-    - paper_id: P000163
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
-      source_type: full_text
-      locator: Abstract; §6 Conclusions
-      checked_at: '2026-09-18'
-    contribution:
-    - paper_id: P000163
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
-      source_type: full_text
-      locator: Abstract; §6 Conclusions
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
 - paper_id: P000178
   group: particles-and-potentials
   role: PACE・LMAGによる磁気リコネクションの候補
-  summary:
-    question: 月の地殻磁気異常の付近で、イオンの噴流を伴わず電子だけが加速される磁気リコネクションが起きるかを、低高度での直接観測から調べる。
-    method: 南極エイトケン磁気異常付近を高度29 kmで通過した「かぐや」の電子データを1秒分解能で解析し、電流シート内の電子・イオンの噴流と磁場構造を調べた。
-    contribution: 電流シートの通過時に、イオン噴流を伴わない電子噴流と磁束ロープを見いだした。月の磁気異常付近で電子のみの磁気リコネクションが起こる可能性を支持する観測例を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000178
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
-      source_type: abstract
-      locator: Abstract, sentence 1
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000178
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
-      source_type: abstract
-      locator: Abstract, sentences 2–3
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000178
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
-      source_type: abstract
-      locator: Abstract, sentences 3–5
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000274
   group: particles-and-potentials
   role: 観測視野と太陽風条件を考慮した複数磁気異常のENA遮蔽比較
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
-  summary:
-    question: CENAが観測した月の10磁気異常では、150–600 eVの中性水素フラックスの減少が常に現れるか。また、その減少率は地殻磁場・太陽風動圧・惑星間磁場とどう関係するか。
-    method: Chandrayaan-1/CENAの昼側・緯度±60°の87軌道を解析し、ENAフラックスを時間補正したWINDの太陽風陽子フラックスで規格化する。振幅を適合させた角度散乱関数からの減少率を求め、Lunar Prospectorの高度30 km磁場地図と比較する。異常より広い視野を持つセクター1・5を除いた2–4で磁場との相関を調べる。
-    contribution: Gerasimovichでは、視野の広い外側セクターを除くと磁場が強いほどENA減少率が高く、同程度の磁場では低動圧群の減少率が高かった。外側セクターのみの1領域を除いた9領域中4領域で磁場との相関が見られ、2領域は有効観測が各1件、3領域には相関が見えなかった。表面反射効率との交絡と、小規模磁場構造の解釈の限界を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000274
-      version_id: V1
-      url: https://doi.org/10.1029/2012JA017553
-      locator: PDF p.2, §1 ¶3
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000274
-      version_id: V1
-      url: https://doi.org/10.1029/2012JA017553
-      locator: PDF pp.2–4, §§2–3 ¶4–11, Eqs.1–2; p.6 ¶14, Fig.4
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000274
-      version_id: V1
-      url: https://doi.org/10.1029/2012JA017553
-      locator: PDF pp.6–9, §4 ¶14–18, Figs.4–5, Tables1–3; §5 ¶19–23,25
-      source_type: full_text
-      checked_at: '2026-10-11'
 - paper_id: P000272
   group: surface-and-global
   role: ARTEMISによる磁気異常周辺の圧縮構造
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 磁気異常周辺の圧縮構造はどこでどの条件で生じるか。
-    method: ARTEMISの5年間の粒子・磁場観測を統計解析する。
-    contribution: 太陽風条件と圧縮構造の位置・流れの偏向を関連付け、反射陽子との運動量交換から解釈した。
-  evidence_by_item:
-    question:
-    - paper_id: P000272
-      version_id: V1
-      url: https://doi.org/10.1002/2017ja023931
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000272
-      version_id: V1
-      url: https://doi.org/10.1002/2017ja023931
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000272
-      version_id: V1
-      url: https://doi.org/10.1002/2017ja023931
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000273
   group: surface-and-global
   role: 磁気異常からウェイクへの陽子輸送
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 磁気異常で散乱された陽子は月ウェイクへ届くか。
-    method: SARA/SWIM観測と粒子の逆向き軌道追跡を組み合わせる。
-    contribution: South Pole–Aitkenの磁気異常に由来する近傍ウェイクへの輸送経路を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000273
-      version_id: V1
-      url: https://doi.org/10.1029/2018gl079330
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000273
-      version_id: V1
-      url: https://doi.org/10.1029/2018gl079330
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000273
-      version_id: V1
-      url: https://doi.org/10.1029/2018gl079330
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000275
   group: surface-and-global
   role: 電子・イオンの応答差と風洞の空洞形成
-  summary:
-    question: イオンの旋回半径より小さい月面磁気異常の上で、何が太陽風イオンを減速・反射し、密度空洞とスワールの明暗差を作りうるか。
-    method: Lunar Prospector・Kaguya・Chandrayaan-1・Nozomiの既報の異なる事例を、電子が磁化されイオンが磁化されない二流体の電位障壁モデルでまとめ、超音速水素流を二つの双極子磁石へ当てる風洞の写真・Langmuir probe分布と比較した。観測・風洞データは引用文献に依存し、全無次元数をそろえた相似ではない。
-    contribution: 小規模な磁気異常でも、電子とイオンの応答差による電荷分離の電場がイオンを偏向する機構を提案し、風洞での密度空洞と浮遊電位変化につないだ。複雑な局所磁場勾配が太陽風照射と風化を変えることでスワールの明暗差を生む可能性を論じる。実験電位予測と電子慣性長には原稿内の数値不整合があり、定量的一致は未確認。
-  evidence_by_item:
-    question:
-    - paper_id: P000275
-      version_id: Vaccess1
-      url: https://arxiv.org/pdf/1207.2076v1
-      locator: PDF pp.1–2, Fig.2
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000275
-      version_id: Vaccess1
-      url: https://arxiv.org/pdf/1207.2076v1
-      locator: PDF pp.2–4, Eqs.(1–4), Table I, Figs.3–5
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000275
-      version_id: Vaccess1
-      url: https://arxiv.org/pdf/1207.2076v1
-      locator: PDF pp.3–5, Eq.(2), Figs.4–5, interpretation/conclusion
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: preprint
-    version_id: Vaccess1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
 - paper_id: P000288
   group: origin
   role: 月裏側試料によるダイナモ停止時期の制約
-  summary:
-    question: 若い月裏側の試料は全球磁場の停止時期をどう制約するか。
-    method: 裏側起源と推定される月隕石NWA 15528の古地磁気を測り、若いApollo試料と比較する。
-    contribution: 約7億年前の磁場を数百nT未満と推定した。表側試料と合わせ、過去約10億年間に全球的なダイナモ磁場がなかった可能性を支持した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000288
-      version_id: V1
-      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000288
-      version_id: V1
-      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000288
-      version_id: V1
-      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000297
   group: origin
   role: 熱処理によるFe再分配と磁性相形成
-  summary:
-    question: 模擬レゴリス中のFeは加熱でどのような磁性相へ変わるか。
-    method: 低酸素分圧で玄武岩質模擬物を加熱し、磁化測定、Mössbauer分光、X線回折、透過電子顕微鏡で調べる。
-    contribution: 800°Cの加熱後に金属Feと磁鉄鉱に似た相が形成され、20 kOeでの質量磁化が約27.5%増えた。さらに高温では磁性相の保持と磁化が低下した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000297
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je010010
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000297
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je010010
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000297
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je010010
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000322
+  group: origin
   role: Dewar磁気異常の埋没火成岩体
-  summary:
-    question: Dewarの磁場源はどのような構造で、古い月ダイナモをどう制約するか。
-    method: 軌道の重力・磁場を共同逆解析し、磁化量と重なる盆地噴出物による年代制約を組み合わせる。
-    contribution: 浅部の高密度・磁化体を埋没玄武岩として解釈し、約42億年前のダイナモを支持するモデル制約を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000322
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.aec0341
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000322
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.aec0341
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000322
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.aec0341
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: origin
 - paper_id: P000323
-  role: 月試料中のγ鉄と磁区構造
-  summary:
-    question: 月面温度で残るγ鉄は、どのような磁化を保持するか。
-    method: Chang’e-6衝突ガラスのナノ粒子を同定し、電子ホログラフィーで磁区構造を調べる。
-    contribution: 常温で安定なγ鉄の磁気ボルテックスを示し、急冷・微量元素による保存と衝撃磁化の記録可能性を論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000323
-      version_id: V1
-      url: https://doi.org/10.1073/pnas.2608395123
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000323
-      version_id: V1
-      url: https://doi.org/10.1073/pnas.2608395123
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000323
-      version_id: V1
-      url: https://doi.org/10.1073/pnas.2608395123
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: origin
-relations: []
-view:
-  sort:
-  - year
-  - first_author
-  - paper_id
-  overview_nodes: []
-  graphs: []
-  graph_nodes: 20
-  graph_edges: 30
+  role: 月試料中のγ鉄と磁区構造
 survey:
   searched_at: '2026-09-25'
   scope_period: 制限なし
@@ -866,12 +282,11 @@ survey:
   - 'GitHub Issues #9–#10'
   - Crossref・出版社・機関公開記録の要旨
   queries: []
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue
-    #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。
+    2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
   changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。'
   publication_status: draft
-  reviewed_at: null
 reading_notes: []

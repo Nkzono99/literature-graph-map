@@ -4,8 +4,15 @@ from pathlib import Path
 import pytest
 
 from literature_graph_map.cli import main
-from literature_graph_map.lint import review_citation_gaps, summary_gaps
-from literature_graph_map.models import LineageStep, LineageTrack, ReviewSection, Topic
+from literature_graph_map.lint import plain_author_gaps, review_citation_gaps, summary_gaps
+from literature_graph_map.models import (
+    LineageStep,
+    LineageTrack,
+    Overview,
+    ReviewSection,
+    Summary,
+    Topic,
+)
 from literature_graph_map.storage import MapError, write_files
 
 
@@ -104,12 +111,12 @@ def test_cli_text_and_unknown_topic(tmp_path, snapshot, capsys):
 
 def test_missing_summary_reports_each_item(snapshot):
     assert summary_gaps(snapshot) == []
-    snapshot.topics["demo"].entries[0].summary = None
+    snapshot.works["P000001"].summary = None
     gaps = summary_gaps(snapshot)
     assert [gap["field"] for gap in gaps] == ["question", "method", "contribution"]
     assert gaps[0] == {
         "topic_id": "demo",
-        "path": "topics/demo/topic.yaml",
+        "path": "data/works.jsonl",
         "paper_id": "P000001",
         "citation": "1 2001",
         "title": "検証用架空文献 1",
@@ -133,7 +140,7 @@ def test_missing_summary_reports_each_item(snapshot):
     ],
 )
 def test_placeholder_item_is_reported_without_flagging_real_prose(snapshot, text):
-    summary = snapshot.topics["demo"].entries[0].summary
+    summary = snapshot.works["P000001"].summary
     summary.question = "準備中の観測装置が対象とする現象を調べる。"
     summary.method = text
     summary.contribution = "原論文は未確認とする課題の所在を整理した。"
@@ -149,7 +156,7 @@ def test_summary_gaps_are_scoped_to_each_topic_including_private_children(snapsh
     child.topic_id = "child"
     child.navigation.parent = "demo"
     child.public = False
-    child.entries[0].summary = None
+    child.entries[0].summary = Summary(question="準備中", method="準備中", contribution="準備中")
     snapshot.topics["child"] = child
     snapshot.paths["child"] = Path("topics/demo/nested")
     snapshot.topics["category"] = Topic(topic_id="category", title="分類", question="入口")
@@ -174,8 +181,10 @@ def test_cli_reports_summary_gaps_even_when_every_paper_is_cited(tmp_path, snaps
                 paragraphs=["".join(f"[@{paper_id}]" for paper_id in snapshot.works)],
             )
         ]
-    topic.entries[0].summary = None
-    topic.entries[1].summary.method = "TODO"
+    snapshot.works["P000001"].summary = None
+    topic.entries[1].summary = snapshot.works["P000002"].summary.model_copy(
+        update={"method": "TODO"}
+    )
     repo = tmp_path / "repo"
     private = tmp_path / "private"
     write_files(repo, snapshot.source_files(repo))
@@ -189,8 +198,8 @@ def test_cli_reports_summary_gaps_even_when_every_paper_is_cited(tmp_path, snaps
     assert output["missing_summaries"][-1]["reason"] == "placeholder"
     assert main(args) == 1
     output = capsys.readouterr().out
-    assert "topic.yaml: summary.question: 要点不足 P000001 / 問い / 1 2001" in output
-    assert "summary.method: 要点不足 P000002 / 方法 / 2 2002" in output
+    assert "data/works.jsonl: summary.question: 要点不足 P000001 / 問い / 1 2001" in output
+    assert "topics/demo/topic.yaml: summary.method: 要点不足 P000002 / 方法 / 2 2002" in output
     assert "要点検査: 1テーマ / 不足4項目" in output
     assert before == {path: path.read_bytes() for path in repo.rglob("*") if path.is_file()}
     assert not private.exists()
@@ -198,11 +207,67 @@ def test_cli_reports_summary_gaps_even_when_every_paper_is_cited(tmp_path, snaps
 
 
 def test_cli_rejects_blank_summary_items_without_writing(tmp_path, snapshot, capsys):
-    snapshot.topics["demo"].entries[0].summary.method = "   "
+    snapshot.works["P000001"].summary.method = "   "
     write_files(tmp_path, snapshot.source_files(tmp_path))
-    before = (tmp_path / "topics/demo/topic.yaml").read_bytes()
+    before = (tmp_path / "data/works.jsonl").read_bytes()
     assert main(["--repo", str(tmp_path), "lint", "--json"]) == 1
     output = capsys.readouterr()
     assert "summary.method" in output.err
     assert not output.out
-    assert (tmp_path / "topics/demo/topic.yaml").read_bytes() == before
+    assert (tmp_path / "data/works.jsonl").read_bytes() == before
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Stubbs et al. (2014) では放出電流を変えた。",
+        "Pacaudら（2025）は粒子電荷を測った。",
+        "Furman・Pivi（2002）の確率モデル。",
+        "Örgerら（2017）は最大高度を比較した。",
+        "Xuほか (2026a) の統計。",
+    ],
+)
+def test_plain_author_names_are_reported_for_topics_and_overview(snapshot, text):
+    topic = snapshot.topics["demo"]
+    topic.review = [ReviewSection(heading="概観", paragraphs=[text + " [@P000001]"])]
+    snapshot.overview = Overview(review=[{"heading": "つながり", "paragraphs": [text]}])
+    gaps = plain_author_gaps(snapshot)
+    assert [gap["path"] for gap in gaps] == ["topics/demo/topic.yaml", "overview.yaml"]
+    assert gaps[0]["heading"] == "概観" and text.startswith(gaps[0]["text"])
+    assert plain_author_gaps(snapshot, "demo") == gaps[:1]
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "[@P000001]では放出電流を変えた（2014年の計算）。",
+        "LDEX (2014) の観測と Apollo 17 試料。",
+        "ARTEMIS（2026）の統計は[@P000001]にある。",
+        "Lunar Prospectorの1998年観測。",
+    ],
+)
+def test_linked_citations_and_instrument_names_are_not_flagged(snapshot, text):
+    snapshot.topics["demo"].review = [ReviewSection(heading="概観", paragraphs=[text])]
+    assert plain_author_gaps(snapshot) == []
+
+
+def test_cli_reports_plain_author_names(tmp_path, snapshot, capsys):
+    topic = snapshot.topics["demo"]
+    topic.review = [
+        ReviewSection(
+            heading="概観",
+            paragraphs=[
+                "Example et al. (2001) を含む " + "".join(f"[@{p}]" for p in snapshot.works)
+            ],
+        )
+    ]
+    write_files(tmp_path, snapshot.source_files(tmp_path))
+    args = ["--repo", str(tmp_path), "lint", "demo"]
+    assert main(args + ["--json"]) == 1
+    output = json.loads(capsys.readouterr().out)
+    assert output["missing_count"] == 1 and output["missing_citations"] == []
+    assert output["plain_author_names"][0]["text"] == "Example et al. (2001)"
+    assert main(args) == 1
+    text = capsys.readouterr().out
+    assert "平文の著者名 Example et al. (2001) / 概観" in text
+    assert "平文の著者名1件" in text

@@ -4,6 +4,29 @@ const updateSidebar = () => { sidebarMenu.open = !compactSidebar.matches; };
 updateSidebar();
 compactSidebar.addEventListener('change', updateSidebar);
 
+const worksForm = document.querySelector('.works-filter');
+if (worksForm) {
+  const search = document.querySelector('#works-search');
+  const items = [...document.querySelectorAll('.work-item')];
+  const normalize = text => text.normalize('NFKC').toLocaleLowerCase();
+  const searchable = new Map(items.map(item => [item, normalize(`${item.textContent} ${item.dataset.authors}`)]));
+  const applyFilter = () => {
+    const terms = normalize(search.value).trim().split(/\s+/).filter(Boolean);
+    let count = 0;
+    for (const item of items) {
+      const visible = terms.every(term => searchable.get(item).includes(term));
+      item.hidden = !visible;
+      if (visible) count++;
+    }
+    document.querySelector('#works-count').textContent = `${count} / ${items.length}件`;
+    document.querySelector('#works-no-results').hidden = count > 0;
+  };
+  worksForm.hidden = false;
+  worksForm.addEventListener('submit', event => event.preventDefault());
+  search.addEventListener('input', applyFilter);
+  worksForm.addEventListener('reset', () => { search.value = ''; applyFilter(); });
+}
+
 const form = document.querySelector('.paper-filter');
 if (form) {
   const search = document.querySelector('#paper-search');

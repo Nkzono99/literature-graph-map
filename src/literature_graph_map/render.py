@@ -1,6 +1,7 @@
 """Build the public HTML site from the canonical literature data."""
 
 import os
+import re
 import shutil
 from collections import defaultdict
 from pathlib import Path
@@ -9,10 +10,18 @@ from urllib.parse import quote, unquote
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
-from .models import PAPER_CITATION, TOPIC_CITATION, Entry, Evidence, Topic, Work
-from .storage import Snapshot, inside, write_files
+from .models import PAPER_CITATION, TOPIC_CITATION, Entry, Evidence, Reading, Topic, Work, reading
+from .storage import MapError, Snapshot, inside, write_files
 
-DISCLAIMER = "この文献マップには誤りや抜けが含まれる可能性があります。気づいた点をご指摘いただければ、その都度修正します。"
+DISCLAIMER = (
+    "この文献マップには誤りや抜けが含まれる可能性があります。"
+    "要点と概説の文章は生成AIを使って作成しており、"
+    "「本文確認」「要旨確認」などの確認状況もAIによる読み取りの範囲を示します。"
+    "気づいた点をご指摘いただければ、その都度修正します。"
+)
+README_MARKERS = re.compile(
+    r"(<!-- lgm:topics (?P<base>\S+) -->\n)(?P<body>.*?)(<!-- /lgm:topics -->)", re.S
+)
 KIND_LABELS = {
     "published": "出版版",
     "accepted": "著者最終稿",
@@ -95,33 +104,34 @@ def preprint_cell(work: Work) -> Markup | str:
     }.get(work.preprint_check, "未確認")
 
 
-def inspection_label(entry: Entry, work: Work) -> str:
-    if entry.inspection.level == "metadata_only":
-        refs = entry.evidence_by_item
+def inspection_label(shown: Reading, work: Work) -> str:
+    inspection = shown.inspection
+    if inspection.level == "metadata_only":
+        refs = shown.evidence_by_item
         status = (
             "他文献による紹介（原著の要旨・本文は未確認）"
             if any(
-                ref.paper_id != entry.paper_id
+                ref.paper_id != work.paper_id
                 for items in (refs.question, refs.method, refs.contribution)
                 for ref in items
             )
             else "書誌情報のみ確認（要旨・本文は未確認）"
         )
-    elif entry.inspection.version_id is None:
+    elif inspection.version_id is None:
         status = {
             "abstract": "要旨確認",
             "preprint": "プレプリント参照",
             "full_text": "本文確認",
-        }[entry.inspection.level] + "（参照版未記録）"
+        }[inspection.level] + "（参照版未記録）"
     else:
-        kind = work.version(entry.inspection.version_id).kind
-        if entry.inspection.level == "abstract":
+        kind = work.version(inspection.version_id).kind
+        if inspection.level == "abstract":
             status = f"要旨確認（{KIND_LABELS[kind]}）"
         elif kind == "submitted":
             status = "プレプリント参照"
         else:
             status = f"本文確認（{KIND_LABELS[kind]}）"
-    if status and entry.inspection.recheck:
+    if status and inspection.recheck:
         status += "・旧版に基づく記述"
     return status
 
@@ -154,15 +164,17 @@ def evidence_context(ref: Evidence, works: dict[str, Work], citations: dict[str,
 
 def summary_block(entry: Entry, work: Work, works: dict[str, Work]) -> Markup:
     citations = citation_labels(works)
+    shown = reading(entry, work)
     return Markup(
         TEMPLATES.get_template("summary.html").render(
-            entry=entry,
-            status=inspection_label(entry, work),
+            paper_id=work.paper_id,
+            summary=shown.summary,
+            status=inspection_label(shown, work),
             labels=SUMMARY_LABELS,
             refs={
                 key: [
                     evidence_context(ref, works, citations)
-                    for ref in getattr(entry.evidence_by_item, key)
+                    for ref in getattr(shown.evidence_by_item, key)
                 ]
                 for key in SUMMARY_LABELS
             },
@@ -200,15 +212,18 @@ def title_url(work: Work) -> str:
     )
 
 
+def citation_name(work: Work) -> str:
+    author = (work.authors or ["著者未確認"])[0]
+    return work.citation_author or (
+        author.split(",", 1)[0].strip() if "," in author else author.split()[-1]
+    )
+
+
 def citation_labels(works: dict[str, Work]) -> dict[str, str]:
     """Use the same author/year labels across all themes in the library."""
     groups = defaultdict(list)
     for paper_id, work in sorted(works.items()):
-        author = (work.authors or ["著者未確認"])[0]
-        name = work.citation_author or (
-            author.split(",", 1)[0].strip() if "," in author else author.split()[-1]
-        )
-        groups[f"{name} {work.version().year or '年未確認'}"].append(paper_id)
+        groups[f"{citation_name(work)} {work.version().year or '年未確認'}"].append(paper_id)
     return {
         paper_id: f"{label}-{index}" if len(papers) > 1 else label
         for label, papers in groups.items()
@@ -260,12 +275,81 @@ def page_context(snapshot: Snapshot, path: Path) -> dict:
         siblings.append(item)
     return {
         "home_url": relative_url(path, Path("index.html")),
+        "works_url": relative_url(path, Path("works/index.html")),
         "asset_url": relative_url(path, Path("assets")),
         "copyright_url": relative_url(path, Path("copyright.html")),
         "disclaimer": DISCLAIMER,
         "topic_links": roots,
         "topic_count": sum(not item["is_collection"] for item in topics.values()),
     }
+
+
+def works_index(snapshot: Snapshot) -> list[dict]:
+    """Every work listed in a public topic, in author/year order, with its topic pages."""
+    path = Path("works")
+    citations = citation_labels(snapshot.works)
+    topics_by_paper = defaultdict(list)
+    for key, topic in sorted(snapshot.topics.items()):
+        if topic.public:
+            for entry in topic.entries:
+                topics_by_paper[entry.paper_id].append(
+                    {
+                        "title": topic.title,
+                        "url": relative_url(path, snapshot.paths[key] / "index.html")
+                        + f"#{entry.paper_id}",
+                    }
+                )
+    items = [
+        {
+            "work": snapshot.works[paper_id],
+            "citation": citations[paper_id],
+            "year": snapshot.works[paper_id].version().year,
+            "topics": topics,
+        }
+        for paper_id, topics in topics_by_paper.items()
+    ]
+    items.sort(
+        key=lambda item: (
+            citation_name(item["work"]).casefold(),
+            item["year"] or 9999,
+            item["work"].paper_id,
+        )
+    )
+    return items
+
+
+def works_page(snapshot: Snapshot) -> str:
+    return TEMPLATES.get_template("works.html").render(
+        **page_context(snapshot, Path("works")),
+        title="全文献索引",
+        items=works_index(snapshot),
+    )
+
+
+def readme_topics(snapshot: Snapshot, base_url: str) -> str:
+    """A nested Markdown list of public topics with absolute site URLs."""
+    base = base_url.rstrip("/") + "/"
+    lines = []
+
+    def walk(items: list[dict], depth: int) -> None:
+        for item in items:
+            url = base + item["url"].removesuffix("index.html")
+            lines.append(f"{'  ' * depth}- [{item['title']}]({url})")
+            walk(item["children"], depth + 1)
+
+    walk(page_context(snapshot, Path("."))["topic_links"], 0)
+    return "\n".join(lines) + "\n"
+
+
+def readme_text(text: str, snapshot: Snapshot) -> str:
+    """Replace the topic list between the README markers; the markers carry the site URL."""
+    match = README_MARKERS.search(text)
+    if match is None:
+        raise MapError(
+            "README.md needs <!-- lgm:topics https://site/ --> and <!-- /lgm:topics --> markers"
+        )
+    generated = readme_topics(snapshot, match["base"])
+    return text[: match.start("body")] + generated + text[match.end("body") :]
 
 
 def topic_page(topic: Topic, snapshot: Snapshot) -> str:
@@ -374,6 +458,7 @@ def rendered_files(
         notice = notice.partition("\n")[2]
     files = {
         output / "index.html": index_page(snapshot),
+        output / "works" / "index.html": works_page(snapshot),
         output / "copyright.html": TEMPLATES.get_template("copyright.html").render(
             **page_context(snapshot, Path(".")),
             title="著作権について",

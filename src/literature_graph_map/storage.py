@@ -45,7 +45,11 @@ def private_directory(repo: Path, override: Path | None = None) -> Path:
 
 
 def yaml_text(model: Model) -> str:
-    return yaml.safe_dump(model.model_dump(mode="json"), allow_unicode=True, sort_keys=False)
+    """Canonical YAML. Unset optional fields are omitted, so an entry without its own reading
+    stays a two-line record that inherits the work's summary, sources, and inspection."""
+    return yaml.safe_dump(
+        model.model_dump(mode="json", exclude_none=True), allow_unicode=True, sort_keys=False
+    )
 
 
 def read_yaml(path: Path) -> dict:
@@ -104,11 +108,13 @@ class Snapshot:
             raise MapError("topic paths must be normalized relative paths")
         seen_dois = {}
         seen_repositories = {}
-        relation_signatures = {}
         for key, work in self.works.items():
             Work.model_validate(work.model_dump())
             if key != work.paper_id:
                 raise MapError("work registry ID mismatch")
+            for evidence in work.evidence_by_item.model_dump().values():
+                for item in evidence:
+                    self.validate_evidence(item)
             for version in work.versions:
                 for identifier, seen in (
                     (version.doi, seen_dois),
@@ -139,25 +145,15 @@ class Snapshot:
                 work = self.works[entry.paper_id]
                 ids = {v.version_id for v in work.versions}
                 if (
-                    entry.inspection.version_id is not None
+                    entry.inspection is not None
+                    and entry.inspection.version_id is not None
                     and entry.inspection.version_id not in ids
                 ):
                     raise MapError(f"{entry.paper_id}: unknown inspection version")
-                for evidence in entry.evidence_by_item.model_dump().values():
-                    for item in evidence:
-                        self.validate_evidence(item)
-            for relation in topic.relations:
-                signature = relation.model_dump(exclude={"locked_fields"})
-                if (
-                    relation.relation_id in relation_signatures
-                    and relation_signatures[relation.relation_id] != signature
-                ):
-                    raise MapError(
-                        f"{relation.relation_id}: relation ID has different meanings across topics"
-                    )
-                relation_signatures[relation.relation_id] = signature
-                for evidence in relation.evidence:
-                    self.validate_evidence(evidence.model_dump())
+                if entry.evidence_by_item is not None:
+                    for evidence in entry.evidence_by_item.model_dump().values():
+                        for item in evidence:
+                            self.validate_evidence(item)
 
     def validate_evidence(self, evidence: dict) -> None:
         work = self.works.get(evidence["paper_id"])

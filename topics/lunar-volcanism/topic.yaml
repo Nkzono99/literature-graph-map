@@ -2,7 +2,49 @@ schema_version: 1
 topic_id: lunar-volcanism
 title: 月の火山活動と年代
 question: クレーター年代、玄武岩層厚、揮発性物質から火山活動の時間変化を調べる。
+review:
+- heading: クレーター数と層厚から、火山活動の時間と量を調べる
+  paragraphs:
+  - 表面に残るクレーターのサイズ別頻度を年代へ対応させる枠組みが[@P000187]である。
+  - HaruyamaらのTCによるクレーター径頻度の解析では、多くの裏側海は3.0 Gaより古い一方、北部Moscovienseから南部Antoniadiまで2.44–2.58
+    Gaの若いモデル年代が分布した。Apollo Nなどでは大小クレーターに異なる年代曲線を当てはめられ、古い玄武岩表面の部分的な再舗装を示唆する。著者は約2.5
+    Gaの遅い活動期を考えるが、2.5–3.0 Gaの表面が若い溶岩に連続的に覆われた可能性も残した。露出表面の年代頻度を全月面の噴火率や一意の休止期間へ変換する際には、保存と被覆の影響を考える必要がある。[@P000171]
+  - '[@P000182]はMoscovienseの年代に玄武岩の層厚・体積を加え、長期間の活動と薄い地殻との関係を論じた。[@P000181]の地下反射層は、表面の年代だけでは見えない噴出の休止期を検討する材料になる。'
+- heading: 水の研究を、マグマの噴火過程へつなぐ
+  paragraphs:
+  - '[@P000246]は水と爆発的火山活動の関係を扱う。表面での水の生成・保持を扱う研究と併せると、月内部からの供給と、その後に表面で起きる移動を別々の過程として追える。'
+- heading: 火山の地形と地下の貫入岩体を対応させる
+  paragraphs:
+  - 年代と噴出量の研究に対し、[@P000289]は直径約80 kmの二つの楯状火山候補を扱う。地形に加えて一方の重力異常を調べ、地下7〜32 kmの貫入岩体と浅部マグマ貯留域を提案した。噴火した時期に、マグマがどこに蓄えられたかという問いを加える。
+- heading: 受動マイクロ波と磁場・重力から火成構造を見る
+  paragraphs:
+  - '[@P000337]はChang’e-2のマイクロ波輝度温度から、Aristarchusの火砕堆積物の熱的特徴と広がりを再評価した。[@P000322]はDewarの磁化した高密度体を埋没玄武岩として解釈する。表面の堆積物と地下の火成岩体を異なる観測から制約する系列として比較できる。[@P000329]・[@P000330]の統合データと基盤モデルは、火山地形の解析を他ミッションの観測へ接続する。'
+- heading: 試料の鉱物と同位体からマグマの履歴を読む
+  paragraphs:
+  - 地形・重力に加え、[@P000378]と[@P000371]のChang’e-5鉱物分析は試料スケールで分化を調べる。前者は鉱物集団、後者は一つの玄武岩を対象とする。
+  - Li同位体について、[@P000377]の高温結晶化の解釈に対し、[@P000372]は高Ti玄武岩のメルト・マントル相互作用を重視する。分化段階を比較する制約となる。
+lineage:
+- title: 裏側の火山活動を年代と体積で読む
+  steps:
+  - paper_id: P000171
+    title: 海の年代を広域で求める
+    significance: 5領域に2.44–2.58 Gaの若いモデル年代を見いだし、Apollo Nなどの大小クレーターで異なる年代曲線から部分的な再舗装を示唆した。多くの海の3.0
+      Ga以前の形成と若い活動の継続を分け、約2.5 Gaの活動集中には継続的な被覆という代替解釈も残す。
+    connection: ''
+  - paper_id: P000182
+    title: Moscovienseの層厚と体積を加える
+    significance: 活動期間と噴出量を地殻厚の違いへ結び付けた。
+    connection: 広域の年代から地域の噴出史へ
+- title: 火山地形から浅部の供給源へ
+  steps:
+  - paper_id: P000289
+    title: 大型楯状火山の貯留域を推定する
+    significance: 火山形態と重力異常を組み合わせ、浅部貯留域からの噴火を検討した。
+    connection: ''
 public: true
+scope:
+  include: []
+  exclude: []
 navigation:
   parent: lunar-geology
   related:
@@ -24,349 +66,67 @@ entries:
 - paper_id: P000171
   group: chronology
   role: 約2.5 Gaの裏側海と複数噴火・被覆による年代記録
-  inspection:
-    level: full_text
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  summary:
-    question: 月裏側の露出した海の年代はどこまで若く、クレーター径頻度は古い表面の再舗装を示すか。
-    method: かぐやTCの約10 m画像でSPA盆地・Moscovienseの海のクレーターを手作業計数し、長い影・明瞭な二次クレーターを除外する。Neukumの生成関数と年代曲線に径範囲ごとに当てはめて表面のモデル年代を推定する。
-    contribution: 5領域に2.44–2.58 Gaの若いモデル年代を見いだし、Apollo Nなどの大小クレーターで異なる年代曲線から部分的な再舗装を示唆した。多くの海の3.0 Ga以前の形成と若い活動の継続を分け、約2.5 Gaの活動集中には継続的な被覆という代替解釈も残す。
   evidence_by_item:
     question:
     - paper_id: P000171
       version_id: V2
       url: https://doi.org/10.1126/science.1163382
       source_type: full_text
-      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5 Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.2–3 Apollo/Moscoviense/discussion PDF p.5 Table1 PDF pp.7–8 Figs2–3
+      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF
+        p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5
+        Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense
+        PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.2–3
+        Apollo/Moscoviense/discussion PDF p.5 Table1 PDF pp.7–8 Figs2–3
       checked_at: '2026-10-13'
     method:
     - paper_id: P000171
       version_id: V2
       url: https://doi.org/10.1126/science.1163382
       source_type: full_text
-      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5 Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.2–3 Apollo/Moscoviense/discussion PDF p.5 Table1 PDF pp.7–8 Figs2–3
+      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF
+        p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5
+        Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense
+        PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.2–3
+        Apollo/Moscoviense/discussion PDF p.5 Table1 PDF pp.7–8 Figs2–3
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000171
       version_id: V2
       url: https://doi.org/10.1126/science.1163382
       source_type: full_text
-      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5 Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.2–3 Apollo/Moscoviense/discussion PDF p.5 Table1 PDF pp.7–8 Figs2–3
+      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF
+        p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5
+        Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense
+        PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.2–3
+        Apollo/Moscoviense/discussion PDF p.5 Table1 PDF pp.7–8 Figs2–3
       checked_at: '2026-10-13'
 - paper_id: P000182
   group: chronology
   role: Moscovienseの玄武岩層厚と年代
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: Moscovienseの噴出期間と量はどの程度か。
-    method: TC画像から玄武岩の年代・層厚・体積を推定する。
-    contribution: 長期の火山活動と大きな噴出量を薄い地殻と関連付けて論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000182
-      version_id: V1
-      url: https://doi.org/10.1029/2009gl040472
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000182
-      version_id: V1
-      url: https://doi.org/10.1029/2009gl040472
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000182
-      version_id: V1
-      url: https://doi.org/10.1029/2009gl040472
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000187
   group: chronology
   role: クレーター数に基づく年代尺度
-  summary:
-    question: 月のクレーター径と個数の分布から衝突天体の集団と衝突史をどう復元し、月の年代尺度を火星などの地球型惑星に展開できるかを検討した。
-    method: 月のクレーターの大きさ別頻度から衝突天体のサイズ分布を推定し、小惑星の観測と比較した。放射年代の解釈とクレーター分布を改良して既存の月年代モデルを再検討した。
-    contribution: 衝突天体のサイズ分布は主帯小惑星に近く、過去40億年間で比較的安定していたと推定した。月のクレーター年代モデルを統合し、他の地球型惑星の年代推定の基準を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000187
-      version_id: V1
-      url: https://link.springer.com/article/10.1023/A:1011989004263
-      source_type: abstract
-      locator: Abstract、第1・3段落
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000187
-      version_id: V1
-      url: https://link.springer.com/article/10.1023/A:1011989004263
-      source_type: abstract
-      locator: Abstract、第1〜3段落
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000187
-      version_id: V1
-      url: https://link.springer.com/article/10.1023/A:1011989004263
-      source_type: abstract
-      locator: Abstract、第1〜3段落
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000181
   group: chronology
   role: LRSによる海の地下層序
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 月の海の下にどのような層があるか。
-    method: LRSの地下反射と表面地質を比較する。
-    contribution: 地下の反射層を噴出休止期の埋没レゴリスと解釈し、玄武岩の堆積史を調べた。
-  evidence_by_item:
-    question:
-    - paper_id: P000181
-      version_id: V1
-      url: https://doi.org/10.1126/science.1165988
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000181
-      version_id: V1
-      url: https://doi.org/10.1126/science.1165988
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000181
-      version_id: V1
-      url: https://doi.org/10.1126/science.1165988
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000246
   group: volatiles
   role: 水と爆発的火山活動
-  summary:
-    question: 月の爆発的噴火を駆動する水・一酸化炭素・水素の役割は何か。気泡の成長や地殻内でのマグマの一時滞留は、噴火の爆発性にどう影響するか。
-    method: 気泡成長とマグマ上昇を連成したモデルで、炭素・水素を含む揮発性成分の影響を計算した。破砕時の水含有量を月の火山ガラスや火砕堆積物からの推定値と比較した。
-    contribution: 計算では水が主な駆動源となり、水約500 ppm以上・CO約20 ppm以下で浅部の脱ガスと気泡成長が破砕を起こした。深さ約17 km以内での一時滞留も爆発性に有利と示唆された。
-  evidence_by_item:
-    question:
-    - paper_id: P000246
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009318
-      source_type: abstract
-      locator: Abstract、第3–4文（水と気泡の役割）、第8文（地殻内の一時滞留）
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000246
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009318
-      source_type: abstract
-      locator: Abstract、第5–6文（連成モデルと水含有量の整合）；Plain Language Summary、第3文（C・Hを含む揮発性成分の評価）
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000246
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009318
-      source_type: abstract
-      locator: Abstract、第5文（水が主な駆動源）、第7文（水≳500 ppm・CO≲20 ppm、数百mの浅部での脱ガス・気泡成長と破砕）、第8文（深さ≲17 kmでの一時滞留）
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000289
   group: reservoirs
   role: 大型楯状火山と浅部マグマ貯留域
-  summary:
-    question: 月に大型楯状火山と、それを供給した浅部マグマ貯留域が存在したか。
-    method: Prinz-HarbingerとTheophilusの地形を調べ、重力異常から地下の貫入岩体を推定する。
-    contribution: 直径約80 kmの二つの楯状火山候補を示した。一方の重力異常を深さ7〜32 kmの貫入岩体で説明し、浅部貯留域からの噴火を提案した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000289
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl121908
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000289
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl121908
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000289
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl121908
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000322
-  role: Dewar磁気異常の埋没火成岩体
-  summary:
-    question: Dewarの磁場源はどのような構造で、古い月ダイナモをどう制約するか。
-    method: 軌道の重力・磁場を共同逆解析し、磁化量と重なる盆地噴出物による年代制約を組み合わせる。
-    contribution: 浅部の高密度・磁化体を埋没玄武岩として解釈し、約42億年前のダイナモを支持するモデル制約を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000322
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.aec0341
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000322
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.aec0341
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000322
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.aec0341
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: reservoirs
+  role: Dewar磁気異常の埋没火成岩体
 - paper_id: P000329
+  group: chronology
   role: 月観測を統合した機械学習データ
-  summary:
-    question: 異なるミッション・装置の観測を、再現可能な月科学の機械学習へどうそろえるか。
-    method: 4ミッション・10装置の30層超を位置合わせし、複数解像度のタイルと地理的な訓練・評価分割を用意する。
-    contribution: 衝突・火山・極域揮発性物質の共通ベンチマークと基準モデルを提供した。データセット論文のプレプリント。
-  evidence_by_item:
-    question:
-    - paper_id: P000329
-      version_id: V1
-      url: https://arxiv.org/abs/2609.13277
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000329
-      version_id: V1
-      url: https://arxiv.org/abs/2609.13277
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000329
-      version_id: V1
-      url: https://arxiv.org/abs/2609.13277
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: chronology
 - paper_id: P000330
+  group: chronology
   role: 複数観測・解像度の月基盤モデル
-  summary:
-    question: 月の異なる観測と空間解像度を、共通の学習表現で扱えるか。
-    method: SomBenchの11観測種・二つの空間スケールを使い、観測幾何を含む基盤モデルを事前学習する。
-    contribution: クレーター検出、火山地形分割、氷有望度回帰で比較し、表現と学習方法の効果を示した。未査読の評価結果。
-  evidence_by_item:
-    question:
-    - paper_id: P000330
-      version_id: V1
-      url: https://arxiv.org/abs/2609.13283
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000330
-      version_id: V1
-      url: https://arxiv.org/abs/2609.13283
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000330
-      version_id: V1
-      url: https://arxiv.org/abs/2609.13283
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: chronology
 - paper_id: P000337
-  role: Aristarchusの受動マイクロ波観測
-  summary:
-    question: 火砕堆積物の分布と地下熱環境を、受動マイクロ波からどう制約するか。
-    method: Chang’e-2のマイクロ波放射計から時刻別の輝度温度・規格化温度地図を作り、地質図と比較する。
-    contribution: 高い蓄熱能力と、光学・レーダー推定より広い火砕堆積物分布の可能性を示し、地下温度・熱流束も論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000337
-      version_id: V1
-      url: https://doi.org/10.3390/rs18183194
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000337
-      version_id: V1
-      url: https://doi.org/10.3390/rs18183194
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000337
-      version_id: V1
-      url: https://doi.org/10.3390/rs18183194
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: chronology
+  role: Aristarchusの受動マイクロ波観測
 - paper_id: P000371
   group: petrology
   role: 低Ti玄武岩のマントル源・浅部分化
@@ -374,34 +134,6 @@ entries:
     question: 若いChang’e-5玄武岩の供給源をどう制約するか。
     method: 一試料の鉱物像とラマン組成を比較した。
     contribution: 混合マントル源と浅部貯留域での分化を示唆した。
-  evidence_by_item:
-    question:
-    - paper_id: P000371
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
-      source_type: abstract
-      locator: Abstract, sentences 1–2
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000371
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
-      source_type: abstract
-      locator: Abstract, sentence 2 (one basalt sample)
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000371
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
-      source_type: abstract
-      locator: Abstract, sentences 3–5
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
 - paper_id: P000372
   group: petrology
   role: 高Ti玄武岩のLiとマントル相互作用
@@ -409,34 +141,6 @@ entries:
     question: 高Ti玄武岩の重いLiは何を記録するか。
     method: 月隕石を既報試料・分化モデルと比較した。
     contribution: イルメナイト含有集積岩由来メルトとマントルの相互作用を提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000372
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
-      source_type: abstract
-      locator: Abstract, sentence 1
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000372
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
-      source_type: abstract
-      locator: Abstract, sentences 1–4
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000372
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
-      source_type: abstract
-      locator: Abstract, sentences 5–7
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
 - paper_id: P000377
   group: petrology
   role: マグマオーシャン結晶化とLi分別
@@ -444,34 +148,6 @@ entries:
     question: 高Ti・低Ti玄武岩のLi差は何に由来するか。
     method: Apollo・LaPaz試料の同位体を比較した。
     contribution: 高Ti側の重いLiを、大規模な結晶分化と結び付けた。
-  evidence_by_item:
-    question:
-    - paper_id: P000377
-      version_id: V1
-      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
-      source_type: full_text
-      locator: Abstract; Introduction
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000377
-      version_id: V1
-      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
-      source_type: full_text
-      locator: 'Methods: bulk-rock MC-ICP-MS and mineral LA-ICP-MS'
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000377
-      version_id: V1
-      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
-      source_type: full_text
-      locator: Abstract; discussion of high-temperature differentiation
-      checked_at: '2026-10-07'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
 - paper_id: P000378
   group: petrology
   role: Chang’e-5鉱物の組成・分化
@@ -479,70 +155,9 @@ entries:
     question: Chang’e-5月壌の母岩組成をどう読むか。
     method: ラマン分光で鉱物・ガラスを分類した。
     contribution: 鉱物組成を示した。玄武岩質ガラスの火山・衝突起源はラマンだけでは分けられない。
-  evidence_by_item:
-    question:
-    - paper_id: P000378
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
-      source_type: full_text
-      locator: Abstract; 1. Introduction
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000378
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
-      source_type: full_text
-      locator: '2. Materials and Methods: 127 + 1132 Raman points'
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000378
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
-      source_type: full_text
-      locator: Abstract; 4. Discussion; 5. Conclusions
-      checked_at: '2026-10-07'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
-review:
-- heading: クレーター数と層厚から、火山活動の時間と量を調べる
-  paragraphs:
-  - 表面に残るクレーターのサイズ別頻度を年代へ対応させる枠組みが[@P000187]である。
-  - HaruyamaらのTCによるクレーター径頻度の解析では、多くの裏側海は3.0 Gaより古い一方、北部Moscovienseから南部Antoniadiまで2.44–2.58 Gaの若いモデル年代が分布した。Apollo Nなどでは大小クレーターに異なる年代曲線を当てはめられ、古い玄武岩表面の部分的な再舗装を示唆する。著者は約2.5 Gaの遅い活動期を考えるが、2.5–3.0 Gaの表面が若い溶岩に連続的に覆われた可能性も残した。露出表面の年代頻度を全月面の噴火率や一意の休止期間へ変換する際には、保存と被覆の影響を考える必要がある。[@P000171]
-  - '[@P000182]はMoscovienseの年代に玄武岩の層厚・体積を加え、長期間の活動と薄い地殻との関係を論じた。[@P000181]の地下反射層は、表面の年代だけでは見えない噴出の休止期を検討する材料になる。'
-- heading: 水の研究を、マグマの噴火過程へつなぐ
-  paragraphs:
-  - '[@P000246]は水と爆発的火山活動の関係を扱う。表面での水の生成・保持を扱う研究と併せると、月内部からの供給と、その後に表面で起きる移動を別々の過程として追える。'
-- heading: 火山の地形と地下の貫入岩体を対応させる
-  paragraphs:
-  - 年代と噴出量の研究に対し、[@P000289]は直径約80 kmの二つの楯状火山候補を扱う。地形に加えて一方の重力異常を調べ、地下7〜32 kmの貫入岩体と浅部マグマ貯留域を提案した。噴火した時期に、マグマがどこに蓄えられたかという問いを加える。
-- heading: 受動マイクロ波と磁場・重力から火成構造を見る
-  paragraphs:
-  - '[@P000337]はChang’e-2のマイクロ波輝度温度から、Aristarchusの火砕堆積物の熱的特徴と広がりを再評価した。[@P000322]はDewarの磁化した高密度体を埋没玄武岩として解釈する。表面の堆積物と地下の火成岩体を異なる観測から制約する系列として比較できる。[@P000329]・[@P000330]の統合データと基盤モデルは、火山地形の解析を他ミッションの観測へ接続する。'
-- heading: 試料の鉱物と同位体からマグマの履歴を読む
-  paragraphs:
-  - 地形・重力に加え、[@P000378]と[@P000371]のChang’e-5鉱物分析は試料スケールで分化を調べる。前者は鉱物集団、後者は一つの玄武岩を対象とする。
-  - Li同位体について、[@P000377]の高温結晶化の解釈に対し、[@P000372]は高Ti玄武岩のメルト・マントル相互作用を重視する。分化段階を比較する制約となる。
-lineage:
-- title: 裏側の火山活動を年代と体積で読む
-  steps:
-  - paper_id: P000171
-    title: 海の年代を広域で求める
-    significance: 5領域に2.44–2.58 Gaの若いモデル年代を見いだし、Apollo Nなどの大小クレーターで異なる年代曲線から部分的な再舗装を示唆した。多くの海の3.0 Ga以前の形成と若い活動の継続を分け、約2.5 Gaの活動集中には継続的な被覆という代替解釈も残す。
-  - paper_id: P000182
-    title: Moscovienseの層厚と体積を加える
-    significance: 活動期間と噴出量を地殻厚の違いへ結び付けた。
-    connection: 広域の年代から地域の噴出史へ
-- title: 火山地形から浅部の供給源へ
-  steps:
-  - paper_id: P000289
-    title: 大型楯状火山の貯留域を推定する
-    significance: 火山形態と重力異常を組み合わせ、浅部貯留域からの噴火を検討した。
 survey:
   searched_at: '2026-10-07'
+  scope_period: 制限なし
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
@@ -551,9 +166,15 @@ survey:
   - Crossref・出版社・機関公開記録の要旨
   - 'GitHub Issue #25'
   - 出版社の公開要旨・本文と著者所属機関の書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。 2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue #25の要点・項目別出典と概説引用を追加。'
+  queries: []
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。
+    2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。
+    2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
   - 2026-10-07の追加分はLin・Tianを公開要旨、Day・Caoを本文の関連節まで確認。解釈の比較であり、同一試料の再解析ではない。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue
+    #25の要点・項目別出典と概説引用を追加。'
+  publication_status: draft
+reading_notes: []

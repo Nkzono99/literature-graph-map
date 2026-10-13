@@ -7,50 +7,66 @@ review:
   paragraphs:
   - プラズマが真空や低密度領域に接すると、動きの速い電子が先行し、電荷分離によって生じる電場がイオンを加速する。[@P000095]は、希薄化波が元のプラズマへ広がる過程と、イオン先端が空隙へ進む過程を整理し、宇宙物体背後のウェイクへ結び付けた。膨張する密度や速度をまず見通したいときの入口になる。
   - 無衝突膨張を扱う[@P000219]はイオン先端の加速を調べる。月の後方が埋まる過程や、推進機からプルームが広がる過程にも同じ膨張の発想が使える。物体による粒子の吸収、表面電位、磁場を順に加えることで、それぞれの対象に近づけていく。
-  - Mora（2003）は、冷イオンと一定温度のBoltzmann電子からなる半無限プラズマの真空膨張を、Poisson方程式を含む一次元モデルで扱った。長時間には、準中性の自己相似解が破れる先端で電場が内部の約2倍となり、Znᵢ/nₑも約2となる。先端電場の補間式から速度・位置を求め、高エネルギー端をEmax≈2ZkBTₑ[ln(2τ)]²（τ=ωₚᵢt/√(2e)、eは自然対数の底、ωₚᵢt≫1）で表した。これは有限時刻の端で、固定電子温度のモデルでは時間とともに増える。イオン密度の盛り上がりがない結果も、鋭い初期境界を条件とする。[@P000096]
+  - '[@P000096]は、冷イオンと一定温度のBoltzmann電子からなる半無限プラズマの真空膨張を、Poisson方程式を含む一次元モデルで扱った。長時間には、準中性の自己相似解が破れる先端で電場が内部の約2倍となり、Znᵢ/nₑも約2となる。先端電場の補間式から速度・位置を求め、高エネルギー端をEmax≈2ZkBTₑ[ln(2τ)]²（τ=ωₚᵢt/√(2e)、eは自然対数の底、ωₚᵢt≫1）で表した。これは有限時刻の端で、固定電子温度のモデルでは時間とともに増える。イオン密度の盛り上がりがない結果も、鋭い初期境界を条件とする。'
 - heading: 電子の分布から計算モデルを選ぶ
   paragraphs:
-  - Wang and Hu（2018）は、無衝突・非磁化の陽子–電子流が無バイアス導体平板の背後へ膨張する問題を、流体解析解、Boltzmann電子のhybrid PIC、実質量比のfull PICで比較した。平板長140 Debye長、Mach数8の計算では、Mach線から測った膨張角δθ≈2θ0≈2/M0までの初期域で密度場が近く、その先では電子VDFが非Maxwell化して差が増える。中心付近の横方向温度増大は、対向電子集団の二峰分布による二次モーメントの増大として説明される。等温電子による膨張則を使う際には、密度場の近似と電子分布の熱的解釈を分けて扱う必要がある。[@P000099]
+  - '[@P000099]は、無衝突・非磁化の陽子–電子流が無バイアス導体平板の背後へ膨張する問題を、流体解析解、Boltzmann電子のhybrid PIC、実質量比のfull
+    PICで比較した。平板長140 Debye長、Mach数8の計算では、Mach線から測った膨張角δθ≈2θ0≈2/M0までの初期域で密度場が近く、その先では電子VDFが非Maxwell化して差が増える。中心付近の横方向温度増大は、対向電子集団の二峰分布による二次モーメントの増大として説明される。等温電子による膨張則を使う際には、密度場の近似と電子分布の熱的解釈を分けて扱う必要がある。'
   - '[@P000101]はXe推進機の条件でモデルを比較し、密度の大まかな形が似ていても、外縁の局所密度と電位には大きな差が残ることを示した。必要な出力が密度・電位・電子分布のどれかによって、モデル比較で見るべき量も変わる。'
-  - Hu and Wang (2017)は、電子熱速度≫ビーム速度≫イオン熱速度を保つ完全運動論PICで、無衝突プルームの冷却と電子速度分布を結びつけた。ゼロ電流だが非中性の放出では、シースの後に中心域、電子冷却域、ほぼ等温の外側域が現れ、方向別分布は冷却域を経て初期とは異なる近Maxwell型へ移る。放出面から準中性を課した粒子計算では、巨視的構造が似ていても軸方向の冷却と電子分布が変わるため、温度と密度の関係を単一の平衡電子流体にまとめる際には、放出境界と異方性を考慮する必要がある。[@P000100]
+  - '[@P000100]は、電子熱速度≫ビーム速度≫イオン熱速度を保つ完全運動論PICで、無衝突プルームの冷却と電子速度分布を結びつけた。ゼロ電流だが非中性の放出では、シースの後に中心域、電子冷却域、ほぼ等温の外側域が現れ、方向別分布は冷却域を経て初期とは異なる近Maxwell型へ移る。放出面から準中性を課した粒子計算では、巨視的構造が似ていても軸方向の冷却と電子分布が変わるため、温度と密度の関係を単一の平衡電子流体にまとめる際には、放出境界と異方性を考慮する必要がある。'
 - heading: 月ウェイクは流入経路と再充填の段階で読む
   paragraphs:
   - 月ウェイクの観測は、Windの横断観測[@P000223]、ARTEMISの三次元再構成[@P000231]をたどれる。[@P000220]は空隙断面の一次元静電PICをWind観測と比べ、境界電場で加速される対向イオン流を再現した。観測位置と膨張の段階を対応させると、理想化した空隙モデルが説明する構造を見分けられる。
-  - Halekasらは、高エネルギー尾部をもつKappa電子の速度選別を含めた1次元準中性膨張解が、Lunar Prospectorで導出した電子密度・温度・電位の基本形を等温Maxwell解よりよく説明すると示した。特に自己相似変数Z=s/tが約300 km/s未満で適合がよいが、密度の全域と約75 km/sの再圧縮速度は説明しきれない。電子密度は観測精度内でほぼ軸対称でも、月近傍のLP位置では音速膨張と速度異方性1.3の高速磁気音速膨張を識別できなかった。[@P000224]
-  - 真空への一次元膨張を月ウェイクと比べたOgilvieらは、入口側の指数関数的な密度減少、線形の陽子速度増加、光学的影の外へ広がる密度低下域を観測した。下流距離と太陽風速度に基づく膨張時間約24秒は、速度勾配からの約22秒と近い。一方、入口の密度適合に用いた音速40 km/sは実測電子温度からの35 km/sとずれ、出口側の回復も広域では単純な指数関数に合いにくかった。磁場方向の補正と上流条件の変化を含めて、単純解が観測のどの特徴を捉えるかを示す例である[@P000223]。
-  - Nakagawa (2013)は、非磁化の絶縁障害物を太陽風中へ置く二次元電磁full-particle計算で、粒子吸収と局所的な表面帯電を扱った。夜側の負帯電を含む計算では、近傍のイオン・電子の密度差が背景密度の約50%に達し、イオンは自己相似解の希薄波先端へ来る前からwakeへ向かって加速された。著者はこの前加速を表面の負帯電に結びつけている。速度分布は一旦、有限イオン温度を含む自己相似解へ近づくが、下流で両側の流入が重なると再び外れる。中央の高い温度・圧力には、低温の二つの流れを一緒に評価した速度分散が寄与する。物体サイズに対するDebye長を下げ、全速度も遅くした比較では近傍の加速が強まった。磁場変形を議論できないとする著者の留保、光電子等の省略、完全垂直磁場を扱えない境界条件を伴う結果である。[@P000102]
+  - Halekasらは、高エネルギー尾部をもつKappa電子の速度選別を含めた1次元準中性膨張解が、Lunar Prospectorで導出した電子密度・温度・電位の基本形を等温Maxwell解よりよく説明すると示した。特に自己相似変数Z=s/tが約300
+    km/s未満で適合がよいが、密度の全域と約75 km/sの再圧縮速度は説明しきれない。電子密度は観測精度内でほぼ軸対称でも、月近傍のLP位置では音速膨張と速度異方性1.3の高速磁気音速膨張を識別できなかった。[@P000224]
+  - 真空への一次元膨張を月ウェイクと比べたOgilvieらは、入口側の指数関数的な密度減少、線形の陽子速度増加、光学的影の外へ広がる密度低下域を観測した。下流距離と太陽風速度に基づく膨張時間約24秒は、速度勾配からの約22秒と近い。一方、入口の密度適合に用いた音速40
+    km/sは実測電子温度からの35 km/sとずれ、出口側の回復も広域では単純な指数関数に合いにくかった。磁場方向の補正と上流条件の変化を含めて、単純解が観測のどの特徴を捉えるかを示す例である[@P000223]。
+  - '[@P000102]は、非磁化の絶縁障害物を太陽風中へ置く二次元電磁full-particle計算で、粒子吸収と局所的な表面帯電を扱った。夜側の負帯電を含む計算では、近傍のイオン・電子の密度差が背景密度の約50%に達し、イオンは自己相似解の希薄波先端へ来る前からwakeへ向かって加速された。著者はこの前加速を表面の負帯電に結びつけている。速度分布は一旦、有限イオン温度を含む自己相似解へ近づくが、下流で両側の流入が重なると再び外れる。中央の高い温度・圧力には、低温の二つの流れを一緒に評価した速度分散が寄与する。物体サイズに対するDebye長を下げ、全速度も遅くした比較では近傍の加速が強まった。磁場変形を議論できないとする著者の留保、光電子等の省略、完全垂直磁場を扱えない境界条件を伴う結果である。'
   - ARTEMISで静電衝撃波を捉えた[@P000232]、電子分布から電位を復元するプレプリント[@P000262]は、計算が予測する局所的な電位構造を観測へ結び付ける。
-  - Xu et al. (2019)は、ARTEMISのウェイクへ入る電子分布を内外で比較して磁力線方向電位を推定し、電子温度が高いほど負電位が深く、太陽風が速いほど下流へ長く続く傾向を示した。斜交磁場では左右の膨張時間が異なり、電位最小と電場の方向境界が片側へ移る二次元モデルを統計結果が支持する。近月の片側にはモデル差が残り、strahlのある例で中心に現れる約50 Vの接続差は左右別に置いたゼロ電位基準の制約として解釈された。[@P000104]
-  - An et al. (2025)は、磁力線に沿う月ウェイク再充填を電子・イオン双方の運動論で追い、初期の自己相似的なイオン加速・平行冷却から、中央で対向流が作る静電衝撃波までを結びつけた。電子の磁場平行温度は端付近で密度低下とともに下がるため、等温電子理論は前面電場と到達位置を過大に見積もる。中央衝撃波では電位差が流入イオンを減速・反射し、磁場平行成分のエネルギー分配では主に電子熱へエネルギーを移して平坦な速度分布を作る。温度異方性を持つイオン流と同方向に進む波も増幅され、著者は右旋磁気音波と同定した。EMIC波は実行時間が短いため未確認の予測にとどまる。これらは1次元・初期Maxwell分布・質量比100の計算であり、非熱的電子や磁力線を横切る流入を含む条件への拡張が残る。[@P000105]
-  - An et al.（2026）は、磁場に沿う一次元PIC計算で、膨張による大域的電位井戸と中心部のイオン音波衝撃波による局所電位上昇をつないだ。磁場平行成分のエネルギー分配では、大域的電位は電子を減速し、イオンを超音速へ加速して電子の熱をイオンの流れへ移す。中心部では、数十Debye長の衝撃波電位がイオンを減速・熱化し、電子も加熱する。左右由来の電子を追うことで、strahlの通過・反射と中心部の平坦な頂部を区別し、電位推定に用いる電子分布の物理的意味を整理した。[@P000106]
-  - 2011年10月26日の単一ARTEMIS事例では、電子分布から推定した100 Vの大域的電位低下が与える陽子速度約140 km/sと、測定した磁場平行イオン流約150 km/sが概ね対応した。電子の磁場平行熱速度の増加約3000 km/sは、電位またはイオン流から見積もる約6000 km/sより小さい。計算は質量比100の一次元モデルで、入口側には磁場不連続による加熱もあるため、結果の条件を広げるには複数事例と高次元の検証が必要である。[@P000106]
-  - 電子分布からの電位診断では、[@P000262]がボルツマン電位を初期値に使いつつ、左右の分布を独立に最適化し、衝撃波のある中央は捕捉電子の平坦な分布幅で解く。質量比100の一次元PICで、衝撃波のない初期（r/R_l=1.65）と衝撃波のある後期（r/R_l=5.5）を分けて検証した。ARTEMISの初期観測例にはすでに中央衝撃波があり、3領域を用いる点が初期PICと異なる。約800 Vと約200 Vは2観測事例の逆推定値であり、境界での残差と上流の定常性を条件として読む。
+  - '[@P000104]は、ARTEMISのウェイクへ入る電子分布を内外で比較して磁力線方向電位を推定し、電子温度が高いほど負電位が深く、太陽風が速いほど下流へ長く続く傾向を示した。斜交磁場では左右の膨張時間が異なり、電位最小と電場の方向境界が片側へ移る二次元モデルを統計結果が支持する。近月の片側にはモデル差が残り、strahlのある例で中心に現れる約50
+    Vの接続差は左右別に置いたゼロ電位基準の制約として解釈された。'
+  - '[@P000105]は、磁力線に沿う月ウェイク再充填を電子・イオン双方の運動論で追い、初期の自己相似的なイオン加速・平行冷却から、中央で対向流が作る静電衝撃波までを結びつけた。電子の磁場平行温度は端付近で密度低下とともに下がるため、等温電子理論は前面電場と到達位置を過大に見積もる。中央衝撃波では電位差が流入イオンを減速・反射し、磁場平行成分のエネルギー分配では主に電子熱へエネルギーを移して平坦な速度分布を作る。温度異方性を持つイオン流と同方向に進む波も増幅され、著者は右旋磁気音波と同定した。EMIC波は実行時間が短いため未確認の予測にとどまる。これらは1次元・初期Maxwell分布・質量比100の計算であり、非熱的電子や磁力線を横切る流入を含む条件への拡張が残る。'
+  - '[@P000106]は、磁場に沿う一次元PIC計算で、膨張による大域的電位井戸と中心部のイオン音波衝撃波による局所電位上昇をつないだ。磁場平行成分のエネルギー分配では、大域的電位は電子を減速し、イオンを超音速へ加速して電子の熱をイオンの流れへ移す。中心部では、数十Debye長の衝撃波電位がイオンを減速・熱化し、電子も加熱する。左右由来の電子を追うことで、strahlの通過・反射と中心部の平坦な頂部を区別し、電位推定に用いる電子分布の物理的意味を整理した。'
+  - 2011年10月26日の単一ARTEMIS事例では、電子分布から推定した100 Vの大域的電位低下が与える陽子速度約140 km/sと、測定した磁場平行イオン流約150
+    km/sが概ね対応した。電子の磁場平行熱速度の増加約3000 km/sは、電位またはイオン流から見積もる約6000 km/sより小さい。計算は質量比100の一次元モデルで、入口側には磁場不連続による加熱もあるため、結果の条件を広げるには複数事例と高次元の検証が必要である。[@P000106]
+  - 電子分布からの電位診断では、[@P000262]がボルツマン電位を初期値に使いつつ、左右の分布を独立に最適化し、衝撃波のある中央は捕捉電子の平坦な分布幅で解く。質量比100の一次元PICで、衝撃波のない初期（r/R_l=1.65）と衝撃波のある後期（r/R_l=5.5）を分けて検証した。ARTEMISの初期観測例にはすでに中央衝撃波があり、3領域を用いる点が初期PICと異なる。約800
+    Vと約200 Vは2観測事例の逆推定値であり、境界での残差と上流の定常性を条件として読む。
   - 流入する陽子には表面で反射・散乱された成分もある。近傍ウェイクのエネルギー変化[@P000186]、磁気異常からウェイクへの輸送経路[@P000273]を、ARTEMISの広域圧縮構造[@P000272]と読み比べる。Chandrayaan-2の電波観測[@P000247]は、太陽風中と磁気圏尾部の密度ゆらぎを調べる。大域的な流入・偏向と局所的な膨張を組にして扱う研究群である。
-  - 月周辺の低エネルギーイオンには、昼側月面で散乱して戻る太陽風陽子も含まれる。Saito et al. (2008)は、かぐやの月面側センサーに現れる広い角度分布の成分を月面反射と解釈し、反射フラックスを元の太陽風イオンフラックスの約0.1〜1％と報告した。選択した連続2周回では太陽風約0.75 keV/qに対し最大約5 keV/qの成分が現れ、磁場から推定した対流電場方向に対応する南北変化を自己拾い上げ加速で説明した。この研究が扱うのは昼側で戻るイオンの起源と加速であり、ウェイクへの補充量は測定していない。[@P000184]
-  - Nishino et al. は、先行研究のType-I進入を、境界電場で加速された陽子が磁場に垂直なラーモア運動で入る機構として紹介し、さらに昼側表面で散乱した陽子が自己ピックアップを経て最深部へ回り込むType-II経路を提案した。約100 km高度の上向き陽子の観測を、負のBy・影側磁場1.2倍・境界電場の省略を置いた軌道計算と比較した。このモデルで最深部へ上向きに達したのは、直下点から外れた昼側赤道域で散乱し、月の大きさに合うラーモア半径を持つ陽子の一部だった。南側の陽子支配領域が磁場沿いの電子を引き込むという説明は、対向電子ビームと磁力線の接続に基づく著者の提案である。[@P000103]
+  - 月周辺の低エネルギーイオンには、昼側月面で散乱して戻る太陽風陽子も含まれる。[@P000184]は、かぐやの月面側センサーに現れる広い角度分布の成分を月面反射と解釈し、反射フラックスを元の太陽風イオンフラックスの約0.1〜1％と報告した。選択した連続2周回では太陽風約0.75
+    keV/qに対し最大約5 keV/qの成分が現れ、磁場から推定した対流電場方向に対応する南北変化を自己拾い上げ加速で説明した。この研究が扱うのは昼側で戻るイオンの起源と加速であり、ウェイクへの補充量は測定していない。
+  - Nishino et al. は、先行研究のType-I進入を、境界電場で加速された陽子が磁場に垂直なラーモア運動で入る機構として紹介し、さらに昼側表面で散乱した陽子が自己ピックアップを経て最深部へ回り込むType-II経路を提案した。約100
+    km高度の上向き陽子の観測を、負のBy・影側磁場1.2倍・境界電場の省略を置いた軌道計算と比較した。このモデルで最深部へ上向きに達したのは、直下点から外れた昼側赤道域で散乱し、月の大きさに合うラーモア半径を持つ陽子の一部だった。南側の陽子支配領域が磁場沿いの電子を引き込むという説明は、対向電子ビームと磁力線の接続に基づく著者の提案である。[@P000103]
 - heading: ダストとクレーターでは、物体の尺度が効く
   paragraphs:
   - Debye長より小さな負帯電粒子の背後では、イオンの集束が周囲の電位や粒子間力を変える。[@P000098]は動的遮蔽を求める理論と自己無撞着PICを比較しており、粒子の帯電と非線形性をどこまで扱うかを考える際に使える。
-  - Hutchinson（2012）は、Te/Ti=100の一様な定常イオン流中で、小さな等電荷二粒子の横方向整列力をBoltzmann電子と粒子イオンを組み合わせた三次元PICと全運動量流束から求めた。衝突には、イオンと同じ速度で流れる中性気体との固定頻度の荷電交換を用いた。M≈0.3以下では単粒子ウェイクの正電位ピークが著しく弱まり、近線形条件では整列力もほぼ失われる。一方、Q̄=-0.2の非線形・衝突ありでは、単粒子電位勾配が反発を予測する低Mにも全力は引力を保ち、M=0.1に音速時の約1割が残る。著者は粒子へ収束するイオン流によるドラッグ摂動を候補に挙げるが、機構を一意に分離してはいない。膨張に伴う低速領域の相互作用を考える際には、Mだけでなくイオン熱速度・電荷・衝突モデルもそろえて比較する必要がある。本論文は膨張前線の時間発展自体を計算していない。[@P000097]
+  - '[@P000097]は、Te/Ti=100の一様な定常イオン流中で、小さな等電荷二粒子の横方向整列力をBoltzmann電子と粒子イオンを組み合わせた三次元PICと全運動量流束から求めた。衝突には、イオンと同じ速度で流れる中性気体との固定頻度の荷電交換を用いた。M≈0.3以下では単粒子ウェイクの正電位ピークが著しく弱まり、近線形条件では整列力もほぼ失われる。一方、Q̄=-0.2の非線形・衝突ありでは、単粒子電位勾配が反発を予測する低Mにも全力は引力を保ち、M=0.1に音速時の約1割が残る。著者は粒子へ収束するイオン流によるドラッグ摂動を候補に挙げるが、機構を一意に分離してはいない。膨張に伴う低速領域の相互作用を考える際には、Mだけでなくイオン熱速度・電荷・衝突モデルもそろえて比較する必要がある。本論文は膨張前線の時間発展自体を計算していない。'
   - 地形の陰への膨張は、クレーターへの太陽風供給に直結する。[@P000008]は表面帯電と膨張のフィードバックを扱う。月全体のウェイク、局所地形の陰、粒子周囲では、物体サイズとDebye長、流速、磁場をそろえて比較するとつながりが見える。日夜境界の電場とダスト運動[@P000221]、日夜境界・極域での準中性破れ[@P000282]も、同じ粒子供給の違いを表面近くへつなぐ文献となる。[@P000221]の計算は定常・準中性ウェイクと滑らかな月面の鉛直電場を扱う。地形の陰による水平電場は定性的な提案で、局所電場の数値解やダストとの自己無撞着な連成計算は行っていない。
   - 太陽嵐中のクレーターと物体帯電を扱う[@P000222]は、運動論計算を等価回路へ接続した。膨張前線の下の電子雲を解く[@P000264]は、クレーター内の非中性領域を解析的に扱う。地形・材料と流入条件を対応させることで、膨張理論を具体的な空洞へ適用する筋道を追える。
-  - Miyake・Nishino（2015）の50 m×45 m縦孔計算では、450 km/sの太陽風陽子は約1 keVのエネルギーでほぼ弾道的に進む一方、熱電子は負電位の影と壁への吸収により孔底への到達を制限される。日向側の電子密度低下には加速と壁損失が関わるが、流束保存による加速だけでは電流は減らず、壁への吸収が孔底の電子電流を減らす。天頂角30°では壁から孔底へ向かう光電子の下向き平均流も形成される。[@P000225]
-  - 開口部から空洞へ入る流れでは、電子の熱運動と壁面捕集により、電子とイオンの底面への輸送が異なる。Gopalakrishnanらの2024年9月25日草稿のガラス管実験では、入口の負バイアスや深さの増加で底面の正電位が概ね高くなる一方、入口−40/−70 Vで模擬太陽風電子をほぼ遮っても電子電流が残る。著者はこの成分を壁へのイオン入射で生じる二次電子に帰し、底面電位の上昇を抑える機構として示した。100–800 eVの窒素由来プラズマと管径6 mmの実験であり、月の空洞に対する定量的な相似則は示されていない。[@P000226]
-  - Xie et al. (2024)の静電hybrid計算では、標準条件のウェイクコーン角8.8°と温度・流速による変化はイオン音速を用いた膨張理論と整合する。一方、下降加速はクレーター上流のシースから始まり、底近くのイオン前縁は表面と局所シースのため比較理論より高くなると解釈された。三次元の横方向速度も加わり、自由な真空への膨張を地形内の局所流入へ拡張する位置付けとなる。電子雲の負電位は20秒計算の準平衡である。[@P000048]
+  - '[@P000225]の50 m×45 m縦孔計算では、450 km/sの太陽風陽子は約1 keVのエネルギーでほぼ弾道的に進む一方、熱電子は負電位の影と壁への吸収により孔底への到達を制限される。日向側の電子密度低下には加速と壁損失が関わるが、流束保存による加速だけでは電流は減らず、壁への吸収が孔底の電子電流を減らす。天頂角30°では壁から孔底へ向かう光電子の下向き平均流も形成される。'
+  - 開口部から空洞へ入る流れでは、電子の熱運動と壁面捕集により、電子とイオンの底面への輸送が異なる。Gopalakrishnanらの2024年9月25日草稿のガラス管実験では、入口の負バイアスや深さの増加で底面の正電位が概ね高くなる一方、入口−40/−70
+    Vで模擬太陽風電子をほぼ遮っても電子電流が残る。著者はこの成分を壁へのイオン入射で生じる二次電子に帰し、底面電位の上昇を抑える機構として示した。100–800
+    eVの窒素由来プラズマと管径6 mmの実験であり、月の空洞に対する定量的な相似則は示されていない。[@P000226]
+  - '[@P000048]の静電hybrid計算では、標準条件のウェイクコーン角8.8°と温度・流速による変化はイオン音速を用いた膨張理論と整合する。一方、下降加速はクレーター上流のシースから始まり、底近くのイオン前縁は表面と局所シースのため比較理論より高くなると解釈された。三次元の横方向速度も加わり、自由な真空への膨張を地形内の局所流入へ拡張する位置付けとなる。電子雲の負電位は20秒計算の準平衡である。'
 - heading: ウェイクによる力と電荷変化を実験へつなぐ
   paragraphs:
   - '[@P000321]は流れの中のダストについて、遮蔽、ウェイク電位、イオンの運動量移行を分けて考える基礎文献である。[@P000318]は異なる粒径の粒子対を三次元追跡し、下流粒子の電荷変化とウェイク引力を推定した。粒子周囲の電位だけでなく、相手粒子の電荷も変わることが、相互作用モデルを比較する際の軸になる。'
-  - XieらはBoltzmann電子とイオン粒子を非線形Poisson方程式で結ぶ静電モデルで、局所クレーターへの太陽風流入を計算した。適用条件はクレーター径が電子旋回半径より小さいことである。NishinoらはKaguyaの月ウェイク陽子観測をもとに、指定した上流磁場・速度の下で昼側散乱陽子が自己ピックアップされる軌道を計算し、ウェイク境界の内向き電場を省いた。後者は高度100 kmの仮想軌道で上向き陽子を選んで観測パターンと比較している。両者をつなぐには、地形・月の空間スケール、磁場、粒子の起源、観測・評価面の違いを保つ必要がある。 [@P000048][@P000103]
+  - XieらはBoltzmann電子とイオン粒子を非線形Poisson方程式で結ぶ静電モデルで、局所クレーターへの太陽風流入を計算した。適用条件はクレーター径が電子旋回半径より小さいことである。NishinoらはKaguyaの月ウェイク陽子観測をもとに、指定した上流磁場・速度の下で昼側散乱陽子が自己ピックアップされる軌道を計算し、ウェイク境界の内向き電場を省いた。後者は高度100
+    kmの仮想軌道で上向き陽子を選んで観測パターンと比較している。両者をつなぐには、地形・月の空間スケール、磁場、粒子の起源、観測・評価面の違いを保つ必要がある。[@P000048][@P000103]
 - heading: 条件を対応させて文献を比べる
   paragraphs:
-  - 電子流体近似を評価するには、密度の一致と速度分布の形を併せて読む必要がある。Wang and Hu（2018）は無バイアス導体平板のウェイクで、等温Boltzmann電子を用いるhybrid PICとfull PICを比べ、深いウェイクで密度差と電子分布の非Maxwell化が強まることを示した。[@P000099] Hu and Wang（2017）は両モデルともfull PICを使い、非中性の放出面から準中性の貯蔵域へ供給条件を変えると、似た巨視的構造でも方向別電子温度と分布が変わった。[@P000100] 二次モーメントで定義する温度には対向流の速度差も入る。電子二峰分布を調べたWang and Hu（2018）と、低温イオン二群の重なりを調べたNakagawa（2013）は、全体の温度上昇と各群の熱化を分ける必要を示す。[@P000099][@P000102]
-  - 磁場に沿う月ウェイクの一次元再充填では、膨張が作る対向イオン流と、中央衝撃波による減速・電子分布の平坦化がつながる。Anらの2025年計算は初期Maxwell電子、2026年計算はcore・halo・strahl電子を用い、両方とも質量比100の運動論PICである。[@P000105][@P000106] 2025年の代表的衝撃波ではイオン流のエネルギーが主に電子熱へ移り、2026年は大域的な電位井戸と局所的な電位上昇を連続した変換として追い、ARTEMISの一横断と照合した。診断時刻とイオン群の分け方が異なるため、両種への熱分配率の差はまだ直接比較できない。[@P000105][@P000106] 2025年の右旋R-mode波の増幅は計算結果だが、十分発達したEMIC波と実質量比での両波の優劣は未検証である。[@P000105]
+  - 電子流体近似を評価するには、密度の一致と速度分布の形を併せて読む必要がある。[@P000099]は無バイアス導体平板のウェイクで、等温Boltzmann電子を用いるhybrid
+    PICとfull PICを比べ、深いウェイクで密度差と電子分布の非Maxwell化が強まることを示した。[@P000099] [@P000100]は両モデルともfull
+    PICを使い、非中性の放出面から準中性の貯蔵域へ供給条件を変えると、似た巨視的構造でも方向別電子温度と分布が変わった。[@P000100]二次モーメントで定義する温度には対向流の速度差も入る。電子二峰分布を調べた[@P000099]と、低温イオン二群の重なりを調べた[@P000102]は、全体の温度上昇と各群の熱化を分ける必要を示す。
+  - 磁場に沿う月ウェイクの一次元再充填では、膨張が作る対向イオン流と、中央衝撃波による減速・電子分布の平坦化がつながる。Anらの2025年計算は初期Maxwell電子、2026年計算はcore・halo・strahl電子を用い、両方とも質量比100の運動論PICである。[@P000105][@P000106]
+    2025年の代表的衝撃波ではイオン流のエネルギーが主に電子熱へ移り、2026年は大域的な電位井戸と局所的な電位上昇を連続した変換として追い、ARTEMISの一横断と照合した。診断時刻とイオン群の分け方が異なるため、両種への熱分配率の差はまだ直接比較できない。[@P000105][@P000106]
+    2025年の右旋R-mode波の増幅は計算結果だが、十分発達したEMIC波と実質量比での両波の優劣は未検証である。
 lineage:
 - title: 膨張の電荷分離と電子分布
   steps:
   - paper_id: P000096
     title: イオン先端の加速を解く
     significance: 先端電場が長時間には内部自己相似電場の約2倍になることを示し、先端速度・位置と有限時刻のエネルギー端を近似式で求めた。長時間の先端ではZnᵢ/nₑ≈2となり、本紙の鋭い初期境界ではイオン密度の盛り上がりがない。
+    connection: ''
   - paper_id: P000099
     title: 電子流体近似が崩れる領域を示す
     significance: 物体背後の解析解とPICを比べ、非平衡な電子分布がウェイクの予測を変えることを示した。
@@ -64,6 +80,7 @@ lineage:
   - paper_id: P000103
     title: 昼側から回り込む陽子を捉える
     significance: 負のByを仮定した軌道計算で、昼側の正午子午面から外れた赤道域で散乱した陽子の一部が、自己ピックアップと月の大きさに合うラーモア軌道を経て最深部へ上向きに達するType-II経路を示した。南側の陽子支配領域と電子吸収を生む外向き電場は著者の提案である。
+    connection: ''
   - paper_id: P000102
     title: 表面帯電とイオン流入を同時に解く
     significance: 二次元PICで物体近傍の電荷分離と流入を扱い、Debye長と物体半径の比と全速度を同時に変えた比較で、近傍の加速の違いを調べた。
@@ -106,1239 +123,268 @@ entries:
 - paper_id: P000095
   group: expansion
   role: 真空膨張と宇宙ウェイクの総説
-  summary:
-    question: 真空や希薄プラズマへの膨張で、粒子と電場はどう変化するか。
-    method: 希薄化波、イオン加速、膨張先端を整理し、宇宙物体のウェイクへ適用。
-    contribution: プラズマ膨張と人工衛星・天体背後の粒子分布を共通の過程として結び付けた。
-  evidence_by_item:
-    question:
-    - paper_id: P000095
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RG021i007p01631
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-    method:
-    - paper_id: P000095
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RG021i007p01631
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-    contribution:
-    - paper_id: P000095
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/RG021i007p01631
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000096
   group: expansion
   role: 有限時刻のイオン先端とエネルギー端
-  summary:
-    question: 鋭い境界を持つプラズマが真空へ膨張するとき、準中性が破れるイオン先端の電場・密度構造と、有限時刻の最大イオンエネルギーはどう決まるか。
-    method: 一次元・無衝突・静電場で、初期静止の冷イオンと一定温度のBoltzmann電子を仮定。Poisson方程式とイオン流体方程式をLagrange型コードで解き、先端電場の補間式と長時間漸近式を比較した。
-    contribution: 先端電場が長時間には内部自己相似電場の約2倍になることを示し、先端速度・位置と有限時刻のエネルギー端を近似式で求めた。長時間の先端ではZnᵢ/nₑ≈2となり、本紙の鋭い初期境界ではイオン密度の盛り上がりがない。
-  evidence_by_item:
-    question:
-    - paper_id: P000096
-      version_id: V1
-      url: https://doi.org/10.1103/PhysRevLett.90.185002
-      source_type: full_text
-      locator: PDF p.1 introduction and initial-condition paragraph; right-column validity discussion
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000096
-      version_id: V1
-      url: https://doi.org/10.1103/PhysRevLett.90.185002
-      source_type: full_text
-      locator: PDF pp.1–2, Eqs.(1),(2),(4),(5),(8), code/boundary-condition paragraphs
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000096
-      version_id: V1
-      url: https://doi.org/10.1103/PhysRevLett.90.185002
-      source_type: full_text
-      locator: PDF pp.2–4, Eqs.(9)–(22), Figs.1–7
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000097
   group: grain-wakes
   role: 低速流中の粒子間力
-  summary:
-    question: 音速より十分遅いイオン流で、単粒子ウェイクの振動・正電位ピークと、二粒子の横方向整列力はどこで失われるか。電位勾配による力の推定は衝突・非線形条件でも成り立つか。
-    method: 電子Boltzmann応答・イオンPICの三次元COPTICで、温度比Te/Ti=100、Q̄=-0.02/-0.2、非衝突および荷電交換τ=1.3λDe/csを比較。等電荷二粒子を原点と(0.5,0,1)λDeに置き、球面の全運動量流束から横力を求め、単粒子ウェイクの電位勾配と比較。
-    contribution: M≈0.3以下で正電位ピークと整列力が概ね弱まることを示し、近線形では単粒子電位勾配による力の推定を支持した。非線形・衝突ありではM=0.1にも音速時の約1割の引力が残り、電位勾配だけの推定と符号まで食い違う。
-  evidence_by_item:
-    question:
-    - paper_id: P000097
-      version_id: V2
-      url: https://arxiv.org/abs/1204.5076v1
-      source_type: full_text
-      locator: PDF pp.1–2、§1
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000097
-      version_id: V2
-      url: https://arxiv.org/abs/1204.5076v1
-      source_type: full_text
-      locator: PDF pp.2–3, 9、§2,4
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000097
-      version_id: V2
-      url: https://arxiv.org/abs/1204.5076v1
-      source_type: full_text
-      locator: PDF pp.6, 12–14、§3–5、Figs.10–11
-      checked_at: '2026-10-12'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000098
   group: grain-wakes
   role: 動的遮蔽と自己無撞着PIC
-  summary:
-    question: 流れるプラズマ中のダスト周囲の電位を、どのモデルで求めるか。
-    method: 誘電関数から求める動的遮蔽電位と、帯電を含む三次元PICを比較。
-    contribution: 粒子の帯電と非線形効果を含めて、二つのウェイク計算法の適用範囲を整理。
-  evidence_by_item:
-    question:
-    - paper_id: P000098
-      version_id: V2
-      url: https://arxiv.org/abs/1201.1714
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-    method:
-    - paper_id: P000098
-      version_id: V2
-      url: https://arxiv.org/abs/1201.1714
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-    contribution:
-    - paper_id: P000098
-      version_id: V2
-      url: https://arxiv.org/abs/1201.1714
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000099
   group: electron-models
   role: 電子流体近似とウェイク
-  summary:
-    question: 無衝突・非磁化のmesothermal流中の無バイアス導体平板背後で、等温Boltzmann電子を使う流体解析・hybrid PICはどの領域までfull PICの密度場を表せるか。
-    method: 平板長140 λD0、Mach数8の陽子–電子流を、準中性の流体解析解・静電hybrid PIC・実質量比1836.15の静電full PICで比較。局所密度差、方向別電子二次モーメントとVDF、VDFの非Maxwell性を測る指標Ψを対応付けた。
-    contribution: Mach線からδθ≈2θ0≈2/M0までの初期膨張域では巨視的密度場が近く、その先の深いウェイクでは非Maxwell分布・異方性・対向電子流に伴ってBoltzmann電子閉包が崩れることを示した。10%密度差境界は本計算の密度約0.15とΨ≈0.02におよそ対応し、中心の横方向温度増大は二峰分布の対向流に由来する。
-  evidence_by_item:
-    question:
-    - paper_id: P000099
-      version_id: V1
-      url: https://doi.org/10.1029/2018JA025743
-      source_type: full_text
-      locator: PDF pp.1–2、要旨・§1
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000099
-      version_id: V1
-      url: https://doi.org/10.1029/2018JA025743
-      source_type: full_text
-      locator: PDF pp.2–4、§2、式(1)–(3)
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000099
-      version_id: V1
-      url: https://doi.org/10.1029/2018JA025743
-      source_type: full_text
-      locator: PDF pp.5–8、§3–4、Figs.3–6、式(4)–(7)
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000100
   group: electron-models
   role: 放出条件と異方的電子分布が決めるプルーム冷却
-  summary:
-    question: 無衝突mesothermalプルームで、電子の局所速度分布と放出面の非中性条件は、巨視的な冷却・等温領域をどう決めるか。
-    method: 実質量比の電子・イオン完全運動論静電PICで、有限幅2Dプルームを計算。主条件は陽子mi/me=1836、Ti0/Te0=0.01、vbeam/vte0=0.1、M0=4.29。ゼロ電流・非中性放出model Aと、準中性Maxwell貯蔵域model Bを比較し、方向別温度と局所EVDFを調べる。
-    contribution: 非中性放出では中心域・電子冷却域・ほぼ等温域が現れ、電位井戸の内外で電子EVDFが変わる。準中性放出へ変えると巨視的構造が似ていても軸方向冷却と局所分布が異なり、単一平衡電子流体の全域適用に限界がある。
-  evidence_by_item:
-    question:
-    - paper_id: P000100
-      version_id: V1
-      url: https://doi.org/10.1063/1.4978484
-      source_type: full_text
-      locator: PDF file pp.4–5 (033510-2–3), Sec.II; pp.10–12 (033510-8–10), Sec.V
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000100
-      version_id: V1
-      url: https://doi.org/10.1063/1.4978484
-      source_type: full_text
-      locator: PDF file pp.4–7 (033510-2–5), Sec.II–III, Eqs.3–10, Figs.2,5–6; pp.10–12 (033510-8–10), Sec.V, Figs.11–17
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000100
-      version_id: V1
-      url: https://doi.org/10.1063/1.4978484
-      source_type: full_text
-      locator: PDF file pp.7–10 (033510-5–8), Sec.III–IV, Figs.6–10; pp.11–13 (033510-9–11), Sec.V–VI, Figs.14–17
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000101
   group: electron-models
   role: 推進機プルームのモデル比較
-  summary:
-    question: 等温Boltzmann電子の静電hybridは、無衝突プルームの密度・電位をどこまで再現するか。
-    method: 実際のXe⁺・電子質量比による二次元PICと比較。hybridはBoltzmann密度から非線形Poissonを解き、放出部の中和条件も比較する。
-    contribution: 密度の大まかな形が似ていても、外縁の密度と横方向の電位に差が残った。電子温度の異方性と中和条件を分けて検証する根拠を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000101
-      version_id: V1
-      url: https://doi.org/10.1063/1.5111791
-      source_type: full_text
-      locator: 出版PDF pp.2–3（印刷103502-1–2）、§I、式1–3
-      checked_at: '2026-10-10'
-    method:
-    - paper_id: P000101
-      version_id: V1
-      url: https://doi.org/10.1063/1.5111791
-      source_type: full_text
-      locator: 出版PDF pp.3–4、§II、Fig.1、式4–7
-      checked_at: '2026-10-10'
-    contribution:
-    - paper_id: P000101
-      version_id: V1
-      url: https://doi.org/10.1063/1.5111791
-      source_type: full_text
-      locator: 出版PDF pp.5–8、Fig.2–7、式9–13、§IV
-      checked_at: '2026-10-10'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-10'
-    recheck: false
-  locked_fields: []
 - paper_id: P000102
   group: lunar-wake
   role: 表面帯電による前加速と有限幅wakeの二流
-  summary:
-    question: 非磁化の絶縁障害物の表面帯電はwakeへのイオン流入をどう変え、有限サイズと対流時間は自己相似解との差にどう現れるか。
-    method: 電子とイオンを粒子で扱う二次元電磁full-particle計算で粒子吸収と衝突位置の帯電を入れ、Debye長/障害物半径を1/8と1/16で比較。斜め磁場下の密度・速度・圧力・温度・速度分布を有限イオン温度の自己相似解と照合。
-    contribution: 夜側の負帯電に伴う電子・イオン密度差と希薄波先端前のイオン加速を示し、下流では両側からの低温流入が重なって全体温度・圧力が上がる機構を区別した。大きい障害物に相当する尺度比と遅い流速は近傍の加速時間を増す。
-  evidence_by_item:
-    question:
-    - paper_id: P000102
-      version_id: V1
-      url: https://doi.org/10.1002/jgra.50129
-      source_type: full_text
-      locator: PDF p.2, §2, ¶¶16–23, Table1, Eqs1–4; PDF pp.3–6, ¶¶27–31,37–44,46–54, Figs1–6; PDF pp.6–10, ¶¶55–73, Figs7–10; PDF pp.3,11, ¶¶23–25,92–93
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000102
-      version_id: V1
-      url: https://doi.org/10.1002/jgra.50129
-      source_type: full_text
-      locator: PDF p.2, §2, ¶¶16–23, Table1, Eqs1–4; PDF pp.3–6, ¶¶27–31,37–44,46–54, Figs1–6; PDF pp.6–10, ¶¶55–73, Figs7–10; PDF pp.3,11, ¶¶23–25,92–93
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000102
-      version_id: V1
-      url: https://doi.org/10.1002/jgra.50129
-      source_type: full_text
-      locator: PDF p.2, §2, ¶¶16–23, Table1, Eqs1–4; PDF pp.3–6, ¶¶27–31,37–44,46–54, Figs1–6; PDF pp.6–10, ¶¶55–73, Figs7–10; PDF pp.3,11, ¶¶23–25,92–93
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000103
   group: lunar-wake
   role: 昼側散乱から夜側への陽子輸送
-  summary:
-    question: 昼側で散乱した太陽風陽子は、かぐやが約100 km高度の月ウェイク最深部で検出した上向き陽子をどう供給するか。
-    method: 2008年9月24日のかぐやPACE/IMA・ESA-S1とLMAGをWindの上流太陽風と比較し、負のByを持つ簡略磁場、影側磁場1.2倍、境界電場の省略を仮定した陽子軌道を計算。仮想100 km周回で上向き陽子だけを集計し、エネルギー分布のパターンを比較した。
-    contribution: 負のByを仮定した軌道計算で、昼側の正午子午面から外れた赤道域で散乱した陽子の一部が、自己ピックアップと月の大きさに合うラーモア軌道を経て最深部へ上向きに達するType-II経路を示した。南側の陽子支配領域と電子吸収を生む外向き電場は著者の提案である。
-  evidence_by_item:
-    question:
-    - paper_id: P000103
-      version_id: V1
-      url: https://doi.org/10.1029/2009GL039444
-      source_type: full_text
-      locator: 出版社PDF p.1 §1 [5]; pp.2–3 §3 [7]–[10]
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000103
-      version_id: V1
-      url: https://doi.org/10.1029/2009GL039444
-      source_type: full_text
-      locator: 出版社PDF pp.1–2 §2 [6]; pp.3–4 §4 [11]–[15], 図3
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000103
-      version_id: V1
-      url: https://doi.org/10.1029/2009GL039444
-      source_type: full_text
-      locator: 出版社PDF pp.3–4 §4 [13]–[15]; p.4 §5 [16]–[17], 図3–4
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000104
   group: lunar-wake
   role: 電子分布からウェイク電位を推定し、斜交IMFの膨張時間差モデルと比較
-  summary:
-    question: 月ウェイクの磁力線方向電位は太陽風電子温度・速度でどう変わり、磁場傾斜とstrahlによる左右の非対称性をどう分けられるか。
-    method: ARTEMIS P1・P2の2011年6月〜2018年末の電子・磁場データを選び、40–500 eVの入射電子分布をウェイク内外で比較して電位を推定。左右別に1.3–1.5月半径をゼロ電位とし、斜交IMFの二次元膨張モデルと比較した。
-    contribution: 電子温度が高いほど深い負電位、太陽風が速いほど長い電位域を統計的に示した。傾いたIMFの膨張時間差による最小位置の移動を支持し、strahl例で残る約50 Vの接続差をゼロ電位基準の制約として論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000104
-      version_id: V2
-      url: https://doi.org/10.1029/2019ja026536
-      source_type: full_text
-      locator: 実読はNASA Public Access著者稿V2（30頁）。出版社版V1は未読。リンクは関連刊行論文の書誌URL。 PDF pp.5–10 §§3–4; pp.11–12 §5; Figs.4–5,8,10–12 pp.22–23,26,28–30
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000104
-      version_id: V2
-      url: https://doi.org/10.1029/2019ja026536
-      source_type: full_text
-      locator: 実読はNASA Public Access著者稿V2（30頁）。出版社版V1は未読。リンクは関連刊行論文の書誌URL。 PDF pp.5–10 §§3–4; pp.11–12 §5; Figs.4–5,8,10–12 pp.22–23,26,28–30
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000104
-      version_id: V2
-      url: https://doi.org/10.1029/2019ja026536
-      source_type: full_text
-      locator: 実読はNASA Public Access著者稿V2（30頁）。出版社版V1は未読。リンクは関連刊行論文の書誌URL。 PDF pp.5–10 §§3–4; pp.11–12 §5; Figs.4–5,8,10–12 pp.22–23,26,28–30
-      checked_at: '2026-10-12'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000105
   group: lunar-wake
   role: 自己相似膨張から中央衝撃波・電子熱化とイオンスケール波へ
-  summary:
-    question: 磁力線方向の月ウェイク再充填で、電子の冷却、対向イオン流の衝突、粒子間エネルギー移送と波動励起はどうつながるか。
-    method: 電子・イオンをともに粒子で扱う1次元電磁VPIC。B0に平行な移流切片で初期空洞からtωpi=14400まで追跡し、mi/me=100・Rl/di=13.2の条件で自己相似解、Hamiltonian・x成分エネルギー分配、偏波とk–ωスペクトルを比較。
-    contribution: 初期の自己相似的イオン加速・平行冷却に、非等温電子の冷却と理論との差を加えて示した。中央静電衝撃波の電位差が流入イオンを減速・反射し、主に電子熱へエネルギーを移して平坦分布を作ることを診断した。右旋磁気音波の移流成長を異常サイクロトロン共鳴で解釈し、EMIC波は短い実行時間のため未確認の予測として残した。
-  evidence_by_item:
-    question:
-    - paper_id: P000105
-      version_id: V2
-      url: https://arxiv.org/abs/2505.12497v2
-      source_type: full_text
-      locator: PDF pp3–4, Introduction
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000105
-      version_id: V2
-      url: https://arxiv.org/abs/2505.12497v2
-      source_type: full_text
-      locator: PDF pp8–10, §3, Table1, Eqs15–18
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000105
-      version_id: V2
-      url: https://arxiv.org/abs/2505.12497v2
-      source_type: full_text
-      locator: PDF pp11–27, §§4–6, Figs5–18
-      checked_at: '2026-10-12'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000106
   group: lunar-wake
   role: 二つの電位尺度によるエネルギー変換と電子分布の痕跡
-  summary:
-    question: 磁場に沿った月ウェイク再充填で、膨張の大域的電位井戸と中心部の衝撃波電位は、種間のエネルギー変換と粒子速度分布にどう対応するか。
-    method: 磁場方向の一次元PIC（質量比100、core/halo/strahl電子分布、両端太陽風注入）で電位・粒子分布・エネルギー密度・電子力平衡を追い、2011年10月26日の単一ARTEMIS横断と電子分布からの電位推定を比較した。
-    contribution: 膨張の電位井戸による電子熱から超音速イオン流への変換と、数十Debye長のイオン音波衝撃波による両種の加熱を連続した機構として示した。電子の準静的力平衡、通過・反射・平坦な頂部の分布を、電位推定の物理的根拠として整理した。
-  evidence_by_item:
-    question:
-    - paper_id: P000106
-      version_id: V1
-      url: https://arxiv.org/pdf/2608.18383v1
-      source_type: full_text
-      locator: PDF p.3, §1
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000106
-      version_id: V1
-      url: https://arxiv.org/pdf/2608.18383v1
-      source_type: full_text
-      locator: PDF pp.3–4, §2; pp.11–14, Appendices A–C; p.8, §3.4
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000106
-      version_id: V1
-      url: https://arxiv.org/pdf/2608.18383v1
-      source_type: full_text
-      locator: PDF pp.4–10, §§3.1–3.4, Figs.1–4; pp.15–16, Appendix E
-      checked_at: '2026-10-12'
-  inspection:
-    level: preprint
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000008
   group: crater-wakes
   role: 極域への太陽風侵入
-  summary:
-    question: 極域クレーターへの太陽風侵入と帯電はどう影響し合うか。
-    method: 影の段差を二次元で計算し、表面電荷と二次電子放出を追跡。
-    contribution: 表面帯電と流入プラズマの負のフィードバックを示し、二次電子放出が電位と陽子の到達位置を変える。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000008
-      version_id: V1
-      url: https://doi.org/10.1029/2011GL048880
-      source_type: full_text
-      locator: §2・§4（PDF pp.1–2,4–5）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000048
   group: crater-wakes
   role: 極域クレーターのミニウェイク
   summary:
     question: 極域クレーターによる膨張は、上流のシースと底面での吸収によって自己相似ウェイクからどう変わるか。
-    method: SPISの三次元静電hybrid PICで、イオンを粒子、電子をBoltzmann関係で閉じた質量なし流体として扱い、陰的な非線形Poisson方程式を解く。直径1.2 km、光電子・二次電子放出を省いた6条件を20 s計算する。
-    contribution: 標準条件で余剰電子を伴うイオン空乏域と約−60 Vの準平衡電位、底から100 mの下降フラックス約4%、壁法線フラックス約18%を示した。上流のシース擾乱と約±40 km s−1の横方向流れを三次元で捉えた。
-  evidence_by_item:
-    question:
-    - paper_id: P000048
-      version_id: V1
-      url: https://doi.org/10.1029/2024JA032764
-      source_type: full_text
-      locator: PDF pp.1–2, Introduction
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000048
-      version_id: V1
-      url: https://doi.org/10.1029/2024JA032764
-      source_type: full_text
-      locator: PDF pp.2–3, §2, Fig.1, Table 1; p.8 §4 (20 s)
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000048
-      version_id: V1
-      url: https://doi.org/10.1029/2024JA032764
-      source_type: full_text
-      locator: PDF pp.4–8, §3–4, Figs.2–5; p.9 §4 (magnetic limit)
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
+    method: SPISの三次元静電hybrid PICで、イオンを粒子、電子をBoltzmann関係で閉じた質量なし流体として扱い、陰的な非線形Poisson方程式を解く。直径1.2
+      km、光電子・二次電子放出を省いた6条件を20 s計算する。
+    contribution: 標準条件で余剰電子を伴うイオン空乏域と約−60 Vの準平衡電位、底から100 mの下降フラックス約4%、壁法線フラックス約18%を示した。上流のシース擾乱と約±40
+      km s−1の横方向流れを三次元で捉えた。
 - paper_id: P000219
   group: expansion
   role: 無衝突プラズマ膨張の基準解
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 無衝突プラズマが真空へ膨張すると先端のイオンはどう加速するか。
-    method: 半無限プラズマの無衝突膨張を計算する。
-    contribution: イオン先端が電子熱速度に匹敵する速度へ加速することを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000219
-      version_id: V1
-      url: https://doi.org/10.1017/s0022377800025538
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000219
-      version_id: V1
-      url: https://doi.org/10.1017/s0022377800025538
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000219
-      version_id: V1
-      url: https://doi.org/10.1017/s0022377800025538
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000220
   group: lunar-wake
   role: 月ウェイクの一次元PIC
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 月ウェイクの粒子構造を単純な運動論モデルで説明できるか。
-    method: 空隙の断面を一次元静電PICで計算し、Windの観測と比較する。
-    contribution: 境界の電場で加速される対向イオン流などを再現した。
-  evidence_by_item:
-    question:
-    - paper_id: P000220
-      version_id: V1
-      url: https://doi.org/10.1029/97ja03717
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000220
-      version_id: V1
-      url: https://doi.org/10.1029/97ja03717
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000220
-      version_id: V1
-      url: https://doi.org/10.1029/97ja03717
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000223
   group: lunar-wake
   role: WIND観測による磁場方向の月ウェイク充填
-  summary:
-    question: 月後方のプラズマ空洞を太陽風がどのように埋めるか、密度減少、二つの陽子流、磁場方向、密度低下境界を通じて調べた。
-    method: 1994年12月27日、月中心から下流6.5月半径を横断したWINDのSWEによる粒子分布・密度・温度・速度とMFIの磁場を調べ、磁場に沿う一次元真空膨張解と比較した。
-    contribution: 密度の最小値は流入直前の太陽風の約1/20となり、二つの低温陽子流が同時に現れた。流入側の密度減少と速度勾配は単純な膨張解と概ね合い、斜めの磁場による非対称な充填と解釈された。約2×10⁻⁴ V/mの電場は速度変化から得た粗い推定で、流出側の密度回復は指数関数への適合が弱かった。
-  evidence_by_item:
-    question:
-    - paper_id: P000223
-      version_id: V1
-      url: https://discovery.ucl.ac.uk/id/eprint/1349829/1/96GL01069.pdf
-      locator: PDF pp.1–2／誌面pp.1255–1256, Introduction; Observations and Interpretation
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000223
-      version_id: V1
-      url: https://discovery.ucl.ac.uk/id/eprint/1349829/1/96GL01069.pdf
-      locator: PDF pp.1,3／誌面pp.1255,1257, Instrumentation and Data; equations (1)–(2) and downstream-time/field-angle mapping
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000223
-      version_id: V1
-      url: https://discovery.ucl.ac.uk/id/eprint/1349829/1/96GL01069.pdf
-      locator: PDF pp.1–4／誌面pp.1255–1258, Figs.1–3; density-entry/exit comparison; inferred potential/electric field and velocity-difference alignment
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
 - paper_id: P000224
   group: lunar-wake
   role: 近月ウェイクの観測によるKappa膨張解の検証範囲
-  summary:
-    question: 月の近傍ウェイクで電子と磁場の構造は高度・太陽風条件にどう依存し、Kappa電子を用いた空洞への膨張解でどこまで説明できるか。
-    method: 地球周辺の影響と時間移動後のWind磁場との不対応を除いたLunar Prospectorの3813軌道を解析した。月向き電子のKappaフィットから密度・温度を近似し、500–2000 eVの分布シフトから衛星帯電を含む電位差を導出した。高度・太陽風条件別の統計、1次元準中性Kappa膨張解、電子圧力からの反磁性電流と磁場計算を比較した。
-    contribution: 85–115 kmでは中央磁場増大と膨張域の減少、20–45 kmでは地殻磁場の強い寄与を示した。電子密度は2桁以上低下し温度は最大約1桁上昇した。Kappa解は等温Maxwell解より電子量の基本形に合うが、高Zの密度、約75 km/sの再圧縮速度、中央磁場の形と方向依存には差が残り、LP位置では音速膨張と小異方性の磁気音速膨張を識別できない。
   evidence_by_item:
     question:
     - paper_id: P000224
       version_id: V1
       url: https://doi.org/10.1029/2004ja010991
       source_type: full_text
-      locator: PDF pp.2–3, §2.1–2.2 [8–12], Fig.1 PDF p.3, §2.3 [13], Table 1 PDF pp.3–4, §2.3 [14–15], Fig.2 PDF p.4, §2.3 [14] PDF p.4, §2.4 [16–17] PDF pp.5–6, §3.1 [21–22], Figs.3–5 (color pp.18–19) PDF pp.6–10, §3.1 [23–26], Figs.6–8,11–13 (color pp.19–20) PDF pp.8–9, §3.1–3.2 [24–29]; p.11, Fig.14 PDF p.9, §3.2 [30]; p.12, Fig.15 PDF pp.11–13, §3.3 [35–37], Figs.17–19 PDF p.10, §3.3 [32–34]; p.13, Fig.16 (color p.21) PDF pp.13–14, §4 [39–44], Eqs.1–12 PDF pp.14–15, §4.1–4.2 [45–46], Figs.20–22 PDF pp.15–16, §4.3 [47–48], Figs.23–24 PDF pp.7–8, §3.1 [23]; p.14, Eqs.7–8, [42] PDF p.13, §3.3 [38], Fig.16 PDF pp.10–14, §3.3–4 [32–45] PDF p.15, §4.2 [46], Figs.20–22
+      locator: PDF pp.2–3, §2.1–2.2 [8–12], Fig.1 PDF p.3, §2.3 [13], Table 1 PDF
+        pp.3–4, §2.3 [14–15], Fig.2 PDF p.4, §2.3 [14] PDF p.4, §2.4 [16–17] PDF pp.5–6,
+        §3.1 [21–22], Figs.3–5 (color pp.18–19) PDF pp.6–10, §3.1 [23–26], Figs.6–8,11–13
+        (color pp.19–20) PDF pp.8–9, §3.1–3.2 [24–29]; p.11, Fig.14 PDF p.9, §3.2
+        [30]; p.12, Fig.15 PDF pp.11–13, §3.3 [35–37], Figs.17–19 PDF p.10, §3.3 [32–34];
+        p.13, Fig.16 (color p.21) PDF pp.13–14, §4 [39–44], Eqs.1–12 PDF pp.14–15,
+        §4.1–4.2 [45–46], Figs.20–22 PDF pp.15–16, §4.3 [47–48], Figs.23–24 PDF pp.7–8,
+        §3.1 [23]; p.14, Eqs.7–8, [42] PDF p.13, §3.3 [38], Fig.16 PDF pp.10–14, §3.3–4
+        [32–45] PDF p.15, §4.2 [46], Figs.20–22
       checked_at: '2026-10-13'
     method:
     - paper_id: P000224
       version_id: V1
       url: https://doi.org/10.1029/2004ja010991
       source_type: full_text
-      locator: PDF pp.2–3, §2.1–2.2 [8–12], Fig.1 PDF p.3, §2.3 [13], Table 1 PDF pp.3–4, §2.3 [14–15], Fig.2 PDF p.4, §2.3 [14] PDF p.4, §2.4 [16–17] PDF pp.5–6, §3.1 [21–22], Figs.3–5 (color pp.18–19) PDF pp.6–10, §3.1 [23–26], Figs.6–8,11–13 (color pp.19–20) PDF pp.8–9, §3.1–3.2 [24–29]; p.11, Fig.14 PDF p.9, §3.2 [30]; p.12, Fig.15 PDF pp.11–13, §3.3 [35–37], Figs.17–19 PDF p.10, §3.3 [32–34]; p.13, Fig.16 (color p.21) PDF pp.13–14, §4 [39–44], Eqs.1–12 PDF pp.14–15, §4.1–4.2 [45–46], Figs.20–22 PDF pp.15–16, §4.3 [47–48], Figs.23–24 PDF pp.7–8, §3.1 [23]; p.14, Eqs.7–8, [42] PDF p.13, §3.3 [38], Fig.16 PDF pp.10–14, §3.3–4 [32–45] PDF p.15, §4.2 [46], Figs.20–22
+      locator: PDF pp.2–3, §2.1–2.2 [8–12], Fig.1 PDF p.3, §2.3 [13], Table 1 PDF
+        pp.3–4, §2.3 [14–15], Fig.2 PDF p.4, §2.3 [14] PDF p.4, §2.4 [16–17] PDF pp.5–6,
+        §3.1 [21–22], Figs.3–5 (color pp.18–19) PDF pp.6–10, §3.1 [23–26], Figs.6–8,11–13
+        (color pp.19–20) PDF pp.8–9, §3.1–3.2 [24–29]; p.11, Fig.14 PDF p.9, §3.2
+        [30]; p.12, Fig.15 PDF pp.11–13, §3.3 [35–37], Figs.17–19 PDF p.10, §3.3 [32–34];
+        p.13, Fig.16 (color p.21) PDF pp.13–14, §4 [39–44], Eqs.1–12 PDF pp.14–15,
+        §4.1–4.2 [45–46], Figs.20–22 PDF pp.15–16, §4.3 [47–48], Figs.23–24 PDF pp.7–8,
+        §3.1 [23]; p.14, Eqs.7–8, [42] PDF p.13, §3.3 [38], Fig.16 PDF pp.10–14, §3.3–4
+        [32–45] PDF p.15, §4.2 [46], Figs.20–22
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000224
       version_id: V1
       url: https://doi.org/10.1029/2004ja010991
       source_type: full_text
-      locator: PDF pp.2–3, §2.1–2.2 [8–12], Fig.1 PDF p.3, §2.3 [13], Table 1 PDF pp.3–4, §2.3 [14–15], Fig.2 PDF p.4, §2.3 [14] PDF p.4, §2.4 [16–17] PDF pp.5–6, §3.1 [21–22], Figs.3–5 (color pp.18–19) PDF pp.6–10, §3.1 [23–26], Figs.6–8,11–13 (color pp.19–20) PDF pp.8–9, §3.1–3.2 [24–29]; p.11, Fig.14 PDF p.9, §3.2 [30]; p.12, Fig.15 PDF pp.11–13, §3.3 [35–37], Figs.17–19 PDF p.10, §3.3 [32–34]; p.13, Fig.16 (color p.21) PDF pp.13–14, §4 [39–44], Eqs.1–12 PDF pp.14–15, §4.1–4.2 [45–46], Figs.20–22 PDF pp.15–16, §4.3 [47–48], Figs.23–24 PDF pp.7–8, §3.1 [23]; p.14, Eqs.7–8, [42] PDF p.13, §3.3 [38], Fig.16 PDF pp.10–14, §3.3–4 [32–45] PDF p.15, §4.2 [46], Figs.20–22
+      locator: PDF pp.2–3, §2.1–2.2 [8–12], Fig.1 PDF p.3, §2.3 [13], Table 1 PDF
+        pp.3–4, §2.3 [14–15], Fig.2 PDF p.4, §2.3 [14] PDF p.4, §2.4 [16–17] PDF pp.5–6,
+        §3.1 [21–22], Figs.3–5 (color pp.18–19) PDF pp.6–10, §3.1 [23–26], Figs.6–8,11–13
+        (color pp.19–20) PDF pp.8–9, §3.1–3.2 [24–29]; p.11, Fig.14 PDF p.9, §3.2
+        [30]; p.12, Fig.15 PDF pp.11–13, §3.3 [35–37], Figs.17–19 PDF p.10, §3.3 [32–34];
+        p.13, Fig.16 (color p.21) PDF pp.13–14, §4 [39–44], Eqs.1–12 PDF pp.14–15,
+        §4.1–4.2 [45–46], Figs.20–22 PDF pp.15–16, §4.3 [47–48], Figs.23–24 PDF pp.7–8,
+        §3.1 [23]; p.14, Eqs.7–8, [42] PDF p.13, §3.3 [38], Fig.16 PDF pp.10–14, §3.3–4
+        [32–45] PDF p.15, §4.2 [46], Figs.20–22
       checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
 - paper_id: P000231
   group: lunar-wake
   role: ARTEMISによるウェイクの三次元再構成
-  summary:
-    question: 月の背後にできるプラズマ希薄領域では、密度・温度・圧力・磁場・流れが三次元的にどう分布し、その構造が太陽風と惑星間磁場の条件にどう応答するかを調べる。
-    method: ARTEMISの2機で近傍太陽風とウェイクのプラズマ・磁場を同時測定した。約600回の通過で得た両者の差を座標系に合わせて集約し、ウェイクの三次元構造を再構成した。
-    contribution: 希薄化の波が高速MHD波の速度で外へ広がり、内向きのプラズマ流入が磁場を圧縮することを示した。磁場変動の大きさは下流距離、太陽風イオンβ、太陽風と惑星間磁場のなす角に依存した。
-  evidence_by_item:
-    question:
-    - paper_id: P000231
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
-      source_type: abstract
-      locator: Abstract, first paragraph
-      checked_at: '2026-10-06'
-    - paper_id: P000231
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
-      source_type: full_text
-      locator: Section 1 Introduction, final paragraph
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000231
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
-      source_type: abstract
-      locator: Abstract, first three sentences
-      checked_at: '2026-10-06'
-    - paper_id: P000231
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
-      source_type: full_text
-      locator: Section 2 Instrumentation and Reconstruction Method, first two paragraphs and spatial-bin reconstruction paragraphs
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000231
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014JA020111
-      source_type: abstract
-      locator: Abstract, rarefaction-wave sentence, inward-flow sentence, and field-perturbation-dependence sentence
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000232
   group: lunar-wake
   role: ARTEMISの静電衝撃波観測
-  summary:
-    question: 月の両側からウェイク中心へ流入する超音速イオンビームにより、予測された静電衝撃波が生じ、電子加熱とイオン減速を引き起こすかを観測で調べる。
-    method: ARTEMISの2機がウェイク内と背景太陽風を同時に観測した事例を選び、電場・磁場、電子とイオンの速度分布、密度を解析し、磁力線沿いの流入モデルと照合した。
-    contribution: ウェイク中心付近で、下流へ向かう電位上昇、電子の磁力線方向の加熱、イオン減速と密度増加を伴う静電衝撃波の観測証拠を得た。別事例は衝撃波の散逸が進んだ段階と整合した。
-  evidence_by_item:
-    question:
-    - paper_id: P000232
-      version_id: V1
-      url: https://research.ssl.berkeley.edu/~poppe/papers/Liu_et_al_2025.pdf
-      source_type: abstract
-      locator: PDF p.1, Abstract, sentences describing predicted shocks and ARTEMIS observations
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000232
-      version_id: V1
-      url: https://research.ssl.berkeley.edu/~poppe/papers/Liu_et_al_2025.pdf
-      source_type: full_text
-      locator: PDF p.2, Section 2 (Data), paragraphs 1–3
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000232
-      version_id: V1
-      url: https://research.ssl.berkeley.edu/~poppe/papers/Liu_et_al_2025.pdf
-      source_type: abstract
-      locator: PDF p.1, Abstract, Event 1 and Event 2 descriptions
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000184
   group: lunar-wake
   role: 昼側で戻る太陽風陽子とその拾い上げ加速
-  summary:
-    question: 月面へ入射した太陽風陽子の一部はイオンとして月面から戻るのか。その組成とエネルギー・方向分布、さらに太陽風より高エネルギーになる過程を調べる。
-    method: 高度約100 kmのかぐやで、反対向きの半球視野を持つMAP-PACEのIEAとIMAにより、2008年2月27日の昼側太陽風と月面側イオンを同時観測した。前日2月26日の類似事例のTOF質量測定で組成を補い、2月27日のMAP-LMAG磁場と合わせて、低エネルギー成分と連続2周回の加速成分を比較した。
-    contribution: 月面側から来る広い角度分布の陽子成分を、太陽風の月面反射・散乱と解釈し、反射陽子フラックスを元の太陽風イオンフラックスの約0.1〜1％と報告した。連続2周回では太陽風約0.75 keV/qに対し最大約5 keV/qの成分を捉え、磁場に基づく対流電場方向との対応からself-pick-up加速で説明した。
   evidence_by_item:
     question:
     - paper_id: P000184
       version_id: V1
       url: https://doi.org/10.1029/2008gl036077
       source_type: full_text
-      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3]; Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3 [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5 Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5, Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8]; Figs.2–4
+      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3];
+        Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3
+        [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5
+        Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5,
+        Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8];
+        Figs.2–4
       checked_at: '2026-10-13'
     method:
     - paper_id: P000184
       version_id: V1
       url: https://doi.org/10.1029/2008gl036077
       source_type: full_text
-      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3]; Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3 [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5 Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5, Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8]; Figs.2–4
+      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3];
+        Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3
+        [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5
+        Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5,
+        Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8];
+        Figs.2–4
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000184
       version_id: V1
       url: https://doi.org/10.1029/2008gl036077
       source_type: full_text
-      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3]; Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3 [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5 Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5, Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8]; Figs.2–4
+      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3];
+        Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3
+        [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5
+        Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5,
+        Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8];
+        Figs.2–4
       checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
 - paper_id: P000186
   group: lunar-wake
   role: ウェイク内の陽子エネルギー変化
-  summary:
-    question: 月のすぐ後方、高度約100 kmの希薄な領域（ウェイク）へ太陽風陽子はどの向きに入り、南北で対になるエネルギーの増減は何によって生じるか。
-    method: かぐやのMAP-PACE/IMAとMAP-LMAGで陽子と磁場を観測し、ウェイク境界の内向き電場を含む粒子軌道計算と理論解析でエネルギー変化を調べた。
-    contribution: 磁場に垂直な陽子の侵入と、月の静止系での半球ごとのエネルギー増減を捉えた。粒子軌道計算は、磁場周りの旋回運動とウェイク境界の内向き電場でこの特徴を再現した。
-  evidence_by_item:
-    question:
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: abstract
-      locator: Abstract, paragraph [1]
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: abstract
-      locator: Abstract, paragraph [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: full_text
-      locator: Section 2. Instrumentation, paragraph [3]; Section 4. Model Calculations, paragraphs [7]–[9]
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: abstract
-      locator: Abstract, paragraph [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: full_text
-      locator: Section 4. Model Calculations, paragraph [9]; Section 5. Theoretical Interpretation, paragraphs [10]–[11]
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000247
   group: lunar-wake
   role: Chandrayaan-2電波観測による密度ゆらぎ
-  summary:
-    question: 月が太陽風と地球磁気尾を通る際、地球―月間の視線に沿った電子密度ゆらぎのスペクトルはどう変わり、地磁気活動とどの程度対応するかを調べる。
-    method: Chandrayaan-2の双方向S帯の電波掩蔽観測から幾何学的ドップラー成分を除き、電子密度ゆらぎを反映する周波数残差を得た。2022年の54区間でパワースペクトルを求め、磁気圏境界モデルで環境を分類した。
-    contribution: 得られたスペクトル指数はイオン運動論・散逸スケールに対応した。磁気圏境界内と太陽風などの指数差は標本が限られ統計的に有意でなく、地磁気活動との測定可能な相関も見られなかった。
-  evidence_by_item:
-    question:
-    - paper_id: P000247
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
-      source_type: abstract
-      locator: Abstract 第1段落・第3段落
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000247
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
-      source_type: abstract
-      locator: Abstract 第1段落・第2段落
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000247
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
-      source_type: abstract
-      locator: Abstract 第2段落・第3段落
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000262
   group: lunar-wake
   role: 非対称な電子分布と捕捉幅からの電位反転
-  inspection:
-    level: preprint
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
   summary:
     question: ストラールによる左右非対称と中央の捕捉電子・衝撃波を含む月ウェイクで、電子位相空間密度から磁力線沿いの電位を復元できるか。
-    method: 磁場強度が安定し電子が準静的平衡にあると仮定して左右の分布を独立に最適化し、中央は平坦な分布の端の速度から電位差を求めて接続する。質量比100の一次元PICの2時点で既知電位と比べ、ARTEMIS P1の2横断へ適用した。
-    contribution: 初期・後期PICで非対称な電位と衝撃波に伴う上昇をおおむね復元し、ARTEMISでは太陽風から中央への電位降下を約800 Vと約200 Vと推定した。衝撃波境界の分布端と、非定常な観測区間には手法間の差が残る。
-  evidence_by_item:
-    question:
-    - paper_id: P000262
-      version_id: V1
-      url: https://arxiv.org/pdf/2604.17825v1
-      locator: PDF p.3, Introduction; pp.4–7, Section 2; Eqs.1–8
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000262
-      version_id: V1
-      url: https://arxiv.org/pdf/2604.17825v1
-      locator: PDF pp.4–8, Sections 2–3; Eqs.2–8; pp.14–15, Section 4
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000262
-      version_id: V1
-      url: https://arxiv.org/pdf/2604.17825v1
-      locator: PDF pp.8–14, Sections 3.1–3.2; Figs.2–7; pp.15–19, Section 4; Figs.8–11
-      source_type: full_text
-      checked_at: '2026-10-11'
+    method: 磁場強度が安定し電子が準静的平衡にあると仮定して左右の分布を独立に最適化し、中央は平坦な分布の端の速度から電位差を求めて接続する。質量比100の一次元PICの2時点で既知電位と比べ、ARTEMIS
+      P1の2横断へ適用した。
+    contribution: 初期・後期PICで非対称な電位と衝撃波に伴う上昇をおおむね復元し、ARTEMISでは太陽風から中央への電位降下を約800 Vと約200
+      Vと推定した。衝撃波境界の分布端と、非定常な観測区間には手法間の差が残る。
 - paper_id: P000272
   group: lunar-wake
   role: ARTEMISによる磁気異常周辺の圧縮構造
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 磁気異常周辺の圧縮構造はどこでどの条件で生じるか。
-    method: ARTEMISの5年間の粒子・磁場観測を統計解析する。
-    contribution: 太陽風条件と圧縮構造の位置・流れの偏向を関連付け、反射陽子との運動量交換から解釈した。
-  evidence_by_item:
-    question:
-    - paper_id: P000272
-      version_id: V1
-      url: https://doi.org/10.1002/2017ja023931
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000272
-      version_id: V1
-      url: https://doi.org/10.1002/2017ja023931
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000272
-      version_id: V1
-      url: https://doi.org/10.1002/2017ja023931
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000273
   group: lunar-wake
   role: 磁気異常からウェイクへの陽子輸送
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 磁気異常で散乱された陽子は月ウェイクへ届くか。
-    method: SARA/SWIM観測と粒子の逆向き軌道追跡を組み合わせる。
-    contribution: South Pole–Aitkenの磁気異常に由来する近傍ウェイクへの輸送経路を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000273
-      version_id: V1
-      url: https://doi.org/10.1029/2018gl079330
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000273
-      version_id: V1
-      url: https://doi.org/10.1029/2018gl079330
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000273
-      version_id: V1
-      url: https://doi.org/10.1029/2018gl079330
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000221
   group: crater-wakes
   role: 日夜境界の鉛直電場と地形ウェイクの仮説
-  summary:
-    question: 月の日夜境界でプラズマ供給の偏りが作る電場は、ダスト加速や夜側への輸送を説明しうるか。
-    method: 定常・準中性ウェイクの密度と電子温度を表面の電流収支へ組み込み、滑らかな月面の電位と鉛直電場を計算した。完全帯電した孤立球を仮定し、付着力を省いた試験粒子を追跡した。Apollo 17周辺の地形の陰も模式的に検討した。
-    contribution: モデルは日夜境界の夜側で強まる鉛直電場と、小粒子の加速を予測した。地形の陰で夜側向きの水平電場が生じる説明は定性的な仮説で、局所電場・軌道の数値計算やLEAMの再解析はない。本文と図の速度・単位表記の不整合が残るため、具体的な速度値は確定結果として使わない。
-  evidence_by_item:
-    question:
-    - paper_id: P000221
-      version_id: V1
-      url: https://doi.org/10.1029/2007GL029312
-      source_type: full_text
-      locator: PDF p.1、§1 [2]–[3]
-      checked_at: '2026-10-08'
-    method:
-    - paper_id: P000221
-      version_id: V1
-      url: https://doi.org/10.1029/2007GL029312
-      source_type: full_text
-      locator: "PDF pp.2–4、§2–3 [4]–[13]、Fig.1–2、電流収支・完全帯電・付着力を省く試験粒子条件"
-      checked_at: '2026-10-08'
-    contribution:
-    - paper_id: P000221
-      version_id: V1
-      url: https://doi.org/10.1029/2007GL029312
-      source_type: full_text
-      locator: PDF pp.3–5、§3–5、Fig.2–4、速度表記と地形ウェイクの議論
-      checked_at: '2026-10-08'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-08'
-    recheck: false
 - paper_id: P000222
   group: crater-wakes
   role: 太陽嵐中のクレーター帯電
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 太陽嵐で影のクレーターと内部の物体はどう帯電するか。
-    method: 運動論計算の結果を無次元比で整理し、物体の等価回路へ入力する。
-    contribution: 低電流環境での帯電緩和と、地形に届くイオンの分布を評価した。
-  evidence_by_item:
-    question:
-    - paper_id: P000222
-      version_id: V1
-      url: https://doi.org/10.1029/2012je004094
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000222
-      version_id: V1
-      url: https://doi.org/10.1029/2012je004094
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000222
-      version_id: V1
-      url: https://doi.org/10.1029/2012je004094
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000225
   group: crater-wakes
   role: 縦孔への電子侵入と壁での損失
-  summary:
-    question: 月の日照側の深い縦孔で、壁への電子損失と壁–底の光電子輸送が、孔底の電流収支と孔内外の表面電位をどう変えるか。
-    method: 直径50 m・深さ45 mの絶縁性縦孔を、0.5 m格子の三次元静電PICで計算した。太陽風は450 km/s・5 cm⁻³・8.6 eV、光電子は垂直入射時4.5 μA/m²・温度2.2 eVとし、無静磁場で天頂角1〜89°を調べた。
-    contribution: 日向の孔底は、天頂角5°超でその位置が日向にある範囲で、同じ光電子放出条件の孔外より8〜10 V高くなった。壁への吸収で太陽風電子電流が減り、壁から届く光電子によって孔底の光電子正味電流が負に転じる。影深部の最終電位は電流収支が未成立のため確定しない。
   evidence_by_item:
     question:
     - paper_id: P000225
       version_id: V1
       url: https://doi.org/10.1016/j.icarus.2015.07.011
       source_type: full_text
-      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3 PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3 PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5 PDF p.3、§3.2；p.5、Fig.4；p.6、§4・Fig.5a
+      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3
+        PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d
+        PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3
+        PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5
+        PDF p.3、§3.2；p.5、Fig.4；p.6、§4・Fig.5a
       checked_at: '2026-10-13'
     method:
     - paper_id: P000225
       version_id: V1
       url: https://doi.org/10.1016/j.icarus.2015.07.011
       source_type: full_text
-      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3 PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3 PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5 PDF p.3、§3.2；p.5、Fig.4；p.6、§4・Fig.5a
+      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3
+        PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d
+        PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3
+        PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5
+        PDF p.3、§3.2；p.5、Fig.4；p.6、§4・Fig.5a
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000225
       version_id: V1
       url: https://doi.org/10.1016/j.icarus.2015.07.011
       source_type: full_text
-      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3 PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3 PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5 PDF p.3、§3.2；p.5、Fig.4；p.6、§4・Fig.5a
+      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3
+        PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d
+        PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3
+        PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5
+        PDF p.3、§3.2；p.5、Fig.4；p.6、§4・Fig.5a
       checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
 - paper_id: P000226
   group: crater-wakes
   role: 溶岩チューブ内の帯電実験
-  inspection:
-    level: full_text
-    version_id: Vdraft20240925
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  summary:
-    question: 溶岩チューブを模した空洞で、入口の電子遮蔽と側壁からの二次電子供給は底面の帯電をどう変えるか。
-    method: 2024年9月25日草稿を実読。イオン源を5 mAで動作させ、N₂ガス由来の100–800 eV準中性イオン流を直径6 mmのガラス管へ正対入射させ、入口導電面へ−5/−40/−70 Vを印加し、底面LPの浮遊電位とI–V曲線を測る。図2は深さ0/6/12 mm、図3は24 mm点も含む。
-    contribution: 底面は正に帯電し、強い入口負バイアスで電位が高くなるが、イオンエネルギー相当の電位には達しない。対照バイアス実験とLP電流分解から、イオン誘起二次電子の流入が正帯電を抑えると解釈した。
   evidence_by_item:
     question:
     - paper_id: P000226
       version_id: Vdraft20240925
       url: https://doi.org/10.3847/psj/ada6b0
       source_type: full_text
-      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3 Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5 lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.2 §2 PDF pp.3–4 Figs.2–3/lines76–101 PDF pp.5–6 Fig.5/lines115–122
+      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF
+        p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3
+        Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5
+        lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.2 §2 PDF pp.3–4 Figs.2–3/lines76–101
+        PDF pp.5–6 Fig.5/lines115–122
       checked_at: '2026-10-13'
     method:
     - paper_id: P000226
       version_id: Vdraft20240925
       url: https://doi.org/10.3847/psj/ada6b0
       source_type: full_text
-      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3 Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5 lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.2 §2 PDF pp.3–4 Figs.2–3/lines76–101 PDF pp.5–6 Fig.5/lines115–122
+      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF
+        p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3
+        Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5
+        lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.2 §2 PDF pp.3–4 Figs.2–3/lines76–101
+        PDF pp.5–6 Fig.5/lines115–122
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000226
       version_id: Vdraft20240925
       url: https://doi.org/10.3847/psj/ada6b0
       source_type: full_text
-      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3 Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5 lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.2 §2 PDF pp.3–4 Figs.2–3/lines76–101 PDF pp.5–6 Fig.5/lines115–122
+      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF
+        p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3
+        Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5
+        lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.2 §2 PDF pp.3–4 Figs.2–3/lines76–101
+        PDF pp.5–6 Fig.5/lines115–122
       checked_at: '2026-10-13'
 - paper_id: P000264
   group: crater-wakes
   role: クレーター内の電子雲の解析解
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 膨張前線より下の電子雲と表面電位を解析的に求められるか。
-    method: 自己相似膨張前線と帯電表面の間でMaxwell電子雲のPoisson方程式を解く。
-    contribution: クレーター内の非中性領域を扱い、既存の数値結果を説明する解析解を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000264
-      version_id: V1
-      url: https://doi.org/10.1029/2019ja026625
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000264
-      version_id: V1
-      url: https://doi.org/10.1029/2019ja026625
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000264
-      version_id: V1
-      url: https://doi.org/10.1029/2019ja026625
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000282
   group: crater-wakes
   role: 日夜境界・極域での準中性破れ
-  summary:
-    question: 月の日夜境界・極域に続くウェイクの縁で、電子とイオンの密度が等しいという準中性がどう崩れ、夜側表面の帯電をどう変えるかを調べる。
-    method: 空隙へのプラズマ膨張を一次元の静電粒子シミュレーション（PIC）で計算した。月面は直接置かず、想定した表面位置の電子・イオンを用いて電流収支から表面電位を推定した。
-    contribution: モデルでは電子がイオンに先行し、電子雲とイオン過剰域の間に定常的な電気二重層が形成された。通常の太陽風条件では、電子雲に接する夜側表面の電位は準中性を仮定した値より負になると推定した。
-  evidence_by_item:
-    question:
-    - paper_id: P000282
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000282
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
-      source_type: full_text
-      locator: 1. Introduction [4], [6]
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000282
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
-      source_type: full_text
-      locator: 2. Simulation Description [7], [8], [10]; 4. Surface Potential [17]
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000282
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000282
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2007GL032653
-      source_type: full_text
-      locator: 3. Results [13]; 4. Surface Potential [20]
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000318
+  group: grain-wakes
   role: イオンウェイク内の粒子電荷の実験
-  summary:
-    question: 上流粒子のウェイクは、下流粒子の電荷と粒子間力をどう変えるか。
-    method: 異なる粒径の粒子対の三次元運動から、シース内の電荷変化とウェイクによる引力を推定する。
-    contribution: ウェイク内の粒子電荷変化と追加の引力を運動から定量化した。実験室の複雑プラズマが対象。
-  evidence_by_item:
-    question:
-    - paper_id: P000318
-      version_id: V1
-      url: https://journals.aps.org/pre/accepted/10.1103/9q9z-5d6k
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000318
-      version_id: V1
-      url: https://journals.aps.org/pre/accepted/10.1103/9q9z-5d6k
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000318
-      version_id: V1
-      url: https://journals.aps.org/pre/accepted/10.1103/9q9z-5d6k
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: grain-wakes
 - paper_id: P000321
-  role: 遮蔽・ウェイク・イオン運動量の区別
-  summary:
-    question: 静止プラズマと流れのあるプラズマで、粒子間相互作用はどう異なるか。
-    method: OMLと線形応答を用い、遮蔽電位・ウェイク電位・イオン衝撃による運動量移行を検討する。
-    contribution: 静止系の反発と、流れによる下流への引力・遮蔽力を整理し、粒子間力の比較の基礎を与えた。
-  evidence_by_item:
-    question:
-    - paper_id: P000321
-      version_id: V1
-      url: https://doi.org/10.1063/1.1288910
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000321
-      version_id: V1
-      url: https://doi.org/10.1063/1.1288910
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000321
-      version_id: V1
-      url: https://doi.org/10.1063/1.1288910
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: grain-wakes
-relations: []
-view:
-  sort:
-  - year
-  - first_author
-  - paper_id
-  overview_nodes: []
-  graphs: []
-  graph_nodes: 20
-  graph_edges: 30
+  role: 遮蔽・ウェイク・イオン運動量の区別
 survey:
   searched_at: '2026-09-22'
   scope_period: 制限なし
@@ -1354,10 +400,11 @@ survey:
   - plasma expansion
   - wake
   - plume electron kinetic
-  coverage_note: "Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。
+    2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。'
   limitations:
-  - "2026-09-22のIssue #2–#8整理では新規文献の全文を未精読として記録した。2026-10-08にはP000221の該当版を全文確認した。他の文献の確認状況は各entryのinspectionを参照。"
-  changes: "Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
+  - '2026-09-22のIssue #2–#8整理では新規文献の全文を未精読として記録した。2026-10-08にはP000221の該当版を全文確認した。他の文献の確認状況は各entryのinspectionを参照。'
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。
+    2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。'
   publication_status: draft
-  reviewed_at: null
 reading_notes: []

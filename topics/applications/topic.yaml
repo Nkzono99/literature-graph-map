@@ -1,7 +1,26 @@
+schema_version: 1
 topic_id: applications
 title: 宇宙機・プラズマ応用
 question: プラズマと物体の相互作用を、宇宙機の設計・天体の計測と微細加工から読む。
+review: []
+lineage: []
+public: true
+scope:
+  include: []
+  exclude: []
 navigation:
   related:
   - lunar-charging-engineering
+groups:
+- id: general
+  title: 先行研究
 entries: []
+survey:
+  scope_period: 制限なし
+  provider_names: []
+  queries: []
+  coverage_note: 未記録
+  limitations: []
+  changes: 新規作成
+  publication_status: draft
+reading_notes: []

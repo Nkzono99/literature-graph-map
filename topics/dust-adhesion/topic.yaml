@@ -2,7 +2,107 @@ schema_version: 1
 topic_id: dust-adhesion
 title: ダストの付着・接触・離脱
 question: 表面エネルギー、粗さ、粒子形状と電荷から、接触の強さと離脱条件を調べる。
+review:
+- heading: 接触モデルと表面粗さが、離脱に必要な力を変える
+  paragraphs:
+  - 粒子を表面から離すには、電場中の力と付着力を同じ条件で比べる必要がある。球状粒子間のvan der Waals引力を扱う[@P000205]は、接触を支える分子間力の入口になる。[@P000198]のJKR、[@P000199]のDMT、両者の遷移を扱う[@P000200]は、弾性変形と表面エネルギーから接触を考える基礎である。
+  - 実際の表面には凹凸がある。[@P000204]は突起の統計から接触を扱い、[@P000201]は粗さによって付着が大きく減ることを実験とモデルで調べた。ナノ粗面の理論[@P000202]と測定[@P000203]、Apollo粒子の三次元形状[@P000218]は、平滑な球の近似を使う条件を考える材料になる。
+    フラクタル粗面と微粒子付着を扱う[@P000212]、FJS-1の三次元形状を離散要素法へ入力する[@P000281]は、粗さと粒子形状を具体的に与える研究として参照できる。
+  - 接触した粒子は、引き離される前に転がることもある。[@P000206]の付着接触の転がり抵抗と、[@P000207]のダスト凝集体の構造を合わせると、接触一つの力から粒子集団の変形へ論点を広げられる。
+  - 付着した粒子が接触を保って動く場合には、引き離し力と転がり開始の力を分けて考える。[@P000206]は、滑りを抑えたJKRS接触で、粒子の回転に接触面が遅れると弾性の抵抗モーメントが生じ、原子径程度の臨界ずれを超えると不可逆な転がりへ移るモデルを示した。臨界ずれを0.2
+    nmと置けば半径100 nm球の鎖の最小弾性曲率半径は50 µmとなるが、このずれは測定値ではなく、三次元接触も近似解である。粗い非球形粒子や帯電した実ダストへの適用では、接触形状と荷重の条件を別途検証する。
+- heading: 付着の測定を、帯電による離脱と結び付ける
+  paragraphs:
+  - 月ダスト付着を整理した[@P000208]と[@P000209]に対し、[@P000210]は遠心法、[@P000211]は模擬月環境の条件から付着を測る。遠心測定装置を扱う[@P000213]も、測定方法を選ぶための文献となる。環境、粒径、粗さ、接触履歴をそろえることが、異なる実験を比較する出発点となる。
+  - 表面上の局所帯電[@P000009]と単粒子の移動[@P000013]は、付着していた粒子が動き始める過程を扱う。[@P000215]ではUVと外部電場を組み合わせ、電場の向きによる光電子の動きと粒子離脱の違いを調べた。
+    光と低密度プラズマを同時に照射する[@P000014]では、単独照射より粒子の飛び出しと推定負電荷が増えた。固定粒子群の差動帯電を計算した[@P000010]と合わせて、電荷が生まれる過程と保持される過程を比較できる。
+  - '[@P000214]は、Ti6Al4Vの表面をナノチューブ化し、粒子付きAFM探針の平均付着力を未処理面の12.98 nNから1.63 nNへ低減した。投入量5
+    g・設置角60°の散布試験では、残留量も0.5420から0.1642 mg/cm²へ減った。局所接触の力と散布後の残留量を分けて評価した結果であり、月面への適用には真空・帯電などの環境条件の検証が残る。'
+  - 付着を弱める表面の選択肢には、受動技術を比較する[@P000257]、ZnO薄膜と立体テクスチャを組み合わせる[@P000258]、導電性ポリイミドを扱う[@P000259]がある。接触面積を変える加工と、電荷を散逸させる材料を、同じ粒径・照射条件で評価することが比較の軸になる。
+- heading: 電場の形成と、接触が破れる条件をつなぐ
+  paragraphs:
+  - '[@P000026]は負にバイアスした基板上の粉体が外縁から広がる様子を観察した。[@P000029]は浮遊基板へ電子ビームを加え、電子とイオンの電流が同程度になる条件で電場の増強と小粒子の移動を調べた。電位・電荷の測定と移動の撮影では粒径やプラズマ条件が異なり、個々の接触の付着力は直接測っていない。'
+  - 凝集力と重力を入れる[@P000387]は、平均電荷を投影面積へ配分する仮定から、中間半径で離脱の必要電場が最小になると予測した。[@P000388]は直径約5–25
+    µmのポリスチレン堆積を同じ形状で比較し、15 µmで最大の拡がりを観察した。モデルと整合する粒径選択性を示したが、凝集係数は逆算であり、離脱時の鉛直電場と個々の電荷は未測定である。
+  - 電子ビーム下のJSC-1を使う[@P000392]では、小粒子が捕集集団で相対的に多くなった。各々を規格化した捕集・対照分布の比は絶対的な離脱確率ではなく、モデルで比較する接触距離もフィット値である。[@P000388]と材料・電流源・接触配置が異なるため、粒径選択性の違いを帯電・凝集条件に沿って比較する。
+  - '[@P000216]はナノ領域の電荷ゆらぎから局所電場を計算し、仮定した粒子電荷に働く力を付着モデルと比べた。半径20 nmの粒子と半径10 nmの帯電領域に各+10eを与えた最隣接の例では約10
+    pNとなるが、成否は配置・粗さ・清浄度に依存する。[@P000256]の総説が整理した地盤のせん断強度、接触中の電荷、離脱後の浮遊条件も測る量を区別する必要がある。'
+  - 粒子の運動は接触帯電の履歴も変える。振動面上の単一球[@P000308]は姿勢と電荷分布による帯電停止を示し、二粒子の反復衝突[@P000309]は確率的な電荷移動と累積電荷の飽和を調べた。月ダストの生成・物性・輸送をまとめた[@P000249]は、これらの接触過程を探査機周辺の問題へ位置づける入口になる。
+- heading: 実粒子の形と氷の量から、集団の流れやすさを調べる
+  paragraphs:
+  - Apollo粒子の三次元形状[@P000218]に対し、[@P000293]はChang'e-6の多数の粒子を再構成して離散要素法へ入力した。得られた粘着力や摩擦角は、粒子集団の計算結果である。[@P000290]は鉱物ごとの摩擦と表面エネルギーも調べ、低重力で付着の寄与が大きくなる粒径域を比較する。
+  - 永久影では氷の寄与も加わる。[@P000292]は低温の模擬物実験から、氷含有量と静的・動的安息角の関係を調べた。接触一つの引き離し力、粒子同士のかみ合い、氷による凝集を分けて評価すると、月面地盤の強度へつなげやすい。
+  - ガラスで結ばれた粒子を作る[@P000373]は、凝集体内部の構造と地盤の強度を結び付ける。三軸試験の集団応答を、単一接触の引き離し力と分けて比較できる。
+- heading: 離脱後の初速と、氷で結ばれた粒子の強度
+  paragraphs:
+  - 粒子が離れた後の移動範囲には、初速と射出方向が必要になる。[@P000217]は日照域で静電的に離脱した粒子の打ち上げ速度を評価する。斜入射電子ビームの実験[@P000250]は、二次電子収率が1を超える条件でビームと逆方向への移動を示し、粒子の照射側と陰側の帯電差から方向性を説明した。[@P000315]は最大初速の粒径依存と、形状・凝集力による速度分散を測定した。[@P000316]はシリカ粒子の射出角と距離ごとの粒径を調べている。氷を含む地盤については、[@P000332]が円錐貫入試験で、粒子間を結ぶ氷と分散した氷の強度・掘削性の違いを定量化した。単粒子の付着力と、粒子集団の強度は測る量が異なるため、接触状態や温度をそろえて比較する。
+- heading: 材料選定から実月面の付着像・EDSの残留粒子へ
+  paragraphs:
+  - '[@P000367]はRACに向けた材料・レーザー加工面を地上で評価し、接触角、形状、模擬ダスト付着を比較する手順を示した。[@P000365]はこの研究を材料クーポン選定に参照し、PlanetVacの月面運用で付着像を得た。実環境の比較点が加わった一方、基準面を欠く画像からは付着量やレーザー加工の低減効果を定量できない。'
+  - 除去時に残る粒子を調べる[@P000370]は、実験条件内で25 µm未満の付着と250 µm超の重力・誘電泳動力の影響を報告した。[@P000369]は高真空の連続降塵下でEDS被覆と残留粒径・損傷を比較した。表面の引き離し力、動的な蓄積抑制、清掃後の残留量を測定量ごとに整理すると、材料表面と電場の寄与を比較できる。
+lineage:
+- title: 弾性付着から粗面の付着へ
+  steps:
+  - paper_id: P000198
+    title: 表面エネルギーを接触に加える
+    significance: 弾性球の接触寸法と引き離し力を表面エネルギーから求めた。
+    connection: ''
+  - paper_id: P000201
+    title: 粗さの効果を調べる
+    significance: 個々の突起の付着と圧縮を組み合わせ、粗面の付着低下を説明した。
+    connection: 平滑面の接触を突起の集まりへ拡張
+- title: 基板の電位から電子ビームによる差動帯電へ
+  steps:
+  - paper_id: P000026
+    title: 負バイアス基板上の移動を測る
+    significance: 粉体の外縁からの移動を、位置によって異なる電位構造と粒子電荷に結び付けた。
+    connection: ''
+  - paper_id: P000029
+    title: 電流の釣合いと表面特性を加える
+    significance: 浮遊基板上で電子ビームとイオンの電流比を変え、粉体と基板の電位差・電場と輸送を調べた。
+    connection: 先行実験を踏まえ、電子ビームと二次電子放出の差を取り入れる
+- title: Apolloの形状計測から月裏側の粒子集団へ
+  steps:
+  - paper_id: P000218
+    title: 実粒子の形状と空隙を測る
+    significance: Apollo粒子の三次元形状を測り、模擬物との比較基盤を作った。
+    connection: ''
+  - paper_id: P000293
+    title: 月裏側の形状を強度計算へ入れる
+    significance: Chang'e-6粒子を多数再構成し、かみ合いによる強度を評価した。
+    connection: 形状計測を集団の力学応答へつなぐ
+  - paper_id: P000290
+    title: 摩擦と付着の寄与を比べる
+    significance: 鉱物・粒径・重力に応じて安息角が変わる条件を検討した。
+    connection: 形状に表面特性と重力の効果を加える
+- title: 飛行前の材料評価から実月面の付着観察へ
+  steps:
+  - paper_id: P000367
+    title: 材料とレーザー加工面を選ぶ
+    significance: RAC用材料を地上で評価し、月面付着比較のための試料選定・加工手順を示した。
+    connection: ''
+  - paper_id: P000365
+    title: 月面で材料クーポンを観察する
+    significance: 選定研究を参照したクーポンで実月面の付着像を取得し、画像による定量評価の課題を明らかにした。
+    connection: 材料選定を参照し、地上試験を実月面の観察へつなぐ
+- title: 凝集と帯電条件による粒径選択性
+  steps:
+  - paper_id: P000387
+    title: 凝集と重力から離脱閾値を求める
+    significance: 球と平面の接触と平均電荷配分を仮定し、中間半径で必要電場が最小となると予測した。
+    connection: ''
+  - paper_id: P000388
+    title: 中間粒径の堆積が広がる実験
+    significance: 先行理論を参照し、5–25 µmのポリスチレンで中間粒径の優先的な拡がりを測った。電荷と鉛直電場は未確定である。
+    connection: 凝集を含む閾値予測を、同じ形状の堆積実験と照合
+  - paper_id: P000392
+    title: 電子ビーム下の捕集粒径を比較
+    significance: JSC-1では小粒子が捕集集団で相対的に多いと報告し、再捕集モデルと比較した。絶対的な離脱確率ではない。
+    connection: 中間粒径の実験を参照し、異なる材料・帯電条件の粒径選択性と比較
 public: true
+scope:
+  include: []
+  exclude: []
 navigation:
   parent: dust-physics
   related:
@@ -25,1834 +125,156 @@ entries:
 - paper_id: P000198
   group: contact
   role: JKRの弾性付着理論
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 表面エネルギーは弾性体の接触をどう変えるか。
-    method: 弾性球の接触理論を導き、ゴムとゼラチン球の実験と比較する。
-    contribution: 接触寸法と付着力に表面エネルギーを取り入れるJKR理論を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000198
-      version_id: V1
-      url: https://doi.org/10.1098/rspa.1971.0141
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000198
-      version_id: V1
-      url: https://doi.org/10.1098/rspa.1971.0141
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000198
-      version_id: V1
-      url: https://doi.org/10.1098/rspa.1971.0141
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000199
   group: contact
   role: DMTの接触変形・付着理論
-  summary:
-    question: 球状粒子と平面の接触で、弾性変形と分子間引力が互いにどう影響し、接触面積の増大が粒子を引き離す力を増すのかを調べた。
-    method: 球と平面の弾性接触と分子間引力の相互作用を記述する理論を構築し、接触面積と接触を破るのに必要な力との関係を解析した。
-    contribution: 著者の理論では、ファンデルワールス力で弾性接触面積が広がっても、分離力は未変形の球と平面の点接触での引力に等しい。静電成分がなければ、その力は球半径と単位面積当たりの分離仕事に比例する。
-  evidence_by_item:
-    question:
-    - paper_id: P000199
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/0021979775900181/pdf
-      source_type: abstract
-      locator: Abstract, paragraph 1, sentences 1–2
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000199
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/0021979775900181/pdf
-      source_type: abstract
-      locator: Abstract, paragraph 1, sentences 1–3
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000199
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/0021979775900181/pdf
-      source_type: abstract
-      locator: Abstract, paragraph 1, sentences 2–3; paragraph 2
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000200
   group: contact
   role: JKRとDMTの遷移
-  summary:
-    question: 弾性球の付着接触で、接触域外の引力と表面変形を異なる仕方で扱うJKR理論とDMT理論を、ひとつのモデルで連続的につなげられるかを調べる。
-    method: 接触縁の外側に一定の引張応力が働くDugdaleモデルを用い、応力特異性の相殺と、J積分で求めたエネルギー解放率が付着仕事に等しい平衡条件を組み合わせた。
-    contribution: 単一のパラメータを変えるとDMT極限からJKR極限へ連続的に移ることを示した。接触半径・荷重・押込み量の平衡関係と、荷重一定・変位一定での離脱力を統一的に計算した。
-  evidence_by_item:
-    question:
-    - paper_id: P000200
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/002197979290285T
-      source_type: abstract
-      locator: Abstract、冒頭のJKR/DMTの近似の比較、およびDMTからJKRへの連続遷移の文
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000200
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/002197979290285T
-      source_type: abstract
-      locator: Abstract、Dugdaleモデルの一定応力、内外荷重の応力拡大係数の相殺、J積分とG=wの記述
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000200
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/002197979290285T
-      source_type: abstract
-      locator: Abstract、平衡曲線・fixed load/fixed gripsでの離脱力・単一パラメータλと連続遷移の記述
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000205
   group: contact
   role: 球状粒子間のvan der Waals力
-  summary:
-    question: 微小粒子の付着に関わるロンドン・ファンデルワールス力は、球状粒子の直径と粒子間隔によってどの程度変わり、液中ではどう変化するか。
-    method: 二つの球状粒子間の相互作用を直径と間隔の関数として計算し、数値表と近距離で使える近似式を導いた。さらに両粒子を液体に浸した場合の修正を検討した。
-    contribution: 球状粒子間の引力を見積もる式・数値表と、粒子間隔が小さい場合の近似を提示した。液中でもロンドン・ファンデルワールス力は一般に引力を生むと結論した。
-  evidence_by_item:
-    question:
-    - paper_id: P000205
-      version_id: V1
-      url: https://www.damtp.cam.ac.uk/user/gold/pdfs/teaching/hamaker.pdf
-      source_type: abstract
-      locator: PDF file p.1 / printed p.1058, Summary, opening and liquid-medium sentences
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000205
-      version_id: V1
-      url: https://www.damtp.cam.ac.uk/user/gold/pdfs/teaching/hamaker.pdf
-      source_type: abstract
-      locator: PDF file p.1 / printed p.1058, Summary, sphere-interaction calculation, numerical table, near-distance approximations and immersion sentences
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000205
-      version_id: V1
-      url: https://www.damtp.cam.ac.uk/user/gold/pdfs/teaching/hamaker.pdf
-      source_type: abstract
-      locator: PDF file p.1 / printed p.1058, Summary, numerical-table and approximation sentences; final liquid-attraction sentence
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000201
   group: roughness
   role: 表面粗さによる付着力の変化
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 小さな粗さは付着力にどれほど影響するか。
-    method: ゴム球と粗さを変えた硬い面の実験を、突起の統計モデルと比較する。
-    contribution: 粗さと弾性の競合から付着の低下を説明した。
-  evidence_by_item:
-    question:
-    - paper_id: P000201
-      version_id: V1
-      url: https://doi.org/10.1098/rspa.1975.0138
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000201
-      version_id: V1
-      url: https://doi.org/10.1098/rspa.1975.0138
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000201
-      version_id: V1
-      url: https://doi.org/10.1098/rspa.1975.0138
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000202
   group: roughness
   role: ナノ粗面の付着理論（第1報）
-  summary:
-    question: ナノメートル規模の粗面に付着した粒子を対象に、表面突起の寸法をどうモデル化し、接触部と非接触部の相互作用が付着にどう寄与するかを調べた。
-    method: 測定可能な二乗平均平方根（RMS）粗さと突起間隔から突起の幾何モデルを導いた。RMS粗さがおよそ20 nm未満の表面について、既存モデルと合わせて接触・非接触相互作用の寄与を解析した。
-    contribution: 同じ粗面を表す従来の近似より大きな突起半径が得られた。モデル上では、検討した表面の多くで粒子と突起の接触相互作用が支配的になると示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000202
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0021979700971674
-      source_type: abstract
-      locator: Abstract, sentences 1, 2, 4
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000202
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0021979700971674
-      source_type: abstract
-      locator: Abstract, sentences 2, 4
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000202
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0021979700971674
-      source_type: abstract
-      locator: Abstract, sentences 3, 5
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000203
   group: roughness
   role: ナノ粗面の付着測定（第2報）
-  summary:
-    question: ナノメートル規模の表面粗さは粒子と平板の付着力をどう変え、突起の高さと幅を考慮したモデルは実測をどこまで説明できるかを調べた。
-    method: 表面のRMS粗さ0.17～10.5 nmの粒子と平板の付着力を原子間力顕微鏡で測定し、突起より大きい粒子と小さい粒子を比較した。突起の高さと幅を反映したモデルの予測を実測と照合した。
-    contribution: 付着力は粗さが2 nm未満の範囲で粗さの増加とともに急減し、その後は緩やかに減った。突起の高さと幅を反映したモデルは、付着力を過小評価する既存モデルよりも、この実験系で実測をよく説明した。
-  evidence_by_item:
-    question:
-    - paper_id: P000203
-      version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/11071727/
-      source_type: abstract
-      locator: Abstract 第1文（測定対象）・第5～6文（新モデルの適用と比較）
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000203
-      version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/11071727/
-      source_type: abstract
-      locator: Abstract 第1～2文（粗さ0.17–10.5 nm、原子間力顕微鏡、突起より大・小の粒子）・第5文（高さと幅を考慮したモデル）
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000203
-      version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/11071727/
-      source_type: abstract
-      locator: Abstract 第3～4文（付着力の粗さ依存・既存モデルの過小評価）・第6文（対象実験系での予測改善）
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000204
   group: roughness
   role: 突起の統計による多点接触
-  summary:
-    question: 見かけ上平らな金属面が接触するとき、実接触面積や弾性・塑性の変形様式は、表面の突起形状にどう左右されるか。
-    method: 表面の凹凸を組み込んだ弾性接触理論を構築した。新しい形状測定装置で、標準的な加工を施した複数の面について、突起の高さ分布と曲率半径を調べた。
-    contribution: 弾性接触と塑性接触を区別する基準を示した。表面形状の測定データから、塑性接触が多い一方、工業で使う表面で弾性接触も珍しくないとした。
-  evidence_by_item:
-    question:
-    - paper_id: P000204
-      version_id: V1
-      url: https://www.researchgate.net/publication/220010544_Contact_of_Nominally_Flat_Surfaces
-      source_type: abstract
-      locator: Abstract 第1段落（nominally flat metal surfaces と real area of contact）、第3段落（変形と表面形状の関係）
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000204
-      version_id: V1
-      url: https://www.researchgate.net/publication/220010544_Contact_of_Nominally_Flat_Surfaces
-      source_type: abstract
-      locator: Abstract 第2〜3段落（new theory of elastic contact）、第4段落（新装置、突起の半径と高さ分布、標準的加工面）
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000204
-      version_id: V1
-      url: https://www.researchgate.net/publication/220010544_Contact_of_Nominally_Flat_Surfaces
-      source_type: abstract
-      locator: Abstract 第3段落（弾性・塑性の判別基準）、最終段落（測定データを用いた engineering practice の接触様式評価）
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000206
   group: roughness
   role: 付着接触の弾性曲げと不可逆な転がり抵抗
-  summary:
-    question: 付着した二つの弾性球が互いに転がろうとすると、接触面の遅れと非対称な圧力分布はどのような抵抗を生み、粒子鎖の変形・安定性をどう変えるか。
-    method: 接触域内だけに引力を認めるJKRS理論と、原子間距離程度で接触が更新される仮定を組み合わせた。滑りを抑え、ずれた接触領域を二つの半円に近似して小変位の抵抗モーメントを求め、粒子鎖の曲率、重力下の支持数、振動と衝突後の転がりを計算した。
-    contribution: 小変位では抵抗モーメントが引き離し力と接触のずれに比例し、仮定した臨界ずれを超えると接触更新でエネルギーを失うモデルを示した。同一球・外力ゼロの近似では転がり開始の接線力は6πγξ_yieldとなる。臨界ずれ0.2 nmは測定値ではなく、三次元接触の解も近似である。
-  evidence_by_item:
-    question:
-    - paper_id: P000206
-      version_id: V1
-      url: https://ntrs.nasa.gov/api/citations/19980018487/downloads/19980018487.pdf
-      locator: PDF p.2 / printed p.784, §1末尾–§2; p.4–6 / printed p.786–788, §3 and Fig.2
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000206
-      version_id: V1
-      url: https://ntrs.nasa.gov/api/citations/19980018487/downloads/19980018487.pdf
-      locator: PDF p.2 / printed p.784, §2のJKRS条件; p.4 / printed p.786, no-sliding assumption; p.6–8 / printed p.788–790, §3.1, Eq.(12)–(25)
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000206
-      version_id: V1
-      url: https://ntrs.nasa.gov/api/citations/19980018487/downloads/19980018487.pdf
-      locator: PDF p.8–10 / printed p.790–792, Eq.(25)–(28), ξyield仮定; p.13 / printed p.795, §4.2.2, Eq.(43); p.15 / printed p.797, §5
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
 - paper_id: P000207
   group: roughness
   role: 粒子接触と凝集体の構造
-  summary:
-    question: 星間空間や原始惑星系円盤で、接触部に働く接線方向の力はダスト凝集体の成長や衝突後の構造をどう変え、構造を変えずに付着する近似はいつ妥当か。
-    method: 接触部の接線力に関する既存理論を整理し、凝集過程と凝集体の衝突を詳細に数値計算した。構造の組み替えに要する臨界エネルギーで衝突結果を説明した。
-    contribution: 単粒子の付加による成長では通常大きな再構成が起きず、そのまま付着する近似が概ね妥当だった。凝集体同士や大粒子との衝突は、大きな圧密を起こし得た。
-  evidence_by_item:
-    question:
-    - paper_id: P000207
-      version_id: Vpre
-      url: https://citeseerx.ist.psu.edu/document?doi=a65ece1aeeda3fd085a9a0f0d8f6d4c465fa3f1c&repid=rep1&type=pdf
-      source_type: abstract
-      locator: 原稿冒頭 ABSTRACT
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000207
-      version_id: Vpre
-      url: https://citeseerx.ist.psu.edu/document?doi=a65ece1aeeda3fd085a9a0f0d8f6d4c465fa3f1c&repid=rep1&type=pdf
-      source_type: abstract
-      locator: 原稿冒頭 ABSTRACT
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000207
-      version_id: Vpre
-      url: https://citeseerx.ist.psu.edu/document?doi=a65ece1aeeda3fd085a9a0f0d8f6d4c465fa3f1c&repid=rep1&type=pdf
-      source_type: abstract
-      locator: 原稿冒頭 ABSTRACT
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: Vpre
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: true
 - paper_id: P000212
   group: roughness
   role: フラクタル粗面上の微粒子付着
-  summary:
-    question: アルミニウム系粗面の凹凸は、超微細な月ダストの付着力をどう変えるか。付着を抑える表面粗さをフラクタル理論で予測できるかを調べた。
-    method: 粒子と粗面の接触をフラクタルモデルで記述し、付着力を計算して最小化する粗さを求めた。エッチングしたアルミニウム表面の形状を原子間力顕微鏡で測り、計算値と遠心実験のダスト残留率を比較した。
-    contribution: モデルでは超微細粒子の付着をファンデルワールス力が支配し、粒径ごとにこの力を最小にする粗さが得られた。実験では計算上の力が大きい表面ほど残留率が高く、粗面モデルと付着傾向の対応を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000212
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0273117722000011
-      source_type: abstract
-      locator: 'Abstract: sentences 2, 4'
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000212
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0273117722000011
-      source_type: abstract
-      locator: 'Abstract: sentences 2, 4, 6–8'
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000212
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0273117722000011
-      source_type: abstract
-      locator: 'Abstract: sentences 3–5, 8'
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000218
   group: roughness
   role: Apollo試料の三次元形状と空隙
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    method:
-    - paper_id: P000218
-      version_id: V1
-      url: https://catalog.data.gov/dataset/3d-shape-and-size-data-for-10084-and-14163-lunar-regolith-particles
-      source_type: metadata
-      locator: 公開データ：Apollo 11・14の三次元粒子形状（NIST）
-      checked_at: '2026-09-25'
-    - paper_id: P000218
-      version_id: V1
-      url: https://www.nist.gov/publications/three-dimensional-characterization-particle-size-shape-and-internal-porosity-apollo-11
-      source_type: abstract
-      locator: NIST公開要旨
-      checked_at: '2026-09-25'
-    question:
-    - paper_id: P000218
-      version_id: V1
-      url: https://www.nist.gov/publications/three-dimensional-characterization-particle-size-shape-and-internal-porosity-apollo-11
-      source_type: abstract
-      locator: NIST公開要旨
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000218
-      version_id: V1
-      url: https://www.nist.gov/publications/three-dimensional-characterization-particle-size-shape-and-internal-porosity-apollo-11
-      source_type: abstract
-      locator: NIST公開要旨
-      checked_at: '2026-09-25'
-  summary:
-    question: 実際の月レゴリスと模擬物では、粒子の三次元形状と内部空隙がどう異なるか。
-    method: Apollo 11・14試料とJSC-1A模擬物をX線CTと数学的解析で調べ、微小粒子には電子顕微鏡観察を加える。
-    contribution: 月試料約14,000粒子と模擬物約128,000粒子を特徴付けた。三次元形状の公開データを整備し、実粒子による光散乱計算や模擬物との定量比較に使えるようにした。
 - paper_id: P000281
   group: roughness
   role: FJS-1の三次元形状と離散要素法
-  summary:
-    question: 月土壌模擬物質FJS-1の三次元粒子形状を計測して離散要素法へ取り込み、粒子流動後の斜面角を再現できるかを調べる。
-    method: SPring-8の高分解能マイクロX線CTと画像解析で個々の粒子を識別し、得られた三次元形状をモデル化して粒子流動の離散要素シミュレーションを行う。
-    contribution: FJS-1の実形状に基づく粒子モデルで計算した斜面角は、実験結果とよく一致した。接触剛性、反発係数、粒子間摩擦が斜面角に及ぼす影響も検討した。
-  evidence_by_item:
-    question:
-    - paper_id: P000281
-      version_id: V1
-      url: https://www.kz.tsukuba.ac.jp/~tmatsu/dem/cr01/200901_jae.pdf
-      source_type: abstract
-      locator: PDF p.1（誌面 p.15）, Abstract, sentences 1–2 and 6–7
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000281
-      version_id: V1
-      url: https://www.kz.tsukuba.ac.jp/~tmatsu/dem/cr01/200901_jae.pdf
-      source_type: abstract
-      locator: PDF p.1（誌面 p.15）, Abstract, sentences 3–6
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000281
-      version_id: V1
-      url: https://www.kz.tsukuba.ac.jp/~tmatsu/dem/cr01/200901_jae.pdf
-      source_type: abstract
-      locator: PDF p.1（誌面 p.15）, Abstract, sentences 7–8
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000208
   group: measurements
   role: 月ダストの付着・凝集機構
-  summary:
-    question: 月面ダストの粒子間の凝集と異種材料への付着には、どの相互作用が働くか。粒径や帯電状態、ケイ酸塩主体の組成との関係を既刊研究から検討した。
-    method: 米国と旧ソ連の既刊研究をレビューし、月土壌の物理特性と組成、Apolloでのダスト障害を比較整理した。ファンデルワールス力・静電力・Lewis酸塩基相互作用から付着と凝集を考察した。
-    contribution: 月ダストではLewis酸塩基相互作用が重要と論じた。異種材料への付着は粒径で支配力が変わり、正帯電を想定する議論では、事前帯電すると粒径によらず静電力が優勢になると提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000208
-      version_id: V1
-      url: https://www.tandfonline.com/doi/abs/10.1163/156856195X00932
-      source_type: abstract
-      locator: Abstract：月土壌の組成、凝集・付着の相互作用、異種材料との付着、粒径と事前帯電についての記述
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000208
-      version_id: V1
-      url: https://www.tandfonline.com/doi/abs/10.1163/156856195X00932
-      source_type: abstract
-      locator: Abstract冒頭：米国・旧ソ連の多数の刊行物を用いたレビュー、Apolloでの障害、物理特性の比較と酸性・塩基性成分の整理
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000208
-      version_id: V1
-      url: https://www.tandfonline.com/doi/abs/10.1163/156856195X00932
-      source_type: abstract
-      locator: Abstract：ケイ酸塩とLewis酸塩基相互作用の記述、ファンデルワールス・静電相互作用の粒径依存性、事前帯電時に粒径によらず静電相互作用が優勢とする記述
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000209
   group: measurements
   role: 月ダスト付着の技術報告
-  summary:
-    question: 月面環境で微細なダストが機器などの表面に付着するとき、どの力が支配的になり、その強さは粒径・帯電状態・表面条件によってどう変わるのか。
-    method: 月ダストの物性と既存の付着研究を概説し、表面エネルギーに由来する力と帯電粒子が誘起する鏡像力の粒径依存性を比較した。測定法と除去法も検討した。
-    contribution: 接触後の付着ではファンデルワールス力などと静電的な鏡像力が有力と整理した。両者の相対的重要性は電荷と粒径の関係に左右され、表面の粗さや真空下の表面エネルギーが予測の不確かさを増す。
-  evidence_by_item:
-    question:
-    - paper_id: P000209
-      version_id: V1
-      url: https://ntrs.nasa.gov/api/citations/20070020448/downloads/20070020448.pdf
-      source_type: abstract
-      locator: PDF file page 5 (printed p. 1), Abstract, opening scope and charge/size/surface-energy discussion
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000209
-      version_id: V1
-      url: https://ntrs.nasa.gov/api/citations/20070020448/downloads/20070020448.pdf
-      source_type: abstract
-      locator: PDF file page 5 (printed p. 1), Abstract, review scope, charge/size scaling and closing measurement/model/removal discussion
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000209
-      version_id: V1
-      url: https://ntrs.nasa.gov/api/citations/20070020448/downloads/20070020448.pdf
-      source_type: abstract
-      locator: PDF file page 5 (printed p. 1), Abstract, surface-energy and static-image forces; charge-size dependence and roughness/vacuum uncertainties
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000210
   group: measurements
   role: 遠心法による模擬粒子の付着測定
-  summary:
-    question: 月土壌模擬試料BHLD1000の微粒子は宇宙機材料にどの程度強く付着し、理論モデルの付着力と実験値はどの程度一致するか。
-    method: ファンデルワールス力・静電力・毛管力を含むモデルを作り、BHLD1000と4種類の宇宙機材料の付着を、地上の遠心法と画像処理で測定した。
-    contribution: 付着粒子の大きさは数µm、平均付着力は数nNで、理論値より約3桁小さかった。著者はこの差を粒子の不規則な形状と表面粗さで説明した。
-  evidence_by_item:
-    question:
-    - paper_id: P000210
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0032063322001210
-      source_type: abstract
-      locator: 'Abstract: theoretical model, BHLD1000 and four types of aerospace functional surfaces'
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000210
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0032063322001210
-      source_type: abstract
-      locator: 'Abstract: forces in model and centrifugal technique with image processing; Highlights, final bullet: laboratory environment'
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000210
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0032063322001210
-      source_type: abstract
-      locator: 'Abstract: particle size, average adhesion force, comparison with theoretical value and explanation'
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000211
   group: measurements
   role: 真空・UV条件を含む付着試験
-  summary:
-    question: 月面で使う材料への模擬月ダストの付着は、真空中の紫外線照射でどう変わるか。回転による粒子の離脱から、材料ごとの付着の強さを半定量的に評価する試験法を検証した。
-    method: 45 µm未満のJSC-1/1Aを、未処理・陽極酸化・Z93P塗装のアルミニウムとOrtho布に付着させた。真空中でUV照射の有無を変え、回転加速度を段階的に上げながら画像からダスト被覆率の変化を調べた。
-    contribution: 高い回転加速度では、未処理・陽極酸化アルミニウムの付着はUV照射時に弱まった。一方、Z93P塗装アルミニウムとOrtho布ではUV照射時に残留ダストが増え、照射の影響が材料によって逆になると示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000211
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S009457652200340X
-      source_type: abstract
-      locator: Abstract冒頭：月面用途材料へのJSC-1/1Aの付着を半定量測定する装置の設計と、高真空・UV条件での粒子離脱
-      checked_at: '2026-10-06'
-    - paper_id: P000211
-      version_id: V1
-      url: https://www.researchgate.net/publication/361942611_Adhesion_of_lunar_simulant_dust_to_materials_under_simulated_lunar_environment_conditions
-      source_type: abstract
-      locator: 著者公開出版版p.25 Abstract冒頭（公開ページlines 37、128–139）
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000211
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S009457652200340X
-      source_type: abstract
-      locator: Abstract：45 µm未満の模擬ダスト、4材料、12段階の加速度プロファイル、カメラによる被覆率記録と後処理
-      checked_at: '2026-10-06'
-    - paper_id: P000211
-      version_id: V1
-      url: https://www.researchgate.net/publication/361942611_Adhesion_of_lunar_simulant_dust_to_materials_under_simulated_lunar_environment_conditions
-      source_type: abstract
-      locator: 著者公開出版版p.25 Abstract（公開ページlines 37–38、128–146）
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000211
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S009457652200340X
-      source_type: abstract
-      locator: Abstract結果：高い加速度でbare/anodized aluminumは真空のみの方が高付着、Z93P painted aluminum/Ortho fabricはUV照射で多くのダストを保持
-      checked_at: '2026-10-06'
-    - paper_id: P000211
-      version_id: V1
-      url: https://www.researchgate.net/publication/361942611_Adhesion_of_lunar_simulant_dust_to_materials_under_simulated_lunar_environment_conditions
-      source_type: abstract
-      locator: 著者公開出版版p.25 Abstract結果（公開ページlines 39、152–157）
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000213
   group: measurements
   role: 付着測定用の遠心装置
-  summary:
-    question: 月レゴリス模擬試料が材料表面から離れる力を、入手しやすい部品と3D印刷で製作した卓上遠心装置によって測定できるかを検討する。
-    method: 3D印刷部品とArduino、回転検出器付きモーターで装置を製作し、PID制御で回転させた。PEEK表面上のLX-M100粒子を顕微鏡画像で追跡し、推定質量と回転条件から離脱力を算出した。
-    contribution: 模擬粒子の離脱を用いて装置の利用可能性を示し、材料や表面処理を比較する試験法を提示した。粒子質量は形状仮定に基づく近似で、段階的な回転試験から得る力は付着力の上限に相当する。
-  evidence_by_item:
-    question:
-    - paper_id: P000213
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S2468067225000720
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000213
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S2468067225000720
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-06'
-    - paper_id: P000213
-      version_id: V1
-      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12446612/
-      source_type: full_text
-      locator: 8. Dust characterization, sample preparation, imaging, image processing and Eqs. (3)–(7)
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000213
-      version_id: V1
-      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12446612/
-      source_type: full_text
-      locator: 8.1. Results; 8.2. Conclusions and discussion; 8.3. Capabilities and limitations
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000214
   group: measurements
   role: ナノチューブ表面による付着低減
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
-  summary:
-    question: Ti6Al4V上のナノチューブ配列は、模擬月塵の局所付着力と表面残留量をどう変えるか。
-    method: 陽極酸化電圧を変えた表面を、粒子付きAFM探針と粉体散布試験で比較する。
-    contribution: 未処理Ti-0と比べ、Ti-40の平均付着力は12.98から1.63 nNへ低下。投入量5 g・設置角60°の残留量は0.5420から0.1642 mg/cm²へ減った。ナノ構造の半径・直径表記は原文内で一致しない。
-  evidence_by_item:
-    question:
-    - paper_id: P000214
-      version_id: V1
-      url: https://doi.org/10.7527/S1000-6893.2024.31803
-      source_type: full_text
-      locator: PDF pp.1–2, Introduction
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000214
-      version_id: V1
-      url: https://doi.org/10.7527/S1000-6893.2024.31803
-      source_type: full_text
-      locator: PDF pp.2–4, §§1.1–1.3, Figs.1–4
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000214
-      version_id: V1
-      url: https://doi.org/10.7527/S1000-6893.2024.31803
-      source_type: full_text
-      locator: PDF pp.5–9, §§2.1–2.3, Figs.6,9,10,12; p.12 English abstract
-      checked_at: '2026-09-22'
 - paper_id: P000257
   group: measurements
   role: 受動的なダスト対策表面の比較
-  summary:
-    question: 月ダストの付着を抑える表面と、ダストにさらされても機能を保つ表面について、受動技術の性能・環境耐久性と月面条件での検証不足を比較整理する。
-    method: 2006〜2026年に報告された32種の受動表面技術をレビューした。厚み増加、製造性、複雑さ、環境耐久性、ダストとの相互作用の5項目で重み付き採点し、技術成熟度も整理した。
-    contribution: 付着抑制表面は高い除塵効果が報告される一方、高真空での検証が乏しく、耐ダスト表面も繰り返すダスト曝露による摩耗データが不足する。両者の組合せと複合環境試験を次の課題として示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000257
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0094576526003292
-      source_type: abstract
-      locator: Abstract, opening three sentences
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000257
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0094576526003292
-      source_type: abstract
-      locator: Abstract, sentences 2–4
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000257
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0094576526003292
-      source_type: abstract
-      locator: Abstract, sentences 5–9
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000258
   group: measurements
   role: ZnO薄膜と立体テクスチャの付着試験
-  summary:
-    question: ZnO超薄膜の厚さと階層的な立体形状を組み合わせると、月ダスト模擬物LHS-1の付着量と残留粒子の位置をどう制御できるかを調べた。
-    method: 二光子リソグラフィで作る立体形状と原子層堆積によるZnO膜を組み合わせ、膜厚と層間の回転角を変更した。空気中で20秒振動させた後の残留量を比較し、膜の成長状態を原子間力顕微鏡で確認した。
-    contribution: ZnO膜の連続化が、振動後の残留量が大幅に減る条件と対応した。同じZnO条件でも、立体形状に応じて粒子が縁・谷・稜線の間に残る違いを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000258
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0094576526001335
-      source_type: abstract
-      locator: Abstract, 第2文・最終文
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000258
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0094576526001335
-      source_type: abstract
-      locator: Abstract, 第2–4文・第6文
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000258
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0094576526001335
-      source_type: abstract
-      locator: Abstract, 第5–7文
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000259
   group: measurements
   role: 導電性ポリイミドによる付着低減
-  summary:
-    question: シリカと導電性添加剤を含むポリイミド被膜の表面特性を調整することで、月ダスト模擬粒子の付着・残留を低減できるかを調べた。
-    method: シリカや多層カーボンナノチューブを加えた被膜を作製し、ぬれ性・表面エネルギー・粗さ・導電率を測定した。模擬粒子の残留を傾斜試験と顕微鏡で評価した。
-    contribution: 導電性と超撥水性を備える被膜を得て、良好な試料では90度の傾斜後に模擬粒子の残留質量がわずかとなった。表面の微視的な残留被覆も少なく、付着抑制用の有望な配合を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000259
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0169433226000784
-      source_type: abstract
-      locator: Abstract, sentences 2–3; Highlights, bullets 1–3
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000259
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0169433226000784
-      source_type: abstract
-      locator: Highlights, bullets 1–3; Abstract, sentences 3–6
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000259
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0169433226000784
-      source_type: abstract
-      locator: Abstract, sentences 4–7
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000026
   group: detachment
   role: プラズマ中のダスト移動実験
-  summary:
-    question: プラズマ中で、導体上の絶縁性ダストはどこから動き始めるか。
-    method: 負にバイアスしたグラファイト上の25 µm未満の模擬粒子を撮影し、別条件の絶縁円板で電位と約100 µm粒子の電荷を測る。
-    contribution: 外縁から輪状に広がる移動と6 mm以上の到達を観察し、電位構造・粒子電荷の位置依存性と対応付けた。付着力の閾値は定量化していない。
-  evidence_by_item:
-    question:
-    - paper_id: P000026
-      version_id: V1
-      url: https://doi.org/10.1029/2008JA013983
-      source_type: full_text
-      locator: PDF pp.1–2, §§1–2
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000026
-      version_id: V1
-      url: https://doi.org/10.1029/2008JA013983
-      source_type: full_text
-      locator: PDF pp.2–4, §§2–4, Figs.1,4,5
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000026
-      version_id: V1
-      url: https://doi.org/10.1029/2008JA013983
-      source_type: full_text
-      locator: PDF pp.2–5, §§3–4, Figs.2–7
-      checked_at: '2026-09-22'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  locked_fields: []
 - paper_id: P000029
   group: detachment
   role: 電子ビームとダスト離脱
-  summary:
-    question: 電子ビームとイオンの電流比は、ダスト層と基板の電位差・輸送をどう変えるか。
-    method: 浮遊グラファイト上のJSC-Mars-1に電子ビームを入射し、75–90 µm粒子層の電位と、別条件で25 µm未満の粒子の移動を測る。
-    contribution: 両電流が同程度でビームエネルギーが十分な条件では電場が増強し、小粒子の広がりと絶縁ブロック上面への堆積を観察した。無照射時に対する約1桁の増加は垂直電場の値である。
-  evidence_by_item:
-    question:
-    - paper_id: P000029
-      version_id: V1
-      url: https://doi.org/10.1029/2010JA015465
-      source_type: full_text
-      locator: PDF p.1, §1
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000029
-      version_id: V1
-      url: https://doi.org/10.1029/2010JA015465
-      source_type: full_text
-      locator: PDF pp.1–4, §§2–4, Table 1
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000029
-      version_id: V1
-      url: https://doi.org/10.1029/2010JA015465
-      source_type: full_text
-      locator: PDF pp.3–6, §§3.1,4–5, Figs.2,5
-      checked_at: '2026-09-22'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
-  locked_fields: []
 - paper_id: P000009
   group: detachment
   role: 空隙の電子再吸収
-  summary:
-    question: 粉体面の粒子は、離脱に必要な電荷をどう得るか。
-    method: 粉体の照射実験と、空隙内の電子再吸収モデルを比較。
-    contribution: 空隙の負帯電・反発力で粒子の跳躍を説明するPCMを提案。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000009
-      version_id: V1
-      url: https://doi.org/10.1002/2016GL069491
-      source_type: full_text
-      locator: §2–4（pp.6104–6109）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000010
   group: detachment
   role: 粒子間電場と導電性
-  summary:
-    question: 粒子間の局所電場はどこまで強くなるか。
-    method: 一次元で導電性を、三次元で固定粒子群の差動帯電を計算。
-    contribution: 導電性が局所電場の上限を左右する。粒子離脱は計算対象外。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000010
-      version_id: V1
-      url: https://doi.org/10.1002/2016JE005049
-      source_type: full_text
-      locator: 考察・§5（p.2163）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000013
   group: detachment
   role: 単粒子と基板の隙間
-  summary:
-    question: 基板上の単粒子も、電子の再捕集で帯電・移動するか。
-    method: Kapton上のSiO₂粒子を電子・紫外線で照射し、移動を画像計測。
-    contribution: PCMを粒子と基板の隙間へ拡張。計測した移動度は離脱率とは異なる。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000013
-      version_id: V1
-      url: https://doi.org/10.1103/PhysRevLett.133.115301
-      source_type: full_text
-      locator: PCM-SP・Figs.3–4（PDF pp.1–3）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000215
   group: detachment
   role: 光帯電と外部電場による離脱
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 外部電場の向きは光帯電粒子の離脱をどう変えるか。
-    method: 導体上の絶縁粒子にUVと正負の外部電場を与える。
-    contribution: 光電子の軌道の違いが、正帯電に至る過程と粒子離脱の違いを生むことを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000215
-      version_id: V1
-      url: https://doi.org/10.1063/5.0210675
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000215
-      version_id: V1
-      url: https://doi.org/10.1063/5.0210675
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000215
-      version_id: V1
-      url: https://doi.org/10.1063/5.0210675
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000216
   group: detachment
   role: 電荷ゆらぎと静電離脱
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
-  summary:
-    question: 光電子放出・電子捕獲の局所的なゆらぎは、粒子の付着を超える静電力を作るか。
-    method: ナノ領域の電荷生成・消滅をMonte Carlo法で模擬し、帯電領域の配置から求めた電場と仮定した粒子電荷を、粗さ・清浄度を含む付着モデルと比較する。
-    contribution: 半径20 nmの粒子と半径10 nmの帯電領域に各+10eを仮定し、最隣接させた例で約10 pNを得た。離脱条件の成否は電荷・配置・粗さ・清浄度に依存し、有効面積の記載にも不整合が残る。
-  evidence_by_item:
-    question:
-    - paper_id: P000216
-      version_id: V1
-      url: https://doi.org/10.1016/j.epsl.2025.119544
-      source_type: full_text
-      locator: PDF pp.1–3, §§1–2.1
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000216
-      version_id: V1
-      url: https://doi.org/10.1016/j.epsl.2025.119544
-      source_type: full_text
-      locator: PDF pp.1–2, Eqs.1–2; pp.5–8, Eqs.3–22, Figs.7–10
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000216
-      version_id: V1
-      url: https://doi.org/10.1016/j.epsl.2025.119544
-      source_type: full_text
-      locator: PDF pp.2,5,7–8, Figs.1,8, Computational Space and Scheme
-      checked_at: '2026-09-22'
 - paper_id: P000217
   group: detachment
   role: 離脱後の打ち上げ速度の評価
-  summary:
-    question: 日照下の月面で、光電帯電による微小領域の電場の揺らぎは付着力と重力を越えてダストを離脱させ、離脱直後にどの程度の速度を与えるか。
-    method: 微小領域の平均電荷と分散の時間発展から電場の揺らぎを求め、粒子運動と結合した。光電子放出・回収、レゴリスの実測粒径分布、典型的な太陽風プラズマをモデルに組み込んだ。
-    contribution: モデル解析では、強い局所電場の揺らぎがサブミクロン粒子を離脱させ、数m/sの初速を与える可能性を示した。離脱速度を電荷の統計的揺らぎから見積もる枠組みを提示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000217
-      version_id: V1
-      url: https://academic.oup.com/mnras/article-abstract/519/1/85/6843616
-      source_type: abstract
-      locator: ABSTRACT, paragraphs 1–2 (HTML lines 65–66)
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000217
-      version_id: V1
-      url: https://academic.oup.com/mnras/article-abstract/519/1/85/6843616
-      source_type: abstract
-      locator: ABSTRACT, paragraphs 1–2 (HTML lines 65–66)
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000217
-      version_id: V1
-      url: https://academic.oup.com/mnras/article-abstract/519/1/85/6843616
-      source_type: abstract
-      locator: ABSTRACT, paragraph 3 (HTML line 67); paragraph 2 (HTML line 66)
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000014
   group: detachment
   role: 光とプラズマの同時照射
-  summary:
-    question: 光電子を放出する粉体に、プラズマ電子はどう作用するか。
-    method: 模擬粉体への真空紫外線・低密度Arプラズマの単独／同時照射を比較。
-    contribution: 同時照射で飛び出し・推定負電荷が増加。charge pumpingで説明。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000014
-      version_id: V1
-      url: https://doi.org/10.1029/2024GL113715
-      source_type: full_text
-      locator: 要旨・§3.2–3.3（PDF pp.1,5）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000250
   group: detachment
   role: 関連研究
-  summary:
-    question: 固体表面上のダストに浅い角度で電子ビームを当てたとき、粒子はどちらへ移動するか。二次電子放出率と、ビームに面する側・陰になる側の帯電差との関係を調べた。
-    method: 固体表面上のダストに電子ビームを浅い角度で照射し、二次電子放出率が1を上回る条件と下回る条件での移動を実験で比較した。結果を粒子セル法によるシミュレーションと照合した。
-    contribution: 二次電子放出率が1を上回ると粒子はビームと逆向きに移動し、著者は陰側の帯電量が大きくなることによる反発力で説明した。1を下回ると両側の電位が近づき、移動方向はランダムになった。
-  evidence_by_item:
-    question:
-    - paper_id: P000250
-      version_id: V1
-      url: https://journals.aps.org/pre/abstract/10.1103/c8nd-1lxg
-      source_type: abstract
-      locator: Abstract、第1段落（行90）：斜入射電子ビーム下の固体表面上のダスト移動と、ビームに面する側・陰側の非対称帯電
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000250
-      version_id: V1
-      url: https://journals.aps.org/pre/abstract/10.1103/c8nd-1lxg
-      source_type: abstract
-      locator: Abstract、第1・第3段落（行90、92）：実験、二次電子放出率による条件区分、末文の粒子セル法シミュレーションとの比較
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000250
-      version_id: V1
-      url: https://journals.aps.org/pre/abstract/10.1103/c8nd-1lxg
-      source_type: abstract
-      locator: Abstract、第1–第3段落（行90–92）：放出率1超で逆向き移動、陰側の大きい帯電量と反発力、1未満で両側の類似電位とランダム方向
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000249
   group: detachment
   role: 月ダストの生成・物性・輸送の総説
-  summary:
-    question: 月ダストの生成と粒子の物性は、隕石衝突・静電力・ロケット噴流による輸送や探査機の設計条件にどう結びつくか。海・高地・永久影などの環境差も整理する。
-    method: Apollo試料分析と月面・軌道観測を統合する総説。熱伝導モデルと電荷緩和則で温度・日照依存性を整理し、付着力と表面近傍の電場を考慮したダスト輸送の解析式を示す。
-    contribution: 生成・組成・物性から輸送経路と地域別の設計値へつながる関係をまとめた。付着を考慮した離脱閾値と表面近傍の輸送高度の解析式を示し、着陸機・ローバーの工学評価に使える形にした。
-  evidence_by_item:
-    question:
-    - paper_id: P000249
-      version_id: V1
-      url: https://journals.aps.org/prresearch/abstract/10.1103/hn1p-nx25
-      source_type: abstract
-      locator: 'Abstract, opening passage and paragraph beginning The review links: lunar dust properties; production→grain properties→mobilization→region-specific design ranges'
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000249
-      version_id: V1
-      url: https://journals.aps.org/prresearch/abstract/10.1103/hn1p-nx25
-      source_type: abstract
-      locator: 'Abstract, paragraphs beginning We synthesize, We also incorporate and We quantify: Apollo/in situ/orbital datasets; two-channel k(T,ρ) model and charge-relaxation scaling'
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000249
-      version_id: V1
-      url: https://journals.aps.org/prresearch/abstract/10.1103/hn1p-nx25
-      source_type: abstract
-      locator: 'Abstract, paragraph beginning The review links and closing paragraph (We provide; The result): region-specific design ranges; adhesion-aware lift thresholds; near-surface apex/hover transport heights as functions of sheath structure'
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000256
   group: detachment
   role: ダスト運動とレゴリス力学の総説
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
-  summary:
-    question: 月レゴリスの力学特性と帯電環境は、ダストの離脱・運動をどう制約するか。
-    method: Apollo試料の物性、土質力学試験、月面観測、帯電・軌道モデルを横断して整理した2007年の総説。
-    contribution: レゴリスの力学応答と帯電・輸送研究をつなぎ、離脱時の電荷分布や微小粒子の実験不足を当時の課題として挙げた。観測されるダストを安定浮遊だけで説明する必要はないと論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000256
-      version_id: V1
-      url: https://doi.org/10.1029/2005RG000184
-      source_type: full_text
-      locator: PDF pp.1–2, §1
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000256
-      version_id: V1
-      url: https://doi.org/10.1029/2005RG000184
-      source_type: full_text
-      locator: PDF pp.2–22, §§2–4, Tables 1–5b, Figs.1–13
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000256
-      version_id: V1
-      url: https://doi.org/10.1029/2005RG000184
-      source_type: full_text
-      locator: PDF p.21, §4.3 [74]; pp.22–23, §5 [81]–[84]
-      checked_at: '2026-09-22'
 - paper_id: P000290
   group: measurements
   role: 鉱物・形状・付着からの安息角推定
-  summary:
-    question: 月裏側レゴリスの鉱物組成と粒子表面は安息角をどう変えるか。
-    method: Chang'e-6の5種・30粒子の形状、表面エネルギー、摩擦を調べ、粒子集団の安息角を実験とモデルで評価する。
-    contribution: 月重力では摩擦・形状が支配する領域と付着が支配する領域の境界が、地球の約100 μmから約200 μmへ移ると推定した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000290
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009536
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000290
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009536
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000290
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009536
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000292
   group: measurements
   role: 水氷によるレゴリス凝集の低温実験
-  summary:
-    question: 永久影の水氷はレゴリスを固め、斜面を安定させるか。
-    method: 約90 Kと約220 Kで氷と高地レゴリス模擬物を混ぜ、静的・動的安息角と崩壊様式を測る。
-    contribution: 約90 Kでは氷が30重量%を超えると静的安息角が増えた一方、動的安息角の変化は小さかった。実験条件下では数重量%の氷による凝集の寄与は限定的だった。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000292
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je009785
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000292
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je009785
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000292
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je009785
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000293
   group: roughness
   role: 月裏側粒子の三次元形状と集団強度
-  summary:
-    question: 月裏側粒子の不規則な形状はレゴリスの強度へどう寄与するか。
-    method: Chang'e-6試料のX線CTと半教師あり学習で349,740粒子を再構成し、実形状を使う離散要素法で力学応答を計算する。
-    contribution: 拘束圧5〜15 kPaの計算で内部摩擦角47.96°、粘着力1.08 kPaを得た。強度増加を主に粒子のかみ合いで説明した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000293
-      version_id: V1
-      url: https://api.crossref.org/works/10.34133/research.1064
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000293
-      version_id: V1
-      url: https://api.crossref.org/works/10.34133/research.1064
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000293
-      version_id: V1
-      url: https://api.crossref.org/works/10.34133/research.1064
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000308
+  group: detachment
   role: 姿勢と接触帯電の停止状態
-  summary:
-    question: 振動面で跳ねる絶縁球の最終電荷は、なぜ試行ごとに異なるか。
-    method: 単一球の振動実験とシミュレーションで、姿勢・運動・電荷分布の結合を調べる。
-    contribution: 永久双極子が姿勢を固定して帯電を止める状態を示し、最終電荷のばらつきを動力学から説明した。
-  evidence_by_item:
-    question:
-    - paper_id: P000308
-      version_id: V1
-      url: https://doi.org/10.1103/37yf-n6f7
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000308
-      version_id: V1
-      url: https://doi.org/10.1103/37yf-n6f7
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000308
-      version_id: V1
-      url: https://doi.org/10.1103/37yf-n6f7
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: detachment
 - paper_id: P000309
+  group: detachment
   role: 二粒子の衝突ごとの電荷移動
-  summary:
-    question: 同じ材料の絶縁粒子が繰り返し衝突すると、電荷はどう蓄積するか。
-    method: 音響浮遊した二つのポリスチレン粒子を衝突させ、Faradayケージで電荷移動を測定する。
-    contribution: 各衝突の電荷移動は確率的だが、累積電荷はコンデンサーモデルの飽和則に従うことを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000309
-      version_id: V1
-      url: https://journals.aps.org/pre/accepted/10.1103/p9zp-hf26
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000309
-      version_id: V1
-      url: https://journals.aps.org/pre/accepted/10.1103/p9zp-hf26
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000309
-      version_id: V1
-      url: https://journals.aps.org/pre/accepted/10.1103/p9zp-hf26
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: detachment
 - paper_id: P000315
+  group: detachment
   role: 離脱初速の粒径・形状依存
-  summary:
-    question: 静電的に離脱したダストの初速は、粒径と形状にどう依存するか。
-    method: 離脱初速・角度を室内測定し、局所帯電モデルとエネルギー保存から導く速度と粒径の関係を比較する。
-    contribution: 最大初速は粒径の増加とともに低下し、同じ粒径でも凝集力や形状による大きな速度分散を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000315
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103520303407
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000315
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103520303407
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000315
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103520303407
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: detachment
 - paper_id: P000316
-  role: 離脱粒径と射出角の分布
-  summary:
-    question: 飛び出す粒子の大きさと方向は、輸送距離とどう関係するか。
-    method: 450 eVの電子ビームでシリカ粒子を離脱させ、高速度撮影と周囲の粘着面への捕集を組み合わせる。
-    contribution: 表面法線から約43.5〜45度の射出角にピークを見いだし、凝集体と単粒子の到達距離の違いを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000316
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0273117721002623
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000316
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0273117721002623
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000316
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0273117721002623
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: detachment
+  role: 離脱粒径と射出角の分布
 - paper_id: P000332
-  role: 氷の形態と走行・掘削性
-  summary:
-    question: 氷量が同じでも、その形態によって地盤の強さと掘削エネルギーは変わるか。
-    method: 低温の模擬レゴリスを未焼結・圧力焼結・氷結合・蒸着で準備し、円錐貫入試験を行う。
-    contribution: 粒子間を結ぶ氷と分散した氷で強度・掘削性が大きく異なり、氷量に加えて微細構造を評価する必要を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000332
-      version_id: V1
-      url: https://doi.org/10.1007/s44461-026-00015-w
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000332
-      version_id: V1
-      url: https://doi.org/10.1007/s44461-026-00015-w
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000332
-      version_id: V1
-      url: https://doi.org/10.1007/s44461-026-00015-w
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: measurements
+  role: 氷の形態と走行・掘削性
 - paper_id: P000365
   group: measurements
   role: 実月面でのガス採取と付着観察
-  summary:
-    question: 月面でガス噴流によるレゴリスの採取・輸送・分級を実行できるか。
-    method: Blue Ghost Mission 1で窒素ガス式装置を運用し、内部撮像、光遮断センサー、外部映像で評価した。捕集量は画像、CAD、地上試験から推定した。
-    contribution: 非公称の接地姿勢でも4回の運用で累計約11 cm³の捕集を推定し、材料クーポンへの付着も観察した。クーポン像に校正用基準面がなく、付着量や表面加工の効果の定量化には限界がある。
-  evidence_by_item:
-    question:
-    - paper_id: P000365
-      version_id: V1
-      url: https://link.springer.com/article/10.1007/s44461-026-00012-z
-      source_type: full_text
-      locator: 要旨、装置・運用結果、材料クーポンの観察、考察
-      checked_at: '2026-10-05'
-    method:
-    - paper_id: P000365
-      version_id: V1
-      url: https://link.springer.com/article/10.1007/s44461-026-00012-z
-      source_type: full_text
-      locator: 要旨、装置・運用結果、材料クーポンの観察、考察
-      checked_at: '2026-10-05'
-    contribution:
-    - paper_id: P000365
-      version_id: V1
-      url: https://link.springer.com/article/10.1007/s44461-026-00012-z
-      source_type: full_text
-      locator: 要旨、装置・運用結果、材料クーポンの観察、考察
-      checked_at: '2026-10-05'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-05'
-    recheck: false
-  locked_fields: []
 - paper_id: P000367
   group: measurements
   role: 飛行前の材料選定と表面加工評価
-  summary:
-    question: 月面での付着評価へ向け、どの構造材料と表面加工を選定すべきか。
-    method: Kapton HN、Teflon FEP、炭素繊維強化ビスマレイミド複合材、Ti–6Al–4Vを選び、レーザー加工面と比較面を準備した。模擬ダスト試験、顕微鏡・SEM、接触角、表面形状測定で地上評価した。
-    contribution: RAC搭載試料の材料選択・加工・評価手順を示し、実月面で表面特性と付着を比較するための基盤を提供した。飛行前の地上評価であり、材料別の月面付着低減率を示す結果ではない。
-  evidence_by_item:
-    question:
-    - paper_id: P000367
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576524001668
-      source_type: abstract
-      locator: 要旨・公開本文抜粋
-      checked_at: '2026-10-05'
-    method:
-    - paper_id: P000367
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576524001668
-      source_type: abstract
-      locator: 要旨・公開本文抜粋
-      checked_at: '2026-10-05'
-    contribution:
-    - paper_id: P000367
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0094576524001668
-      source_type: abstract
-      locator: 要旨・公開本文抜粋
-      checked_at: '2026-10-05'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-05'
-    recheck: false
-  locked_fields: []
 - paper_id: P000369
   group: detachment
   role: EDS被覆の除去性能と耐久性
-  summary:
-    question: 機能性被覆は、EDSの微小放電、ダスト蓄積、耐久性をどう変えるか。
-    method: CMrGO電極とHDPE基板の二相EDSにPSまたはTPFSを被覆し、高真空下の連続降塵試験で電圧、残留粒径、表面損傷を比較した。
-    contribution: 両被覆は微小放電を抑える一方、同じ電圧での蓄積抑制は未被覆より低下した。TPFSはPSより高電圧域の蓄積抑制と耐久性が良好で、1000–1500 Vでは未被覆に近い除去性能を示した。評価量は動的降塵下の蓄積抑制に基づき、事前堆積後の除去率との比較には試験方式をそろえる必要がある。
-  evidence_by_item:
-    question:
-    - paper_id: P000369
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S009457652500565X
-      source_type: full_text
-      locator: 公開HTML本文の実験方法・結果・限界・結論
-      checked_at: '2026-10-05'
-    method:
-    - paper_id: P000369
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S009457652500565X
-      source_type: full_text
-      locator: 公開HTML本文の実験方法・結果・限界・結論
-      checked_at: '2026-10-05'
-    contribution:
-    - paper_id: P000369
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S009457652500565X
-      source_type: full_text
-      locator: 公開HTML本文の実験方法・結果・限界・結論
-      checked_at: '2026-10-05'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-05'
-    recheck: false
-  locked_fields: []
 - paper_id: P000370
   group: detachment
   role: 粒径別EDS性能と力の競合
-  summary:
-    question: 月レゴリス模擬物の粒径に応じて、EDSで除去しにくくなる原因は何か。
-    method: 模擬物を粒径群に分級して清掃実験と高速度撮影を行い、粒径依存の簡略化した力の釣り合い計算と比較した。
-    contribution: 当該条件では25 µm未満で付着力、250 µm超で誘電泳動力と重力が除去性能を低下させた。大粒子の鎖状化と基板への捕捉も観察し、粒径によって支配的な力が変わることを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000370
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0094576524007756
-      source_type: abstract
-      locator: 要旨・公開本文抜粋
-      checked_at: '2026-10-05'
-    method:
-    - paper_id: P000370
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0094576524007756
-      source_type: abstract
-      locator: 要旨・公開本文抜粋
-      checked_at: '2026-10-05'
-    contribution:
-    - paper_id: P000370
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0094576524007756
-      source_type: abstract
-      locator: 要旨・公開本文抜粋
-      checked_at: '2026-10-05'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-05'
-    recheck: false
-  locked_fields: []
 - paper_id: P000373
   group: measurements
   role: ガラス結合と模擬地盤のせん断応答
-  summary:
-    question: 凝集粒子内の結合は集団強度をどう変えるか。
-    method: 焼結アグルチネートを混ぜ、密度を管理した三軸試験などで比較した。
-    contribution: 溶融の進んだ粒子はせん断強度とひずみ軟化をともに増大させた。
-  evidence_by_item:
-    question:
-    - paper_id: P000373
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009810
-      source_type: abstract
-      locator: Abstract, sentences 1–2
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000373
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009810
-      source_type: abstract
-      locator: Abstract, sentences 2–4
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000373
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009810
-      source_type: abstract
-      locator: Abstract, sentences 5–7
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
 - paper_id: P000387
   group: detachment
-  locked_fields: []
   role: 凝集・重力・震動を含む離脱閾値
-  summary:
-    question: 重力、粒子間の凝集、地表の震動を含めると、静電的な接触解除と打ち上げの条件はどう変わるか。
-    method: 球と平面の接触にvan der Waals凝集と重力を与え、接触中の平均電荷をQ＝ε₀Eπr²と近似して、月・Eros・Itokawaで必要電場と初期加速度・速度を計算した。
-    contribution: 小粒子側の凝集と大粒子側の重力が閾値を上げ、中間半径で必要電場が最小になる。震動による接触解除と上向き加速度を伴う打ち上げは異なる。閾値は電荷配分・接触・清浄度の仮定に依存し、月面粒子の電荷や離脱を測った値ではない。
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-08'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000387
-      version_id: V1
-      url: https://doi.org/10.1016/j.pss.2011.04.017
-      source_type: full_text
-      locator: PDF p.1（印刷1758）、研究目的
-      checked_at: '2026-10-08'
-    method:
-    - paper_id: P000387
-      version_id: V1
-      url: https://doi.org/10.1016/j.pss.2011.04.017
-      source_type: full_text
-      locator: PDF pp.2–4（1759–1761）、§1–2、式(1)–(27)
-      checked_at: '2026-10-08'
-    contribution:
-    - paper_id: P000387
-      version_id: V1
-      url: https://doi.org/10.1016/j.pss.2011.04.017
-      source_type: full_text
-      locator: PDF pp.5–10（1762–1767）、§3–5、Fig.2–5、閾値・震動・帯電増幅の条件
-      checked_at: '2026-10-08'
 - paper_id: P000388
   group: detachment
-  locked_fields: []
   role: 中間粒径の優先的な堆積拡がり
-  summary:
-    question: 凝集力と重力の競合が予測する中間粒径の動きやすさは、同じ形状の粒子堆積を使う実験でも現れるか。
-    method: 負にバイアスした板上に直径約5–25 µmの単分散ポリスチレンを同じ堆積形状で置き、アルゴンプラズマに1時間さらした。前後のCCD像から半径方向の拡がりを求め、曝露後の水平電位分布も測定した。
-    contribution: 試験した5種類では直径15 µmの堆積が最も広がり、5・25 µmでは拡がりが小さかった。凝集を含むモデルと整合する粒径選択性を示したが、離脱時の鉛直電場・粒子電荷は未測定で、凝集係数はモデルからの逆算、Q∝d²は一意に確定していない。
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-08'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000388
-      version_id: V1
-      url: https://doi.org/10.1002/grl.50230
-      source_type: full_text
-      locator: PDF p.1（印刷1038）、§1–2
-      checked_at: '2026-10-08'
-    method:
-    - paper_id: P000388
-      version_id: V1
-      url: https://doi.org/10.1002/grl.50230
-      source_type: full_text
-      locator: PDF pp.2–3（1039–1040）、§3–4、Table 1、Fig.1–4
-      checked_at: '2026-10-08'
-    contribution:
-    - paper_id: P000388
-      version_id: V1
-      url: https://doi.org/10.1002/grl.50230
-      source_type: full_text
-      locator: PDF pp.3–5（1040–1042）、§4–5、Fig.3–7、凝集推定と鉛直電場の限界
-      checked_at: '2026-10-08'
 - paper_id: P000392
   group: detachment
-  locked_fields: []
   role: 捕集粒子の相対的な粒径選択性
-  summary:
-    question: 電子ビームで浮上した月模擬土では、捕集粒子の粒径構成が元試料とどう異なり、移動距離にどう依存するか。
-    method: JSC-1に120 eVの電子ビームを1時間照射し、飛び出した粒子を粘着面に回収した。画像の投影面積に等しい円の直径を求め、各々を規格化した捕集・対照分布を比較した。移動距離からは、弾道と射出角を仮定して初速を推定した。
-    contribution: 小粒子が捕集集団で相対的に多く、分布比は約23±9 µm付近で減り方が変わった。分布比は絶対的な離脱確率ではなく、接触距離と初速もモデルを介する推定である。初速と粒径の逆比例は最大粒径側の包絡線として整合し、全粒子の速度則や総輸送量を測った結果ではない。
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-08'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000392
-      version_id: V1
-      url: https://doi.org/10.1016/j.icarus.2021.114684
-      source_type: full_text
-      locator: PDF pp.1–2、§1–2
-      checked_at: '2026-10-08'
-    method:
-    - paper_id: P000392
-      version_id: V1
-      url: https://doi.org/10.1016/j.icarus.2021.114684
-      source_type: full_text
-      locator: PDF pp.2–4、§3、Fig.2–5、捕集・画像径・規格化
-      checked_at: '2026-10-08'
-    contribution:
-    - paper_id: P000392
-      version_id: V1
-      url: https://doi.org/10.1016/j.icarus.2021.114684
-      source_type: full_text
-      locator: PDF pp.4–5、§4、Fig.5–7、式(5)–(7)、相対分布・接触距離・初速推定
-      checked_at: '2026-10-08'
-review:
-- heading: 接触モデルと表面粗さが、離脱に必要な力を変える
-  paragraphs:
-  - 粒子を表面から離すには、電場中の力と付着力を同じ条件で比べる必要がある。球状粒子間のvan der Waals引力を扱う[@P000205]は、接触を支える分子間力の入口になる。[@P000198]のJKR、[@P000199]のDMT、両者の遷移を扱う[@P000200]は、弾性変形と表面エネルギーから接触を考える基礎である。
-  - 実際の表面には凹凸がある。[@P000204]は突起の統計から接触を扱い、[@P000201]は粗さによって付着が大きく減ることを実験とモデルで調べた。ナノ粗面の理論[@P000202]と測定[@P000203]、Apollo粒子の三次元形状[@P000218]は、平滑な球の近似を使う条件を考える材料になる。 フラクタル粗面と微粒子付着を扱う[@P000212]、FJS-1の三次元形状を離散要素法へ入力する[@P000281]は、粗さと粒子形状を具体的に与える研究として参照できる。
-  - 接触した粒子は、引き離される前に転がることもある。[@P000206]の付着接触の転がり抵抗と、[@P000207]のダスト凝集体の構造を合わせると、接触一つの力から粒子集団の変形へ論点を広げられる。
-  - 付着した粒子が接触を保って動く場合には、引き離し力と転がり開始の力を分けて考える。Dominik（1995）は、滑りを抑えたJKRS接触で、粒子の回転に接触面が遅れると弾性の抵抗モーメントが生じ、原子径程度の臨界ずれを超えると不可逆な転がりへ移るモデルを示した。臨界ずれを0.2 nmと置けば半径100 nm球の鎖の最小弾性曲率半径は50 µmとなるが、このずれは測定値ではなく、三次元接触も近似解である。粗い非球形粒子や帯電した実ダストへの適用では、接触形状と荷重の条件を別途検証する。[@P000206]
-- heading: 付着の測定を、帯電による離脱と結び付ける
-  paragraphs:
-  - 月ダスト付着を整理した[@P000208]と[@P000209]に対し、[@P000210]は遠心法、[@P000211]は模擬月環境の条件から付着を測る。遠心測定装置を扱う[@P000213]も、測定方法を選ぶための文献となる。環境、粒径、粗さ、接触履歴をそろえることが、異なる実験を比較する出発点となる。
-  - 表面上の局所帯電[@P000009]と単粒子の移動[@P000013]は、付着していた粒子が動き始める過程を扱う。[@P000215]ではUVと外部電場を組み合わせ、電場の向きによる光電子の動きと粒子離脱の違いを調べた。
-    光と低密度プラズマを同時に照射する[@P000014]では、単独照射より粒子の飛び出しと推定負電荷が増えた。固定粒子群の差動帯電を計算した[@P000010]と合わせて、電荷が生まれる過程と保持される過程を比較できる。
-  - '[@P000214]は、Ti6Al4Vの表面をナノチューブ化し、粒子付きAFM探針の平均付着力を未処理面の12.98 nNから1.63 nNへ低減した。投入量5
-    g・設置角60°の散布試験では、残留量も0.5420から0.1642 mg/cm²へ減った。局所接触の力と散布後の残留量を分けて評価した結果であり、月面への適用には真空・帯電などの環境条件の検証が残る。'
-  - 付着を弱める表面の選択肢には、受動技術を比較する[@P000257]、ZnO薄膜と立体テクスチャを組み合わせる[@P000258]、導電性ポリイミドを扱う[@P000259]がある。接触面積を変える加工と、電荷を散逸させる材料を、同じ粒径・照射条件で評価することが比較の軸になる。
-- heading: 電場の形成と、接触が破れる条件をつなぐ
-  paragraphs:
-  - '[@P000026]は負にバイアスした基板上の粉体が外縁から広がる様子を観察した。[@P000029]は浮遊基板へ電子ビームを加え、電子とイオンの電流が同程度になる条件で電場の増強と小粒子の移動を調べた。電位・電荷の測定と移動の撮影では粒径やプラズマ条件が異なり、個々の接触の付着力は直接測っていない。'
-  - 凝集力と重力を入れる[@P000387]は、平均電荷を投影面積へ配分する仮定から、中間半径で離脱の必要電場が最小になると予測した。[@P000388]は直径約5–25 µmのポリスチレン堆積を同じ形状で比較し、15
-    µmで最大の拡がりを観察した。モデルと整合する粒径選択性を示したが、凝集係数は逆算であり、離脱時の鉛直電場と個々の電荷は未測定である。
-  - 電子ビーム下のJSC-1を使う[@P000392]では、小粒子が捕集集団で相対的に多くなった。各々を規格化した捕集・対照分布の比は絶対的な離脱確率ではなく、モデルで比較する接触距離もフィット値である。[@P000388]と材料・電流源・接触配置が異なるため、粒径選択性の違いを帯電・凝集条件に沿って比較する。
-  - '[@P000216]はナノ領域の電荷ゆらぎから局所電場を計算し、仮定した粒子電荷に働く力を付着モデルと比べた。半径20 nmの粒子と半径10 nmの帯電領域に各+10eを与えた最隣接の例では約10 pNとなるが、成否は配置・粗さ・清浄度に依存する。[@P000256]の総説が整理した地盤のせん断強度、接触中の電荷、離脱後の浮遊条件も測る量を区別する必要がある。'
-  - 粒子の運動は接触帯電の履歴も変える。振動面上の単一球[@P000308]は姿勢と電荷分布による帯電停止を示し、二粒子の反復衝突[@P000309]は確率的な電荷移動と累積電荷の飽和を調べた。月ダストの生成・物性・輸送をまとめた[@P000249]は、これらの接触過程を探査機周辺の問題へ位置づける入口になる。
-- heading: 実粒子の形と氷の量から、集団の流れやすさを調べる
-  paragraphs:
-  - Apollo粒子の三次元形状[@P000218]に対し、[@P000293]はChang'e-6の多数の粒子を再構成して離散要素法へ入力した。得られた粘着力や摩擦角は、粒子集団の計算結果である。[@P000290]は鉱物ごとの摩擦と表面エネルギーも調べ、低重力で付着の寄与が大きくなる粒径域を比較する。
-  - 永久影では氷の寄与も加わる。[@P000292]は低温の模擬物実験から、氷含有量と静的・動的安息角の関係を調べた。接触一つの引き離し力、粒子同士のかみ合い、氷による凝集を分けて評価すると、月面地盤の強度へつなげやすい。
-  - ガラスで結ばれた粒子を作る[@P000373]は、凝集体内部の構造と地盤の強度を結び付ける。三軸試験の集団応答を、単一接触の引き離し力と分けて比較できる。
-- heading: 離脱後の初速と、氷で結ばれた粒子の強度
-  paragraphs:
-  - 粒子が離れた後の移動範囲には、初速と射出方向が必要になる。[@P000217]は日照域で静電的に離脱した粒子の打ち上げ速度を評価する。斜入射電子ビームの実験[@P000250]は、二次電子収率が1を超える条件でビームと逆方向への移動を示し、粒子の照射側と陰側の帯電差から方向性を説明した。[@P000315]は最大初速の粒径依存と、形状・凝集力による速度分散を測定した。[@P000316]はシリカ粒子の射出角と距離ごとの粒径を調べている。氷を含む地盤については、[@P000332]が円錐貫入試験で、粒子間を結ぶ氷と分散した氷の強度・掘削性の違いを定量化した。単粒子の付着力と、粒子集団の強度は測る量が異なるため、接触状態や温度をそろえて比較する。
-- heading: 材料選定から実月面の付着像・EDSの残留粒子へ
-  paragraphs:
-  - '[@P000367]はRACに向けた材料・レーザー加工面を地上で評価し、接触角、形状、模擬ダスト付着を比較する手順を示した。[@P000365]はこの研究を材料クーポン選定に参照し、PlanetVacの月面運用で付着像を得た。実環境の比較点が加わった一方、基準面を欠く画像からは付着量やレーザー加工の低減効果を定量できない。'
-  - 除去時に残る粒子を調べる[@P000370]は、実験条件内で25 µm未満の付着と250 µm超の重力・誘電泳動力の影響を報告した。[@P000369]は高真空の連続降塵下でEDS被覆と残留粒径・損傷を比較した。表面の引き離し力、動的な蓄積抑制、清掃後の残留量を測定量ごとに整理すると、材料表面と電場の寄与を比較できる。
-lineage:
-- title: 弾性付着から粗面の付着へ
-  steps:
-  - paper_id: P000198
-    title: 表面エネルギーを接触に加える
-    significance: 弾性球の接触寸法と引き離し力を表面エネルギーから求めた。
-  - paper_id: P000201
-    title: 粗さの効果を調べる
-    significance: 個々の突起の付着と圧縮を組み合わせ、粗面の付着低下を説明した。
-    connection: 平滑面の接触を突起の集まりへ拡張
-- title: 基板の電位から電子ビームによる差動帯電へ
-  steps:
-  - paper_id: P000026
-    title: 負バイアス基板上の移動を測る
-    significance: 粉体の外縁からの移動を、位置によって異なる電位構造と粒子電荷に結び付けた。
-  - paper_id: P000029
-    title: 電流の釣合いと表面特性を加える
-    significance: 浮遊基板上で電子ビームとイオンの電流比を変え、粉体と基板の電位差・電場と輸送を調べた。
-    connection: 先行実験を踏まえ、電子ビームと二次電子放出の差を取り入れる
-- title: Apolloの形状計測から月裏側の粒子集団へ
-  steps:
-  - paper_id: P000218
-    title: 実粒子の形状と空隙を測る
-    significance: Apollo粒子の三次元形状を測り、模擬物との比較基盤を作った。
-  - paper_id: P000293
-    title: 月裏側の形状を強度計算へ入れる
-    significance: Chang'e-6粒子を多数再構成し、かみ合いによる強度を評価した。
-    connection: 形状計測を集団の力学応答へつなぐ
-  - paper_id: P000290
-    title: 摩擦と付着の寄与を比べる
-    significance: 鉱物・粒径・重力に応じて安息角が変わる条件を検討した。
-    connection: 形状に表面特性と重力の効果を加える
-- title: 飛行前の材料評価から実月面の付着観察へ
-  steps:
-  - paper_id: P000367
-    title: 材料とレーザー加工面を選ぶ
-    significance: RAC用材料を地上で評価し、月面付着比較のための試料選定・加工手順を示した。
-  - paper_id: P000365
-    title: 月面で材料クーポンを観察する
-    significance: 選定研究を参照したクーポンで実月面の付着像を取得し、画像による定量評価の課題を明らかにした。
-    connection: 材料選定を参照し、地上試験を実月面の観察へつなぐ
-- title: 凝集と帯電条件による粒径選択性
-  steps:
-  - paper_id: P000387
-    title: 凝集と重力から離脱閾値を求める
-    significance: 球と平面の接触と平均電荷配分を仮定し、中間半径で必要電場が最小となると予測した。
-  - paper_id: P000388
-    title: 中間粒径の堆積が広がる実験
-    significance: 先行理論を参照し、5–25 µmのポリスチレンで中間粒径の優先的な拡がりを測った。電荷と鉛直電場は未確定である。
-    connection: 凝集を含む閾値予測を、同じ形状の堆積実験と照合
-  - paper_id: P000392
-    title: 電子ビーム下の捕集粒径を比較
-    significance: JSC-1では小粒子が捕集集団で相対的に多いと報告し、再捕集モデルと比較した。絶対的な離脱確率ではない。
-    connection: 中間粒径の実験を参照し、異なる材料・帯電条件の粒径選択性と比較
 survey:
   searched_at: '2026-10-07'
+  scope_period: 制限なし
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
@@ -1862,10 +284,13 @@ survey:
   - Crossref・出版社・機関公開記録の要旨
   - 'GitHub Issue #25'
   - 出版社の公開要旨・本文と著者所属機関の書誌
-  coverage_note: "Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-22にP000214・P000026・P000029・P000216・P000256の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。 2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
-  changes: "Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 対象文献の要約・根拠位置・本文確認状況を更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。 Goguen 2024のNIST公開要旨に基づく要約・確認状況を追記。 Issue #25の要点・項目別出典と概説引用を追加。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
+  queries: []
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。
+    2026-09-22にP000214・P000026・P000029・P000216・P000256の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。
+    2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。
+    2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。'
   limitations:
-  - "2026-09-22の全文確認はP000214・P000026・P000029・P000216・P000256、2026-10-08の追加確認はP000387・P000388・P000392。他の文献の確認状況は各entryのinspectionを参照。"
+  - 2026-09-22の全文確認はP000214・P000026・P000029・P000216・P000256、2026-10-08の追加確認はP000387・P000388・P000392。他の文献の確認状況は各entryのinspectionを参照。
   - He 2026はナノ構造の半径・直径表記と試験環境の記載が不十分。
   - Wang 2010は一部の電場値・式表記に原文内の不整合が残る。
   - Sana 2025は計算領域の有効面積式に不整合があり、粒子電荷を仮定している。
@@ -1873,22 +298,8 @@ survey:
   - Fuller & Tabor 1975の候補PDFは別論文だったため全文確認の対象外とし、既存の公開要旨に基づく要約を維持した。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
   - 2026-10-07に追加したWangの文献は公開要旨を確認。模擬地盤の集団強度を扱い、接触一つの付着力を直接測定した研究としては扱わない。
-relations:
-- relation_id: R000022
-  source: P000367
-  target: P000365
-  type: uses_method
-  basis: explicit
-  state: checked
-  aspect: 付着評価用材料クーポンの選定
-  reason: PlanetVac論文はDas 2024を材料クーポン選定の根拠として引用し、選んだ表面の月面付着像を報告した。
-  evidence:
-  - paper_id: P000365
-    version_id: V1
-    url: https://link.springer.com/article/10.1007/s44461-026-00012-z
-    source_type: full_text
-    locator: 要旨、装置・運用結果、材料クーポンの観察、考察
-    checked_at: '2026-10-05'
-  checked_by: ai
-  checked_at: '2026-10-05'
-  limitation: 地上試験と月面観察では条件が異なる。月面像には校正用基準面がなく、付着量や加工効果の定量比較はできない。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 対象文献の要約・根拠位置・本文確認状況を更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。
+    2026-09-25にIssue #5の補助データを対応論文の手法の出典へ追加。データ本体の再解析は未実施。 Goguen 2024のNIST公開要旨に基づく要約・確認状況を追記。
+    Issue #25の要点・項目別出典と概説引用を追加。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。'
+  publication_status: draft
+reading_notes: []

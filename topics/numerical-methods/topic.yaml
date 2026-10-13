@@ -1,7 +1,26 @@
+schema_version: 1
 topic_id: numerical-methods
 title: 数値計算手法
 question: 粒子・流体と場の結合、保存則、境界条件を軸に、プラズマを計算する手法を整理する。
+review: []
+lineage: []
+public: true
+scope:
+  include: []
+  exclude: []
 navigation:
   related:
   - mhd
+groups:
+- id: general
+  title: 先行研究
 entries: []
+survey:
+  scope_period: 制限なし
+  provider_names: []
+  queries: []
+  coverage_note: 未記録
+  limitations: []
+  changes: 新規作成
+  publication_status: draft
+reading_notes: []

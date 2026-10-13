@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-header">
+  <nav class="breadcrumb" aria-label="パンくず"><a href="{{ home_url }}">テーマ一覧</a><span aria-hidden="true">/</span><span aria-current="page">全文献索引</span></nav>
+  <h1>全文献索引</h1>
+  <p class="lead">収録した文献を第一著者＋年の順に並べています。要点と出典は、その文献を扱うテーマのページで参照できます。</p>
+  <div class="topic-meta"><span><b>{{ items | length }}</b> 文献</span></div>
+</header>
+<section id="works" aria-labelledby="works-heading">
+  <div class="section-heading"><h2 id="works-heading">文献</h2><span>{{ items | length }}件</span></div>
+  <form class="works-filter" role="search" hidden>
+    <div class="search-field"><label for="works-search">文献を検索</label><input id="works-search" type="search" placeholder="著者・タイトル・掲載誌・テーマ" autocomplete="off"></div>
+    <div class="filter-status"><output id="works-count" aria-live="polite">{{ items | length }} / {{ items | length }}件</output><button type="reset">リセット</button></div>
+  </form>
+  <p id="works-no-results" hidden>一致する文献がありません。</p>
+  <ol class="works-index">
+    {% for item in items %}
+    {% set work = item.work %}{% set version = work.version() %}
+    <li class="work-item" id="{{ work.paper_id }}" data-authors="{{ work.authors | join(' ') }}">
+      <div class="paper-year" aria-hidden="true">{{ item.year or '—' }}</div>
+      <div class="work-body">
+        <p class="paper-kicker"><span>{{ item.citation }}</span></p>
+        <h3><a href="{{ title_url(work) }}">{{ work.title }}</a></h3>
+        <p class="work-bibliography">{{ authors(work) }}{% if version.venue %} ／ {{ version.venue }}{% endif %}</p>
+        <p class="work-topics">{% for topic in item.topics %}<a href="{{ topic.url }}">{{ topic.title }}</a>{% if not loop.last %} ／ {% endif %}{% endfor %}</p>
+      </div>
+    </li>
+    {% else %}<li>文献はまだ登録されていません。</li>{% endfor %}
+  </ol>
+</section>
+{% endblock %}

@@ -2,24 +2,23 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 import pytest
-import yaml
 from conftest import DAY, make_entry, make_work
 from pydantic import ValidationError
 
 from literature_graph_map.cli import main
 from literature_graph_map.models import (
-    ImportPacket,
+    Inspection,
+    ItemEvidence,
     LineageStep,
     LineageTrack,
     Location,
     ReviewSection,
     Topic,
     Version,
-    VersionLink,
     Work,
     public_url,
 )
-from literature_graph_map.operations import commit, export_snapshot, import_packet
+from literature_graph_map.operations import commit, export_snapshot
 from literature_graph_map.render import (
     access_cell,
     citation_labels,
@@ -28,7 +27,7 @@ from literature_graph_map.render import (
     summary_block,
     topic_page,
 )
-from literature_graph_map.storage import MapError, load, yaml_text
+from literature_graph_map.storage import MapError, load
 
 
 def test_offline_survey_end_to_end(tmp_path):
@@ -42,6 +41,7 @@ def test_offline_survey_end_to_end(tmp_path):
     assert not list(repo.rglob("README.md"))
     assert 'id="review"' not in page
     assert (private / "dust/RESEARCH_REQUEST.md").exists()
+    assert not list(private.rglob("packet*.yaml"))
     assert not (repo / "responses").exists()
 
 
@@ -58,6 +58,14 @@ def test_deterministic_render_and_all_papers(tmp_path, snapshot):
     assert "Example 1" in page and "架空の検証用誌" in page
     assert "OA・無料公開：未確認" in page and "Preprint：未確認" in page
     assert "検証用の架空の節" in page and "本文確認（出版版）" in page
+    assert (tmp_path / "_site/works/index.html").exists()
+
+
+def test_footer_states_ai_authorship_and_correction_policy(snapshot):
+    page = topic_page(snapshot.topics["demo"], snapshot)
+    footer = page.split('<footer class="site-footer">')[1]
+    assert "誤りや抜け" in footer and "生成AI" in footer and "本文確認" in footer
+    assert "checked_by" not in page
 
 
 @pytest.mark.parametrize(
@@ -124,17 +132,16 @@ def test_site_omits_editorial_logs_and_private_topics(tmp_path, snapshot):
     render(tmp_path, snapshot)
     pages = "".join(p.read_text(encoding="utf-8") for p in (tmp_path / "_site").rglob("*.html"))
     assert "INTERNAL_" not in pages and "PRIVATE_TOPIC" not in pages
-    assert "調査範囲と更新" not in pages and "AI確認" not in pages
+    assert "調査範囲と更新" not in pages and "checked_by" not in pages
     assert not list((tmp_path / "_site").rglob("*.yaml"))
     assert not list((tmp_path / "_site").rglob("*.jsonl"))
 
 
 def test_summary_without_inspection_does_not_claim_review(snapshot):
-    data = snapshot.topics["demo"].model_dump()
-    data["entries"][0].pop("inspection")
-    data["entries"][0].pop("evidence_by_item")
-    topic = Topic.model_validate(data)
-    text = summary_block(topic.entries[0], snapshot.works["P000001"], snapshot.works)
+    work = snapshot.works["P000001"]
+    work.inspection = Inspection()
+    work.evidence_by_item = ItemEvidence()
+    text = summary_block(snapshot.topics["demo"].entries[0], work, snapshot.works)
     assert "架空の問いを比較する。" in text
     assert "本文確認" not in text and "人間" not in text and "None" not in text
     assert 'class="sources"' in text and "書誌情報のみ確認" in text
@@ -143,9 +150,54 @@ def test_summary_without_inspection_does_not_claim_review(snapshot):
 
 def test_empty_summary_does_not_add_sources(snapshot):
     entry = snapshot.topics["demo"].entries[0]
-    entry.summary = None
+    snapshot.works[entry.paper_id].summary = None
     text = summary_block(entry, snapshot.works[entry.paper_id], snapshot.works)
     assert "要点は準備中" in text and 'class="sources"' not in text
+
+
+def test_entry_reading_overrides_the_work_default(tmp_path, snapshot):
+    """One work, two topics: the second topic frames the summary differently."""
+    other = Topic(
+        topic_id="other",
+        title="別のテーマ",
+        question="同じ文献を別の問いで読む。",
+        entries=[make_entry(snapshot.works["P000001"])],
+    )
+    other.entries[0].summary = snapshot.works["P000001"].summary.model_copy(
+        update={"question": "このテーマ固有の問い。"}
+    )
+    snapshot.topics["other"] = other
+    snapshot.paths["other"] = Path("topics/other")
+    commit(tmp_path, snapshot)
+    loaded = load(tmp_path)
+    assert loaded.topics["other"].entries[0].summary.question == "このテーマ固有の問い。"
+    assert loaded.topics["demo"].entries[0].summary is None
+    assert "このテーマ固有" not in (tmp_path / "data/works.jsonl").read_text(encoding="utf-8")
+    render(tmp_path, loaded)
+    demo = (tmp_path / "_site/topics/demo/index.html").read_text(encoding="utf-8")
+    other_page = (tmp_path / "_site/topics/other/index.html").read_text(encoding="utf-8")
+    assert "架空の問いを比較する。" in demo and "このテーマ固有の問い。" not in demo
+    assert "このテーマ固有の問い。" in other_page and "架空の問いを比較する。" not in other_page
+    # Sources and inspection are inherited from the work unless overridden.
+    assert "検証用の架空の節" in other_page and "本文確認（出版版）" in other_page
+    # A correction to the work's default reaches topics that inherit it; an override stays.
+    snapshot.works["P000001"].summary.method = "訂正した方法。"
+    render(tmp_path, snapshot)
+    demo = (tmp_path / "_site/topics/demo/index.html").read_text(encoding="utf-8")
+    other_page = (tmp_path / "_site/topics/other/index.html").read_text(encoding="utf-8")
+    assert "訂正した方法。" in demo and "訂正した方法。" not in other_page
+
+
+def test_reading_versions_are_validated_on_works_and_overrides(snapshot):
+    data = snapshot.works["P000001"].model_dump()
+    data["inspection"]["version_id"] = "Vmissing"
+    with pytest.raises(ValidationError, match="unknown version"):
+        Work.model_validate(data)
+    snapshot.topics["demo"].entries[0].inspection = Inspection(
+        level="abstract", version_id="Vmissing"
+    )
+    with pytest.raises(MapError, match="unknown inspection version"):
+        snapshot.validate()
 
 
 def test_sources_distinguish_reference_version_from_destination(snapshot):
@@ -154,8 +206,8 @@ def test_sources_distinguish_reference_version_from_destination(snapshot):
     original = work.version()
     manuscript = Version(version_id="V2", kind="accepted", year=original.year)
     work.versions.append(manuscript)
-    entry.inspection.version_id = manuscript.version_id
-    ref = entry.evidence_by_item.method[0]
+    work.inspection.version_id = manuscript.version_id
+    ref = work.evidence_by_item.method[0]
     ref.version_id = manuscript.version_id
     ref.url = f"https://doi.org/{original.doi.upper()}"
     ref.locator = "著者最終稿 pp.11–12"
@@ -176,10 +228,10 @@ def test_sources_distinguish_reference_version_from_destination(snapshot):
 def test_sources_keep_other_paper_introduction_separate(snapshot):
     entry = snapshot.topics["demo"].entries[0]
     work = snapshot.works[entry.paper_id]
-    entry.inspection.level = "metadata_only"
+    work.inspection.level = "metadata_only"
     source = snapshot.works["P000002"]
     source.citation_author = "Example"
-    ref = entry.evidence_by_item.method[0]
+    ref = work.evidence_by_item.method[0]
     ref.paper_id = source.paper_id
     ref.version_id = source.representative_version_id
     ref.url = source.record_url
@@ -189,6 +241,24 @@ def test_sources_keep_other_paper_introduction_separate(snapshot):
     assert "Example 2002による紹介" in text and "総説・紹介" in text
     assert f'href="{source.record_url}"' in text
     assert "本文確認" not in text
+
+
+def test_recheck_flag_marks_old_version_in_every_topic(tmp_path, snapshot):
+    other = snapshot.topics["demo"].model_copy(deep=True)
+    other.topic_id = "other"
+    snapshot.topics["other"] = other
+    snapshot.paths["other"] = Path("topics/other")
+    work = snapshot.works["P000001"]
+    work.versions.append(Version(version_id="Vnew", kind="published", doi="10.5555/new"))
+    work.representative_version_id = "Vnew"
+    work.inspection.recheck = True
+    commit(tmp_path, snapshot)
+    loaded = load(tmp_path)
+    render(tmp_path, loaded)
+    for key in ("demo", "other"):
+        page = (tmp_path / f"_site/topics/{key}/index.html").read_text(encoding="utf-8")
+        assert "旧版に基づく記述" in page
+    assert loaded.works["P000001"].inspection.version_id == "V000001"
 
 
 @pytest.mark.parametrize("kind", ["submitted", "accepted"])
@@ -223,7 +293,6 @@ def test_found_preprint_requires_a_displayable_version(missing):
 def test_parent_counts_and_paper_links_include_public_descendants_only(tmp_path, snapshot):
     parent = snapshot.topics["demo"]
     parent.entries = parent.entries[:1]
-    parent.relations = []
     for key, parent_id, papers, public in [
         ("child", "demo", ["P000001", "P000002"], True),
         ("grandchild", "child", ["P000002", "P000003"], True),
@@ -256,11 +325,48 @@ def test_parent_counts_and_paper_links_include_public_descendants_only(tmp_path,
     assert "テーマ全体：<b>3</b> 文献" in page and 'id="papers"' not in page
 
 
+def test_works_index_lists_each_work_once_with_its_topics(tmp_path, snapshot):
+    snapshot.works["P000001"].authors = ["Zed Zulu"]
+    snapshot.topics["other"] = Topic(
+        topic_id="other",
+        title="別のテーマ <B>",
+        question="共通の文献を扱う。",
+        navigation={"parent": "demo"},
+        entries=[make_entry(snapshot.works["P000001"])],
+    )
+    snapshot.paths["other"] = Path("topics/demo/other")
+    snapshot.topics["private"] = Topic(
+        topic_id="private",
+        title="PRIVATE",
+        question="非公開",
+        public=False,
+        entries=[make_entry(snapshot.works["P000004"])],
+    )
+    snapshot.paths["private"] = Path("topics/private")
+    snapshot.works["P000099"] = make_work(99)  # Reference-only: in the ledger, no topic.
+    render(tmp_path, snapshot)
+    page = (tmp_path / "_site/works/index.html").read_text(encoding="utf-8")
+    assert page.count('class="work-item"') == 4 and "P000099" not in page
+    assert "<b>4</b> 文献" in page and "PRIVATE" not in page
+    assert page.index('id="P000002"') < page.index('id="P000001"')  # Example before Zulu.
+    item = page.split('id="P000001"')[1].split("</li>")[0]
+    assert 'href="../topics/demo/index.html#P000001">動作確認用の架空テーマ</a>' in item
+    assert 'href="../topics/demo/other/index.html#P000001">別のテーマ &lt;B&gt;</a>' in item
+    assert 'href="https://doi.org/10.5555/fixture-1"' in item
+    assert 'id="works-search"' in page and "問い" not in page
+    for relative in ("index.html", "topics/demo/index.html", "topics/demo/other/index.html"):
+        page = (tmp_path / "_site" / relative).read_text(encoding="utf-8")
+        header = page.split('<header class="site-header">')[1].split("</header>")[0]
+        link = header.split('class="site-nav"')[1].split('href="')[1].split('"')[0]
+        assert ((tmp_path / "_site" / relative).parent / link).resolve() == (
+            tmp_path / "_site/works/index.html"
+        ).resolve()
+
+
 def test_large_topic_keeps_all_papers(snapshot):
     works = [make_work(i) for i in range(1, 82)]
     topic = snapshot.topics["demo"]
     topic.entries = [make_entry(w) for w in works]
-    topic.relations = []
     snapshot.works = {w.paper_id: w for w in works}
     page = topic_page(topic, snapshot)
     assert page.count('class="paper"') == 81
@@ -292,7 +398,7 @@ def test_citations_disambiguate_author_year_and_preserve_compound_names(snapshot
     assert citation_labels(dict(reversed(list(snapshot.works.items())))) == labels
     page = topic_page(snapshot.topics["demo"], snapshot)
     assert ">Nakazono 2025-1</a>" in page and ">Nakazono 2025-2</a>" in page
-    assert ">P000001</a>" not in page and ">R000001</span>" not in page
+    assert ">P000001</a>" not in page
 
 
 def test_review_renders_inline_citations_from_current_bibliography(tmp_path, snapshot):
@@ -322,35 +428,6 @@ def test_review_citations_require_a_paper_in_the_topic(snapshot):
     data["review"] = [{"heading": "概観", "paragraphs": ["未掲載の[@P999999]。"]}]
     with pytest.raises(ValidationError, match="review citations"):
         Topic.model_validate(data)
-
-
-def test_import_remaps_review_and_lineage_references(tmp_path, snapshot):
-    incoming = snapshot.works["P000001"].model_copy(update={"paper_id": "P999999"}, deep=True)
-    packet = ImportPacket(
-        works=[incoming],
-        topic=Topic(
-            topic_id="with-review",
-            title="概観付きテーマ",
-            question="研究のつながりを読む。",
-            entries=[make_entry(incoming)],
-            review=[ReviewSection(heading="基礎", paragraphs=["[@P999999]から始める。"])],
-            lineage=[
-                LineageTrack(
-                    title="基礎",
-                    steps=[
-                        LineageStep(paper_id="P999999", title="節目", significance="変化の説明")
-                    ],
-                )
-            ],
-        ),
-    )
-    import_packet(tmp_path / "repo", snapshot, packet, tmp_path / "private")
-    loaded = load(tmp_path / "repo")
-    topic = loaded.topics["with-review"]
-    assert topic.review[0].paragraphs == ["[@P000001]から始める。"]
-    assert topic.entries[0].paper_id == "P000001"
-    assert topic.lineage[0].steps[0].paper_id == "P000001"
-    assert '<a href="#P000001">1 2001</a>から始める。' in topic_page(topic, loaded)
 
 
 def test_lineage_links_to_bibliography_and_uses_current_citations(tmp_path, snapshot):
@@ -492,53 +569,6 @@ def test_multiple_versions_do_not_require_provenance(snapshot):
     assert len(work.versions) == 2 and work.version_links == []
 
 
-def test_new_version_keeps_old_evidence_and_marks_every_topic(tmp_path, snapshot, packet):
-    other = snapshot.topics["demo"].model_copy(deep=True)
-    other.topic_id = "other"
-    snapshot.topics["other"] = other
-    snapshot.paths["other"] = Path("topics/other")
-    commit(tmp_path / "repo", snapshot)
-    packet = packet.model_copy(deep=True)
-    work = packet.works[0]
-    work.versions.append(Version(version_id="Vnew", kind="published", doi="10.5555/new"))
-    work.version_links.append(
-        VersionLink(source="V000001", target="Vnew", evidence_url=work.record_url, checked_at=DAY)
-    )
-    work.representative_version_id = "Vnew"
-    import_packet(tmp_path / "repo", snapshot, packet, tmp_path / "private")
-    loaded = load(tmp_path / "repo")
-    render(tmp_path / "repo", loaded)
-    for topic in loaded.topics.values():
-        assert topic.entries[0].inspection.version_id == "V000001"
-        assert topic.entries[0].inspection.recheck
-        assert topic.relations[0].state == "recheck"
-        assert "旧版に基づく記述" in (
-            tmp_path / "repo" / "_site" / loaded.paths[topic.topic_id] / "index.html"
-        ).read_text(encoding="utf-8")
-        pending = ImportPacket.model_validate(
-            yaml.safe_load(
-                (tmp_path / "private" / topic.topic_id / "review-packet.yaml").read_text(
-                    encoding="utf-8"
-                )
-            )
-        )
-        assert pending.topic.relations[0].state == "recheck"
-    assert len(loaded.works) == 4
-
-
-def test_import_preserves_locked_summary(tmp_path, snapshot, packet):
-    snapshot.topics["demo"].entries[0].locked_fields = ["summary"]
-    commit(tmp_path / "repo", snapshot)
-    packet = packet.model_copy(deep=True)
-    packet.topic.entries[0].summary.question = "上書きしようとした問い。"
-    packet.topic.entries[0].locked_fields = []
-    conflicts = import_packet(tmp_path / "repo", snapshot, packet, tmp_path / "private")
-    assert conflicts
-    entry = load(tmp_path / "repo").topics["demo"].entries[0]
-    assert entry.summary.question == "架空の問いを比較する。"
-    assert entry.locked_fields == ["summary"]
-
-
 def test_navigation_links_follow_paths(tmp_path, snapshot):
     parent = Topic(topic_id="parent", title="親", question="親テーマ")
     snapshot.topics["parent"] = parent
@@ -625,7 +655,7 @@ def test_sidebar_theme_destinations_are_consistent_across_pages(tmp_path, snapsh
         root / "topics/parent/index.html": {"#subtopics", "#review"},
         root / "topics/parent/child/index.html": {"#papers"},
     }
-    for path, anchors in pages.items():
+    for path in [*pages, root / "works/index.html"]:
         page = path.read_text(encoding="utf-8")
         links = Links(page.split('<aside class="sidebar">')[1].split("</aside>")[0]).links
         destinations = {
@@ -634,6 +664,7 @@ def test_sidebar_theme_destinations_are_consistent_across_pages(tmp_path, snapsh
             if not link["href"].startswith("#")
         }
         assert destinations == set(pages)
+        anchors = pages.get(path, set())
         assert {link["href"] for link in links if link["href"].startswith("#")} == anchors
         current = [link for link in links if link.get("aria-current") == "page"]
         if anchors:
@@ -658,7 +689,6 @@ def test_parent_with_papers_keeps_bibliography_and_excludes_private_children(sna
     assert 'id="subtopics"' in page and 'id="papers"' in page
     assert "<b>4</b> 文献" in page and "../private/" not in page
     topic.entries = []
-    topic.relations = []
     page = topic_page(topic, snapshot)
     assert "<b>1</b> テーマ" in page and 'id="papers"' not in page
 
@@ -680,9 +710,10 @@ def test_export_only_public_allowlisted_data(tmp_path, snapshot):
     assert export_snapshot(repo, snapshot, out) > 0
     assert not (out / "topics/private").exists()
     assert not (out / "secret.pdf").exists()
-    assert "P000999" not in (out / "data/works.jsonl").read_text(encoding="utf-8")
-    assert "R000003" in (out / "topics/demo/topic.yaml").read_text(encoding="utf-8")
+    ledger = (out / "data/works.jsonl").read_text(encoding="utf-8")
+    assert "P000999" not in ledger and "架空の問いを比較する。" in ledger
     assert (out / "_site/topics/demo/index.html").exists()
+    assert (out / "_site/works/index.html").exists()
     assert (out / "COPYRIGHT.md").read_text(encoding="utf-8") == notice
     assert (out / "LICENSE").read_text(encoding="utf-8") == license_text
     assert (out / "_site/LICENSE").read_text(encoding="utf-8") == license_text
@@ -702,31 +733,21 @@ def test_export_detects_leak_before_writing(tmp_path, snapshot):
     assert not out.exists()
 
 
-def test_unknown_fields_are_reported(packet):
-    data = packet.model_dump()
-    data["works"][0]["abstract"] = "非公開要旨"
+def test_unknown_fields_are_reported(snapshot):
+    data = snapshot.works["P000001"].model_dump()
+    data["abstract"] = "非公開要旨"
     with pytest.raises(ValidationError, match="Extra inputs"):
-        ImportPacket.model_validate(data)
+        Work.model_validate(data)
+    data = snapshot.topics["demo"].model_dump()
+    data["relations"] = []
+    with pytest.raises(ValidationError, match="Extra inputs"):
+        Topic.model_validate(data)
 
 
-def test_import_rejects_path_escape(tmp_path, packet):
-    from literature_graph_map.storage import Snapshot
-
-    with pytest.raises(MapError):
-        import_packet(tmp_path / "repo", Snapshot(), packet, tmp_path / "private", "../escape")
-    assert not (tmp_path / "escape").exists()
-
-
-def test_import_cli_and_schemas(tmp_path, packet):
-    path = tmp_path / "packet.yaml"
-    path.write_text(yaml_text(packet), encoding="utf-8")
-    common = ["--repo", str(tmp_path / "repo"), "--private-dir", str(tmp_path / "private")]
-    assert main(common + ["import", str(path)]) == 0
-    assert main(common + ["check", "--public"]) == 0
+def test_schemas_cover_each_canonical_file(tmp_path):
     assert main(["schema", "--output", str(tmp_path / "schemas")]) == 0
     assert {p.name for p in (tmp_path / "schemas").glob("*.schema.json")} == {
         "work.schema.json",
         "topic.schema.json",
-        "import.schema.json",
         "overview.schema.json",
     }

@@ -74,7 +74,9 @@ def test_duplicate_doi_add_reuses_ledger_without_extra_calls(tmp_path):
         assert add_seeds(snapshot, other, ["10.5555/test"], provider, tmp_path) == []
     assert len(calls) == 1 and len(snapshot.works) == 1
     assert topic.entries[0].paper_id == other.entries[0].paper_id
-    assert topic.entries[0].summary is None and topic.relations == []
+    assert topic.entries[0].summary is None
+    work = snapshot.works[topic.entries[0].paper_id]
+    assert work.summary is None and work.inspection.version_id == work.representative_version_id
 
 
 def test_failed_seed_is_not_a_paper(tmp_path):
@@ -115,6 +117,11 @@ def test_refresh_preserves_summary_and_verified_access(tmp_path, snapshot):
         )
     )
     before = snapshot.topics["demo"].entries[0].model_dump()
+    reading_before = (
+        work.summary,
+        work.evidence_by_item.model_copy(deep=True),
+        work.inspection.model_copy(),
+    )
     with httpx.Client(
         transport=httpx.MockTransport(
             lambda request: httpx.Response(200, json={"message": record("10.5555/fixture-1")})
@@ -127,6 +134,8 @@ def test_refresh_preserves_summary_and_verified_access(tmp_path, snapshot):
     assert snapshot.works["P000001"].citation_author == "Pagán Muñoz"
     assert snapshot.works["P000001"].versions[0].locations[0].access_status == "free"
     assert snapshot.topics["demo"].entries[0].model_dump() == before
+    refreshed = snapshot.works["P000001"]
+    assert (refreshed.summary, refreshed.evidence_by_item, refreshed.inspection) == reading_before
 
 
 def test_invalid_crossref_payload_fails_cleanly(tmp_path):

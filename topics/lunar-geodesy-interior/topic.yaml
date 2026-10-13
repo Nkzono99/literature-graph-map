@@ -2,7 +2,100 @@ schema_version: 1
 topic_id: lunar-geodesy-interior
 title: 月の地形計測・重力・内部構造
 question: 地形・重力・月震と試料の記録から、月の地殻構造と内部活動の履歴をどう推定するか。
+review:
+- heading: 高さと重力の組合せから、地殻の厚さを推定する
+  paragraphs:
+  - レーザー高度計による[@P000169]は全球の地形を与える。
+  - Namikiらは、SELENEのリレー追跡から推定した重力場をLALT地形と比較し、裏側・リム側の盆地縁に対応する環状異常と、補正後も残る中心異常を分けた。地殻密度2800
+    kg/m³を仮定したブーゲー異常との比較で、鋭い中心ピークのType Iと、フリーエア中心高が20–60%小さい広いType IIを分類した。中心のマントル隆起・過剰補償や局所的な脆性変形、表側でのより大きな緩和は著者の内部構造・熱史の解釈であり、観測の地域差と地形・密度・流動則の条件を伴う。[@P000170]
+  - '[@P000180]は、この地形と重力から地殻厚を計算した。地殻厚は密度や補償の仮定を介した推定量なので、観測された高度・重力とモデルの条件を合わせて参照する。'
+- heading: 重力の空間分解能が、探せる地下構造を変える
+  paragraphs:
+  - GRAIL重力を使った[@P000194]は、長く細い質量欠損を空洞の候補として抽出する。衛星軌道と検出法によって感度の高い方向・寸法が異なるため、縦孔の画像やLRSの地下反射との対応が解釈を補う。
+- heading: 密度構造から、衝突破砕とマグマの貫入を探る
+  paragraphs:
+  - '[@P000301]はGRAILとLOLAを二層モデルで解釈し、月裏側の多孔質な上層と密な下層を推定した。[@P000307]はOrientaleの地下構造を衝突後の流動と断層形成で説明する。[@P000289]では大型火山候補に伴う重力異常を貫入岩体と解釈しており、同じ重力でも地質条件に応じた密度モデルが必要になる。'
+- heading: 月震波形で震源と浅部構造を調べる
+  paragraphs:
+  - '[@P000304]は反復する浅発月震を見いだし、すべり方向と潮汐位相の関係を調べた。[@P000300]はP波の偏波とS波・P波の時刻差から、単一観測点で震源を求める。前者は断層の起動、後者は定位手法に焦点を置く。'
+  - 浅部探査を扱う[@P000302]は、空洞の検出に使う常時微動の周波数と寸法感度を比較した。試料の熱履歴を使う[@P000299]は、Apollo 17コアから地中の温度勾配を求める。地震波と熱の記録を合わせることで、重力だけでは決まらない浅部の性質を補える。
+- heading: 若い試料の磁化から全球磁場の停止を制約する
+  paragraphs:
+  - '[@P000288]は月裏側起源と推定される隕石の古地磁気を測り、若いApollo試料と比較した。約7億年前の弱い磁場の記録は、過去約10億年間に全球的なダイナモ磁場がなかった可能性を支持する。試料の起源と記録年代を踏まえて内部活動の時間史を読む。'
+- heading: 低温の熱伝導と、火成岩体の制約
+  paragraphs:
+  - Divinerの全球熱物性を求めた[@P000334]に対し、[@P000335]は100 K未満まで固体熱伝導を拡張し、[@P000339]は赤道から永久影まで一貫して扱うモデルを作った。[@P000338]は氷含有模擬物の実験で、氷量と粒子間の氷構造がともに熱伝導へ効くことを示す。火成起源の制約には、重力・磁場を共同解析したDewarの[@P000322]と、マイクロ波温度からAristarchusを調べた[@P000337]を比較できる。
+  - 浅部の断熱層は、月の内部からの熱を地表温度へ結び付ける際の境界条件になる。[@P000334]は表面・深部の密度と接触伝導率を固定した1次元モデルで夜間温度へ適合させ、物性分布の尺度Hと273
+    K換算熱慣性を地図化した。日周赤外観測の感度は主にcm深さにあり、密度・伝導率を独立に求める適合は非一意だった。モデルの地熱流0.018 W m⁻²は仮定した底面境界値なので、内部熱流の新しい全球測定とは区別する。
+  - 熱伝導率は温度だけでなく粒子構造にも応答する。[@P000331]は粒子の形と充填を熱抵抗ネットワークへつなぎ、レゴリス成熟度の補完指標を提案した。全球の熱物性推定と比較する際に、試料の粒子構造が測定量へどう反映されるかを調べる研究となる。
+- heading: 高度と重力の観測を選ぶ
+  paragraphs:
+  - LALTのレーザー高度観測[@P000169]は、かぐやによる地形・内部構造研究の入口である。LOLAもレーザー高度を測り、GRAILは衛星間の追跡から重力場を求める。LOLA地形とGRAIL重力を組み合わせた密度構造の解析は[@P000301]、GRAILの重力勾配から空洞候補を探す研究は[@P000194]を参照できる。高度、重力、推定された密度・空洞形状を順に対応させると、観測量と逆解析の結果を区別して読める。
+- heading: 軌道・試料からの推定に、ロボットの深度測定を加える
+  paragraphs:
+  - Divinerに基づく熱物性推定[@P000334]やApollo 17コアの熱履歴[@P000299]に対し、[@P000366]はBlue Ghost
+    Mission 1のLISTERで窒素ガス掘削を実施し、0.288〜0.971 mの8深度で温度・熱伝導率を測った。測定場所と深さが分かる現地データを加える装置実証である。設計深度3
+    mへの到達と熱データの詳細解析は残るため、低温モデル[@P000339]との定量照合は解析結果を待って行う。
+- heading: 試料のLi同位体で内部組成を補う
+  paragraphs:
+  - 重力が捉える密度構造に、[@P000375]と[@P000376]のLi同位体比較を加えると、月内部の組成を別の観点から検討できる。[@P000372]は月隕石から地球に近いマントル値を支持した。
+lineage:
+- title: 月裏側の重力から地殻厚へ
+  steps:
+  - paper_id: P000170
+    title: 裏側の盆地構造を制約
+    significance: 裏側の盆地縁に対応する環状重力異常を示し、地形補正後の中心異常からType I・IIを分けた。硬い地殻・リソスフェアによる支持、中心部の過剰補償や局所補償、表側でのより大きな変形を解釈したが、北側の観測空白と次数60超の事前拘束が残る予備モデルである。
+    connection: ''
+  - paper_id: P000180
+    title: 地形を加えて地殻厚を求める
+    significance: 重力場と全球地形を組み合わせ、盆地の構造差を解釈した。
+    connection: 重力と地形の統合
+  - paper_id: P000301
+    title: 浅部の密度と空隙を推定する
+    significance: 高分解能重力と地形を二層モデルへ当てはめ、多孔質な上層を推定した。
+    connection: 地殻厚に加えて浅部の密度構造を調べる
+- title: 反復月震の識別と単一観測点での定位
+  steps:
+  - paper_id: P000304
+    title: 浅発月震の繰り返しを捉える
+    significance: 同一震源と考えられるイベントから断層すべりと潮汐の関係を検討した。
+    connection: ''
+  - paper_id: P000300
+    title: 一台の地震計で位置を求める
+    significance: 偏波解析と到着時刻差を使い、月震と衝突の位置を推定した。
+    connection: 震源物理の解析に定位手法を補う
+- title: 全球熱物性から極低温・氷構造へ
+  steps:
+  - paper_id: P000334
+    title: 深さと温度に依存する浅部断熱層を地図化
+    significance: 固定密度/接触伝導率の端点をつなぐHをDiviner夜間温度から推定し、273 K換算の浅部熱慣性を全球比較した。
+    connection: ''
+  - paper_id: P000335
+    title: 極低温の固体熱伝導を加える
+    significance: 20〜400 Kの熱物性を組成・密度・固体物理からモデル化した。
+    connection: 全球推定の低温側を理論から補う
+  - paper_id: P000339
+    title: 低緯度と永久影を同じモデルで扱う
+    significance: Divinerに整合する全球低温熱伝導モデルを示した。
+    connection: 低温物理を全球の温度計算へ統合
+  - paper_id: P000338
+    title: 氷の形態を実験で変える
+    significance: 粒子間を結ぶ氷と分散した氷の熱伝導の違いを測った。
+    connection: 乾燥レゴリスのモデルに対し、氷含有物性を別条件で補う
+- title: 試料の熱履歴と現地での深度測定
+  steps:
+  - paper_id: P000299
+    title: コアに残る浅部の熱履歴を読む
+    significance: Apollo 17コアから地中の温度勾配を推定し、深さ方向の温度構造を制約した。
+    connection: ''
+  - paper_id: P000366
+    title: ガス掘削で温度センサーを配置する
+    significance: 約1 mまで到達して8深度で測定し、現地の温度・熱伝導率データを得る手段を実証した。
+    connection: 試料履歴による推定と、その場の深度測定を比較する
 public: true
+scope:
+  include: []
+  exclude: []
 navigation:
   parent: lunar-geology
   related:
@@ -26,889 +119,136 @@ entries:
 - paper_id: P000169
   group: measurements
   role: LALTによる全球地形
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 月の全球地形をどの精度で復元できるか。
-    method: かぐやのLALT高度データから全球地形を作成する。
-    contribution: 全球形状と地形の波長別の特徴を示し、地殻の支持機構を比較した。
-  evidence_by_item:
-    question:
-    - paper_id: P000169
-      version_id: V1
-      url: https://doi.org/10.1126/science.1164146
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000169
-      version_id: V1
-      url: https://doi.org/10.1126/science.1164146
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000169
-      version_id: V1
-      url: https://doi.org/10.1126/science.1164146
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000170
   group: measurements
   role: リレー追跡で推定した裏側重力と盆地の支持・補償
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  summary:
-    question: 地球から見えない月裏側の重力場をリレー追跡でどう拘束でき、盆地の地形支持と中心質量の構造は表側とどう違うか。
-    method: 2007年10月31日–2008年4月1日のSELENEの4ウェイドップラーと2ウェイ追跡・測距、既往データを用い、Main・Rstarの軌道と次数・位数90のSGM90dを同時推定する。地形モデルSTM-359_grid-02と地殻密度2800 kg/m³でブーゲー異常を求め、中心異常と環状構造を比較する。
-    contribution: 裏側の盆地縁に対応する環状重力異常を示し、地形補正後の中心異常からType I・IIを分けた。硬い地殻・リソスフェアによる支持、中心部の過剰補償や局所補償、表側でのより大きな変形を解釈したが、北側の観測空白と次数60超の事前拘束が残る予備モデルである。
   evidence_by_item:
     question:
     - paper_id: P000170
       version_id: V1
       url: https://doi.org/10.1126/science.1168029
       source_type: full_text
-      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2 Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology and conclusion, p.7 Note30 PDF p.5 density and Table1 PDF pp.4–6, Figs2/4/5 PDF p.6 rheology/thermal conclusion; p.7 Note30
+      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2
+        Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center
+        column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology
+        and conclusion, p.7 Note30 PDF p.5 density and Table1 PDF pp.4–6, Figs2/4/5
+        PDF p.6 rheology/thermal conclusion; p.7 Note30
       checked_at: '2026-10-13'
     method:
     - paper_id: P000170
       version_id: V1
       url: https://doi.org/10.1126/science.1168029
       source_type: full_text
-      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2 Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology and conclusion, p.7 Note30 PDF p.5 density and Table1 PDF pp.4–6, Figs2/4/5 PDF p.6 rheology/thermal conclusion; p.7 Note30
+      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2
+        Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center
+        column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology
+        and conclusion, p.7 Note30 PDF p.5 density and Table1 PDF pp.4–6, Figs2/4/5
+        PDF p.6 rheology/thermal conclusion; p.7 Note30
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000170
       version_id: V1
       url: https://doi.org/10.1126/science.1168029
       source_type: full_text
-      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2 Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology and conclusion, p.7 Note30 PDF p.5 density and Table1 PDF pp.4–6, Figs2/4/5 PDF p.6 rheology/thermal conclusion; p.7 Note30
+      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2
+        Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center
+        column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology
+        and conclusion, p.7 Note30 PDF p.5 density and Table1 PDF pp.4–6, Figs2/4/5
+        PDF p.6 rheology/thermal conclusion; p.7 Note30
       checked_at: '2026-10-13'
 - paper_id: P000180
   group: interior
   role: 重力と地形からの地殻厚推定
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 裏側の盆地構造の違いは何で決まるか。
-    method: SELENEの重力場と地形から地殻厚を計算する。
-    contribution: 衝突前の地殻厚と衝突規模の比に着目して盆地構造を解釈した。
-  evidence_by_item:
-    question:
-    - paper_id: P000180
-      version_id: V1
-      url: https://doi.org/10.1029/2009gl039708
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000180
-      version_id: V1
-      url: https://doi.org/10.1029/2009gl039708
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000180
-      version_id: V1
-      url: https://doi.org/10.1029/2009gl039708
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000194
   group: interior
   role: GRAIL重力からの地下空洞候補
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 重力から細長い地下空洞の候補を抽出できるか。
-    method: GRAIL重力に勾配法と相互相関を適用する。
-    contribution: 質量欠損から空洞候補を示し、方向や寸法に対する検出感度を整理した。
-  evidence_by_item:
-    question:
-    - paper_id: P000194
-      version_id: V1
-      url: https://doi.org/10.1002/2016gl071588
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000194
-      version_id: V1
-      url: https://doi.org/10.1002/2016gl071588
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000194
-      version_id: V1
-      url: https://doi.org/10.1002/2016gl071588
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000288
   group: interior
   role: 月裏側試料によるダイナモ停止時期の制約
-  summary:
-    question: 若い月裏側の試料は全球磁場の停止時期をどう制約するか。
-    method: 裏側起源と推定される月隕石NWA 15528の古地磁気を測り、若いApollo試料と比較する。
-    contribution: 約7億年前の磁場を数百nT未満と推定した。表側試料と合わせ、過去約10億年間に全球的なダイナモ磁場がなかった可能性を支持した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000288
-      version_id: V1
-      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000288
-      version_id: V1
-      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000288
-      version_id: V1
-      url: https://api.crossref.org/works/10.1126/sciadv.adz6195
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000289
   group: interior
   role: 大型楯状火山と浅部マグマ貯留域
-  summary:
-    question: 月に大型楯状火山と、それを供給した浅部マグマ貯留域が存在したか。
-    method: Prinz-HarbingerとTheophilusの地形を調べ、重力異常から地下の貫入岩体を推定する。
-    contribution: 直径約80 kmの二つの楯状火山候補を示した。一方の重力異常を深さ7〜32 kmの貫入岩体で説明し、浅部貯留域からの噴火を提案した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000289
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl121908
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000289
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl121908
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000289
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl121908
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000299
   group: thermal
   role: Apolloコアの熱ルミネッセンス温度推定
-  summary:
-    question: 返還試料から浅部レゴリスの温度と熱波の到達深度を復元できるか。
-    method: Apollo 17コアの深さ95〜291 cmの自然熱ルミネッセンスをピーク分離し、平衡温度を推定する。
-    contribution: 深さ133〜291 cmで平均248 ± 14 K、温度勾配1.0 ± 0.5 K/mを得た。年周期の熱波の到達は約135 cm以浅と推定した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000299
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je009720
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000299
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je009720
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000299
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je009720
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000300
   group: seismology
   role: 単一観測点からの月震定位
-  summary:
-    question: 強い散乱を受ける月震波形から、単一観測点で震源を求められるか。
-    method: Apolloの3成分波形からP波の周波数依存偏波を解析し、S波とP波の到着時刻差を組み合わせる。
-    contribution: 信号対雑音比が2を超える人工衝突と自然イベントで定位手法を検証した。P波の入射角は震源深度や観測点下の浅部構造にも感度を持つ。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000300
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl122962
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000300
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl122962
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000300
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl122962
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000301
   group: interior
   role: 月裏側浅部の密度・空隙構造
-  summary:
-    question: 衝突を重ねた月裏側の浅部地殻は、どの密度構造を持つか。
-    method: GRAIL重力とLOLA地形に有効密度スペクトル法を適用し、二層モデルの密度と境界深度を推定する。
-    contribution: 平均厚4.7 km、密度約2,111 kg/m³の上層と、約2,739 kg/m³の下層を推定した。上層を衝突破砕と噴出物に由来する多孔質層と解釈した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000301
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009138
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000301
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009138
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000301
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009138
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000302
   group: seismology
   role: 空洞を調べる常時微動探査の比較
-  summary:
-    question: 月の常時微動から溶岩チューブの存在と寸法を推定できるか。
-    method: Marius Hillsを含む二次元浅部モデルで、地震波干渉法、水平・鉛直スペクトル比、分布型音響計測、回転計測を比較する。
-    contribution: 空洞と天井厚への感度を示したが、底部深度の制約は難しかった。深さ10 mを超える構造には、通常の熱月震より低い1 Hz未満の振動源が必要となる。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000302
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009576
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000302
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009576
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000302
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009576
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000304
   group: seismology
   role: 反復する浅発月震と断層すべり
-  summary:
-    question: 浅発月震は繰り返し起こり、その起動は潮汐に支配されるか。
-    method: 更新されたApollo月震データから反復イベントを同定し、波形の相対位相と震源特性を比較する。
-    contribution: 反対の潮汐位相でもすべり方向が一致する一組の浅発月震を見いだした。潮汐応力が主な起動要因ではない可能性と、地震に似た断層物理を示唆した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000304
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl122541
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000304
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl122541
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000304
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026gl122541
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
 - paper_id: P000307
   group: interior
   role: Orientale多重リング盆地の形成計算
-  summary:
-    question: Orientaleの複数の環と地下構造は、衝突後の崩壊でどう作られるか。
-    method: 衝突流体力学コードで盆地形成を計算し、GRAILの高分解能重力が制約する地下構造と比較する。
-    contribution: 直径約390 kmの一時的な空洞の重力崩壊を再現した。深部の高温・低強度物質の流動と大規模な正断層が外側の環を作ると解釈した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000307
-      version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/27789836/
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000307
-      version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/27789836/
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000307
-      version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/27789836/
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-25'
 - paper_id: P000322
-  role: Dewar磁気異常の埋没火成岩体
-  summary:
-    question: Dewarの磁場源はどのような構造で、古い月ダイナモをどう制約するか。
-    method: 軌道の重力・磁場を共同逆解析し、磁化量と重なる盆地噴出物による年代制約を組み合わせる。
-    contribution: 浅部の高密度・磁化体を埋没玄武岩として解釈し、約42億年前のダイナモを支持するモデル制約を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000322
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.aec0341
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000322
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.aec0341
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000322
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.aec0341
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: interior
+  role: Dewar磁気異常の埋没火成岩体
 - paper_id: P000331
-  role: 熱伝導率による成熟度の推定
-  summary:
-    question: 粒子構造と充填状態から、熱伝導率をレゴリス成熟度の指標にできるか。
-    method: 粒子のボクセル特徴と熱物性をGaussian過程回帰で結び、熱抵抗ネットワークで試料全体へ接続する。
-    contribution: 成熟度に対応した実効熱伝導率の変化を示し、遠隔観測や磁気共鳴による評価と比較する補完指標を提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000331
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009847
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000331
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009847
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000331
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009847
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: thermal
+  role: 熱伝導率による成熟度の推定
 - paper_id: P000334
+  group: thermal
   role: 浅部断熱層の深さ・温度依存モデル
   summary:
     question: 月の浅部断熱層を、地表温度観測とApolloの密度・地中温度に整合する形でどう表せるか。
-    method: Divinerの128 ppd分離済み夜間レゴリス温度を1次元熱モデルへ合わせた。表面/深部の密度と接触伝導率を固定し、指数分布の尺度Hを推定して、上部4–7 cmの273 K換算熱慣性を地図化する。
+    method: Divinerの128 ppd分離済み夜間レゴリス温度を1次元熱モデルへ合わせた。表面/深部の密度と接触伝導率を固定し、指数分布の尺度Hを推定して、上部4–7
+      cmの273 K換算熱慣性を地図化する。
     contribution: 密度・接触伝導率の固定端点と温度依存の放射伝導・比熱を持つ浅部モデルを示した。全球のH平均6.8 cmを得た一方、密度と伝導率を独立に推定する適合の非一意性を明示した。
   evidence_by_item:
     question:
     - paper_id: P000334
       version_id: V2
       url: https://arxiv.org/pdf/1711.00977v1
+      source_type: full_text
       locator: PDF pp.3–6, §§1,3.1
-      source_type: full_text
       checked_at: '2026-10-11'
     method:
     - paper_id: P000334
       version_id: V2
       url: https://arxiv.org/pdf/1711.00977v1
+      source_type: full_text
       locator: PDF pp.6–13, §§3.1,3.3.2; pp.41–52, Appendix A, Tables A1–A2
-      source_type: full_text
       checked_at: '2026-10-11'
     contribution:
     - paper_id: P000334
       version_id: V2
       url: https://arxiv.org/pdf/1711.00977v1
-      locator: PDF pp.11–14,17; pp.42–44,51–52; Fig.6, Table1, TableA1
       source_type: full_text
+      locator: PDF pp.11–14,17; pp.42–44,51–52; Fig.6, Table1, TableA1
       checked_at: '2026-10-11'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
-  group: thermal
 - paper_id: P000335
+  group: thermal
   role: 極低温までの熱物性モデル
-  summary:
-    question: 100 K未満で従来モデルの熱慣性が合わない原因は何か。
-    method: 固体物理と模擬物の測定をもとに、20〜400 Kの比熱・熱伝導率を半経験的にモデル化する。
-    contribution: 極低温の固体熱伝導、組成、結晶性、密度・空隙率の寄与を示し、永久影温度の再評価と実験課題を与えた。
-  evidence_by_item:
-    question:
-    - paper_id: P000335
-      version_id: V1
-      url: https://doi.org/10.1029/2019JE005955
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000335
-      version_id: V1
-      url: https://doi.org/10.1029/2019JE005955
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000335
-      version_id: V1
-      url: https://doi.org/10.1029/2019JE005955
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: thermal
 - paper_id: P000337
+  group: thermal
   role: Aristarchusの受動マイクロ波観測
-  summary:
-    question: 火砕堆積物の分布と地下熱環境を、受動マイクロ波からどう制約するか。
-    method: Chang’e-2のマイクロ波放射計から時刻別の輝度温度・規格化温度地図を作り、地質図と比較する。
-    contribution: 高い蓄熱能力と、光学・レーダー推定より広い火砕堆積物分布の可能性を示し、地下温度・熱流束も論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000337
-      version_id: V1
-      url: https://doi.org/10.3390/rs18183194
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000337
-      version_id: V1
-      url: https://doi.org/10.3390/rs18183194
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000337
-      version_id: V1
-      url: https://doi.org/10.3390/rs18183194
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: thermal
 - paper_id: P000338
+  group: thermal
   role: 氷の量・形態と熱伝導率
-  summary:
-    question: 氷含有模擬物の熱伝導率は、氷量と粒子間の氷構造にどう依存するか。
-    method: 低温・低圧で氷飽和度などを変え、粒子を結ぶ氷と分散した孔隙氷を比較する。
-    contribution: 分散氷では緩やかに、粒子間を結ぶ氷では急速に熱伝導率が増え、氷量だけで熱測定を解釈できないことを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000338
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009900
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000338
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009900
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000338
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009900
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: thermal
 - paper_id: P000339
-  role: 低温から全球へ一貫した熱伝導モデル
-  summary:
-    question: 赤道から極域まで、同じ熱物性モデルでDivinerの温度を説明できるか。
-    method: 低温レゴリスの固体物理を全球熱モデルへ組み込み、暖かい地域と永久影の観測傾向に照合する。
-    contribution: 夜間表面温度や極域地下温度を再評価し、従来モデルより極域浅部が約5〜10 K暖かくなる条件を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000339
-      version_id: V1
-      url: https://doi.org/10.1029/2021JE006829
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000339
-      version_id: V1
-      url: https://doi.org/10.1029/2021JE006829
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000339
-      version_id: V1
-      url: https://doi.org/10.1029/2021JE006829
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: thermal
+  role: 低温から全球へ一貫した熱伝導モデル
 - paper_id: P000366
   group: thermal
   role: ガス掘削による月地下熱測定の実証
-  summary:
-    question: 小型着陸機の制約下で熱プローブを月地下へ送り、複数深度で測定できるか。
-    method: 窒素噴流で掘削しながらプローブを送り、荷重検知で上下動を調整した。測定時には噴流を停止し、センサーを未掘削の土へ挿入した。
-    contribution: 約1 mまで到達し、0.288〜0.971 mの8深度で温度と熱伝導率を測定した。設計深度3 mには達せず、停止原因も未確定。掘削・装置性能の報告で、熱流量の詳細解析は別論文に委ねている。
-  evidence_by_item:
-    question:
-    - paper_id: P000366
-      version_id: V1
-      url: https://elib.dlr.de/217457/1/Nagihara_2025_Planet._Sci._J._6_232.pdf
-      source_type: full_text
-      locator: 出版社版PDFの要旨・装置・方法・運用結果・考察・結論
-      checked_at: '2026-10-05'
-    method:
-    - paper_id: P000366
-      version_id: V1
-      url: https://elib.dlr.de/217457/1/Nagihara_2025_Planet._Sci._J._6_232.pdf
-      source_type: full_text
-      locator: 出版社版PDFの要旨・装置・方法・運用結果・考察・結論
-      checked_at: '2026-10-05'
-    contribution:
-    - paper_id: P000366
-      version_id: V1
-      url: https://elib.dlr.de/217457/1/Nagihara_2025_Planet._Sci._J._6_232.pdf
-      source_type: full_text
-      locator: 出版社版PDFの要旨・装置・方法・運用結果・考察・結論
-      checked_at: '2026-10-05'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-05'
-    recheck: false
-  locked_fields: []
 - paper_id: P000372
   group: geochemistry
   role: 月マントルのLi同位体組成
-  summary:
-    question: 地球と月のマントルはLi同位体比が異なるか。
-    method: 月隕石とApolloなどの既報値を統合した。
-    contribution: δ⁷Li=3.8±1.3‰と見積もり、地球との差を認めなかった。
-  evidence_by_item:
-    question:
-    - paper_id: P000372
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
-      source_type: abstract
-      locator: Abstract, sentence 1
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000372
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
-      source_type: abstract
-      locator: Abstract, sentences 1–4
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000372
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
-      source_type: abstract
-      locator: Abstract, sentences 5–7
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
 - paper_id: P000375
   group: geochemistry
   role: 惑星間Li比較による月内部の基準
-  summary:
-    question: 月のLi組成は地球マントルと共通か。
-    method: 始原的な玄武岩・ガラスを他天体と比較した。
-    contribution: 月の代表値は地球に近く、玄武岩内の変動には分化の寄与を検討した。
-  evidence_by_item:
-    question:
-    - paper_id: P000375
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000375
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000375
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
 - paper_id: P000376
   group: geochemistry
   role: 月のリザーバー間のLi比較
-  summary:
-    question: 月のリザーバー間でLi組成が違うか。
-    method: 玄武岩・高地角礫岩・火山ガラスを比較した。
-    contribution: 大半は地球マントルに近く、部分溶融による大きな分別を支持しなかった。
-  evidence_by_item:
-    question:
-    - paper_id: P000376
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000376
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000376
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
-review:
-- heading: 高さと重力の組合せから、地殻の厚さを推定する
-  paragraphs:
-  - レーザー高度計による[@P000169]は全球の地形を与える。
-  - Namikiらは、SELENEのリレー追跡から推定した重力場をLALT地形と比較し、裏側・リム側の盆地縁に対応する環状異常と、補正後も残る中心異常を分けた。地殻密度2800 kg/m³を仮定したブーゲー異常との比較で、鋭い中心ピークのType Iと、フリーエア中心高が20–60%小さい広いType IIを分類した。中心のマントル隆起・過剰補償や局所的な脆性変形、表側でのより大きな緩和は著者の内部構造・熱史の解釈であり、観測の地域差と地形・密度・流動則の条件を伴う。[@P000170]
-  - '[@P000180]は、この地形と重力から地殻厚を計算した。地殻厚は密度や補償の仮定を介した推定量なので、観測された高度・重力とモデルの条件を合わせて参照する。'
-- heading: 重力の空間分解能が、探せる地下構造を変える
-  paragraphs:
-  - GRAIL重力を使った[@P000194]は、長く細い質量欠損を空洞の候補として抽出する。衛星軌道と検出法によって感度の高い方向・寸法が異なるため、縦孔の画像やLRSの地下反射との対応が解釈を補う。
-- heading: 密度構造から、衝突破砕とマグマの貫入を探る
-  paragraphs:
-  - '[@P000301]はGRAILとLOLAを二層モデルで解釈し、月裏側の多孔質な上層と密な下層を推定した。[@P000307]はOrientaleの地下構造を衝突後の流動と断層形成で説明する。[@P000289]では大型火山候補に伴う重力異常を貫入岩体と解釈しており、同じ重力でも地質条件に応じた密度モデルが必要になる。'
-- heading: 月震波形で震源と浅部構造を調べる
-  paragraphs:
-  - '[@P000304]は反復する浅発月震を見いだし、すべり方向と潮汐位相の関係を調べた。[@P000300]はP波の偏波とS波・P波の時刻差から、単一観測点で震源を求める。前者は断層の起動、後者は定位手法に焦点を置く。'
-  - 浅部探査を扱う[@P000302]は、空洞の検出に使う常時微動の周波数と寸法感度を比較した。試料の熱履歴を使う[@P000299]は、Apollo 17コアから地中の温度勾配を求める。地震波と熱の記録を合わせることで、重力だけでは決まらない浅部の性質を補える。
-- heading: 若い試料の磁化から全球磁場の停止を制約する
-  paragraphs:
-  - '[@P000288]は月裏側起源と推定される隕石の古地磁気を測り、若いApollo試料と比較した。約7億年前の弱い磁場の記録は、過去約10億年間に全球的なダイナモ磁場がなかった可能性を支持する。試料の起源と記録年代を踏まえて内部活動の時間史を読む。'
-- heading: 低温の熱伝導と、火成岩体の制約
-  paragraphs:
-  - Divinerの全球熱物性を求めた[@P000334]に対し、[@P000335]は100 K未満まで固体熱伝導を拡張し、[@P000339]は赤道から永久影まで一貫して扱うモデルを作った。[@P000338]は氷含有模擬物の実験で、氷量と粒子間の氷構造がともに熱伝導へ効くことを示す。火成起源の制約には、重力・磁場を共同解析したDewarの[@P000322]と、マイクロ波温度からAristarchusを調べた[@P000337]を比較できる。
-  - 浅部の断熱層は、月の内部からの熱を地表温度へ結び付ける際の境界条件になる。[@P000334]は表面・深部の密度と接触伝導率を固定した1次元モデルで夜間温度へ適合させ、物性分布の尺度Hと273 K換算熱慣性を地図化した。日周赤外観測の感度は主にcm深さにあり、密度・伝導率を独立に求める適合は非一意だった。モデルの地熱流0.018 W m⁻²は仮定した底面境界値なので、内部熱流の新しい全球測定とは区別する。
-  - 熱伝導率は温度だけでなく粒子構造にも応答する。[@P000331]は粒子の形と充填を熱抵抗ネットワークへつなぎ、レゴリス成熟度の補完指標を提案した。全球の熱物性推定と比較する際に、試料の粒子構造が測定量へどう反映されるかを調べる研究となる。
-- heading: 高度と重力の観測を選ぶ
-  paragraphs:
-  - LALTのレーザー高度観測[@P000169]は、かぐやによる地形・内部構造研究の入口である。LOLAもレーザー高度を測り、GRAILは衛星間の追跡から重力場を求める。LOLA地形とGRAIL重力を組み合わせた密度構造の解析は[@P000301]、GRAILの重力勾配から空洞候補を探す研究は[@P000194]を参照できる。高度、重力、推定された密度・空洞形状を順に対応させると、観測量と逆解析の結果を区別して読める。
-- heading: 軌道・試料からの推定に、ロボットの深度測定を加える
-  paragraphs:
-  - Divinerに基づく熱物性推定[@P000334]やApollo 17コアの熱履歴[@P000299]に対し、[@P000366]はBlue Ghost
-    Mission 1のLISTERで窒素ガス掘削を実施し、0.288〜0.971 mの8深度で温度・熱伝導率を測った。測定場所と深さが分かる現地データを加える装置実証である。設計深度3
-    mへの到達と熱データの詳細解析は残るため、低温モデル[@P000339]との定量照合は解析結果を待って行う。
-- heading: 試料のLi同位体で内部組成を補う
-  paragraphs:
-  - 重力が捉える密度構造に、[@P000375]と[@P000376]のLi同位体比較を加えると、月内部の組成を別の観点から検討できる。[@P000372]は月隕石から地球に近いマントル値を支持した。
-lineage:
-- title: 月裏側の重力から地殻厚へ
-  steps:
-  - paper_id: P000170
-    title: 裏側の盆地構造を制約
-    significance: 裏側の盆地縁に対応する環状重力異常を示し、地形補正後の中心異常からType I・IIを分けた。硬い地殻・リソスフェアによる支持、中心部の過剰補償や局所補償、表側でのより大きな変形を解釈したが、北側の観測空白と次数60超の事前拘束が残る予備モデルである。
-  - paper_id: P000180
-    title: 地形を加えて地殻厚を求める
-    significance: 重力場と全球地形を組み合わせ、盆地の構造差を解釈した。
-    connection: 重力と地形の統合
-  - paper_id: P000301
-    title: 浅部の密度と空隙を推定する
-    significance: 高分解能重力と地形を二層モデルへ当てはめ、多孔質な上層を推定した。
-    connection: 地殻厚に加えて浅部の密度構造を調べる
-- title: 反復月震の識別と単一観測点での定位
-  steps:
-  - paper_id: P000304
-    title: 浅発月震の繰り返しを捉える
-    significance: 同一震源と考えられるイベントから断層すべりと潮汐の関係を検討した。
-  - paper_id: P000300
-    title: 一台の地震計で位置を求める
-    significance: 偏波解析と到着時刻差を使い、月震と衝突の位置を推定した。
-    connection: 震源物理の解析に定位手法を補う
-- title: 全球熱物性から極低温・氷構造へ
-  steps:
-  - paper_id: P000334
-    title: 深さと温度に依存する浅部断熱層を地図化
-    significance: 固定密度/接触伝導率の端点をつなぐHをDiviner夜間温度から推定し、273 K換算の浅部熱慣性を全球比較した。
-  - paper_id: P000335
-    title: 極低温の固体熱伝導を加える
-    significance: 20〜400 Kの熱物性を組成・密度・固体物理からモデル化した。
-    connection: 全球推定の低温側を理論から補う
-  - paper_id: P000339
-    title: 低緯度と永久影を同じモデルで扱う
-    significance: Divinerに整合する全球低温熱伝導モデルを示した。
-    connection: 低温物理を全球の温度計算へ統合
-  - paper_id: P000338
-    title: 氷の形態を実験で変える
-    significance: 粒子間を結ぶ氷と分散した氷の熱伝導の違いを測った。
-    connection: 乾燥レゴリスのモデルに対し、氷含有物性を別条件で補う
-- title: 試料の熱履歴と現地での深度測定
-  steps:
-  - paper_id: P000299
-    title: コアに残る浅部の熱履歴を読む
-    significance: Apollo 17コアから地中の温度勾配を推定し、深さ方向の温度構造を制約した。
-  - paper_id: P000366
-    title: ガス掘削で温度センサーを配置する
-    significance: 約1 mまで到達して8深度で測定し、現地の温度・熱伝導率データを得る手段を実証した。
-    connection: 試料履歴による推定と、その場の深度測定を比較する
 survey:
   searched_at: '2026-10-07'
+  scope_period: 制限なし
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
@@ -919,9 +259,15 @@ survey:
   - 既存文献の観測装置・観測量照合
   - 'GitHub Issue #25'
   - 出版社の公開要旨・本文と著者所属機関の書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。 2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue #3–#4の残件として、観測装置・観測量・代表文献の入口を概説に追加。 Issue #25の要点・項目別出典と概説引用を追加。'
+  queries: []
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。
+    2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。
+    2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
   - 2026-10-07の追加分はTian・Magna・Seitzの公開要旨を確認。試料地球化学による制約と、重力による密度構造の推定を区別する。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue
+    #3–#4の残件として、観測装置・観測量・代表文献の入口を概説に追加。 Issue #25の要点・項目別出典と概説引用を追加。'
+  publication_status: draft
+reading_notes: []

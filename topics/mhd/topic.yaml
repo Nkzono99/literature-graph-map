@@ -17,12 +17,14 @@ review:
   - '[@P000400]の上流型・適応格子法で用いる八波形式は、発散に比例する項を加え、誤差を流れとともに運ぶ。[@P000401]はCT、射影法、八波形式などを比較し、発散誤差の大きさと保存性、衝撃波の正しさを別々に確かめる必要を示した。[@P000402]のGLM法では補助変数を加え、誤差を伝播させ、混合型では減衰させる。採用する方式に応じて、保存量の収支、磁場の発散、境界での誤差の振る舞いを確認する。'
 - heading: 多次元更新と格子細分化を、実装へつなぐ
   paragraphs:
-  - 二次元・二次精度の方法を示したGardinerら（[@P000403]）は、セル平均磁場を隣接面磁場の平均として更新し、Godunov法の磁場流束を角電場の平均へ補正する整合条件を導いた。単純な角電場平均では一次元流れの数値粘性が半分になるため、PPM・CTUの多次元磁場源項と接触モードで風上化したCTを組み合わせる。斜め線形波は二次以上に収束する一方、回転衝撃管のセル中心磁場には約10%の振動が残り、保存的な2×1セル平均で初めて丸め誤差になる。CTの発散保存とセル尺度での無振動性を区別する結果である。[@P000403]
-  - Athenaを記述したStone et al.（[@P000405]）は、質量・運動量・エネルギーの有限体積流束と、面磁場を更新するCT電場を整合させ、多次元の実装と検証問題にまとめた。標準3D CTU＋CTは6回のRiemann計算とCFL数0.5以下を用い、三次のPPM再構成を選んでも方法全体は二次精度である。斜めの線形MHD波で二次収束を確かめ、磁場ループでは格子に沿う軸方向磁場の保存と、軸も斜めの場合の打切り誤差を区別する。発散を測る離散演算子、数値拡散、強い衝撃波の頑健性を同じ条件でそろえることが、後続コードとの比較の軸になる。
+  - 二次元・二次精度の方法を示したGardinerら（[@P000403]）は、セル平均磁場を隣接面磁場の平均として更新し、Godunov法の磁場流束を角電場の平均へ補正する整合条件を導いた。単純な角電場平均では一次元流れの数値粘性が半分になるため、PPM・CTUの多次元磁場源項と接触モードで風上化したCTを組み合わせる。斜め線形波は二次以上に収束する一方、回転衝撃管のセル中心磁場には約10%の振動が残り、保存的な2×1セル平均で初めて丸め誤差になる。CTの発散保存とセル尺度での無振動性を区別する結果である。
+  - Athenaを記述したStone et al.（[@P000405]）は、質量・運動量・エネルギーの有限体積流束と、面磁場を更新するCT電場を整合させ、多次元の実装と検証問題にまとめた。標準3D
+    CTU＋CTは6回のRiemann計算とCFL数0.5以下を用い、三次のPPM再構成を選んでも方法全体は二次精度である。斜めの線形MHD波で二次収束を確かめ、磁場ループでは格子に沿う軸方向磁場の保存と、軸も斜めの場合の打切り誤差を区別する。発散を測る離散演算子、数値拡散、強い衝撃波の頑健性を同じ条件でそろえることが、後続コードとの比較の軸になる。
   - PLUTO（[@P000406]）は、古典流体・MHD・特殊相対論流体・RMHDを、再構成、Riemann解法、時間更新から分けて選ぶ構成を示した。回転MHD衝撃波管では、基本変数での線形再構成と非分割RK2を固定した比較で、HLLDがRoeに近い誤差を保ち、同じ誤差に対する計算時間を減らした。著者は再構成の変更で時間順位が変わり得ると留保しており、解法の順位は対象と組み合わせに結び付けて読む。
   - CTと八波形式、曲線座標、閉包を同じコードで試せる点もPLUTO（[@P000406]）の特徴である。高速回転体では発散制約処理による分布が近い一方、極座標の内側セルが時間刻みを制限した。相対論的衝撃波管では閉包と薄い密度殻の解像が結果を変える。2007年稿の多次元AMRは開発中で、この版の検証と後年の実装を区別する。
   - Athena++（[@P000407]）は、AthenaのGodunov法とCTを、ブロック型AMR、曲線座標、通信と計算を重ねるtask listへ移した。粗細境界では保存量の面積積分流束と磁場更新の線積分EMFを細レベルへ合わせる。標準CTの全体空間精度は二次で、高次再構成と時間積分は誤差を減らす。解法の次数と、AMR境界の保存・発散制約の整合を合わせて確認する段階へ進んだ。
-  - AMRによる高速化は、細分化条件とブロックの大きさに依存する。[@P000407]の相対論KH試験では、AMRは一様格子より速い一方、多くの短波長構造が粗細境界に由来すると著者は判断した。524,288 threadsで84%というMHD効率は、一様格子の弱スケーリングを8ノード基準で測った結果である。構造の再現と計算速度を比較する際は、最細解像度、格子配置、誤差指標と測定条件を対応させる。
+  - AMRによる高速化は、細分化条件とブロックの大きさに依存する。[@P000407]の相対論KH試験では、AMRは一様格子より速い一方、多くの短波長構造が粗細境界に由来すると著者は判断した。524,288
+    threadsで84%というMHD効率は、一様格子の弱スケーリングを8ノード基準で測った結果である。構造の再現と計算速度を比較する際は、最細解像度、格子配置、誤差指標と測定条件を対応させる。
 - heading: 太陽風では、膨張流・磁気トルク・波動をつなぐ
   paragraphs:
   - '[@P000396]は高温コロナの流体方程式から外向きの膨張流を説明し、運ばれる磁場を考察した。[@P000397]は定常・軸対称の赤道面モデルに磁気力と回転を含め、三つの臨界点と角運動量輸送を結び付けた。このモデルでは、磁気トルクをAlfvén点までの有効な共回転と対応させて評価する。太陽風の速度を求める問題から、磁場を介して太陽の回転が失われる問題へ、扱う物理が広がる。'
@@ -43,6 +45,7 @@ lineage:
   - paper_id: P000393
     title: 導電性流体と磁場の波を提示
     significance: 流体運動と誘導電流の力を結び付け、MHD波動の基本を示した。
+    connection: ''
   - paper_id: P000411
     title: 太陽風の変動からAlfvén波を読む
     significance: 1970年報告書版では、Mariner 5の1967年の磁場・プラズマ同時観測を対応させ、太陽風静止系での大振幅の外向きAlfvén波を整理した。先端圧縮域には内向き波や非Alfvén成分も混ざり得る。
@@ -52,6 +55,7 @@ lineage:
   - paper_id: P000396
     title: 高温コロナからの外向き流れ
     significance: 流体の膨張で太陽風を説明し、運ばれる磁場を考察した。
+    connection: ''
   - paper_id: P000397
     title: 回転と磁気トルクを含める
     significance: 臨界点を通る定常磁化風を解き、角運動量の損失を評価した。
@@ -61,6 +65,7 @@ lineage:
   - paper_id: P000399
     title: 格子上で磁場の発散制約を維持
     significance: 磁束の積分形に合わせたCTの離散化を示した。
+    connection: ''
   - paper_id: P000403
     title: Godunov流束とCTを整合
     significance: 二次元・二次精度のCTU/CTで、Godunov面流束と格子辺の電場を整合させた。
@@ -78,6 +83,7 @@ lineage:
   - paper_id: P000400
     title: 上流法と適応格子を組み合わせる
     significance: 八波形式を用いるMHD解法を太陽風・磁気圏の計算へ適用した。
+    connection: ''
   - paper_id: P000401
     title: 発散制約の方式と保存性を比較
     significance: CT、射影法、八波形式の誤差を同じ試験条件で比較した。
@@ -91,6 +97,7 @@ lineage:
   - paper_id: P000395
     title: 流入・流出と拡散で再結合を考える
     significance: 高い電気伝導度を持つ流体で反平行磁場の再結合を評価した。
+    connection: ''
   - paper_id: P000410
     title: 共通条件でHall・PICと比較
     significance: 再結合率の差から、無衝突電流層に必要な物理を検討した。
@@ -132,705 +139,63 @@ entries:
 - paper_id: P000393
   group: foundations
   role: Alfvén波の出発点
-  summary:
-    question: 導電性流体の運動と磁場の相互作用は、どのような波を生むか。
-    method: 一様磁場中の流体運動、誘導電流、その電流に働く力を結び付ける。
-    contribution: 電磁場と流体運動が互いに応答する波を提示し、MHD波動研究の出発点を作った。
-  evidence_by_item:
-    question:
-    - paper_id: P000393
-      version_id: V1
-      url: https://www.nature.com/articles/150405d0
-      source_type: abstract
-      locator: 出版社公開の冒頭抜粋
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000393
-      version_id: V1
-      url: https://www.nature.com/articles/150405d0
-      source_type: abstract
-      locator: 出版社公開の冒頭抜粋
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000393
-      version_id: V1
-      url: https://www.nature.com/articles/150405d0
-      source_type: abstract
-      locator: 出版社公開の冒頭抜粋
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000394
   group: foundations
   role: MHD方程式・波動・安定性の教科書
-  summary:
-    question: 巨視的な流体モデルで、磁化プラズマの運動と安定性をどこまで説明できるか。
-    method: 古典的MHDの導出、波動のスペクトル、非一様プラズマの安定性を体系化。
-    contribution: 実験室と天体プラズマに共通する理論を整理し、運動論からの近似と適用条件を考える入口を提供。
-  evidence_by_item:
-    question:
-    - paper_id: P000394
-      version_id: V1
-      url: https://www.cambridge.org/core/books/principles-of-magnetohydrodynamics/847AF12C94451B41D8F71C1F11EB308A
-      source_type: abstract
-      locator: 出版社の書籍紹介・目次、序文と第3・4章の公開要約。書籍全体は未読
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000394
-      version_id: V1
-      url: https://www.cambridge.org/core/books/principles-of-magnetohydrodynamics/847AF12C94451B41D8F71C1F11EB308A
-      source_type: abstract
-      locator: 出版社の書籍紹介・目次、序文と第3・4章の公開要約。書籍全体は未読
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000394
-      version_id: V1
-      url: https://www.cambridge.org/core/books/principles-of-magnetohydrodynamics/847AF12C94451B41D8F71C1F11EB308A
-      source_type: abstract
-      locator: 出版社の書籍紹介・目次、序文と第3・4章の公開要約。書籍全体は未読
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000395
   group: reconnection
   role: Sweet–Parker型の抵抗性再結合
-  summary:
-    question: 高い電気伝導度を持つ流体で、反平行な磁場はどう再結合するか。
-    method: 押し合わされた反平行磁場の流入・流出と磁場拡散を半定量的に評価。
-    contribution: 通常の拡散より速く磁場配置を変える機構を示し、磁気エネルギーから流体運動への変換を論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000395
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JZ062i004p00509
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000395
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JZ062i004p00509
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000395
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JZ062i004p00509
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000396
   group: solar-wind
   role: 太陽風の流体理論
-  summary:
-    question: 高温の太陽コロナから、持続的な外向き流れはどう生まれるか。
-    method: コロナの流体方程式から外向きの膨張流を求め、運ばれる磁場の配置を考察。
-    contribution: 太陽風を流体力学的に説明する基礎を示した。磁気力も含む回転風モデルへ進む前段となる。
-  evidence_by_item:
-    question:
-    - paper_id: P000396
-      version_id: V1
-      url: https://adsabs.harvard.edu/pdf/1958apj...128..664p
-      source_type: abstract
-      locator: 論文冒頭の要旨（p.664）
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000396
-      version_id: V1
-      url: https://adsabs.harvard.edu/pdf/1958apj...128..664p
-      source_type: abstract
-      locator: 論文冒頭の要旨（p.664）
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000396
-      version_id: V1
-      url: https://adsabs.harvard.edu/pdf/1958apj...128..664p
-      source_type: abstract
-      locator: 論文冒頭の要旨（p.664）
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000397
   group: solar-wind
   role: 磁化した回転風と角運動量輸送
-  summary:
-    question: 太陽風の磁場は、太陽からの角運動量損失をどう変えるか。
-    method: 赤道面の定常・軸対称モデルに圧力、重力、磁気力を含め、動径・方位角方向を解く。
-    contribution: 三つの臨界点と磁気トルクを結び付け、Alfvén点までの有効な共回転が角運動量輸送を強めることを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000397
-      version_id: V1
-      url: https://adsabs.harvard.edu/pdf/1967ApJ...148..217W
-      source_type: abstract
-      locator: 要旨（p.217）。完全導電・無粘性・ポリトロープの仮定
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000397
-      version_id: V1
-      url: https://adsabs.harvard.edu/pdf/1967ApJ...148..217W
-      source_type: abstract
-      locator: 要旨（p.217）。完全導電・無粘性・ポリトロープの仮定
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000397
-      version_id: V1
-      url: https://adsabs.harvard.edu/pdf/1967ApJ...148..217W
-      source_type: abstract
-      locator: 要旨（p.217）。完全導電・無粘性・ポリトロープの仮定
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000398
   group: riemann
   role: Roe型MHD解法と衝撃波管問題
-  summary:
-    question: MHDの複雑な波を、衝撃波を含む数値流束にどう取り込むか。
-    method: Roe型の線形化と固有系を構成し、共平面Riemann問題を複数の差分法で比較。
-    contribution: 非凸性と複合波を示し、MHD解法の精度を比較する衝撃波管問題を提供した。厳密な平均値Jacobianの構成はγ=2の場合。
-  evidence_by_item:
-    question:
-    - paper_id: P000398
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/0021999188901209
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000398
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/0021999188901209
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000398
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/0021999188901209
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000399
   group: divergence
   role: Constrained Transport（CT）
-  summary:
-    question: 磁場の発散がゼロという制約を、格子上の時間更新でもどう保つか。
-    method: 誘導方程式を磁束の積分形に合わせて離散化し、磁場を格子面で更新。
-    contribution: 離散的な発散制約を丸め誤差の精度で維持するCT法を示した。保存される制約は採用した格子上の定義による。
-  evidence_by_item:
-    question:
-    - paper_id: P000399
-      version_id: V1
-      url: https://adsabs.harvard.edu/pdf/1988ApJ...332..659E
-      source_type: abstract
-      locator: 要旨（p.659）
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000399
-      version_id: V1
-      url: https://adsabs.harvard.edu/pdf/1988ApJ...332..659E
-      source_type: abstract
-      locator: 要旨（p.659）
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000399
-      version_id: V1
-      url: https://adsabs.harvard.edu/pdf/1988ApJ...332..659E
-      source_type: abstract
-      locator: 要旨（p.659）
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000400
   group: divergence
   role: 適応格子・八波形式の上流法
-  summary:
-    question: 大きな磁場と局所的な構造を含む理想MHDを、適応格子でどう解くか。
-    method: 上流型Riemann解法、制限付き再構成、格子細分化・粗視化を組み合わせる。
-    contribution: 解析解と三次元太陽風・磁気圏問題で手法を試験し、解に応じて計算を集中する構成を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000400
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S002199919996299X
-      source_type: abstract
-      locator: 出版社公開要旨。八波形式の比較はTóth (2000)も参照
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000400
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S002199919996299X
-      source_type: abstract
-      locator: 出版社公開要旨。八波形式の比較はTóth (2000)も参照
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000400
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S002199919996299X
-      source_type: abstract
-      locator: 出版社公開要旨。八波形式の比較はTóth (2000)も参照
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000401
   group: divergence
   role: 発散制約の処理法を比較
-  summary:
-    question: 衝撃波捕獲型MHDで、発散誤差と保存性は処理法によってどう変わるか。
-    method: 八波形式、射影法、CT系の方式を同じ試験問題で比較。
-    contribution: 発散を小さくすることと保存則・衝撃波の正しさを分けて評価し、非保存型の補正が強い不連続で誤差を生む場合を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000401
-      version_id: V1
-      url: https://public.websites.umich.edu/~gtoth/Papers/Toth2000_divb.pdf
-      source_type: abstract
-      locator: 要旨（p.605）
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000401
-      version_id: V1
-      url: https://public.websites.umich.edu/~gtoth/Papers/Toth2000_divb.pdf
-      source_type: abstract
-      locator: 要旨（p.605）
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000401
-      version_id: V1
-      url: https://public.websites.umich.edu/~gtoth/Papers/Toth2000_divb.pdf
-      source_type: abstract
-      locator: 要旨（p.605）
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000402
   group: divergence
   role: GLMによる発散誤差の伝播と減衰
-  summary:
-    question: 既存の有限体積MHD解法へ、局所的な発散誤差の制御をどう加えるか。
-    method: 補助変数を導入し、発散制約を保存則に結合したGLM系を構成・試験。
-    contribution: 双曲型の伝播と減衰を組み合わせ、試験問題の発散誤差と安定性を改善した。CTと異なり、誤差を伝播・減衰させる方式。
-  evidence_by_item:
-    question:
-    - paper_id: P000402
-      version_id: V1
-      url: https://www.tp4.ruhr-uni-bochum.de/~sw/papers/JCP2002.6961.pdf
-      source_type: abstract
-      locator: 要旨（p.645）。概説の方程式は序論pp.645–646、補正の説明は第2節も参照
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000402
-      version_id: V1
-      url: https://www.tp4.ruhr-uni-bochum.de/~sw/papers/JCP2002.6961.pdf
-      source_type: abstract
-      locator: 要旨（p.645）。概説の方程式は序論pp.645–646、補正の説明は第2節も参照
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000402
-      version_id: V1
-      url: https://www.tp4.ruhr-uni-bochum.de/~sw/papers/JCP2002.6961.pdf
-      source_type: abstract
-      locator: 要旨（p.645）。概説の方程式は序論pp.645–646、補正の説明は第2節も参照
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000403
   group: riemann
   role: 多次元Godunov法とCTの整合
-  summary:
-    question: セル平均を更新するGodunov流束と、面磁束を更新するCTの格子辺電場をどう整合させ、一次元への還元と二次元精度を保つか。
-    method: PPM界面予測とCTU横方向補正にMHD源項を加え、面磁場を半時刻へCT更新する。角電場の勾配を接触モードで風上化し、磁場の有限体積流束を角電場の平均で補正する二次元・二次精度法を構成した。
-    contribution: 面磁場とセル平均磁場の整合条件を導き、単純な角電場平均では格子に沿う流れの数値粘性が半分になると示した。整合的なCTU＋CT法は斜め線形波で二次以上に収束した一方、回転衝撃管にはセル単位の磁場振動が残った。
-  evidence_by_item:
-    question:
-    - paper_id: P000403
-      version_id: V2
-      url: https://arxiv.org/abs/astro-ph/0501557v1
-      locator: PDF pp.3–8, §§2–2.3
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000403
-      version_id: V2
-      url: https://arxiv.org/abs/astro-ph/0501557v1
-      locator: PDF pp.11–18, §§3.1–3.2; pp.24–29, §4, eqs.(61)–(78)
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000403
-      version_id: V2
-      url: https://arxiv.org/abs/astro-ph/0501557v1
-      locator: PDF pp.7–8, eqs.(19)–(24); pp.13–14, eqs.(34)–(38); pp.33–36, §§5.3–5.4, Figs.10–11
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
 - paper_id: P000404
   group: riemann
   role: HLLD近似Riemann解法
-  summary:
-    question: 理想MHDの波を、計算量を抑えながらどこまで解像できるか。
-    method: 複数の中間状態を持つHLL型の近似Riemann解法を構成し、標準問題で比較。
-    contribution: 接触不連続とAlfvén波を取り込むHLLDを示し、MHDの流束計算に精度と計算量の選択肢を加えた。
-  evidence_by_item:
-    question:
-    - paper_id: P000404
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999105001142
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000404
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999105001142
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000404
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999105001142
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000405
   group: codes
   role: Athenaのアルゴリズムと検証問題
-  summary:
-    question: 理想MHDを保存的に解き、磁場の発散制約を多次元で保つAthenaをどう実装・検証するか。
-    method: セル平均の保存量を更新するGodunov法、面平均磁場のCT、方向非分割CTU、PLM／PPMとRoe／HLL系解法を組み合わせ、1D～3Dの波・衝撃波・ループ移流で試す。
-    contribution: 発散の特定の離散形を維持する更新と二次収束を実装・検証し、強い衝撃波の補正、並列費用、AMR実演まで示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000405
-      version_id: V2
-      url: https://arxiv.org/abs/0804.0402v1
-      locator: PDF pp.1–5, §§1–3, Eqs.1–28
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000405
-      version_id: V2
-      url: https://arxiv.org/abs/0804.0402v1
-      locator: PDF pp.3–5, §3, Eqs.(11)–(28); pp.6–13, §§4–6; Appendices A–B pp.56–61
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000405
-      version_id: V2
-      url: https://arxiv.org/abs/0804.0402v1
-      locator: PDF pp.15–20, §8; Figs.7–36 pp.28–55; Table1 p.22
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
 - paper_id: P000406
   group: codes
   role: 物理・数値モジュールを選び、条件をそろえて性能を比べるPLUTO
-  summary:
-    question: 圧縮性の強い天体流体を、古典・特殊相対論、磁場の有無に応じて解く際、物理モデルと数値手法をどう組み合わせ、精度・頑健性・計算量を比較するか。
-    method: 保存変数から基本変数へ変換し、再構成・Riemann解法・時間更新を分けた有限体積RSAを実装。HD・MHD・RHD・RMHDを選択し、MHDのCT/八波形式、方向分割/非分割更新、直交曲線座標を複数の検証課題で比べた。
-    contribution: モジュール式の公開PLUTOと七つの検証課題を示した。回転MHD衝撃波管では指定した線形/RK2構成でHLLDがRoe並みの誤差と良い計算効率を示し、回転体や相対論的衝撃波では格子の時間制限、閉包と薄い殻の解像が結果に影響することを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000406
-      version_id: V2
-      url: https://arxiv.org/pdf/astro-ph/0701854v2
-      locator: PDF pp.1–3、§1–2：対象とRSAの設計
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000406
-      version_id: V2
-      url: https://arxiv.org/pdf/astro-ph/0701854v2
-      locator: PDF pp.3–12、§2–3：モジュール責務・再構成・Riemann解法・時間更新・CT/八波形式
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000406
-      version_id: V2
-      url: https://arxiv.org/pdf/astro-ph/0701854v2
-      locator: PDF pp.15–26、表3・§5；pp.31–37、図6–12：検証構成と結果、各比較の条件
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
 - paper_id: P000407
   group: codes
   role: Athena++のAMR境界整合と並列実行
-  summary:
-    question: 適応格子・曲線座標・大規模並列実行を、保存量と磁場の発散制約を保つMHDへどう組み込むか。
-    method: セル中心の有限体積Godunov法と面磁場のCTをブロック型AMRへ実装し、粗細境界の流束・EMF補正、全レベル共通dt、依存関係付きtask listで通信と計算を重ねる。非相対論・相対論MHDを解析解、線形波、衝撃波、KH・blast問題と性能試験で検証。 GRは与えられた定常計量の幾何因子を離散化に含める。
-    contribution: Athenaの解法を物理から独立した格子基盤へ移し、AMR境界での保存・磁場整合と曲線座標を示した。一様格子の524,288 threads試験でMHDの弱スケーリング効率84%（8ノード基準）を達成。一方、AMRの細部に境界由来の人工構造が生じ得ることも検証した。
-  evidence_by_item:
-    question:
-    - paper_id: P000407
-      version_id: V2
-      url: https://arxiv.org/pdf/2005.06651v1
-      locator: PDF pp.1–3（Introduction）
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000407
-      version_id: V2
-      url: https://arxiv.org/pdf/2005.06651v1
-      locator: pp.3–14 §2; pp.16–20 §3.1–3.2; pp.39–41 §4.1–4.2; Eqs.1–5,6–20,31–42
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000407
-      version_id: V2
-      url: https://arxiv.org/pdf/2005.06651v1
-      locator: pp.20–38 §3.3–3.6; pp.41–45 §4.3; Figs.11–42; Tables1–3; 特にp.37のweak scalingとp.42のAMR人工構造
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
 - paper_id: P000408
   group: magnetosphere
   role: SWMFによる領域・モデル結合
-  summary:
-    question: 太陽から地球の上層大気まで、異なる領域の物理モデルをどう結合するか。
-    method: 太陽コロナ、太陽圏、磁気圏、電離圏などのモデルを標準インターフェースで結ぶ。
-    contribution: 複数の物理モデルを並列に制御する枠組みと実演試験を示した。本論文の主題は設計・実装で、広範な観測検証は後続研究に委ねる。
-  evidence_by_item:
-    question:
-    - paper_id: P000408
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2005JA011126
-      source_type: abstract
-      locator: 出版社へ登録された要旨（Crossref）
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000408
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2005JA011126
-      source_type: abstract
-      locator: 出版社へ登録された要旨（Crossref）
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000408
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2005JA011126
-      source_type: abstract
-      locator: 出版社へ登録された要旨（Crossref）
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000409
   group: magnetosphere
   role: OpenGGCMとTHEMIS観測
-  summary:
-    question: 点在するTHEMIS観測を磁気圏・電離圏の変化へ結び付けるとき、全球MHDは何を再現し、どこにずれが残るか。
-    method: 半保存形の抵抗性MHDとCTを用い、沿磁力線電流・電位・電子降下でCTIMへ結合。WindのMINVAR入力と2007年3月23日の仮想衛星・磁力線写像を比較。
-    contribution: 単一事例で磁場・流れの大まかな変化とTHEMISからサージへの磁力線写像を再現したが、開始は観測より早く、密度・温度の一致は弱かった。
-  evidence_by_item:
-    question:
-    - paper_id: P000409
-      version_id: V1
-      url: https://doi.org/10.1007/s11214-008-9421-5
-      locator: PDF pp. 2–3, §1
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000409
-      version_id: V1
-      url: https://doi.org/10.1007/s11214-008-9421-5
-      locator: PDF pp. 4–10, §2, Eqs. 1–16, Figs. 1–3
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000409
-      version_id: V1
-      url: https://doi.org/10.1007/s11214-008-9421-5
-      locator: PDF pp. 11–19, §3–4, Figs. 4–9; onset/density-temperature limitations pp. 11–12; mapping pp. 16–17
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
 - paper_id: P000410
   group: reconnection
   role: GEM再結合ベンチマーク
-  summary:
-    question: 無衝突再結合を表すには、MHDからどの物理を拡張する必要があるか。
-    method: 共通のHarris電流層と初期摂動を使い、PICから抵抗性MHDまでを比較。
-    contribution: この試験条件ではHall効果を含むモデルが近い再結合率を示し、通常の抵抗性MHDとの違いを整理した。
-  evidence_by_item:
-    question:
-    - paper_id: P000410
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029%2F1999JA900449
-      source_type: abstract
-      locator: 出版社へ登録された要旨（Crossref）。共通初期条件下の比較
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000410
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029%2F1999JA900449
-      source_type: abstract
-      locator: 出版社へ登録された要旨（Crossref）。共通初期条件下の比較
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000410
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029%2F1999JA900449
-      source_type: abstract
-      locator: 出版社へ登録された要旨（Crossref）。共通初期条件下の比較
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000411
   group: solar-wind
   role: 太陽風中のAlfvén波の観測
-  summary:
-    question: 太陽風の微細な磁場変動は静的な接線不連続か、大振幅Alfvén波か。伝播方向・振幅・異方性は流れ構造とどう結びつくか。
-    method: 1967年6月14日–11月21日のMariner5磁場・プラズマ同時データを用い、速度と磁場の三成分相関、極性依存、6時間の相関統計、3時間量の加重相関、FFT・クロススペクトル、168.75秒・22.5分・3時間の分散テンソルを比較した。速度三成分には暫定値を含む。
-    contribution: 外向きAlfvén波を、磁場・速度のベクトル対応と密度・磁場強度の安定性から識別した。占有率を約50%と推定し、純粋な例が高速流本体・後縁に多い一方、最大振幅は複数モードを含み得る圧縮域に現れると整理した。局所平均磁場に対する概略5:4:1の分散異方性を示し、太陽近傍起源と圧縮・減衰の条件付きモデルを提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000411
-      version_id: V2
-      url: https://ntrs.nasa.gov/api/citations/19710000956/downloads/19710000956.pdf
-      source_type: full_text
-      locator: PDF pp5–14
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000411
-      version_id: V2
-      url: https://ntrs.nasa.gov/api/citations/19710000956/downloads/19710000956.pdf
-      source_type: full_text
-      locator: PDF pp6–11,15–17,24–27,29–30,33–44
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000411
-      version_id: V2
-      url: https://ntrs.nasa.gov/api/citations/19710000956/downloads/19710000956.pdf
-      source_type: full_text
-      locator: PDF pp14–17,28,38–44,45–60
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
 - paper_id: P000071
   group: magnetosphere
   role: FLEKS・流体との領域結合
-  summary:
-    question: 大域MHDの内部で、形が変わる電子・イオン運動論領域をどう効率よく追い、粒子数と刻み幅を調整するか。
-    method: 非相対論的GL-ECSIMを一様直交格子上で用い、各方向N≥2セルの活性パッチを動的に切り替える。新旧Δtを使い分けて時間配置を保ち、セル内の分割と、位置・速度を継承して5保存量に合わせ、正の重みが得られる場合の6→5統合で粒子数を調整する。
-    contribution: 動的PIC領域をMHD-AEPICへ埋め込む実装を提供し、波・非対称再結合・Frontera並列試験で動作と性能を検証した。統合の総量保存を保ちながらppc偏りを減らせるが、統計雑音は増え、計算全体の厳密保存とは区別する。
-  evidence_by_item:
-    question:
-    - paper_id: P000071
-      version_id: V1
-      url: https://doi.org/10.1016/j.cpc.2023.108714
-      source_type: full_text
-      locator: PDF pp.1–3、§1–2
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000071
-      version_id: V1
-      url: https://doi.org/10.1016/j.cpc.2023.108714
-      source_type: full_text
-      locator: PDF pp.3–7、§2–5、式1–5
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000071
-      version_id: V1
-      url: https://doi.org/10.1016/j.cpc.2023.108714
-      source_type: full_text
-      locator: PDF pp.7–13、§6、図6–14
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
-relations: []
 survey:
   searched_at: '2026-10-09'
   scope_period: 1942–2023の基礎・代表的手法と宇宙プラズマの応用
@@ -852,3 +217,4 @@ survey:
   - 計算コードは引用した論文の実装を記述し、現在の配布版の機能は調査対象に含めない。
   changes: MHDテーマを新規作成。理論・数値手法・宇宙プラズマ応用と既存PICテーマを接続。
   publication_status: draft
+reading_notes: []

@@ -1,12 +1,13 @@
-"""Survey, incremental import, update, and publication orchestration."""
+"""Survey, bibliographic refresh, and publication orchestration."""
 
 import copy
 import hashlib
+import json
 import re
 from datetime import date
 from pathlib import Path
 
-from .models import PAPER_CITATION, Entry, ImportPacket, Inspection, Topic, Work
+from .models import Entry, Topic, Work, reading
 from .providers import Crossref, crossref_work, seed_identifiers
 from .render import COPYRIGHT, copyright_text, rendered_files
 from .storage import (
@@ -17,7 +18,6 @@ from .storage import (
     next_paper_id,
     publication_issues,
     write_files,
-    yaml_text,
 )
 
 
@@ -40,24 +40,11 @@ def commit(repo: Path, snapshot: Snapshot) -> None:
     write_files(repo, prepare_commit(repo, snapshot))
 
 
-def find_work(snapshot: Snapshot, incoming: Work) -> Work | None:
-    dois = {v.doi for v in incoming.versions if v.doi}
-    repositories = {v.repository_id for v in incoming.versions if v.repository_id}
-    matches = [
-        w
-        for w in snapshot.works.values()
-        if any(v.doi in dois or v.repository_id in repositories for v in w.versions)
-    ]
-    if len(matches) > 1:
-        raise MapError("versions already belong to distinct works; reconcile their IDs explicitly")
-    return matches[0] if matches else None
-
-
-def merge_work(
-    existing: Work, incoming: Work, conflicts: list[str], metadata_only: bool = False
-) -> Work:
-    data = incoming.model_dump()
-    data["paper_id"] = existing.paper_id
+def merge_bibliography(existing: Work, incoming: Work, conflicts: list[str]) -> Work:
+    """Refresh provider bibliography; verified records and the reading stay as recorded."""
+    original = existing.model_dump()
+    data = copy.deepcopy(original)
+    fresh = incoming.model_dump()
     versions = {v.version_id: v.model_dump() for v in existing.versions}
     for version in incoming.versions:
         duplicate = next(
@@ -65,243 +52,42 @@ def merge_work(
         )
         if duplicate and duplicate.version_id != version.version_id:
             raise MapError("an existing DOI's version ID is immutable; use the ledger's version ID")
-        fresh = version.model_dump()
-        if metadata_only and version.version_id in versions:
-            fresh["locations"] = versions[version.version_id]["locations"]
-            fresh["repository_id"] = versions[version.version_id]["repository_id"]
-            for key, value in list(fresh.items()):
-                if value is None:
-                    fresh[key] = versions[version.version_id][key]
+        item = version.model_dump()
         if version.version_id in versions:
+            previous = versions[version.version_id]
             for key in ("doi", "repository_id"):
-                previous = versions[version.version_id][key]
-                if previous is not None and fresh[key] != previous:
+                if previous[key] is not None and item[key] not in (None, previous[key]):
                     raise MapError("an existing version's bibliographic identity is immutable")
-        versions[version.version_id] = fresh
+            item["locations"] = previous["locations"]
+            item["repository_id"] = previous["repository_id"]
+            for key, value in list(item.items()):
+                if value is None:
+                    item[key] = previous[key]
+        versions[version.version_id] = item
     data["versions"] = list(versions.values())
-    data["version_links"] = [v.model_dump() for v in existing.version_links]
-    for item in incoming.version_links:
-        if item.model_dump() not in data["version_links"]:
-            data["version_links"].append(item.model_dump())
+    data["title"] = fresh["title"]
+    data["authors"] = fresh["authors"]
+    data["missing_note"] = fresh["missing_note"]
     sources = {source.url: source.model_dump() for source in existing.metadata_sources}
     sources.update({source.url: source.model_dump() for source in incoming.metadata_sources})
     data["metadata_sources"] = list(sources.values())
-    if metadata_only:
-        for key in (
-            "access_check",
-            "preprint_check",
-            "representative_version_id",
-            "record_url",
-            "citation_author",
-        ):
-            data[key] = getattr(existing, key)
-    data["locked_fields"] = sorted(set(existing.locked_fields + incoming.locked_fields))
-    locked = set(existing.locked_fields)
-    if "versions" in locked:
-        locked.update(("versions", "version_links", "representative_version_id"))
-    for key in locked:
-        before = existing.model_dump()[key]
-        if data[key] != before:
+    for key in existing.locked_fields:
+        if data[key] != original[key]:
             conflicts.append(
                 f"{existing.paper_id}.{key}: locked value preserved; review incoming evidence"
             )
-            data[key] = before
+            data[key] = original[key]
     return Work.model_validate(data)
 
 
-def invalidate_versions(snapshot: Snapshot, changed: set[str]) -> None:
-    for topic in snapshot.topics.values():
-        affected = changed & {e.paper_id for e in topic.entries}
-        if not affected:
-            continue
-        topic.survey.publication_status = "draft"
-        topic.survey.reviewed_at = None
-        for entry in topic.entries:
-            if entry.paper_id in affected and entry.inspection.level != "metadata_only":
-                entry.inspection.recheck = True
-        for relation in topic.relations:
-            if {relation.source, relation.target} & affected and relation.state == "checked":
-                relation.state = "recheck"
-        topic.survey.changes = (
-            "版情報の更新。参照版を維持し、影響する要点・関係を再確認待ちに変更。"
-        )
-
-
-def referenced_papers(topic: Topic) -> set[str]:
+def referenced_papers(topic: Topic, works: dict[str, Work]) -> set[str]:
+    """Works listed in the topic plus the works their displayed sources point to."""
     references = {e.paper_id for e in topic.entries}
-    references.update(e.paper_id for r in topic.relations for e in r.evidence)
     for entry in topic.entries:
+        evidence = reading(entry, works[entry.paper_id]).evidence_by_item
         for key in ("question", "method", "contribution"):
-            references.update(e.paper_id for e in getattr(entry.evidence_by_item, key))
+            references.update(e.paper_id for e in getattr(evidence, key))
     return references
-
-
-def research_packet(topic: Topic, snapshot: Snapshot) -> ImportPacket:
-    """Collect the topic and its referenced works for optional import editing."""
-    return ImportPacket(
-        works=[snapshot.works[key] for key in sorted(referenced_papers(topic))], topic=topic
-    )
-
-
-def import_packet(
-    repo: Path,
-    snapshot: Snapshot,
-    packet: ImportPacket,
-    private: Path,
-    topic_path: str | None = None,
-) -> list[str]:
-    snapshot = copy.deepcopy(snapshot)
-    if not packet.topic.public:
-        if packet.topic.topic_id in snapshot.topics:
-            raise MapError(
-                "cannot hide an existing published topic by importing a private draft; remove its public files explicitly"
-            )
-        write_files(
-            private, {private / packet.topic.topic_id / "review-packet.yaml": yaml_text(packet)}
-        )
-        return []
-    conflicts = []
-    mapping = {}
-    changed = set()
-    seen_ids = set()
-    for incoming in packet.works:
-        if incoming.paper_id in seen_ids:
-            raise MapError("duplicate work ID in import packet")
-        seen_ids.add(incoming.paper_id)
-        same = find_work(snapshot, incoming)
-        by_id = snapshot.works.get(incoming.paper_id)
-        if by_id and same and by_id.paper_id != same.paper_id:
-            raise MapError("incoming paper ID belongs to another work")
-        if by_id and not same:
-            # DOI-free corrections may still share the explicitly confirmed record URL.
-            if by_id.record_url != incoming.record_url:
-                raise MapError("cannot replace a paper ID with a different bibliographic identity")
-            same = by_id
-        if same:
-            mapping[incoming.paper_id] = same.paper_id
-            merged = merge_work(same, incoming, conflicts)
-            if merged.representative_version_id != same.representative_version_id or {
-                v.version_id for v in merged.versions
-            } != {v.version_id for v in same.versions}:
-                changed.add(same.paper_id)
-            snapshot.works[same.paper_id] = merged
-        else:
-            mapping[incoming.paper_id] = incoming.paper_id
-            snapshot.works[incoming.paper_id] = incoming
-    data = packet.topic.model_dump()
-
-    def remap(value):
-        if isinstance(value, dict):
-            return {
-                key: (
-                    mapping.get(item, item)
-                    if key in {"paper_id", "source", "target"} and isinstance(item, str)
-                    else [mapping.get(n, n) for n in item]
-                    if key in {"nodes", "overview_nodes"} and isinstance(item, list)
-                    else remap(item)
-                )
-                for key, item in value.items()
-            }
-        if isinstance(value, list):
-            return [remap(item) for item in value]
-        return value
-
-    data = remap(data)
-    for section in data["review"]:
-        section["paragraphs"] = [
-            PAPER_CITATION.sub(lambda m: f"[@{mapping.get(m[1], m[1])}]", paragraph)
-            for paragraph in section["paragraphs"]
-        ]
-    old = snapshot.topics.get(packet.topic.topic_id)
-    if old:
-        if topic_path and Path(topic_path) != snapshot.paths[old.topic_id]:
-            raise MapError(
-                "move a topic directory explicitly, then run render to update relative links"
-            )
-        old_entries = {e.paper_id: e for e in old.entries}
-        incoming_ids = {e["paper_id"] for e in data["entries"]}
-        if any(e.locked_fields and e.paper_id not in incoming_ids for e in old.entries):
-            raise MapError("import would remove a locked entry")
-        for entry in data["entries"]:
-            previous = old_entries.get(entry["paper_id"])
-            if previous:
-                preserve_locks(
-                    previous, entry, conflicts, bundle={"summary", "evidence_by_item", "inspection"}
-                )
-        old_relations = {r.relation_id: r for r in old.relations}
-        relation_ids = {r["relation_id"] for r in data["relations"]}
-        if any(
-            r.locked_fields and r.relation_id not in relation_ids for r in old_relations.values()
-        ):
-            raise MapError("import would remove a locked relation")
-        for relation in data["relations"]:
-            previous = old_relations.get(relation["relation_id"])
-            if previous:
-                preserve_locks(
-                    previous,
-                    relation,
-                    conflicts,
-                    bundle={
-                        "state",
-                        "basis",
-                        "type",
-                        "reason",
-                        "evidence",
-                        "aspect",
-                        "graph_label",
-                        "comparability",
-                        "checked_by",
-                        "checked_at",
-                        "source",
-                        "target",
-                        "limitation",
-                    },
-                )
-    topic = Topic.model_validate(data)
-    snapshot.topics[topic.topic_id] = topic
-    if topic.topic_id not in snapshot.paths:
-        path = Path(topic_path) if topic_path else Path("topics") / topic.topic_id
-        resolved = inside(repo, repo / path / "topic.yaml")
-        if not resolved.is_relative_to((repo / "topics").resolve()):
-            raise MapError("topic path must be inside topics/")
-        path = resolved.parent.relative_to(repo.resolve())
-        if path in snapshot.paths.values():
-            raise MapError("topic path is already occupied")
-        snapshot.paths[topic.topic_id] = path
-    invalidate_versions(snapshot, changed)
-    snapshot.validate()
-    public = public_snapshot(snapshot)
-    public_files = prepare_commit(repo, public)
-    private_files = {}
-    for key, current in snapshot.topics.items():
-        if key == topic.topic_id or changed & {e.paper_id for e in current.entries}:
-            pending = research_packet(current, snapshot)
-            private_files[private / key / "review-packet.yaml"] = yaml_text(pending)
-    write_files(private, private_files)
-    write_files(repo, public_files)
-    write_files(
-        private,
-        {
-            private / "import-report.json": json_text(
-                {"conflicts": conflicts, "remapped_ids": mapping}
-            )
-        },
-    )
-    return conflicts
-
-
-def preserve_locks(previous, incoming: dict, conflicts: list[str], bundle: set[str]) -> None:
-    original = previous.model_dump()
-    locked = set(previous.locked_fields)
-    if locked & bundle:
-        locked |= bundle
-    for key in locked:
-        if original[key] != incoming[key]:
-            conflicts.append(
-                f"{original.get('paper_id', original.get('relation_id'))}.{key}: locked value preserved"
-            )
-            incoming[key] = original[key]
-    incoming["locked_fields"] = sorted(set(previous.locked_fields + incoming["locked_fields"]))
 
 
 def topic_slug(theme: str) -> str:
@@ -345,13 +131,7 @@ def add_seeds(
                 continue
             snapshot.works[work.paper_id] = work
             if work.paper_id not in {e.paper_id for e in topic.entries}:
-                topic.entries.append(
-                    Entry(
-                        paper_id=work.paper_id,
-                        group=topic.groups[0].id,
-                        inspection=Inspection(version_id=work.representative_version_id),
-                    )
-                )
+                topic.entries.append(Entry(paper_id=work.paper_id, group=topic.groups[0].id))
                 accepted.append(
                     {
                         "paper_id": work.paper_id,
@@ -360,8 +140,6 @@ def add_seeds(
                 )
     if accepted:
         existing_path = private / topic.topic_id / "adoptions.json"
-        import json
-
         previous = (
             json.loads(existing_path.read_text(encoding="utf-8")) if existing_path.exists() else []
         )
@@ -419,24 +197,18 @@ def discover(
 
 def research_handoff(private: Path, topic: Topic, snapshot: Snapshot, events: list[dict]) -> Path:
     target = private / topic.topic_id
-    packet = research_packet(topic, snapshot)
     instruction = f"""# 調査メモ：{topic.title}
 
 テーマの問い：{topic.question}
 
 このテーマを引用リンク付きの概説と文献一覧に整理します。調査方法や利用するAI・検索・プラグインは自由です。情報が揃った部分から反映し、誤りや不足は随時修正します。
 
-補助ファイル：`packet.generated.yaml` は現在のデータ、`packet.yaml` は編集用コピーです。既存の編集用コピーは上書きしません。検索を行った場合の候補は `candidates.json`、取得応答は作業領域の `responses/` にあります。
-
-正本の `data/works.jsonl` と `topics/*/topic.yaml` を直接編集して `lgm render` で反映できます。コピーを使う場合は `lgm --repo <対象repo> import <packet.yaml>`。入力形式の詳細は `docs/USAGE.md` と `lgm schema --output schemas` を参照してください。
+正本は `data/works.jsonl`（書誌と要点の既定値）と `topics/**/topic.yaml`（テーマの分類・概説・系譜）です。直接編集して `lgm lint` と `lgm render` で確認します。検索を行った場合の候補は `candidates.json`、取得応答は作業領域の `responses/` にあります。入力形式の詳細は `docs/USAGE.md` と `lgm schema --output schemas` を参照してください。
 """
     files = {
-        target / "packet.generated.yaml": yaml_text(packet),
         target / "RESEARCH_REQUEST.md": instruction,
         target / "search-report.json": json_text(events),
     }
-    if not (target / "packet.yaml").exists():
-        files[target / "packet.yaml"] = yaml_text(packet)
     write_files(private, files)
     return target / "RESEARCH_REQUEST.md"
 
@@ -452,12 +224,10 @@ def refresh(snapshot: Snapshot, topic: Topic, provider: Crossref) -> list[str]:
             continue
         try:
             incoming = crossref_work(provider.resolve(doi), work.paper_id)
-            # Crossref refresh does not change evidence/version identifiers already assigned by a researcher.
+            # Crossref refresh does not change version identifiers already assigned by a researcher.
             incoming.versions[0].version_id = work.version().version_id
             incoming.representative_version_id = work.version().version_id
-            snapshot.works[work.paper_id] = merge_work(
-                work, incoming, conflicts, metadata_only=True
-            )
+            snapshot.works[work.paper_id] = merge_bibliography(work, incoming, conflicts)
         except MapError as exc:
             limitations.append(f"{work.paper_id}: {exc}")
     limitations.extend(conflicts)
@@ -476,7 +246,17 @@ def public_snapshot(snapshot: Snapshot) -> Snapshot:
             key for key in topic.navigation.related if snapshot.topics[key].public
         ]
         topics[key] = topic
-    papers = {paper for topic in topics.values() for paper in referenced_papers(topic)}
+    papers = set()
+    for topic in topics.values():
+        papers |= referenced_papers(topic, snapshot.works)
+    pending = list(papers)
+    while pending:
+        work = snapshot.works[pending.pop()]
+        for key in ("question", "method", "contribution"):
+            for ref in getattr(work.evidence_by_item, key):
+                if ref.paper_id not in papers:
+                    papers.add(ref.paper_id)
+                    pending.append(ref.paper_id)
     result = Snapshot(
         overview=copy.deepcopy(snapshot.overview),
         works={key: snapshot.works[key] for key in sorted(papers)},

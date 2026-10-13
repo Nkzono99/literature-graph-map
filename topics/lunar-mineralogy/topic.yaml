@@ -2,974 +2,15 @@ schema_version: 1
 topic_id: lunar-mineralogy
 title: 月の鉱物・元素組成
 question: 軌道分光と返還試料、模擬物実験から、月の組成と衝突・加熱による物質変化をどう読み取るか。
-public: true
-navigation:
-  parent: lunar-geology
-  related:
-  - kaguya
-  - lunar-water
-  - lunar-volcanism
-  - lunar-craters
-  - dust-adhesion
-  - lunar-magnetic-anomalies
-groups:
-- id: composition
-  title: 鉱物・元素分布
-- id: calibration
-  title: 機器間比較・較正
-- id: samples
-  title: 返還試料・宇宙風化
-- id: materials
-  title: 熱履歴・磁性相
-- id: isotopes
-  title: Li同位体・分化
-entries:
-- paper_id: P000172
-  group: composition
-  role: MIによる純斜長岩の分布
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 月高地の地殻はどの程度斜長石に富むか。
-    method: MIの斜長石吸収帯を使って全球の露出地点を調べる。
-    contribution: 高純度斜長岩の分布を示し、地殻形成モデルを制約した。
-  evidence_by_item:
-    question:
-    - paper_id: P000172
-      version_id: V1
-      url: https://www.nature.com/articles/nature08317
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000172
-      version_id: V1
-      url: https://www.nature.com/articles/nature08317
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000172
-      version_id: V1
-      url: https://www.nature.com/articles/nature08317
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-- paper_id: P000173
-  group: composition
-  role: SPによるかんらん石と深部物質の候補
-  summary:
-    question: 月面のかんらん石露出はどこに分布し、その一部が衝突盆地が形成された際に掘り出されたマントル物質である可能性はあるか。全球分布と起源を調べた。
-    method: かぐや搭載のスペクトルプロファイラで月面を全球調査し、反射スペクトルからかんらん石の露出を探した。放射伝達モデルで盆地周辺の露出物の起源を検討した。
-    contribution: 地殻の薄い南極エイトケン、雨の海、モスクワの海の各盆地周辺に多くの露出を見いだした。一部は上部マントル起源と示唆されるが、マグネシウムに富む下部地殻の深成岩起源も候補に残る。
-  evidence_by_item:
-    question:
-    - paper_id: P000173
-      version_id: V1
-      url: https://www.nature.com/articles/ngeo897
-      source_type: abstract
-      locator: Abstract 第1文（月マントル組成・構造・進化の制約不足）、第4–7文（全球調査と起源）
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000173
-      version_id: V1
-      url: https://www.nature.com/articles/ngeo897
-      source_type: abstract
-      locator: Abstract 第4文（Spectral Profiler による月面全球調査）、第7文（radiative transfer modelling）
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000173
-      version_id: V1
-      url: https://www.nature.com/articles/ngeo897
-      source_type: abstract
-      locator: Abstract 第5–7文（South Pole-Aitken、Imbrium、Moscoviense 盆地周辺の露出、二つの起源候補、一部の上部マントル起源）
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
-- paper_id: P000174
-  group: composition
-  role: SPアーカイブによるイルメナイト分布
-  summary:
-    question: 月面のイルメナイト富化を示すスペクトル候補はどこに分布し、火砕堆積物・高地・高Ti海玄武岩との層序関係をどう説明できるか。
-    method: かぐやSP Level 2Cで1 µm吸収内の1003.6 nmの小さな盛り上がりと1797.6/752.8 nm反射率比 >2.4を併用し、51観測点を抽出。MI Map 3.0を70 mセルに平均して局所スペクトルを分類し、TC DTMとLROC NAC像で地質・被覆層を読む。
-    contribution: 候補の大部分は表側の盆地周縁にあり、暗い火砕堆積物が高地物質を覆う地質と対応する。既存高Ti海の主要分布域は同じ分光特徴を示さず、その原因は鉱物混合・粒径・成熟度・Tiの相配分等の複数の説明が残る。候補分布を資源探査に使う提案だが、含有率や採掘可能質量の実測ではない。
-  evidence_by_item:
-    question:
-    - paper_id: P000174
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JE008663
-      source_type: full_text
-      locator: PDF pp.6–9, §3.1, Figs.2–3, Table 3; PDF pp.18–19, §4.2
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000174
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JE008663
-      source_type: full_text
-      locator: PDF p.3, §2.1; PDF pp.5–6, §2.2, Tables1–2; PDF pp.6–9, §3.1, Figs.2–3, Table 3
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000174
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JE008663
-      source_type: full_text
-      locator: PDF pp.6–9, §3.1, Figs.2–3, Table 3; PDF p.11, Fig.5, §3.2.1; PDF pp.13–17, §§3.2.3–3.2.5, Figs.7–9; PDF pp.18–19, §4.2; PDF p.19, §4.3
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-- paper_id: P000175
-  group: composition
-  role: 月面U–Th共変動と裏側高地の組成差
-  summary:
-    question: 月面のUをThとは別に測って全球分布を描き、全球的な共変動と裏側高地のU/Thの地域差が地殻組成に何を示すか。
-    method: 2007年12月〜2008年12月のかぐやGRS観測2674時間を用い、U系列214Biの1764.5 keV線とTh系列208Tlの2614.5 keV線を干渉線からピークフィットで分離した。背景・デッドタイム・高度を補正し、放出率・輸送・幾何・検出効率の計算で濃度較正した。9°画素の分布図と広域高地の積算値を比較した。
-    contribution: Uの独立した全球分布図を作成し、全球U–Th回帰の傾き0.269±0.007と裏側東西高地のUの差を示した。東西のThは0.36±0.02と0.33±0.02 ppmで統計誤差の範囲内、Uは0.34±0.01と0.21±0.01 ppmだった。著者は地殻の不均一形成を示唆するが、Uの系統誤差と形成後の元素移動を条件として残す。
-  evidence_by_item:
-    question:
-    - paper_id: P000175
-      version_id: V1
-      url: https://doi.org/10.1029/2010gl043061
-      source_type: full_text
-      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.2–3 ¶9, Figs.3–4 PDF p.4 Fig.5, ¶¶10–15
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000175
-      version_id: V1
-      url: https://doi.org/10.1029/2010gl043061
-      source_type: full_text
-      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.2–3 ¶9, Figs.3–4 PDF p.4 Fig.5, ¶¶10–15
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000175
-      version_id: V1
-      url: https://doi.org/10.1029/2010gl043061
-      source_type: full_text
-      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.2–3 ¶9, Figs.3–4 PDF p.4 Fig.5, ¶¶10–15
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-- paper_id: P000277
-  group: calibration
-  role: 観測機器間の放射輝度比較
-  summary:
-    question: 空間・分光分解能や観測時の照明条件が異なる、かぐやとチャンドラヤーン1号の光学機器は、月面の放射輝度をどこまで一致して測定するか。
-    method: 2008～2009年の両衛星の放射輝度データを機器間で相互検証し、較正用に系統的に取得した地上望遠鏡の観測データとも比較した。
-    contribution: 月物質の全体的なスペクトル特性は機器間で一致したが、小さな系統差が残った。着陸地点の遠隔観測輝度は持ち帰り土壌の室内測定からの推定値より低く、著者らは表層の微細構造の再現困難さを主因とした。
-  evidence_by_item:
-    question:
-    - paper_id: P000277
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513003096
-      source_type: abstract
-      locator: Abstract, sentences 1–3
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000277
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513003096
-      source_type: abstract
-      locator: Abstract, sentences 1 and 3
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000277
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513003096
-      source_type: abstract
-      locator: Abstract, sentences 5–7
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
-- paper_id: P000278
-  group: calibration
-  role: 観測幾何と測光補正
-  summary:
-    question: かぐやとチャンドラヤーン1号の月面反射スペクトルに見られる違いは、観測時の照明条件を補正する測光モデルの違いによって、どこまで説明できるか。
-    method: M³とSPで使う測光モデルの位相関数を比較し、かぐやのMI・TCと地上のROLOも含む反射スペクトルの相違を調べた。
-    contribution: 位相角20〜75度では補正はよく一致し、小位相角の差には観測角度や地形の扱いが関わる可能性を示した。SPの急なスペクトル勾配とM³の低い反射率は補正の違いでは説明できず、解釈時の注意点となる。
-  evidence_by_item:
-    question:
-    - paper_id: P000278
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
-      source_type: abstract
-      locator: Abstract, sentences 1–2
-      checked_at: '2026-10-06'
-    - paper_id: P000278
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
-      source_type: full_text
-      locator: Introduction, paragraph 2
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000278
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
-      source_type: abstract
-      locator: Abstract, sentence 2
-      checked_at: '2026-10-06'
-    - paper_id: P000278
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
-      source_type: full_text
-      locator: Introduction, paragraph 3
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000278
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
-      source_type: abstract
-      locator: Abstract, sentences 3–10
-      checked_at: '2026-10-06'
-    - paper_id: P000278
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002091
-      source_type: abstract
-      locator: Highlights, bullets 2–5
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
-- paper_id: P000279
-  group: calibration
-  role: MI・SP・M³の反射スペクトル比較
-  summary:
-    question: かぐやとチャンドラヤーン1号の月面反射率データは、観測条件や較正の違いを含めてどこまで一致し、組成推定に合わせて利用できるか。
-    method: 両衛星の5機器と地上望遠鏡のデータについて、放射輝度から反射率への変換手順と各データの特徴を整理し、異なる機器の反射スペクトルを比較した。
-    contribution: 絶対反射率には一部で小さな差が残る一方、スペクトル形状は機器間で対応し、複数機器のデータを組み合わせて各地質領域の組成を推定できることを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000279
-      version_id: V1
-      url: https://okayama.elsevierpure.com/en/publications/one-moon-many-measurements-3-spectral-reflectance/
-      source_type: abstract
-      locator: Abstract、第1文
-      checked_at: '2026-10-06'
-    - paper_id: P000279
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002108
-      source_type: abstract
-      locator: Abstract、第1文
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000279
-      version_id: V1
-      url: https://okayama.elsevierpure.com/en/publications/one-moon-many-measurements-3-spectral-reflectance/
-      source_type: abstract
-      locator: Abstract、第2文
-      checked_at: '2026-10-06'
-    - paper_id: P000279
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002108
-      source_type: abstract
-      locator: Abstract、第2文
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000279
-      version_id: V1
-      url: https://okayama.elsevierpure.com/en/publications/one-moon-many-measurements-3-spectral-reflectance/
-      source_type: abstract
-      locator: Abstract、第3文
-      checked_at: '2026-10-06'
-    - paper_id: P000279
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103513002108
-      source_type: abstract
-      locator: Abstract、第3文
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
-- paper_id: P000286
-  group: samples
-  role: Ni同位体から読む衝突物質の供給
-  summary:
-    question: 月裏側の微小隕石供給と衝突蒸発はNi同位体にどう記録されるか。
-    method: Chang'e-6のレゴリスと岩片のNi同位体組成を測定する。
-    contribution: 重い同位体への偏りと一部岩片の軽い組成を、累積的な蒸発と再凝縮で解釈した。同位体異常から、長期平均の供給物質は主に内太陽系起源と推定した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000286
-      version_id: V1
-      url: https://api.crossref.org/works/10.1038/s43247-026-04038-1
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000286
-      version_id: V1
-      url: https://api.crossref.org/works/10.1038/s43247-026-04038-1
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000286
-      version_id: V1
-      url: https://api.crossref.org/works/10.1038/s43247-026-04038-1
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-- paper_id: P000287
-  group: samples
-  role: 衝突蒸気からの二次鉱物形成
-  summary:
-    question: 衝突による蒸発と堆積は月レゴリス中の元素をどう再分配するか。
-    method: Chang'e-5の宇宙風化したかんらん石片に付着するクロム鉄鉱ナノ粒子の形態と組織を調べる。
-    contribution: 粒子の特徴を気相からの凝縮で説明し、衝突時のCr・Fe・Oの局所的な蒸発と、その後の再堆積を示す鉱物学的証拠とした。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000287
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je009807
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000287
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je009807
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000287
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je009807
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-- paper_id: P000290
-  group: samples
-  role: 鉱物・形状・付着からの安息角推定
-  summary:
-    question: 月裏側レゴリスの鉱物組成と粒子表面は安息角をどう変えるか。
-    method: Chang'e-6の5種・30粒子の形状、表面エネルギー、摩擦を調べ、粒子集団の安息角を実験とモデルで評価する。
-    contribution: 月重力では摩擦・形状が支配する領域と付着が支配する領域の境界が、地球の約100 μmから約200 μmへ移ると推定した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000290
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009536
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000290
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009536
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000290
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2025je009536
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-- paper_id: P000293
-  group: samples
-  role: 月裏側粒子の三次元形状と集団強度
-  summary:
-    question: 月裏側粒子の不規則な形状はレゴリスの強度へどう寄与するか。
-    method: Chang'e-6試料のX線CTと半教師あり学習で349,740粒子を再構成し、実形状を使う離散要素法で力学応答を計算する。
-    contribution: 拘束圧5〜15 kPaの計算で内部摩擦角47.96°、粘着力1.08 kPaを得た。強度増加を主に粒子のかみ合いで説明した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000293
-      version_id: V1
-      url: https://api.crossref.org/works/10.34133/research.1064
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000293
-      version_id: V1
-      url: https://api.crossref.org/works/10.34133/research.1064
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000293
-      version_id: V1
-      url: https://api.crossref.org/works/10.34133/research.1064
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-- paper_id: P000297
-  group: materials
-  role: 熱処理によるFe再分配と磁性相形成
-  summary:
-    question: 模擬レゴリス中のFeは加熱でどのような磁性相へ変わるか。
-    method: 低酸素分圧で玄武岩質模擬物を加熱し、磁化測定、Mössbauer分光、X線回折、透過電子顕微鏡で調べる。
-    contribution: 800°Cの加熱後に金属Feと磁鉄鉱に似た相が形成され、20 kOeでの質量磁化が約27.5%増えた。さらに高温では磁性相の保持と磁化が低下した。
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-25'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000297
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je010010
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    method:
-    - paper_id: P000297
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je010010
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-    contribution:
-    - paper_id: P000297
-      version_id: V1
-      url: https://api.crossref.org/works/10.1029/2026je010010
-      source_type: abstract
-      locator: 出版社提供の公開要旨（Crossref）
-      checked_at: '2026-09-25'
-- paper_id: P000311
-  role: 極域レゴリスの絶縁破壊風化
-  summary:
-    question: 内部帯電による絶縁破壊は、極域レゴリスの微細構造を変え得るか。
-    method: 陽子フルエンスモデルとDivinerの温度を組み合わせ、破壊を起こし得るSEPイベントの履歴を推定する。
-    contribution: 永久影の低温条件で繰り返し破壊が起こる可能性を示し、細粒化や空隙構造への寄与を論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000311
-      version_id: V1
-      url: https://doi.org/10.1002/2014JE004710
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000311
-      version_id: V1
-      url: https://doi.org/10.1002/2014JE004710
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000311
-      version_id: V1
-      url: https://doi.org/10.1002/2014JE004710
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: samples
-- paper_id: P000312
-  role: 絶縁破壊と衝突風化の速度比較
-  summary:
-    question: 永久影での絶縁破壊による改変は、微隕石衝突と比べてどの程度か。
-    method: SEP観測とレゴリスの露出履歴を用い、絶縁破壊と衝突のエネルギー・溶融蒸発収支を比較する。
-    contribution: 最も低温な永久影では、破壊による溶融・蒸発が微隕石衝突に匹敵し得ると見積もった。
-  evidence_by_item:
-    question:
-    - paper_id: P000312
-      version_id: V1
-      url: https://ntrs.nasa.gov/citations/20170002355
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000312
-      version_id: V1
-      url: https://ntrs.nasa.gov/citations/20170002355
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000312
-      version_id: V1
-      url: https://ntrs.nasa.gov/citations/20170002355
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: samples
-- paper_id: P000323
-  role: 月試料中のγ鉄と磁区構造
-  summary:
-    question: 月面温度で残るγ鉄は、どのような磁化を保持するか。
-    method: Chang’e-6衝突ガラスのナノ粒子を同定し、電子ホログラフィーで磁区構造を調べる。
-    contribution: 常温で安定なγ鉄の磁気ボルテックスを示し、急冷・微量元素による保存と衝撃磁化の記録可能性を論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000323
-      version_id: V1
-      url: https://doi.org/10.1073/pnas.2608395123
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000323
-      version_id: V1
-      url: https://doi.org/10.1073/pnas.2608395123
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000323
-      version_id: V1
-      url: https://doi.org/10.1073/pnas.2608395123
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: materials
-- paper_id: P000331
-  role: 熱伝導率による成熟度の推定
-  summary:
-    question: 粒子構造と充填状態から、熱伝導率をレゴリス成熟度の指標にできるか。
-    method: 粒子のボクセル特徴と熱物性をGaussian過程回帰で結び、熱抵抗ネットワークで試料全体へ接続する。
-    contribution: 成熟度に対応した実効熱伝導率の変化を示し、遠隔観測や磁気共鳴による評価と比較する補完指標を提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000331
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009847
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000331
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009847
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000331
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009847
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: materials
-- paper_id: P000336
-  role: 被覆率による水吸着機構の変化
-  summary:
-    question: 月面鉱物に吸着する水が増えると、保持を支配する要因はどう変わるか。
-    method: 代表的な四種のレゴリス鉱物表面で、単分子・複数分子の吸着を第一原理計算で比較する。
-    contribution: 低被覆率では金属サイトへの配位、高被覆率では水素結合の連結と表面形状が安定化を支配することを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000336
-      version_id: V1
-      url: https://doi.org/10.3390/ma19173805
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000336
-      version_id: V1
-      url: https://doi.org/10.3390/ma19173805
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000336
-      version_id: V1
-      url: https://doi.org/10.3390/ma19173805
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: composition
-- paper_id: P000337
-  role: Aristarchusの受動マイクロ波観測
-  summary:
-    question: 火砕堆積物の分布と地下熱環境を、受動マイクロ波からどう制約するか。
-    method: Chang’e-2のマイクロ波放射計から時刻別の輝度温度・規格化温度地図を作り、地質図と比較する。
-    contribution: 高い蓄熱能力と、光学・レーダー推定より広い火砕堆積物分布の可能性を示し、地下温度・熱流束も論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000337
-      version_id: V1
-      url: https://doi.org/10.3390/rs18183194
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000337
-      version_id: V1
-      url: https://doi.org/10.3390/rs18183194
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000337
-      version_id: V1
-      url: https://doi.org/10.3390/rs18183194
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: composition
-- paper_id: P000371
-  group: samples
-  role: 単一玄武岩の鉱物・衝撃記録
-  summary:
-    question: Chang’e-5玄武岩の鉱物は、マグマの形成と衝撃履歴をどう記録するか。
-    method: 一つの玄武岩試料を走査電子顕微鏡と顕微ラマン分光で非破壊分析した。
-    contribution: 低Ti組成を確認し、衝撃圧力の下限を5.2 GPa、上限を20～25 GPaと推定した。混合マントル源と浅部での分別結晶化を提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000371
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
-      source_type: abstract
-      locator: Abstract, sentences 1–2
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000371
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
-      source_type: abstract
-      locator: Abstract, sentence 2 (one basalt sample)
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000371
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009952
-      source_type: abstract
-      locator: Abstract, sentences 3–5
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
-- paper_id: P000372
-  group: isotopes
-  role: 月隕石によるLi同位体の再評価
-  summary:
-    question: 月のLi同位体比を、内部の分化と衝突改変からどう分けて読むか。
-    method: 玄武岩・Mg-suite・斜長岩を含む12個の月隕石を測定し、分化モデルと比較した。
-    contribution: 月マントルのδ⁷Liを3.8±1.3‰と推定した。高Ti玄武岩にはメルトとマントルの相互作用、斜長岩の散らばりには衝突再分配を提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000372
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
-      source_type: abstract
-      locator: Abstract, sentence 1
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000372
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
-      source_type: abstract
-      locator: Abstract, sentences 1–4
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000372
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE010077
-      source_type: abstract
-      locator: Abstract, sentences 5–7
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
-- paper_id: P000373
-  group: samples
-  role: アグルチネート構造と集団強度
-  summary:
-    question: ガラス質アグルチネートの構造は、模擬レゴリスの強度をどう変えるか。
-    method: 高温真空焼結で粒子を作り、単粒子圧縮、安息角、小型三軸試験で評価した。
-    contribution: 密度をそろえると、溶融・ガラス含有の多い粒子ほどせん断強度の増加とひずみ軟化が顕著になった。
-  evidence_by_item:
-    question:
-    - paper_id: P000373
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009810
-      source_type: abstract
-      locator: Abstract, sentences 1–2
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000373
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009810
-      source_type: abstract
-      locator: Abstract, sentences 2–4
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000373
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009810
-      source_type: abstract
-      locator: Abstract, sentences 5–7
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
-- paper_id: P000374
-  group: samples
-  role: 粒径・金属鉄の光学効果
-  summary:
-    question: 粒径と表面の金属鉄が、月模擬物の反射・偏光へ及ぼす効果をどう分けるか。
-    method: JSC-1AとKLS-1を分級し、水素還元の前後で反射スペクトルと偏光を測った。
-    contribution: 還元で暗化と正の偏光増加が起きた。粒径間の反射率差は縮小したが、偏光とアルベドの関係には粒径依存が残った。
-  evidence_by_item:
-    question:
-    - paper_id: P000374
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009905
-      source_type: abstract
-      locator: Abstract, sentences 1–3
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000374
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009905
-      source_type: abstract
-      locator: Abstract, sentences 4–5
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000374
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2026JE009905
-      source_type: abstract
-      locator: Abstract, sentences 6–7
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
-- paper_id: P000375
-  group: isotopes
-  role: 月・地球・分化天体のLi同位体比較
-  summary:
-    question: 月と他の分化天体はLi同位体組成が共通か。
-    method: 月・地球・火星・ベスタ由来試料の高精度Li分析を比較した。
-    contribution: 月の代表値をδ⁷Li=3.8±0.4‰と推定し、地球との類似性と月内変動の分化起源を検討した。
-  evidence_by_item:
-    question:
-    - paper_id: P000375
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000375
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000375
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0012821X06000367
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
-- paper_id: P000376
-  group: isotopes
-  role: 月・火星のLiリザーバー比較
-  summary:
-    question: 月・火星のLi同位体比はリザーバー間で異なるか。
-    method: 月試料12点と火星隕石7点をMC-ICP-MSで測定した。
-    contribution: 大半は地球マントルに近く、部分溶融での大きな分別を支持しなかった。KREEPに富む角礫岩に例外を認めた。
-  evidence_by_item:
-    question:
-    - paper_id: P000376
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000376
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000376
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0012821X06002093
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-10-07'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
-- paper_id: P000377
-  group: isotopes
-  role: 月マグマオーシャンの高温Li分別
-  summary:
-    question: 高Ti・低Ti玄武岩のLi差は月の高温分化を記録するか。
-    method: Apollo・LaPaz試料のLi同位体をO・Fe同位体と比較し、鉱物内Liも測った。
-    contribution: 高Ti玄武岩の重いLiを示し、月マグマオーシャンの大規模な結晶分化で説明できると論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000377
-      version_id: V1
-      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
-      source_type: full_text
-      locator: Abstract; Introduction
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000377
-      version_id: V1
-      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
-      source_type: full_text
-      locator: 'Methods: bulk-rock MC-ICP-MS and mineral LA-ICP-MS'
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000377
-      version_id: V1
-      url: https://onlinelibrary.wiley.com/doi/full/10.1111/maps.12643
-      source_type: full_text
-      locator: Abstract; discussion of high-temperature differentiation
-      checked_at: '2026-10-07'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
-- paper_id: P000378
-  group: samples
-  role: Chang’e-5の鉱物モード・衝撃記録
-  summary:
-    question: Chang’e-5月壌は母岩と衝撃の履歴をどう残すか。
-    method: 月壌・角礫岩のラマン点計数1259点と顕微像を分析した。
-    contribution: 鉱物・ガラス組成から外来物質の混合と再加工を示唆し、石英・マスケリナイトで衝撃を制約した。
-  evidence_by_item:
-    question:
-    - paper_id: P000378
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
-      source_type: full_text
-      locator: Abstract; 1. Introduction
-      checked_at: '2026-10-07'
-    method:
-    - paper_id: P000378
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
-      source_type: full_text
-      locator: '2. Materials and Methods: 127 + 1132 Raman points'
-      checked_at: '2026-10-07'
-    contribution:
-    - paper_id: P000378
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GL099282
-      source_type: full_text
-      locator: Abstract; 4. Discussion; 5. Conclusions
-      checked_at: '2026-10-07'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-07'
-    recheck: false
 review:
 - heading: 鉱物の分布から、地殻と深部物質を考える
   paragraphs:
   - '[@P000172]はMIの斜長石吸収帯から、高純度の斜長岩の全球分布を調べた。地殻形成モデルに対する組成の制約になる。[@P000173]のかんらん石分布は、衝突盆地周辺で深部物質が露出した可能性を考える入口である。'
-  - UとThは表側PKTで濃集し、全球の濃度相関はR²=0.97、回帰の傾きは0.269±0.007だった。一方、裏側東高地と西高地の広域平均では、Thが0.36±0.02と0.33±0.02 ppmで統計誤差内にあるのに対し、Uの報告値は0.34±0.01と0.21±0.01 ppmと異なる。併記された±は全系統誤差を含む誤差予算としては示されず、−0.11 ppmのU補正案の適用も明記されない。著者は不均一な地殻形成の可能性を示唆するが、Uの絶対較正に関する系統誤差と形成後の元素移動を残している。全球的な元素の共変動と地域的な組成差を両立させて読む結果である[@P000175]。
-  - Yamamoto et al. (2025)のイルメナイト富化スペクトル候補は、表側の盆地周縁の火砕堆積物に多く、既存TiO₂地図で高Tiとされる海の主要分布域では同じ特徴が検出されなかった。この違いには輝石との混合、粒径、成熟度、Tiを含む他鉱物相が関係し得るため、未検出をイルメナイトの不存在へ置き換えることはできず、火砕堆積物と高Ti海の含有率の優劣も未確定である。（PDF pp.6–7,16,18–19, §§3.1,3.2.6,4.2–4.3）[@P000174]
+  - UとThは表側PKTで濃集し、全球の濃度相関はR²=0.97、回帰の傾きは0.269±0.007だった。一方、裏側東高地と西高地の広域平均では、Thが0.36±0.02と0.33±0.02
+    ppmで統計誤差内にあるのに対し、Uの報告値は0.34±0.01と0.21±0.01 ppmと異なる。併記された±は全系統誤差を含む誤差予算としては示されず、−0.11
+    ppmのU補正案の適用も明記されない。著者は不均一な地殻形成の可能性を示唆するが、Uの絶対較正に関する系統誤差と形成後の元素移動を残している。全球的な元素の共変動と地域的な組成差を両立させて読む結果である[@P000175]。
+  - '[@P000174]のイルメナイト富化スペクトル候補は、表側の盆地周縁の火砕堆積物に多く、既存TiO₂地図で高Tiとされる海の主要分布域では同じ特徴が検出されなかった。この違いには輝石との混合、粒径、成熟度、Tiを含む他鉱物相が関係し得るため、未検出をイルメナイトの不存在へ置き換えることはできず、火砕堆積物と高Ti海の含有率の優劣も未確定である。（PDF
+    pp.6–7,16,18–19, §§3.1,3.2.6,4.2–4.3）'
   - 組成と地下熱環境をつなぐ[@P000337]は、Chang’e-2のマイクロ波輝度温度を地質図と比較し、Aristarchus周辺で火砕堆積物が光学・レーダー推定より広い可能性を示した。鉱物の吸収帯による表層の分布と、マイクロ波が捉える深さの熱的な性質を対応させて解釈する。
 - heading: 機器の違いをそろえてから、組成を比べる
   paragraphs:
@@ -996,6 +37,7 @@ lineage:
   - paper_id: P000172
     title: 高地の純斜長岩を調べる
     significance: MIの吸収帯から高純度斜長岩の分布を捉えた。
+    connection: ''
   - paper_id: P000173
     title: 衝突盆地周辺の深部物質へ
     significance: かんらん石の分布から深部起源の可能性を調べた。
@@ -1009,6 +51,7 @@ lineage:
   - paper_id: P000293
     title: 月裏側粒子の形状を再構成する
     significance: 大規模な三次元形状データを離散要素法の強度評価へつないだ。
+    connection: ''
   - paper_id: P000290
     title: 鉱物と表面特性を加える
     significance: 摩擦・形状と付着の寄与が粒径・重力で変わることを調べた。
@@ -1018,6 +61,7 @@ lineage:
   - paper_id: P000378
     title: 多粒子の鉱物と衝撃を調べる
     significance: ラマン分光と顕微像で返還試料の鉱物学を整理した。
+    connection: ''
   - paper_id: P000371
     title: 一つの玄武岩を詳しく調べる
     significance: 鉱物の組織と組成をマグマ履歴へ接続した。
@@ -1027,6 +71,7 @@ lineage:
   - paper_id: P000375
     title: 惑星間比較の基準を得る
     significance: 月のLiを他天体と比較する出発点を示した。
+    connection: ''
   - paper_id: P000376
     title: 月内部の試料間差を比べる
     significance: 試料のリザーバーごとに同位体を比較した。
@@ -1039,8 +84,164 @@ lineage:
     title: 月隕石で代表値を再評価
     significance: 内部の分化と表層での改変を分けた。
     connection: 採取地点の異なる試料へ比較を広げる
+public: true
+scope:
+  include: []
+  exclude: []
+navigation:
+  parent: lunar-geology
+  related:
+  - kaguya
+  - lunar-water
+  - lunar-volcanism
+  - lunar-craters
+  - dust-adhesion
+  - lunar-magnetic-anomalies
+groups:
+- id: composition
+  title: 鉱物・元素分布
+- id: calibration
+  title: 機器間比較・較正
+- id: samples
+  title: 返還試料・宇宙風化
+- id: materials
+  title: 熱履歴・磁性相
+- id: isotopes
+  title: Li同位体・分化
+entries:
+- paper_id: P000172
+  group: composition
+  role: MIによる純斜長岩の分布
+- paper_id: P000173
+  group: composition
+  role: SPによるかんらん石と深部物質の候補
+- paper_id: P000174
+  group: composition
+  role: SPアーカイブによるイルメナイト分布
+- paper_id: P000175
+  group: composition
+  role: 月面U–Th共変動と裏側高地の組成差
+  evidence_by_item:
+    question:
+    - paper_id: P000175
+      version_id: V1
+      url: https://doi.org/10.1029/2010gl043061
+      source_type: full_text
+      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF
+        p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.2–3 ¶9, Figs.3–4
+        PDF p.4 Fig.5, ¶¶10–15
+      checked_at: '2026-10-13'
+    method:
+    - paper_id: P000175
+      version_id: V1
+      url: https://doi.org/10.1029/2010gl043061
+      source_type: full_text
+      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF
+        p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.2–3 ¶9, Figs.3–4
+        PDF p.4 Fig.5, ¶¶10–15
+      checked_at: '2026-10-13'
+    contribution:
+    - paper_id: P000175
+      version_id: V1
+      url: https://doi.org/10.1029/2010gl043061
+      source_type: full_text
+      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF
+        p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.2–3 ¶9, Figs.3–4
+        PDF p.4 Fig.5, ¶¶10–15
+      checked_at: '2026-10-13'
+- paper_id: P000277
+  group: calibration
+  role: 観測機器間の放射輝度比較
+- paper_id: P000278
+  group: calibration
+  role: 観測幾何と測光補正
+- paper_id: P000279
+  group: calibration
+  role: MI・SP・M³の反射スペクトル比較
+- paper_id: P000286
+  group: samples
+  role: Ni同位体から読む衝突物質の供給
+- paper_id: P000287
+  group: samples
+  role: 衝突蒸気からの二次鉱物形成
+- paper_id: P000290
+  group: samples
+  role: 鉱物・形状・付着からの安息角推定
+- paper_id: P000293
+  group: samples
+  role: 月裏側粒子の三次元形状と集団強度
+- paper_id: P000297
+  group: materials
+  role: 熱処理によるFe再分配と磁性相形成
+- paper_id: P000311
+  group: samples
+  role: 極域レゴリスの絶縁破壊風化
+- paper_id: P000312
+  group: samples
+  role: 絶縁破壊と衝突風化の速度比較
+- paper_id: P000323
+  group: materials
+  role: 月試料中のγ鉄と磁区構造
+- paper_id: P000331
+  group: materials
+  role: 熱伝導率による成熟度の推定
+- paper_id: P000336
+  group: composition
+  role: 被覆率による水吸着機構の変化
+- paper_id: P000337
+  group: composition
+  role: Aristarchusの受動マイクロ波観測
+- paper_id: P000371
+  group: samples
+  role: 単一玄武岩の鉱物・衝撃記録
+  summary:
+    question: Chang’e-5玄武岩の鉱物は、マグマの形成と衝撃履歴をどう記録するか。
+    method: 一つの玄武岩試料を走査電子顕微鏡と顕微ラマン分光で非破壊分析した。
+    contribution: 低Ti組成を確認し、衝撃圧力の下限を5.2 GPa、上限を20～25 GPaと推定した。混合マントル源と浅部での分別結晶化を提案した。
+- paper_id: P000372
+  group: isotopes
+  role: 月隕石によるLi同位体の再評価
+  summary:
+    question: 月のLi同位体比を、内部の分化と衝突改変からどう分けて読むか。
+    method: 玄武岩・Mg-suite・斜長岩を含む12個の月隕石を測定し、分化モデルと比較した。
+    contribution: 月マントルのδ⁷Liを3.8±1.3‰と推定した。高Ti玄武岩にはメルトとマントルの相互作用、斜長岩の散らばりには衝突再分配を提案した。
+- paper_id: P000373
+  group: samples
+  role: アグルチネート構造と集団強度
+  summary:
+    question: ガラス質アグルチネートの構造は、模擬レゴリスの強度をどう変えるか。
+    method: 高温真空焼結で粒子を作り、単粒子圧縮、安息角、小型三軸試験で評価した。
+    contribution: 密度をそろえると、溶融・ガラス含有の多い粒子ほどせん断強度の増加とひずみ軟化が顕著になった。
+- paper_id: P000374
+  group: samples
+  role: 粒径・金属鉄の光学効果
+- paper_id: P000375
+  group: isotopes
+  role: 月・地球・分化天体のLi同位体比較
+  summary:
+    question: 月と他の分化天体はLi同位体組成が共通か。
+    method: 月・地球・火星・ベスタ由来試料の高精度Li分析を比較した。
+    contribution: 月の代表値をδ⁷Li=3.8±0.4‰と推定し、地球との類似性と月内変動の分化起源を検討した。
+- paper_id: P000376
+  group: isotopes
+  role: 月・火星のLiリザーバー比較
+  summary:
+    question: 月・火星のLi同位体比はリザーバー間で異なるか。
+    method: 月試料12点と火星隕石7点をMC-ICP-MSで測定した。
+    contribution: 大半は地球マントルに近く、部分溶融での大きな分別を支持しなかった。KREEPに富む角礫岩に例外を認めた。
+- paper_id: P000377
+  group: isotopes
+  role: 月マグマオーシャンの高温Li分別
+- paper_id: P000378
+  group: samples
+  role: Chang’e-5の鉱物モード・衝撃記録
+  summary:
+    question: Chang’e-5月壌は母岩と衝撃の履歴をどう残すか。
+    method: 月壌・角礫岩のラマン点計数1259点と顕微像を分析した。
+    contribution: 鉱物・ガラス組成から外来物質の混合と再加工を示唆し、石英・マスケリナイトで衝撃を制約した。
 survey:
   searched_at: '2026-10-07'
+  scope_period: 制限なし
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
@@ -1049,9 +250,15 @@ survey:
   - Crossref・出版社・機関公開記録の要旨
   - 'GitHub Issue #25'
   - 出版社の公開要旨・本文と著者所属機関の書誌
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。 2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue #25の要点・項目別出典と概説引用を追加。 ラマン分析とLi同位体の比較系譜を追加。'
+  queries: []
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。
+    2026-09-25にIssue #9–#10の25文献をDOI・題名・著者・年で照合し、要旨に基づく要点を追加。LunarLeaperは出版版とarXiv版を同一文献に統合。
+    2026-10-07にIssue #25の指定候補をDOI・題名・著者で照合し、当テーマに直接関係する文献を追加した。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   - 2026-09-25の追加分は公開要旨による整理。本文・図表の精読は未実施。系譜は研究上の問い・手法の比較を含み、直接の引用関係を保証しない。
   - 2026-10-07の追加分は、新着4件とMagna・Seitzを公開要旨、Day・Caoを本文の関連節まで確認。系譜には編集上の比較を含む。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #9–#10の文献・概説・系譜と関連テーマを追加。 Issue
+    #25の要点・項目別出典と概説引用を追加。 ラマン分析とLi同位体の比較系譜を追加。'
+  publication_status: draft
+reading_notes: []

@@ -3,7 +3,7 @@
 <header class="page-header">
   <h1>テーマ一覧</h1>
   <p class="lead">テーマごとに文献と要点を整理しています。概説の引用から、各文献を参照できます。</p>
-  {% if overview %}<div class="topic-meta"><span><b>{{ topic_count }}</b>テーマ</span><nav class="jump-links" aria-label="ページ内"><a href="#review">テーマの概観へ</a><a href="#themes">テーマを選ぶ</a></nav></div>{% endif %}
+  <div class="topic-meta"><span><b>{{ topic_count }}</b>テーマ</span><nav class="jump-links" aria-label="ページ内">{% if overview %}<a href="#review">テーマの概観へ</a><a href="#themes">テーマを選ぶ</a>{% endif %}<a href="{{ works_url }}">全文献索引</a></nav></div>
 </header>
 {% if overview %}
 <section id="review" aria-labelledby="review-heading">

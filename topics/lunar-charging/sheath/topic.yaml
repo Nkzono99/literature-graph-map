@@ -6,30 +6,35 @@ review:
 - heading: 電流の釣り合いと電子放出
   paragraphs:
   - '[@P000002]の電流収支は、プラズマの電子・イオンが運ぶ電荷と、光電子・二次電子として出ていく電荷を釣り合わせる。放出特性を測る[@P000001]と、月面電場やシースを整理する[@P000020]を併せて読むと、材料特性から表面電位へ進む筋道が分かる。'
-  - '[@P000020]は、観測で推定した地表電位を遮蔽長で割ってシース電場の規模を整理した。昼側の+10 Vと有効遮蔽長1 mは約10 V/mと整合し、終端では約10 mを仮定して内向き約1～10 V/mを見積もる。終端イオンシースの模式図にはλD≫10 mと記され、遠夜側の約100 mと約1 V/mは推測に残る。この整理から、後続のシース研究では電位分布と有効遮蔽長をどの粒子集団が決めるかが課題になる。'
+  - '[@P000020]は、観測で推定した地表電位を遮蔽長で割ってシース電場の規模を整理した。昼側の+10 Vと有効遮蔽長1 mは約10 V/mと整合し、終端では約10
+    mを仮定して内向き約1～10 V/mを見積もる。終端イオンシースの模式図にはλD≫10 mと記され、遠夜側の約100 mと約1 V/mは推測に残る。この整理から、後続のシース研究では電位分布と有効遮蔽長をどの粒子集団が決めるかが課題になる。'
   - 磁気圏ローブ中の昼側について、[@P000162]は太陽活動に応じた放出電流から電位を予測し、[@P000161]は観測光電子のエネルギーずれから電位を推定する。放出モデルと観測を往復して電流収支を調べる研究として読める。
-  - 電流収支を入力条件ごとに調べたStubbs et al. (2014) では、光放出電流JP0の増加が光電子密度を増やしてDebye長を短くし、表面電場を電位以上に強める。JP0を固定した光電子温度Tpの変化では電位とDebye長がともに増え、ゼロ電位角は変わらないが、光電子密度np0を固定すれば放出電流も変わり、この不変性は成り立たない。さらに非単調PICとの著者比較では、単調モデルの電位は周囲プラズマ基準の表面電位より電位障壁差に近かった。[@P000038]
+  - 電流収支を入力条件ごとに調べた[@P000038]では、光放出電流JP0の増加が光電子密度を増やしてDebye長を短くし、表面電場を電位以上に強める。JP0を固定した光電子温度Tpの変化では電位とDebye長がともに増え、ゼロ電位角は変わらないが、光電子密度np0を固定すれば放出電流も変わり、この不変性は成り立たない。さらに非単調PICとの著者比較では、単調モデルの電位は周囲プラズマ基準の表面電位より電位障壁差に近かった。
 - heading: 単一の表面電位から、空間構造へ
   paragraphs:
-  - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]に進める。
+  - 表面から出た電子の一部は電場で引き戻され、シースに電位の極小が生じる場合がある。[@P000007]はPICで光電子とダストの運動を追い、[@P000030]はUVで作るシースを実験的に調べた。磁気圏尾部では、Lunar
+    Prospectorを使う[@P000033]とARTEMISを使う[@P000036]が非単調な電位構造を論じている。太陽風電子の流れを含む半解析モデルは[@P000011]に進める。
   - Lunar Prospectorによる非単調シースの議論に続き、[@P000036]はARTEMIS P1の電子だけでなくイオン温度も用いて、磁気圏尾部の日照側シースを一次元PICと照合した。イオン温度を上げると電位極小への落差が浅くなり、電子温度が低下してTi/Teが臨界比を超える時間帯には冷たいビームが消える。残る低エネルギーの上向きフラックス、探査機電位による汚染範囲、初期時間帯の予測との差も比較条件に含める。
   - シース内を動く粒子には、場所ごとの電場と電子・イオン電流が同時に効く。[@P000167]は帯電と軌道を連成し、希薄な条件では電子1個ずつの出入りが運動を変えることを示した。
   - シース内の力をダスト輸送へ結び付ける際には、表面から離れるまでの接触も条件になる。[@P000256]の総説はレゴリスの力学と帯電・運動を横断し、離脱時の電荷分布と微小粒子の実験を課題として整理した。シースが与える電場と、粒子を保持する力を対応させるための入口となる。
-  - 電子・光電子の速度分布に加え、イオンの熱圧力と境界から入る速度も電流収支・遮蔽を変える。Sana（2026）はMaxwell分布の電子と一次元定常イオン流を連立し、法線入射速度がBohm速度を十分上回るθ=40°・60°では温度効果が小さく、θ=80°では低温側に電位の初期低下、θ=85°では負の電位極小と光電子障壁の弱化が生じることを示した。さらに、シース端のBohm条件を満たしても正電位層に実数のイオン解がない場合を指摘し、通過条件に合わせた境界速度の修正を提案した。[@P000055]
+  - 電子・光電子の速度分布に加え、イオンの熱圧力と境界から入る速度も電流収支・遮蔽を変える。[@P000055]はMaxwell分布の電子と一次元定常イオン流を連立し、法線入射速度がBohm速度を十分上回るθ=40°・60°では温度効果が小さく、θ=80°では低温側に電位の初期低下、θ=85°では負の電位極小と光電子障壁の弱化が生じることを示した。さらに、シース端のBohm条件を満たしても正電位層に実数のイオン解がない場合を指摘し、通過条件に合わせた境界速度の修正を提案した。
 - heading: 実験の光電子シースを計算と照合する
   paragraphs:
   - '[@P000030]は2010年の会議要旨として参照する。真空中の金属面で作るモデル実験と月面の粒子・材料条件の違いを踏まえ、月面シース計算の比較対象を選ぶ。'
-  - Dove et al. (2012)の真空・金属面実験は、放出電子の返還と別の放出面から来る電子が、光電子層の密度を変えることを示した。負のグリッドに対する浮遊面の電位は約+1.5 Vへ近づき、二面からの電子を含む1D PICが密度分布を概ね再現する。外部の太陽風プラズマやレゴリスを含む月面条件への値の移行には条件差があり、この論文では電位極小やダスト浮上を直接測っていない。[@P000092]
+  - '[@P000092]の真空・金属面実験は、放出電子の返還と別の放出面から来る電子が、光電子層の密度を変えることを示した。負のグリッドに対する浮遊面の電位は約+1.5
+    Vへ近づき、二面からの電子を含む1D PICが密度分布を概ね再現する。外部の太陽風プラズマやレゴリスを含む月面条件への値の移行には条件差があり、この論文では電位極小やダスト浮上を直接測っていない。'
 - heading: 電流収支へ入れる放出・散乱特性を観測で制約する
   paragraphs:
   - 光電子電流を計算するには、入射光子1個から何個の電子が出るかを知る必要がある。[@P000362]はARTEMISと太陽放射モデルから収率の下限を求めたが、放出電子のエネルギー分布の仮定による幅も示した。[@P000363]は後方散乱電子の表面への再衝突を扱った。表面で生成された量と、シースや磁場を通って観測点へ届く量の対応が、電流収支の比較条件になる。
-  - Xuほか（2026）の光電子統計は、電位補正した表面流束が太陽照射に従い、識別可能性が降下電子によって抑えられることを示す。約500 eV Auger電子と100 eV電子の流束を用いる際は、EFIの宇宙機電位と同伴論文からの月面電位補正を区別する必要がある。数密度やシース厚を直接与える結果ではなく、昼側電流収支・電位モデルへつながる観測制約として利用する。傾きの選別閾値は本文と図2で一致せず、実際の設定は未確定である。 [@P000364]
+  - '[@P000364]の光電子統計は、電位補正した表面流束が太陽照射に従い、識別可能性が降下電子によって抑えられることを示す。約500 eV Auger電子と100
+    eV電子の流束を用いる際は、EFIの宇宙機電位と同伴論文からの月面電位補正を区別する必要がある。数密度やシース厚を直接与える結果ではなく、昼側電流収支・電位モデルへつながる観測制約として利用する。傾きの選別閾値は本文と図2で一致せず、実際の設定は未確定である。'
 lineage:
 - title: 放出測定から電位分布へ
   steps:
   - paper_id: P000001
     title: 月試料の光電子放出を測る
     significance: 放出収率とエネルギー分布を測り、材料の特性から月面上の光電子シースを考えた。
+    connection: ''
   - paper_id: P000002
     title: 放出と流入を電流収支にまとめる
     significance: 光電子・二次電子と周囲のプラズマを組み合わせ、昼夜の電位を同じ枠組みで扱った。
@@ -43,9 +48,11 @@ lineage:
   - paper_id: P000030
     title: 光電子シースを実験室で測る
     significance: UVで電子を放出させ、面の近傍の電気的構造を調べる実験系を示した。
+    connection: ''
   - paper_id: P000092
     title: 金属面の実験をPICと比較する
-    significance: バイアスによる密度分布の変化を、表面へ戻る電子とグリッド由来電子を含むPICで概ね再現した。浮遊電位は負グリッドに対して約+1.5 Vで、シース電位極小の直接測定は未達だった。
+    significance: バイアスによる密度分布の変化を、表面へ戻る電子とグリッド由来電子を含むPICで概ね再現した。浮遊電位は負グリッドに対して約+1.5
+      Vで、シース電位極小の直接測定は未達だった。
     connection: 会議要旨に対し、実験・PIC比較の雑誌論文を加える
   - paper_id: P000036
     title: 月周回の電子分布をPICと比べる
@@ -60,6 +67,7 @@ lineage:
   - paper_id: P000362
     title: 酸素Auger電子で光電子を識別
     significance: 月面由来の光電子を選び、放出収率の下限とモデル依存の幅を求めた。
+    connection: ''
   - paper_id: P000363
     title: 表面での後方散乱と再衝突を分ける
     significance: 光電子の識別法を使って後方散乱電子が優勢な事例を選び、磁場の向きと表面脱出の関係を示した。
@@ -89,549 +97,57 @@ entries:
 - paper_id: P000001
   group: balance
   role: 月試料の光電子放出
-  summary:
-    question: 月試料の光電子放出は、どのようなシースを作るか。
-    method: 月試料14259,116の単色光下の収率・電子分布を測り、太陽スペクトルと合わせた放出分布からシースを近似計算。
-    contribution: 実測した放出特性から算出した太陽照射下の光電子分布は、同じ平均エネルギーのMaxwell近似より高エネルギー側が弱かった。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000001
-      version_id: V1
-      url: https://ui.adsabs.harvard.edu/abs/1972LPSC....3.2655F/abstract
-      source_type: full_text
-      locator: pp.2655,2662
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000002
   group: balance
   role: 電流収支の基礎
-  summary:
-    question: 日照とプラズマ環境によって、月面電位はどう変わるか。
-    method: 電子・イオンの流入と、光電子・二次電子の放出を電流収支で計算。
-    contribution: 昼側の正帯電と夜側・高温プラズマ中の負帯電を、電流の釣り合いで整理。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000002
-      version_id: V1
-      url: https://doi.org/10.1007/978-94-010-2647-5_22
-      source_type: abstract
-      locator: p.347 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000020
   group: balance
   role: 電位観測と遮蔽長からシース電場を見積もる
-  summary:
-    question: 太陽風・磁気圏尾部中の月面電位は、SIDE観測と先行理論からどこまで定まり、近地表シースの電場へどう結び付くか。
-    method: SIDEの電圧走査共鳴と終端の低エネルギーイオンから電位を推定し、先行研究を比較。電場は電位と仮定した遮蔽長から概算。
-    contribution: 昼側の正電位と終端の負電位をSIDE観測から推定し、電位と遮蔽長から昼側外向き・終端内向きの電場を概算。夜側と有効遮蔽長の未確定性を残した。
-  evidence_by_item:
-    question:
-    - paper_id: P000020
-      version_id: V1
-      url: https://doi.org/10.1007/BF00562976
-      locator: PDF pp.1–4,10–12; title/abstract, Tables I–II and closing discussion
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000020
-      version_id: V1
-      url: https://doi.org/10.1007/BF00562976
-      locator: PDF pp.4–5 Eq.(1), Fig.3–4; pp.7–9 Fig.7–8; pp.10–11 electric-field estimates
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000020
-      version_id: V1
-      url: https://doi.org/10.1007/BF00562976
-      locator: PDF pp.6–7 Fig.5–6 (dayside); pp.7–9 Fig.7–8 (terminator); pp.10–11 Fig.9 (fields and nightside assumptions)
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
-  locked_fields: []
 - paper_id: P000038
   group: balance
   role: 三電流収支と光電子条件の感度
-  summary:
-    question: 太陽風の密度・電子温度・イオン温度・流速と光電子放出の強さ・温度は、昼側と明暗境界の平衡電位・遮蔽距離・鉛直電場をどう変えるか。
-    method: 定常・局所平面・単調シースを仮定し、流れるMaxwellian電子・プロトンと光電子の三電流収支を数値探索。六つの入力を一つずつ変え、二電流解析近似と比較し、Debye長から電場を近似する。
-    contribution: 昼側の光放出量・光電子温度と境界の電子温度が主要因となること、冷たい電子や高速流ではイオンを省く二電流近似が外れることを示した。非単調シースでは予測電位が障壁差に近くなり、電場評価にも制約が残る。
-  evidence_by_item:
-    question:
-    - paper_id: P000038
-      version_id: V1
-      url: https://doi.org/10.1016/j.pss.2013.07.008
-      source_type: full_text
-      locator: PDF p.6 3.1, Table 1 PIC column, Eq. 11; PDF p.9 4, Table 3; PDF p.10 4.5; PDF p.11 4.6, Eq. 12; PDF p.14 5.4
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000038
-      version_id: V1
-      url: https://doi.org/10.1016/j.pss.2013.07.008
-      source_type: full_text
-      locator: PDF p.6 3.1, Table 1 PIC column, Eq. 11; PDF p.9 4, Table 3; PDF p.10 4.5; PDF p.11 4.6, Eq. 12; PDF p.14 5.4
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000038
-      version_id: V1
-      url: https://doi.org/10.1016/j.pss.2013.07.008
-      source_type: full_text
-      locator: PDF p.6 3.1, Table 1 PIC column, Eq. 11; PDF p.9 4, Table 3; PDF p.10 4.5; PDF p.11 4.6, Eq. 12; PDF p.14 5.4
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000007
   group: structure
   role: シースと浮遊条件
-  summary:
-    question: 電子分布と帯電の時間変化は、粒子の浮遊をどう変えるか。
-    method: 正午の平坦面を一次元PICで計算し、粒子の帯電・軌道を追跡。
-    contribution: 浮遊平衡点への到達は保証されない。表面からの剥離は対象外。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000007
-      version_id: V1
-      url: https://doi.org/10.1029/2010JA015286
-      source_type: full_text
-      locator: §2.1・考察（PDF pp.2,8）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000011
   group: structure
   role: 半解析解とPIC
-  summary:
-    question: 太陽風電子の流れを含むシースを半解析解で再現できるか。
-    method: 半解析解を一次元PICで検証し、Maxwell・κ分布の差も比較。
-    contribution: Maxwell分布の半解析解と一次元PICが整合し、平均太陽風条件ではκ=4.5の電子分布との差も小さかった。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000011
-      version_id: V2
-      url: https://doi.org/10.1109/TPS.2021.3110946
-      source_type: full_text
-      locator: 要旨・§V（著者最終稿 pp.1–2,11–12）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000030
   group: structure
   role: 光電子シースの室内計測
-  summary:
-    question: UV照射で生じる光電子シースを実験室で測れるか。
-    method: UV光源を用いて表面から電子を放出させ、近傍シースを計測。
-    contribution: 光電子が作る電気的構造を、室内実験で調べる手法を提示。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution: []
-  inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
-    recheck: false
-  locked_fields: []
 - paper_id: P000033
   group: structure
   role: 昼側の非単調シース
-  summary:
-    question: 日照域の上空に、負電位の領域は形成されるか。
-    method: Lunar Prospectorの電子観測と一次元PIC計算を比較。
-    contribution: 磁気圏プラズマシート中の昼側で、非単調な電位構造を支持する結果を示した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000033
-      version_id: V1
-      url: https://doi.org/10.1029/2010gl046119
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000036
   group: structure
   role: ARTEMISの電子・イオン観測とPICの比較
-  summary:
-    question: 地球磁気圏尾部の日照側月面上空で見られる電子ビームとロスコーンの時間変化を、非単調な光電子シースと入射電子・イオン温度から説明できるか。
-    method: 2011年7月16日11:50–12:25 UTCのARTEMIS P1の電子・イオン・電磁場観測を、実測Te・Tiを与えた一次元PICシースモデルと比較。直線外挿で月面との磁気接続を判定し、探査機電位を加えてビームエネルギーを照合した。
-    contribution: 実測イオン温度を加えて、非単調シースの極小への電位落差とビームの一時的消失を説明した。Te=500 eV・nps=10⁵ m⁻³の計算例ではTiの増加で落差が減り、観測時の温度比がモデル臨界値を超える区間にビーム消失が対応した。
-  evidence_by_item:
-    question:
-    - paper_id: P000036
-      version_id: V1
-      url: https://doi.org/10.1029/2011gl050321
-      locator: PDF pp.1–2, §§1–2, ¶3–7
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000036
-      version_id: V1
-      url: https://doi.org/10.1029/2011gl050321
-      locator: PDF pp.1–3, §2 ¶4–6; §3.1 ¶7; Eq.(1), Fig.1 (p.3, caption p.2)
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000036
-      version_id: V1
-      url: https://doi.org/10.1029/2011gl050321
-      locator: PDF pp.2–5, §3.1–3.2 ¶7–11; Eqs.(1),(2); Figs.2–4; §4 ¶12
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
-  locked_fields: []
 - paper_id: P000055
   group: structure
   role: イオン温度と光電子シース
-  summary:
-    question: 有限のイオン温度は、法線入射速度と太陽天頂角によって月面光電子シースをどう変えるか。
-    method: 熱圧力を含む一次元定常イオン流とMaxwell分布の電子・光電子をPoisson方程式に結び、準中性・電流収支・非単調電位の極小条件を連立する。θ、Ti/Te=0–10、圧力係数ψ=1・3を比較し、正電位層での実数イオン解の存在条件に応じた境界速度の修正も導入する。
-    contribution: 温度効果が高い太陽天頂角で大きくなり、θ=89°の負電位シースが薄くなる一方、θ=85°の非単調シースでは負の電位極小と光電子障壁が弱まることを示した。表面電場・極小高度には非単調な応答があり、シース端のBohm条件だけでは正電位層を通過できない場合も示す。
-  evidence_by_item:
-    question:
-    - paper_id: P000055
-      version_id: V1
-      url: https://arxiv.org/abs/2608.19926v1
-      source_type: full_text
-      locator: PDF pp.1–2, §§I–II
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000055
-      version_id: V1
-      url: https://arxiv.org/abs/2608.19926v1
-      source_type: full_text
-      locator: PDF p.2 Eqs.(1)–(6), pp.6–9 Appendices A–E
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000055
-      version_id: V1
-      url: https://arxiv.org/abs/2608.19926v1
-      source_type: full_text
-      locator: PDF pp.3–5 Figs.2–9, pp.8–9 Eqs.(E1)–(E8)
-      checked_at: '2026-10-12'
-  inspection:
-    level: preprint
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000161
   group: balance
   role: 昼側電位の統計と環境依存
-  summary:
-    question: 磁気圏ローブ中の昼側電位は、日照と周囲のプラズマにどう応答するか。
-    method: ARTEMISの光電子位相空間密度を放出モデルと50–250 eVで比較して電位を推定し、イオン観測による局所密度などへの依存を統計解析。
-    contribution: 昼側電位は太陽天頂角と局所プラズマ密度に応答し、その影響を除くと電子温度との依存も現れた。ARTEMISが観測した範囲では地殻磁場への明瞭な依存は認められなかった。
-  evidence_by_item:
-    question:
-    - paper_id: P000161
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
-      source_type: full_text
-      locator: §2–4
-      checked_at: '2026-09-18'
-    method:
-    - paper_id: P000161
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
-      source_type: full_text
-      locator: §2–4
-      checked_at: '2026-09-18'
-    contribution:
-    - paper_id: P000161
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
-      source_type: full_text
-      locator: §2–4
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
 - paper_id: P000162
   group: balance
   role: 太陽活動と昼側の正電位
-  summary:
-    question: 太陽活動の変化は、月面の光電子放出と正電位をどこまで高めるか。
-    method: ARTEMIS長期観測と光電子モデルを照合し、単調シースを仮定した電流収支から+50 V超の電位を計算。
-    contribution: 磁気圏ローブでフレア時に+100 Vを超える正電位を予測した。
-  evidence_by_item:
-    question:
-    - paper_id: P000162
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
-      source_type: full_text
-      locator: Abstract; §4 Conclusions
-      checked_at: '2026-09-18'
-    method:
-    - paper_id: P000162
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
-      source_type: full_text
-      locator: PDF pp.2-7, sections 2-3; Fig.4c (p.6); monotonic potential and >+50 V restriction (p.7)
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000162
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
-      source_type: full_text
-      locator: Abstract; §4 Conclusions
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
 - paper_id: P000167
   group: structure
   role: 離散帯電と飛翔中の電荷変化
-  summary:
-    question: 光電子シース中で、電荷の時間変化と離散性は粒子の軌道をどう変えるか。
-    method: 太陽スペクトルとκ分布電子を用い、離脱後の粒子の帯電と運動を連成計算。
-    contribution: 希薄プラズマでは離散帯電が軌道を変え、静止浮遊の成立を難しくすると示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000167
-      version_id: V1
-      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
-      source_type: full_text
-      locator: Abstract; §III; §VI
-      checked_at: '2026-09-18'
-    method:
-    - paper_id: P000167
-      version_id: V1
-      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
-      source_type: full_text
-      locator: Abstract; §III; §VI
-      checked_at: '2026-09-18'
-    contribution:
-    - paper_id: P000167
-      version_id: V1
-      url: https://pubs.aip.org/pop/article/31/10/102901/3316998/Revisiting-lunar-dust-charging-and-dynamics
-      source_type: full_text
-      locator: Abstract; §III; §VI
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
 - paper_id: P000256
   group: structure
   role: ダスト運動とレゴリス力学の総説
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: true
-  summary:
-    question: 月レゴリスの力学特性と帯電環境は、ダストの離脱・運動をどう制約するか。
-    method: Apollo試料の物性、土質力学試験、月面観測、帯電・軌道モデルを横断して整理した2007年の総説。
-    contribution: レゴリスの力学応答と帯電・輸送研究をつなぎ、離脱時の電荷分布や微小粒子の実験不足を当時の課題として挙げた。観測されるダストを安定浮遊だけで説明する必要はないと論じた。
-  evidence_by_item:
-    question:
-    - paper_id: P000256
-      version_id: V1
-      url: https://doi.org/10.1029/2005RG000184
-      source_type: full_text
-      locator: PDF pp.1–2, §1
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000256
-      version_id: V1
-      url: https://doi.org/10.1029/2005RG000184
-      source_type: full_text
-      locator: PDF pp.2–22, §§2–4, Tables 1–5b, Figs.1–13
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000256
-      version_id: V1
-      url: https://doi.org/10.1029/2005RG000184
-      source_type: full_text
-      locator: PDF p.21, §4.3 [74]; pp.22–23, §5 [81]–[84]
-      checked_at: '2026-09-22'
 - paper_id: P000092
   group: structure
   role: 金属面の光電子シース実験・PIC比較
-  summary:
-    question: UV照射面がつくる光電子層で、他面からの電子と戻り電子を分けながら、密度・有効温度・浮遊電位をどう測るか。
-    method: 約10⁻⁶ TorrでZr平面を172 nm VUV照射し、負のNiグリッドと正のcollectorで壁電子を抑制。阻止電位解析と円筒Langmuir探針を、二面のMaxwellian放出を含む1D PICと比較する。
-    contribution: バイアスによる密度分布の変化を、表面へ戻る電子とグリッド由来電子を含むPICで概ね再現した。浮遊電位は負グリッドに対して約+1.5 Vで、シース電位極小の直接測定は未達だった。
-  evidence_by_item:
-    question:
-    - paper_id: P000092
-      version_id: V1
-      url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
-      source_type: full_text
-      locator: PDF pp.1–2 I/II
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000092
-      version_id: V1
-      url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
-      source_type: full_text
-      locator: PDF pp.2–3 II/II.B/III.A; p.5 IV
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000092
-      version_id: V1
-      url: https://research.ssl.berkeley.edu/~poppe/papers/Dove_et_al_2012.pdf
-      source_type: full_text
-      locator: PDF p.4 III.A/Fig.4; pp.5–6 IV/Figs.6–7; p.5 III.B
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000362
   group: balance
   role: ARTEMISによる光電子の識別と放出収率
-  summary:
-    question: 月面の光電子放出収率を、軌道上の電子観測からどこまで制約できるか。
-    method: ARTEMISとFISM2の太陽放射を比較し、酸素Auger電子を指標に月面由来の光電子を選別。
-    contribution: 約20 eVを超える入射光子の放出収率に10⁻³の下限を与えた。放出電子のエネルギー分布の仮定により、推定収率には約4桁の幅が残る。
-  evidence_by_item:
-    contribution:
-    - paper_id: P000362
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020je006790
-      source_type: abstract
-      locator: 要旨・Plain Language Summary（本文全体は未精読）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
 - paper_id: P000363
   group: balance
   role: 表面での電子後方散乱と再衝突
-  summary:
-    question: 月面で後方散乱された電子の割合は、磁場の向きとどう関わるか。
-    method: ARTEMISの電子スペクトルで光電子と後方散乱電子を区別し、後方散乱係数を推定。
-    contribution: 一次電子50–600 eVで代表的な推定係数は約0.3、純弾性散乱を仮定した下限は約0.1。推定値は光電子の補正条件に依存し、磁場の伏角による再衝突が宇宙へ戻る割合を変える。
-  evidence_by_item:
-    contribution:
-    - paper_id: P000363
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023je007983
-      source_type: abstract
-      locator: 要旨・Plain Language Summary（本文全体は未精読）
-      checked_at: '2026-10-02'
-    - paper_id: P000363
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023JE007983
-      source_type: full_text
-      locator: §4：一次電子50–600 eVと光電子補正・散乱モデルの条件（該当箇所のみ確認。本文全体は未精読）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
 - paper_id: P000364
   group: balance
   role: 光電子流束・検出確率の環境依存
-  summary:
-    question: 月面から放出された光電子の流束と、観測で光電子を識別できる割合は、太陽天頂角・太陽軟X線・降下電子・周辺プラズマ環境でどう変わるか。
-    method: 2011年8月–2025年1月のARTEMIS burst電子・磁場・宇宙機電位を用い、昼側表面への直線磁力線接続と上向きピッチ角を選ぶ。酸素Augerピークの傾き/流束と高放出率モデルへの相対適合誤差<0.2で光電子を選別し、宇宙機・月面電位を補正した流束と識別確率をローブ/太陽風で比較する。傾き閾値の本文・図の不一致は未解決。
-    contribution: 表面推定流束の余弦型SZA依存と軟X線との正相関を示し、識別割合がローブ51.2%、太陽風8.6%となる環境差、太陽風の夕側ピーク、降下電子による識別抑制を整理した。電位・光電流モデルへの観測制約を提供する。
-  evidence_by_item:
-    question:
-    - paper_id: P000364
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009879
-      source_type: full_text
-      locator: PDF pp.2–3 §2.1–2.2; pp.4–9 §3
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000364
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009879
-      source_type: full_text
-      locator: PDF pp.2–4 §2.1–3.1; p.4 Fig.2b/d slope discrepancy
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000364
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009879
-      source_type: full_text
-      locator: PDF pp.3–9 §2.2–3.2, Figs.3–8; p.10 §4 continuation
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-relations: []
-view:
-  sort:
-  - year
-  - first_author
-  - paper_id
-  overview_nodes: []
-  graphs: []
-  graph_nodes: 20
-  graph_edges: 30
 survey:
   searched_at: '2026-10-02'
   scope_period: 制限なし
@@ -646,7 +162,8 @@ survey:
   - 10.1029/2020JE006790
   - 10.1029/2023JE007983
   - 10.1029/2026JE009879
-  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-09-22にP000256の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。'
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。
+    2026-09-22にP000256の所蔵PDFを全ページ読解し、図表・式と要約を独立照合した。'
   limitations:
   - 今回の全文確認はP000256に限る。他の文献の確認状況は各entryのinspectionを参照。
   - Colwell 2007の引用先原著は未通読。Debye長の式の単位系と弱光源の帯電時間の記述は要再確認。
@@ -654,5 +171,4 @@ survey:
   - P000363は§4のエネルギー範囲と光電子補正・散乱モデルの条件のみ本文で追加確認。inspectionは要旨確認のままとし、本文全体・全図表の精読は未実施。
   changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 対象文献の要約・根拠位置・本文確認状況を更新。 Issue #23の電子放出・後方散乱研究を追加し、概説と必要な系譜を補足。'
   publication_status: draft
-  reviewed_at: null
 reading_notes: []

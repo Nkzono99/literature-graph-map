@@ -1,14 +1,30 @@
+schema_version: 1
 topic_id: lunar-environment
 title: 月の科学・探査
 question: 月の地形・地質、観測ミッション、帯電、磁気異常、水・揮発性物質の研究をたどる。
+review: []
+lineage: []
+public: true
+scope:
+  include: []
+  exclude: []
+navigation:
+  related: []
+groups:
+- id: general
+  title: 先行研究
 entries: []
 survey:
   searched_at: '2026-09-22'
+  scope_period: 制限なし
   provider_names:
   - 'GitHub Issues #2–#8'
   - Crossref
   - 出版社・公的機関の公開書誌
+  queries: []
   coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。'
-  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   limitations:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
+  publication_status: draft
+reading_notes: []

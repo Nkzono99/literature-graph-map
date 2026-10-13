@@ -8,21 +8,20 @@ from pathlib import Path
 import yaml
 from pydantic import ValidationError
 
-from .lint import review_citation_gaps, summary_gaps
-from .models import ImportPacket, Overview, Topic, Work
+from .lint import plain_author_gaps, review_citation_gaps, summary_gaps
+from .models import Overview, Topic, Work
 from .operations import (
     add_seeds,
     commit,
     discover,
     export_snapshot,
-    import_packet,
     new_topic,
     public_snapshot,
     refresh,
     research_handoff,
 )
 from .providers import Crossref, Settings, settings
-from .render import SUMMARY_LABELS, render, rendered_files
+from .render import SUMMARY_LABELS, readme_text, render, rendered_files
 from .storage import (
     MapError,
     inside,
@@ -31,7 +30,6 @@ from .storage import (
     private_directory,
     publication_files,
     publication_issues,
-    read_yaml,
     write_files,
     yaml_text,
 )
@@ -72,17 +70,20 @@ def parser() -> argparse.ArgumentParser:
     update.add_argument(
         "--since", type=date.fromisoformat, help="新規候補の出版日フィルタ YYYY-MM-DD"
     )
-    ingest = commands.add_parser("import", help="文献・テーマのデータを取り込み")
-    ingest.add_argument("packet", type=Path)
-    ingest.add_argument("--path", help="新規テーマの配置先（例: topics/dust/charging）")
     commands.add_parser("render", help="通信なしで正本から_site/のHTMLを再生成")
     check = commands.add_parser("check", help="データ形式と参照を検証")
     check.add_argument(
         "--public", action="store_true", help="公開対象フィールドと生成内容の漏えい検査も行う"
     )
-    lint = commands.add_parser("lint", help="研究の概観の引用漏れと文献の要点漏れを検出")
-    lint.add_argument("topic_id", nargs="?", help="省略時は入れ子を含む全テーマを検査")
+    lint = commands.add_parser(
+        "lint", help="研究の概観の引用漏れ、文献の要点漏れ、平文の著者名を検出"
+    )
+    lint.add_argument("topic_id", nargs="?", help="省略時は入れ子を含む全テーマと概観を検査")
     lint.add_argument("--json", action="store_true", help="検査結果をJSONで出力")
+    readme = commands.add_parser("readme", help="READMEの収録テーマ一覧を正本から生成")
+    readme.add_argument(
+        "--check", action="store_true", help="書き換えずに、一覧が最新かどうかだけ確認"
+    )
     export = commands.add_parser(
         "export", help="許可したフィールドだけを新しい公開スナップショットへ出力"
     )
@@ -97,6 +98,49 @@ def parser() -> argparse.ArgumentParser:
     return root
 
 
+def run_lint(args: argparse.Namespace, repo: Path) -> int:
+    snapshot = load(repo)
+    gaps = review_citation_gaps(snapshot, args.topic_id)
+    summaries = summary_gaps(snapshot, args.topic_id)
+    names = plain_author_gaps(snapshot, args.topic_id)
+    count = len(snapshot.topics) if args.topic_id is None else 1
+    if args.json:
+        print(
+            json_text(
+                {
+                    "topics_checked": count,
+                    "missing_count": len(gaps) + len(summaries) + len(names),
+                    "missing_citations": gaps,
+                    "missing_summaries": summaries,
+                    "plain_author_names": names,
+                }
+            ),
+            end="",
+        )
+    else:
+        for gap in gaps:
+            print(
+                f"{gap['path']}: review: 未引用 {gap['paper_id']}"
+                f" / {gap['citation']} / {gap['title']}"
+            )
+        print(f"概観の引用検査: {count}テーマ / 未引用{len(gaps)}件")
+        for gap in summaries:
+            reason = "未記入" if gap["reason"] == "missing" else "仮置きの文言"
+            print(
+                f"{gap['path']}: summary.{gap['field']}: 要点不足 {gap['paper_id']}"
+                f" / {SUMMARY_LABELS[gap['field']]} / {gap['citation']} / {gap['title']}"
+                f" / {reason}"
+            )
+        print(f"要点検査: {count}テーマ / 不足{len(summaries)}項目")
+        for gap in names:
+            print(
+                f"{gap['path']}: review: 平文の著者名 {gap['text']} / {gap['heading']}"
+                " / [@P000000]の引用に置き換える"
+            )
+        print(f"著者名の検査: {count}テーマ / 平文の著者名{len(names)}件")
+    return 1 if gaps or summaries or names else 0
+
+
 def run(args: argparse.Namespace) -> int:
     if args.command == "schema":
         output = args.output.resolve()
@@ -104,50 +148,31 @@ def run(args: argparse.Namespace) -> int:
             output,
             {
                 output / f"{name}.schema.json": json_text(model.model_json_schema())
-                for name, model in (
-                    ("work", Work),
-                    ("topic", Topic),
-                    ("import", ImportPacket),
-                    ("overview", Overview),
-                )
+                for name, model in (("work", Work), ("topic", Topic), ("overview", Overview))
             },
         )
         print(f"JSON Schemaを生成: {output}")
         return 0
     repo = args.repo.resolve()
     if args.command == "lint":
-        snapshot = load(repo)
-        gaps = review_citation_gaps(snapshot, args.topic_id)
-        summaries = summary_gaps(snapshot, args.topic_id)
-        count = len(snapshot.topics) if args.topic_id is None else 1
-        if args.json:
-            print(
-                json_text(
-                    {
-                        "topics_checked": count,
-                        "missing_count": len(gaps) + len(summaries),
-                        "missing_citations": gaps,
-                        "missing_summaries": summaries,
-                    }
-                ),
-                end="",
-            )
-        else:
-            for gap in gaps:
+        return run_lint(args, repo)
+    if args.command == "readme":
+        path = inside(repo, repo / "README.md")
+        if not path.is_file():
+            raise MapError("README.md not found")
+        before = path.read_text(encoding="utf-8")
+        after = readme_text(before, load(repo))
+        if args.check:
+            if before != after:
                 print(
-                    f"{gap['path']}: review: 未引用 {gap['paper_id']}"
-                    f" / {gap['citation']} / {gap['title']}"
+                    "README.md の収録テーマ一覧が正本と異なります。`lgm readme` で更新してください。"
                 )
-            print(f"概観の引用検査: {count}テーマ / 未引用{len(gaps)}件")
-            for gap in summaries:
-                reason = "未記入" if gap["reason"] == "missing" else "仮置きの文言"
-                print(
-                    f"{gap['path']}: summary.{gap['field']}: 要点不足 {gap['paper_id']}"
-                    f" / {SUMMARY_LABELS[gap['field']]} / {gap['citation']} / {gap['title']}"
-                    f" / {reason}"
-                )
-            print(f"要点検査: {count}テーマ / 不足{len(summaries)}項目")
-        return 1 if gaps or summaries else 0
+                return 1
+            print("README.md の収録テーマ一覧は最新です。")
+            return 0
+        write_files(repo, {path: after})
+        print(f"README.md の収録テーマ一覧を更新: {path}")
+        return 0
     private = private_directory(repo, args.private_dir)
     if args.command == "config":
         data = settings(private).model_dump()
@@ -205,18 +230,6 @@ def run(args: argparse.Namespace) -> int:
         if issues:
             raise MapError("\n".join(dict.fromkeys(issues)))
         print(f"検証OK: {len(snapshot.works)}文献 / {len(snapshot.topics)}テーマ")
-    elif args.command == "import":
-        packet = ImportPacket.model_validate(read_yaml(args.packet))
-        conflicts = import_packet(repo, snapshot, packet, private, args.path)
-        print(
-            f"調査データを取り込み: {packet.topic.topic_id}"
-            if packet.topic.public
-            else f"非公開草稿をrepo外へ保存: {private / packet.topic.topic_id / 'review-packet.yaml'}"
-        )
-        if conflicts:
-            print(
-                f"固定項目を維持しました。再確認事項{len(conflicts)}件: {private / 'import-report.json'}"
-            )
     elif args.command == "export":
         count = export_snapshot(repo, snapshot, args.destination)
         print(
@@ -228,9 +241,7 @@ def run(args: argparse.Namespace) -> int:
         try:
             if args.command == "survey":
                 if args.offline and args.seed:
-                    raise MapError(
-                        "--offline cannot resolve new seeds; import a prepared packet instead"
-                    )
+                    raise MapError("--offline cannot resolve new seeds; add them with `lgm add`")
                 topic = new_topic(snapshot, args.theme, args.id, args.parent)
                 limitations = []
                 if not args.offline:
@@ -266,9 +277,7 @@ def run(args: argparse.Namespace) -> int:
             request = research_handoff(private, topic, snapshot, provider.events)
             print(f"草稿: {repo / snapshot.paths[topic.topic_id] / 'topic.yaml'}")
             print(f"調査メモ: {request}")
-            print(
-                f"補足: {len(topic.survey.limitations)}件。正本の編集またはimportで内容を更新できます。"
-            )
+            print(f"補足: {len(topic.survey.limitations)}件。正本を編集して内容を更新できます。")
         finally:
             provider.close()
     return 0

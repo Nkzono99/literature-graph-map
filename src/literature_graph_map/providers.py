@@ -9,7 +9,7 @@ from urllib.parse import quote
 import httpx
 from pydantic import Field, ValidationError
 
-from .models import MetadataSource, Model, Version, Work, normalize_doi
+from .models import Inspection, MetadataSource, Model, Version, Work, normalize_doi
 from .storage import MapError, json_text, read_yaml, write_files
 
 
@@ -144,6 +144,7 @@ def crossref_work(item: dict, paper_id: str) -> Work:
                 )
             ],
             missing_note="Crossref書誌を参照。欠損書誌・無料公開・プレプリント対応は未確認。",
+            inspection=Inspection(version_id=version.version_id),
         )
     except (KeyError, IndexError, TypeError, ValueError, ValidationError):
         raise MapError("Crossref: record lacks valid bibliographic identity") from None

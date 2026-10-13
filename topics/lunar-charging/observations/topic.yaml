@@ -6,34 +6,45 @@ review:
 - heading: 電子観測から月面電位を推定する
   paragraphs:
   - 月面の粒子環境はApollo 14のCPLEE（[@P000018]）などで測られ、その後は軌道からの電子観測が蓄積された。Lunar Prospectorでは電子のロスコーンやビームが夜側電位の手掛かりになる（[@P000003]）。[@P000025]は探査機自身の電位を補正し、周囲のプラズマに対する月面電位と入射電流の関係を求めた。[@P000023]はその環境の違いを全球的に整理している。
-  - Halekas (2008) は探査機電位を補正したLP電子分布から月面負電位と入射電子電流を対応づけ、日照プラズマシートでも数百Vの負電位を報告した。通常ウェイクの境界付近約−200 V、中央部の絶対値100 V未満は局所ウェイクプラズマを基準とする。1998年5月6日のSEPでは約−4 kVに達したが、この期間には探査機電位補正を適用できておらず、局所プラズマ基準と解釈するには探査機電位が小さいという仮定が加わる。[@P000025]
-  - 電子スペクトルのエネルギーずれを使う電位診断に対し、[@P000262]は左右で異なる分布を独立に最適化し、中央の衝撃波では捕捉電子の平坦な分布幅を使う。ARTEMIS P1の2016年7月29日と2011年10月23日の横断で、太陽風から中央への電位降下を約800 Vと約200 Vと推定した。安定した磁場と上流の定常性が適用条件となり、地球フォアショックとの接続が疑われる区間や、中央の分布端が曖昧な境界には手法間の差が残る。これらはウェイク内プラズマの電位差であり、表面帯電へつなぐには別の電流収支とシースの検討が必要となる。
+  - '[@P000025]は探査機電位を補正したLP電子分布から月面負電位と入射電子電流を対応づけ、日照プラズマシートでも数百Vの負電位を報告した。通常ウェイクの境界付近約−200
+    V、中央部の絶対値100 V未満は局所ウェイクプラズマを基準とする。1998年5月6日のSEPでは約−4 kVに達したが、この期間には探査機電位補正を適用できておらず、局所プラズマ基準と解釈するには探査機電位が小さいという仮定が加わる。'
+  - 電子スペクトルのエネルギーずれを使う電位診断に対し、[@P000262]は左右で異なる分布を独立に最適化し、中央の衝撃波では捕捉電子の平坦な分布幅を使う。ARTEMIS
+    P1の2016年7月29日と2011年10月23日の横断で、太陽風から中央への電位降下を約800 Vと約200 Vと推定した。安定した磁場と上流の定常性が適用条件となり、地球フォアショックとの接続が疑われる区間や、中央の分布端が曖昧な境界には手法間の差が残る。これらはウェイク内プラズマの電位差であり、表面帯電へつなぐには別の電流収支とシースの検討が必要となる。
 - heading: 磁気圏・太陽活動・衝突で変わる電流
   paragraphs:
   - 磁気圏尾部では日照域も強く負に帯電しうる（[@P000004]）。太陽高エネルギー粒子イベントを扱う[@P000006]、[@P000027]はkV級の負帯電を観測と電流収支で比較する。ARTEMISでは遠隔のシース推定（[@P000034]）、太陽放射と光電子の対応（[@P000041]）が調べられた。[@P000046]はARTEMISとOMNIの条件を帯電予測へ組み込む。
-  - Poppe et al. (2021)は、上向き電子ビームから月面との電位差を遠隔推定する方法を55回のローブ内夜側接続に適用した。途中の非単調電位を考慮しない仮定と直線磁力線追跡の下で、10度幅の経度別中央値を比較すると、夕方から真夜中の観測／理論比は約0.8で、真夜中から夜明けに向けて比が下がり、とくに低密度群で小さくなった。この経度・密度依存を衝突プラズマによる追加電流のモデルと結び付けた[@P000045]。
-  - Lunar Prospectorの帯電観測で残った探査機電位の未知のずれに対し、[@P000034]はEFIで測ったARTEMIS-P2の電位を補正に使った。2010年3月28日に月面から8,000 km以上離れた位置から、ローブの−30〜−60 Vとプラズマシートの−180〜−450 Vを推定し、ローブの日照面負帯電に初めて定量的な証拠を与えた。低エネルギー分解能と磁力線曲率は依然として制限となり、後者の区間後半は夜側接続を排除できない。
-  - '[@P000041]は、2011年7月～2016年9月のARTEMISから、ローブ・低高度・ほぼ太陽直下の弱磁場域に限った829スペクトルを選んだ。観測80–300 eVの上向き電子とFISMの1–5 nm光子の相関は0.77で、平均流束比は5.0×10⁻³だった。表面電位を各区間で得られるとは限らないため、この統計は観測エネルギーで比較する。2012年12月29日の+15～25 Vは、冷たいイオンの反射が測れた一事例の制約である。'
+  - '[@P000045]は、上向き電子ビームから月面との電位差を遠隔推定する方法を55回のローブ内夜側接続に適用した。途中の非単調電位を考慮しない仮定と直線磁力線追跡の下で、10度幅の経度別中央値を比較すると、夕方から真夜中の観測／理論比は約0.8で、真夜中から夜明けに向けて比が下がり、とくに低密度群で小さくなった。この経度・密度依存を衝突プラズマによる追加電流のモデルと結び付けた。'
+  - Lunar Prospectorの帯電観測で残った探査機電位の未知のずれに対し、[@P000034]はEFIで測ったARTEMIS-P2の電位を補正に使った。2010年3月28日に月面から8,000
+    km以上離れた位置から、ローブの−30〜−60 Vとプラズマシートの−180〜−450 Vを推定し、ローブの日照面負帯電に初めて定量的な証拠を与えた。低エネルギー分解能と磁力線曲率は依然として制限となり、後者の区間後半は夜側接続を排除できない。
+  - '[@P000041]は、2011年7月～2016年9月のARTEMISから、ローブ・低高度・ほぼ太陽直下の弱磁場域に限った829スペクトルを選んだ。観測80–300
+    eVの上向き電子とFISMの1–5 nm光子の相関は0.77で、平均流束比は5.0×10⁻³だった。表面電位を各区間で得られるとは限らないため、この統計は観測エネルギーで比較する。2012年12月29日の+15～25
+    Vは、冷たいイオンの反射が測れた一事例の制約である。'
   - 太陽活動が高まると、光電子電流も増える。[@P000162]はARTEMISの長期観測をモデルと照合し、フレア時の磁気圏ローブで+100 Vを超える正電位を予測した。[@P000161]は別の放出モデルで光電子のエネルギーずれを読み、昼側電位の日照・プラズマ依存を統計化している。
 - heading: 場所の違いと、新しい月面計測
   paragraphs:
   - 観測計画の資料としては月面電磁場計測を検討する[@P000032]がある。IM-1のROLSES（[@P000056]）は月面の電波・プラズマ波を測る装置であり、装置論文には設計と初期観測がまとまっている。
-  - Katoらは、かぐやの上向き光電子の60–150 eVを用い、放出効率α=0.420に固定したK23モデルを装置応答と畳み込んで相対エネルギーずれを求めた。2009年5月7日の事例では非磁化領域で+2.9 eV、磁化領域で−7.5 eV、選択した43,670点のうち磁場図と比較できる42,197点の統計でも強い地殻磁場ほど減速する傾向を得た。静電変化を仮定した地域間電位差はおおむねΔU≲10 Vの規模である。ただし、推定に使う連続スペクトルでは放出効率とエネルギーずれが縮退し、探査機電位も未補正のため、相対電位として扱う必要がある。[@P000051]
-  - アンテナの電場信号から局所密度とダストを調べるROLSESの設計・運用を[@P000056]が報告した。4本のモノポールでスペクトルと生波形を返したが、全区間10 dBの低利得、DSP平均化エラー、機体雑音が測定を制限した。輸送中の16–22 MHzの電波線は地上AJ4COとの周波数対応から地球送信電波と解釈された。月面36分のデータからシース密度や帯電ダストを測った結果は本稿に含まれない。
+  - Katoらは、かぐやの上向き光電子の60–150 eVを用い、放出効率α=0.420に固定したK23モデルを装置応答と畳み込んで相対エネルギーずれを求めた。2009年5月7日の事例では非磁化領域で+2.9
+    eV、磁化領域で−7.5 eV、選択した43,670点のうち磁場図と比較できる42,197点の統計でも強い地殻磁場ほど減速する傾向を得た。静電変化を仮定した地域間電位差はおおむねΔU≲10
+    Vの規模である。ただし、推定に使う連続スペクトルでは放出効率とエネルギーずれが縮退し、探査機電位も未補正のため、相対電位として扱う必要がある。[@P000051]
+  - アンテナの電場信号から局所密度とダストを調べるROLSESの設計・運用を[@P000056]が報告した。4本のモノポールでスペクトルと生波形を返したが、全区間10
+    dBの低利得、DSP平均化エラー、機体雑音が測定を制限した。輸送中の16–22 MHzの電波線は地上AJ4COとの周波数対応から地球送信電波と解釈された。月面36分のデータからシース密度や帯電ダストを測った結果は本稿に含まれない。
   - Chandrayaan-1の[@P000163]は、夕方側57周回の観測で、SPA磁気群上空の高度約100 kmに太陽風の偏向・加熱・減速が繰り返し現れることを示した。著者らは反射陽子との相互作用によるproto-magnetosheathと解釈しており、上流で測った太陽風と月面近くの入射条件を結ぶ際に参照できる。
   - 近傍ウェイクでの陽子エネルギー変化[@P000186]は、表面との相互作用を周囲の粒子分布へ結び付ける。磁気異常で散乱された陽子がウェイクへ届く経路は[@P000273]が観測と逆向き軌道追跡で調べた。低高度のPACE・LMAGによる[@P000178]は磁気リコネクションの候補を扱い、局所磁場による粒子加速を検討する。
-  - Saito et al. (2008)は、かぐやのPACEで昼側月面方向から戻るイオンを捉え、前日の類似事例の質量測定と広い角度分布から太陽風陽子の月面反射・散乱を支持した。著者が報告する約0.1〜1％は、元の太陽風イオンフラックスに対する反射陽子フラックスの比である。30％のエネルギー低下を表面相互作用での損失と解釈する一方、高エネルギー成分は太陽風の対流電場による反射後の加速で説明する。月面電位の数値を直接求めた観測ではない。[@P000184]
+  - '[@P000184]は、かぐやのPACEで昼側月面方向から戻るイオンを捉え、前日の類似事例の質量測定と広い角度分布から太陽風陽子の月面反射・散乱を支持した。著者が報告する約0.1〜1％は、元の太陽風イオンフラックスに対する反射陽子フラックスの比である。30％のエネルギー低下を表面相互作用での損失と解釈する一方、高エネルギー成分は太陽風の対流電場による反射後の加速で説明する。月面電位の数値を直接求めた観測ではない。'
   - Chandrayaan-2の電波観測[@P000247]は、太陽風中と磁気圏尾部での密度ゆらぎを比較する。粒子のエネルギーや電位を測る研究に対し、電波の伝播からプラズマの変動を調べる観測として位置づけられる。
 - heading: 月起源イオンの供給から地球方向への輸送へ
   paragraphs:
   - 月起源イオンを直接捉えたかぐやIMAの[@P000185]に加え、[@P000177]は地球起源酸素の月への輸送、[@P000179]は月周辺のC・N・Oイオンの日変化を調べた。
-  - Wieser et al.（2025）はChang’E-6のNILSで、月裏側の着陸点から1–20 mの月面に由来する50–400 eVのH−を検出した。電子・H−・O−・偶発計数の校正TOF応答を最尤分離し、O−には有意検出に届かない上限を与えた。反射陽子と同じ放出角分布、エネルギーと角度の独立、ARTEMIS-P2の入射太陽風を仮定すると、H−反射率は2.5（−0.8、＋1.2）%、表面直上の体積数密度は0.18（−0.03、＋0.04）cm⁻³（90%区間）となる。既報の昼側寿命70 msを採用した等価スケールハイト約10 kmは、スペクトルと放出角分布を使うモデル推定である。負イオンのダスト帯電や波動への影響は今後の課題に位置づけた。[@P000253]
-  - Zhong et al.はWieser et al.の初検出と同じChang’E-6/NILS観測系列を用い、6区間の高エネルギーH−成分とARTEMIS太陽風条件の正相関を調べた。月面から出る負イオンを背景電磁場で追跡すると、光脱離による昼側の薄層と、影に延びる夜側の尾が予測される。昼側のH−角度分布はENAから借用し、夜側は一様角度を仮定する。尾は50 sで計算を止めた分布である。H−によるwakeやシースの再構成は、負イオンの反作用を含む計算で確かめる課題として残る。[@P000252]
+  - '[@P000253]はChang’E-6のNILSで、月裏側の着陸点から1–20 mの月面に由来する50–400 eVのH−を検出した。電子・H−・O−・偶発計数の校正TOF応答を最尤分離し、O−には有意検出に届かない上限を与えた。反射陽子と同じ放出角分布、エネルギーと角度の独立、ARTEMIS-P2の入射太陽風を仮定すると、H−反射率は2.5（−0.8、＋1.2）%、表面直上の体積数密度は0.18（−0.03、＋0.04）cm⁻³（90%区間）となる。既報の昼側寿命70
+    msを採用した等価スケールハイト約10 kmは、スペクトルと放出角分布を使うモデル推定である。負イオンのダスト帯電や波動への影響は今後の課題に位置づけた。'
+  - Zhong et al.はWieser et al.の初検出と同じChang’E-6/NILS観測系列を用い、6区間の高エネルギーH−成分とARTEMIS太陽風条件の正相関を調べた。月面から出る負イオンを背景電磁場で追跡すると、光脱離による昼側の薄層と、影に延びる夜側の尾が予測される。昼側のH−角度分布はENAから借用し、夜側は一様角度を仮定する。尾は50
+    sで計算を止めた分布である。H−によるwakeやシースの再構成は、負イオンの反作用を含む計算で確かめる課題として残る。[@P000252]
   - '[@P000342]はTHEMIS-ARTEMISの長期観測から月近傍金属イオンの源を評価し、太陽活動より月位置への依存が強いことを示した。[@P000341]はMHD場と粒子追跡を組み合わせ、理想化した北向きIMFで月から地球の内側磁気圏へ戻る経路を計算した。局所の供給・存在量と大域輸送を分けて扱うことで、月起源の重イオンが地球環境へ及ぼす寄与を考えられる。'
 - heading: 表面から戻る電子を起源ごとに選び分ける
   paragraphs:
   - '[@P000362]は酸素Auger電子の特徴を使って月面由来の光電子を識別し、光電子放出収率を制約した。[@P000363]はその識別法で後方散乱電子が優勢な事例を選び、表面から宇宙へ戻る割合を調べた。放出収率、散乱係数、観測される流束を結び付けることで、電位推定の入力となる電子電流を比較できる。'
-  - Xuほか（2026）は、2011年8月–2025年1月のARTEMIS burstデータのうち昼側月面に磁気的に接続する上向き電子を、酸素Augerピークの傾き・流束とモデル相対差20%未満で選別した。ローブの光電子検出確率は太陽直下付近の約0.8からターミネータ付近の約0.2へ下がり、太陽風では夕側SZA 30–60°で約0.15に達する。これらは、反射・二次電子の背景下で光電子を識別できたと著者が報告する観測割合である。傾きの閾値は本文−0.25と図2の約−2.5が一致せず、実際の設定は未確定である。[@P000364]
+  - '[@P000364]は、2011年8月–2025年1月のARTEMIS burstデータのうち昼側月面に磁気的に接続する上向き電子を、酸素Augerピークの傾き・流束とモデル相対差20%未満で選別した。ローブの光電子検出確率は太陽直下付近の約0.8からターミネータ付近の約0.2へ下がり、太陽風では夕側SZA
+    30–60°で約0.15に達する。これらは、反射・二次電子の背景下で光電子を識別できたと著者が報告する観測割合である。傾きの閾値は本文−0.25と図2の約−2.5が一致せず、実際の設定は未確定である。'
 - heading: 衝突噴出物の雲と、微小ダスト密度の上限
   paragraphs:
   - LDEXの個別衝突を解析した[@P000390]は、主に半径0.3 µm以上の粒子で明け方に偏る持続的な雲と流星群時の増加を捉えた。流入隕石モデルとの比較から衝突噴出物と解釈しており、衝突時に生じる電離電荷を、飛行中の粒子の正味電荷と混同しない。
@@ -41,13 +52,17 @@ review:
     m⁻³、磁気圏尾部約40 m⁻³となった。二つの解析は検出方式と粒径条件が異なり、独立観測の再現ではない。高度3–250 kmの制約を地表近傍の局所移動へ拡張するには、観測範囲を埋める測定が必要になる。'
 - heading: 条件を対応させて文献を比べる
   paragraphs:
-  - Wieser et al.（2025）はChang’E-6のNILSで、着陸点近傍の月面に由来する50–400 eVの水素負イオンH−を検出した。反射陽子と同じ放出角分布を仮定した反射率2.5（−0.8、＋1.2）%、表面直上の体積数密度0.18（−0.03、＋0.04）cm⁻³（90%区間）と、昼側寿命70 msを使う等価スケールハイト約10 kmは、局所スペクトルからの推定である。[@P000253] Zhong et al.（2026）は同じ観測系列と解析コードを用い、6区間で200 eVから各区間の太陽風エネルギーまでの90%有意限界を超えるH−成分を比較し、フラックスと平均エネルギーが太陽風条件に正に相関することを示した。初報の2.5%収率を入力とする輸送計算では、昼側はENAの放出角分布、夜側は一様角度、月の影では光脱離なしと仮定し、薄い昼側層と50 sで計算を止めた夜側の尾を予測した。H−がwakeやシースを変える作用と水生成への寄与量は、負イオンの反作用と表面反応を含む別の検証を要する。[@P000252]
+  - '[@P000253]はChang’E-6のNILSで、着陸点近傍の月面に由来する50–400 eVの水素負イオンH−を検出した。反射陽子と同じ放出角分布を仮定した反射率2.5（−0.8、＋1.2）%、表面直上の体積数密度0.18（−0.03、＋0.04）cm⁻³（90%区間）と、昼側寿命70
+    msを使う等価スケールハイト約10 kmは、局所スペクトルからの推定である。[@P000253] [@P000252]は同じ観測系列と解析コードを用い、6区間で200
+    eVから各区間の太陽風エネルギーまでの90%有意限界を超えるH−成分を比較し、フラックスと平均エネルギーが太陽風条件に正に相関することを示した。初報の2.5%収率を入力とする輸送計算では、昼側はENAの放出角分布、夜側は一様角度、月の影では光脱離なしと仮定し、薄い昼側層と50
+    sで計算を止めた夜側の尾を予測した。H−がwakeやシースを変える作用と水生成への寄与量は、負イオンの反作用と表面反応を含む別の検証を要する。'
 lineage:
 - title: 粒子計測から表面電位を推定する
   steps:
   - paper_id: P000018
     title: 月面で荷電粒子を測る
     significance: Apollo 14のCPLEE装置と計測成果をまとめ、月面近傍のプラズマを読む基盤を作った。
+    connection: ''
   - paper_id: P000003
     title: 軌道上から日陰の負帯電を捉える
     significance: Lunar Prospectorの電子分布から、夜側月面が探査機より低い電位にあることを示した。
@@ -60,7 +75,9 @@ lineage:
   steps:
   - paper_id: P000051
     title: 地殻磁場と相対電位を対応付ける
-    significance: 強い地殻磁場から来る光電子ほど負側の相対エネルギーずれを持つ統計的傾向を示し、静電減速を仮定すると磁化表面が相対的に正側となる解釈を支持した。地域間電位差はおおむねΔU≲10 Vの規模と推定され、Fe組成で二分しても磁場依存が残る。固定放出効率とエネルギーずれの縮退、未測定の探査機電位は明示的な限界である。
+    significance: 強い地殻磁場から来る光電子ほど負側の相対エネルギーずれを持つ統計的傾向を示し、静電減速を仮定すると磁化表面が相対的に正側となる解釈を支持した。地域間電位差はおおむねΔU≲10
+      Vの規模と推定され、Fe組成で二分しても磁場依存が残る。固定放出効率とエネルギーずれの縮退、未測定の探査機電位は明示的な限界である。
+    connection: ''
   - paper_id: P000162
     title: 太陽活動による正電位の変動を予測
     significance: ARTEMISと光電子モデルを照合し、フレア時の電流収支から正電位を予測した。
@@ -74,6 +91,7 @@ lineage:
   - paper_id: P000342
     title: 月近傍のイオン源を長期観測で評価
     significance: 月位置と太陽活動に対する生成・電離・流束の依存を調べた。
+    connection: ''
   - paper_id: P000341
     title: 地球磁気圏へ戻る経路を計算
     significance: MHD場での粒子追跡から北向きIMF条件の輸送経路を示した。
@@ -83,6 +101,7 @@ lineage:
   - paper_id: P000362
     title: 酸素Auger電子で光電子を識別
     significance: 月面由来の光電子を選び、放出収率の下限とモデル依存の幅を求めた。
+    connection: ''
   - paper_id: P000363
     title: 表面での後方散乱と再衝突を分ける
     significance: 光電子の識別法を使って後方散乱電子が優勢な事例を選び、磁場の向きと表面脱出の関係を示した。
@@ -113,75 +132,12 @@ entries:
 - paper_id: P000003
   group: measurements
   role: 夜側の負帯電
-  summary:
-    question: 日陰の月面の負帯電を、軌道上から推定できるか。
-    method: Lunar Prospectorのロスコーンと二次電子ビームを解析。
-    contribution: 夜側月面は探査機より平均約35 V低い電位と推定。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000003
-      version_id: V1
-      url: https://doi.org/10.1029/2001GL014428
-      source_type: full_text
-      locator: 要旨・結論（PDF pp.1,3）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000018
   group: measurements
   role: Apollo 14の月面粒子観測
-  summary:
-    question: 月面近傍の荷電粒子を、どのように測定したか。
-    method: CPLEEの装置・較正・設置とApollo 14観測成果を整理。
-    contribution: 初期の月面プラズマ計測と、その後のデータ解析の基盤をまとめた。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000018
-      version_id: V1
-      url: https://hdl.handle.net/20.500.11753/96
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000023
   group: measurements
   role: 全球の帯電分布
-  summary:
-    question: 月面電位の全球分布は、プラズマ環境から推定できるか。
-    method: Lunar Prospectorのプラズマデータと電流収支モデルを組み合わせる。
-    contribution: 太陽風・ウェイク・磁気圏尾部で変わる帯電環境を全球的に整理。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000023
-      version_id: V1
-      url: https://iro.uiowa.edu/esploro/outputs/conferenceProceeding/Lunar-surface-charging-A-global-perspective/9984429043102771
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000025
   group: measurements
   role: 入射電流と月面電位
@@ -189,53 +145,9 @@ entries:
     question: LPの軌道観測から、局所プラズマを基準とする月面負電位をどこまで定量化できるか。
     method: 1999年4月29日の磁気圏、1998年3月23日の太陽風・ウェイク、1998年5月6日のSEPを電子分布フィットと電流平衡で比較。
     contribution: 環境ごとの負電位と入射電子の対応を示した。通常期間の探査機電位補正、約20 Vの検出閾値、SEPの未補正、ウェイクの局所基準を区別して解釈できる。
-  evidence_by_item:
-    question:
-    - paper_id: P000025
-      version_id: V1
-      url: https://doi.org/10.1029/2008ja013194
-      locator: PDF pp.1–3 §§1–2; p.14 §9
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000025
-      version_id: V1
-      url: https://doi.org/10.1029/2008ja013194
-      locator: PDF pp.3–8 §§2–5, Eq.1, Figs.1–5
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000025
-      version_id: V1
-      url: https://doi.org/10.1029/2008ja013194
-      locator: PDF pp.9–14 §§6–9, Figs.6–15; SEP p.13 ¶57 is uncorrected
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
-  locked_fields: []
 - paper_id: P000032
   group: measurements
   role: 月面電磁場観測の計画
-  summary:
-    question: 月面での電磁場観測を、次の探査でどう実現するか。
-    method: かぐやの磁場観測成果を踏まえ、月面での観測計画を検討。
-    contribution: 月面電磁場の計測設計を、SELENE-2に向けた課題として整理。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution: []
-  inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
-    recheck: false
-  locked_fields: []
 - paper_id: P000034
   group: measurements
   role: ARTEMISによるローブ・プラズマシート電位の遠隔定量化
@@ -243,150 +155,27 @@ entries:
     question: Lunar Prospectorに残った探査機電位の未知のずれを減らし、低密度ローブでも月面負帯電を推定できるか。
     method: 2010年3月28日の磁気圏尾部フライバイでARTEMIS-P2のESA電子分布、FGM磁場、EFI探査機電位を使用。入射成分で規格化した上下方向分布に、探査機電位で補正した損失円錐と放出ビームを最小二乗で同時に合わせ、表面電位と磁場比を推定した。表面電位と経路上最低電位を等しいと仮定した。
     contribution: ローブで−30〜−60 V、プラズマシートの約07:27 UTの短い接続区間で−180〜−450 Vを推定した。入射電子電流が予想光電子電流よりローブで2桁以上、プラズマシートで約2桁小さいのに負電位が現れ、日照面上の非単調シースの解釈を支持した。プラズマシート後半は磁力線曲率により夜側接続を排除できない。
-  evidence_by_item:
-    question:
-    - paper_id: P000034
-      version_id: V1
-      url: https://doi.org/10.1029/2011JA016542
-      locator: PDF pp.1–2, §1 ¶4–8
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000034
-      version_id: V1
-      url: https://doi.org/10.1029/2011JA016542
-      locator: PDF pp.7–8, §3 ¶19; Figs.5,7
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000034
-      version_id: V1
-      url: https://doi.org/10.1029/2011JA016542
-      locator: PDF pp.4–5, ¶14; pp.6–8, ¶18–22; p.10, ¶25
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
-  locked_fields: []
 - paper_id: P000056
   group: measurements
   role: ROLSESの設計と初期観測の制約
-  summary:
-    question: 月面近傍の電波と局所プラズマ・ダストの信号を、着陸機搭載アンテナでどう識別できるか。
-    method: IM-1の4本の2.5 mモノポールで2 kHz–30 MHzのスペクトルと生波形を取得。輸送中83分・月面36分の取得条件と機器雑音を整理し、輸送中のピーク周波数を同時刻の地上AJ4COと比較した。
-    contribution: 輸送中の16–22 MHzの強い電波線を、地上観測との周波数対応から地球送信電波と解釈した。全区間10 dBの低利得とDSP平均化エラーなどの制約を報告し、シース密度・ダストの測定目標は達成結果として提示していない。
-  evidence_by_item:
-    question:
-    - paper_id: P000056
-      version_id: V1
-      url: https://arxiv.org/pdf/2603.22600v2
-      locator: §2–2.4（arXiv v2 PDF pp.3,6–7）
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000056
-      version_id: V1
-      url: https://arxiv.org/pdf/2603.22600v2
-      locator: §3–3.3・§4–5・§6.1（arXiv v2 PDF pp.8–13,18–24）
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000056
-      version_id: V1
-      url: https://arxiv.org/pdf/2603.22600v2
-      locator: §4–6.3（arXiv v2 PDF pp.20–26、Figs.19–22）；目標の達成範囲はp.7
-      source_type: full_text
-      checked_at: '2026-10-11'
-  inspection:
-    level: preprint
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
-  locked_fields: []
 - paper_id: P000004
   group: environment
   role: 日照域の強い負帯電
-  summary:
-    question: 磁気圏尾部では、日照域でも強い負帯電が起こるか。
-    method: Lunar Prospectorの電子ビームと入射電子スペクトルを比較。
-    contribution: 日照域でも月面がLPより500 V以上低い電位の事例を推定。主にプラズマシートで発生し、周囲プラズマ基準にはLPの帯電補正が要る。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000004
-      version_id: V1
-      url: https://doi.org/10.1029/2005GL022627
-      source_type: full_text
-      locator: 要旨・結論（PDF pp.1,3–4）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000006
   group: environment
   role: SEP時の極端な帯電
-  summary:
-    question: SEPイベントは月面の負帯電をどこまで強めるか。
-    method: 月周回の電子ビームを、ACE・SOHOの粒子観測と比較。
-    contribution: SEP時に月面と探査機の電位差が約−4.5 kVに到達。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000006
-      version_id: V1
-      url: https://doi.org/10.1029/2006GL028517
-      source_type: full_text
-      locator: §2・§5–6（PDF pp.1–2,4）
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000027
   group: environment
   role: SEP時の帯電予測
-  summary:
-    question: 太陽高エネルギー粒子イベントの強い負帯電を予測できるか。
-    method: 11回のSEPイベントでLunar Prospector観測と電流収支計算を比較。
-    contribution: 夜側で最大約−4.5 kVの帯電を扱い、8イベントで計算が観測を再現。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000027
-      version_id: V1
-      url: https://doi.org/10.1029/2009ja014113
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000041
   group: environment
   role: 光電子と太陽光子の対応、および一事例の正電位制約
   summary:
     question: ローブ中の近い太陽直下・弱地殻磁場域で、観測した高エネルギー光電子の強度は太陽光子流束とどう対応するか。
-    method: 2011年7月～2016年9月の2機のARTEMISから8条件で829スペクトルを選び、観測80–300 eV上向き電子と60秒分解能FISMの1–5 nm光子を比較。一事例はイオン反射でUMを独立制約した。
-    contribution: 相関係数0.77、平均電子／光子流束比5.0×10⁻³（2標準偏差1.6×10⁻³）を得た。毎回のUMが得られない統計と、一事例の+15～25 Vの観測制約を分けて示す。
+    method: 2011年7月～2016年9月の2機のARTEMISから8条件で829スペクトルを選び、観測80–300 eV上向き電子と60秒分解能FISMの1–5
+      nm光子を比較。一事例はイオン反射でUMを独立制約した。
+    contribution: 相関係数0.77、平均電子／光子流束比5.0×10⁻³（2標準偏差1.6×10⁻³）を得た。毎回のUMが得られない統計と、一事例の+15～25
+      Vの観測制約を分けて示す。
   evidence_by_item:
     question:
     - paper_id: P000041
@@ -421,845 +210,115 @@ entries:
       source_type: full_text
       locator: PDF pp.3–4、§2.1、Fig.2h–i
       checked_at: '2026-10-11'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
-  locked_fields: []
 - paper_id: P000045
   group: environment
   role: 夜明け側・低密度の電位異常の統計
-  summary:
-    question: 磁気圏尾部ローブの月夜側、とくに夜明け側・低密度条件の弱い負電位は、周囲電子・イオン収集と二次電子放出だけで説明できるか。
-    method: ARTEMISの電子ビームによる遠隔電位推定を55事例で解析し、経度・周囲密度別に電流収支モデルと比較。既往の衝突電荷収率と微小隕石質量・速度分布から衝突電流を推算し、4電流源の平衡モデルを計算。
-    contribution: 夜明け側かつ低密度で強まる弱い負帯電を示し、約1桁の不確かさを持つ全球平均約10^-10 A/m^2の衝突電流と夜明け側に偏る衝突分布が、その大きさと経度依存を説明しうると提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000045
-      version_id: V1
-      url: https://doi.org/10.1029/2021gl094585
-      source_type: full_text
-      locator: PDF pp.4–5, §2.2, Fig.2 PDF pp.3–4, §2.1, Fig.1 PDF p.4, §2.1 PDF p.5, §3, Eq.1 PDF p.5, §3, Fig.3a–b PDF pp.5–6, §3, Fig.3c–d PDF pp.6–7, §3, Fig.3d PDF p.7, §3, Fig.4 PDF pp.5–7, §3
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000045
-      version_id: V1
-      url: https://doi.org/10.1029/2021gl094585
-      source_type: full_text
-      locator: PDF pp.4–5, §2.2, Fig.2 PDF pp.3–4, §2.1, Fig.1 PDF p.4, §2.1 PDF p.5, §3, Eq.1 PDF p.5, §3, Fig.3a–b PDF pp.5–6, §3, Fig.3c–d PDF pp.6–7, §3, Fig.3d PDF p.7, §3, Fig.4 PDF pp.5–7, §3
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000045
-      version_id: V1
-      url: https://doi.org/10.1029/2021gl094585
-      source_type: full_text
-      locator: PDF pp.4–5, §2.2, Fig.2 PDF pp.3–4, §2.1, Fig.1 PDF p.4, §2.1 PDF p.5, §3, Eq.1 PDF p.5, §3, Fig.3a–b PDF pp.5–6, §3, Fig.3c–d PDF pp.6–7, §3, Fig.3d PDF p.7, §3, Fig.4 PDF pp.5–7, §3
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000046
   group: environment
   role: 観測データからの宇宙天気条件
-  summary:
-    question: 実際の宇宙天気の変化を、月面帯電モデルへどう反映するか。
-    method: ARTEMISとOMNIから得たプラズマ条件を用いて帯電を計算。
-    contribution: 観測に基づく環境条件と月面電位予測をつなぐ枠組みを示した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution: []
-  inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
-    recheck: false
-  locked_fields: []
 - paper_id: P000051
   group: environment
   role: 連続光電子スペクトルによる相対電位推定
-  summary:
-    question: 地球磁気圏ローブ中の月の日照面で、地殻磁場の強さは光電子の減速と相対表面電位の空間分布にどう対応するか。
-    method: 2008年1月–2009年6月のかぐやLMAG・PACE/ESA-S1から336軌道・43,670点のローブ様日照面観測を選ぶ。α=0.420に固定したK23放出モデルを10 eV幅で平滑化し装置応答と畳み込んで、上向き電子の60–150 eVをχ²フィットする。直線磁力線外挿足点をLP電子反射法の5°×5°表面磁場図と照合し、欠測を除いた42,197点で磁場強度とΔEを比較する。
-    contribution: 強い地殻磁場から来る光電子ほど負側の相対エネルギーずれを持つ統計的傾向を示し、静電減速を仮定すると磁化表面が相対的に正側となる解釈を支持した。地域間電位差はおおむねΔU≲10 Vの規模と推定され、Fe組成で二分しても磁場依存が残る。固定放出効率とエネルギーずれの縮退、未測定の探査機電位は明示的な限界である。
-  evidence_by_item:
-    question:
-    - paper_id: P000051
-      version_id: V1
-      url: https://doi.org/10.1029/2024ja033545
-      source_type: full_text
-      locator: PDF pp.7–8, §3, Fig.5 PDF pp.8–9, §4 PDF pp.4–6, §2, Eq.(1), Figs.2–3 PDF pp.5–6, Fig.3 PDF pp.6–7, Fig.4 PDF pp.9–10, §4, Table 1 PDF p.10, §4末尾 PDF pp.9–10, §§4–5 PDF pp.4–10, Eq.(1), Figs.3–5, §§2–4
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000051
-      version_id: V1
-      url: https://doi.org/10.1029/2024ja033545
-      source_type: full_text
-      locator: PDF pp.7–8, §3, Fig.5 PDF pp.8–9, §4 PDF pp.4–6, §2, Eq.(1), Figs.2–3 PDF pp.5–6, Fig.3 PDF pp.6–7, Fig.4 PDF pp.9–10, §4, Table 1 PDF p.10, §4末尾 PDF pp.9–10, §§4–5 PDF pp.4–10, Eq.(1), Figs.3–5, §§2–4
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000051
-      version_id: V1
-      url: https://doi.org/10.1029/2024ja033545
-      source_type: full_text
-      locator: PDF pp.7–8, §3, Fig.5 PDF pp.8–9, §4 PDF pp.4–6, §2, Eq.(1), Figs.2–3 PDF pp.5–6, Fig.3 PDF pp.6–7, Fig.4 PDF pp.9–10, §4, Table 1 PDF p.10, §4末尾 PDF pp.9–10, §§4–5 PDF pp.4–10, Eq.(1), Figs.3–5, §§2–4
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000161
   group: measurements
   role: 昼側電位の統計と環境依存
-  summary:
-    question: 磁気圏ローブ中の昼側電位は、日照と周囲のプラズマにどう応答するか。
-    method: ARTEMISの光電子位相空間密度を放出モデルと50–250 eVで比較して電位を推定し、イオン観測による局所密度などへの依存を統計解析。
-    contribution: 昼側電位は太陽天頂角と局所プラズマ密度に応答し、その影響を除くと電子温度との依存も現れた。ARTEMISが観測した範囲では地殻磁場への明瞭な依存は認められなかった。
-  evidence_by_item:
-    question:
-    - paper_id: P000161
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
-      source_type: full_text
-      locator: §2–4
-      checked_at: '2026-09-18'
-    method:
-    - paper_id: P000161
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
-      source_type: full_text
-      locator: §2–4
-      checked_at: '2026-09-18'
-    contribution:
-    - paper_id: P000161
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL123954
-      source_type: full_text
-      locator: §2–4
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
 - paper_id: P000162
   group: environment
   role: 太陽活動と昼側の正電位
-  summary:
-    question: 太陽活動の変化は、月面の光電子放出と正電位をどこまで高めるか。
-    method: ARTEMIS長期観測と光電子モデルを照合し、単調シースを仮定した電流収支から+50 V超の電位を計算。
-    contribution: 磁気圏ローブでフレア時に+100 Vを超える正電位を予測した。
-  evidence_by_item:
-    question:
-    - paper_id: P000162
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
-      source_type: full_text
-      locator: Abstract; §4 Conclusions
-      checked_at: '2026-09-18'
-    method:
-    - paper_id: P000162
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
-      source_type: full_text
-      locator: PDF pp.2-7, sections 2-3; Fig.4c (p.6); monotonic potential and >+50 V restriction (p.7)
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000162
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120581
-      source_type: full_text
-      locator: Abstract; §4 Conclusions
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
 - paper_id: P000163
   group: environment
   role: 反射陽子による広域の太陽風擾乱
-  summary:
-    question: 磁気異常で反射された陽子は、周囲の太陽風をどこまで変えるか。
-    method: 2009年3月29日–4月5日の夕方側57周回で、Chandrayaan-1/SWIMのイオン分布をWindの上流計測と比較し、SPA磁気群上空の偏向・加熱・減速を解析。
-    contribution: 高度約100 kmの夕方側、南緯15–70度で頻発する擾乱から、反射陽子と太陽風の相互作用による広域のproto-magnetosheathを提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000163
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
-      source_type: full_text
-      locator: Abstract; §6 Conclusions
-      checked_at: '2026-09-18'
-    method:
-    - paper_id: P000163
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
-      source_type: full_text
-      locator: Abstract; §6 Conclusions
-      checked_at: '2026-09-18'
-    contribution:
-    - paper_id: P000163
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JA035258
-      source_type: full_text
-      locator: Abstract; §6 Conclusions
-      checked_at: '2026-09-18'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
 - paper_id: P000184
   group: measurements
   role: PACEによる太陽風陽子の月面散乱観測
-  summary:
-    question: 月面へ入射した太陽風陽子の一部はイオンとして月面から戻るのか。その組成とエネルギー・方向分布、さらに太陽風より高エネルギーになる過程を調べる。
-    method: 高度約100 kmのかぐやで、反対向きの半球視野を持つMAP-PACEのIEAとIMAにより、2008年2月27日の昼側太陽風と月面側イオンを同時観測した。前日2月26日の類似事例のTOF質量測定で組成を補い、2月27日のMAP-LMAG磁場と合わせて、低エネルギー成分と連続2周回の加速成分を比較した。
-    contribution: 月面側から来る広い角度分布の陽子成分を、太陽風の月面反射・散乱と解釈し、反射陽子フラックスを元の太陽風イオンフラックスの約0.1〜1％と報告した。連続2周回では太陽風約0.75 keV/qに対し最大約5 keV/qの成分を捉え、磁場に基づく対流電場方向との対応からself-pick-up加速で説明した。
   evidence_by_item:
     question:
     - paper_id: P000184
       version_id: V1
       url: https://doi.org/10.1029/2008gl036077
       source_type: full_text
-      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3]; Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3 [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5 Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5, Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8], Figs.2–4
+      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3];
+        Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3
+        [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5
+        Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5,
+        Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8],
+        Figs.2–4
       checked_at: '2026-10-13'
     method:
     - paper_id: P000184
       version_id: V1
       url: https://doi.org/10.1029/2008gl036077
       source_type: full_text
-      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3]; Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3 [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5 Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5, Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8], Figs.2–4
+      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3];
+        Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3
+        [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5
+        Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5,
+        Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8],
+        Figs.2–4
       checked_at: '2026-10-13'
     contribution:
     - paper_id: P000184
       version_id: V1
       url: https://doi.org/10.1029/2008gl036077
       source_type: full_text
-      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3]; Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3 [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5 Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5, Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8], Figs.2–4
+      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3];
+        Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3
+        [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5
+        Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5,
+        Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF pp.3–5 Sec.3 [5]–[6], Sec.4 [7]–[8],
+        Figs.2–4
       checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
 - paper_id: P000185
   group: measurements
   role: PACEによる月起源イオン
-  summary:
-    question: 月周回軌道で測定した低エネルギーイオンは月面・外気圏に由来するのか、どの元素のイオンが含まれるのかを調べる。
-    method: かぐや搭載のイオンエネルギー質量分析器MAP-PACE IMAを用い、高度100 kmで低エネルギーイオンを観測して質量成分を調べた。
-    contribution: 月面・外気圏起源のイオンを検出し、少なくともHe⁺、C⁺、O⁺、Na⁺、K⁺を同定した。Na・Kに加えて、He・C・Oの月外気圏の存在を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000185
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009GL038185
-      source_type: abstract
-      locator: Abstract [1], first two sentences and origin/species result
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000185
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009GL038185
-      source_type: abstract
-      locator: Abstract [1], MAP-PACE IMA and 100-km-altitude observation sentence
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000185
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2009GL038185
-      source_type: abstract
-      locator: Abstract [1], final two sentences
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000186
   group: measurements
   role: ウェイク内の陽子エネルギー変化
-  summary:
-    question: 月のすぐ後方、高度約100 kmの希薄な領域（ウェイク）へ太陽風陽子はどの向きに入り、南北で対になるエネルギーの増減は何によって生じるか。
-    method: かぐやのMAP-PACE/IMAとMAP-LMAGで陽子と磁場を観測し、ウェイク境界の内向き電場を含む粒子軌道計算と理論解析でエネルギー変化を調べた。
-    contribution: 磁場に垂直な陽子の侵入と、月の静止系での半球ごとのエネルギー増減を捉えた。粒子軌道計算は、磁場周りの旋回運動とウェイク境界の内向き電場でこの特徴を再現した。
-  evidence_by_item:
-    question:
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: abstract
-      locator: Abstract, paragraph [1]
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: abstract
-      locator: Abstract, paragraph [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: full_text
-      locator: Section 2. Instrumentation, paragraph [3]; Section 4. Model Calculations, paragraphs [7]–[9]
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: abstract
-      locator: Abstract, paragraph [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000186
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL039049
-      source_type: full_text
-      locator: Section 4. Model Calculations, paragraph [9]; Section 5. Theoretical Interpretation, paragraphs [10]–[11]
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000247
   group: measurements
   role: Chandrayaan-2電波観測による密度ゆらぎ
-  summary:
-    question: 月が太陽風と地球磁気尾を通る際、地球―月間の視線に沿った電子密度ゆらぎのスペクトルはどう変わり、地磁気活動とどの程度対応するかを調べる。
-    method: Chandrayaan-2の双方向S帯の電波掩蔽観測から幾何学的ドップラー成分を除き、電子密度ゆらぎを反映する周波数残差を得た。2022年の54区間でパワースペクトルを求め、磁気圏境界モデルで環境を分類した。
-    contribution: 得られたスペクトル指数はイオン運動論・散逸スケールに対応した。磁気圏境界内と太陽風などの指数差は標本が限られ統計的に有意でなく、地磁気活動との測定可能な相関も見られなかった。
-  evidence_by_item:
-    question:
-    - paper_id: P000247
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
-      source_type: abstract
-      locator: Abstract 第1段落・第3段落
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000247
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
-      source_type: abstract
-      locator: Abstract 第1段落・第2段落
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000247
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009957
-      source_type: abstract
-      locator: Abstract 第2段落・第3段落
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000252
   group: measurements
   role: Chang’E-6負イオンの太陽風依存性
-  summary:
-    question: Chang’E-6で観測されたH−のスペクトルは、太陽風のフラックス・エネルギーにどう応答するか。月面から放出されたH−が光脱離と電磁場の下でどこまで分布しうるかを調べた。
-    method: 同じNILS観測系列の6区間を最尤解析し、200 eVから各区間の太陽風エネルギーまでの90%有意限界を超えた点から積分フラックスと平均エネルギーを計算してARTEMISと比較した。収率2.5%、昼側ENA角度分布、影で光脱離なし等の仮定を置いた5条件のMonte Carloテスト粒子計算を行った。
-    contribution: 選択高エネルギーH−成分と太陽風に正相関があり、太陽風–表面相互作用と後方散乱起源の解釈を支持した。薄い昼側層と夜側の尾は計算予測で、角度・影・磁場・50 s終端時刻に依存する。月水やwake再充填への寄与は定量実証されていない。
-  evidence_by_item:
-    question:
-    - paper_id: P000252
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.adw1162
-      source_type: full_text
-      locator: PDF pp.2–3, Introduction末尾・Results
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000252
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.adw1162
-      source_type: full_text
-      locator: PDF pp.6–7, Materials and Methods; Eqs.1–10; p.4, 分布初期条件
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000252
-      version_id: V1
-      url: https://doi.org/10.1126/sciadv.adw1162
-      source_type: full_text
-      locator: PDF pp.3–5, Results; Fig.2–3; p.7, Hybrid model限界
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
 - paper_id: P000253
   group: measurements
   role: Chang’E-6/NILSによる月面H−の局所検出と負イオン層の推定
-  summary:
-    question: 月面に入射する太陽風は負イオンを伴って戻るか。水素と酸素負イオンを電子背景から分離し、局所フラックスから全反射率・近傍密度・高度をどこまで推定できるか。
-    method: 月裏側ApolloクレーターのNILSデータ302分を、電子/H−/O−/偶発の校正TOF応答で最尤分離した。下向き5°を超える方向と時間を積算し、ARTEMIS-P2の太陽風に対して角応答補正を行う。全放出量には角分布とエネルギー・角度の独立を仮定し、昼側光脱離寿命から鉛直分布を推定した。
-    contribution: 50–400 eVのH−を局所検出した。反射陽子角分布を用いると、反射率2.5（−0.8、＋1.2）%、表面直上体積密度0.18（−0.03、＋0.04）cm⁻³（90%区間）、昼側等価高度約10kmを推定する。O−は非検出で、収率<19.7%・密度≲2.3cm⁻³の上限に留まる。
-  evidence_by_item:
-    question:
-    - paper_id: P000253
-      version_id: V1
-      url: https://doi.org/10.1038/s43247-025-02399-7
-      source_type: full_text
-      locator: PDF pp1–2 Introduction
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000253
-      version_id: V1
-      url: https://doi.org/10.1038/s43247-025-02399-7
-      source_type: full_text
-      locator: PDF pp5–8 Methods; Figs5–8; Eqs1–25
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000253
-      version_id: V1
-      url: https://doi.org/10.1038/s43247-025-02399-7
-      source_type: full_text
-      locator: PDF pp2–4 Results and discussion; Fig3; Table1
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
 - paper_id: P000262
   group: measurements
   role: ARTEMIS電子分布からのウェイク内プラズマ電位推定
-  inspection:
-    level: preprint
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-11'
-    recheck: false
-  summary:
-    question: 月ウェイクの電子分布から、左右非対称と中央衝撃波を含むプラズマ電位を間接的に推定できるか。
-    method: 安定した磁場と上流定常性を条件としてARTEMIS P1の時系列を空間列へ読み替える。左右では電子の準平衡を使って分布を最適化し、中央では捕捉電子分布の幅を電位差へ換算する。既知電位との精度比較は別の一次元PICで行う。
-    contribution: 2016年7月29日と2011年10月23日の横断から、太陽風と中央の電位差をそれぞれ約800 Vと約200 Vと推定した。非定常区間と中央境界では従来shift法と差が生じる。月面・宇宙機表面の帯電電位を直接測った値ではない。
-  evidence_by_item:
-    question:
-    - paper_id: P000262
-      version_id: V1
-      url: https://arxiv.org/pdf/2604.17825v1
-      locator: PDF p.3, Introduction; pp.4–7, Section 2; Eqs.1–8
-      source_type: full_text
-      checked_at: '2026-10-11'
-    method:
-    - paper_id: P000262
-      version_id: V1
-      url: https://arxiv.org/pdf/2604.17825v1
-      locator: PDF pp.4–8, Sections 2–3; Eqs.2–8; pp.14–15, Section 4
-      source_type: full_text
-      checked_at: '2026-10-11'
-    contribution:
-    - paper_id: P000262
-      version_id: V1
-      url: https://arxiv.org/pdf/2604.17825v1
-      locator: PDF pp.8–14, Sections 3.1–3.2; Figs.2–7; pp.15–19, Section 4; Figs.8–11
-      source_type: full_text
-      checked_at: '2026-10-11'
 - paper_id: P000273
   group: measurements
   role: 磁気異常からウェイクへの陽子輸送
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-22'
-    recheck: false
-  summary:
-    question: 磁気異常で散乱された陽子は月ウェイクへ届くか。
-    method: SARA/SWIM観測と粒子の逆向き軌道追跡を組み合わせる。
-    contribution: South Pole–Aitkenの磁気異常に由来する近傍ウェイクへの輸送経路を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000273
-      version_id: V1
-      url: https://doi.org/10.1029/2018gl079330
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    method:
-    - paper_id: P000273
-      version_id: V1
-      url: https://doi.org/10.1029/2018gl079330
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
-    contribution:
-    - paper_id: P000273
-      version_id: V1
-      url: https://doi.org/10.1029/2018gl079330
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
 - paper_id: P000177
   group: environment
   role: PACEによる地球起源酸素の輸送
-  summary:
-    question: 月の金属に含まれる酸素同位体のうち、酸素16に乏しい成分はどこから来たのか。地球の生物活動に由来する酸素が、磁気圏を通じて月へ届くかを調べた。
-    method: かぐやが観測した酸素イオンのエネルギーと、月が地球のプラズマシート内にある条件を比較した。金属への侵入深さと地球上層大気の酸素同位体の特徴も合わせて検討した。
-    contribution: 月がプラズマシート内にあるときだけ、1〜10 keVの酸素イオンを多数検出した。地球起源の酸素が月の表土の浅部へ注入され、酸素16に乏しい成分の供給源になると解釈した。
-  evidence_by_item:
-    question:
-    - paper_id: P000177
-      version_id: V1
-      url: https://www.natureasia.com/ja-jp/natastron/abstracts/83526
-      source_type: abstract
-      locator: Research Abstract、英語要旨第1〜2文
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000177
-      version_id: V1
-      url: https://www.natureasia.com/ja-jp/natastron/abstracts/83526
-      source_type: abstract
-      locator: Research Abstract、英語要旨第3〜4文
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000177
-      version_id: V1
-      url: https://www.natureasia.com/ja-jp/natastron/abstracts/83526
-      source_type: abstract
-      locator: Research Abstract、英語要旨第3〜4文
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000178
   group: environment
   role: PACE・LMAGによる磁気リコネクションの候補
-  summary:
-    question: 月の地殻磁気異常の付近で、イオンの噴流を伴わず電子だけが加速される磁気リコネクションが起きるかを、低高度での直接観測から調べる。
-    method: 南極エイトケン磁気異常付近を高度29 kmで通過した「かぐや」の電子データを1秒分解能で解析し、電流シート内の電子・イオンの噴流と磁場構造を調べた。
-    contribution: 電流シートの通過時に、イオン噴流を伴わない電子噴流と磁束ロープを見いだした。月の磁気異常付近で電子のみの磁気リコネクションが起こる可能性を支持する観測例を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000178
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
-      source_type: abstract
-      locator: Abstract, sentence 1
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000178
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
-      source_type: abstract
-      locator: Abstract, sentences 2–3
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000178
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL120358
-      source_type: abstract
-      locator: Abstract, sentences 3–5
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000179
   group: environment
   role: PACEによるC・N・Oイオンの日変化
-  summary:
-    question: 月外気圏の炭素・窒素・酸素イオンの組成と日変化はどのようで、供給源と生成機構をどこまで特定できるかを調べた。
-    method: かぐやのイオン質量分析器の観測でC+・N+・O+を分離し、C+/O+比とN+/O+比の時間変化や昼夜差を解析した。
-    contribution: イオン比の日変化から、窒素に富む供給源と窒素を含まないCO・CO2成分を示唆した。日中の主な生成過程を太陽風が窒素に富む月面物質を叩き出す作用と解釈し、流星雨直後のC+/O+比変化も報告した。
-  evidence_by_item:
-    question:
-    - paper_id: P000179
-      version_id: V1
-      url: https://www.nature.com/articles/s41561-026-01933-2
-      source_type: abstract
-      locator: Abstract, first three sentences
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000179
-      version_id: V1
-      url: https://www.nature.com/articles/s41561-026-01933-2
-      source_type: abstract
-      locator: Abstract, Kaguya ion mass analyser sentence
-      checked_at: '2026-10-06'
-    - paper_id: P000179
-      version_id: V1
-      url: https://www.nature.com/articles/s41561-026-01933-2
-      source_type: full_text
-      locator: Extended Data Fig. 2 caption
-      checked_at: '2026-10-06'
-    - paper_id: P000179
-      version_id: V1
-      url: https://www.nature.com/articles/s41561-026-01933-2
-      source_type: full_text
-      locator: Fig. 2 title; Extended Data Fig. 1 caption
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000179
-      version_id: V1
-      url: https://www.nature.com/articles/s41561-026-01933-2
-      source_type: abstract
-      locator: Abstract, C+/O+ and N+/O+ variations, sources and daytime mechanism sentences
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000341
+  group: environment
   role: 月金属イオンの地球方向輸送
-  summary:
-    question: 月起源の金属イオンは、どの条件で地球の内側磁気圏へ到達するか。
-    method: OpenGGCMの時間依存MHD場に粒子追跡を組み合わせ、磁気圏尾部で月位置とIMFを変える。
-    contribution: 理想化した北向きIMF条件で地球方向への輸送経路を示した。輸送確率は限定的で、全球供給量の直接測定ではない。
-  evidence_by_item:
-    question:
-    - paper_id: P000341
-      version_id: V1
-      url: https://doi.org/10.1029/2026JA035493
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000341
-      version_id: V1
-      url: https://doi.org/10.1029/2026JA035493
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000341
-      version_id: V1
-      url: https://doi.org/10.1029/2026JA035493
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
-  group: environment
 - paper_id: P000342
-  role: 月位置・太陽活動と金属イオン源
-  summary:
-    question: 月近傍の金属pickup ionの供給は、太陽活動と月位置にどう依存するか。
-    method: THEMIS-ARTEMISの12年の観測から、中性粒子の生成・電離率とイオン流束の変動を評価する。
-    contribution: 太陽活動より月位置への依存が強く、磁気圏内ではスパッタ・電離の低下により生成が抑えられることを示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000342
-      version_id: V1
-      url: https://doi.org/10.1029/2024JA033566
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000342
-      version_id: V1
-      url: https://doi.org/10.1029/2024JA033566
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000342
-      version_id: V1
-      url: https://doi.org/10.1029/2024JA033566
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: environment
+  role: 月位置・太陽活動と金属イオン源
 - paper_id: P000362
   group: measurements
   role: ARTEMISによる光電子の識別と放出収率
-  summary:
-    question: 月面の光電子放出収率を、軌道上の電子観測からどこまで制約できるか。
-    method: ARTEMISとFISM2の太陽放射を比較し、酸素Auger電子を指標に月面由来の光電子を選別。
-    contribution: 約20 eVを超える入射光子の放出収率に10⁻³の下限を与えた。放出電子のエネルギー分布の仮定により、推定収率には約4桁の幅が残る。
-  evidence_by_item:
-    contribution:
-    - paper_id: P000362
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020je006790
-      source_type: abstract
-      locator: 要旨・Plain Language Summary（本文全体は未精読）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
 - paper_id: P000363
   group: measurements
   role: 表面での電子後方散乱と再衝突
-  summary:
-    question: 月面で後方散乱された電子の割合は、磁場の向きとどう関わるか。
-    method: ARTEMISの電子スペクトルで光電子と後方散乱電子を区別し、後方散乱係数を推定。
-    contribution: 一次電子50–600 eVで代表的な推定係数は約0.3、純弾性散乱を仮定した下限は約0.1。推定値は光電子の補正条件に依存し、磁場の伏角による再衝突が宇宙へ戻る割合を変える。
-  evidence_by_item:
-    contribution:
-    - paper_id: P000363
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023je007983
-      source_type: abstract
-      locator: 要旨・Plain Language Summary（本文全体は未精読）
-      checked_at: '2026-10-02'
-    - paper_id: P000363
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023JE007983
-      source_type: full_text
-      locator: §4：一次電子50–600 eVと光電子補正・散乱モデルの条件（該当箇所のみ確認。本文全体は未精読）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
 - paper_id: P000364
   group: measurements
   role: 光電子流束・検出確率の環境依存
-  summary:
-    question: 月面から放出された光電子の流束と、観測で光電子を識別できる割合は、太陽天頂角・太陽軟X線・降下電子・周辺プラズマ環境でどう変わるか。
-    method: 2011年8月–2025年1月のARTEMIS burst電子・磁場・宇宙機電位を用い、昼側表面への直線磁力線接続と上向きピッチ角を選ぶ。酸素Augerピークの傾き/流束と高放出率モデルへの相対適合誤差<0.2で光電子を選別し、宇宙機・月面電位を補正した流束と識別確率をローブ/太陽風で比較する。傾き閾値の本文・図の不一致は未解決。
-    contribution: 表面推定流束の余弦型SZA依存と軟X線との正相関を示し、識別割合がローブ51.2%、太陽風8.6%となる環境差、太陽風の夕側ピーク、降下電子による識別抑制を整理した。電位・光電流モデルへの観測制約を提供する。
-  evidence_by_item:
-    question:
-    - paper_id: P000364
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009879
-      source_type: full_text
-      locator: PDF pp.2–3 §2.1–2.2; pp.4–9 §3
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000364
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009879
-      source_type: full_text
-      locator: PDF pp.2–4 §2.1–3.1; p.4 Fig.2b/d slope discrepancy
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000364
-      version_id: V1
-      url: https://doi.org/10.1029/2026JE009879
-      source_type: full_text
-      locator: PDF pp.3–9 §2.2–3.2, Figs.3–8; p.10 §4 continuation
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
 - paper_id: P000390
   group: environment
-  locked_fields: []
   role: LDEXの衝突検出で捉えた非対称なダスト雲
-  summary:
-    question: 月の周囲には持続的なダスト雲があるか。その空間分布と流星群への応答は、どの供給機構と整合するか。
-    method: LADEE搭載LDEXの約80日分の稼働で得た約14万件の個別衝突を解析し、主に半径0.3 µm以上の粒子について高度・地方時・流星群との対応を調べた。衝突時の電離電荷を質量・速度モデルで粒子量へ換算した。
-    contribution: 明け方に偏る持続的な雲と流星群時の増加を捉え、流入隕石モデルとの比較から彗星由来粒子の衝突による噴出物と解釈した。粒子の起源や飛行中の正味電荷を直接測った結果ではない。半径約0.1 µmの積分電流解析は別の感度条件を持ち、Szalayらと同じLDEX観測に基づく。
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-08'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000390
-      version_id: V1
-      url: https://doi.org/10.1038/nature14479
-      source_type: full_text
-      locator: PDF p.1（印刷324）、Abstract・導入
-      checked_at: '2026-10-08'
-    method:
-    - paper_id: P000390
-      version_id: V1
-      url: https://doi.org/10.1038/nature14479
-      source_type: full_text
-      locator: PDF pp.1–5、Fig.1–3、MethodsのLDEX検出・換算・噴出物モデル
-      checked_at: '2026-10-08'
-    contribution:
-    - paper_id: P000390
-      version_id: V1
-      url: https://doi.org/10.1038/nature14479
-      source_type: full_text
-      locator: PDF pp.1–6、Fig.1・3、Methodsの流入隕石と微小粒子上限、観測範囲
-      checked_at: '2026-10-08'
 - paper_id: P000039
   group: environment
-  locked_fields: []
   role: LDEX積分電流による浮上ダスト密度の上限
-  summary:
-    question: LADEEのLDEXが測る積分電流から、月上空の微小ダスト密度にどのような上限を置けるか。
-    method: 高度3–250 kmのLDEX観測から背景電流を差し引き、ダスト衝突と低エネルギーイオンが残る信号を解析した。粒子半径0.1 µmを仮定し、各境界通過時の機体速度を用いて、残差信号をすべてダストとした密度上限へ換算した。
-    contribution: 日の出側の測定で、太陽風中では約100 m⁻³、磁気圏尾部では約40 m⁻³の密度上限を得た。この粒径・速度・高度の条件ではApollo期の高密度雲を支持せず、高度3 km未満の局所輸送は観測範囲の外に残る。
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-08'
-    recheck: false
-  evidence_by_item:
-    question:
-    - paper_id: P000039
-      version_id: V1
-      url: https://doi.org/10.1002/2015GL064324
-      source_type: full_text
-      locator: PDF p.1、Abstract・§1
-      checked_at: '2026-10-08'
-    method:
-    - paper_id: P000039
-      version_id: V1
-      url: https://doi.org/10.1002/2015GL064324
-      source_type: full_text
-      locator: "PDF pp.2–5、§2–3、積分電流・背景補正・電荷と速度を仮定した密度換算"
-      checked_at: '2026-10-08'
-    contribution:
-    - paper_id: P000039
-      version_id: V1
-      url: https://doi.org/10.1002/2015GL064324
-      source_type: full_text
-      locator: PDF pp.4–5、§3–4、密度上限・Apolloとの比較・観測高度の限界
-      checked_at: '2026-10-08'
-relations: []
-view:
-  sort:
-  - year
-  - first_author
-  - paper_id
-  overview_nodes: []
-  graphs: []
-  graph_nodes: 20
-  graph_edges: 30
 survey:
   searched_at: '2026-10-02'
   scope_period: 制限なし
@@ -1273,12 +332,13 @@ survey:
   - 10.1029/2020JE006790
   - 10.1029/2023JE007983
   - 10.1029/2026JE009879
-  coverage_note: "Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
+  coverage_note: 'Issue #2–#8 の候補をDOI・題名・著者・年で照合して追加。既存文献の確認状況を維持し、新規分は書誌確認と要旨確認を区別した。
+    2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。'
   limitations:
-  - "2026-09-22のIssue #2–#8整理では新規文献の全文を未精読として記録した。2026-10-08にはP000039・P000390の該当版を全文確認した。他の文献の確認状況は各entryのinspectionを参照。"
+  - '2026-09-22のIssue #2–#8整理では新規文献の全文を未精読として記録した。2026-10-08にはP000039・P000390の該当版を全文確認した。他の文献の確認状況は各entryのinspectionを参照。'
   - 'Issue #23の追加文献は要旨・Plain Language Summaryで確認。本文全体と全図表は未精読。'
   - P000363は§4のエネルギー範囲と光電子補正・散乱モデルの条件のみ本文で追加確認。inspectionは要旨確認のままとし、本文全体・全図表の精読は未実施。
-  changes: "Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #23の電子放出・後方散乱研究を追加し、概説と必要な系譜を補足。 2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。"
+  changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。 Issue #23の電子放出・後方散乱研究を追加し、概説と必要な系譜を補足。
+    2026-10-08に追加読解した文献の全文要約・参照版・出典位置と概説を更新した。対象とPDFの照合記録は非公開ワークスペースに保存。'
   publication_status: draft
-  reviewed_at: null
 reading_notes: []

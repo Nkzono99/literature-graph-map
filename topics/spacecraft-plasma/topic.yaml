@@ -8,17 +8,21 @@ review:
   - 宇宙機には電子とイオンが流入し、表面からは光電子や二次電子が出ていく。その電流収支で機体の電位が決まると、周囲の粒子軌道と密度分布も変わる。電位が変化するシースと、流れの後方にできるウェイクを含めて扱うことが、宇宙機とプラズマの相互作用を理解する基礎になる。[@P000118]は帯電過程・シース理論・観測を概観し、[@P000119]は式の導出から帯電対策までを調べるための教科書である。
 - heading: 材料と形状を入れて、機体の帯電を計算する
   paragraphs:
-  - Mandellらの2005年会議版は、NASCAP-2Kの表面帯電と周囲のプラズマ計算をつなぐ構成を示した。希薄プラズマの表面電位は境界要素法、空間電位は入れ子格子の有限要素法で求め、イオン軌道から電荷密度を更新する方法や、EPICのプルーム密度を取り込む方法を選べる。静止軌道例の300 s後の約−7～−10 kVは指定材料配置とNASA Worst Case環境の計算値であり、ウェイクとプルームの例では電子密度をbarometricと仮定する。PICは利用可能な機能として挙げられるが、本稿の3例からその動的性能や実機予測精度を評価するには、別に挙げられた検証論文の確認が要る。[@P000120]
+  - Mandellらの2005年会議版は、NASCAP-2Kの表面帯電と周囲のプラズマ計算をつなぐ構成を示した。希薄プラズマの表面電位は境界要素法、空間電位は入れ子格子の有限要素法で求め、イオン軌道から電荷密度を更新する方法や、EPICのプルーム密度を取り込む方法を選べる。静止軌道例の300
+    s後の約−7～−10 kVは指定材料配置とNASA Worst Case環境の計算値であり、ウェイクとプルームの例では電子密度をbarometricと仮定する。PICは利用可能な機能として挙げられるが、本稿の3例からその動的性能や実機予測精度を評価するには、別に挙げられた検証論文の確認が要る。[@P000120]
   - 太陽近傍を想定した[@P000121]は5つの計算モデルを比較し、浮遊電位、捕集・放出電流、密度と電位の空間分布を調べた。同じ物理過程を同様に扱う条件では予測がよく一致し、放出電子や背景磁場の扱いを変えると結果も変わる。数値手法を選ぶ際には、取り込む物理過程と幾何形状を併せて確認したい。
-  - Parkerらは同じ月ウェイク環境にNASCAP-2KのinterplanetaryとGEOの計算法を適用し、材料間電位差と計算法間の違いを比較した。低速太陽風で機体全体の負電位は約−236 Vと−154 Vに分かれたが、両者とも差動帯電は小さかった。電場出力の差とGEOの数値ノイズ、太陽電池の二次電子収率とMaxwell分布への依存を示し、計算オプションの選択と非熱的分布の扱いを課題として残した。[@P000024]
+  - Parkerらは同じ月ウェイク環境にNASCAP-2KのinterplanetaryとGEOの計算法を適用し、材料間電位差と計算法間の違いを比較した。低速太陽風で機体全体の負電位は約−236
+    Vと−154 Vに分かれたが、両者とも差動帯電は小さかった。電場出力の差とGEOの数値ノイズ、太陽電池の二次電子収率とMaxwell分布への依存を示し、計算オプションの選択と非熱的分布の扱いを課題として残した。[@P000024]
 - heading: 光電子と細いブームが、シースとウェイクを変える
   paragraphs:
-  - Ergun et al.（2010）は、近太陽の強い光電子放出下でも、日照面の負の空間電荷が非単調な電位を作って光電子の脱出を制限し、宇宙機を負電位にし得ることを静的計算で示した。イオンウェイクは、接触面からの二次電子の脱出を妨げて負帯電をさらに強める。9.5太陽半径、電子温度85 eV、二次電子生成効率100%のSolar Probe Plus形状モデルでは機体電位は約−10 Vだった。一方、イオン温度ゼロの円筒対照では、近太陽の密度・電子温度・放出条件を保って機体と計算領域を1/4寸法にすると、−4.15 Vから+0.3 Vへ変わった。物体寸法と放出層の相対尺度、ウェイク接触面積、二次電子収率を合わせて考える必要がある。モデルはイオン密度固定とBoltzmann熱電子を用い、収率の不確かさを残す。[@P000122]
+  - '[@P000122]は、近太陽の強い光電子放出下でも、日照面の負の空間電荷が非単調な電位を作って光電子の脱出を制限し、宇宙機を負電位にし得ることを静的計算で示した。イオンウェイクは、接触面からの二次電子の脱出を妨げて負帯電をさらに強める。9.5太陽半径、電子温度85
+    eV、二次電子生成効率100%のSolar Probe Plus形状モデルでは機体電位は約−10 Vだった。一方、イオン温度ゼロの円筒対照では、近太陽の密度・電子温度・放出条件を保って機体と計算領域を1/4寸法にすると、−4.15
+    Vから+0.3 Vへ変わった。物体寸法と放出層の相対尺度、ウェイク接触面積、二次電子収率を合わせて考える必要がある。モデルはイオン密度固定とBoltzmann熱電子を用い、収率の不確かさを残す。'
   - 希薄で低温の流れの中では、細いワイヤーブームも周囲のイオンを大きく偏向する。Clusterを計算した[@P000123]では、正帯電したブームの存在がウェイク電場を強めた。図面上の太さに加え、ブームの電位とプラズマの遮蔽距離が、計測器周辺の環境を決める。
 - heading: 電場センサの信号を、機体の影響まで含めて読む
   paragraphs:
   - 二点の電位差から電場を求める方法では、各プローブがどの電位を測っているかが問題になる。[@P000124]は細い構造を境界要素法で扱うPICを使い、機体とブームが作る電位分布から、Clusterで観測される見かけの電場波形を説明している。
-  - Fahleson（1967）は、同形・同材質・同じ向き・同じ負荷のプローブで局所プラズマに対する電位のずれを共通にし、二点の差電位を電場へ換算する条件を整理した。移動系の電場からv×Bを差し引く必要があり、目的の電場が運動起電力より小さい場合には、粗い電場推定にも電位差・速度・磁場の精密測定が要る。球形プローブの電流収支を近似して、電圧計の負荷、粒子の遮蔽、熱雑音を満たす最小寸法を求めた。中央電極によるバイアスは測定球をプラズマ電位近くに保ち、負荷や速度差の感度を下げるが、中央電極を含む装置は大きくなる。密度・電子温度・粒子束の二電極間差と、回転に同期する表面の接触電位のむらは残る。電離圏で10–20%程度、数地球半径まで桁の推定が可能という結論は、薄いシースと表の仮定条件に基づく設計評価である。[@P000126]
+  - '[@P000126]は、同形・同材質・同じ向き・同じ負荷のプローブで局所プラズマに対する電位のずれを共通にし、二点の差電位を電場へ換算する条件を整理した。移動系の電場からv×Bを差し引く必要があり、目的の電場が運動起電力より小さい場合には、粗い電場推定にも電位差・速度・磁場の精密測定が要る。球形プローブの電流収支を近似して、電圧計の負荷、粒子の遮蔽、熱雑音を満たす最小寸法を求めた。中央電極によるバイアスは測定球をプラズマ電位近くに保ち、負荷や速度差の感度を下げるが、中央電極を含む装置は大きくなる。密度・電子温度・粒子束の二電極間差と、回転に同期する表面の接触電位のむらは残る。電離圏で10–20%程度、数地球半径まで桁の推定が可能という結論は、薄いシースと表の仮定条件に基づく設計評価である。'
   - 周波数を持つ電場やプラズマ波を測る場合は、センサのインピーダンスも必要になる。[@P000125]は磁化プラズマ中のダイポールをPICで駆動し、応答のピークをプラズマ波の分散関係と結び付けた。静的な機体電位の補正と、センサの周波数応答の校正は、測定対象に応じて参照する論点が変わる。
   - '[@P000251]は、宇宙機が自然に放出する電子から、その電位を離れた機体で測る条件を評価した。シースとイオンウェイクの障壁が信号を弱める。二機の寸法や電位だけでなく、相手のウェイクに入る位置関係も電子の到達を変えるため、近接運用時の計測では両者が作る場を考慮する必要がある。'
 - heading: 探針の電流電圧特性から、周囲の密度・温度へ戻る
@@ -30,13 +34,16 @@ review:
   - '[@P000340]のE-Gliderは、宇宙機の電位分布を調整し、天体との静電相互作用で平衡を作る構想である。周辺プラズマのPIC計算と機体全域の平衡計算を接続し、天体と機体の寸法に応じた必要電位を求めた。月では高い電位を要する条件があり、現在は計算上の提案として、帯電モデルと近接飛行の工学課題をつなぐ。'
 - heading: 条件を対応させて文献を比べる
   paragraphs:
-  - 放出する導電宇宙機では、日照面の光電子層と背面のイオン欠乏域が、異なる経路で正味の放出電流を制限する。Ergunら（2010）の近太陽条件の円筒対照計算は、イオンウェイクを人工的に消しても光電子障壁が残り、浮遊電位が−0.85 Vになった。イオン温度ゼロの完全ウェイクを加えると背面の二次電子脱出が抑えられ、浮遊電位は−4.15 Vへ下がった。これは固定イオン密度とBoltzmann熱電子を使うPoisson・放出電子軌道の反復解であり、流入イオンの対向流や衝撃波を時間発展で解く計算とは、物体の電気的条件と評価する電流が異なる。[@P000122]
+  - 放出する導電宇宙機では、日照面の光電子層と背面のイオン欠乏域が、異なる経路で正味の放出電流を制限する。[@P000122]の近太陽条件の円筒対照計算は、イオンウェイクを人工的に消しても光電子障壁が残り、浮遊電位が−0.85
+    Vになった。イオン温度ゼロの完全ウェイクを加えると背面の二次電子脱出が抑えられ、浮遊電位は−4.15 Vへ下がった。これは固定イオン密度とBoltzmann熱電子を使うPoisson・放出電子軌道の反復解であり、流入イオンの対向流や衝撃波を時間発展で解く計算とは、物体の電気的条件と評価する電流が異なる。
 lineage:
 - title: 機体の帯電を空間分布で解く
   steps:
   - paper_id: P000120
     title: 複雑な機体と周囲の場を計算
-    significance: 表面物性と回路結合を含む形状モデルから、表面帯電・空間電位・イオン軌道を計算するモジュール構成を整理した。指定した静止軌道例の300 s後に面ごとの電位（約−7～−10 kV）、イオン軌道とbarometric電子によるウェイク電位、既知プルーム密度と指定境界電位からの空間電位を示す。PICは利用可能な機能として紹介されるが、本版の例に動的PIC検証は含まれない。
+    significance: 表面物性と回路結合を含む形状モデルから、表面帯電・空間電位・イオン軌道を計算するモジュール構成を整理した。指定した静止軌道例の300
+      s後に面ごとの電位（約−7～−10 kV）、イオン軌道とbarometric電子によるウェイク電位、既知プルーム密度と指定境界電位からの空間電位を示す。PICは利用可能な機能として紹介されるが、本版の例に動的PIC検証は含まれない。
+    connection: ''
   - paper_id: P000122
     title: 強い光電子放出下の負帯電を説明
     significance: 放出電子を戻す電位障壁とイオンウェイクが、太陽近傍の負帯電を維持する条件を示した。
@@ -50,6 +57,7 @@ lineage:
   - paper_id: P000126
     title: 電位差から電場を測る原理を整理
     significance: 同一電極の共通浮遊電位を差電位で相殺する設計原則を定量化し、バイアスは測定球の寸法と速度感度を下げても装置全体を大きくし、プラズマ勾配と表面パッチの誤差が残ることを示した。刊行版の計算は理想化した桁の見積もりである。
+    connection: ''
   - paper_id: P000124
     title: 機体とブームが作る信号を再現
     significance: Cluster周囲のPICで、ウェイクの見かけの電場と光電子分布による短絡効果を示した。
@@ -94,442 +102,45 @@ entries:
 - paper_id: P000118
   group: charging-basics
   role: 宇宙機帯電の基礎レビュー
-  summary:
-    question: 宇宙機表面の電荷は何で決まり、観測・設計にどう影響するか。
-    method: 帯電過程、電荷蓄積モデル、宇宙機シース理論と観測を整理。
-    contribution: 表面帯電を設計上の問題と低エネルギー粒子計測の両方から概観した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000118
-      version_id: V1
-      url: https://doi.org/10.1029/rg019i004p00577
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000119
   group: charging-basics
   role: 帯電物理の教科書
-  summary:
-    question: 宇宙機帯電の式と機構を、基礎からどう理解するか。
-    method: 電子放出、プラズマ中の帯電、電位障壁、緩和策を例題とともに解説。
-    contribution: 電流収支から機体の帯電対策までを調べるための体系的な参照書。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000119
-      version_id: V1
-      url: https://assets.press.princeton.edu/catalogs/S11Featured.pdf
-      source_type: metadata
-      locator: 出版社の書籍紹介
-      checked_at: '2026-09-18'
-  inspection:
-    level: metadata_only
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000120
   group: charging-models
   role: NASCAP-2Kの計算モデルと3適用例
-  summary:
-    question: 宇宙機の形状、材料、電気結合とプラズマ環境を入力し、表面帯電、周囲の電位、粒子収集、外部プルームの影響をどの計算モデルで扱うか。
-    method: 2005年会議録のNASCAP-2K Version 3.0を概説。希薄プラズマの表面帯電は境界要素法、周囲の電位は入れ子格子上の高次有限要素法で扱い、マクロ粒子追跡やEPICからのイオン密度取込みを使う。静止軌道、CHAWSウェイク、NSTARプルームの3例で操作と計算結果を示す。
-    contribution: 表面物性と回路結合を含む形状モデルから、表面帯電・空間電位・イオン軌道を計算するモジュール構成を整理した。指定した静止軌道例の300 s後に面ごとの電位（約−7～−10 kV）、イオン軌道とbarometric電子によるウェイク電位、既知プルーム密度と指定境界電位からの空間電位を示す。PICは利用可能な機能として紹介されるが、本版の例に動的PIC検証は含まれない。
-  evidence_by_item:
-    question:
-    - paper_id: P000120
-      version_id: V1
-      url: https://jaxa.repo.nii.ac.jp/records/6371
-      source_type: full_text
-      locator: PDF pp2–3,8 / printed500–501,506, Fig2 PDF p4 / printed502, Spacecraft Models and Object Toolkit PDF pp8,10,12–13 / printed506,508,510–511, Fig7,9–10,13–15 PDF pp14–18 / printed512–516, Fig16–22 PDF pp18–19 / printed516–517, Example3, unnumbered equations, Fig23–24 PDF pp2–3,8,10,12–13,16,18–20; Table1 p7; Fig2,9,13–15,19–24
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000120
-      version_id: V1
-      url: https://jaxa.repo.nii.ac.jp/records/6371
-      source_type: full_text
-      locator: PDF pp2–3,8 / printed500–501,506, Fig2 PDF p4 / printed502, Spacecraft Models and Object Toolkit PDF pp8,10,12–13 / printed506,508,510–511, Fig7,9–10,13–15 PDF pp14–18 / printed512–516, Fig16–22 PDF pp18–19 / printed516–517, Example3, unnumbered equations, Fig23–24 PDF pp2–3,8,10,12–13,16,18–20; Table1 p7; Fig2,9,13–15,19–24
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000120
-      version_id: V1
-      url: https://jaxa.repo.nii.ac.jp/records/6371
-      source_type: full_text
-      locator: PDF pp2–3,8 / printed500–501,506, Fig2 PDF p4 / printed502, Spacecraft Models and Object Toolkit PDF pp8,10,12–13 / printed506,508,510–511, Fig7,9–10,13–15 PDF pp14–18 / printed512–516, Fig16–22 PDF pp18–19 / printed516–517, Example3, unnumbered equations, Fig23–24 PDF pp2–3,8,10,12–13,16,18–20; Table1 p7; Fig2,9,13–15,19–24
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000121
   group: charging-models
   role: 太陽近傍のモデル比較
-  summary:
-    question: 同じ宇宙機・プラズマ条件を解く計算コードは、どこまで一致するか。
-    method: Solar Probe Plusの簡略形状を5モデルで計算し、放出電子や磁場の扱いを比較。
-    contribution: 同じ物理過程を同様に扱う条件では予測が約2%以内で一致した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000121
-      version_id: V1
-      url: https://doi.org/10.1063/1.4882439
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000122
   group: sheath-and-wake
   role: 太陽近傍の光電子障壁
-  summary:
-    question: 強い光電子放出の下で、宇宙機寸法、放出電子の空間電荷、二次電子収率、ウェイク接触面積が負の浮遊電位をどう決めるか。
-    method: 固定したイオン密度とBoltzmann熱電子に、光電子・二次電子の3次元軌道追跡とPoisson解を反復し、実機を模した形状と円筒のウェイク有無・寸法・環境条件を比較。
-    contribution: 日照面の非単調電位が光電子の脱出を制限し、ウェイクが接触面の二次電子を戻して負帯電を強める条件を示した。9.5太陽半径の想定条件では二次電子生成100%の機体電位は約−10 V。イオン温度ゼロの円筒対照は−4.15 Vだが、機体と領域を1/4寸法にすると+0.3 Vとなる。
-  evidence_by_item:
-    question:
-    - paper_id: P000122
-      version_id: V2
-      url: https://arxiv.org/pdf/1006.0760v1
-      source_type: full_text
-      locator: PDF pp. 2–4, 13–15
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000122
-      version_id: V2
-      url: https://arxiv.org/pdf/1006.0760v1
-      source_type: full_text
-      locator: PDF pp. 7–9; Fig. 1 (p. 18)
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000122
-      version_id: V2
-      url: https://arxiv.org/pdf/1006.0760v1
-      source_type: full_text
-      locator: PDF pp. 10–15; Figs. 2–7; Tables 1–2
-      checked_at: '2026-10-12'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000123
   group: sheath-and-wake
   role: 細いブームのウェイク
-  summary:
-    question: 細いワイヤーブームは、宇宙機後方の電場にどの程度影響するか。
-    method: 希薄な低温流プラズマ中のClusterを、機体とブームを含むPICで計算。
-    contribution: 正帯電したブームがイオンを偏向し、ウェイクの電場を強めることを示した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000123
-      version_id: V1
-      url: https://doi.org/10.1002/jgra.50543
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000124
   group: electric-field
   role: ダブルプローブ計測のPIC
-  summary:
-    question: 機体とブームが作る電位分布は、電場計測にどの信号を加えるか。
-    method: 境界要素法を組み込んだPICで、Cluster周囲を3種類のプラズマ条件で計算。
-    contribution: ウェイクに由来する見かけの電場波形を再現し、光電子分布による短絡効果も示した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000124
-      version_id: V1
-      url: https://doi.org/10.1002/2016rs006095
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000125
   group: electric-field
   role: 磁化プラズマ中のセンサ応答
-  summary:
-    question: 磁場は電場センサのインピーダンスの周波数依存をどう変えるか。
-    method: 導体棒のダイポールセンサを三次元PICで駆動し、線形分散関係と比較。
-    contribution: インピーダンスのピークと、センサ長に対応するプラズマ波の分枝を結び付けた。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000125
-      version_id: V1
-      url: https://doi.org/10.1186/s40623-024-01977-x
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000126
   group: electric-field
   role: 対称な二電極の電位差測定とバイアス設計の基礎
-  summary:
-    question: 同じ二点の電位差から弱い磁気圏電場を推定するために、電極の非対称性、負荷、運動電場補正、プラズマ不均一性をどこまで抑える必要があるか。
-    method: Maxwellプラズマ中の球形プローブの電流収支を近似し、二電極の負荷・立体角遮蔽・熱雑音からR・r・dの最小寸法を計算。中央電極でV≈0へ保つ三電極系と比較し、回転、有限シース、密度・温度・高エネルギー粒子束の不均一性を検討した。
-    contribution: 同一電極の共通浮遊電位を差電位で相殺する設計原則を定量化し、バイアスは測定球の寸法と速度感度を下げても装置全体を大きくし、プラズマ勾配と表面パッチの誤差が残ることを示した。刊行版の計算は理想化した桁の見積もりである。
-  evidence_by_item:
-    question:
-    - paper_id: P000126
-      version_id: V1
-      url: https://doi.org/10.1007/bf00215600
-      source_type: full_text
-      locator: PDF p.2, §2 PDF pp.3–4, §§3–4, Eq.1, Table II PDF pp.7–8, §6, Fig.1, Eqs.8–9 PDF pp.13–16, §13, Fig.2, Eqs.13–26 PDF pp.13,15,18, Tables IV–V, Eqs.31–35 PDF pp.20–22, §18, Eqs.36–39, Table VI PDF p.23, §§20–21 PDF pp.3–4, §§3–4 PDF pp.7–19, §§6–17 PDF pp.20–23, §§18–21
-      checked_at: '2026-10-13'
-    method:
-    - paper_id: P000126
-      version_id: V1
-      url: https://doi.org/10.1007/bf00215600
-      source_type: full_text
-      locator: PDF p.2, §2 PDF pp.3–4, §§3–4, Eq.1, Table II PDF pp.7–8, §6, Fig.1, Eqs.8–9 PDF pp.13–16, §13, Fig.2, Eqs.13–26 PDF pp.13,15,18, Tables IV–V, Eqs.31–35 PDF pp.20–22, §18, Eqs.36–39, Table VI PDF p.23, §§20–21 PDF pp.3–4, §§3–4 PDF pp.7–19, §§6–17 PDF pp.20–23, §§18–21
-      checked_at: '2026-10-13'
-    contribution:
-    - paper_id: P000126
-      version_id: V1
-      url: https://doi.org/10.1007/bf00215600
-      source_type: full_text
-      locator: PDF p.2, §2 PDF pp.3–4, §§3–4, Eq.1, Table II PDF pp.7–8, §6, Fig.1, Eqs.8–9 PDF pp.13–16, §13, Fig.2, Eqs.13–26 PDF pp.13,15,18, Tables IV–V, Eqs.31–35 PDF pp.20–22, §18, Eqs.36–39, Table VI PDF p.23, §§20–21 PDF pp.3–4, §§3–4 PDF pp.7–19, §§6–17 PDF pp.20–23, §§18–21
-      checked_at: '2026-10-13'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-13'
-    recheck: false
-  locked_fields: []
 - paper_id: P000127
   group: probe-interpretation
   role: OML電流とプローブ形状
-  summary:
-    question: 球以外の形状でも、軌道運動制限電流を使って温度・密度を測れるか。
-    method: 粒子の角運動量保存を仮定せず捕集電流を導き、多電極形状を提案。
-    contribution: 適用可能な凸形状を広げ、イオン温度を含む探針設計の条件を示した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000127
-      version_id: V1
-      url: https://doi.org/10.1063/1.1694398
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000128
   group: probe-interpretation
   role: 宇宙機シース内の探針
-  summary:
-    question: 負帯電した機体のシース内では、Langmuir探針の電流電圧特性がどう変わるか。
-    method: 小球探針のOML理論を電位障壁付きに拡張し、Cassiniのデータと比較。
-    contribution: 低エネルギー電子の遮蔽が遷移領域を作り、温度・電位推定に影響することを示した。
-  evidence_by_item:
-    question: []
-    method: []
-    contribution:
-    - paper_id: P000128
-      version_id: V1
-      url: https://doi.org/10.1063/1.3482155
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-09-18'
-    recheck: false
-  locked_fields: []
 - paper_id: P000024
   group: charging-models
   role: 月ウェイクでの宇宙機帯電モデル比較
-  summary:
-    question: 月の深いウェイクで、既存の宇宙機帯電計算法と材料の二次電子放出特性は機体電位・電場をどう変えるか。
-    method: Lunar Prospectorを模した混合材料機体をNASCAP-2Kでモデル化し、高度100 kmの無日照ウェイク5環境についてinterplanetaryとGEOの計算法を比較した。
-    contribution: 低速太陽風では機体全体が約−236 Vまたは−154 Vとなる一方、差動帯電は小さかった。境界層・磁気シース・高速太陽風の小さな正電位を太陽電池の二次電子放出とMaxwell分布に結び付け、非熱的分布を扱う月専用モデルへの拡張を提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000024
-      version_id: V1
-      url: https://ntrs.nasa.gov/citations/20070031940
-      source_type: full_text
-      locator: PDF p2 §1
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000024
-      version_id: V1
-      url: https://ntrs.nasa.gov/citations/20070031940
-      source_type: full_text
-      locator: PDF p2–4 §2–4, Table1
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000024
-      version_id: V1
-      url: https://ntrs.nasa.gov/citations/20070031940
-      source_type: full_text
-      locator: PDF p4–8 §4–5, Fig6, Table2
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000251
   group: sheath-and-wake
   role: シース・ウェイク障壁と宇宙機電位計測
-  summary:
-    question: 太陽風にさらされる月周辺の宇宙機で、イオンウェイクと非単調シースの電位障壁はどの条件で生じ、自然放出電子による他機の電位計測をどう制約するか。
-    method: SPISのPIC法で、日照側と高度1.2万km超で月の影に入る太陽風環境をモデル化し、機体幅と表面電位を変えて障壁を調べた。二機の配置と測定機電位も変え、放出電子と検出電流を比較した。
-    contribution: 放出電子温度を2 eVとした計算では、機体幅が電子デバイ長の約半分以上で障壁が重要になった。正電位の測定機は電子を引き寄せたが、そのウェイク内に対象機が入ると信号が大幅に低下した。配置変更や測定機電位の低減を対策として提案した。
-  evidence_by_item:
-    question:
-    - paper_id: P000251
-      version_id: V1
-      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
-      source_type: abstract
-      locator: PDF file p. 2 / printed p. 023508-1, Abstract
-      checked_at: '2026-10-06'
-    - paper_id: P000251
-      version_id: V1
-      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
-      source_type: full_text
-      locator: PDF file p. 3 / printed p. 023508-2, Sec. I final paragraph
-      checked_at: '2026-10-06'
-    method:
-    - paper_id: P000251
-      version_id: V1
-      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
-      source_type: full_text
-      locator: PDF file pp. 5–6 / printed pp. 023508-4–5, Sec. III; Table I
-      checked_at: '2026-10-06'
-    - paper_id: P000251
-      version_id: V1
-      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
-      source_type: full_text
-      locator: PDF file p. 10 / printed p. 023508-9, Sec. V opening paragraphs
-      checked_at: '2026-10-06'
-    contribution:
-    - paper_id: P000251
-      version_id: V1
-      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
-      source_type: abstract
-      locator: PDF file p. 2 / printed p. 023508-1, Abstract
-      checked_at: '2026-10-06'
-    - paper_id: P000251
-      version_id: V1
-      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
-      source_type: full_text
-      locator: PDF file p. 10 / printed p. 023508-9, Sec. IV final paragraph; Table II
-      checked_at: '2026-10-06'
-    - paper_id: P000251
-      version_id: V1
-      url: https://hanspeterschaub.info/PapersPrivate/Champion2026.pdf
-      source_type: full_text
-      locator: PDF file p. 13 / printed p. 023508-12, Sec. VI
-      checked_at: '2026-10-06'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-06'
-    recheck: false
 - paper_id: P000340
-  role: 帯電を利用する静電飛行の平衡
-  summary:
-    question: 無大気天体の近くで、宇宙機帯電による人工平衡を形成できるか。
-    method: E-PICで周辺プラズマを計算し、E-QUIL-DERで機体全域の平衡に必要な電位分布を求める。
-    contribution: 必要電位の天体・機体寸法依存を示し、月では約千Vを要する条件を報告した。飛行実証へ向けた理論計算。
-  evidence_by_item:
-    question:
-    - paper_id: P000340
-      version_id: V1
-      url: https://doi.org/10.1007/s44205-026-00198-6
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    method:
-    - paper_id: P000340
-      version_id: V1
-      url: https://doi.org/10.1007/s44205-026-00198-6
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-    contribution:
-    - paper_id: P000340
-      version_id: V1
-      url: https://doi.org/10.1007/s44205-026-00198-6
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-02'
   group: charging-models
-relations: []
-view:
-  sort:
-  - year
-  - first_author
-  - paper_id
-  overview_nodes: []
-  graphs: []
-  graph_nodes: 20
-  graph_edges: 30
+  role: 帯電を利用する静電飛行の平衡
 survey:
   searched_at: '2026-09-22'
   scope_period: 制限なし
@@ -545,5 +156,4 @@ survey:
   - 今回追加した文献の全文は未精読。要旨を確認した文献以外はmetadata_onlyとして記録。
   changes: 'Issue #2–#8 の文献追加、重複統合、分類・概説・系譜の更新。'
   publication_status: draft
-  reviewed_at: null
 reading_notes: []

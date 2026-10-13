@@ -3,7 +3,7 @@
 import ipaddress
 import re
 from datetime import date
-from typing import Annotated, Literal, Self
+from typing import Annotated, Literal, NamedTuple, Self
 from urllib.parse import unquote, urlsplit
 
 from pydantic import AfterValidator, BaseModel, ConfigDict, Field, model_validator
@@ -52,7 +52,6 @@ PAPER_CITATION = re.compile(r"\[@(P[0-9]{6,})\]")
 TOPIC_CITATION = re.compile(r"\[@topic:([a-z0-9]+(?:-[a-z0-9]+)*)\]")
 VersionID = Annotated[str, Field(pattern=r"^V[A-Za-z0-9_-]+$")]
 TopicID = Annotated[str, Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")]
-RelationID = Annotated[str, Field(pattern=r"^R[0-9]{6,}$")]
 Actor = Literal["ai", "human"]
 Kind = Literal["published", "accepted", "submitted", "unknown"]
 
@@ -98,65 +97,6 @@ class VersionLink(Model):
     checked_at: date | None = None
 
 
-class Work(Model):
-    paper_id: PaperID
-    title: Text
-    authors: list[Text]
-    citation_author: Text | None = None
-    representative_version_id: VersionID
-    versions: list[Version] = Field(min_length=1)
-    metadata_sources: list[MetadataSource] = Field(default_factory=list)
-    record_url: URL
-    access_check: Literal["not_checked", "not_found", "limited_not_found", "checked", "failed"] = (
-        "not_checked"
-    )
-    preprint_check: Literal[
-        "not_checked",
-        "not_found",
-        "limited_not_found",
-        "found",
-        "uncertain",
-        "failed",
-        "not_applicable",
-    ] = "not_checked"
-    version_links: list[VersionLink] = Field(default_factory=list)
-    missing_note: str = "未取得の書誌項目は未確認。"
-    locked_fields: list[
-        Literal[
-            "title",
-            "authors",
-            "citation_author",
-            "representative_version_id",
-            "versions",
-            "record_url",
-        ]
-    ] = Field(default_factory=list)
-
-    @model_validator(mode="after")
-    def versions_are_consistent(self) -> Self:
-        ids = [v.version_id for v in self.versions]
-        if len(set(ids)) != len(ids) or self.representative_version_id not in ids:
-            raise ValueError("duplicate version ID or missing representative version")
-        identifiers = [v.doi for v in self.versions if v.doi]
-        if len(set(identifiers)) != len(identifiers):
-            raise ValueError("duplicate DOI within work")
-        if self.preprint_check == "found" and not any(
-            v.repository_id and v.kind in {"submitted", "accepted"} and v.locations
-            for v in self.versions
-        ):
-            raise ValueError(
-                "preprint_check=found requires an identified repository version and URL"
-            )
-        for link in self.version_links:
-            if link.source not in ids or link.target not in ids or link.source == link.target:
-                raise ValueError("version link must reference two distinct versions of this work")
-        return self
-
-    def version(self, version_id: str | None = None) -> Version:
-        key = version_id or self.representative_version_id
-        return next(v for v in self.versions if v.version_id == key)
-
-
 class Evidence(Model):
     paper_id: PaperID
     version_id: VersionID
@@ -188,49 +128,96 @@ class Inspection(Model):
     recheck: bool = False
 
 
-class Entry(Model):
+class Work(Model):
+    """Shared bibliography plus the default reading (summary, sources, inspection)."""
+
     paper_id: PaperID
-    group: TopicID
-    role: Text = "内容未確認"
+    title: Text
+    authors: list[Text]
+    citation_author: Text | None = None
+    representative_version_id: VersionID
+    versions: list[Version] = Field(min_length=1)
+    metadata_sources: list[MetadataSource] = Field(default_factory=list)
+    record_url: URL
+    access_check: Literal["not_checked", "not_found", "limited_not_found", "checked", "failed"] = (
+        "not_checked"
+    )
+    preprint_check: Literal[
+        "not_checked",
+        "not_found",
+        "limited_not_found",
+        "found",
+        "uncertain",
+        "failed",
+        "not_applicable",
+    ] = "not_checked"
+    version_links: list[VersionLink] = Field(default_factory=list)
+    missing_note: str = "未取得の書誌項目は未確認。"
     summary: Summary | None = None
     evidence_by_item: ItemEvidence = Field(default_factory=ItemEvidence)
     inspection: Inspection = Field(default_factory=Inspection)
-    locked_fields: list[Literal["group", "role", "summary", "evidence_by_item", "inspection"]] = (
-        Field(default_factory=list)
-    )
-
-
-class Comparability(Model):
-    conditions: Text
-    differences: Text
-
-
-class Relation(Model):
-    relation_id: RelationID
-    source: PaperID
-    target: PaperID
-    type: Literal["extends", "uses_method", "tests", "supports", "challenges", "compares_with"]
-    basis: Literal["explicit", "comparison"] = "comparison"
-    state: Literal["candidate", "checked", "recheck", "rejected"] = "candidate"
-    aspect: Text
-    graph_label: Text | None = None
-    reason: Text
-    evidence: list[Evidence] = Field(default_factory=list)
-    comparability: Comparability | None = None
-    checked_by: Actor | None = None
-    checked_at: date | None = None
-    limitation: str | None = None
     locked_fields: list[
         Literal[
-            "type", "basis", "state", "aspect", "graph_label", "reason", "evidence", "comparability"
+            "title",
+            "authors",
+            "citation_author",
+            "representative_version_id",
+            "versions",
+            "record_url",
         ]
     ] = Field(default_factory=list)
 
     @model_validator(mode="after")
-    def distinct_works(self) -> Self:
-        if self.source == self.target:
-            raise ValueError("a relation requires distinct works")
+    def versions_are_consistent(self) -> Self:
+        ids = [v.version_id for v in self.versions]
+        if len(set(ids)) != len(ids) or self.representative_version_id not in ids:
+            raise ValueError("duplicate version ID or missing representative version")
+        identifiers = [v.doi for v in self.versions if v.doi]
+        if len(set(identifiers)) != len(identifiers):
+            raise ValueError("duplicate DOI within work")
+        if self.preprint_check == "found" and not any(
+            v.repository_id and v.kind in {"submitted", "accepted"} and v.locations
+            for v in self.versions
+        ):
+            raise ValueError(
+                "preprint_check=found requires an identified repository version and URL"
+            )
+        for link in self.version_links:
+            if link.source not in ids or link.target not in ids or link.source == link.target:
+                raise ValueError("version link must reference two distinct versions of this work")
+        if self.inspection.version_id is not None and self.inspection.version_id not in ids:
+            raise ValueError("inspection references an unknown version of this work")
         return self
+
+    def version(self, version_id: str | None = None) -> Version:
+        key = version_id or self.representative_version_id
+        return next(v for v in self.versions if v.version_id == key)
+
+
+class Entry(Model):
+    """A work's place in one topic. Reading fields override the work's defaults when set."""
+
+    paper_id: PaperID
+    group: TopicID
+    role: Text = "内容未確認"
+    summary: Summary | None = None
+    evidence_by_item: ItemEvidence | None = None
+    inspection: Inspection | None = None
+
+
+class Reading(NamedTuple):
+    summary: Summary | None
+    evidence_by_item: ItemEvidence
+    inspection: Inspection
+
+
+def reading(entry: Entry, work: Work) -> Reading:
+    """The summary, sources, and inspection shown for an entry: its own, else the work's."""
+    return Reading(
+        entry.summary if entry.summary is not None else work.summary,
+        entry.evidence_by_item if entry.evidence_by_item is not None else work.evidence_by_item,
+        entry.inspection if entry.inspection is not None else work.inspection,
+    )
 
 
 class Scope(Model):
@@ -246,19 +233,6 @@ class Navigation(Model):
 class Group(Model):
     id: TopicID
     title: Text
-
-
-class Graph(Model):
-    title: Text
-    nodes: list[PaperID]
-
-
-class View(Model):
-    sort: list[str] = Field(default_factory=lambda: ["year", "first_author", "paper_id"])
-    overview_nodes: list[PaperID] = Field(default_factory=list)
-    graphs: list[Graph] = Field(default_factory=list)
-    graph_nodes: int = Field(default=20, ge=2, le=20)
-    graph_edges: int = Field(default=30, ge=1, le=30)
 
 
 class Survey(Model):
@@ -314,8 +288,6 @@ class Topic(Model):
         default_factory=lambda: [Group(id="general", title="先行研究")], min_length=1
     )
     entries: list[Entry] = Field(default_factory=list)
-    relations: list[Relation] = Field(default_factory=list)
-    view: View = Field(default_factory=View)
     survey: Survey = Field(default_factory=Survey)
     reading_notes: list[Text] = Field(default_factory=list, max_length=3)
 
@@ -323,9 +295,8 @@ class Topic(Model):
     def references(self) -> Self:
         papers = [e.paper_id for e in self.entries]
         groups = [g.id for g in self.groups]
-        relations = [r.relation_id for r in self.relations]
-        if any(len(set(ids)) != len(ids) for ids in (papers, groups, relations)):
-            raise ValueError("duplicate paper, group, or relation ID in topic")
+        if any(len(set(ids)) != len(ids) for ids in (papers, groups)):
+            raise ValueError("duplicate paper or group ID in topic")
         if any(e.group not in groups for e in self.entries):
             raise ValueError("entry references an unknown group")
         milestones = [step.paper_id for track in self.lineage for step in track.steps]
@@ -335,19 +306,4 @@ class Topic(Model):
             for paragraph in section.paragraphs:
                 if not set(PAPER_CITATION.findall(paragraph)) <= set(papers):
                     raise ValueError("review citations must appear in the topic's paper list")
-        for relation in self.relations:
-            if relation.source not in papers or relation.target not in papers:
-                raise ValueError("relation endpoints must appear in the topic's table")
-        nodes = self.view.overview_nodes + [n for graph in self.view.graphs for n in graph.nodes]
-        if not set(nodes) <= set(papers):
-            raise ValueError("all graph nodes must appear in the table")
-        if self.view.sort != ["year", "first_author", "paper_id"]:
-            raise ValueError("supported stable sort is year, first_author, paper_id")
         return self
-
-
-class ImportPacket(Model):
-    """Interchange format for literature data from any research workflow."""
-
-    works: list[Work] = Field(default_factory=list)
-    topic: Topic

@@ -3,98 +3,65 @@ from pathlib import Path
 
 import httpx
 import pytest
-from conftest import DAY
+from conftest import DAY, make_entry, make_work
 from test_providers import record
 
-from literature_graph_map.cli import parser
-from literature_graph_map.models import ImportPacket, Version, VersionLink
+from literature_graph_map.cli import main, parser
+from literature_graph_map.models import Evidence, Summary, Topic, Version, Work
 from literature_graph_map.operations import (
     add_seeds,
     commit,
     discover,
-    import_packet,
+    export_snapshot,
+    merge_bibliography,
     research_handoff,
 )
 from literature_graph_map.providers import Crossref, Settings, seed_identifiers
 from literature_graph_map.render import render
-from literature_graph_map.storage import MapError, Snapshot, load, read_yaml
+from literature_graph_map.storage import MapError, Snapshot, load
 
 
-def test_topic_path_alias_cannot_overwrite_another_topic(tmp_path, snapshot, packet):
-    repo = tmp_path / "repo"
-    commit(repo, snapshot)
-    packet = packet.model_copy(deep=True)
-    packet.topic.topic_id = "other"
-    original = (repo / "topics/demo/topic.yaml").read_bytes()
-    with pytest.raises(MapError, match="occupied"):
-        import_packet(repo, snapshot, packet, tmp_path / "private", "topics/unused/../demo")
-    assert (repo / "topics/demo/topic.yaml").read_bytes() == original
-
-
-def test_existing_version_cannot_change_doi(tmp_path, snapshot, packet):
-    packet = packet.model_copy(deep=True)
-    packet.works[0].versions[0].doi = "10.5555/different"
+def test_existing_version_cannot_change_doi(snapshot):
+    incoming = snapshot.works["P000001"].model_copy(deep=True)
+    incoming.versions[0].doi = "10.5555/different"
     with pytest.raises(MapError, match="immutable"):
-        import_packet(tmp_path / "repo", snapshot, packet, tmp_path / "private")
-    assert not (tmp_path / "repo/data/works.jsonl").exists()
+        merge_bibliography(snapshot.works["P000001"], incoming, [])
 
 
-@pytest.mark.parametrize("locked_field", ["type", "graph_label"])
-def test_relation_lock_protects_endpoints_and_qualifications(
-    tmp_path, snapshot, packet, locked_field
-):
-    snapshot.topics["demo"].relations[0].locked_fields = [locked_field]
-    snapshot.topics["demo"].relations[0].graph_label = "測定した分布を使用"
-    packet = packet.model_copy(deep=True)
-    packet.topic.relations[0].source = "P000004"
-    packet.topic.relations[0].limitation = "不適切な変更"
-    packet.topic.relations[0].graph_label = "矛盾する変更"
-    conflicts = import_packet(tmp_path / "repo", snapshot, packet, tmp_path / "private")
-    relation = load(tmp_path / "repo").topics["demo"].relations[0]
-    assert relation.source == "P000001" and relation.limitation is None
-    assert relation.graph_label == "測定した分布を使用"
-    assert any("source" in c for c in conflicts)
-    assert any("graph_label" in c for c in conflicts)
+def test_bibliographic_refresh_keeps_reading_and_locked_fields(snapshot):
+    existing = snapshot.works["P000001"]
+    existing.locked_fields = ["title"]
+    incoming = Work(
+        paper_id=existing.paper_id,
+        title="Provider title",
+        authors=["Provider Author"],
+        representative_version_id=existing.representative_version_id,
+        versions=[Version(version_id=existing.representative_version_id, year=2001)],
+        record_url="https://example.org/provider",
+        missing_note="Provider note",
+    )
+    conflicts = []
+    merged = merge_bibliography(existing, incoming, conflicts)
+    assert conflicts and merged.title == existing.title
+    assert merged.authors == ["Provider Author"] and merged.missing_note == "Provider note"
+    assert merged.record_url == existing.record_url
+    assert merged.version().doi == "10.5555/fixture-1" and merged.version().venue
+    assert merged.summary == existing.summary
+    assert merged.evidence_by_item == existing.evidence_by_item
+    assert merged.inspection == existing.inspection
 
 
-def test_scope_changes_update_generated_prose(tmp_path, snapshot, packet):
+def test_scope_changes_update_generated_prose(tmp_path, snapshot):
     repo = tmp_path / "repo"
     commit(repo, snapshot)
-    packet = packet.model_copy(deep=True)
-    packet.topic.question = "更新後の問い。"
-    packet.topic.scope.include = ["更新後の対象条件"]
-    import_packet(repo, snapshot, packet, tmp_path / "private")
+    topic = snapshot.topics["demo"]
+    topic.question = "更新後の問い。"
+    topic.scope.include = ["更新後の対象条件"]
+    commit(repo, snapshot)
     render(repo, load(repo))
     page = (repo / "_site/topics/demo/index.html").read_text(encoding="utf-8")
     assert "更新後の問い。" in page and "更新後の対象条件" in page
-    assert "全論文・著者・関係・出典は架空" not in page
-
-
-def test_work_version_lock_preserves_dependent_fields(tmp_path, snapshot, packet):
-    snapshot.works["P000001"].locked_fields = ["versions"]
-    packet = packet.model_copy(deep=True)
-    incoming = packet.works[0]
-    incoming.versions.append(Version(version_id="Vnew", kind="published", doi="10.5555/new"))
-    incoming.version_links.append(
-        VersionLink(
-            source="V000001", target="Vnew", evidence_url=incoming.record_url, checked_at=DAY
-        )
-    )
-    incoming.representative_version_id = "Vnew"
-    conflicts = import_packet(tmp_path / "repo", snapshot, packet, tmp_path / "private")
-    work = load(tmp_path / "repo").works["P000001"]
-    assert conflicts and len(work.versions) == 1 and work.version_links == []
-    assert work.representative_version_id == "V000001"
-
-
-def test_import_does_not_depend_on_cached_response_contents(tmp_path, snapshot, packet):
-    private = tmp_path / "private"
-    (private / "responses").mkdir(parents=True)
-    (private / "responses/record.json").write_text("incomplete cached response", encoding="utf-8")
-    import_packet(tmp_path / "repo", snapshot, packet, private)
-    assert (
-        load(tmp_path / "repo").topics["demo"].entries[0].summary == packet.topic.entries[0].summary
-    )
+    assert "全論文・著者・出典は架空" not in page
 
 
 def test_bad_pdf_keeps_successful_seed_and_reports_failure(tmp_path, snapshot):
@@ -115,6 +82,9 @@ def test_bad_pdf_keeps_successful_seed_and_reports_failure(tmp_path, snapshot):
         )
     assert len(topic.entries) == 5
     assert any("PDF could not be read" in issue for issue in issues)
+    added = snapshot.works[topic.entries[-1].paper_id]
+    assert added.summary is None and added.inspection.level == "metadata_only"
+    assert added.inspection.version_id == added.representative_version_id
 
 
 def test_metadata_only_update_preserves_research_provenance(tmp_path, snapshot):
@@ -129,93 +99,65 @@ def test_metadata_only_update_preserves_research_provenance(tmp_path, snapshot):
     assert topic.survey.model_dump() == before
 
 
-def test_public_import_keeps_provisional_relations_in_canonical_data(tmp_path, packet):
-    repo, private = tmp_path / "repo", tmp_path / "private"
-    import_packet(repo, Snapshot(), packet, private)
-    assert "R000003" in (repo / "topics/demo/topic.yaml").read_text(encoding="utf-8")
-    pending = ImportPacket.model_validate(read_yaml(private / "demo/review-packet.yaml"))
-    assert pending.topic.relations[-1].state == "candidate"
-    assert load(repo).topics["demo"].public
-
-
-@pytest.mark.parametrize("state", [None, "checked", "recheck", "rejected"])
-def test_partial_research_can_be_published_without_evidence_or_license(tmp_path, state):
-    from literature_graph_map.cli import main
-    from literature_graph_map.operations import export_snapshot
-    from literature_graph_map.storage import yaml_text
-
+def test_partial_research_can_be_published_without_evidence_or_license(tmp_path):
     works = [
-        {
-            "paper_id": f"P{i:06d}",
-            "title": f"Synthetic work {i}",
-            "authors": [],
-            "record_url": f"https://example.org/paper/{i}",
-            "representative_version_id": "V1",
-            "versions": [{"version_id": "V1"}],
-        }
+        Work.model_validate(
+            {
+                "paper_id": f"P{i:06d}",
+                "title": f"Synthetic work {i}",
+                "authors": [],
+                "record_url": f"https://example.org/paper/{i}",
+                "representative_version_id": "V1",
+                "versions": [{"version_id": "V1"}],
+            }
+        )
         for i in (1, 2)
     ]
-    relation = {
-        "relation_id": "R000001",
-        "source": "P000001",
-        "target": "P000002",
-        "type": "supports",
-        "aspect": "結果の比較",
-        "reason": "同じ傾向を報告している。条件差はTODO。",
-    }
-    if state:
-        relation["state"] = state
-    packet = ImportPacket.model_validate(
+    topic = Topic.model_validate(
         {
-            "works": works,
-            "topic": {
-                "topic_id": "minimal",
-                "title": "最小構成の文献マップ",
-                "question": "研究間の違いは何か",
-                "entries": [
-                    {
-                        "paper_id": work["paper_id"],
-                        "group": "general",
-                        "summary": {
-                            "question": "共通の現象を調べる。",
-                            "method": "二つのモデルを比較する。",
-                            "contribution": "同じ傾向を示す。",
-                        },
-                    }
-                    for work in works
-                ],
-                "relations": [relation],
-            },
+            "topic_id": "minimal",
+            "title": "最小構成の文献マップ",
+            "question": "研究間の違いは何か",
+            "entries": [
+                {
+                    "paper_id": work.paper_id,
+                    "group": "general",
+                    "summary": {
+                        "question": "共通の現象を調べる。",
+                        "method": "二つのモデルを比較する。",
+                        "contribution": "同じ傾向を示す。",
+                    },
+                }
+                for work in works
+            ],
         }
     )
-    path = tmp_path / "packet.yaml"
-    path.write_text(yaml_text(packet), encoding="utf-8")
+    snapshot = Snapshot(
+        works={w.paper_id: w for w in works},
+        topics={"minimal": topic},
+        paths={"minimal": Path("topics/minimal")},
+    )
     repo, private, out = tmp_path / "repo", tmp_path / "private", tmp_path / "export"
-    common = ["--repo", str(repo), "--private-dir", str(private)]
-    assert main(common + ["import", str(path)]) == 0
-    assert main(common + ["check", "--public"]) == 0
-    snapshot = load(repo)
-    assert export_snapshot(repo, snapshot, out) > 0
-    saved_relations = load(out).topics["minimal"].relations
-    assert len(saved_relations) == 1 and saved_relations[0].reason == relation["reason"]
-    assert saved_relations[0].state == (state or "candidate")
+    commit(repo, snapshot)
+    assert main(["--repo", str(repo), "--private-dir", str(private), "check", "--public"]) == 0
+    assert export_snapshot(repo, load(repo), out) > 0
     page = (out / "_site/topics/minimal/index.html").read_text(encoding="utf-8")
     assert "誤りや抜け" in page and "共通の現象を調べる。" in page
-    assert "本文確認" not in page and "人間確認" not in page and "None" not in page
+    papers = page.split('<section id="papers"')[1].split("</section>")[0]
+    assert "本文確認" not in papers and "人間確認" not in papers and "None" not in papers
 
 
 @pytest.mark.parametrize("level", ["full_text", "preprint", "abstract"])
-def test_unspecified_inspection_version_is_not_inferred_after_update(tmp_path, packet, level):
-    repo, private = tmp_path / "repo", tmp_path / "private"
-    packet = packet.model_copy(deep=True)
-    entry = packet.topic.entries[0]
-    entry.inspection.version_id = None
-    entry.inspection.level = level
-    packet.works[0].versions[0].kind = "submitted"
-    import_packet(repo, Snapshot(), packet, private)
-    packet.works[0].versions.append(Version(version_id="Vnew", kind="published"))
-    packet.works[0].representative_version_id = "Vnew"
-    import_packet(repo, load(repo), packet, private)
+def test_unspecified_inspection_version_is_not_inferred_after_update(tmp_path, snapshot, level):
+    repo = tmp_path / "repo"
+    work = snapshot.works["P000001"]
+    work.versions[0].kind = "submitted"
+    work.inspection.version_id = None
+    work.inspection.level = level
+    work.versions.append(Version(version_id="Vnew", kind="published"))
+    work.representative_version_id = "Vnew"
+    work.inspection.recheck = True
+    commit(repo, snapshot)
     render(repo, load(repo))
     page = (repo / "_site/topics/demo/index.html").read_text(encoding="utf-8")
     paper = page.split('id="P000001"', 1)[1].split("</article>", 1)[0]
@@ -223,54 +165,39 @@ def test_unspecified_inspection_version_is_not_inferred_after_update(tmp_path, p
     assert "本文確認（出版版）" not in paper and "要旨確認（出版版）" not in paper
 
 
-@pytest.mark.parametrize("reference", ["relation", "summary"])
-def test_reference_only_work_survives_import_and_export(tmp_path, packet, reference):
-    from conftest import make_work
-
-    from literature_graph_map.cli import main
-    from literature_graph_map.models import Evidence
-    from literature_graph_map.operations import export_snapshot
-
-    packet = packet.model_copy(deep=True)
+@pytest.mark.parametrize("reference", ["work", "entry"])
+def test_reference_only_work_survives_commit_and_export(tmp_path, snapshot, reference):
     source = make_work(99)
-    packet.works.append(source)
+    snapshot.works[source.paper_id] = source
     evidence = Evidence(
         paper_id=source.paper_id,
         version_id=source.representative_version_id,
         url=source.record_url,
     )
-    if reference == "relation":
-        packet.topic.relations[0].evidence = [evidence]
+    entry = snapshot.topics["demo"].entries[0]
+    if reference == "work":
+        snapshot.works[entry.paper_id].evidence_by_item.question = [evidence]
     else:
-        packet.topic.entries[0].evidence_by_item.question = [evidence]
+        entry.evidence_by_item = snapshot.works[entry.paper_id].evidence_by_item.model_copy(
+            update={"question": [evidence]}
+        )
     repo, private, out = tmp_path / "repo", tmp_path / "private", tmp_path / "export"
-    import_packet(repo, Snapshot(), packet, private)
-    snapshot = load(repo)
-    assert "P000099" in snapshot.works
-    assert "P000099" not in {entry.paper_id for entry in snapshot.topics["demo"].entries}
-    backup = ImportPacket.model_validate(read_yaml(private / "demo/review-packet.yaml"))
-    assert "P000099" in {work.paper_id for work in backup.works}
+    commit(repo, snapshot)
+    loaded = load(repo)
+    assert "P000099" in loaded.works
+    assert "P000099" not in {entry.paper_id for entry in loaded.topics["demo"].entries}
     assert main(["--repo", str(repo), "--private-dir", str(private), "check", "--public"]) == 0
-    export_snapshot(repo, snapshot, out)
+    export_snapshot(repo, loaded, out)
     assert "P000099" in load(out).works
 
 
-def test_private_topic_stays_outside_repo(tmp_path, packet):
-    packet = packet.model_copy(deep=True)
-    packet.topic.public = False
-    import_packet(tmp_path / "repo", Snapshot(), packet, tmp_path / "private")
-    assert not (tmp_path / "repo").exists()
-    assert (tmp_path / "private/demo/review-packet.yaml").exists()
-
-
-def test_handoff_preserves_in_progress_packet(tmp_path, snapshot):
+def test_handoff_writes_request_without_packet_copies(tmp_path, snapshot):
     private = tmp_path / "private"
-    research_handoff(private, snapshot.topics["demo"], snapshot, [])
-    packet_path = private / "demo/packet.yaml"
-    packet_path.write_text("researcher's in-progress draft", encoding="utf-8")
-    research_handoff(private, snapshot.topics["demo"], snapshot, [])
-    assert packet_path.read_text(encoding="utf-8") == "researcher's in-progress draft"
-    assert (private / "demo/packet.generated.yaml").exists()
+    request = research_handoff(private, snapshot.topics["demo"], snapshot, [{"status": "ok"}])
+    assert request.read_text(encoding="utf-8").startswith("# 調査メモ：動作確認用の架空テーマ")
+    assert "works.jsonl" in request.read_text(encoding="utf-8")
+    assert json.loads((private / "demo/search-report.json").read_text(encoding="utf-8"))
+    assert not list(private.rglob("*.yaml"))
 
 
 def test_default_is_current_repository():
@@ -283,21 +210,17 @@ def test_doi_parentheses_are_not_removed_from_bibtex(tmp_path):
     assert seed_identifiers(str(bib)) == ["10.5555/test(2001)"]
 
 
-def test_public_check_rejects_unmanaged_source_files(tmp_path, packet):
-    from literature_graph_map.cli import main
-
+def test_public_check_rejects_unmanaged_source_files(tmp_path, snapshot):
     repo = tmp_path / "repo"
     private = tmp_path / "private"
-    import_packet(repo, Snapshot(), packet, private)
+    commit(repo, snapshot)
     (repo / "topics/demo/source.pdf").write_bytes(b"private source")
     assert main(["--repo", str(repo), "--private-dir", str(private), "check", "--public"]) == 1
 
 
-def test_public_check_scans_original_yaml_comments(tmp_path, packet):
-    from literature_graph_map.cli import main
-
+def test_public_check_scans_original_yaml_comments(tmp_path, snapshot):
     repo, private = tmp_path / "repo", tmp_path / "private"
-    import_packet(repo, Snapshot(), packet, private)
+    commit(repo, snapshot)
     path = repo / "topics/demo/topic.yaml"
     path.write_text(
         path.read_text(encoding="utf-8") + "\n# C:\\Users\\private\\source.pdf\n", encoding="utf-8"
@@ -305,11 +228,9 @@ def test_public_check_scans_original_yaml_comments(tmp_path, packet):
     assert main(["--repo", str(repo), "--private-dir", str(private), "check", "--public"]) == 1
 
 
-def test_public_check_also_scans_decoded_source_values(tmp_path, packet):
-    from literature_graph_map.cli import main
-
+def test_public_check_also_scans_decoded_source_values(tmp_path, snapshot):
     repo, private = tmp_path / "repo", tmp_path / "private"
-    import_packet(repo, Snapshot(), packet, private)
+    commit(repo, snapshot)
     path = repo / "data/works.jsonl"
     records = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
     fake = "sk-FAKE" + "X" * 32
@@ -320,8 +241,6 @@ def test_public_check_also_scans_decoded_source_values(tmp_path, packet):
 
 
 def test_export_index_is_self_contained(tmp_path, snapshot):
-    from literature_graph_map.operations import export_snapshot
-
     repo, dest = tmp_path / "repo", tmp_path / "export"
     commit(repo, snapshot)
     index = repo / "README.md"
@@ -331,53 +250,38 @@ def test_export_index_is_self_contained(tmp_path, snapshot):
     assert "docs/USAGE.md" not in (dest / "_site/index.html").read_text(encoding="utf-8")
 
 
-def test_shared_work_version_update_preserves_other_topics_pending_relations(tmp_path, packet):
-    repo, private = tmp_path / "repo", tmp_path / "private"
-    import_packet(repo, Snapshot(), packet, private)
-    other = packet.model_copy(deep=True)
-    other.topic.topic_id = "other"
-    import_packet(repo, load(repo), other, private)
-    incoming = packet.model_copy(deep=True)
-    work = incoming.works[0]
-    work.versions.append(Version(version_id="Vnew", kind="published", doi="10.5555/new"))
-    work.version_links.append(
-        VersionLink(source="V000001", target="Vnew", evidence_url=work.record_url, checked_at=DAY)
-    )
-    work.representative_version_id = "Vnew"
-    import_packet(repo, load(repo), incoming, private)
-    saved = ImportPacket.model_validate(read_yaml(private / "other/review-packet.yaml"))
-    states = {r.relation_id: r.state for r in saved.topic.relations}
-    assert states["R000001"] == "recheck" and states["R000003"] == "candidate"
-
-
-def test_review_packet_does_not_include_unrelated_metadata(tmp_path, snapshot, packet):
-    from conftest import make_work
-
-    snapshot.works["P000099"] = make_work(99)
-    import_packet(tmp_path / "repo", snapshot, packet, tmp_path / "private")
-    saved = ImportPacket.model_validate(read_yaml(tmp_path / "private/demo/review-packet.yaml"))
-    assert "P000099" not in {w.paper_id for w in saved.works}
-
-
-def test_rejected_import_does_not_overwrite_private_recovery_packet(tmp_path, packet):
-    repo, private = tmp_path / "repo", tmp_path / "private"
-    import_packet(repo, Snapshot(), packet, private)
-    path = private / "demo/review-packet.yaml"
-    before = path.read_bytes()
-    packet = packet.model_copy(deep=True)
-    packet.topic.title = "C:\\Users\\private\\document"
-    with pytest.raises(MapError, match="local path"):
-        import_packet(repo, load(repo), packet, private)
-    assert path.read_bytes() == before
-
-
 @pytest.mark.parametrize("relative", ["topics/moved/README.md", "COPYRIGHT.md", "LICENSE"])
-def test_public_check_scans_manual_publication_documents(tmp_path, packet, relative):
-    from literature_graph_map.cli import main
-
+def test_public_check_scans_manual_publication_documents(tmp_path, snapshot, relative):
     repo, private = tmp_path / "repo", tmp_path / "private"
-    import_packet(repo, Snapshot(), packet, private)
+    commit(repo, snapshot)
     path = repo / relative
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("C:\\Users\\private\\document.pdf", encoding="utf-8")
     assert main(["--repo", str(repo), "--private-dir", str(private), "check", "--public"]) == 1
+
+
+def test_shared_summary_is_stored_once_and_corrected_everywhere(tmp_path, snapshot):
+    other = Topic(
+        topic_id="other",
+        title="別のテーマ",
+        question="共通文献",
+        entries=[make_entry(snapshot.works["P000001"])],
+    )
+    snapshot.topics["other"] = other
+    snapshot.paths["other"] = Path("topics/other")
+    repo = tmp_path / "repo"
+    commit(repo, snapshot)
+    for key in ("demo", "other"):
+        text = (repo / f"topics/{key}/topic.yaml").read_text(encoding="utf-8")
+        assert "summary:" not in text and "evidence_by_item" not in text
+    loaded = load(repo)
+    loaded.works["P000001"].summary = Summary(
+        question="訂正した問い。", method="訂正した方法。", contribution="訂正した判明点。"
+    )
+    loaded.works["P000001"].inspection.checked_at = DAY
+    commit(repo, loaded)
+    render(repo, load(repo))
+    for key in ("demo", "other"):
+        page = (repo / f"_site/topics/{key}/index.html").read_text(encoding="utf-8")
+        paper = page.split('id="P000001"', 1)[1].split("</article>", 1)[0]
+        assert "訂正した問い。" in paper and "架空の問いを比較する。" not in paper

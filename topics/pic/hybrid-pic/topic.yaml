@@ -29,11 +29,14 @@ review:
 - heading: 宇宙プラズマへの応用を、条件ごとに読む
   paragraphs:
   - 月の大域ウェイクでは、[@P000420]がWind観測からCMEの3期と比較用の上流条件を作り、それぞれを固定した三次元hybrid計算を行った。sheath期には空乏域が短くなり、後続の磁気雲・mid-CME期には長い空乏域が生じる。これは各期の条件に対する比較であり、CME通過全体を連続した時変境界で再現した結果としては読まない。電子流体と圧力勾配の扱いも、電子分布を解くウェイク研究と比較する条件となる。
-  - ガニメデの[@P000419]は、Hall MHDとMHD-EPICをGalileo G8の磁場観測と比較し、基準格子ではPICを含む計算が変動のスペクトルやFTEの特徴へ近づくことを示した。比較には、観測軌道の座標を6%拡大し、9分間の計算出力を繰り返して観測時系列へ対応させる調整を伴う。イオン・電子質量比100は固定した近似条件である。高解像度のHall MHDでも観測に近い変動スペクトルが得られ、モデルの違いと格子解像度を併せて評価する必要がある。
-  - Xie et al. (2024)は、電子をBoltzmann関係で閉じた質量なし流体、イオンを粒子とする静電hybridをSPISで用い、陰的非線形Poisson解法で直径1.2 kmのクレーターを計算した。境界で準中性を維持しつつ内部の電子雲の電荷分離を扱える点が特徴で、磁場を進化させる電磁hybridとは閉包・場の解法が異なる。電子の近い熱力学的平衡とクレーター径が電子旋回半径より小さいことを条件とし、粗い格子での安定性とシースの精度、短時間の準平衡と最終帯電は分けて評価する。[@P000048]
+  - ガニメデの[@P000419]は、Hall MHDとMHD-EPICをGalileo G8の磁場観測と比較し、基準格子ではPICを含む計算が変動のスペクトルやFTEの特徴へ近づくことを示した。比較には、観測軌道の座標を6%拡大し、9分間の計算出力を繰り返して観測時系列へ対応させる調整を伴う。イオン・電子質量比100は固定した近似条件である。高解像度のHall
+    MHDでも観測に近い変動スペクトルが得られ、モデルの違いと格子解像度を併せて評価する必要がある。
+  - '[@P000048]は、電子をBoltzmann関係で閉じた質量なし流体、イオンを粒子とする静電hybridをSPISで用い、陰的非線形Poisson解法で直径1.2
+    kmのクレーターを計算した。境界で準中性を維持しつつ内部の電子雲の電荷分離を扱える点が特徴で、磁場を進化させる電磁hybridとは閉包・場の解法が異なる。電子の近い熱力学的平衡とクレーター径が電子旋回半径より小さいことを条件とし、粗い格子での安定性とシースの精度、短時間の準平衡と最終帯電は分けて評価する。'
 - heading: 電子流体が再現できる範囲を確かめる
   paragraphs:
-  - Wang and Hu（2018）の無衝突・非磁化プラズマにおける静電hybrid–full PIC比較では、イオンを粒子としてシースや軌道交差を含めても、等温Boltzmann電子の閉包が深いウェイクで電子密度と電場を変え、イオン密度にも差を生んだ。無バイアス導体平板、Mach数8、平板長140 Debye長の例では、hybrid密度を分母にした約10%の密度差境界が正規化密度約0.15とVDFの非平衡指標Ψ≈0.02に対応する。これらは本計算の近似的な対応で、帯電物体や磁化プラズマへそのまま使える閾値ではない。[@P000099]
+  - '[@P000099]の無衝突・非磁化プラズマにおける静電hybrid–full PIC比較では、イオンを粒子としてシースや軌道交差を含めても、等温Boltzmann電子の閉包が深いウェイクで電子密度と電場を変え、イオン密度にも差を生んだ。無バイアス導体平板、Mach数8、平板長140
+    Debye長の例では、hybrid密度を分母にした約10%の密度差境界が正規化密度約0.15とVDFの非平衡指標Ψ≈0.02に対応する。これらは本計算の近似的な対応で、帯電物体や磁化プラズマへそのまま使える閾値ではない。'
   - イオンスラスタの[@P000101]では、Boltzmann電子密度を非線形Poisson方程式へ入れる静電hybridと、実際のXeイオン・電子質量比を使う完全PICを比較する。Poissonを解くこの構成では、イオン密度と電子密度を全域で同一に固定するわけではない。密度の大まかな形は似ていても外縁には大きな局所誤差が残り、電位にも差が出た。電子温度の異方性と中和電子の放出条件が影響した。電位差だけを単一のポリトロープ指数で直せるかは、別途検証する課題として残る。
   - 選択の出発点は、知りたい量と必要な物理である。イオンの非平衡と磁場の応答には準中性電磁hybrid、電子慣性が効く場合には慣性流体、電荷分離と表面電位にはPoissonを含む記述、局所の電子運動論には領域結合や完全PICを検討する。どの構成でも、閉包と境界条件を示し、代表的な波動、保存量、格子幅・粒子数・時間刻みへの依存を確かめる。
 lineage:
@@ -42,6 +45,7 @@ lineage:
   - paper_id: P000412
     title: CAM-CLで電流と磁場を進める
     significance: 多イオン種の粒子走査と、粒子・磁場の時間刻みを整理した。
+    connection: ''
   - paper_id: P000416
     title: 大域保存則に整合する陰的結合
     significance: 粒子・電子圧力・場の離散化を組み合わせ、境界条件付きの保存則を導いた。
@@ -55,6 +59,7 @@ lineage:
   - paper_id: P000418
     title: 二次元の二方向結合を検証
     significance: Hall MHDと局所の陰的PICを同じ計算に組み込んだ。
+    connection: ''
   - paper_id: P000419
     title: ガニメデ磁気圏を観測と比較
     significance: 三次元の埋め込み領域とGalileoの磁場を対応させた。
@@ -100,547 +105,69 @@ entries:
 - paper_id: P000412
   group: integrators
   role: CAM-CL・電流と磁場の時間更新
-  summary:
-    question: 多イオン種のhybrid計算で、粒子の繰り返し走査をどう減らすか。
-    method: イオン電流を半刻み進めるCAMと、磁場を副刻みで更新するcyclic leapfrogを組み合わせる。
-    contribution: 電場の時間外挿を避けて多種イオンを1回の粒子走査で進め、波動・ビーム不安定性で検証した。
-  evidence_by_item:
-    question:
-    - paper_id: P000412
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0021999184710849
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000412
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0021999184710849
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000412
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/pii/S0021999184710849
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000413
   group: integrators
   role: dHybrid・陽解法と低密度域
-  summary:
-    question: 無質量電子hybridの陽解法を、低密度セルと大規模並列計算でどう安定させるか。
-    method: イオンのBoris更新と磁場の二段Lax–Wendroff法を結ぶ三次元陽解法。線形安定条件から局所密度の下限を決め、電場評価時の安定化に用いる。
-    contribution: 並列性能と太陽風中の膨張雲を示した。密度下限は最終手段で、粒子統計の不足、電子圧力の省略、実験との条件差を併せて検証する。
-  evidence_by_item:
-    question:
-    - paper_id: P000413
-      version_id: V3
-      url: https://arxiv.org/pdf/physics/0611174v1
-      source_type: full_text
-      locator: arXiv v1 PDF pp.1–3、§1–2
-      checked_at: '2026-10-10'
-    method:
-    - paper_id: P000413
-      version_id: V3
-      url: https://arxiv.org/pdf/physics/0611174v1
-      source_type: full_text
-      locator: arXiv v1 PDF pp.3–6、§2–3、式1–6
-      checked_at: '2026-10-10'
-    contribution:
-    - paper_id: P000413
-      version_id: V3
-      url: https://arxiv.org/pdf/physics/0611174v1
-      source_type: full_text
-      locator: arXiv v1 PDF pp.6–12、§3–4、Fig.1–6
-      checked_at: '2026-10-10'
-  inspection:
-    level: full_text
-    version_id: V3
-    checked_by: ai
-    checked_at: '2026-10-10'
-    recheck: false
 - paper_id: P000414
   group: multiscale
   role: A.I.K.E.F.・イオン運動論と適応格子
-  summary:
-    question: 物体近傍の細かいイオン構造と、大域のプラズマ流をどう同時に解くか。
-    method: Cartesian適応格子と粒子の分割・統合を、イオン粒子・電子流体モデルへ組み込む。
-    contribution: 格子段階を横切る波動と一様格子との比較を示し、水星・タイタンのプラズマ相互作用へ適用した。
-  evidence_by_item:
-    question:
-    - paper_id: P000414
-      version_id: V1
-      url: https://elib.dlr.de/70122/
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000414
-      version_id: V1
-      url: https://elib.dlr.de/70122/
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000414
-      version_id: V1
-      url: https://elib.dlr.de/70122/
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000415
   group: models
   role: CHIEF・有限電子慣性
-  summary:
-    question: 電子慣性とイオン運動論を、準中性モデルの中でどう残すか。
-    method: イオンをPIC、電子を等温の慣性流体として、電子慣性項を省略しない流体方程式を解く。
-    contribution: 波動・イオンビーム・イオンLandau減衰・イオンfirehose試験で検証。電子分布関数の運動論は含まれない。
-  evidence_by_item:
-    question:
-    - paper_id: P000415
-      version_id: V2
-      url: https://arxiv.org/abs/1612.03818v2
-      source_type: full_text
-      locator: arXiv:1612.03818v2 PDF pp.1–6、§1
-      checked_at: '2026-10-10'
-    method:
-    - paper_id: P000415
-      version_id: V2
-      url: https://arxiv.org/abs/1612.03818v2
-      source_type: full_text
-      locator: arXiv v2 PDF pp.7–20、§2–3、式1–32、Fig.1–2
-      checked_at: '2026-10-10'
-    contribution:
-    - paper_id: P000415
-      version_id: V2
-      url: https://arxiv.org/abs/1612.03818v2
-      source_type: full_text
-      locator: arXiv v2 PDF pp.22–46、§4、Table 1–6、Fig.3–19
-      checked_at: '2026-10-10'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-10'
-    recheck: false
 - paper_id: P000416
   group: integrators
   role: 完全陰的hybrid・大域保存則
-  summary:
-    question: イオン粒子と電子流体の更新を、保存則に整合する形で結合できるか。
-    method: 陰的中点法・イオン副刻み・軌道平均を、セル中心差分と粒子形状・保存的平滑化に組み合わせる。
-    contribution: 境界条件と非線形反復の収束を条件に大域の質量・運動量・エネルギー保存を示し、波動・有限格子不安定性を検証した。
-  evidence_by_item:
-    question:
-    - paper_id: P000416
-      version_id: V2
-      url: https://arxiv.org/abs/1803.07158v1
-      source_type: full_text
-      locator: arXiv:1803.07158v1 PDF pp.1–4、§1–2
-      checked_at: '2026-10-10'
-    method:
-    - paper_id: P000416
-      version_id: V2
-      url: https://arxiv.org/abs/1803.07158v1
-      source_type: full_text
-      locator: arXiv v1 PDF pp.4–10、§3–4、式10–35；Appendix Cはp.19、Fig.C.5
-      checked_at: '2026-10-10'
-    contribution:
-    - paper_id: P000416
-      version_id: V2
-      url: https://arxiv.org/abs/1803.07158v1
-      source_type: full_text
-      locator: arXiv v1 PDF pp.5–8、保存則の導出；pp.11–16、§5–6、Fig.1–4
-      checked_at: '2026-10-10'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-10'
-    recheck: false
 - paper_id: P000417
   group: integrators
   role: 粒子の有限サイズと相殺誤差
-  summary:
-    question: イオン慣性長より長い波を、粗いhybrid格子で正しく伝播できるか。
-    method: 冷たい一様背景の平行横波を半離散解析し、64セル/波長の一次元計算と比較。debris-ion膨張の非線形例も調べる。
-    contribution: 有限粒子形状と電子格子の相殺誤差を示した。格子幅/イオン慣性長、対象波数、粒子形状・平滑化に応じた分散精度の条件を導く。
-  evidence_by_item:
-    question:
-    - paper_id: P000417
-      version_id: V2
-      url: https://arxiv.org/abs/1912.04860v1
-      source_type: full_text
-      locator: arXiv:1912.04860v1 PDF pp.1–6、§2–4、式12–18、Fig.1–2
-      checked_at: '2026-10-10'
-    method:
-    - paper_id: P000417
-      version_id: V2
-      url: https://arxiv.org/abs/1912.04860v1
-      source_type: full_text
-      locator: arXiv:1912.04860v1 PDF pp.1–6、§2–4、式12–18、Fig.1–2
-      checked_at: '2026-10-10'
-    contribution:
-    - paper_id: P000417
-      version_id: V2
-      url: https://arxiv.org/abs/1912.04860v1
-      source_type: full_text
-      locator: arXiv:1912.04860v1 PDF pp.1–6、§2–4、式12–18、Fig.1–2
-      checked_at: '2026-10-10'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-10'
-    recheck: false
 - paper_id: P000418
   group: multiscale
   role: MHD-EPIC・二方向の領域結合
-  summary:
-    question: 大域流体計算の一部へ、局所の粒子運動論を埋め込むには。
-    method: Hall MHDのBATS-R-USと陰的PICのiPIC3Dを、二次元で双方向に結合。
-    contribution: 同じ格子幅・時間刻みでの結合を検証し、二次元磁気圏へ適用する基盤を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000418
-      version_id: V1
-      url: https://lirias.kuleuven.be/361847
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000418
-      version_id: V1
-      url: https://lirias.kuleuven.be/361847
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-10-09'
-    contribution:
-    - paper_id: P000418
-      version_id: V1
-      url: https://lirias.kuleuven.be/361847
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-10-09'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-09'
-    recheck: false
 - paper_id: P000419
   group: applications
   role: ガニメデ磁気圏・MHD-EPICと観測
-  summary:
-    question: 局所の運動論は、ガニメデ磁気圏と観測との対応をどう変えるか。
-    method: Hall MHDと埋め込みPICの三次元計算をGalileo G8と比較。質量比100を固定し、観測軌道を6%拡大、9分間の計算出力を繰り返して対応させる。
-    contribution: 基準格子ではPICが磁場変動とFTEの観測特徴へ近づいた。高解像度Hall MHDでも近い変動スペクトルが得られ、モデルと格子を併せて評価する根拠を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000419
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2015JA021997
-      source_type: abstract
-      locator: 公開要旨、本文§2モデル設定を補助確認
-      checked_at: '2026-10-09'
-    method:
-    - paper_id: P000419
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2015JA021997
-      source_type: full_text
-      locator: 公開HTML本文§2.2–2.3・§3.2（質量比100、軌道6%拡大、9分の出力反復）
-      checked_at: '2026-10-10'
-    contribution:
-    - paper_id: P000419
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2015JA021997
-      source_type: full_text
-      locator: 公開HTML本文§3.1–3.2・§4（基準格子と高解像度Hall MHDの比較）
-      checked_at: '2026-10-10'
-  inspection:
-    level: abstract
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-10'
-    recheck: false
 - paper_id: P000420
   group: applications
   role: CME条件別の月ウェイク
-  summary:
-    question: CMEの上流条件の違いで、月のウェイク形状と場はどう変わるか。
-    method: Windの観測からCME3期と比較用の上流条件を作り、各条件を固定した三次元hybrid計算を実施。
-    contribution: sheath期の短い空乏域と磁場増強、後続期の長い空乏域を比較。CME通過を連続時変境界で追った結果ではない。
-  evidence_by_item:
-    question:
-    - paper_id: P000420
-      version_id: V1
-      url: https://ntrs.nasa.gov/citations/20220000371
-      source_type: full_text
-      locator: 出版PDF p.1、Abstract・§1
-      checked_at: '2026-10-10'
-    method:
-    - paper_id: P000420
-      version_id: V1
-      url: https://ntrs.nasa.gov/citations/20220000371
-      source_type: full_text
-      locator: 出版PDF p.3、§2–3、Table 1
-      checked_at: '2026-10-10'
-    contribution:
-    - paper_id: P000420
-      version_id: V1
-      url: https://ntrs.nasa.gov/citations/20220000371
-      source_type: full_text
-      locator: 出版PDF pp.4–7、§4–5、Fig.3–6
-      checked_at: '2026-10-10'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-10'
-    recheck: false
 - paper_id: P000064
   group: models
   role: 衝突と粒子・流体の結合
-  summary:
-    question: 強衝突の標的と弱衝突のコロナで、高温電子と背景の輸送をどう同時に追うか。
-    method: 高温電子を衝突付きPIC、熱電子とイオンを有限質量の二流体で解き、陰的モーメント式とPoissonから静電場を求める。
-    contribution: 粒子・流体の集団分割でレーザー電子輸送と箔の膨張を計算。電子Courant制約、保存誤差、縮小質量比による限界も示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000064
-      version_id: V1
-      url: https://doi.org/10.1016/0021-9991(83)90165-1
-      source_type: full_text
-      locator: 出版PDF pp.2–3、§1–2A
-      checked_at: '2026-10-10'
-    method:
-    - paper_id: P000064
-      version_id: V1
-      url: https://doi.org/10.1016/0021-9991(83)90165-1
-      source_type: full_text
-      locator: 出版PDF pp.3–9、§2A–C、式4–9
-      checked_at: '2026-10-10'
-    contribution:
-    - paper_id: P000064
-      version_id: V1
-      url: https://doi.org/10.1016/0021-9991(83)90165-1
-      source_type: full_text
-      locator: 出版PDF pp.9–17、§2E・§3–4、Fig.2–4
-      checked_at: '2026-10-10'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-10'
-    recheck: false
-  locked_fields: []
 - paper_id: P000066
   group: models
   role: エネルギー保存半陰解法
-  summary:
-    question: 陽的PICに似た計算順を保ち、粒子・場の非線形反復なしに離散エネルギーを保存できるか。
-    method: 既知の半ステップ粒子位置と旧時刻磁場を用いるmoverから、平均速度電流を未知電場の線形関数として質量行列で表し、線形Maxwell方程式を解く。θ＝1/2で仕事を整合させる。
-    contribution: 周期境界・整合する補間とcurl演算子の下で保存機構を導き、直接線形解法の1D1V/1D3V試験で全エネルギー誤差約10⁻¹⁴–10⁻¹⁵を示す。無ドリフトMaxwell平衡ではDebye長を大幅に未解像にしても数値加熱を抑える。
-  evidence_by_item:
-    question:
-    - paper_id: P000066
-      version_id: V2
-      url: https://arxiv.org/abs/1602.06326
-      source_type: full_text
-      locator: PDF pp3–5 Eqs6–21/§4 model assumptions; PDF p13 AppendixD
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000066
-      version_id: V2
-      url: https://arxiv.org/abs/1602.06326
-      source_type: full_text
-      locator: PDF pp3–5 Eqs6–21/§4 model assumptions; PDF p13 AppendixD
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000066
-      version_id: V2
-      url: https://arxiv.org/abs/1602.06326
-      source_type: full_text
-      locator: PDF pp3–5 Eqs6–21/§4 model assumptions; PDF p13 AppendixD
-      checked_at: '2026-10-12'
-  inspection:
-    level: preprint
-    version_id: V2
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000071
   group: multiscale
   role: FLEKS・流体との領域結合
-  summary:
-    question: 大域MHDの内部で、形が変わる電子・イオン運動論領域をどう効率よく追い、粒子数と刻み幅を調整するか。
-    method: 非相対論的GL-ECSIMを一様直交格子上で用い、各方向N≥2セルの活性パッチを動的に切り替える。新旧Δtを使い分けて時間配置を保ち、セル内の分割と、位置・速度を継承して5保存量に合わせ、正の重みが得られる場合の6→5統合で粒子数を調整する。
-    contribution: 動的PIC領域をMHD-AEPICへ埋め込む実装を提供し、波・非対称再結合・Frontera並列試験で動作と性能を検証した。統合の総量保存を保ちながらppc偏りを減らせるが、統計雑音は増え、計算全体の厳密保存とは区別する。
-  evidence_by_item:
-    question:
-    - paper_id: P000071
-      version_id: V1
-      url: https://doi.org/10.1016/j.cpc.2023.108714
-      source_type: full_text
-      locator: PDF pp.1–3、§1–2
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000071
-      version_id: V1
-      url: https://doi.org/10.1016/j.cpc.2023.108714
-      source_type: full_text
-      locator: PDF pp.3–7、§2–5、式1–5
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000071
-      version_id: V1
-      url: https://doi.org/10.1016/j.cpc.2023.108714
-      source_type: full_text
-      locator: PDF pp.7–13、§6、図6–14
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000099
   group: closures
   role: 電子流体近似とウェイク
-  summary:
-    question: 無衝突・非磁化のmesothermal流中の無バイアス導体平板背後で、等温Boltzmann電子を使う流体解析・hybrid PICはどの領域までfull PICの密度場を表せるか。
-    method: 平板長140 λD0、Mach数8の陽子–電子流を、準中性の流体解析解・静電hybrid PIC・実質量比1836.15の静電full PICで比較。局所密度差、方向別電子二次モーメントとVDF、VDFの非Maxwell性を測る指標Ψを対応付けた。
-    contribution: Mach線からδθ≈2θ0≈2/M0までの初期膨張域では巨視的密度場が近く、その先の深いウェイクでは非Maxwell分布・異方性・対向電子流に伴ってBoltzmann電子閉包が崩れることを示した。10%密度差境界は本計算の密度約0.15とΨ≈0.02におよそ対応し、中心の横方向温度増大は二峰分布の対向流に由来する。
-  evidence_by_item:
-    question:
-    - paper_id: P000099
-      version_id: V1
-      url: https://doi.org/10.1029/2018JA025743
-      source_type: full_text
-      locator: PDF pp.1–2、要旨・§1
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000099
-      version_id: V1
-      url: https://doi.org/10.1029/2018JA025743
-      source_type: full_text
-      locator: PDF pp.2–4、§2、式(1)–(3)
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000099
-      version_id: V1
-      url: https://doi.org/10.1029/2018JA025743
-      source_type: full_text
-      locator: PDF pp.5–8、§3–4、Figs.3–6、式(4)–(7)
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
 - paper_id: P000101
   group: closures
   role: 推進機プルームのモデル比較
-  summary:
-    question: 等温Boltzmann電子の静電hybridは、無衝突プルームの密度・電位をどこまで再現するか。
-    method: 実際のXe⁺・電子質量比による二次元PICと比較。hybridはBoltzmann密度から非線形Poissonを解き、放出部の中和条件も比較する。
-    contribution: 密度の大まかな形が似ていても、外縁の密度と横方向の電位に差が残った。電子温度の異方性と中和条件を分けて検証する根拠を示した。
-  evidence_by_item:
-    question:
-    - paper_id: P000101
-      version_id: V1
-      url: https://doi.org/10.1063/1.5111791
-      source_type: full_text
-      locator: 出版PDF pp.2–3（印刷103502-1–2）、§I、式1–3
-      checked_at: '2026-10-10'
-    method:
-    - paper_id: P000101
-      version_id: V1
-      url: https://doi.org/10.1063/1.5111791
-      source_type: full_text
-      locator: 出版PDF pp.3–4、§II、Fig.1、式4–7
-      checked_at: '2026-10-10'
-    contribution:
-    - paper_id: P000101
-      version_id: V1
-      url: https://doi.org/10.1063/1.5111791
-      source_type: full_text
-      locator: 出版PDF pp.5–8、Fig.2–7、式9–13、§IV
-      checked_at: '2026-10-10'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-10'
-    recheck: false
-  locked_fields: []
 - paper_id: P000048
   group: applications
   role: 極域クレーターのミニウェイク
   summary:
     question: Boltzmann電子の静電hybridで、Debye長を大きく超える三次元クレーターの帯電とイオン膨張をどう扱うか。
-    method: SPISの三次元静電hybrid PICで、イオンを粒子、電子をBoltzmann関係で閉じた質量なし流体として扱い、陰的な非線形Poisson方程式を解く。直径1.2 km、光電子・二次電子放出を省いた6条件を20 s計算する。
-    contribution: 標準条件で余剰電子を伴うイオン空乏域と約−60 Vの準平衡電位、底から100 mの下降フラックス約4%、壁法線フラックス約18%を示した。上流のシース擾乱と約±40 km s−1の横方向流れを三次元で捉えた。
-  evidence_by_item:
-    question:
-    - paper_id: P000048
-      version_id: V1
-      url: https://doi.org/10.1029/2024JA032764
-      source_type: full_text
-      locator: PDF pp.1–2, Introduction
-      checked_at: '2026-10-12'
-    method:
-    - paper_id: P000048
-      version_id: V1
-      url: https://doi.org/10.1029/2024JA032764
-      source_type: full_text
-      locator: PDF pp.2–3, §2, Fig.1, Table 1; p.8 §4 (20 s)
-      checked_at: '2026-10-12'
-    contribution:
-    - paper_id: P000048
-      version_id: V1
-      url: https://doi.org/10.1029/2024JA032764
-      source_type: full_text
-      locator: PDF pp.4–8, §3–4, Figs.2–5; p.9 §4 (magnetic limit)
-      checked_at: '2026-10-12'
-  inspection:
-    level: full_text
-    version_id: V1
-    checked_by: ai
-    checked_at: '2026-10-12'
-    recheck: false
-  locked_fields: []
-relations: []
-reading_notes:
-- 電子を流体にする準中性電磁モデル、Poissonを解く静電hybrid、MHDと局所PICの領域結合を比較する。
-- 要旨確認と全文確認は文献ごとに表示。arXiv稿の読解は指定版に限り、出版版との差分は未確認。
+    method: SPISの三次元静電hybrid PICで、イオンを粒子、電子をBoltzmann関係で閉じた質量なし流体として扱い、陰的な非線形Poisson方程式を解く。直径1.2
+      km、光電子・二次電子放出を省いた6条件を20 s計算する。
+    contribution: 標準条件で余剰電子を伴うイオン空乏域と約−60 Vの準平衡電位、底から100 mの下降フラックス約4%、壁法線フラックス約18%を示した。上流のシース擾乱と約±40
+      km s−1の横方向流れを三次元で捉えた。
 survey:
   searched_at: '2026-10-09'
+  scope_period: 制限なし
   provider_names:
   - Bukan library
   - Crossref
   - 出版社・著者所属機関
   - arXiv
+  queries: []
   coverage_note: 代表的なモデル・数値手法と月ウェイク／磁気圏／プルームの比較を対象にしたレビュー。
   limitations:
   - 全引用網・全実装の網羅は未実施。
   - 要旨・部分本文のみ確認の文献は全文確認と区別する。
   changes: hybrid-PICの独立レビューを追加。作業証跡はリポジトリ外のBukan reports/hybrid-pic-review-2026-10-09に保存。
+  publication_status: draft
+reading_notes:
+- 電子を流体にする準中性電磁モデル、Poissonを解く静電hybrid、MHDと局所PICの領域結合を比較する。
+- 要旨確認と全文確認は文献ごとに表示。arXiv稿の読解は指定版に限り、出版版との差分は未確認。

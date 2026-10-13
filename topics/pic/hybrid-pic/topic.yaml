@@ -33,7 +33,7 @@ review:
   - Xie et al. (2024)は、電子をBoltzmann関係で閉じた質量なし流体、イオンを粒子とする静電hybridをSPISで用い、陰的非線形Poisson解法で直径1.2 kmのクレーターを計算した。境界で準中性を維持しつつ内部の電子雲の電荷分離を扱える点が特徴で、磁場を進化させる電磁hybridとは閉包・場の解法が異なる。電子の近い熱力学的平衡とクレーター径が電子旋回半径より小さいことを条件とし、粗い格子での安定性とシースの精度、短時間の準平衡と最終帯電は分けて評価する。[@P000048]
 - heading: 電子流体が再現できる範囲を確かめる
   paragraphs:
-  - '[@P000099]は、解析・hybrid・完全運動論のウェイク計算を比較し、電子分布が平衡から外れる場所で流体近似の誤差が生じることを整理した。イオン密度や大域形状の一致を確かめた後も、電位、電子温度の方向依存、捕捉・逃走する電子を調べる必要がある。'
+  - Wang and Hu（2018）の無衝突・非磁化プラズマにおける静電hybrid–full PIC比較では、イオンを粒子としてシースや軌道交差を含めても、等温Boltzmann電子の閉包が深いウェイクで電子密度と電場を変え、イオン密度にも差を生んだ。無バイアス導体平板、Mach数8、平板長140 Debye長の例では、hybrid密度を分母にした約10%の密度差境界が正規化密度約0.15とVDFの非平衡指標Ψ≈0.02に対応する。これらは本計算の近似的な対応で、帯電物体や磁化プラズマへそのまま使える閾値ではない。[@P000099]
   - イオンスラスタの[@P000101]では、Boltzmann電子密度を非線形Poisson方程式へ入れる静電hybridと、実際のXeイオン・電子質量比を使う完全PICを比較する。Poissonを解くこの構成では、イオン密度と電子密度を全域で同一に固定するわけではない。密度の大まかな形は似ていても外縁には大きな局所誤差が残り、電位にも差が出た。電子温度の異方性と中和電子の放出条件が影響した。電位差だけを単一のポリトロープ指数で直せるかは、別途検証する課題として残る。
   - 選択の出発点は、知りたい量と必要な物理である。イオンの非平衡と磁場の応答には準中性電磁hybrid、電子慣性が効く場合には慣性流体、電荷分離と表面電位にはPoissonを含む記述、局所の電子運動論には領域結合や完全PICを検討する。どの構成でも、閉包と境界条件を示し、代表的な波動、保存量、格子幅・粒子数・時間刻みへの依存を確かめる。
 lineage:
@@ -524,36 +524,36 @@ entries:
   group: closures
   role: 電子流体近似とウェイク
   summary:
-    question: 電子を流体として扱う近似は、物体背後のどこで使えるか。
-    method: 無衝突流中の大きな平板を、解析解・ハイブリッドPIC・完全運動論PICで比較。
-    contribution: 平衡に近い領域と、電子分布の歪みが流体近似の誤差を生む領域を分けた。
+    question: 無衝突・非磁化のmesothermal流中の無バイアス導体平板背後で、等温Boltzmann電子を使う流体解析・hybrid PICはどの領域までfull PICの密度場を表せるか。
+    method: 平板長140 λD0、Mach数8の陽子–電子流を、準中性の流体解析解・静電hybrid PIC・実質量比1836.15の静電full PICで比較。局所密度差、方向別電子二次モーメントとVDF、VDFの非Maxwell性を測る指標Ψを対応付けた。
+    contribution: Mach線からδθ≈2θ0≈2/M0までの初期膨張域では巨視的密度場が近く、その先の深いウェイクでは非Maxwell分布・異方性・対向電子流に伴ってBoltzmann電子閉包が崩れることを示した。10%密度差境界は本計算の密度約0.15とΨ≈0.02におよそ対応し、中心の横方向温度増大は二峰分布の対向流に由来する。
   evidence_by_item:
     question:
     - paper_id: P000099
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JA025743?af=R
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-10-10'
+      url: https://doi.org/10.1029/2018JA025743
+      source_type: full_text
+      locator: PDF pp.1–2、要旨・§1
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000099
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JA025743?af=R
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-10-10'
+      url: https://doi.org/10.1029/2018JA025743
+      source_type: full_text
+      locator: PDF pp.2–4、§2、式(1)–(3)
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000099
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JA025743?af=R
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-10-10'
+      url: https://doi.org/10.1029/2018JA025743
+      source_type: full_text
+      locator: PDF pp.5–8、§3–4、Figs.3–6、式(4)–(7)
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000101

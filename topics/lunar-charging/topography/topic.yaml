@@ -6,13 +6,15 @@ review:
 - heading: 永久影へ入り込むプラズマ
   paragraphs:
   - 極域の低い太陽高度では、クレーターの壁が光と太陽風を遮る。電子とイオンは質量や速度分布が違うため、陰への到達もそろわない。[@P000031]はLOLA地形を使って遮蔽を具体化し、[@P000008]は表面帯電が流入粒子へ及ぼす作用も計算する。
-  - 日夜境界・影の極域で準中性が破れる条件を扱う[@P000282]は、電子とイオンの到達差を読む入口になる。太陽嵐中の[@P000222]は運動論計算を物体の等価回路へつなぎ、低電流環境での帯電緩和を評価した。[@P000264]は膨張前線と表面の間の電子雲をPoisson方程式で求め、[@P000263]の実験はデバイ長と地形寸法の比による内部電場・二重層の変化を調べる。非中性領域の解析と、形状を変える実験を比較できる。
+  - 日夜境界・影の極域で準中性が破れる条件を扱う[@P000282]は、電子とイオンの到達差を読む入口になる。太陽嵐中の[@P000222]は運動論計算を物体の等価回路へつなぎ、低電流環境での帯電緩和を評価した。[@P000264]は膨張前線と表面の間の電子雲をPoisson方程式で求めた。
+  - 地形の影響は、穴の半径と周囲のシース厚さの比によって電位輪郭へ現れる強さが変わる。Wangほかは半径1 cmの半球形穴を用い、熱アルゴンプラズマの密度を変えてS/R≈0.65、1.2、3を比較した。Sが大きくなるほど電位輪郭のくぼみが弱まり、穴内電位が平坦になった。これは地形とシースの長さ尺度を結びつける基礎実験で、太陽風の流れや紫外線による光電子は今後の研究に残る。[@P000263]
   - 直径1.2 kmの極域クレーターを扱うXie et al. (2024)では、深さ200から300 mへの変更は電子雲近傍の準平衡電位を約4 V負にし、規格化下降フラックスを減らした。斜面60から30°への変更では電位は約5 V正側へ変わるが、流入フラックスの差は結果節で明瞭でないとされる。地形による遮蔽と三次元の側壁流入を示す一方、−60 Vなどの電位は放出電流を省いた20秒計算の値であり、永久影の長期平衡の条件が残る。[@P000048]
   - Farrell et al. はGoldstone地形を用い、永久影の帯電を両極性膨張電位と表面シース電位の二段階で求めた。Shoemakerの通常条件では約−90 V、一定ダスト電流を置くイオン非入射点では約−180 Vとなるが、後者は非一意な閉鎖条件に依存し、電流換算にも本文の不整合がある。低い環境電流は小物体の摩擦電荷緩和を遅らせ、氷のスパッタ侵食にも地形依存性を与える。これらは固定流向・Maxwell分布・垂直膨張のモデルであり、側方流入や粒子放出の確認が必要になる。[@P000058]
 - heading: 深い空洞と実地形への拡張
   paragraphs:
   - 深い空洞では、入口から底へ至る間に電子が側壁へ失われる。上方から太陽風が入る条件を扱った[@P000012]は、その選別によって底部が正に帯電しうることを示した。[@P000015]は空洞寸法とシース厚の比に注目し、大きな空洞では電子供給が増えて正電位が緩和されることを示した。[@P000016]は流速と熱速度の比を変え、底部電位が負から正、さらにほぼゼロへ移る条件を調べる。南極の実地形を含む[@P000017]は、理想化した形状の計算から、候補地点ごとの環境を読むための研究へつながる。
-  - 縦孔周囲の三次元の粒子計算[@P000225]は、深い地形への粒子供給を調べる比較対象となる。溶岩チューブをガラス管で模した[@P000226]は、入口電位と深さを変えて底部電位を測った。電子遮蔽による正帯電を、壁からのイオン誘起二次電子が抑えるという結果から、幾何形状と材料の放出特性を組にして考えられる。
+  - Miyake・Nishino（2015）は、直径50 m・深さ45 mの縦孔で日向と影の差動帯電に加え、同じ光電子放出条件の日向同士にも孔内外の電位差が生じると示した。日向の孔底は天頂角5°超でその位置が日向にある範囲で孔外より8〜10 V高い。天頂角30°で報告された局所最大電場は孔縁50 V/m・孔底20 V/mだが、境界の細かな構造は0.5 m格子で限界に近い。影深部の最終平衡電位とダスト輸送の評価は残る。[@P000225]
+  - ガラス管実験は、電子遮蔽と壁面からの二次電子供給を合わせて空洞底面の電流平衡を考える必要を示す。Gopalakrishnanらの2024年9月25日草稿の直径6 mmガラス管実験では、入口導電面へ印加した−40/−70 Vで底面の正電位は近い値になるが、800 eV・深さ12 mmで約110–120 Vと、単一電荷イオンを仮定したイオンエネルギー相当の800 Vを大きく下回る（図の概読）。著者は側壁からのイオン誘起二次電子の流入で説明する。深さ0 mmでは入口の導電板が二次電子源になるとされ、管内の幾何と材料による電子供給を一緒に考える必要がある。月の壁面材質と実際の洞窟形状への適用は今後の検証に残る。[@P000226]
 - heading: 計算出力と図の再現へ進む
   paragraphs:
   - 論文から計算条件を追うために、公開出力も参照できる。[@P000344]は空洞サイズ依存の図に対応するHDF5とNotebook、[@P000345]は流速・熱速度比の計算出力と半解析コード、[@P000346]は極域クレーターのhybrid
@@ -326,39 +328,39 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000263
   group: craters
-  role: クレーター寸法とシースの実験
+  role: クレーター半径に対するシース厚さと電位分布の実験
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: クレーター寸法は内部シースをどう変えるか。
-    method: 実験室プラズマで地形寸法とデバイ長の関係を変える。
-    contribution: デバイ長が地形寸法以上になると内部電場が弱まり、外部との二重層が形成されることを示した。
+    question: 半球形クレーターの半径に対する周囲のシース厚さの違いは、穴内外の電位分布と電場をどう変えるか。
+    method: 絶縁板中央に設けた半径1 cmの半球形穴を熱アルゴンプラズマに置き、フィラメント電流で密度を変えてλDe=0.1/0.2/0.5 cm、S=0.65/1.2/3 cmを比較した。放出プローブで電位を測り、中心軸電位を微分して電場を求めた。周囲の電子分布はLangmuirプローブで診断した。
+    contribution: S/Rの増加に伴って電位輪郭の地形に沿うくぼみが弱まり、穴内電位が平坦になる変化を実測した。電場の入口から底近傍への低下は著者報告値で42/65/83%。二重層に対応する電子・イオン密度の交差は極限条件への外挿に基づく著者の予想として残る。
   evidence_by_item:
     question:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF p. 2, §1 final paragraph; PDF p. 3, §2
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp. 2–3, §2; PDF p. 2, Fig. 2 caption; PDF p. 4, §3
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp. 2–4, Figs. 2–4; PDF pp. 4–5, §3 Cases 1–3 and extrapolation/items 1–3
+      checked_at: '2026-10-13'
 - paper_id: P000264
   group: craters
   role: クレーター内の電子雲の解析解
@@ -396,74 +398,74 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000225
   group: cavities
-  role: 縦孔周囲の三次元粒子計算
+  role: 縦孔の差動帯電と日向孔底の高電位
   summary:
-    question: 月の日照側にある深い縦孔では、鉛直壁が太陽風電子や光電子の流れを変えることで、孔底の電流収支と表面電位が孔外とどう異なるかを調べた。
-    method: 太陽風プラズマ、光電子、帯電した月面の相互作用を三次元の粒子シミュレーション（PIC法）で計算し、数十メートル規模の縦孔内外の帯電を比較した。
-    contribution: 壁への損失で太陽風電子の孔底への流入が減り、孔底と壁を結ぶ光電子電流が電流収支を変えると示した。日向と影の強い帯電差に加え、孔内外の日向同士にも電位差が生じた。
+    question: 月の日照側の深い縦孔で、壁への電子損失と壁–底の光電子輸送が、孔底の電流収支と孔内外の表面電位をどう変えるか。
+    method: 直径50 m・深さ45 mの絶縁性縦孔を、0.5 m格子の三次元静電PICで計算した。太陽風は450 km/s・5 cm⁻³・8.6 eV、光電子は垂直入射時4.5 μA/m²・温度2.2 eVとし、無静磁場で天頂角1〜89°を調べた。
+    contribution: 日向の孔底は、天頂角5°超でその位置が日向にある範囲で、同じ光電子放出条件の孔外より8〜10 V高くなった。壁への吸収で太陽風電子電流が減り、壁から届く光電子によって孔底の光電子正味電流が負に転じる。影深部の最終電位は電流収支が未成立のため確定しない。
   evidence_by_item:
     question:
     - paper_id: P000225
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
-      source_type: abstract
-      locator: Abstract 第1〜4文：dayside、vertical holes、greater depth-to-diameter ratios、hole-bottom current balance
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1016/j.icarus.2015.07.011
+      source_type: full_text
+      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3 PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3 PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5 PDF pp.2–6、§§3.1–4、Figs.1・3–5
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000225
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
-      source_type: abstract
-      locator: Abstract 第1〜2文：solar wind plasma/photoelectrons/charged lunar surface、three-dimensional particle-in-cell simulations
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1016/j.icarus.2015.07.011
+      source_type: full_text
+      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3 PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3 PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5 PDF pp.2–6、§§3.1–4、Figs.1・3–5
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000225
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
-      source_type: abstract
-      locator: Abstract 第4〜5文：limited solar wind electron penetration due to loss at the wall、photoelectron current path、differential charging and potential difference
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1016/j.icarus.2015.07.011
+      source_type: full_text
+      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3 PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3 PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5 PDF pp.2–6、§§3.1–4、Figs.1・3–5
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-13'
     recheck: false
 - paper_id: P000226
   group: cavities
   role: 溶岩チューブ内の帯電実験
   inspection:
-    level: abstract
-    version_id: V1
+    level: full_text
+    version_id: Vdraft20240925
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: 溶岩チューブを模した空洞の奥はどう帯電するか。
-    method: イオン流にさらしたガラス管の入口電位と深さを変え、底部電位を測る。
-    contribution: 電子遮蔽による正帯電と、壁面からのイオン誘起二次電子による電位抑制を示した。
+    question: 溶岩チューブを模した空洞で、入口の電子遮蔽と側壁からの二次電子供給は底面の帯電をどう変えるか。
+    method: 2024年9月25日草稿を実読。イオン源を5 mAで動作させ、N₂ガス由来の100–800 eV準中性イオン流を直径6 mmのガラス管へ正対入射させ、入口導電面へ−5/−40/−70 Vを印加し、底面LPの浮遊電位とI–V曲線を測る。図2は深さ0/6/12 mm、図3は24 mm点も含む。
+    contribution: 底面は正に帯電し、強い入口負バイアスで電位が高くなるが、イオンエネルギー相当の電位には達しない。対照バイアス実験とLP電流分解から、イオン誘起二次電子の流入が正帯電を抑えると解釈した。
   evidence_by_item:
     question:
     - paper_id: P000226
-      version_id: V1
+      version_id: Vdraft20240925
       url: https://doi.org/10.3847/psj/ada6b0
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3 Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5 lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.3 Fig.2c PDF p.4 lines93–101 PDF p.5 lines115–141 PDF p.7 lines164–168
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000226
-      version_id: V1
+      version_id: Vdraft20240925
       url: https://doi.org/10.3847/psj/ada6b0
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3 Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5 lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.3 Fig.2c PDF p.4 lines93–101 PDF p.5 lines115–141 PDF p.7 lines164–168
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000226
-      version_id: V1
+      version_id: Vdraft20240925
       url: https://doi.org/10.3847/psj/ada6b0
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3 Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5 lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.3 Fig.2c PDF p.4 lines93–101 PDF p.5 lines115–141 PDF p.7 lines164–168
+      checked_at: '2026-10-13'
 - paper_id: P000282
   group: craters
   role: 日夜境界・極域での準中性破れ

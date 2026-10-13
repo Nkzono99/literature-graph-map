@@ -199,50 +199,38 @@ entries:
     recheck: false
 - paper_id: P000224
   group: expansion
-  role: Lunar Prospectorの電子・磁場観測
+  role: Lunar Prospectorの電子・磁場観測と高度依存
   summary:
-    question: 月の近傍に生じるプラズマウェイクで、磁場・電子密度・電子温度・電位はどのような空間構造をもち、その構造は太陽風条件や月の地殻磁場にどう依存するか。
-    method: Lunar Prospectorの磁場・電子分布観測と、Windによる太陽風条件の観測を組み合わせ、電子密度・温度・電位と磁場の構造を調べた。カッパ分布を用いた空洞へのプラズマ膨張解とも比較した。
-    contribution: ウェイク内の電子密度低下、電子温度上昇、境界をまたぐ電位降下を確認した。磁場構造は高度によって太陽風条件や地殻磁場に左右され、電子と磁場の分布はカッパ分布を用いた膨張解でよく記述された。
+    question: 月の近傍ウェイクで電子と磁場の構造は高度・太陽風条件にどう依存し、Kappa電子を用いた空洞への膨張解でどこまで説明できるか。
+    method: 地球周辺の影響と時間移動後のWind磁場との不対応を除いたLunar Prospectorの3813軌道を解析した。月向き電子のKappaフィットから密度・温度を近似し、500–2000 eVの分布シフトから衛星帯電を含む電位差を導出した。高度・太陽風条件別の統計、1次元準中性Kappa膨張解、電子圧力からの反磁性電流と磁場計算を比較した。
+    contribution: 85–115 kmでは中央磁場増大と膨張域の減少、20–45 kmでは地殻磁場の強い寄与を示した。電子密度は2桁以上低下し温度は最大約1桁上昇した。Kappa解は等温Maxwell解より電子量の基本形に合うが、高Zの密度、約75 km/sの再圧縮速度、中央磁場の形と方向依存には差が残り、LP位置では音速膨張と小異方性の磁気音速膨張を識別できない。
   evidence_by_item:
     question:
     - paper_id: P000224
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000224
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
+      url: https://doi.org/10.1029/2004ja010991
       source_type: full_text
-      locator: §1 Introduction [6]
-      checked_at: '2026-10-06'
+      locator: PDF pp.2–3, §2.1–2.2 [8–12], Fig.1 PDF p.3, §2.3 [13], Table 1 PDF pp.3–4, §2.3 [14–15], Fig.2 PDF p.4, §2.3 [14] PDF p.4, §2.4 [16–17] PDF pp.5–6, §3.1 [21–22], Figs.3–5 (color pp.18–19) PDF pp.6–10, §3.1 [23–26], Figs.6–8,11–13 (color pp.19–20) PDF pp.8–9, §3.1–3.2 [24–29]; p.11, Fig.14 PDF p.9, §3.2 [30]; p.12, Fig.15 PDF pp.11–13, §3.3 [35–37], Figs.17–19 PDF p.10, §3.3 [32–34]; p.13, Fig.16 (color p.21) PDF pp.13–14, §4 [39–44], Eqs.1–12 PDF pp.14–15, §4.1–4.2 [45–46], Figs.20–22 PDF pp.15–16, §4.3 [47–48], Figs.23–24 PDF pp.7–8, §3.1 [23]; p.14, Eqs.7–8, [42] PDF p.13, §3.3 [38], Fig.16 PDF pp.2–6, §2–3.1 [8–23] PDF pp.15–16, §4.3 [47–48]
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000224
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000224
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
+      url: https://doi.org/10.1029/2004ja010991
       source_type: full_text
-      locator: §2.1 Data Sources [8–9]; §2.3 Calculating Electron Parameters [13–15]
-      checked_at: '2026-10-06'
+      locator: PDF pp.2–3, §2.1–2.2 [8–12], Fig.1 PDF p.3, §2.3 [13], Table 1 PDF pp.3–4, §2.3 [14–15], Fig.2 PDF p.4, §2.3 [14] PDF p.4, §2.4 [16–17] PDF pp.5–6, §3.1 [21–22], Figs.3–5 (color pp.18–19) PDF pp.6–10, §3.1 [23–26], Figs.6–8,11–13 (color pp.19–20) PDF pp.8–9, §3.1–3.2 [24–29]; p.11, Fig.14 PDF p.9, §3.2 [30]; p.12, Fig.15 PDF pp.11–13, §3.3 [35–37], Figs.17–19 PDF p.10, §3.3 [32–34]; p.13, Fig.16 (color p.21) PDF pp.13–14, §4 [39–44], Eqs.1–12 PDF pp.14–15, §4.1–4.2 [45–46], Figs.20–22 PDF pp.15–16, §4.3 [47–48], Figs.23–24 PDF pp.7–8, §3.1 [23]; p.14, Eqs.7–8, [42] PDF p.13, §3.3 [38], Fig.16 PDF pp.2–6, §2–3.1 [8–23] PDF pp.15–16, §4.3 [47–48]
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000224
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2004JA010991
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1029/2004ja010991
+      source_type: full_text
+      locator: PDF pp.2–3, §2.1–2.2 [8–12], Fig.1 PDF p.3, §2.3 [13], Table 1 PDF pp.3–4, §2.3 [14–15], Fig.2 PDF p.4, §2.3 [14] PDF p.4, §2.4 [16–17] PDF pp.5–6, §3.1 [21–22], Figs.3–5 (color pp.18–19) PDF pp.6–10, §3.1 [23–26], Figs.6–8,11–13 (color pp.19–20) PDF pp.8–9, §3.1–3.2 [24–29]; p.11, Fig.14 PDF p.9, §3.2 [30]; p.12, Fig.15 PDF pp.11–13, §3.3 [35–37], Figs.17–19 PDF p.10, §3.3 [32–34]; p.13, Fig.16 (color p.21) PDF pp.13–14, §4 [39–44], Eqs.1–12 PDF pp.14–15, §4.1–4.2 [45–46], Figs.20–22 PDF pp.15–16, §4.3 [47–48], Figs.23–24 PDF pp.7–8, §3.1 [23]; p.14, Eqs.7–8, [42] PDF p.13, §3.3 [38], Fig.16 PDF pp.2–6, §2–3.1 [8–23] PDF pp.15–16, §4.3 [47–48]
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-13'
     recheck: false
 - paper_id: P000231
   group: expansion
@@ -458,38 +446,38 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000225
   group: lunar
-  role: 縦孔周囲の三次元粒子計算
+  role: 深い縦孔の壁–底電流収支
   summary:
-    question: 月の日照側にある深い縦孔では、鉛直壁が太陽風電子や光電子の流れを変えることで、孔底の電流収支と表面電位が孔外とどう異なるかを調べた。
-    method: 太陽風プラズマ、光電子、帯電した月面の相互作用を三次元の粒子シミュレーション（PIC法）で計算し、数十メートル規模の縦孔内外の帯電を比較した。
-    contribution: 壁への損失で太陽風電子の孔底への流入が減り、孔底と壁を結ぶ光電子電流が電流収支を変えると示した。日向と影の強い帯電差に加え、孔内外の日向同士にも電位差が生じた。
+    question: 月の日照側の深い縦孔で、壁への電子損失と壁–底の光電子輸送が、孔底の電流収支と孔内外の表面電位をどう変えるか。
+    method: 直径50 m・深さ45 mの絶縁性縦孔を、0.5 m格子の三次元静電PICで計算した。太陽風は450 km/s・5 cm⁻³・8.6 eV、光電子は垂直入射時4.5 μA/m²・温度2.2 eVとし、無静磁場で天頂角1〜89°を調べた。
+    contribution: 日向の孔底は、天頂角5°超でその位置が日向にある範囲で、同じ光電子放出条件の孔外より8〜10 V高くなった。壁への吸収で太陽風電子電流が減り、壁から届く光電子によって孔底の光電子正味電流が負に転じる。影深部の最終電位は電流収支が未成立のため確定しない。
   evidence_by_item:
     question:
     - paper_id: P000225
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
-      source_type: abstract
-      locator: Abstract 第1〜4文：dayside、vertical holes、greater depth-to-diameter ratios、hole-bottom current balance
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1016/j.icarus.2015.07.011
+      source_type: full_text
+      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3 PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3 PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5 PDF pp.2–6、§§2–3.3、Figs.3–5、式(1)・(2)
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000225
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
-      source_type: abstract
-      locator: Abstract 第1〜2文：solar wind plasma/photoelectrons/charged lunar surface、three-dimensional particle-in-cell simulations
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1016/j.icarus.2015.07.011
+      source_type: full_text
+      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3 PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3 PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5 PDF pp.2–6、§§2–3.3、Figs.3–5、式(1)・(2)
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000225
       version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0019103515003024
-      source_type: abstract
-      locator: Abstract 第4〜5文：limited solar wind electron penetration due to loss at the wall、photoelectron current path、differential charging and potential difference
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1016/j.icarus.2015.07.011
+      source_type: full_text
+      locator: PDF p.2（印刷302）、§2 PDF p.2、§2 PDF p.2、§3.1；p.3、Fig.1；p.6、§4 PDF pp.2–4、§3.1、Figs.1・3 PDF p.3、§3.2、Fig.4b；p.6、§4、Fig.5a PDF p.3、§3.2、Figs.4a・4c PDF p.3、§3.2；p.5、Fig.4d PDF p.4、§3.3、式(1)；p.6、Fig.5 PDF p.5、§3.3、式(2)；p.6、Fig.5 PDF p.4、Fig.3；p.5、§3.3 PDF pp.5–6、§3.3末 PDF p.6、§4、Figs.1・5 PDF p.2、§2；p.6、§4 PDF pp.1–2、§§1–2；p.7、§5 PDF pp.2–6、§§2–3.3、Figs.3–5、式(1)・(2)
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-13'
     recheck: false
 - paper_id: P000012
   group: lunar
@@ -615,72 +603,72 @@ entries:
   group: lunar
   role: 溶岩チューブ内の帯電実験
   inspection:
-    level: abstract
-    version_id: V1
+    level: full_text
+    version_id: Vdraft20240925
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: 溶岩チューブを模した空洞の奥はどう帯電するか。
-    method: イオン流にさらしたガラス管の入口電位と深さを変え、底部電位を測る。
-    contribution: 電子遮蔽による正帯電と、壁面からのイオン誘起二次電子による電位抑制を示した。
+    question: 溶岩チューブを模した空洞で、入口の電子遮蔽と側壁からの二次電子供給は底面の帯電をどう変えるか。
+    method: 2024年9月25日草稿を実読。イオン源を5 mAで動作させ、N₂ガス由来の100–800 eV準中性イオン流を直径6 mmのガラス管へ正対入射させ、入口導電面へ−5/−40/−70 Vを印加し、底面LPの浮遊電位とI–V曲線を測る。図2は深さ0/6/12 mm、図3は24 mm点も含む。
+    contribution: 底面は正に帯電し、強い入口負バイアスで電位が高くなるが、イオンエネルギー相当の電位には達しない。対照バイアス実験とLP電流分解から、イオン誘起二次電子の流入が正帯電を抑えると解釈した。
   evidence_by_item:
     question:
     - paper_id: P000226
-      version_id: V1
+      version_id: Vdraft20240925
       url: https://doi.org/10.3847/psj/ada6b0
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3 Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5 lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.2 §2/Fig.1 PDF pp.3–6 §3/Figs.2–5 PDF p.7 §4
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000226
-      version_id: V1
+      version_id: Vdraft20240925
       url: https://doi.org/10.3847/psj/ada6b0
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3 Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5 lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.2 §2/Fig.1 PDF pp.3–6 §3/Figs.2–5 PDF p.7 §4
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000226
-      version_id: V1
+      version_id: Vdraft20240925
       url: https://doi.org/10.3847/psj/ada6b0
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2024年9月25日付の改訂付き草稿（8頁）。2025年刊行版・公開稿との本文一致は未照合。リンクは関連刊行論文の書誌ページ。PDF p.2 §2 lines60–66, Fig.1; p.5 lines136–141 PDF p.3 Table1; p.2 §2 PDF p.3 Fig.2c and caption; p.4 lines93–101 PDF p.5 lines115–122; p.6 Fig.5 PDF p.5 lines123–129; p.7 Fig.6 PDF p.6 lines149–152 PDF p.2 §2/Fig.1 PDF pp.3–6 §3/Figs.2–5 PDF p.7 §4
+      checked_at: '2026-10-13'
 - paper_id: P000263
   group: lunar
-  role: クレーター寸法とシースの実験
+  role: クレーター半径に対するシース厚さと電位分布の実験
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: クレーター寸法は内部シースをどう変えるか。
-    method: 実験室プラズマで地形寸法とデバイ長の関係を変える。
-    contribution: デバイ長が地形寸法以上になると内部電場が弱まり、外部との二重層が形成されることを示した。
+    question: 半球形クレーターの半径に対する周囲のシース厚さの違いは、穴内外の電位分布と電場をどう変えるか。
+    method: 絶縁板中央に設けた半径1 cmの半球形穴を熱アルゴンプラズマに置き、フィラメント電流で密度を変えてλDe=0.1/0.2/0.5 cm、S=0.65/1.2/3 cmを比較した。放出プローブで電位を測り、中心軸電位を微分して電場を求めた。周囲の電子分布はLangmuirプローブで診断した。
+    contribution: S/Rの増加に伴って電位輪郭の地形に沿うくぼみが弱まり、穴内電位が平坦になる変化を実測した。電場の入口から底近傍への低下は著者報告値で42/65/83%。二重層に対応する電子・イオン密度の交差は極限条件への外挿に基づく著者の予想として残る。
   evidence_by_item:
     question:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF p. 2, §1 final paragraph; PDF p. 3, §2
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp. 2–3, §2; PDF p. 2, Fig. 2 caption; PDF p. 4, §3
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp. 2–4, Figs. 2–4; PDF pp. 4–5, §3 Cases 1–3 and extrapolation/items 1–3
+      checked_at: '2026-10-13'
 - paper_id: P000264
   group: lunar
   role: クレーター内の電子雲の解析解
@@ -720,36 +708,36 @@ entries:
   group: features
   role: アスペクト比と電子の遮蔽
   summary:
-    question: 溝が深くなると、底面電位と側壁の加工はどう変わるか。
-    method: 絶縁膜上のポリシリコン構造で、粒子入射をMonte Carlo計算。
-    contribution: 底面への電子不足が正電位とイオン偏向を強め、ノッチ形成を促すと説明。
+    question: 絶縁レジスト／導電性ポリシリコン／厚いSiO₂からなる端部溝で、アスペクト比は面別電流と電位差を通じてノッチをどう変えるか。
+    method: 塩素高密度プラズマ（1×10¹² cm⁻³、Te=4 eV、Ti=0.5 eV、p<10 mTorr）からの無衝突粒子輸送、電荷再配分・Laplace場、セル除去による形状変化を結合。線幅・溝幅0.5 µm、ポリシリコン厚0.3 µm、レジスト高さでAR=1–4を比較。
+    contribution: AR=1→4で底面電子・イオン電流は約60%減るが端部内側壁イオン束はほぼ一定。底面・隣接線の電位上昇が端部線へ向かう電場と側壁入射エネルギーを増し、100%オーバーエッチのノッチを深く広くする。
   evidence_by_item:
     question:
     - paper_id: P000133
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.365616
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.365616
+      source_type: full_text
+      locator: PDF p.2 §II–III Fig.1; PDF p.3 §III Figs.3–4; PDF p.4 §III Fig.5; PDF p.5 §III Fig.6; PDF p.6 §V
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000133
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.365616
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.365616
+      source_type: full_text
+      locator: PDF p.2 §II–III Fig.1; PDF p.3 §III Figs.3–4; PDF p.4 §III Fig.5; PDF p.5 §III Fig.6; PDF p.6 §V
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000133
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.365616
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.365616
+      source_type: full_text
+      locator: PDF p.2 §II–III Fig.1; PDF p.3 §III Figs.3–4; PDF p.4 §III Fig.5; PDF p.5 §III Fig.6; PDF p.6 §V
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000227
@@ -930,38 +918,38 @@ entries:
   locked_fields: []
 - paper_id: P000131
   group: features
-  role: RFシースと装置モデルの結合
+  role: 薄いRFシースを装置の電位・電子加熱へ結合
   summary:
-    question: 薄いRFシースを、装置全体の計算にどう組み込むか。
-    method: シース電荷の時間発展と半解析解を、二次元ハイブリッドモデルに接続。
-    contribution: Ar・Ar/Cl2放電で、誘導結合電力とRFバイアスに応じた表面流束・電位を計算。
+    question: 数十µm程度のRFシースを装置格子で解像せず、装置全体の電位・電子加熱・基板流束へ自己無撞着に結びつけるにはどうするか。
+    method: 壁の各点でシース電荷の収支を時間積分し、Boltzmann電子と衝突なしの多イオン種・緩和電位を用いる局所一次元モデルから電圧降下を求め、二次元HPEMのPoisson境界と電子Monte Carloの反射加熱へ戻す。
+    contribution: 10 mTorrのAr・Ar/Cl₂計算で、薄いシースの表現が密度・電位・自己バイアスを変えることを示し、流束の大きさは主としてICP電力、均一性はバイアスと固定する制御量にも依存することを整理した。実験比較はRFバイアスなしのDC特性に限る。
   evidence_by_item:
     question:
     - paper_id: P000131
       version_id: V1
-      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.364199
+      source_type: full_text
+      locator: PDF pp.2–3、§II、Eqs.(1)–(13)、Fig.1 PDF pp.3–4、§II末尾 PDF pp.4–5、§III、Figs.2–3 PDF pp.5–6、Figs.5–6 PDF pp.6–7、Figs.7–8 PDF pp.7–8、Fig.9 PDF pp.7–8、Figs.10–12 PDF pp.2–4、§II PDF pp.5–6、Figs.4–7
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000131
       version_id: V1
-      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.364199
+      source_type: full_text
+      locator: PDF pp.2–3、§II、Eqs.(1)–(13)、Fig.1 PDF pp.3–4、§II末尾 PDF pp.4–5、§III、Figs.2–3 PDF pp.5–6、Figs.5–6 PDF pp.6–7、Figs.7–8 PDF pp.7–8、Fig.9 PDF pp.7–8、Figs.10–12 PDF pp.2–4、§II PDF pp.5–6、Figs.4–7
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000131
       version_id: V1
-      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.364199
+      source_type: full_text
+      locator: PDF pp.2–3、§II、Eqs.(1)–(13)、Fig.1 PDF pp.3–4、§II末尾 PDF pp.4–5、§III、Figs.2–3 PDF pp.5–6、Figs.5–6 PDF pp.6–7、Figs.7–8 PDF pp.7–8、Fig.9 PDF pp.7–8、Figs.10–12 PDF pp.2–4、§II PDF pp.5–6、Figs.4–7
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000132
@@ -1002,38 +990,38 @@ entries:
   locked_fields: []
 - paper_id: P000136
   group: features
-  role: 帯電と表面粗さの相互作用
+  role: 微視的凹凸の帯電と形状のフィードバック
   summary:
-    question: 高分子表面の粗さと局所電位は、加工中にどう変化するか。
-    method: 帯電・エッチング速度・形状更新のモデルを結合し、入射角依存性を比較。
-    contribution: 帯電が粗さの減少を促し、平滑化に伴って帯電電位も低下する条件を示した。
+    question: Ar⁺でPMMAのミクロンスケールの凹凸を削るとき、局所帯電と表面形状はどう影響し合い、収率の角度依存と膜厚によってその影響はどう変わるか。
+    method: 正弦波状の初期表面に対し、粒子軌道・表面電荷・Laplace電位を帯電定常まで解き、局所エッチング速度とlevel set形状更新を反復する数値計算。平均イオン90 eV、電子4 eVのPMMA/Ar⁺系で、エネルギーのみ／角度・エネルギー依存収率と帯電あり／なしを比較し、膜厚0.1–10 µmと無限厚で過渡時間も調べる。
+    contribution: 帯電による側壁へのイオン偏向と谷での減速が突起の消失を早め、粗さ低下が電子遮蔽と電位を弱める循環を示した。平均除去速度は帯電で低くなるが、角度依存収率の700 sでは帯電あり・なしでほぼ一致する。角度依存収率では帯電なしでも突起が消えるため粗さの差は小さく、膜厚による帯電時間の違いは本条件の遅い形状変化に影響しない。
   evidence_by_item:
     question:
     - paper_id: P000136
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.5018313
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.5018313
+      source_type: full_text
+      locator: PDFp.5 Sec.III Fig.3 PDFp.5 Sec.III 原頁 PDFp.4 Sec.II B Eq.(1) Fig.2 PDFp.6 Sec.IV A Figs.5–6 PDFpp.7–8 Sec.IV B1 Figs.7–8 PDFpp.8–9 Sec.IV B2 Figs.9–10 PDFpp.7–9 Sec.IV B Figs.7–10 PDFp.10 Sec.V末尾
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000136
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.5018313
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.5018313
+      source_type: full_text
+      locator: PDFp.5 Sec.III Fig.3 PDFp.5 Sec.III 原頁 PDFp.4 Sec.II B Eq.(1) Fig.2 PDFp.6 Sec.IV A Figs.5–6 PDFpp.7–8 Sec.IV B1 Figs.7–8 PDFpp.8–9 Sec.IV B2 Figs.9–10 PDFpp.7–9 Sec.IV B Figs.7–10 PDFp.10 Sec.V末尾
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000136
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.5018313
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.5018313
+      source_type: full_text
+      locator: PDFp.5 Sec.III Fig.3 PDFp.5 Sec.III 原頁 PDFp.4 Sec.II B Eq.(1) Fig.2 PDFp.6 Sec.IV A Figs.5–6 PDFpp.7–8 Sec.IV B1 Figs.7–8 PDFpp.8–9 Sec.IV B2 Figs.9–10 PDFpp.7–9 Sec.IV B Figs.7–10 PDFp.10 Sec.V末尾
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000282
@@ -1190,19 +1178,25 @@ review:
   paragraphs:
   - '[@P000219]の真空膨張と[@P000220]のウェイクPICは、希薄な領域へプラズマが入る過程を扱う。地形が流れを遮る場合には、空洞寸法、デバイ長、流速と熱速度の比が、流入する粒子と電位を比較する軸になる。'
   - '[@P000008]はクレーターへの流入と表面帯電の相互作用を扱い、[@P000222]は太陽嵐中へ広げた。深い空洞では[@P000012]、寸法の違いは[@P000015]、流速と熱速度の比は[@P000016]からたどれる。'
-  - 月全体のウェイクでは、Wind[@P000223]、Lunar Prospector[@P000224]、ARTEMISの三次元再構成[@P000231]が観測から空隙の構造を調べる。静電衝撃波の観測[@P000232]と、電子分布から電位を復元するプレプリント[@P000262]は、再充填に伴う局所構造へ論点を広げる。日夜境界の電場とダスト[@P000221]、日夜境界・極域での準中性破れ[@P000282]を合わせると、大域ウェイクと地形による陰を粒子供給の差から読み比べられる。 [@P000221]の計算は定常・準中性ウェイクと滑らかな月面の鉛直電場を扱う。地形の陰による水平電場は定性的な提案で、局所電場の数値解やダストとの自己無撞着な連成計算は行っていない。
+  - 月全体のウェイクでは、Wind[@P000223]、ARTEMISの三次元再構成[@P000231]が観測から空隙の構造を調べる。静電衝撃波の観測[@P000232]と、電子分布から電位を復元するプレプリント[@P000262]は、再充填に伴う局所構造へ論点を広げる。日夜境界の電場とダスト[@P000221]、日夜境界・極域での準中性破れ[@P000282]を合わせると、大域ウェイクと地形による陰を粒子供給の差から読み比べられる。 [@P000221]の計算は定常・準中性ウェイクと滑らかな月面の鉛直電場を扱う。地形の陰による水平電場は定性的な提案で、局所電場の数値解やダストとの自己無撞着な連成計算は行っていない。
+  - HalekasらはLunar Prospectorの3813軌道をWindの太陽風観測と照合し、高度85–115 kmで中央ウェイクの磁場増大と周囲の減少、高度20–45 kmで地殻磁場の強い寄与を示した。月向き電子のKappaフィットから導く密度は2桁以上減り、温度は最大約1桁上昇するが、約40 eV以下の外挿に依存する。分布のエネルギーシフトから導く電位には衛星帯電が含まれる。電子圧力からの反磁性電流モデルは空洞の基本形を再現する一方、中央磁場の形と磁場方向への応答には未解決の差が残る。[@P000224]
   - この月ウェイク通過では、著者は周囲のプラズマが磁場に沿って両側から入り込み、太陽風に斜めの磁場によって非対称に充填されると解釈した。OgilvieらのWIND観測は下流6.5月半径で二つの低温陽子流を捉え、速度差と磁場の整列を示した。密度低下域は光学的な影より広く、希薄波が周囲へ伝わる解釈と概ね整合した。約2×10⁻⁴ V/mの電場は速度変化からの粗い推定であり、この通過の上流太陽風にも時間変化があった[@P000223]。
   - 月全体の陰を満たす対向流では、局所的な衝撃波と捕捉電子が電位構造を変える。[@P000262]は左右の電子分布を別々に最適化し、中央では平坦な分布の幅から電位を求めて、初期と後期のPICおよびARTEMISの2横断を比較した。空洞への粒子供給を考える際には、安定した磁場、電子の準平衡、分布端の検出という診断条件を参照できる。ウェイク内のプラズマ電位を壁面の帯電電位へつなぐには、表面の電流収支と局所シースを別途扱う必要がある。
-  - 縦孔周辺の[@P000225]は深い地形へ対象を広げ、[@P000264]は膨張前線と表面の間の電子雲を解析した。形状の違いと非中性領域の扱いをそろえることが、負のクレーター電位と正になりうる深い空洞の電位を比較する条件になる。
+  - '[@P000264]は膨張前線と表面の間の電子雲を解析した。'
+  - Miyake・Nishino（2015）は直径50 m・深さ45 mの縦孔を、固定太陽風条件・無磁場の三次元静電PICで計算した。正に帯電した壁への電子吸収で孔底に届く太陽風電子電流が減り、壁から孔底へ届く光電子が孔底の正味光電子電流を負に変える。日向の孔底は、天頂角5°超でその位置が日向にある範囲で、孔外平坦面より8〜10 V高くなった。影深部では電流収支が計算中に完全には成立しておらず、最終負電位は未確定である。[@P000225]
   - クレーターへの流入を三次元化したXie et al. (2024)は、直径1.2 kmの穴で下降流に加えて約±40 km s−1の横方向バルク速度を得た。標準条件では底から100 mの面の下降フラックスが上流の約4%、イオンを受ける壁の法線フラックスが約18%となる。局所成分別の流束であり、穴全体の積分捕獲率とは区別する。モデルは電子旋回半径より小さいクレーターと、放出電流を省いた短時間の準平衡を扱う。[@P000048]
   - kmスケールの永久影クレーターでは、熱電子が先行して作る両極性電場が太陽風イオンを底面へ曲げるため、幾何学的な遮蔽だけでは流入量を決められない。Farrell et al. は膨張則に局所斜面への入射角を加え、イオン流入がある面と電子雲内の非入射面で表面電流収支を分けた。垂直方向の解析近似で、山の側方からの回り込みは含まない。この適用条件を、微小空隙の寸法とDebye長の関係に合わせて吟味する必要がある。[@P000058]
   - 真空側へ先行する電子雲と追随するイオンの違いを示す基礎モデルとして、Mora（2003）は冷イオン・一定温度のBoltzmann電子の一次元自由膨張を扱う。長時間には、イオン先端の電場が内部自己相似電場の約2倍となり、先端密度もZnᵢ≈2nₑで準中性が破れる。先端速度から有限時刻のエネルギー端を定めるが、その端は固定電子温度のもとで増え続ける。空洞への流入を考える際は、この先端機構に壁・曲率・対向流・電子の供給や冷却の条件を加える必要がある。[@P000096]
 - heading: 実験と微細加工の研究から、形状の効果を比較する
   paragraphs:
-  - '[@P000263]のクレーター実験は、デバイ長と地形寸法の比によって内部電場が変わることを示す。[@P000226]の管を使った実験は、入口と壁面による電子遮蔽に加え、イオン誘起二次電子が奥の正電位を抑える効果を調べた。'
-  - 微細加工の[@P000230]は、斜めに入射する電子がパターンで遮られることで局所損傷が生じることを示した。[@P000227]は電子温度と溝底電流、[@P000228]は局所電位と側壁の削れを結び付ける。月面空洞との比較では、幾何形状と流入分布に加えて、衝突や材料の条件もそろえる。 アスペクト比による底面帯電[@P000133]と、一様なプラズマ中でも生じるノッチの計算[@P000229]を加えると、上流の一様性と局所の電流収支を区別して比較できる。
+  - Wangほかは半径1 cm、深さ1 cmの半球形クレーターを熱アルゴンプラズマに置き、形状を固定して周囲の密度を変えた。シース厚さSが0.65、1.2、3 cmへ増えると、電位輪郭のくぼみが弱まり、穴内の電位が平坦になった。比較尺度はS/Rで、実測したデバイ長0.1–0.5 cmはいずれも半径より小さい。電子がたまり密度がイオン密度を超えるという説明は、極限条件へ外挿した著者の機構予想である。[@P000263]
+  - 溶岩チューブ内では、入口での電子遮蔽に加え、壁面が供給する電子も底面の電流平衡を左右する。Gopalakrishnanらの2024年9月25日草稿は、窒素ガス由来の100–800 eVの準中性流を直径6 mmのガラス管へ入射させ、入口に−5/−40/−70 Vを印加した。底面LPは正電位を示すが、強い電子遮蔽条件でもイオンエネルギー相当の電位へは達せず、著者はI–V曲線の追加電子成分を側壁へのイオン衝突による二次電子と解釈している。側壁電位分布や月の材料への相似性は未検証である。[@P000226]
+  - 微細加工の[@P000230]は、斜めに入射する電子がパターンで遮られることで局所損傷が生じることを示した。[@P000227]は電子温度と溝底電流、[@P000228]は局所電位と側壁の削れを結び付ける。月面空洞との比較では、幾何形状と流入分布に加えて、衝突や材料の条件もそろえる。 一様なプラズマ中でも生じるノッチの計算[@P000229]を加えると、上流の一様性と局所の電流収支を区別して比較できる。
+  - Hwang and Giapisは、絶縁レジストで覆った導電性ポリシリコン線と厚いSiO₂底面からなる微細溝を計算した。AR=1から4へ増すと底面電子・イオン電流は約60%減り、底面中央電位は約8から33 Vへ上がる。開放領域から電子を受け取る端部線と隣接線の電位差がイオンを端部線内側へ加速し、その側壁のイオン束がほぼ一定でもノッチが深く広くなる。この結果は、溝の深さだけでなく材料の導電性と開放側の電子供給を含めて局所帯電を考える必要を示す。漏れ電流・表面電流・二次電子放出を省いた条件の結果である[@P000133]。
   - 微細溝の帯電では、絶縁面に届く粒子だけでなく、導体へ捕集された電荷の移動先も局所場を変える。Hwang and Giapis (1997)は、最外配線へ入った電子を等電位条件に従って再分配し、内側底部の強い電位勾配とノッチ成長を計算した。全体電流の均衡後も溝底電位は変わり、開口幅によるノッチ深さは基準条件のW≳5 µmで飽和する。接続配線では局所場がほぼ対称になり、両側にノッチができる。この例は、見通しと電荷移動を同時に扱う必要を示す。ノッチ底の更新は電子流を省いた近似であり、空隙形状の帯電値へ使う際は放出・漏れ電流と材料の接続条件を改めて与える。[@P000228]
-  - 加工中の溝では、流入粒子が形状そのものを変える。[@P000129]の照射と表面反応の実験、[@P000131]のRFシースと装置計算の接続、[@P000132]の輸送・反応・場のハイブリッド計算は、溝へ与える入射条件を考える前段になる。[@P000136]は帯電とエッチング、粗さの更新を結合した。形状を固定する月面空洞の計算と比較する際には、表面更新の時間スケールも条件に含める。
+  - 加工中の溝では、流入粒子が形状そのものを変える。[@P000129]の照射と表面反応の実験、[@P000132]の輸送・反応・場のハイブリッド計算は、溝へ与える入射条件を考える前段になる。形状を固定する月面空洞の計算と比較する際には、表面更新の時間スケールも条件に含める。
+  - Grapperhaus（1997）は、壁近傍の薄いRFシースを局所一次元モデルへ縮約し、電荷収支から求めた電圧降下を二次元装置のPoisson境界と電子反射加熱へ戻した。10 mTorr Arの計算では、シースの表現によってバルク電位と密度・基板流束の分布が変わる。空洞形状による局在を直接検証した研究ではないが、壁近傍の境界モデルが装置全体の分布へ及ぼす影響を比較する事例となる。適用には薄い局所一次元シース、衝突なしのイオン、負イオン空間電荷の無視という条件がある。[@P000131]
+  - 凹凸を固定した帯電計算から形状変化へ進む例として、MemosらはAr⁺でPMMAの周期1 µmの正弦波状表面を削る過程を計算した。谷の正電位がイオンを側壁へ偏向させ、谷へのイオンを減速することで突起の消失が早まる。平滑化が電子遮蔽を弱めると電位も低下し、形状と局所粒子束の循環が生じる。帯電による粗さ低下の差は収率の角度依存を入れると弱まり、イオン反射など粗さを増す過程はこの計算に含まれない。[@P000136]
 - heading: 計算出力と図の再現へ進む
   paragraphs:
   - 論文から計算条件を追うために、公開出力も参照できる。[@P000344]は空洞サイズ依存の図に対応するHDF5とNotebook、[@P000345]は流速・熱速度比の計算出力と半解析コード、[@P000346]は極域クレーターのhybrid

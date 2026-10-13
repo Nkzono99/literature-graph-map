@@ -15,23 +15,29 @@ review:
   - '[@P000328]の偏波レーダーは散乱特性から氷候補を探る。高CPRには岩塊・粗さも寄与するため、[@P000327]の永久影岩塊検出と照合する。[@P000329]・[@P000330]は観測統合と機械学習へ進む方法であり、氷有望度の推定と氷の直接同定を区別する。'
 - heading: 太陽風の水素が入り、ガラスや鉱物に残る
   paragraphs:
-  - 太陽風は月面へ水素を供給する。[@P000142]は陽子を注入したケイ酸塩へ微小隕石衝突を模した熱衝撃を加え、水が生成・放出される過程を実験で示した。粒子へ入った水素がどこに蓄えられるかについては、Chang’e-5の衝突ガラスを調べた[@P000148]が、水量・同位体比・内部濃度分布から太陽風由来水の保持と拡散を論じている。生成実験と試料分析を合わせると、入射した水素が表面反応を経て粒子内部に保持され、再び放出されるまでの経路を考えられる。
+  - 太陽風は月面へ水素を供給する。粒子へ入った水素がどこに蓄えられるかについては、Chang’e-5の衝突ガラスを調べた[@P000148]が、水量・同位体比・内部濃度分布から太陽風由来水の保持と拡散を論じている。
+  - 水素の供給と水の放出を結び付けるには、注入後の鉱物が何を保持し、どの加熱で放出するかを分けて考える必要がある。Zhuらは無水に近いかんらん石へ10 Kで5 keVのD₂⁺を注入し、300 Kまでの緩やかな昇温とCO₂レーザーの短時間加熱を比較した。注入と昇温だけでは気相D₂Oが背景より上に出ず、基底10 Kおよび昇温後300 Kから約1,400 Kへ達する熱パルス中にD₂Oが放出された。処理後の穴と非晶質リム内の空隙は、保持種から生じた水蒸気が空隙を成長・破裂させる機構を支持する。ただし、固体の約8.6 eV帯はD₂OとODを区別しないため、注入時にできた水の解放と、保持された水酸基などから加熱時に生じた水の放出は分離されていない。この実験は太陽風由来水素の保持と衝突加熱を結ぶ経路を示し、月の総水量への寄与率は今後の条件別の収率評価に残る。[@P000142]
   - '[@P000336]は鉱物表面の吸着を第一原理計算で調べ、被覆率が増えると金属サイトへの配位から水素結合ネットワークへ安定化の主因が移ることを示した。別の水形成経路として、[@P000313]は絶縁破壊で露出する酸素と注入水素の反応を分子動力学で計算している。'
-  - 表面を介した水素の戻り方にはイオン観測からの制約もある。Chang’e-6の負イオン初観測[@P000253]とH−成分の太陽風依存性[@P000252]は、入射した水素と表面から戻る粒子を結び付ける研究である。水・OHの吸収を測る分光観測とは測定量が異なるため、供給・反応・脱出の各段階へ対応させて読む。
+  - 太陽風水素の月面での収支には、植え込みとともに負電荷を帯びて戻る経路も含まれる。Wieser et al.（2025）はChang’E-6のNILSで局所H−を検出し、反射陽子の角分布と軌道の太陽風フラックスを用いて、入射陽子に対するH−反射率を2.5（−0.8、＋1.2）%と推定した（90%区間）。観測スペクトルの対数正規近似による平均は239 eVで、約466 eVの上流陽子を基準にすると約49%の損失に相当する。近傍磁気異常と表面電位による局所入射条件への依存があり、水・OHの生成率と結びつけるには別の表面反応・組成の資料を要する。[@P000253]
+  - Zhong et al.はWieser et al.のChang’E-6/NILS初検出データを6区間に分け、200 eVから各区間の太陽風エネルギーまでの有意なH−成分が太陽風の法線方向フラックスとエネルギーに応答することを示した。選別した高エネルギー成分の平均250–300 eVは、太陽風水素の月面後方散乱による生成の解釈を支える。H−と中性粒子の会合脱離によるH2・OH生成は著者が提案した経路で、月水への寄与量は求めていない。[@P000252]
 - heading: 内部の水を、火山噴火の条件から制約する
   paragraphs:
   - 表面への太陽風供給に加え、火山由来の水も研究されている。[@P000246]は気泡成長とマグマ上昇を連成し、水の脱ガスが月の爆発的噴火を駆動する条件を求めた。火山ガラスや火砕堆積物の測定とモデルを比較することで、内部の含水量を噴火・表面への供給へ結び付ける。
 - heading: 粗さと温度が、残りやすい場所を作る
   paragraphs:
-  - 水分子の脱離や氷の昇華は、表面温度に敏感である。[@P000143]は日照域でも凹凸が低温部分を作り、平坦面モデルより吸着水を保持しやすくすると示した。極域では[@P000147]がcm規模までの小さな影を評価し、微小コールドトラップも氷の安定領域に寄与すると見積もった。保持の条件は分子によって変わる。Divinerの長期温度データを使った[@P000149]は、さらに低温を要するCO2の安定域を計算している。温度の最大値だけでなく、時間平均した損失を扱う点も参照したい。
+  - 水分子の脱離や氷の昇華は、表面温度に敏感である。極域では[@P000147]がcm規模までの小さな影を評価し、微小コールドトラップも氷の安定領域に寄与すると見積もった。保持の条件は分子によって変わる。Divinerの長期温度データを使った[@P000149]は、さらに低温を要するCO2の安定域を計算している。温度の最大値だけでなく、時間平均した損失を扱う点も参照したい。
+  - Davidsson・Hosseini（2021）は、800個の面からなる粗い月面について、影・相互照射・法線方向の熱伝導を計算し、単分子層以下の水の一次熱脱離と結合した。粗さは太陽を向く面の早朝の脱離を促す一方、低温の斜面に一部を残す。残存率は夜明けの水量に対する面積加重平均である。赤道では平坦面が日の出後約5時間でほぼ乾くのに対し、粗面には24時間後にも約20%が残り、粗い地形では5日後まで少量が脱離する。45°Nのξ≳0.2では正午を越えて数%が残り、70°Nのξ≥0.21では約10%が正午まで残った。これらは脱離活性化エネルギーを8×10⁻²⁰ Jとした既存吸着水の熱脱離計算であり、光や粒子による損失、再吸着を含む実際の水量は別途評価する必要がある。[@P000143]
   - 低温の保存を考える基礎には、[@P000324]の固相保持理論、[@P000325]のクレーター熱モデル、[@P000326]のDiviner観測がある。[@P000334]・[@P000335]・[@P000339]は熱物性を全球から極低温へつなぎ、[@P000338]は氷の形態によって熱伝導率が変わることを実験で示した。
   - 氷の保存温度を計算する基準として、[@P000334]は乾燥レゴリスの密度・接触伝導率・比熱の深さ/温度依存を整理した。上部4–7 cmの273 K換算熱慣性は平均約55 J m⁻² K⁻¹ s⁻¹ᐟ²だが、傾斜補正が良好なのは約±60°までで、30 K未満の比熱には追加実験が必要とする。永久影や氷を含む粒子間構造を扱う研究へつなぐ際は、この基準モデルの低温物性と地形条件を改めて検証する。
   - 低温域へ集まった氷の保持を考える基礎に、[@P000324]の固相・気相の収支モデルがある。希薄大気での弾道移動と再凝結を組み合わせ、cold trapの氷損失に蒸発流束による上限を与えた。120 K・永久影面積0.5%の代表計算では損失が全月面平均で約4 g cm⁻²／10億年となり、100 Kでは約4桁減る。後続のクレーター熱モデルや温度観測へは、cold trap温度と面積を場所ごとの分布へ置き換える問題としてつながる。
   - 氷が失われる過程は、起源推定にも影響する。[@P000244]は純粋な六方晶氷と平面の比表面積を仮定し、昇華によるO・H同位体の分別をモデル化した。残った氷の同位体比を供給源へ結び付ける際には、温度と失われた割合に加え、採取中の昇華も考慮する必要がある。
 - heading: 地形と磁場が、水素供給と氷の損失を変える
   paragraphs:
-  - 太陽風は水素の供給源であると同時に、表面氷をスパッタで失わせる要因でもある。[@P000144]は南極の実地形から水素の流束とエネルギーを地図化した。[@P000145]は極域磁場と露出氷の分布の対応を調べ、磁気異常がイオン流入と損失を弱める可能性を論じている。地形と磁場を同時に入れた[@P000146]の電磁PICでは、地形による流束変化が大きく、磁場はその分布をさらに調整する。平均太陽風と実験由来の収率を用いた氷の収支は、月面帯電の計算を揮発性物質の進化へつなぐ具体例になる。
-  - 低温域では高エネルギー粒子による内部帯電も考慮する。[@P000310]は電荷蓄積と内部電場を予測し、[@P000311]は絶縁破壊による粒子構造の改変を論じた。表面への平均流束を扱う系列に、レゴリス内部の長い電荷散逸時間を加える比較対象となる。
+  - Hoodほか（2022）はLP・Kaguyaの磁力計観測を高度と分解能をそろえて地図化し、南極Shoemaker・Sverdrup上空に高度20 kmで約4 nTの磁気異常があり、既報の露出氷推定分布とおおむね重なることを示した。低角度で入射する太陽風を異常が偏向し、既存氷のスパッタ損失を減らす可能性を提案する。ただし地図の水平分解能は約60 kmで、極域のイオン束低下率や氷寿命の延長は計算していない。太陽風水素の供給を抑える作用と、氷の損失を抑える作用の競合も残る。[@P000145]
+  - 南極クレーターでは、地形によるプラズマの遮蔽が水素の供給と氷の損失を同じ場所で変える。Rhodes & Farrell (2020)はLOLA地形と解析的な陽子膨張モデルから、壁面に比べ床面の流束が小さく、Shackleton中央約3 km半径にはほぼ陽子が届かないと予測した。広いクレーターの床面や二次峡谷にも地形に応じた差が残る。著者が500 nm純氷層に面密度10²¹分子 m⁻²と収率0.75分子/陽子を仮定したスパッタリングの例では壁面の除去時間は最短約100年、深い床や峡谷では1万年を超えるが、低流束は水素注入後の水生成も弱めるため、氷の正味の増減を確定するには生成・温度・微小隕石による損失を合わせる必要がある。[@P000144]
+  - Deca et al. (2026)は、LOLAの20 m地形製品を1,369 m計算格子へ写像し、軌道磁力計から推定した地殻磁場を完全運動論的PICへ組み込んで、クレーター底への部分的な遮蔽と側壁への粒子集中を示した[@P000146]。名目太陽風を四方向から入れた平均では、磁場あり−なしの差の大きさは上流の種別流束に対して陽子約3%、電子最大10%で、一律な遮蔽より再配分として現れる。生成上限と1質量%氷レゴリスの損失収率を使う縮約収支では、低温PSRが保持に有利な領域となる。表面電荷を追跡せず帯電シースを解かない計算であり、収支の大きさ・符号は採用収率に依存し、惑星間磁場・磁気尾通過と未計算の供給・侵食過程の影響も未評価である。
+  - 低温域では高エネルギー粒子による内部帯電も考慮する。[@P000311]は絶縁破壊による粒子構造の改変を論じた。表面への平均流束を扱う系列に、レゴリス内部の長い電荷散逸時間を加える比較対象となる。
+  - 永久影の低温はレゴリスの電荷散逸を遅くする条件でもある。Jordanらの粒子観測を入力した帯電計算は、大規模SEP時の内部電場が既存誘電体の破壊閾値に達し得ることを示し、鉱物境界に沿う破砕が長期に累積する可能性を論じた。氷含有量による物性変化や水の保持・輸送を計算していないため、水循環の定量結果としては使えないが、低温レゴリスの構造変化を考える候補機構となる[@P000310]。
 - heading: 氷の量と温度が、地盤への寄与を変える
   paragraphs:
   - 水の存在量を地盤の強さへつなぐには、氷が粒子を結び付ける条件を調べる必要がある。[@P000292]の模擬物実験では、約90 Kで静的安息角が増えるのは氷含有量30重量%を超える条件だった。数重量%の氷があるだけで強い凝集を仮定できるとは限らず、温度と混合状態をそろえて比較する。
@@ -39,6 +45,11 @@ review:
 - heading: 着陸機の排気も、局所の水と極域の化学組成に影響する
   paragraphs:
   - '[@P000303]はChang''e-5/6の観測から、排気由来の水が粒子へ入り、徐々に放出される過程をモデル化した。[@P000305]はメタンの全球輸送を計算し、南極着陸に由来する分子が北極の永久影にも捕捉される可能性を示す。着陸地点の観測では局所的な残留を、極域の氷の解釈では遠方からの人工物質の供給も考慮する必要がある。'
+- heading: 条件を対応させて文献を比べる
+  paragraphs:
+  - Wieser et al.（2025）はChang’E-6のNILSで、着陸点近傍の月面に由来する50–400 eVの水素負イオンH−を検出した。反射陽子と同じ放出角分布を仮定した反射率2.5（−0.8、＋1.2）%、表面直上の体積数密度0.18（−0.03、＋0.04）cm⁻³（90%区間）と、昼側寿命70 msを使う等価スケールハイト約10 kmは、局所スペクトルからの推定である。[@P000253] Zhong et al.（2026）は同じ観測系列と解析コードを用い、6区間で200 eVから各区間の太陽風エネルギーまでの90%有意限界を超えるH−成分を比較し、フラックスと平均エネルギーが太陽風条件に正に相関することを示した。初報の2.5%収率を入力とする輸送計算では、昼側はENAの放出角分布、夜側は一様角度、月の影では光脱離なしと仮定し、薄い昼側層と50 sで計算を止めた夜側の尾を予測した。H−がwakeやシースを変える作用と水生成への寄与量は、負イオンの反作用と表面反応を含む別の検証を要する。[@P000252]
+  - 日照域で吸着水が残る条件は、局所平均温度だけでは決まらない。Davidsson（2021）は各800三角面からなる4種類の合成粗面で影・相互照射・法線方向の熱伝導を計算し、単分子層以下の既存水の一次熱脱離へ結び付けた。粗面は日の出直後の脱離を早める一方、低温斜面に水を残し、赤道では24時間後にも初期量の約20%が残った。この割合は脱離活性化エネルギー8×10⁻²⁰ Jを置いた熱脱離だけの結果で、生成・粒子による損失・再吸着を含む水収支へ進む際の一要素になる。[@P000143]
+  - 南極のクレーターでは、陽子が届く量と氷が残る量をつなぐために、供給と損失を合わせて扱う必要がある。Rhodes（2020）はLOLA地形と解析的なプラズマ膨張モデルから、壁面より床面への陽子流束が小さく、Shackleton中央にはほぼ陽子が届かない領域が残ると予測した。低流束は既存氷のスパッタ損失と水素供給をともに弱めるため、正味の氷量は未確定である。[@P000144] Deca（2026）は地形と推定地殻磁場を1,369 m格子の運動論的PICへ組み込み、粒子到達の再配分を計算した。表面電荷を追跡せず、帯電シースは解いていない。500 nm純氷層・10²¹ H₂O m⁻²・0.75 H₂O/陽子を置く先行研究の侵食式を引き継ぐ一方、1質量%氷レゴリスの生成・陽子損失・電子損失・熱昇華を合わせた収支も示した。低温の永久影領域で得る正の収支は生成収率0.01 H₂O/陽子という上限などに依存し、収率を変えると符号も変わり得る。四流向平均は磁気尾通過を省き、再凝結・地下拡散・微隕石・光脱離も収支から省いているため、保持に有利な場所を示す条件付きの推定として読む。[@P000146]
 lineage:
 - title: 日照域の水と供給源
   steps:
@@ -265,182 +276,182 @@ entries:
   locked_fields: []
 - paper_id: P000142
   group: formation-storage
-  role: 陽子注入と衝撃加熱による水生成
+  role: 注入水素の保持と衝突加熱による水放出
   summary:
-    question: 太陽風の水素と微小衝突は、水の生成・放出にどう関わるか。
-    method: 陽子を注入した無水ケイ酸塩に、微小隕石衝突を模した熱衝撃を加える。
-    contribution: 注入水素と熱衝撃の組合せで水が生成・放出されることを室内実験で示した。
+    question: 太陽風由来の水素を保持する無水ケイ酸塩から、水は注入だけで放出されるのか、微小衝突を模した短時間加熱を要するのか。
+    method: San Carlosかんらん石へ10 Kで5 keVのD₂⁺を注入し、300 Kまでの昇温脱離と、基底10/300 Kから約1,400 Kに達するCO₂レーザー熱パルスを比較する。気相をEI-QMS、処理後の穴とリムをSEM/TEM・VEELSで調べ、注入なし対照を置く。
+    contribution: 注入と300 Kまでの昇温だけでは気相D₂Oを検出せず、熱パルス時には注入由来D₂Oが放出される経路を支持した。300 Kまで残る水または前駆体と、穴を伴う非晶質リムを示し、水素保持と衝突加熱による放出を結び付けた。
   evidence_by_item:
     question:
     - paper_id: P000142
       version_id: V1
-      url: https://www.uhmreactiondynamics.org/publication_papers/p430.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1073/pnas.1819600116
+      source_type: full_text
+      locator: PDF pp. 2, 5; Phase I; Experimental Methods PDF p. 2; Phase I PDF pp. 2–3; Phase II; Figs. 1–2 PDF p. 3; Phase II; Figs. 1–2 PDF pp. 3–4; Postirradiation Analysis; Figs. 3–4 PDF pp. 3, 5; Postirradiation Analysis; Fig. 5 PDF p. 4; Discussion; SI Tables S2–S3 cited but unread PDF p. 2 Phase I/II PDF p. 3 Phase II/Postirradiation Analysis PDF pp. 4–5 Discussion Figs. 1–5
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000142
       version_id: V1
-      url: https://www.uhmreactiondynamics.org/publication_papers/p430.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1073/pnas.1819600116
+      source_type: full_text
+      locator: PDF pp. 2, 5; Phase I; Experimental Methods PDF p. 2; Phase I PDF pp. 2–3; Phase II; Figs. 1–2 PDF p. 3; Phase II; Figs. 1–2 PDF pp. 3–4; Postirradiation Analysis; Figs. 3–4 PDF pp. 3, 5; Postirradiation Analysis; Fig. 5 PDF p. 4; Discussion; SI Tables S2–S3 cited but unread PDF p. 2 Phase I/II PDF p. 3 Phase II/Postirradiation Analysis PDF pp. 4–5 Discussion Figs. 1–5
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000142
       version_id: V1
-      url: https://www.uhmreactiondynamics.org/publication_papers/p430.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1073/pnas.1819600116
+      source_type: full_text
+      locator: PDF pp. 2, 5; Phase I; Experimental Methods PDF p. 2; Phase I PDF pp. 2–3; Phase II; Figs. 1–2 PDF p. 3; Phase II; Figs. 1–2 PDF pp. 3–4; Postirradiation Analysis; Figs. 3–4 PDF pp. 3, 5; Postirradiation Analysis; Fig. 5 PDF p. 4; Discussion; SI Tables S2–S3 cited but unread PDF p. 2 Phase I/II PDF p. 3 Phase II/Postirradiation Analysis PDF pp. 4–5 Discussion Figs. 1–5
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000143
   group: thermal-retention
   role: 粗さによる吸着水の保持
   summary:
-    question: 日照域の凹凸は、吸着水の寿命をどの程度延ばすか。
-    method: 日照・影・自己加熱・熱伝導を含む粗面熱モデルを、一次脱離モデルと結合。
-    contribution: 凹凸による温度分布が水の保持を増やし、平坦面近似との差を生むと示した。
+    question: 日照域の粗さが作る面別温度履歴は、夜明けに存在する吸着水の熱脱離をいつ促し、どの程度の水を日中まで残すか。
+    method: 800面のGaussian地形で直達日光・影・可視/赤外相互照射・再放射と法線方向伝導を計算し、ν=10¹³ s⁻¹、ΔEdes=8×10⁻²⁰ Jの一次Polanyi–Wigner脱離へ結合。0°・45°N・70°Nで4粗さ、85°Nでξ≈0.2を比較。
+    contribution: 粗さは早朝の脱離を早める一方、赤道で24 h後にも約20%を残し、十分粗い45°N以上では正午まで一部を保持することを示した。保持量は採用脱離エネルギーと熱脱離だけを扱う条件に依存する。
   evidence_by_item:
     question:
     - paper_id: P000143
       version_id: V1
-      url: https://api.crossref.org/works/10.1093/mnras/stab1360
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1093/mnras/stab1360
+      source_type: full_text
+      locator: PDF p.2, §1
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000143
       version_id: V1
-      url: https://api.crossref.org/works/10.1093/mnras/stab1360
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1093/mnras/stab1360
+      source_type: full_text
+      locator: PDF p.3–4, §§2–3, Eqs.1–5, Tables 1–2
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000143
       version_id: V1
-      url: https://api.crossref.org/works/10.1093/mnras/stab1360
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1093/mnras/stab1360
+      source_type: full_text
+      locator: PDF p.5–7, §4, Figs.5–7
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000144
   group: plasma-environment
-  role: クレーターへの水素供給
+  role: 地形で分かれる水素供給と氷損失
   summary:
-    question: 南極クレーターの地形は、太陽風水素の到達量をどう分けるか。
-    method: LRO地形と解析的プラズマモデルから、4クレーターの月周期平均流束を計算。
-    contribution: 水素流束・エネルギー・磁気圏による変調を地図化し、氷のスパッタ寿命も評価。
+    question: 南極クレーターの地形は太陽風陽子の到達量をどう分け、氷の供給と損失へどう関わるか。
+    method: LOLA地形の4クレーターに2D自己相似プラズマ膨張モデルを掃引し、月周期と磁気圏による密度変動を平均。
+    contribution: 壁への流束集中とShackleton中央の陽子空隙を予測。純氷層のスパッタ寿命を例示し、水の正味収支は未確定とした。
   evidence_by_item:
     question:
     - paper_id: P000144
       version_id: V1
       url: https://ntrs.nasa.gov/api/citations/20205003310/downloads/lunar.Rhodes.maps._2020_Planet._Sci._J._1_13.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF p.1 §1、p.4 §3.1
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000144
       version_id: V1
       url: https://ntrs.nasa.gov/api/citations/20205003310/downloads/lunar.Rhodes.maps._2020_Planet._Sci._J._1_13.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF p.2 §2、Eqs.1–3；p.3 §3；pp.4–5 §3.2
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000144
       version_id: V1
       url: https://ntrs.nasa.gov/api/citations/20205003310/downloads/lunar.Rhodes.maps._2020_Planet._Sci._J._1_13.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp.3–4 §3.1、Fig.3、Table 1；p.5 §3.3、p.6 Fig.5；pp.6–7 §3.4、Eq.4、Fig.6；pp.7–8 §4
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000145
   group: plasma-environment
-  role: 極域磁場と氷分布の対応
+  role: 極域磁場と露出氷の空間対応・スパッタ損失抑制の仮説
   summary:
-    question: 南北極の氷分布の違いに、地殻磁場は関わるか。
-    method: 極域の磁場地図を改良し、永久影と表面露出氷の分布を比較。
-    contribution: 南極の磁気異常と氷の対応から、入射イオンとスパッタ損失の抑制を提案。
+    question: 南北極の露出氷分布の違いに、永久影クレーター上空の地殻磁場による太陽風の偏向が関わるか。
+    method: LP・Kaguyaの低高度で外部磁場の混入が少ない磁力計データを選び、ESD法で高度30 km・20 kmに正規化した極域磁場地図を作成。約60 km分解能で地形および既報M3露出氷推定分布と比較した。
+    contribution: 南極Shoemaker・Sverdrup上空に高度20 kmで約4 nTの異常と露出氷の概略的な重なりを示し、磁場を氷のスパッタ損失計算へ含める必要を提案した。氷保存効果は先行解析に基づく仮説で、極域イオン束や損失率の低下量は未計算。
   evidence_by_item:
     question:
     - paper_id: P000145
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022GL100557
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2022gl100557
+      source_type: full_text
+      locator: PDF pp. 2–3, Section 2, Figure 1; p. 5 Section 3 PDF p. 2, Section 2; Figure 1 p. 3 PDF pp. 4–5, Section 3, Figure 2 PDF pp. 5–7, Section 3, Figure 3 PDF p. 7, Section 4 PDF p. 7, Section 4 final paragraph PDF pp. 2, 4–7; Sections 2–4; Figures 2–3
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000145
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022GL100557
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2022gl100557
+      source_type: full_text
+      locator: PDF pp. 2–3, Section 2, Figure 1; p. 5 Section 3 PDF p. 2, Section 2; Figure 1 p. 3 PDF pp. 4–5, Section 3, Figure 2 PDF pp. 5–7, Section 3, Figure 3 PDF p. 7, Section 4 PDF p. 7, Section 4 final paragraph PDF pp. 2, 4–7; Sections 2–4; Figures 2–3
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000145
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022GL100557
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2022gl100557
+      source_type: full_text
+      locator: PDF pp. 2–3, Section 2, Figure 1; p. 5 Section 3 PDF p. 2, Section 2; Figure 1 p. 3 PDF pp. 4–5, Section 3, Figure 2 PDF pp. 5–7, Section 3, Figure 3 PDF p. 7, Section 4 PDF p. 7, Section 4 final paragraph PDF pp. 2, 4–7; Sections 2–4; Figures 2–3
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000146
   group: plasma-environment
   role: 地形・磁場を含む氷の収支
   summary:
-    question: 実地形と地殻磁場の組合せは、南極の氷の生成・損失をどう変えるか。
-    method: 地形・磁場地図を組み込む電磁PICで粒子流束を求め、生成・脱離・昇華を評価。
-    contribution: 平均太陽風の仮定下で地形の寄与が大きく、採用収率では永久影の氷収支が正になる。
+    question: 南極の実地形と比較的弱い地殻磁場は、浅い太陽風入射による陽子・電子の到達と、条件付きの局所氷収支をどう変えるか。
+    method: LOLAの20 m標高製品を1,369 m格子へ写像し、Kaguya・Lunar Prospectorから推定した地殻場を完全運動論的電磁PICへ組み込む。四流向の名目太陽風準定常流束を平均し、生成・陽子侵食・電子分解/脱離・年平均温度による熱昇華を比較する。
+    contribution: 地形によるクレーター底の部分的遮蔽と側壁・稜線への集中を示し、弱い磁場の効果を一律な遮蔽より流束の再配分として位置づけた。生成上限と固定損失収率の縮約式では低温PSRに正収支を得るが、収率変化で符号も変わり得る。
   evidence_by_item:
     question:
     - paper_id: P000146
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009774
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2026JE009774
+      source_type: full_text
+      locator: PDF pp.2–3 §1
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000146
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009774
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2026JE009774
+      source_type: full_text
+      locator: PDF pp.3–6 §2
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000146
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009774
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2026JE009774
+      source_type: full_text
+      locator: PDF pp.8–16 §§3.2,4.2, Figs.5,8–9
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000147
@@ -660,101 +671,71 @@ entries:
   group: plasma-environment
   role: Chang’E-6負イオンの太陽風依存性
   summary:
-    question: 嫦娥6号が月面で観測した水素負イオン（H−）は、太陽風と月面の相互作用で生じるのか。その生成と月周辺での分布が、太陽風条件にどう依存するかを調べた。
-    method: NILSのH−スペクトルから200 eV超のフラックスと平均エネルギーを求め、ARTEMISの太陽風観測と比較した。さらにテスト粒子のモンテカルロ計算で月周辺の分布を推定した。
-    contribution: H−のフラックスと平均エネルギーが太陽風条件と正に相関し、太陽風と月面の相互作用による生成を支持した。計算では、昼側の薄いH−層と夜側に延びる尾を予測した。
+    question: Chang’E-6で観測されたH−のスペクトルは、太陽風のフラックス・エネルギーにどう応答するか。月面から放出されたH−が光脱離と電磁場の下でどこまで分布しうるかを調べた。
+    method: 同じNILS観測系列の6区間を最尤解析し、200 eVから各区間の太陽風エネルギーまでの90%有意限界を超えた点から積分フラックスと平均エネルギーを計算してARTEMISと比較した。収率2.5%、昼側ENA角度分布、影で光脱離なし等の仮定を置いた5条件のMonte Carloテスト粒子計算を行った。
+    contribution: 選択高エネルギーH−成分と太陽風に正相関があり、太陽風–表面相互作用と後方散乱起源の解釈を支持した。薄い昼側層と夜側の尾は計算予測で、角度・影・磁場・50 s終端時刻に依存する。月水やwake再充填への寄与は定量実証されていない。
   evidence_by_item:
     question:
     - paper_id: P000252
       version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/41824584/
-      source_type: abstract
-      locator: 'Abstract: NILSによるH−のorigin and distributionとsolar wind–surface interaction'
-      checked_at: '2026-10-06'
-    - paper_id: P000252
-      version_id: V1
-      url: https://www.science.org/doi/10.1126/sciadv.adw1162
+      url: https://doi.org/10.1126/sciadv.adw1162
       source_type: full_text
-      locator: 掲載版PDF file p.2, Introduction末尾（H−スペクトルの太陽風依存性と空間分布を研究目的として明記）
-      checked_at: '2026-10-06'
+      locator: PDF pp.2–3, Introduction末尾・Results
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000252
       version_id: V1
-      url: https://www.science.org/doi/10.1126/sciadv.adw1162
+      url: https://doi.org/10.1126/sciadv.adw1162
       source_type: full_text
-      locator: 掲載版PDF file p.2, Results冒頭（NILSとARTEMIS観測の対応）; p.3, Results第2段落（200 eV超、6区間、フラックスと平均エネルギー）; p.3, Distribution of H− ions around the Moon冒頭（test-particle Monte Carlo simulation）
-      checked_at: '2026-10-06'
+      locator: PDF pp.6–7, Materials and Methods; Eqs.1–10; p.4, 分布初期条件
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000252
       version_id: V1
-      url: https://pubmed.ncbi.nlm.nih.gov/41824584/
-      source_type: abstract
-      locator: 'Abstract: positive correlation; thin dayside H− layer and long nightside H− tail predicted by simulations'
-      checked_at: '2026-10-06'
-    - paper_id: P000252
-      version_id: V1
-      url: https://www.science.org/doi/10.1126/sciadv.adw1162
+      url: https://doi.org/10.1126/sciadv.adw1162
       source_type: full_text
-      locator: 掲載版PDF file p.3, Results第2段落・Fig.2C（H−フラックスと月面法線方向太陽風フラックス、H−平均エネルギーと太陽風エネルギーの正の相関）
-      checked_at: '2026-10-06'
+      locator: PDF pp.3–5, Results; Fig.2–3; p.7, Hybrid model限界
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-12'
     recheck: false
 - paper_id: P000253
   group: plasma-environment
-  role: Chang’E-6による月面負イオンの初観測
+  role: Chang’E-6/NILSによる月面H−の局所検出と負イオン層の推定
   summary:
-    question: 太陽風が月面に衝突すると負イオンは生成されるのか。これまで未確認だった負イオンの存在と、月面近傍での量・広がりを調べた。
-    method: 月裏側に着陸した嫦娥6号のNILSで、月面から放出される負イオンの質量・エネルギー・方向を測定し、ARTEMIS-P2の太陽風観測と照合した。
-    contribution: 月面から戻る水素負イオンを直接検出した。放出角分布を反射陽子と同じと仮定すると、入射陽子の約2.5%が負イオンとして反射すると推定された。光による電子脱離が寿命を短くするため、昼側では月面近傍の層に限られると推定した。
+    question: 月面に入射する太陽風は負イオンを伴って戻るか。水素と酸素負イオンを電子背景から分離し、局所フラックスから全反射率・近傍密度・高度をどこまで推定できるか。
+    method: 月裏側ApolloクレーターのNILSデータ302分を、電子/H−/O−/偶発の校正TOF応答で最尤分離した。下向き5°を超える方向と時間を積算し、ARTEMIS-P2の太陽風に対して角応答補正を行う。全放出量には角分布とエネルギー・角度の独立を仮定し、昼側光脱離寿命から鉛直分布を推定した。
+    contribution: 50–400 eVのH−を局所検出した。反射陽子角分布を用いると、反射率2.5（−0.8、＋1.2）%、表面直上体積密度0.18（−0.03、＋0.04）cm⁻³（90%区間）、昼側等価高度約10kmを推定する。O−は非検出で、収率<19.7%・密度≲2.3cm⁻³の上限に留まる。
   evidence_by_item:
     question:
     - paper_id: P000253
       version_id: V1
-      url: https://www.nature.com/articles/s43247-025-02399-7
-      source_type: abstract
-      locator: Abstract; publisher PDF p. 1
-      checked_at: '2026-10-06'
-    - paper_id: P000253
-      version_id: V1
-      url: https://www.nature.com/articles/s43247-025-02399-7
+      url: https://doi.org/10.1038/s43247-025-02399-7
       source_type: full_text
-      locator: Introduction, paragraphs beginning 'An open question' and 'Solar wind protons'; publisher PDF pp. 1–2
-      checked_at: '2026-10-06'
+      locator: PDF pp1–2 Introduction
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000253
       version_id: V1
-      url: https://www.nature.com/articles/s43247-025-02399-7
+      url: https://doi.org/10.1038/s43247-025-02399-7
       source_type: full_text
-      locator: Introduction, NILS instrument description; publisher PDF p. 2
-      checked_at: '2026-10-06'
-    - paper_id: P000253
-      version_id: V1
-      url: https://www.nature.com/articles/s43247-025-02399-7
-      source_type: full_text
-      locator: Results and discussion > Observations, observation site and ARTEMIS-P2 solar wind parameters; publisher PDF p. 2
-      checked_at: '2026-10-06'
+      locator: PDF pp5–8 Methods; Figs5–8; Eqs1–25
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000253
       version_id: V1
-      url: https://www.nature.com/articles/s43247-025-02399-7
-      source_type: abstract
-      locator: Abstract; publisher PDF p. 1
-      checked_at: '2026-10-06'
-    - paper_id: P000253
-      version_id: V1
-      url: https://www.nature.com/articles/s43247-025-02399-7
+      url: https://doi.org/10.1038/s43247-025-02399-7
       source_type: full_text
-      locator: Results and discussion > Observations and Backscattered negative hydrogen; publisher PDF pp. 2–3
-      checked_at: '2026-10-06'
+      locator: PDF pp2–4 Results and discussion; Fig3; Table1
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-12'
     recheck: false
 - paper_id: P000292
   group: ice-mechanics
@@ -862,38 +843,39 @@ entries:
       locator: 出版社提供の公開要旨（Crossref）
       checked_at: '2026-09-25'
 - paper_id: P000310
-  role: 永久影の内部帯電
+  role: 低温の電荷保持とレゴリス破砕の候補機構
   summary:
-    question: 高エネルギー粒子は、低温レゴリス内部にどの程度の電場を作るか。
-    method: CRaTERとACE/EPAMの粒子観測を、温度依存の電荷散逸を含む一次元時間依存モデルへ入力する。
-    contribution: GCRによる持続電場と、大規模SEPイベント時の絶縁破壊に達し得る一時的な電場を予測した。
+    question: 低温の永久影レゴリスへGCR・SEPが電荷を沈着させると、内部電場はどこまで蓄積し、絶縁破壊に達し得るか。
+    method: CRaTERのGCR粒子フラックスとACE/EPAMの限定された電子・陽子エネルギー帯を、SiO₂の停止距離から置いた平面電荷層へ入力する。比誘電率2と代表導電率10⁻¹⁷ S/m、表面流出なし、初期帯電ゼロの一次元時間依存モデルで、Ohm則による層間・深部への散逸を計算した。
+    contribution: GCR入力で帯電域の上下に最大約700 V/m、3大規模SEPで非重複層間に8.8–16 MV/mを予測し、既存誘電体の閾値との比較からPSRでの絶縁破壊と累積的な破砕風化を候補機構として示した。電場と破壊はPSRでの直接観測ではない。
   evidence_by_item:
     question:
     - paper_id: P000310
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014JE004648
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      url: https://doi.org/10.1002/2014JE004648
+      source_type: full_text
+      locator: PDF2–4頁、§2–3、式1、図1 PDF4–5・7–8頁、§3–5.1、式2–12、図3–4 PDF9–10頁、§5.2、図6 PDF9–12頁、§5.2、図7–9 PDF11・13–14頁、§6–7 PDF13–14頁、§6–7 PDF4–5頁、§3–4
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000310
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014JE004648
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      url: https://doi.org/10.1002/2014JE004648
+      source_type: full_text
+      locator: PDF2–4頁、§2–3、式1、図1 PDF4–5・7–8頁、§3–5.1、式2–12、図3–4 PDF9–10頁、§5.2、図6 PDF9–12頁、§5.2、図7–9 PDF11・13–14頁、§6–7 PDF13–14頁、§6–7 PDF4–5頁、§3–4
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000310
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014JE004648
-      source_type: abstract
-      locator: 要旨（本文全体は未確認）
-      checked_at: '2026-10-02'
+      url: https://doi.org/10.1002/2014JE004648
+      source_type: full_text
+      locator: PDF2–4頁、§2–3、式1、図1 PDF4–5・7–8頁、§3–5.1、式2–12、図3–4 PDF9–10頁、§5.2、図6 PDF9–12頁、§5.2、図7–9 PDF11・13–14頁、§6–7 PDF13–14頁、§6–7 PDF4–5頁、§3–4
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-02'
+    checked_at: '2026-10-13'
+    recheck: false
   group: plasma-environment
 - paper_id: P000311
   role: 極域レゴリスの絶縁破壊風化

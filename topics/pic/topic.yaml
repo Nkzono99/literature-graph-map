@@ -23,8 +23,8 @@ review:
   - FLEKSでは一様な直交PIC格子の活性パッチを切り替え、時間刻みの配置を保った調整と、質量・運動量・運動エネルギーを保存する6→5の粒子統合で長時間計算の負荷を抑える。波・再結合試験では主要な非Maxwell分布を保持したが、粒子を減らした部分の雑音は増えた。空間AMRはこの刊行版では開発中である。[@P000071]
 - heading: 物体形状と計算規模に合わせて構成を選ぶ
   paragraphs:
-  - 月面地形や宇宙機の近傍では、表面形状に沿う格子や粒子の境界処理が効いてくる。[@P000074]は宇宙機帯電を題材に、複数のPIC手法を整理して並列実行へつなぐソフトウェア構成を示している。
-  - 大規模化では、格子数と粒子数の両方が費用を決める。局所構造を細かく解く方向として、[@P000073]は疎格子のノイズ低減と適応的な格子細分化を組み合わせている。
+  - Zhang（2020）は、Boris法とPoisson解法を共通エンジンへまとめた並列ES-PICを用い、磁場中の正電位探針で電子流出と吸収を補う境界処理を示した。電子が磁化されイオンはほぼ非磁化の例では負電位の後流、両種が磁化された例では電子捕捉とイオンに富む翼を得る。流れのある二例の電流は全領域換算で約3.4 mAと約3 mAで、著者が引く既報の2.1 mA、4 mAとは差がある。粒子槽、反射、電子電流帰還を問題に応じて使い分け、周期境界が探針列を表す条件も明示している。[@P000074]
+  - Deluzet et al.（2026）は、疎格子で切り落とされた階層B-spline基底を、粒子密度のGalerkin係数に応じて局所的に戻すHSG-PICを提案した。密度surplusをセル体積で正規化して選別し、候補階層をSchur補元で探索するため、大きな一般化空間を丸ごと解く費用を避ける。2次元diocotronの初期密度では線形基底の2次収束を回復し、粒子を含む総誤差試験でも疎格子のノイズ低減を保った。製造解の単一CPU比較（線形基底、h=2⁻⁶、σ=0、ε=0.0005）では、同程度の密度L²誤差をSTDより約17.7分の1の粒子と45分の1の節点で得た。Poisson求解を省いた1反復当たりの計算時間は4.74分の1だった。これらは周期2次元の検証であり、3次元化と非矩形形状は今後の課題である。[@P000073]
   - Delzannoほか（2013）は、物体に沿う非一様構造格子を一様な論理格子へ写し、曲線格子の静電PICを構成した。粒子の位置を論理空間、速度を物理空間で持つhybrid moverにより、物理格子上のセル探索を省く。非直交格子の時間2次精度は、半ステップ予測と計量再補間を加えて維持する。場は保存的な空間2次離散化とBoxMGで解き、球殻の人工解で2次収束と格子数にほぼ比例するserial計算量を示した。平面壁と導体球の吸収境界では、帯電・遮蔽を解析解、OML近似、球対称PICと比較した。一様磁場の球では電子の赤道捕集が減り、負の浮遊電位が浅くなる例も示す。本論文の検証は対称性を使った2D3Vであり、複雑な宇宙機を扱う多block格子と3-D並列化は拡張計画として記述される。[@P000068]
   - 粒子の偏りと格子保持量を同時に扱う方法として、Nakashima et al. (2009) は等サイズの主領域を固定し、各プロセスが最大一つの副領域を援助するOhHelpを提案した。重い領域の粒子を複数の援助者に渡し、格子複製を一プロセス最大二領域に抑える。既存の援助関係で許容担当数を満たせる間は局所移送で維持し、満たせなくなった時に全体再割当てする。[@P000069]
   - T2K256コアの純PIC評価では、均一分布と局所集中分布の強スケーリング速度比が粒子分割参照コードの逐次に対して180.38倍・158.98倍だった。試験は、同数・等絶対値の正負電荷を持つ粒子を置いた電荷中性の系が、外部場なしでほぼ等速に動く周期境界・α=0.2の設定であり、導体を含むPoisson解法や衝突計算は拡張課題として残る。[@P000069]
@@ -495,38 +495,38 @@ entries:
   locked_fields: []
 - paper_id: P000074
   group: boundaries
-  role: 宇宙機帯電コードの構成
+  role: 並列ES-PICと電子電流の帰還境界
   summary:
-    question: 宇宙機帯電の計算法を、並列化可能なソフトウェアにどうまとめるか。
-    method: 複数のPIC手法を備えたパッケージを作り、標準問題と正電位探針で検証。
-    contribution: 静電PICの実装と拡張を支える、直列・並列共通の構成を示す。
+    question: 電子の運動を解く静電PICを直列・並列で共通化し、磁化された流れ中の正電位探針で境界からの電子流出と吸収を補いながら電流・後流を計算するにはどう実装するか。
+    method: C++の抽象エンジンと派生クラスにBoris移動・格子への電荷配分・CG Poisson解法をまとめ、MPI領域分割で粒子とゴースト層を交換する。直列はIC(0)、並列はFSAI前処理を使う。静止プラズマの二つの電流収集ベンチマークと、磁化状態の異なる二つのE×Bドリフト探針問題で、粒子槽・反射・電子電流帰還を使い分ける。
+    contribution: 並列ES-PICの共通構成と、磁化状態に応じて電子を帰還させる境界処理を示す。電子のみが磁化された例では負電位の後流、両種が磁化された例では電子捕捉・イオンに富む翼と概して弱い正電位の後流を得た。流れのある二例の電流は全領域換算で約3.4 mAと約3 mAで、既報との差と境界条件への依存を残す。
   evidence_by_item:
     question:
     - paper_id: P000074
       version_id: V1
-      url: https://api.crossref.org/works/10.1017/s0022377820000410
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1017/s0022377820000410
+      source_type: full_text
+      locator: PDF pp. 2–5, §2.1, Figs. 1–2 PDF pp. 5–6, §2.2, Fig. 3a PDF pp. 6–8, §2.3.1, Fig. 3b PDF pp. 6, 8–9, §§2.2, 2.3.2 PDF pp. 10–11, §3.1, Figs. 4–5 PDF pp. 11–12, §3.2, Fig. 6 PDF p. 13, Table 1, §4.1, Fig. 7 PDF pp. 13–14, §4.1, Fig. 7 PDF pp. 14–18, Figs. 8–13 PDF p. 18, Fig. 14 PDF pp. 19–20, Table 2, §4.2 PDF pp. 19–20, §4.2, Fig. 15 PDF pp. 19–20, Fig. 15b PDF pp. 20–22, Figs. 16–18 PDF pp. 23–24, Figs. 21–22 PDF pp. 24–25, Fig. 23 PDF pp. 5–9, §§2.2–2.3 PDF pp. 13–18, §4.1, Figs. 7–14 PDF pp. 19–24, §4.2, Figs. 15–22
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000074
       version_id: V1
-      url: https://api.crossref.org/works/10.1017/s0022377820000410
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1017/s0022377820000410
+      source_type: full_text
+      locator: PDF pp. 2–5, §2.1, Figs. 1–2 PDF pp. 5–6, §2.2, Fig. 3a PDF pp. 6–8, §2.3.1, Fig. 3b PDF pp. 6, 8–9, §§2.2, 2.3.2 PDF pp. 10–11, §3.1, Figs. 4–5 PDF pp. 11–12, §3.2, Fig. 6 PDF p. 13, Table 1, §4.1, Fig. 7 PDF pp. 13–14, §4.1, Fig. 7 PDF pp. 14–18, Figs. 8–13 PDF p. 18, Fig. 14 PDF pp. 19–20, Table 2, §4.2 PDF pp. 19–20, §4.2, Fig. 15 PDF pp. 19–20, Fig. 15b PDF pp. 20–22, Figs. 16–18 PDF pp. 23–24, Figs. 21–22 PDF pp. 24–25, Fig. 23 PDF pp. 5–9, §§2.2–2.3 PDF pp. 13–18, §4.1, Figs. 7–14 PDF pp. 19–24, §4.2, Figs. 15–22
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000074
       version_id: V1
-      url: https://api.crossref.org/works/10.1017/s0022377820000410
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1017/s0022377820000410
+      source_type: full_text
+      locator: PDF pp. 2–5, §2.1, Figs. 1–2 PDF pp. 5–6, §2.2, Fig. 3a PDF pp. 6–8, §2.3.1, Fig. 3b PDF pp. 6, 8–9, §§2.2, 2.3.2 PDF pp. 10–11, §3.1, Figs. 4–5 PDF pp. 11–12, §3.2, Fig. 6 PDF p. 13, Table 1, §4.1, Fig. 7 PDF pp. 13–14, §4.1, Fig. 7 PDF pp. 14–18, Figs. 8–13 PDF p. 18, Fig. 14 PDF pp. 19–20, Table 2, §4.2 PDF pp. 19–20, §4.2, Fig. 15 PDF pp. 19–20, Fig. 15b PDF pp. 20–22, Figs. 16–18 PDF pp. 23–24, Figs. 21–22 PDF pp. 24–25, Fig. 23 PDF pp. 5–9, §§2.2–2.3 PDF pp. 13–18, §4.1, Figs. 7–14 PDF pp. 19–24, §4.2, Figs. 15–22
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000069
@@ -639,38 +639,38 @@ entries:
   locked_fields: []
 - paper_id: P000073
   group: scaling
-  role: 疎格子の局所適応
+  role: 密度surplusで選ぶ局所適応HSG
   summary:
-    question: 局所構造の解像と、疎格子のノイズ低減をどう両立するか。
-    method: 階層的な近似空間と局所細分化を組み合わせ、数値問題で比較。
-    contribution: 格子点と粒子数を抑えながら、局在する解の近似精度を改善。
+    question: 疎格子PICの統計ノイズ低減を保ちつつ、軸に沿わない局所勾配による密度の偏りをどう減らすか。
+    method: 粒子密度のGalerkin射影で得る階層B-spline係数を正規化して局所基底を選び、Schur補元で一般化疎格子の候補を逐次探索。2次元の製造解とdiocotron環で偏り・総誤差・単一CPU費用を分けて比較。
+    contribution: Diocotron初期密度で線形基底のO(h²)収束を回復。製造解の誤差約0.01ではSTDに対し粒子約17.7分の1、節点約45分の1、時間約4.74分の1をTable1が示す。倍率は試験条件に依存する。
   evidence_by_item:
     question:
     - paper_id: P000073
       version_id: V1
-      url: https://arxiv.org/abs/2608.16294
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2608.16294v1
+      source_type: full_text
+      locator: PDF pp.1–3, §1
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000073
       version_id: V1
-      url: https://arxiv.org/abs/2608.16294
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2608.16294v1
+      source_type: full_text
+      locator: PDF pp.12–17, §§3.2–3.3, Eqs.(3.10)–(3.26)
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000073
       version_id: V1
-      url: https://arxiv.org/abs/2608.16294
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2608.16294v1
+      source_type: full_text
+      locator: PDF pp.20–24, Figs.4–6/Table1
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000159

@@ -26,7 +26,7 @@ review:
 - heading: 太陽風では、膨張流・磁気トルク・波動をつなぐ
   paragraphs:
   - '[@P000396]は高温コロナの流体方程式から外向きの膨張流を説明し、運ばれる磁場を考察した。[@P000397]は定常・軸対称の赤道面モデルに磁気力と回転を含め、三つの臨界点と角運動量輸送を結び付けた。このモデルでは、磁気トルクをAlfvén点までの有効な共回転と対応させて評価する。太陽風の速度を求める問題から、磁場を介して太陽の回転が失われる問題へ、扱う物理が広がる。'
-  - 理論の波を観測へ結び付けたのが、Mariner 5のプラズマ・磁場データを解析した[@P000411]である。高速の太陽風に見られる大振幅の外向きAlfvén波を整理した。定常風の平均構造と、その上に重なる波動を分けて読むと、流体モデルが捉える量と観測で比べる量が明確になる。
+  - Belcher・Davisは、Mariner 5の1967年6～11月の太陽風観測で、磁場と速度の三成分の対応に加え、密度・磁場強度の変動の小ささと磁場極性に応じた相関符号を用いて、非正弦的で大振幅のAlfvén波が太陽風静止系で外向きに伝わることを識別した。純粋な例は高速流本体と後縁に多いが、振幅が最も大きい先端の圧縮域には内向き波や非Alfvén的構造も混ざり得る。区間ごとに平均磁場を取り直した磁場変動全体の分散解析では、168.75秒・22.5分区間の分散比を全観測期間で平均すると、平均磁場と半径方向の両方に垂直な成分が強い概略5:4:1の異方性が得られた。太陽近傍から運ばれた波と圧縮域で増幅・生成された波を区別する著者のモデルは、理想MHDの波と太陽風の流れ構造を結びつける。ここで参照するのは1970年報告書版である。[@P000411]
 - heading: 磁気圏の大域計算では、領域間の結合が効く
   paragraphs:
   - 太陽風と地球の磁気圏を同じ計算へつなぐには、異なる領域の空間・時間スケールと境界で交換する量をそろえる必要がある。SWMF（[@P000408]）は、コロナ・太陽圏・磁気圏・電離圏などのモデルを結合する枠組みを示した。各領域には異なる物理モデルを使い、この論文は設計・実装と実演試験を扱う。
@@ -45,7 +45,7 @@ lineage:
     significance: 流体運動と誘導電流の力を結び付け、MHD波動の基本を示した。
   - paper_id: P000411
     title: 太陽風の変動からAlfvén波を読む
-    significance: 磁場とプラズマの観測を対応させ、大振幅の外向き波動を整理した。
+    significance: 1970年報告書版では、Mariner 5の1967年の磁場・プラズマ同時観測を対応させ、太陽風静止系での大振幅の外向きAlfvén波を整理した。先端圧縮域には内向き波や非Alfvén成分も混ざり得る。
     connection: 波の理論を宇宙での同時観測へつなぐ
 - title: 太陽風の膨張から角運動量輸送へ
   steps:
@@ -763,36 +763,36 @@ entries:
   group: solar-wind
   role: 太陽風中のAlfvén波の観測
   summary:
-    question: 理論で予想されるAlfvén波は、太陽風の変動にどう現れるか。
-    method: Mariner 5のプラズマと磁場の同時データから、非衝撃波の微細変動を解析。
-    contribution: 大振幅の外向きAlfvén波と高速流での特徴を整理し、磁場と流体速度の変動を対応させる観測基準を示した。
+    question: 太陽風の微細な磁場変動は静的な接線不連続か、大振幅Alfvén波か。伝播方向・振幅・異方性は流れ構造とどう結びつくか。
+    method: 1967年6月14日–11月21日のMariner5磁場・プラズマ同時データを用い、速度と磁場の三成分相関、極性依存、6時間の相関統計、3時間量の加重相関、FFT・クロススペクトル、168.75秒・22.5分・3時間の分散テンソルを比較した。速度三成分には暫定値を含む。
+    contribution: 外向きAlfvén波を、磁場・速度のベクトル対応と密度・磁場強度の安定性から識別した。占有率を約50%と推定し、純粋な例が高速流本体・後縁に多い一方、最大振幅は複数モードを含み得る圧縮域に現れると整理した。局所平均磁場に対する概略5:4:1の分散異方性を示し、太陽近傍起源と圧縮・減衰の条件付きモデルを提案した。
   evidence_by_item:
     question:
     - paper_id: P000411
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/JA076i016p03534
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
+      version_id: V2
+      url: https://ntrs.nasa.gov/api/citations/19710000956/downloads/19710000956.pdf
+      source_type: full_text
+      locator: PDF pp5–14
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000411
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/JA076i016p03534
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
+      version_id: V2
+      url: https://ntrs.nasa.gov/api/citations/19710000956/downloads/19710000956.pdf
+      source_type: full_text
+      locator: PDF pp6–11,15–17,24–27,29–30,33–44
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000411
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/JA076i016p03534
-      source_type: abstract
-      locator: 出版社公開要旨
-      checked_at: '2026-10-09'
+      version_id: V2
+      url: https://ntrs.nasa.gov/api/citations/19710000956/downloads/19710000956.pdf
+      source_type: full_text
+      locator: PDF pp14–17,28,38–44,45–60
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
-    version_id: V1
+    level: full_text
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-10-09'
+    checked_at: '2026-10-12'
     recheck: false
 - paper_id: P000071
   group: magnetosphere

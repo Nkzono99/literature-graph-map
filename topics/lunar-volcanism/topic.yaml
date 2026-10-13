@@ -23,39 +23,39 @@ groups:
 entries:
 - paper_id: P000171
   group: chronology
-  role: TC画像による裏側火山活動の年代
+  role: 約2.5 Gaの裏側海と複数噴火・被覆による年代記録
   inspection:
-    level: abstract
-    version_id: V1
+    level: full_text
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: 月裏側の火山活動はいつまで続いたか。
-    method: TC画像のクレーター頻度から海のモデル年代を推定する。
-    contribution: 一部の海で比較的若い年代を示し、裏側火山活動の継続期間を見直した。
+    question: 月裏側の露出した海の年代はどこまで若く、クレーター径頻度は古い表面の再舗装を示すか。
+    method: かぐやTCの約10 m画像でSPA盆地・Moscovienseの海のクレーターを手作業計数し、長い影・明瞭な二次クレーターを除外する。Neukumの生成関数と年代曲線に径範囲ごとに当てはめて表面のモデル年代を推定する。
+    contribution: 5領域に2.44–2.58 Gaの若いモデル年代を見いだし、Apollo Nなどの大小クレーターで異なる年代曲線から部分的な再舗装を示唆した。多くの海の3.0 Ga以前の形成と若い活動の継続を分け、約2.5 Gaの活動集中には継続的な被覆という代替解釈も残す。
   evidence_by_item:
     question:
     - paper_id: P000171
-      version_id: V1
+      version_id: V2
       url: https://doi.org/10.1126/science.1163382
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5 Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.2–3 Apollo/Moscoviense/discussion PDF p.5 Table1 PDF pp.7–8 Figs2–3
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000171
-      version_id: V1
+      version_id: V2
       url: https://doi.org/10.1126/science.1163382
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5 Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.2–3 Apollo/Moscoviense/discussion PDF p.5 Table1 PDF pp.7–8 Figs2–3
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000171
-      version_id: V1
+      version_id: V2
       url: https://doi.org/10.1126/science.1163382
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5 Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.2–3 Apollo/Moscoviense/discussion PDF p.5 Table1 PDF pp.7–8 Figs2–3
+      checked_at: '2026-10-13'
 - paper_id: P000182
   group: chronology
   role: Moscovienseの玄武岩層厚と年代
@@ -510,7 +510,8 @@ entries:
 review:
 - heading: クレーター数と層厚から、火山活動の時間と量を調べる
   paragraphs:
-  - 表面に残るクレーターのサイズ別頻度を年代へ対応させる枠組みが[@P000187]である。[@P000171]はTC画像を用いて裏側の海の年代を調べ、一部の地域で従来考えられていたより遅くまで火山活動が続いた可能性を示した。
+  - 表面に残るクレーターのサイズ別頻度を年代へ対応させる枠組みが[@P000187]である。
+  - HaruyamaらのTCによるクレーター径頻度の解析では、多くの裏側海は3.0 Gaより古い一方、北部Moscovienseから南部Antoniadiまで2.44–2.58 Gaの若いモデル年代が分布した。Apollo Nなどでは大小クレーターに異なる年代曲線を当てはめられ、古い玄武岩表面の部分的な再舗装を示唆する。著者は約2.5 Gaの遅い活動期を考えるが、2.5–3.0 Gaの表面が若い溶岩に連続的に覆われた可能性も残した。露出表面の年代頻度を全月面の噴火率や一意の休止期間へ変換する際には、保存と被覆の影響を考える必要がある。[@P000171]
   - '[@P000182]はMoscovienseの年代に玄武岩の層厚・体積を加え、長期間の活動と薄い地殻との関係を論じた。[@P000181]の地下反射層は、表面の年代だけでは見えない噴出の休止期を検討する材料になる。'
 - heading: 水の研究を、マグマの噴火過程へつなぐ
   paragraphs:
@@ -530,7 +531,7 @@ lineage:
   steps:
   - paper_id: P000171
     title: 海の年代を広域で求める
-    significance: TC画像のクレーター頻度から裏側の活動時期を調べた。
+    significance: 5領域に2.44–2.58 Gaの若いモデル年代を見いだし、Apollo Nなどの大小クレーターで異なる年代曲線から部分的な再舗装を示唆した。多くの海の3.0 Ga以前の形成と若い活動の継続を分け、約2.5 Gaの活動集中には継続的な被覆という代替解釈も残す。
   - paper_id: P000182
     title: Moscovienseの層厚と体積を加える
     significance: 活動期間と噴出量を地殻厚の違いへ結び付けた。

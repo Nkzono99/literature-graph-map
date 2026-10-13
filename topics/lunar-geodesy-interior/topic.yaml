@@ -60,39 +60,39 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000170
   group: measurements
-  role: リレー衛星による月裏側重力
+  role: リレー追跡で推定した裏側重力と盆地の支持・補償
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: 月裏側の盆地の重力構造は表側とどう違うか。
-    method: リレー衛星を介した4ウェイドップラー観測から重力場を求める。
-    contribution: 盆地の重力異常と補償構造に表裏差を示した。
+    question: 地球から見えない月裏側の重力場をリレー追跡でどう拘束でき、盆地の地形支持と中心質量の構造は表側とどう違うか。
+    method: 2007年10月31日–2008年4月1日のSELENEの4ウェイドップラーと2ウェイ追跡・測距、既往データを用い、Main・Rstarの軌道と次数・位数90のSGM90dを同時推定する。地形モデルSTM-359_grid-02と地殻密度2800 kg/m³でブーゲー異常を求め、中心異常と環状構造を比較する。
+    contribution: 裏側の盆地縁に対応する環状重力異常を示し、地形補正後の中心異常からType I・IIを分けた。硬い地殻・リソスフェアによる支持、中心部の過剰補償や局所補償、表側でのより大きな変形を解釈したが、北側の観測空白と次数60超の事前拘束が残る予備モデルである。
   evidence_by_item:
     question:
     - paper_id: P000170
       version_id: V1
       url: https://doi.org/10.1126/science.1168029
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2 Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology and conclusion, p.7 Note30 PDF p.5 density and Table1 PDF pp.4–6, Figs2/4/5 PDF p.6 rheology/thermal conclusion; p.7 Note30
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000170
       version_id: V1
       url: https://doi.org/10.1126/science.1168029
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2 Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology and conclusion, p.7 Note30 PDF p.5 density and Table1 PDF pp.4–6, Figs2/4/5 PDF p.6 rheology/thermal conclusion; p.7 Note30
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000170
       version_id: V1
       url: https://doi.org/10.1126/science.1168029
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2 Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology and conclusion, p.7 Note30 PDF p.5 density and Table1 PDF pp.4–6, Figs2/4/5 PDF p.6 rheology/thermal conclusion; p.7 Note30
+      checked_at: '2026-10-13'
 - paper_id: P000180
   group: interior
   role: 重力と地形からの地殻厚推定
@@ -826,7 +826,8 @@ entries:
 review:
 - heading: 高さと重力の組合せから、地殻の厚さを推定する
   paragraphs:
-  - レーザー高度計による[@P000169]は全球の地形を与える。[@P000170]は、地球から直接追跡しにくい裏側の重力をリレー衛星経由で測り、表裏の盆地が異なる重力構造を持つことを示した。
+  - レーザー高度計による[@P000169]は全球の地形を与える。
+  - Namikiらは、SELENEのリレー追跡から推定した重力場をLALT地形と比較し、裏側・リム側の盆地縁に対応する環状異常と、補正後も残る中心異常を分けた。地殻密度2800 kg/m³を仮定したブーゲー異常との比較で、鋭い中心ピークのType Iと、フリーエア中心高が20–60%小さい広いType IIを分類した。中心のマントル隆起・過剰補償や局所的な脆性変形、表側でのより大きな緩和は著者の内部構造・熱史の解釈であり、観測の地域差と地形・密度・流動則の条件を伴う。[@P000170]
   - '[@P000180]は、この地形と重力から地殻厚を計算した。地殻厚は密度や補償の仮定を介した推定量なので、観測された高度・重力とモデルの条件を合わせて参照する。'
 - heading: 重力の空間分解能が、探せる地下構造を変える
   paragraphs:
@@ -848,7 +849,7 @@ review:
   - 熱伝導率は温度だけでなく粒子構造にも応答する。[@P000331]は粒子の形と充填を熱抵抗ネットワークへつなぎ、レゴリス成熟度の補完指標を提案した。全球の熱物性推定と比較する際に、試料の粒子構造が測定量へどう反映されるかを調べる研究となる。
 - heading: 高度と重力の観測を選ぶ
   paragraphs:
-  - LALTのレーザー高度観測[@P000169]とRSATのドップラー追跡による重力観測[@P000170]は、かぐやによる地形・内部構造研究の入口である。LOLAもレーザー高度を測り、GRAILは衛星間の追跡から重力場を求める。LOLA地形とGRAIL重力を組み合わせた密度構造の解析は[@P000301]、GRAILの重力勾配から空洞候補を探す研究は[@P000194]を参照できる。高度、重力、推定された密度・空洞形状を順に対応させると、観測量と逆解析の結果を区別して読める。
+  - LALTのレーザー高度観測[@P000169]は、かぐやによる地形・内部構造研究の入口である。LOLAもレーザー高度を測り、GRAILは衛星間の追跡から重力場を求める。LOLA地形とGRAIL重力を組み合わせた密度構造の解析は[@P000301]、GRAILの重力勾配から空洞候補を探す研究は[@P000194]を参照できる。高度、重力、推定された密度・空洞形状を順に対応させると、観測量と逆解析の結果を区別して読める。
 - heading: 軌道・試料からの推定に、ロボットの深度測定を加える
   paragraphs:
   - Divinerに基づく熱物性推定[@P000334]やApollo 17コアの熱履歴[@P000299]に対し、[@P000366]はBlue Ghost
@@ -862,7 +863,7 @@ lineage:
   steps:
   - paper_id: P000170
     title: 裏側の盆地構造を制約
-    significance: リレー衛星による追跡から裏側重力場の精度を改善した。
+    significance: 裏側の盆地縁に対応する環状重力異常を示し、地形補正後の中心異常からType I・IIを分けた。硬い地殻・リソスフェアによる支持、中心部の過剰補償や局所補償、表側でのより大きな変形を解釈したが、北側の観測空白と次数60超の事前拘束が残る予備モデルである。
   - paper_id: P000180
     title: 地形を加えて地殻厚を求める
     significance: 重力場と全球地形を組み合わせ、盆地の構造差を解釈した。

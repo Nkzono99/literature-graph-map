@@ -147,37 +147,37 @@ entries:
   group: geodesy
   role: RSAT｜リレー衛星による月裏側重力
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: 月裏側の盆地の重力構造は表側とどう違うか。
-    method: リレー衛星を介した4ウェイドップラー観測から重力場を求める。
-    contribution: 盆地の重力異常と補償構造に表裏差を示した。
+    question: 地球から見えない月裏側の重力場をリレー追跡でどう拘束でき、盆地の地形支持と中心質量の構造は表側とどう違うか。
+    method: 2007年10月31日–2008年4月1日のSELENEの4ウェイドップラーと2ウェイ追跡・測距、既往データを用い、Main・Rstarの軌道と次数・位数90のSGM90dを同時推定する。地形モデルSTM-359_grid-02と地殻密度2800 kg/m³でブーゲー異常を求め、中心異常と環状構造を比較する。
+    contribution: 裏側の盆地縁に対応する環状重力異常を示し、地形補正後の中心異常からType I・IIを分けた。硬い地殻・リソスフェアによる支持、中心部の過剰補償や局所補償、表側でのより大きな変形を解釈したが、北側の観測空白と次数60超の事前拘束が残る予備モデルである。
   evidence_by_item:
     question:
     - paper_id: P000170
       version_id: V1
       url: https://doi.org/10.1126/science.1168029
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2 Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology and conclusion, p.7 Note30 PDF pp.3–4; Figs2–3 PDF pp.4–6; Figs4–5; Table1
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000170
       version_id: V1
       url: https://doi.org/10.1126/science.1168029
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2 Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology and conclusion, p.7 Note30 PDF pp.3–4; Figs2–3 PDF pp.4–6; Figs4–5; Table1
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000170
       version_id: V1
       url: https://doi.org/10.1126/science.1168029
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp.3–4, RSAT and simultaneous orbit solution PDF pp.3–4 PDF p.2 Fig1, p.4 left column PDF p.4 left column, p.3 Fig2 caption PDF p.4 center column, p.3 Fig3 PDF p.4 right column, p.5 Table1 PDF p.6 body PDF p.6 rheology and conclusion, p.7 Note30 PDF pp.3–4; Figs2–3 PDF pp.4–6; Figs4–5; Table1
+      checked_at: '2026-10-13'
 - paper_id: P000180
   group: geodesy
   role: RSAT・LALT｜重力と地形からの地殻厚推定
@@ -215,39 +215,39 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000171
   group: geology
-  role: TC画像による裏側火山活動の年代
+  role: TCの小クレーター計数による裏側海のモデル年代と再舗装
   inspection:
-    level: abstract
-    version_id: V1
+    level: full_text
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: 月裏側の火山活動はいつまで続いたか。
-    method: TC画像のクレーター頻度から海のモデル年代を推定する。
-    contribution: 一部の海で比較的若い年代を示し、裏側火山活動の継続期間を見直した。
+    question: 月裏側の露出した海の年代はどこまで若く、クレーター径頻度は古い表面の再舗装を示すか。
+    method: かぐやTCの約10 m画像でSPA盆地・Moscovienseの海のクレーターを手作業計数し、長い影・明瞭な二次クレーターを除外する。Neukumの生成関数と年代曲線に径範囲ごとに当てはめて表面のモデル年代を推定する。
+    contribution: 5領域に2.44–2.58 Gaの若いモデル年代を見いだし、Apollo Nなどの大小クレーターで異なる年代曲線から部分的な再舗装を示唆した。多くの海の3.0 Ga以前の形成と若い活動の継続を分け、約2.5 Gaの活動集中には継続的な被覆という代替解釈も残す。
   evidence_by_item:
     question:
     - paper_id: P000171
-      version_id: V1
+      version_id: V2
       url: https://doi.org/10.1126/science.1163382
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5 Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.1–2 TC/counting/Eqs1–2 PDF pp.2–3 results PDF p.5 Table1 PDF p.7 Fig2
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000171
-      version_id: V1
+      version_id: V2
       url: https://doi.org/10.1126/science.1163382
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5 Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.1–2 TC/counting/Eqs1–2 PDF pp.2–3 results PDF p.5 Table1 PDF p.7 Fig2
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000171
-      version_id: V1
+      version_id: V2
       url: https://doi.org/10.1126/science.1163382
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: 実読は2008年11月6日Science Express版（8頁）。2009年誌面版との本文一致は未照合。リンクは共通DOIの書誌ページ。PDF p.2 Antoniadi, pp.4/7 Fig2A, p.5 Table1 PDF p.2 Apollo N, pp.4/7 Fig2B, p.5 Table1 PDF p.2 Apollo N PDF pp.2–3, p.5 Table1, p.7 Fig2C PDF pp.2–3 Moscoviense PDF p.3, p.5 Table1 PDF p.3, pp.4/8 Fig3 PDF p.3 final discussion PDF pp.1–2 TC/counting/Eqs1–2 PDF pp.2–3 results PDF p.5 Table1 PDF p.7 Fig2
+      checked_at: '2026-10-13'
 - paper_id: P000172
   group: geology
   role: MI｜純斜長岩の分布
@@ -322,89 +322,71 @@ entries:
   group: geology
   role: SPアーカイブによるイルメナイト分布
   summary:
-    question: 月面でイルメナイトに富むスペクトルを示す領域はどこに分布し、どのような地質や火砕堆積物と結びつくのかを調べた。
-    method: かぐやのスペクトルプロファイラ（SP）データから、1・2 µm帯のイルメナイト特有の反射特徴を持つ地点を抽出した。多波長画像と地形モデルで各地点の地質を調べた。
-    contribution: 該当領域は月表側の衝突盆地周縁に集中し、多くが高地を覆う火砕堆積物にあった。長石質高地や南極エイトケン盆地では検出されず、TiO₂に富む海の玄武岩の分布とも一致しなかった。
+    question: 月面のイルメナイト富化を示すスペクトル候補はどこに分布し、火砕堆積物・高地・高Ti海玄武岩との層序関係をどう説明できるか。
+    method: かぐやSP Level 2Cで1 µm吸収内の1003.6 nmの小さな盛り上がりと1797.6/752.8 nm反射率比 >2.4を併用し、51観測点を抽出。MI Map 3.0を70 mセルに平均して局所スペクトルを分類し、TC DTMとLROC NAC像で地質・被覆層を読む。
+    contribution: 候補の大部分は表側の盆地周縁にあり、暗い火砕堆積物が高地物質を覆う地質と対応する。既存高Ti海の主要分布域は同じ分光特徴を示さず、その原因は鉱物混合・粒径・成熟度・Tiの相配分等の複数の説明が残る。候補分布を資源探査に使う提案だが、含有率や採掘可能質量の実測ではない。
   evidence_by_item:
     question:
     - paper_id: P000174
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JE008663
-      source_type: abstract
-      locator: Abstract, sentence 1
-      checked_at: '2026-10-06'
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JE008663
+      source_type: full_text
+      locator: PDF pp.6–9, §3.1, Figs.2–3, Table 3; PDF pp.18–19, §4.2
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000174
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JE008663
-      source_type: abstract
-      locator: Abstract, sentences 2 and 4
-      checked_at: '2026-10-06'
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JE008663
+      source_type: full_text
+      locator: PDF p.3, §2.1; PDF pp.5–6, §2.2, Tables1–2; PDF pp.6–9, §3.1, Figs.2–3, Table 3
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000174
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JE008663
-      source_type: abstract
-      locator: Abstract, sentences 3, 4 and 6
-      checked_at: '2026-10-06'
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JE008663
+      source_type: full_text
+      locator: PDF pp.6–9, §3.1, Figs.2–3, Table 3; PDF p.11, Fig.5, §3.2.1; PDF pp.13–17, §§3.2.3–3.2.5, Figs.7–9; PDF pp.18–19, §4.2; PDF p.19, §4.3
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-12'
     recheck: false
 - paper_id: P000175
   group: geology
-  role: GRSによるウランとU/Th比
+  role: GRSによるU・Thの独立測定と裏側高地の組成差
   summary:
-    question: 月面のウランは全球でどのように分布し、トリウムとの量比（U/Th比）は地域によって変わるのか。月の裏側の高地が組成的に均一かを調べた。
-    method: かぐやのガンマ線分光計でウラン由来の線を識別し、その強度から月面のウラン分布図を作成した。トリウムの分布と比較して、U/Th比の地域差を調べた。
-    contribution: 月全体のウラン分布図を初めて作成した。裏側ではU/Th比に有意な地域差が見られ、高地の組成が従来考えられたほど均一ではないことを示唆した。
+    question: 月面のUをThとは別に測って全球分布を描き、全球的な共変動と裏側高地のU/Thの地域差が地殻組成に何を示すか。
+    method: 2007年12月〜2008年12月のかぐやGRS観測2674時間を用い、U系列214Biの1764.5 keV線とTh系列208Tlの2614.5 keV線を干渉線からピークフィットで分離した。背景・デッドタイム・高度を補正し、放出率・輸送・幾何・検出効率の計算で濃度較正した。9°画素の分布図と広域高地の積算値を比較した。
+    contribution: Uの独立した全球分布図を作成し、全球U–Th回帰の傾き0.269±0.007と裏側東西高地のUの差を示した。東西のThは0.36±0.02と0.33±0.02 ppmで統計誤差の範囲内、Uは0.34±0.01と0.21±0.01 ppmだった。著者は地殻の不均一形成を示唆するが、Uの系統誤差と形成後の元素移動を条件として残す。
   evidence_by_item:
     question:
     - paper_id: P000175
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000175
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      url: https://doi.org/10.1029/2010gl043061
       source_type: full_text
-      locator: 1. Introduction [2]–[3]
-      checked_at: '2026-10-06'
+      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.1–2 ¶¶5–8 PDF p.4 Fig.5, ¶¶10,12–15
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000175
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000175
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      url: https://doi.org/10.1029/2010gl043061
       source_type: full_text
-      locator: 2. Observation and Analysis [5]–[7]
-      checked_at: '2026-10-06'
+      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.1–2 ¶¶5–8 PDF p.4 Fig.5, ¶¶10,12–15
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000175
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000175
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      url: https://doi.org/10.1029/2010gl043061
       source_type: full_text
-      locator: 3.2. Relative Distributions of U and Th [12]–[13]
-      checked_at: '2026-10-06'
+      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.1–2 ¶¶5–8 PDF p.4 Fig.5, ¶¶10,12–15
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-13'
     recheck: false
 - paper_id: P000176
   group: geology
@@ -513,39 +495,39 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000183
   group: geology
-  role: TC・MI｜Marius Hillsの縦孔
+  role: TC・MI｜照明と視線から制約したMarius Hills縦孔
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: Marius Hillsの深い穴はどのような地形か。
-    method: TC・MIの画像を異なる照明条件で比較する。
-    contribution: 深さと直径、周囲の地質から溶岩チューブの開口という可能性を示した。
+    question: Marius Hillsの縦穴はどのような形状・深さを持ち、溶岩チューブの屋根が崩れた開口という解釈は何に支えられるか。
+    method: SELENE TCの斜め視点とMIのほぼ直下視点を、入射角48.0–73.3°と15.1–21.4°で比較する。鉛直孔の陰影・視線から壁と底の深さを分け、クレーター径頻度分布と単純梁モデルで再被覆履歴と屋根の許容幅を推定する。
+    contribution: 303.3°E、14.2°Nの蛇行溝内に直径65 mのほぼ円形の縦穴を確認し、MIの底の影から深さ80–88 mを推定した。周囲の形態から溶岩チューブの開口を最も妥当と解釈する。梁モデルによる屋根の許容幅約370 mと溶岩シート厚20–25 mは条件付きモデル推定である。
   evidence_by_item:
     question:
     - paper_id: P000183
       version_id: V1
       url: https://doi.org/10.1029/2009gl040635
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp.2–3, Fig.1, §2 [8],[10] PDF pp.3–4, Table 1, Fig.2, §2 [11]–[12] PDF p.4 §2 [13]; pp.4–5 §4 [17] PDF p.4 §2 [14], Fig.3 PDF p.4 §3 [15]–[16], §4 [17] PDF p.3 Table 1, Fig.2, §2 [8],[10]–[11] PDF p.4 §2 [12], §3 [15]–[16]
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000183
       version_id: V1
       url: https://doi.org/10.1029/2009gl040635
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp.2–3, Fig.1, §2 [8],[10] PDF pp.3–4, Table 1, Fig.2, §2 [11]–[12] PDF p.4 §2 [13]; pp.4–5 §4 [17] PDF p.4 §2 [14], Fig.3 PDF p.4 §3 [15]–[16], §4 [17] PDF p.3 Table 1, Fig.2, §2 [8],[10]–[11] PDF p.4 §2 [12], §3 [15]–[16]
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000183
       version_id: V1
       url: https://doi.org/10.1029/2009gl040635
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp.2–3, Fig.1, §2 [8],[10] PDF pp.3–4, Table 1, Fig.2, §2 [11]–[12] PDF p.4 §2 [13]; pp.4–5 §4 [17] PDF p.4 §2 [14], Fig.3 PDF p.4 §3 [15]–[16], §4 [17] PDF p.3 Table 1, Fig.2, §2 [8],[10]–[11] PDF p.4 §2 [12], §3 [15]–[16]
+      checked_at: '2026-10-13'
 - paper_id: P000195
   group: geology
   role: LRSによる溶岩チューブ候補
@@ -876,50 +858,38 @@ entries:
     recheck: false
 - paper_id: P000184
   group: plasma
-  role: PACE｜太陽風陽子の月面反射
+  role: PACE｜太陽風陽子の月面散乱と自己拾い上げ加速
   summary:
-    question: 月面に到来する太陽風陽子の一部は反射されるのか。また、月面から戻った陽子は月周辺でどのように加速されるのかを調べる。
-    method: かぐやのMAP-PACEで、昼側の月面へ向かう太陽風イオンと月面から来るイオンを同時に測定した。エネルギー・方向・イオン種を比べ、磁場観測も合わせて解析した。
-    contribution: 太陽風陽子の0.1〜1％に相当する反射成分を検出した。一部が太陽風より高エネルギーになる観測を、太陽風の対流電場による加速で説明した。
+    question: 月面へ入射した太陽風陽子の一部はイオンとして月面から戻るのか。その組成とエネルギー・方向分布、さらに太陽風より高エネルギーになる過程を調べる。
+    method: 高度約100 kmのかぐやで、反対向きの半球視野を持つMAP-PACEのIEAとIMAにより、2008年2月27日の昼側太陽風と月面側イオンを同時観測した。前日2月26日の類似事例のTOF質量測定で組成を補い、2月27日のMAP-LMAG磁場と合わせて、低エネルギー成分と連続2周回の加速成分を比較した。
+    contribution: 月面側から来る広い角度分布の陽子成分を、太陽風の月面反射・散乱と解釈し、反射陽子フラックスを元の太陽風イオンフラックスの約0.1〜1％と報告した。連続2周回では太陽風約0.75 keV/qに対し最大約5 keV/qの成分を捉え、磁場に基づく対流電場方向との対応からself-pick-up加速で説明した。
   evidence_by_item:
     question:
     - paper_id: P000184
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
+      url: https://doi.org/10.1029/2008gl036077
+      source_type: full_text
+      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3]; Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3 [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5 Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5, Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF p.1 Sec.2 [3]; pp.2–4 Figs.1–4; p.4 Sec.3 [6], Sec.4 [7]
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000184
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      url: https://doi.org/10.1029/2008gl036077
       source_type: full_text
-      locator: Section 2, Instrumentation [3]
-      checked_at: '2026-10-06'
-    - paper_id: P000184
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
-      source_type: full_text
-      locator: Section 3 [5]–[6]; Section 4 [7]
-      checked_at: '2026-10-06'
+      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3]; Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3 [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5 Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5, Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF p.1 Sec.2 [3]; pp.2–4 Figs.1–4; p.4 Sec.3 [6], Sec.4 [7]
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000184
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000184
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL036077
+      url: https://doi.org/10.1029/2008gl036077
       source_type: full_text
-      locator: Section 3 [5]–[6]; Section 4 [7]–[8]
-      checked_at: '2026-10-06'
+      locator: PDF pp.1–3, Secs.1–2 [2]–[3], Sec.3 [4], Fig.1a PDF p.1, Sec.2 [3]; Figs.1–2/4 visual colorbars PDF pp.2–3, Sec.3 [4]–[5], Fig.2 PDF pp.3–4, Sec.3 [5] PDF pp.3–4, Fig.3, Sec.3 [6] PDF p.4 Sec.3 [6]; p.1 Abstract [1]; p.5 Sec.5 [9] PDF p.4, Sec.4 [7], Fig.4 PDF pp.4–5, Sec.4 [7]–[8], Fig.4 PDF p.5, Sec.4 [8] PDF pp.3–5, Secs.3–4 [5]–[8] PDF p.1 Sec.2 [3]; pp.2–4 Figs.1–4; p.4 Sec.3 [6], Sec.4 [7]
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-13'
     recheck: false
 - paper_id: P000185
   group: plasma
@@ -1041,50 +1011,74 @@ entries:
     recheck: false
 - paper_id: P000107
   group: plasma
-  role: 月表面の磁場モデル
+  role: 低高度磁力計から復元した月表面磁場モデル
   summary:
-    question: 月周回の磁場観測から、地表のベクトル磁場をどう復元するか。
-    method: かぐやとLunar Prospectorの低高度観測をsurface vector mappingで統合。
-    contribution: 全球の表面磁場3成分を提供し、明るい模様と磁場構造の対応を示した。
+    question: かぐやとLunar Prospectorの低高度磁場観測から月面の磁場ベクトルを全球で復元し、スワールと磁源の形態・方向を比較できるか。
+    method: 高度10–45 kmの約500万件の磁場観測を選別・平均・外部場除去し、軌道に沿う一階微分を入力して230領域のSVM境界値逆解析を行った。平均半径1737.4 kmの球面上の半径方向成分をABICで正則化し、水平2成分を勾配補正付き境界積分から求めた。0.2°は格子間隔で、代表分解能は約1°の波長。
+    contribution: 平均月半径球面上の3成分と全強度の暫定全球モデルを提供し、最大718 nT、電子反射法との5°×5°平均全強度相関0.671を得た。スワールの明るい部分と低～中傾斜・半径方向ゼロ等値線の対応を示し、中心異常の磁極と伸長異常の方向から、条件付きで極移動年代と磁源候補を議論した。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000107
+      version_id: V1
+      url: https://doi.org/10.1002/2014je004785
+      source_type: full_text
+      locator: PDF pp.3–4; §3.1, Fig.1 PDF p.4; §3.1, Fig.1b PDF p.6; §4.2, Fig.4 PDF p.7; §4.2 PDF pp.16–18; §5.3.1, Fig.12 PDF pp.12,14–16; §5.2.2, Table 2 PDF pp.19–21; §5.4.1, Fig.13 PDF p.19; §5.4.1–5.4.2 PDF pp.2–6,16–18; §§2–4.2,5.3
+      checked_at: '2026-10-13'
+    method:
+    - paper_id: P000107
+      version_id: V1
+      url: https://doi.org/10.1002/2014je004785
+      source_type: full_text
+      locator: PDF pp.3–4; §3.1, Fig.1 PDF p.4; §3.1, Fig.1b PDF p.6; §4.2, Fig.4 PDF p.7; §4.2 PDF pp.16–18; §5.3.1, Fig.12 PDF pp.12,14–16; §5.2.2, Table 2 PDF pp.19–21; §5.4.1, Fig.13 PDF p.19; §5.4.1–5.4.2 PDF pp.2–6,16–18; §§2–4.2,5.3
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000107
       version_id: V1
       url: https://doi.org/10.1002/2014je004785
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp.3–4; §3.1, Fig.1 PDF p.4; §3.1, Fig.1b PDF p.6; §4.2, Fig.4 PDF p.7; §4.2 PDF pp.16–18; §5.3.1, Fig.12 PDF pp.12,14–16; §5.2.2, Table 2 PDF pp.19–21; §5.4.1, Fig.13 PDF p.19; §5.4.1–5.4.2 PDF pp.2–6,16–18; §§2–4.2,5.3
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000111
   group: plasma
-  role: 電子とイオンの同時計測
+  role: 電子・陽子・アルファ粒子の同時計測
   summary:
-    question: 磁気異常上空の電子加速とイオン減速は、どの電場に対応するか。
-    method: かぐやMAP-PACEで電子・陽子・アルファ粒子のエネルギー変化を比較。
-    contribution: 電荷当たりのエネルギー変化の対応から、月から外向きの電場を示した。
+    question: 月の昼側磁気異常上空で電子加速と陽子・アルファ粒子の減速は同じ電位差で説明でき、反射イオンの加熱はどこで生じるか。
+    method: かぐやMAP-PACEの対向電子・イオンセンサーとLMAGで、南極エイトケン盆地上空約25 kmの電子ピッチ角・粒子スペクトル・密度/速度/温度を比較。2009年4月23日の13事例で電子加速と陽子減速、最大磁場Bと太陽風密度nを用いたB²/nの相関を調べた。
+    contribution: 電子の約+150 eV/qの加速と陽子・アルファ粒子の約−150 eV/qの減速の対応から、かぐやより上の静的な月外向き電場を推定した。13事例の陽子減速と電子加速は比例係数0.98・相関0.965で対応し、B²/nとの相関0.798はHall電場の解釈と整合した。反射イオンの高温・低速・広い分布から、約25 kmより下の非断熱散乱と加熱を論じた。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000111
+      version_id: V1
+      url: https://doi.org/10.5047/eps.2011.07.011
+      source_type: full_text
+      locator: PDF pp. 2–3, §2–3, Fig. 1 PDF p. 2 §3 and p. 4 Fig. 2 PDF pp. 2–5 §3 and p. 6 Fig. 4; date visible in Fig. 3 and 4 PDF p. 4 §3; p. 6 Fig. 5 PDF p. 5 §4; pp. 4, 6 Figs. 4–5 PDF p. 4 §3; p. 7 Fig. 6 PDF p. 6 §4; p. 7 Figs. 6–7; p. 9 concluding discussion PDF pp. 7–8 §4; p. 8 Fig. 8 PDF p. 8 §4 PDF pp. 8–9 §4, eqs. (1)–(2); p. 8 Fig. 9 PDF p. 9 §4 PDF pp.2–6 §2–4, Figs.3–5 PDF pp.7–8 §4, Fig.8
+      checked_at: '2026-10-13'
+    method:
+    - paper_id: P000111
+      version_id: V1
+      url: https://doi.org/10.5047/eps.2011.07.011
+      source_type: full_text
+      locator: PDF pp. 2–3, §2–3, Fig. 1 PDF p. 2 §3 and p. 4 Fig. 2 PDF pp. 2–5 §3 and p. 6 Fig. 4; date visible in Fig. 3 and 4 PDF p. 4 §3; p. 6 Fig. 5 PDF p. 5 §4; pp. 4, 6 Figs. 4–5 PDF p. 4 §3; p. 7 Fig. 6 PDF p. 6 §4; p. 7 Figs. 6–7; p. 9 concluding discussion PDF pp. 7–8 §4; p. 8 Fig. 8 PDF p. 8 §4 PDF pp. 8–9 §4, eqs. (1)–(2); p. 8 Fig. 9 PDF p. 9 §4 PDF pp.2–6 §2–4, Figs.3–5 PDF pp.7–8 §4, Fig.8
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000111
       version_id: V1
-      url: https://link.springer.com/article/10.5047/eps.2011.07.011
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.5047/eps.2011.07.011
+      source_type: full_text
+      locator: PDF pp. 2–3, §2–3, Fig. 1 PDF p. 2 §3 and p. 4 Fig. 2 PDF pp. 2–5 §3 and p. 6 Fig. 4; date visible in Fig. 3 and 4 PDF p. 4 §3; p. 6 Fig. 5 PDF p. 5 §4; pp. 4, 6 Figs. 4–5 PDF p. 4 §3; p. 7 Fig. 6 PDF p. 6 §4; p. 7 Figs. 6–7; p. 9 concluding discussion PDF pp. 7–8 §4; p. 8 Fig. 8 PDF p. 8 §4 PDF pp. 8–9 §4, eqs. (1)–(2); p. 8 Fig. 9 PDF p. 9 §4 PDF pp.2–6 §2–4, Figs.3–5 PDF pp.7–8 §4, Fig.8
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000329
@@ -1159,20 +1153,28 @@ review:
 - heading: 装置ごとの観測を、共通の月の姿へ結び付ける
   paragraphs:
   - かぐやは地形、重力、分光、レーダー、粒子・磁場を組み合わせて月を調べた。ミッションの全体像は[@P000168]、地下探査の装置と観測方法は[@P000276]を入口にできる。
-  - LALTの全球地形[@P000169]と、リレー衛星を使った裏側重力場[@P000170]は、地殻厚の推定[@P000180]へつながる。画像から得られる形と、重力から推定する内部構造を重ねる研究の流れである。
+  - LALTの全球地形[@P000169]は、地殻厚の推定[@P000180]へつながる。画像から得られる形と、重力から推定する内部構造を重ねる研究の流れである。
+  - Namikiらは、リレー衛星を介した4ウェイドップラーと測距・既往追跡データから、軌道と次数・位数90のSGM90dを同時に推定した。地球から見えない裏側の追跡により盆地地形に対応する環状異常を捉えたが、2007年10月–2008年4月の被覆は未完了で、次数60超には事前拘束を要し、北側には観測空白が残る。重力・地形の比較は裏側盆地の支持状態や中心質量の解釈へつながった。[@P000170]
 - heading: 保存データの再解析で、観測できる対象を広げる
   paragraphs:
   - LRSが捉えた海の地下層序[@P000181]に対し、[@P000176]は表面からの散乱を計算し、小規模な地下エコー候補を探している。分光データの比較では、放射輝度[@P000277]、測光補正[@P000278]、反射率[@P000279]を分けて読むと、機器間の違いを追いやすい。
-  - PACEでは太陽風陽子の反射[@P000184]と月起源イオン[@P000185]が観測対象となった。地球起源酸素[@P000177]、月周辺のC・N・Oイオンの日変化[@P000179]へと対象が広がり、表面と周囲のプラズマを結ぶ研究に使われている。
+  - PACEでは月起源イオン[@P000185]が観測対象となった。地球起源酸素[@P000177]、月周辺のC・N・Oイオンの日変化[@P000179]へと対象が広がり、表面と周囲のプラズマを結ぶ研究に使われている。
+  - Saito et al. (2008)は、月面側と反対側を向くPACEの半球視野を使い、昼側で月へ入る太陽風と月から戻る低エネルギーイオンを区別した。前日の類似事例におけるTOF測定は戻る成分がほぼ陽子であることを示す。著者は反射陽子フラックスを元の太陽風イオンフラックスの約0.1〜1％と報告し、連続2周回の最大約5 keV/qの成分を、反射後に太陽風対流電場で加速される過程と解釈した。[@P000184]
 - heading: ミッションをまたいで観測をそろえる
   paragraphs:
   - '[@P000329]のSomBenchはKaguyaを含む4ミッションの観測を位置合わせし、クレーター・火山・極域を共通のデータで解析する入口を用意した。[@P000330]はそのデータから複数観測種と解像度を扱う共通表現を学習する。ミッション別の機器較正に加え、地理的な訓練・評価分割や観測幾何をそろえることが、再解析結果を比較する条件になる。両者は別論文のプレプリントとして扱う。'
 - heading: 観測装置から代表研究をたどる
   paragraphs:
-  - LALT（レーザー高度計）の地形観測は[@P000169]、RSATの4ウェイドップラーによる裏側重力観測は[@P000170]を入口にできる。両者を統合した地殻厚推定が[@P000180]である。TC（地形カメラ）の画像は裏側火山活動の継続期間[@P000171]、火山活動の年代・層厚[@P000182]と縦孔の形態[@P000183]を調べる。MI（多波長撮像装置）の反射スペクトルは純斜長岩の分布[@P000172]へつながる。
-  - SP（スペクトルプロファイラ）では、盆地周辺のかんらん石から深部物質の露出を検討する[@P000173]と、イルメナイトに富む場所を保存データから調べる[@P000174]をたどれる。日陰での水氷粒子候補を扱う[@P000280]も、同じ装置のスペクトルを使う研究である。GRS（ガンマ線分光計）のウラン分布とU/Th比[@P000175]は、鉱物の吸収帯とは別の観測量から地域差を調べる。
-  - LRS（月レーダーサウンダー）は地下からの反射を測る。装置・観測方法[@P000276]から海の層序[@P000181]、GRAILの質量欠損と比較したMarius Hillsの空洞候補[@P000195]、表面散乱を考慮した保存データの再解析[@P000176]へ進める。PACEの粒子観測は陽子反射[@P000184]と、IMAによる月起源イオン[@P000185]を捉える。ウェイク陽子のエネルギー変化は[@P000186]にもつながる。PACEとLMAG（月磁場観測装置）を組み合わせた研究は[@P000178]に収録している。
-  - 磁場と粒子を組み合わせる研究では、Lunar Prospectorと統合した表面磁場の復元[@P000107]が計算の基礎となり、電子加速とイオン減速を同時に測った[@P000111]は磁気異常上空の電場を制約する。低高度のPACE・LMAGを使う[@P000178]は磁気リコネクションの候補を調べており、磁場の分布から局所的な粒子加速へ論点を広げている。
+  - LALT（レーザー高度計）の地形観測は[@P000169]を入口にできる。地形と重力を統合した地殻厚推定が[@P000180]である。TC（地形カメラ）の画像は火山活動の年代・層厚[@P000182]を調べる。MI（多波長撮像装置）の反射スペクトルは純斜長岩の分布[@P000172]へつながる。
+  - Haruyamaらは、かぐやTCの約10 m画像で月裏側の海のクレーターを計数し、Antoniadi、Apollo N・S、Nishina、Moscoviense東部に2.44–2.58 Gaの若いモデル年代を得た。Apollo Nでは700 m超のクレーターが3.51 Ga、500 m未満が2.49 Gaの曲線に沿い、著者は古い表面を薄い溶岩が部分的に覆ったと解釈した。TC画像による小クレーターの識別が、海の形成年代と再舗装の違いを検討する手掛かりになった。年代は生成関数・年代曲線に依存し、明瞭な二次クレーターと長い影は計数から除外している。[@P000171]
+  - Haruyama et al. (2009)は、TCの斜め視点と太陽高度の高いMI画像を比較し、Marius Hillsの蛇行溝内に直径65 mの急峻な縦穴を確認した。壁照明のTC画像では約60 mの壁深さ、底を観測したと解釈するMI画像では80–88 mの深さを推定する。周囲の地形は溶岩チューブの屋根崩壊による開口という解釈を支えるが、地下の横方向の空洞は直接撮像されていない。[@P000183]
+  - SP（スペクトルプロファイラ）では、盆地周辺のかんらん石から深部物質の露出を検討する[@P000173]をたどれる。日陰での水氷粒子候補を扱う[@P000280]も、同じ装置のスペクトルを使う研究である。
+  - かぐやGRSの高いエネルギー分解能を生かし、U系列の1764.5 keV線とTh系列の2614.5 keV線を別々にフィットして、Uの全球分布図を作成した。月試料に規格化せず、γ線の放出・輸送と装置応答の計算で濃度を較正している。全球ではUとThがよく相関し、回帰の傾きは0.269±0.007だったが、裏側の二つの広域高地ではThが統計誤差内で一致するのに対してUの報告値は0.34±0.01と0.21±0.01 ppmだった。併記された±は全系統誤差を含む誤差予算としては示されず、−0.11 ppmのU補正案の適用も明記されない。Uの系統誤差の可能性を残しつつ、従来一様とみなされた高地の組成差を捉えた[@P000175]。
+  - Yamamoto et al. (2025)は、SPの1 µm吸収中の小さな盛り上がりと1.8 µm付近までの反射率増加を併用し、51のイルメナイト富化スペクトル観測点を抽出した。MIを70 mセルで分類し、TC地形と合わせた局所解析では、多くの候補が高地を覆う暗い火砕堆積物に対応する。ただしMIには2 µm帯がなく、ガラスとオリビンの分類には重なりが残る。（PDF pp.3,5–7,16, §§2.1–2.2,3.1,3.2.6）[@P000174]
+  - LRS（月レーダーサウンダー）は地下からの反射を測る。装置・観測方法[@P000276]から海の層序[@P000181]、GRAILの質量欠損と比較したMarius Hillsの空洞候補[@P000195]、表面散乱を考慮した保存データの再解析[@P000176]へ進める。PACEの粒子観測はIMAによる月起源イオン[@P000185]を捉える。ウェイク陽子のエネルギー変化は[@P000186]にもつながる。PACEとLMAG（月磁場観測装置）を組み合わせた研究は[@P000178]に収録している。
+  - 低高度のPACE・LMAGを使う[@P000178]は磁気リコネクションの候補を調べており、磁場の分布から局所的な粒子加速へ論点を広げている。
+  - かぐやの低高度LMAG観測は、Lunar Prospectorの観測と統合し、230領域のSVM逆解析から月面ベクトル場を求める基礎となった。平均月半径の球面上で最大全強度718 nTを推定し、Reiner Gammaの明るい模様と半径方向ゼロ付近・低～中傾斜の場との対応を示した。プラズマとの比較には、代表分解能が約1°であることと、静的な地殻場が太陽風で変形する条件を考慮する必要がある[@P000107]。
+  - Saito et al. (2012)は、2009年4月23日の昼側・南極エイトケン盆地上空約25 kmで電子加速と陽子・アルファ粒子の減速を同時に捉え、電荷当たりの約150 eV/qの変化の対応から、かぐやより上の静的な月外向き電場を推定した。対向センサーによる粒子分布の比較により、同日の13事例でも電子加速と陽子減速が比例係数0.98、相関係数0.965で対応することを示した。[@P000111]
   - かぐやのPACE/IMAは、2008年9月24日、約100 km高度でSZA 168°付近から月ウェイク深部の陽子を検出した。深部では0.1–1 keVに広がり、本文では主要部分が上向きだったと報告される。陽子信号は深部から昼側まで続き、南極付近では約3 keVに達した。Nishino et al. は、負のByが優勢な観測条件を簡略化した軌道計算から、昼側赤道域の直下点から外れた場所で散乱した陽子の一部が、自己ピックアップとラーモア運動で夜側へ回り込み、月面近くで上向きになるType-II進入を示した。陽子が南側へ偏る領域と外向き電場による電子吸収は、この観測を説明する著者の提案である。[@P000103]
 lineage:
 - title: 地形・重力から地殻構造へ
@@ -1182,7 +1184,7 @@ lineage:
     significance: LALTから全球地形を整備し、盆地や極域の形を比較する基盤を作った。
   - paper_id: P000170
     title: 月裏側の重力を測る
-    significance: リレー衛星を介した追跡で裏側重力場を制約した。
+    significance: 裏側の盆地縁に対応する環状重力異常を示し、地形補正後の中心異常からType I・IIを分けた。硬い地殻・リソスフェアによる支持、中心部の過剰補償や局所補償、表側でのより大きな変形を解釈したが、北側の観測空白と次数60超の事前拘束が残る予備モデルである。
     connection: 形状と重力という異なる観測量をそろえる
   - paper_id: P000180
     title: 地形と重力を統合する

@@ -11,7 +11,9 @@ review:
   - 候補周回機体の計算では、機体全体の電位と材料間の差動電位を分けて評価する必要がある。Parkerらの低速太陽風ウェイクのケースは約−236 Vまたは−154 Vまで負に帯電したが、差動帯電はほとんど生じなかった。実機材料の完全な再現や着陸後の地面との接触は詳述されず、既定の二次電子収率とMaxwell分布を用いた結果である。設計への適用には、非熱的分布への拡張と数値ノイズの評価が残る。[@P000024]
 - heading: 電場・中和・ブラシによる除塵
   paragraphs:
-  - '[@P000028]のEDSは、電極が作る電場と静電力・誘電泳動力で粒子を移動させる。特許には、宇宙服のダストを正負のイオンで中和した後、気流で吸い込み再帯電させて捕集する[@P000049]と、ブラシへEDS・UVを組み合わせる[@P000050]がある。周辺技術として収録した[@P000035]は、気体中の誘電体バリア放電が生む流れを使う太陽電池除塵である。作用する媒体と力を押さえると、各方式の対象環境を見分けやすい。'
+  - '[@P000028]のEDSは、電極が作る電場と静電力・誘電泳動力で粒子を移動させる。特許には、宇宙服のダストを正負のイオンで中和した後、気流で吸い込み再帯電させて捕集する[@P000049]がある。作用する媒体と力を押さえると、各方式の対象環境を見分けやすい。'
+  - RizzoらのEDS/UVブラシは、毛の間の電極、UV光源、別置きUV照射箱、制御器を組み合わせ、ブラッシングによる捕集後にブラシを清掃する構成を示した。電極列間の180°／120°の位相差、光源の搭載／別置き、制御器の内蔵／外付けを選択肢として記す。除去率や電圧・UV照射条件の測定結果はなく、毛から離れたダストの回収も今後の検証点となる。[@P000050]
+  - Ashpis（2011）は、誘電体を隔てた電極で生むDBDプラズマが周囲気体に運動量を与え、表面に沿う流れで粉体を動かす太陽電池清掃法を特許として示した。アルミナ基板・銅テープ電極とCarbondale赤色粘土の試験では、正弦波電圧で電極に平行な約7 mm幅の清浄帯を報告し、大気圧の別試験写真でも粉体の再配置を示す。透明電極・誘電体カバー、順次駆動、任意の振動補助は実装案で、火星CO₂・低圧環境での試験は未実施である。約300 V運転と省電力は期待値として述べられており、月面の真空に対しては周囲気体という条件を区別して位置づける。[@P000035]
   - '[@P000028]の透明EDSは、ガラス上のITOらせん電極を三相矩形波で駆動する。約10⁻⁶ kPaの真空中で50–75 µmのJSC-1Aを約20 mgずつ散布すると、市販太陽電池の電圧は基準の11.0–22.5%へ落ち、作動後には91.6–99.4%へ回復した。これは電極のない領域を覆った試験配置での電圧比で、発電電力や除去質量の比は報告されていない。電気系統全体へ組み込む際の電磁干渉・電磁両立性は追加解析が必要とされた。'
   - '[@P000049]の登録特許は、宇宙服上のダストの中和と、その後の回収を一つの運用へつなぐ。図2の回収器では中和粒子を再び負に帯電させて正の板に集め、床下フィルタでは濾過空気を再循環する。リングや旋回アームによる走査、施設外の梯子への仮設も例示するが、除去率・捕集率や外部真空での動作条件は示されない。比較には宇宙服に残る量と、施設内部へ入る量を分けた評価が必要になる。'
   - 電子照射で粒子を動かす[@P000164]は、宇宙服用の布と模擬レゴリスを用い、VUVの併用による除去効率の向上を測った。太陽に似た波長分布を再現し、光強度は月面より高く設定している。電極配置に加え、照射と材料の組合せも除塵の設計変数になる。
@@ -180,26 +182,38 @@ entries:
   locked_fields: []
 - paper_id: P000035
   group: removal
-  role: 気体中の除塵・特許
+  role: 気体中のDBD誘起流・特許
   summary:
-    question: 太陽電池上のダストを、電極で生む気流によって除去できるか。
-    method: 透明誘電体の両側に電極を置き、気体中の誘電体バリア放電を利用。
-    contribution: プラズマが誘起する流れでダストを動かす、大気のある環境向けの方式を提案。
+    question: 気体のある環境で、DBDが誘起する表面に沿う流れによって太陽電池上の粉体を動かし、清掃装置を電池や透明カバーへ組み込めるか。
+    method: 誘電体を隔てた電極に時間変化する電圧を加えて周囲気体に運動量を与える。アルミナ基板・銅テープ電極とCarbondale赤色粘土で試験し、透明電極・カバー、両方向流、順次駆動とセンサ制御も提案。
+    contribution: 正弦波電圧で電極に平行な約7 mm幅の清浄帯を報告し、大気圧試験写真で粉体の再配置を示した。火星大気条件は未試験で、約300 V運転・省電力は期待として記述。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000035
+      version_id: V1
+      url: https://patents.google.com/patent/US7999173B1/en
+      source_type: full_text
+      locator: PDFpp.20,23,25 cols.1,8,11
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000035
+      version_id: V1
+      url: https://patents.google.com/patent/US7999173B1/en
+      source_type: full_text
+      locator: PDFpp.23,25–29 cols.8,11–20,Figs.2–6
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000035
       version_id: V1
       url: https://patents.google.com/patent/US7999173B1/en
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDFp.29 col.19,Figs.5,5A
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000049
@@ -242,24 +256,36 @@ entries:
   group: removal
   role: EDS・UVブラシ・特許
   summary:
-    question: ブラシに集めたダストを、電場とUVで取り除けるか。
-    method: ブラシの電極とUV照射部を組み合わせ、付着粒子の除去を制御。
-    contribution: 機械的なブラッシングと電気的な除塵を組み合わせる構成を提案。
+    question: 宇宙服などの表面からダストをブラシに移した後、電場とUV照射でブラシを清掃する作業をどう組み合わせるか。
+    method: 毛の間に電極を持つブラシ、UV照射部、別置きUV照射箱、EDS制御器の構成と操作を、CAD図と請求項で提案。隣接電極列の交流位相差180°／120°、光ファイバ照射、内蔵／外付け制御器を例示。装置請求項1はUV箱を含み、方法請求項21ではUV照射を規定し、箱への挿入は従属項24–25で加える。
+    contribution: 機械的なブラッシングによる捕集と、UV帯電・電場駆動によるブラシ自体の清掃を一つの装置構成にまとめた。除去性能は数値で検証されていない。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000050
+      version_id: V1
+      url: https://patents.google.com/patent/WO2024118089A2/en
+      source_type: full_text
+      locator: PDF pp3–4 [0004]–[0005]; pp12–13 [0043]; p22 Fig4
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000050
+      version_id: V1
+      url: https://patents.google.com/patent/WO2024118089A2/en
+      source_type: full_text
+      locator: PDF pp8–13 [0034]–[0043]; pp19–22 Fig1–4; p16 claim21; p14 claims1,4–5; pp16–17 claims21–25
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000050
       version_id: V1
       url: https://patents.google.com/patent/WO2024118089A2/en
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF p4 [0006]–[0011]; pp10–13 [0036]–[0043]; p14 claim1; p16 claim21
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000164

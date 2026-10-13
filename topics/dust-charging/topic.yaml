@@ -563,38 +563,39 @@ entries:
   locked_fields: []
 - paper_id: P000166
   group: emission
-  role: Apollo 17粒子の電子衝撃帯電
+  role: 実月試料と模擬土の電子衝撃帯電・複数平衡
   summary:
-    question: 実月試料と模擬粒子では、電子照射による帯電がどう異なるか。
-    method: Apollo 17・MLS-I・JSC-1の単粒子へ20–90 eVの電子を照射し、電荷を測定。
-    contribution: Apollo 17の二次電子収率は両模擬試料の中間で、MLS-Iに近いと推定した。
+    question: Apollo 17の実月試料とMLS-1・JSC-1は、電子ビームと背景熱プラズマによる単粒子の帯電と二次電子放出の推定でどの程度一致するか。
+    method: 真空乾燥・ふるい分けで半径29±3 μmにそろえたApollo 17・MLS-1・JSC-1粒子を、アルゴン熱プラズマと20–90 eVの電子ビーム中へ落下させ、各エネルギー設定で50回の電荷をファラデーカップで測定した。二峰性は二群に分け、試料ごとのプラズマ測定値と電流釣合いモデルから有効二次電子収率を適合した。
+    contribution: この条件のApollo 17試料の二次電子収率は両模擬土の中間でMLS-1に近いと推定した。E_M=400 eVを全試料に仮定した有効最大収率はMLS-1が3.1±0.1、JSC-1が3.4±0.1、Apollo 17が3.2±0.1。低エネルギー測定だけでは最大収率とピークエネルギーを一意に分けられず、二峰性電荷分布を二つの安定平衡として扱った。
   evidence_by_item:
     question:
     - paper_id: P000166
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/98je00486
+      source_type: full_text
+      locator: PDF p.3, §3 PDF pp.1–2, §2, Fig.1 PDF pp.2–3, §2, Fig.2, Eqs.(1)–(2) PDF pp.3–4, Eqs.(3)–(6) PDF pp.3–4, §3, Figs.3–4 PDF p.4, Eq.(6), Fig.5 caption PDF pp.4–5, §3, Figs.5–6 PDF pp.4–5, §3, Fig.7, §4 PDF p.2, Fig.2; p.5, Fig.7 caption PDF p.3, §3/Fig.3 PDF pp.4–5, Figs.4–7
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000166
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/98je00486
+      source_type: full_text
+      locator: PDF p.3, §3 PDF pp.1–2, §2, Fig.1 PDF pp.2–3, §2, Fig.2, Eqs.(1)–(2) PDF pp.3–4, Eqs.(3)–(6) PDF pp.3–4, §3, Figs.3–4 PDF p.4, Eq.(6), Fig.5 caption PDF pp.4–5, §3, Figs.5–6 PDF pp.4–5, §3, Fig.7, §4 PDF p.2, Fig.2; p.5, Fig.7 caption PDF p.3, §3/Fig.3 PDF pp.4–5, Figs.4–7
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000166
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/98je00486
+      source_type: full_text
+      locator: PDF p.3, §3 PDF pp.1–2, §2, Fig.1 PDF pp.2–3, §2, Fig.2, Eqs.(1)–(2) PDF pp.3–4, Eqs.(3)–(6) PDF pp.3–4, §3, Figs.3–4 PDF p.4, Eq.(6), Fig.5 caption PDF pp.4–5, §3, Figs.5–6 PDF pp.4–5, §3, Fig.7, §4 PDF p.2, Fig.2; p.5, Fig.7 caption PDF p.3, §3/Fig.3 PDF pp.4–5, Figs.4–7
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
+    recheck: false
 - paper_id: P000005
   group: emission
   role: 単粒子の光電子効率と推定収率
@@ -1593,7 +1594,8 @@ review:
   - 凝集体の見通し遮蔽に電子放出を組み込んだMa et al. (2013)は、ヘリオシース条件で構成粒子数・疎密と正電荷のべき則を示し、5–10 nmの構成粒子の二次電子放出の粒径効果も残るとした。一方、1 AUの光電子放出の例では、光電子供給を変えると同質量球より電荷が大きくも小さくもなり、帯電履歴中の符号も異なる。形状による放出電子の再捕集と、外へ逃げる量を対応させて読む必要がある。光電子の数値比較には、原稿内の式と供給率の不一致が残る。[@P000240]
 - heading: 材料の電子放出を、粉体と孤立粒子で比べる
   paragraphs:
-  - 月試料の光電子放出[@P000001]、二次電子放出[@P000150]、両者を扱う[@P000243]は、帯電モデルへ入れる材料特性の基礎となる。[@P000021]と[@P000166]は月試料・模擬粒子の電子照射帯電を比較した。
+  - 月試料の光電子放出[@P000001]、二次電子放出[@P000150]、両者を扱う[@P000243]は、帯電モデルへ入れる材料特性の基礎となる。[@P000021]は月試料・模擬粒子の電子照射帯電を比較した。
+  - Horányiらは、乾燥して半径29±3 μmにそろえたApollo 17・MLS-1・JSC-1粒子を、背景熱プラズマと20–90 eV電子ビームにさらし、各設定で50回の電荷を測定した。二峰性の分布を二つの安定平衡として扱い、電流釣合いへの適合からApollo試料の有効二次電子収率は両模擬土の中間でMLS-1に近いと推定した。ただし低エネルギー測定だけでは最大収率とピークエネルギーを別々に決められない[@P000166]。
   - '[@P000265]は真空中の導体粒子が孤立照射で正、光電子放出面の近くで負になる符号差を測った。[@P000005]は月ダストの負に帯電した単粒子へUVを当て、電荷減少から効率を求めた。吸収光子当たりの収率には中性極限への外挿と光吸収モデルが入るため、直接測る電荷・効率と区別する。月試料の平衡電位や付着面からの離脱をこの実験だけで確定することはできない。'
   - '[@P000007]は表面近くの光電子シースと飛翔中の粒子を計算した。強い放出では、[@P000155]の空間電荷制限と[@P000156]の逆シースが電位分布の比較に役立つ。'
   - Sheehanらは、壁へ失う電子と放出電子の有限温度を含む平面SCLシース運動論を構築した。温度比5では規格化電位が0.51となり、著者が比較に用いる冷放出流体基準1.02の約半分になる。同温度極限ではシース電位がゼロへ向かうため、放出電子を常に冷たいと置く近似は低温環境で大きな差を生みうる。解析は浮遊平面・無衝突・半Maxwell放出を仮定し、球形ダストの曲率や収集軌道への適用には別途検討が必要である。[@P000089]

@@ -9,7 +9,8 @@ review:
   - Furman・Pivi（2002）は、弾性反射・再拡散・真の二次電子の収率と個別電子のエネルギースペクトルを、衝突ごとの電子数と同時エネルギー分布へ結び付けた。侵入電流に条件付けた電子数分布と合計エネルギー上限を用い、平均収率とスペクトルの整合を保つ。以前の較正で合計エネルギーのjet spectrumを個別スペクトルと取り違えた点も修正した。Cu・304鋼のパラメータは処理条件の定まった特定試料への較正例であり、三成分の排他性、全成分の余弦則、低エネルギー外挿などの仮定を伴う。[@P000091]
 - heading: 月試料を粉体・孤立粒子・軌道観測で比べる
   paragraphs:
-  - 月試料の光電子・二次電子放出を扱う[@P000243]に加え、初期測定として、[@P000150]はApollo 14の粉体を用い、放出収率とエネルギー分布を調べた。単粒子の材料比較では、[@P000166]がApollo 17・MLS-I・JSC-1の帯電を電子照射で測り、実月試料の収率がMLS-Iに近いと推定した。
+  - 月試料の光電子・二次電子放出を扱う[@P000243]に加え、初期測定として、[@P000150]はApollo 14の粉体を用い、放出収率とエネルギー分布を調べた。
+  - Horányiらは実月試料と模擬土の平衡電荷を比較し、二次電子収率を電流釣合いモデルから推定した。全試料にピークエネルギーE_M=400 eVを仮定すると、等方入射の有効最大収率はMLS-1が3.1±0.1、JSC-1が3.4±0.1、Apollo 17が3.2±0.1となる。20–90 eVの照射だけではピーク位置と高さが縮退し、法線入射の収率と約2倍の有効収率も区別する必要がある[@P000166]。
   - Vegaほかは、固定した月模擬物4試料について、全収率を測定し、放出電子50 eVの境界で後方散乱収率を分離した。Table Iの二次電子収率フィットでは、ピークは約1.4〜2.0、ピーク入射エネルギーは約430〜670 eVである。成分の放出曲線を面積比で加重するpatchモデルは全収率曲線を再現したが、密度で重量比に換算しても逆算組成はassay/EDXと一致しなかった。曲線フィットと組成同定を区別し、隣接成分領域間の相互作用を無視する仮定を添える。[@P000053]
   - Dukes and Baragiolaは、ガラス含有率3.3%のApollo 16土壌61241を粒子層として測り、総収率σ=δ+ηの本文最大値1.13と第一交差80 eVを報告した。粒子面の空隙による放出電子の再吸収と少量のガラス寄与で低い収率を説明するが、組成や粗さを独立に変えた検証ではない。40–2000 eVの分布をAr+で帯電補償すると、Ep>100 eVでピーク1.2±0.2 eVとなり、700 eVの尾部はMaxwell型よりゆっくり減衰した。式(2)の分母表記と本文の負の指数pはFig.6の減衰と整合せず、フィット式の実装には留保が残る。本文最大収率1.13とFig.4中心点約1.11の小差は、数%の測定誤差や図読取・丸めを考慮し、誤植とは断定しない。[@P000151]
   - Halekas et al. (2009)は、地球磁気圏内の月夜側で、Lunar Prospectorへ届いた二次電子ビームの電流と、電位を補正したκ分布から推定する月面入射電流を比較した。両者の比は月面の入射エネルギー分布で平均した積分収率で、分布中心は約0.45、中央値は0.48だった。等方入射・平均κ=4.5のモデルでは、垂直入射ピーク約0.5、有効ピーク約1.0に対応し、引用された実験室値の約3分の1となる。強い地殻磁場がなく明瞭なビームを測れる場所・時刻を選び、約50 eV未満の低温側は十分な加速が得られず測れなかったため、条件を越えた一律の収率にはできない。[@P000152]
@@ -29,7 +30,8 @@ review:
   - 斜入射電子ビームを使う[@P000250]は、収率が1を超える条件でビームと逆方向への粒子移動を測った。照射側と陰側で微小空洞へ届く電子が異なり、帯電差が方向性を作るという説明をPICとも比較している。再捕集を平均電荷だけでなく、粒子のどちら側へ電荷が偏るかまで扱う実験となる。
 - heading: 放電・加工では入射粒子と装置条件が効く
   paragraphs:
-  - イオン衝撃による放出を計算する[@P000157]は、イオンの運動エネルギーが材料内の電子へ移る過程と、その電子が外へ逃げる過程を追跡した。Ar・Kr・XeとW・Feの組合せを扱い、電気推進の材料・試験設備へつながる。磁気異常を模擬した[@P000116]では、二次電子の流入が正の表面電位の上昇を抑えるという説明が示されている。
+  - イオン衝撃による放出を計算する[@P000157]は、イオンの運動エネルギーが材料内の電子へ移る過程と、その電子が外へ逃げる過程を追跡した。Ar・Kr・XeとW・Feの組合せを扱い、電気推進の材料・試験設備へつながる。
+  - Yeoら（2022）は、磁気遮蔽領域の正電位を説明するため、二次電子の放出量と近傍からの輸送を併せて検討した。Yeoら（2022）の100–800 eV窒素ビーム実験は、高エネルギー側でローブの正電位がイオン停止の期待値を下回り、電子電流が増すことを示した。発生率を既存文献、二次電子熱エネルギーを5 eVとする試験粒子計算では、800 eVでローブ近傍の供給が増し、磁場と外向き表面電場の下で正味回収も増えた。機構は実測を説明する候補であり、レゴリスの収率や月面電位を直接測った結果として扱うには、材料・イオン種依存と自己無撞着な帯電応答の検証が残る。[@P000116]
   - 放電開始を扱う[@P000158]は、放出のエネルギー依存と微小ギャップの効果をPIC/MCCに入れ、絶縁破壊電圧を実験と比較した。加工形状まで含む[@P000137]は、PMMAの表面粗さに対するイオン反射・帯電・二次電子放出の寄与を分けている。この計算条件では二次電子の影響は小さく、放出の有無だけでなく、入射粒子の条件と評価する量を対応させて読むと使いやすい。
   - 容量結合RF放電の[@P000248]は、エネルギーに依存する二次電子放出とプラズマ密度の増幅を扱う。材料の放出特性を境界条件へ入れるモデルから、放出が装置内のプラズマ状態へ戻る影響まで論点を広げられる。
 - heading: 斜長石粒子の輸送から電荷モデルを制約する
@@ -654,26 +656,38 @@ entries:
   locked_fields: []
 - paper_id: P000116
   group: plasma-applications
-  role: 磁気遮蔽と二次電子の実験
+  role: イオン誘起二次電子の輸送による正帯電の制限
   summary:
-    question: 電子が遮蔽される表面では、イオン照射による正電位がどこまで上がるか。
-    method: 絶縁面下の垂直双極子に100–800 eVのイオンビームを照射し、探針で測定。
-    contribution: 高エネルギー側で正電位の上昇が抑えられ、二次電子の流入による説明を提示した。
+    question: 電子が磁化されイオンが非磁化の双極子ローブでは、100–800 eVの流れが作る正電位がどこまで上がり、高エネルギー側の電子流入を何が担うか。
+    method: 窒素プラズマ（100–800 eV、1–100 mA）を垂直双極子の上の絶縁板へ照射し、放出探針で電位、Langmuir探針で電子電流を測定。測定場を用いる試験粒子計算で上空電子とイオン誘起二次電子の侵入を比較した。
+    contribution: ローブの正電位は100–200 eVではイオンエネルギーに近づくが、400–800 eVでは下回り、電子電流も増した。測定場を与える試験粒子計算では上空電子を電場だけで引き込む説明は不十分で、近傍のイオン誘起二次電子の輸送が電位を下げる説明を支持した。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000116
+      version_id: V1
+      url: https://doi.org/10.1029/2021ja029821
+      source_type: full_text
+      locator: PDF pp. 2–3, §2, Fig. 1, Table 1 PDF pp. 3–4, §3.1, Fig. 2–3; p. 7, §4 PDF p. 4, §3.2, Fig. 4 PDF pp. 4–5, §3.3.1, Fig. 5–7 PDF pp. 5–6, §3.3.1, Fig. 8 PDF pp. 5–7, §3.3.2, Fig. 9–10 PDF pp. 5–7, §3.3.2–4, Figs. 9–10
+      checked_at: '2026-10-13'
+    method:
+    - paper_id: P000116
+      version_id: V1
+      url: https://doi.org/10.1029/2021ja029821
+      source_type: full_text
+      locator: PDF pp. 2–3, §2, Fig. 1, Table 1 PDF pp. 3–4, §3.1, Fig. 2–3; p. 7, §4 PDF p. 4, §3.2, Fig. 4 PDF pp. 4–5, §3.3.1, Fig. 5–7 PDF pp. 5–6, §3.3.1, Fig. 8 PDF pp. 5–7, §3.3.2, Fig. 9–10 PDF pp. 5–7, §3.3.2–4, Figs. 9–10
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000116
       version_id: V1
       url: https://doi.org/10.1029/2021ja029821
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      source_type: full_text
+      locator: PDF pp. 2–3, §2, Fig. 1, Table 1 PDF pp. 3–4, §3.1, Fig. 2–3; p. 7, §4 PDF p. 4, §3.2, Fig. 4 PDF pp. 4–5, §3.3.1, Fig. 5–7 PDF pp. 5–6, §3.3.1, Fig. 8 PDF pp. 5–7, §3.3.2, Fig. 9–10 PDF pp. 5–7, §3.3.2–4, Figs. 9–10
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000137
@@ -714,38 +728,39 @@ entries:
   locked_fields: []
 - paper_id: P000166
   group: lunar-materials
-  role: Apollo 17粒子の電子衝撃帯電
+  role: Apollo 17粒子と模擬土の有効二次電子収率の推定
   summary:
-    question: 実月試料と模擬粒子では、電子照射による帯電がどう異なるか。
-    method: Apollo 17・MLS-I・JSC-1の単粒子へ20–90 eVの電子を照射し、電荷を測定。
-    contribution: Apollo 17の二次電子収率は両模擬試料の中間で、MLS-Iに近いと推定した。
+    question: Apollo 17の実月試料とMLS-1・JSC-1は、電子ビームと背景熱プラズマによる単粒子の帯電と二次電子放出の推定でどの程度一致するか。
+    method: 真空乾燥・ふるい分けで半径29±3 μmにそろえたApollo 17・MLS-1・JSC-1粒子を、アルゴン熱プラズマと20–90 eVの電子ビーム中へ落下させ、各エネルギー設定で50回の電荷をファラデーカップで測定した。二峰性は二群に分け、試料ごとのプラズマ測定値と電流釣合いモデルから有効二次電子収率を適合した。
+    contribution: この条件のApollo 17試料の二次電子収率は両模擬土の中間でMLS-1に近いと推定した。E_M=400 eVを全試料に仮定した有効最大収率はMLS-1が3.1±0.1、JSC-1が3.4±0.1、Apollo 17が3.2±0.1。低エネルギー測定だけでは最大収率とピークエネルギーを一意に分けられず、二峰性電荷分布を二つの安定平衡として扱った。
   evidence_by_item:
     question:
     - paper_id: P000166
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/98je00486
+      source_type: full_text
+      locator: PDF p.3, §3 PDF pp.1–2, §2, Fig.1 PDF pp.2–3, §2, Fig.2, Eqs.(1)–(2) PDF pp.3–4, Eqs.(3)–(6) PDF pp.3–4, §3, Figs.3–4 PDF p.4, Eq.(6), Fig.5 caption PDF pp.4–5, §3, Figs.5–6 PDF pp.4–5, §3, Fig.7, §4 PDF p.2, Fig.2; p.5, Fig.7 caption PDF p.3, Eqs.(3)–(5) PDF p.4, §3/Fig.5 PDF p.5, Figs.6–7
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000166
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/98je00486
+      source_type: full_text
+      locator: PDF p.3, §3 PDF pp.1–2, §2, Fig.1 PDF pp.2–3, §2, Fig.2, Eqs.(1)–(2) PDF pp.3–4, Eqs.(3)–(6) PDF pp.3–4, §3, Figs.3–4 PDF p.4, Eq.(6), Fig.5 caption PDF pp.4–5, §3, Figs.5–6 PDF pp.4–5, §3, Fig.7, §4 PDF p.2, Fig.2; p.5, Fig.7 caption PDF p.3, Eqs.(3)–(5) PDF p.4, §3/Fig.5 PDF p.5, Figs.6–7
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000166
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/98je00486
+      source_type: full_text
+      locator: PDF p.3, §3 PDF pp.1–2, §2, Fig.1 PDF pp.2–3, §2, Fig.2, Eqs.(1)–(2) PDF pp.3–4, Eqs.(3)–(6) PDF pp.3–4, §3, Figs.3–4 PDF p.4, Eq.(6), Fig.5 caption PDF pp.4–5, §3, Figs.5–6 PDF pp.4–5, §3, Fig.7, §4 PDF p.2, Fig.2; p.5, Fig.7 caption PDF p.3, Eqs.(3)–(5) PDF p.4, §3/Fig.5 PDF p.5, Figs.6–7
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
+    recheck: false
 - paper_id: P000243
   group: lunar-materials
   role: 月試料の光電子・二次電子放出

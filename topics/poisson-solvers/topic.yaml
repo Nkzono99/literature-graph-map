@@ -5,46 +5,59 @@ question: 自由空間、部分周期、複雑形状の境界条件に応じて�
 review:
 - heading: 境界条件から解法を選ぶ
   paragraphs:
-  - 静電PICでは、粒子から求めた電荷密度をPoisson方程式へ渡し、電位と電場を計算する。ここで先に決めたいのは、計算領域の外をどう表すかである。孤立した電荷分布、周期的に繰り返す系、電位を指定した壁では、解くべき境界値問題が変わる。孤立系の古典的な検討は[@P000075]、規則格子で複数の境界条件を使い分ける実装はSailFFish（[@P000084]）が入口になる。月面の一部を切り出す場合も、面内の繰り返しと上空側の条件を、表したい空間スケールに合わせる。
+  - 実読日本語訳で、EastwoodとBrownriggは、有限に支持された源を倍長格子へ零埋めし、必要な変位範囲に打ち切ったGreen関数を用いることで、FFTの循環畳込みが物理領域の離散和と一致する仕組みを説明した。三次元POT5Aでは面ごとに変換と逆変換を進め、不要領域を捨てて主データの記憶を2N³へ、変換の演算見積りを素朴な倍長実装の約7/12へ減らす。2標本のインターレース法には源の支持領域条件があり、主・副格子法では長距離成分の粗格子近似と局在する短距離補正を組み合わせる。離散和の厳密性、連続源を格子で表す精度、古い計算機上の実測時間は条件を分けて読む必要がある。[@P000075]
+  - Saverin（2023）はSailFFishとして、矩形等間隔格子の周期・Dirichlet・Neumann問題と完全自由空間問題をCPUのFFTWおよびGPUのcuFFTで解く実装をまとめた。非同次Dirichlet/NeumannにはFD2固有値を用い、自由空間ではHockney–Eastwoodの領域倍増とHejlesenのスペクトル核を使い、2D・3Dでは2・4・6・8・10次Gaussian核も選べる。滑らかな解析解ではPSと核に応じた収束を確認し、2次元GRAD・3次元CURLも同じ収束傾向を示す。一方、この版の混合境界は未実装で、3次元自由空間検証の格子はメモリ制約から最大512³である。GPUの1～2桁の短縮は特定装置の単精度3次元周期問題でFFT・畳み込み・逆FFTを測った結果として位置づけられる。[@P000084]
 - heading: 自由空間のFFTと、多重極展開
   paragraphs:
-  - 規則格子上では、電荷密度とGreen関数の畳み込みをFFTで高速に計算できる。[@P000160]はGreen関数を実空間で切り詰める方法を示し、滑らかな電荷分布に対する自由空間電位の収束精度を高めた。[@P000083]は自由空間を解く二つの方式を比較し、Vico–Greengard–Ferrando法による電位・勾配の誤差収束の改善を示した。粒子計算では電位を微分して得る力も使うため、電位と電場の精度を併せて読むと、解法の違いが分かりやすい。
-  - 粒子同士の長距離相互作用を直接まとめるのが、高速多重極法（FMM）である。[@P000076]は遠方の多数の粒子を展開係数で表し、階層的に計算する基礎を示した。[@P000077]は粒子分布に適応させ、偏った配置へ広げている。格子の規則性を使うFFTと、空間的なまとまりを使うFMMは、電荷の置き方や欲しい出力点から比較できる。
+  - 規則格子上では、電荷密度とGreen関数の畳み込みをFFTで高速に計算できる。[@P000160]はGreen関数を実空間で切り詰める方法を示し、滑らかな電荷分布に対する自由空間電位の収束精度を高めた。粒子計算では電位を微分して得る力も使うため、電位と電場の精度を併せて読むと、解法の違いが分かりやすい。
+  - HE法の比較対象実装では、核の特異点の置換と台形則が電位と電場の精度を制限する。Zou et al.は滑らかなGaussian密度の2D・3D例でHE法とVGF法を比較し、VGFの急速な収束を示した[@P000083]。VGFは領域内の最大点間距離より大きな半径でGreen核を切断し、正則なFourier核から数値畳み込み核を作る。固定格子では各方向4Nの事前計算を一度行い、各方向2Nの反復solveに再利用できる。高次収束は密度の滑らかさに依存し、非平滑で強く不均一な分布に小さな誤差を求める場合、著者は適応的手法を推奨している。
+  - Greengard（1987）は、粒子群が作る二次元の対数ポテンシャルを多重極展開でまとめ、受け側の局所展開へ変換して子箱へ伝えるFMMを構成した。近傍は直接評価し、場は展開の解析的微分から得る。全木の箱数をO(N)に選び、展開次数と最細分箱の粒子数上限を固定できる配置では計算時間はO(N)、保存領域はO(Np)となる。VAX-8600・20項・単精度の周期モデルでは1,600粒子を6.6秒で評価し、直接法272秒と比較した。12,800粒子の60.9秒に対する約300倍の比較は、直接法の推定時間と100粒子での誤差照合に基づく。本文の導出と測定は二次元版で、三次元版は後報予定とする。[@P000076]
+  - Carrierら（1988）は、2次元の対数核に対する高速多重極法を、粒子数が閾値を超える箱だけ四分割する適応木へ拡張した。近接粒子は直接和、遠方箱は多重極・局所展開で評価し、大小の箱の相互作用を別の一覧で処理する。最小粒子間距離を機械精度より大きく保つ条件の下で、著者は固定精度なら計算量を粒子数Nに比例させると評価した。VAX-8600での強い集中分布（25,600粒子、p=17、子なし箱の上限s=30）では90.05秒で場を計算し、同論文の非適応法は2317.93秒だった。これは粒子配置への適応を示す2次元の結果で、3次元版は後の報告に委ねられている。[@P000077]
 - heading: 部分的な周期性と、正味電荷の扱い
   paragraphs:
-  - 面内の二方向を周期的にし、垂直方向を開くと、三方向周期の計算とは周期像の足し合わせ方が変わる。[@P000081]はFourier級数と積分を組み合わせ、こうした薄い領域のEwald和を高速に評価する。[@P000082]は近傍と遠方を分け、FMMに一方向・二方向・三方向の周期条件を導入した。両者は、境界条件を守りながら長距離相互作用を高速化する異なる経路になる。さらに計算領域に正味の電荷があるときは、基準となる電位やエネルギーの定義も関わる。[@P000080]は帯電壁による中性化に対応する正則化を与え、二方向周期の非中性系を扱った。
+  - 面内だけを周期反復する粒子電荷系では、開いた法線方向の境界条件とFourier積分を同時に扱う必要がある。Lindbo・TornbergのSE2Pは、中性電荷系の2P Ewald和を混合Fourier表示から導き、Gaussian分配と積分を使う粒子・格子法へつなぐ。著者が採用する遠方条件では、面内零波数は法線方向の双極子モーメントに対応する遠方電位を担い、Chebyshev補間で別に高速評価する。[@P000081]
+  - SE2PではEwald和の打切りから格子数Mを、Gaussian近似から支持点数Pを選ぶ。自由方向の逆Fourier積分には過剰標本化が必要で、N=50の中性ランダム系では法線格子Mz=6MでEq40の著者報告誤差が倍精度水準まで収束した。大系のO(N log N)は実空間の近傍数を一定にする設計条件を伴い、速度図は逆空間項の測定である。3方向周期へ拡張するslab補正法と比較する際は、遠方条件の保持と積分誤差の制御を分けて見ると研究の違いが明確になる。[@P000081]
+  - Yan・Shelleyは、カーネル独立FMMの近傍計算へ、周期Green関数から近傍像を差し引いた遠方場のM2L補正を加え、一重・二重・三重周期を扱った。演算子は源・標的配置に依存せず、近傍で得た上向き等価密度を再利用する。電荷中性や平均流指定などの整合条件を所要の周期Green関数に含め、固定精度ではO(N)の評価を保つ。LaplaceとStokes速度核の試験で基盤KIFMMに近い収束を示した。[@P000082]
+  - 正味電荷を持つ二方向周期slabでは、境界条件とともに中性化の配置を定める必要がある。Balleneggerらは発散する格子和から正味電荷の項を引き、slab上下の2枚の補償壁が内部の背景力を打ち消す処方へ対応づけた。3D Ewaldを用いるEW3DCには一様背景の放物線電位を除く補正を加え、力とエネルギーの原点依存を取り除く。[@P000080]
+  - この補正と周期像の収束は別に確認する必要がある。EW3DCの空隙誤差は面内周期長に対する空隙幅で制御され、slab厚とセル高さの比だけでは決まらない。水表面のNa⁺平均力でも、非周期の像電荷模型と二方向周期化した模型は異なるため、計算と比較模型の周期条件をそろえることが重要になる。[@P000080]
 - heading: 形状と局所解像度を、格子に反映する
   paragraphs:
   - 物体表面や細い構造の周囲では、全領域を一様に細分化する費用が大きくなる。[@P000078]は直交格子のセルを物体境界で切り分け、有限体積法の流束を通じて境界条件を与える。二次元の変係数Poisson問題で、マルチグリッドと適応格子を組み合わせた二次精度を示した。[@P000079]は非等間隔点のデータに対し、非等間隔FFT（NFFT）に基づく方法とマルチグリッドを比較する。表面形状をどう近似するか、電荷密度をどこで解像するか、場をどの位置へ戻すかを併せて考えると、PIC側の格子設計までつながる。
 - heading: 格子上FMMを、空間・時間の適応化へ進める
   paragraphs:
   - '[@P000319]はRAMSESの一様格子にFMMを実装し、孤立境界での精度とマルチグリッドに対する並列性を比較した。[@P000320]は別のプレプリントであり、AMR・適応時間刻みへ拡張する。粗密境界をまたぐ力の対称性と運動量保存が追加の課題となる。重力場を対象とするため、静電PICへ使う場合には導体・誘電体境界への対応を別に検討する。'
+- heading: 条件を対応させて文献を比べる
+  paragraphs:
+  - 粒子群の場を展開係数へまとめるFMMでは、計算木の作り方が密集分布への対応を変える。Greengard（1987）の一様細分版は二次元対数核の遠方場を局所展開へ渡し、近傍を直接和で評価した。固定精度でNに線形という評価には、全木の箱数をO(N)に選び、最細分箱の粒子数を抑える条件がある。Carrier（1988）は同じ核と展開の受け渡しを保ち、粒子数がsを超える箱だけを細分して、大小の箱間の相互作用を扱った。こちらの線形評価も、最小粒子間距離と機械精度による木の深さ上限を伴う。VAX-8600の集中分布試験では、25,600粒子、p=17、s=30で適応法90.05秒、同論文内の非適応法2317.93秒だった。[@P000076][@P000077]
+  - 周期像を含む静電ポテンシャルでは、周期方向数と遠方条件を一緒に指定する。LindboのSE2Pは三次元の1/r核を面内だけ反復し、電荷中性の下で法線方向の双極子モーメントに対応する遠方電位を選ぶ。この条件を担う面内零波数項は別に保持する。同稿が説明する三方向周期の中性系では、平均電位を零に定めて全零波数を除く。Yanの一方向周期Laplace試験も1/r核の電荷中性を課し、部分周期一般には開いた方向の条件が必要とする。格子上のSailFFishも周期解の平均を零に固定するが、表示された零モード式からは源の平均も零である必要がある。周期像の数だけでなく、どの遠方条件と電位の基準を選ぶかが、これらの解法を比べる軸になる。[@P000081][@P000082][@P000084]
+  - Stokes流では、比較する量が電荷・電位から力・速度・圧力へ変わる。静電場のスカラー1/r核に対し、Stokes速度核は点力を速度へ写す行列の核である。Yanの二重周期試験は、開いた方向の速度を有限にするため総力を零にする。三重周期では非零の総力を圧力勾配と釣り合わせられ、平均速度零を零波数の除外で指定する。核ごとの条件を含む周期Green関数から近傍像を差し引き、遠方場を局所表現へ変換するM2L演算子を事前に作って、自由空間KIFMMの近傍計算へ加えるのがYanらの構成である。零モードを除く操作を比べる際も、平均電位と平均流のどちらを選んでいるかを区別する。[@P000081][@P000082]
+  - 自由空間FFTの精度は、領域倍増と核の作り方を分けて比べる。Zou（2021）が紹介・検証するVGFは、領域内の最大点間距離より外側でGreen核を切り、零波数で正則なFourier核を作る。固定格子・核なら各方向4Nで一度準備し、反復求解を各方向2Nで行う。SailFFishはHEの領域倍増へGaussian正則化核やHejlesenのスペクトル核を組み込んでいるため、Zouの比較対象である単純な特異点置換のHEとは核が異なる。Gaussian例と滑らかなbump例は試験源・誤差尺度が違い、両稿の図から直接の速度・精度順位は決められない。SailFFishのGPUによる時間短縮は、単精度の3D周期問題でFFT・畳み込み・逆FFTを測った結果である。自由空間VGFとの比較には、共通の源・精度・測定範囲が要る。[@P000083][@P000084]
 lineage:
 - title: 自由空間のFFT
   steps:
   - paper_id: P000075
     title: 孤立系の電位を格子で求める
-    significance: 有限の格子で孤立した電荷分布を扱う解法を整理し、自由空間FFTの基礎を示した。
+    significance: 日本語訳では、有限支持の源の零埋めとGreen核の打切りを用い、倍長FFTの循環畳込みを物理領域の離散和へ対応づける仕組みを説明する。原著刊行版との照合は未確認。
   - paper_id: P000160
     title: Green関数の扱いを高精度化
     significance: 実空間で切り詰めたGreen関数を使い、滑らかな電荷分布の電位を高精度に計算した。
     connection: 自由空間の畳み込みを改良
   - paper_id: P000083
     title: 電位と電場の誤差収束を比べる
-    significance: Hockney–Eastwood法とVico–Greengard–Ferrando法を比較し、解法選択を精度から論じた。
+    significance: 滑らかなGaussian密度の二次元・三次元例で、比較したHockney–Eastwood実装とVico–Greengard–Ferrando法の電位・電場の誤差収束を比較し、密度の滑らかさを条件として解法選択を精度から論じた。
     connection: 従来法との収束精度を比較
 - title: 多重極展開と適応化
   steps:
   - paper_id: P000076
     title: 遠方の粒子をまとめて高速化
-    significance: 階層的な多重極展開を使うFMMを示し、多数の粒子間相互作用の計算量を削減した。
+    significance: 二次元の対数核を対象に、階層的な多重極展開と局所展開を使うFMMを示し、多数の粒子間相互作用の計算量を削減した。
   - paper_id: P000077
     title: 不均一な粒子分布に適応
-    significance: 粒子が集中する領域に合わせて計算を分け、偏った分布でもFMMを使えるようにした。
+    significance: 二次元の対数核で、粒子が集中する領域に合わせて計算を分け、不均一な分布へFMMを適応させた。
     connection: 一様な分布から適応的な分割へ
   - paper_id: P000082
     title: 周期像を変換演算子で扱う
-    significance: 近傍と遠方を分け、カーネル独立FMMに一方向から三方向までの周期性を導入した。
+    significance: 近傍と遠方を分け、既知の周期Green関数と整合条件を用いて、カーネル独立FMMに一方向から三方向までの周期性を導入した。
     connection: 周期境界へ広げる
 - title: 格子上FMMの一様格子から適応化へ
   steps:
@@ -83,290 +96,290 @@ groups:
 entries:
 - paper_id: P000075
   group: free-space
-  role: 孤立系のFFT解法
+  role: 孤立系FFTの厳密な離散畳込みと計算節約
   summary:
-    question: 孤立した電荷分布の電位を、有限の計算格子でどう求めるか。
-    method: 孤立系に対するPoisson方程式の数値解法を検討。
-    contribution: 自由空間の電位計算をたどる起点となる基礎文献。
+    question: 孤立境界の有限格子Poisson計算で、FFTの周期性を物理領域から除きつつ、三次元の記憶・演算をどう減らすか。
+    method: 実読日本語訳に基づく記述：有限支持の源を倍長格子へ零埋めし、必要な変位範囲に打ち切ったGreen関数の離散畳込みをFFTで計算する。三次元POT5Aは面ごとに解析・合成を進め、不要な逆変換領域を捨てる。波数空間のインターレース標本と、長距離粗格子・短距離副格子の分割も導く。
+    contribution: 実読日本語訳に基づく記述：孤立系FFTの物理領域での離散和の厳密性と、POT5Aの変換順序による節減を示す。二次元インターレース法の支持条件、局所格子の最小二乗近似を整理し、離散化の精度と計算量の比較基準を明確にする。
   evidence_by_item:
     question:
     - paper_id: P000075
-      version_id: V1
-      url: https://api.crossref.org/works/10.1016/0021-9991(79)90139-6
-      source_type: metadata
-      locator: 書誌レコード
-      checked_at: '2026-09-18'
+      version_id: VjaTranslation
+      url: https://doi.org/10.1016/0021-9991(79)90139-6
+      source_type: full_text
+      locator: 実読日本語訳（訳者・翻訳作成日・公開URL未確認）。原著刊行版V1は未読。リンクは関連原著の書誌URL。 PDF pp.5–8、式11–17・27–30; PDF pp.10–13、POT5A・表1; PDF pp.14–20、インターレース条件・局所メッシュ細分化
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000075
-      version_id: V1
-      url: https://api.crossref.org/works/10.1016/0021-9991(79)90139-6
-      source_type: metadata
-      locator: 書誌レコード
-      checked_at: '2026-09-18'
+      version_id: VjaTranslation
+      url: https://doi.org/10.1016/0021-9991(79)90139-6
+      source_type: full_text
+      locator: 実読日本語訳（訳者・翻訳作成日・公開URL未確認）。原著刊行版V1は未読。リンクは関連原著の書誌URL。 PDF pp.5–8、式11–17・27–30; PDF pp.10–13、POT5A・表1; PDF pp.14–20、インターレース条件・局所メッシュ細分化
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000075
-      version_id: V1
-      url: https://api.crossref.org/works/10.1016/0021-9991(79)90139-6
-      source_type: metadata
-      locator: 書誌レコード
-      checked_at: '2026-09-18'
+      version_id: VjaTranslation
+      url: https://doi.org/10.1016/0021-9991(79)90139-6
+      source_type: full_text
+      locator: 実読日本語訳（訳者・翻訳作成日・公開URL未確認）。原著刊行版V1は未読。リンクは関連原著の書誌URL。 PDF pp.5–8、式11–17・27–30; PDF pp.10–13、POT5A・表1; PDF pp.14–20、インターレース条件・局所メッシュ細分化
+      checked_at: '2026-10-12'
   inspection:
-    level: metadata_only
-    version_id: V1
+    level: full_text
+    version_id: VjaTranslation
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000083
   group: free-space
   role: 自由空間FFTの精度比較
   summary:
-    question: FFTによる自由空間電位と、その勾配の精度をどう高めるか。
-    method: Hockney–Eastwood法とVico–Greengard–Ferrando法の誤差収束を比較。
-    contribution: 後者が同程度の実装・計算負担で、高い精度を得られる例を示す。
+    question: 一様Cartesian格子の自由空間Poisson solveで、HEの低次精度を核の作り方の変更によってどこまで改善でき、どの滑らかさ・支持・計算条件が要るか。
+    method: 切断半径L>√dのGreen核をFourier空間で解析的に評価し、(4N)^d逆FFTで数値核を事前計算して(2N)^dへ制限・再利用するVGFを、HEとnearby value/cell average変種に比較。2D/3DのGaussian密度（σ=0.05、単位box、N=10–100）で電位最大相対誤差と電場最大絶対誤差を評価。
+    contribution: 図示した滑らかなGaussian例ではVGFの急速な収束を示し、電場最大絶対誤差はN≈50で10⁻¹⁴程度へ達する。固定格子で核を再利用すれば反復solveはHEと同じ(2N)^d格子を使える。一方、非平滑で強く不均一な密度の高精度解には適応的手法を推奨する。
   evidence_by_item:
     question:
     - paper_id: P000083
       version_id: V1
-      url: https://arxiv.org/abs/2103.08531
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2103.08531v1
+      source_type: full_text
+      locator: PDF p.1 I節（核原点処理とHE低次精度）; PDF p.2 II節・式(4)–(9)（切断・滑らかさ・事前計算と再利用）; PDF p.3 III節・Fig.1–3、p.4 Fig.4（Gaussian例）; PDF p.4 IV節末（非平滑かつ強い不均一への限定）
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000083
       version_id: V1
-      url: https://arxiv.org/abs/2103.08531
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2103.08531v1
+      source_type: full_text
+      locator: PDF p.1 I節（核原点処理とHE低次精度）; PDF p.2 II節・式(4)–(9)（切断・滑らかさ・事前計算と再利用）; PDF p.3 III節・Fig.1–3、p.4 Fig.4（Gaussian例）; PDF p.4 IV節末（非平滑かつ強い不均一への限定）
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000083
       version_id: V1
-      url: https://arxiv.org/abs/2103.08531
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2103.08531v1
+      source_type: full_text
+      locator: PDF p.1 I節（核原点処理とHE低次精度）; PDF p.2 II節・式(4)–(9)（切断・滑らかさ・事前計算と再利用）; PDF p.3 III節・Fig.1–3、p.4 Fig.4（Gaussian例）; PDF p.4 IV節末（非平滑かつ強い不均一への限定）
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000084
   group: free-space
-  role: SailFFishの実装
+  role: 境界・核・微分を選ぶ共有メモリCPU/GPU実装
   summary:
-    question: 複数の境界条件に対応する高速Poissonソルバをどう実装するか。
-    method: 規則格子と離散変換を用い、周期・Dirichlet・Neumann・自由空間を検証。
-    contribution: CPU・GPU向けのライブラリとして、電位や勾配の計算をまとめる。
+    question: 矩形等間隔格子の有界・自由空間Poisson問題を、核と境界条件を選びつつCPU/GPU上の共通FFT手順で解けるか。
+    method: 周期・Dirichlet・NeumannにはPS/FD2固有値、非同次Dirichlet/NeumannにはFD2、完全自由空間にはHockney–Eastwood領域倍増とHejlesen核を用いる。解析解による倍精度収束検証と、FFTW/cuFFTの単精度時間測定を行う。
+    contribution: 同次境界のPSは機械精度近く、FD2とGaussian自由空間核は対応する次数で収束し、2D GRAD/3D CURLも同じ傾向を示した。共有メモリCPU/GPU実装をまとめる一方、混合境界、メモリ倍増、機器依存の並列性能を制約として示す。
   evidence_by_item:
     question:
     - paper_id: P000084
       version_id: V1
-      url: https://arxiv.org/abs/2301.01145
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2301.01145v1
+      source_type: full_text
+      locator: PDF pp.3–5 §§2–2.3; pp.8–10 §3
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000084
       version_id: V1
-      url: https://arxiv.org/abs/2301.01145
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2301.01145v1
+      source_type: full_text
+      locator: PDF pp.6–8 §§2.4–2.6; pp.10–15 §§4–5
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000084
       version_id: V1
-      url: https://arxiv.org/abs/2301.01145
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://arxiv.org/abs/2301.01145v1
+      source_type: full_text
+      locator: PDF pp.11–15 Figs5–10, Table2
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: preprint
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000076
   group: multipole
   role: 高速多重極法の基礎
   summary:
-    question: 多数の粒子が作るポテンシャルと力を高速に求めるには。
-    method: 遠方の相互作用を多重極展開でまとめ、階層的に評価。
-    contribution: 粒子数に比例する計算量を目指すFMMの基礎アルゴリズムを提示。
+    question: 多数の粒子の長距離対相互作用を、指定精度で全粒子に評価する計算をどう高速化するか。
+    method: 二次元の対数核を多重極展開と局所Taylor展開で表し、四分木の上向き集約・下向き伝播で遠方場を共有する。近傍は直接和、場は解析的微分で得る。
+    contribution: 最細分箱数4ⁿをO(N)に選ぶ一様木で、固定精度かつ箱内粒子数が抑えられる配置では時間O(N)、保存領域O(Np)となるFMMを構成し、周期・同次境界の処理とVAX-8600上の数値比較を示した。
   evidence_by_item:
     question:
     - paper_id: P000076
       version_id: V1
-      url: https://users.flatironinstitute.org/~ahb/m126w12/public_html/Greengard1987JCP_Rokhlin_FMM_Coulomb_algorithm.pdf
-      source_type: abstract
-      locator: 論文冒頭の要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/0021-9991(87)90140-9
+      source_type: full_text
+      locator: PDF pp.1–3; §1
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000076
       version_id: V1
-      url: https://users.flatironinstitute.org/~ahb/m126w12/public_html/Greengard1987JCP_Rokhlin_FMM_Coulomb_algorithm.pdf
-      source_type: abstract
-      locator: 論文冒頭の要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/0021-9991(87)90140-9
+      source_type: full_text
+      locator: PDF pp.3–14; §2,§3, Lemmas2.1–2.5, Fig5, Steps1–7
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000076
       version_id: V1
-      url: https://users.flatironinstitute.org/~ahb/m126w12/public_html/Greengard1987JCP_Rokhlin_FMM_Coulomb_algorithm.pdf
-      source_type: abstract
-      locator: 論文冒頭の要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1016/0021-9991(87)90140-9
+      source_type: full_text
+      locator: PDF pp.12,15–24; Initialization, complexity/occupancy Remark,§4,§5,Table I,§6
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000077
   group: multipole
-  role: 不均一分布への適応
+  role: 粒子密度に応じた2次元適応FMM
   summary:
-    question: 粒子分布が偏っていても、FMMの効率を保つには。
-    method: 粒子の分布に合わせる適応的な多重極アルゴリズムを構成。
-    contribution: Coulomb相互作用の高速評価を、不均一な粒子分布へ広げる。
+    question: 強く不均一な粒子配置でも、2次元Coulomb（対数）ポテンシャルと場の評価費用を、固定精度で粒子数に比例させるには。
+    method: 粒子数がsを超える箱だけを四分割して空箱を除き、近接粒子を直接和、遠方を多重極・局所展開で評価する。大小の箱の相互作用を5種類の一覧へ分け、展開を木の上へ集約し局所展開を下へ伝播する。
+    contribution: 固定精度と最小粒子間距離の条件の下で、分布統計に依存しないO(N)の時間評価を示した。VAX-8600の強い集中分布（N=25,600、p=17、s=30）で90.05秒、非適応法2317.93秒という比較結果を得た。
   evidence_by_item:
     question:
     - paper_id: P000077
       version_id: V1
-      url: https://api.crossref.org/works/10.1137/0909044
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1137/0909044
+      source_type: full_text
+      locator: PDF頁1–2、§1
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000077
       version_id: V1
-      url: https://api.crossref.org/works/10.1137/0909044
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1137/0909044
+      source_type: full_text
+      locator: PDF頁5–11、§3.1–3.4、Figs. 3–5
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000077
       version_id: V1
-      url: https://api.crossref.org/works/10.1137/0909044
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1137/0909044
+      source_type: full_text
+      locator: PDF頁11–13、§3.5、式(21)–(23)、Table 3；頁17–18、Appendix
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000080
   group: periodic
-  role: 非中性スラブの境界条件
+  role: 非中性slabの補償・境界条件とエネルギー基準
   summary:
-    question: 二方向が周期的な系に正味の電荷があるとき、エネルギーをどう定義するか。
-    method: 両側の帯電壁による中性化に対応する正則化を導入。
-    contribution: 二次元周期系の力とエネルギーを整合的に計算し、格子和などで検証。
+    question: 二方向周期slabに正味電荷があるとき、力と帯電エネルギーの基準をどうそろえるか。
+    method: 格子和の発散項を引き、内部の背景力がゼロとなる2枚の帯電壁に対応づける。EW3DCには3D中性化背景を除くbccを加える。
+    contribution: 原点に依存しない力・エネルギーを導き、正方格子のMadelung値、2粒子力、水表面のNa⁺平均力で検証した。
   evidence_by_item:
     question:
     - paper_id: P000080
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.3216473
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.3216473
+      source_type: full_text
+      locator: PDF pp.2–4, Sec.II, Eqs.9–21
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000080
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.3216473
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.3216473
+      source_type: full_text
+      locator: PDF pp.3–6, Secs.II–III, Eqs.9,17,28–30
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000080
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.3216473
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.3216473
+      source_type: full_text
+      locator: PDF pp.6–8, Secs.IV–V, Figs.1,2; p.9 Sec.VI
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000081
   group: periodic
   role: 二方向周期のEwald和
   summary:
-    question: 面内は周期的、面に垂直な方向は開いた系を高速に計算するには。
-    method: Fourier級数と積分を組み合わせ、粒子・格子型のEwald計算法を導出。
-    contribution: 二方向周期の静電系で、スペクトル精度と誤差要因の分離を実現。
+    question: 面内を周期反復し、法線方向を開いた中性点電荷系で、零波数の遠方条件を保ちながらCoulomb電位を高精度に高速計算するには。
+    method: 面内Fourier級数と法線方向Fourier積分から2P Ewald和を導き、Gaussian分配・混合FFT・積分で非零逆空間項を、Chebyshev補間で零波数項を評価する。Ewald打切りとGaussian近似、逆変換の過剰標本化、零波数補間を分けて調整する。
+    contribution: 2方向周期を直接扱うSE2Pを構成し、支持点数Pに対する指数型の精度改善と打切り誤差の分離を示した。N=50の中性ランダム系では、著者のEq40の誤差指標がMz=6Mで倍精度水準へ収束する。近傍数を一定にする大系設計でO(N log N)となる。
   evidence_by_item:
     question:
     - paper_id: P000081
-      version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.4704177
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/abs/1109.1667v1
+      source_type: full_text
+      locator: PDF pp1–3, §§1–1.2; p8遠方条件; pp25–26 AppendixA。
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000081
-      version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.4704177
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/abs/1109.1667v1
+      source_type: full_text
+      locator: PDF pp9–11, §§3.1–3.2, Eqs17–22; pp17–18 §3.4。
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000081
-      version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.4704177
-      source_type: abstract
-      locator: 出版社提供のCrossref要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/abs/1109.1667v1
+      source_type: full_text
+      locator: PDF pp18–22, §§3.5–4.1, Eqs34–40, Fig8; pp23–24 §4.3, Fig10。
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000082
   group: periodic
   role: FMMへの周期条件の導入
   summary:
-    question: FMMで一方向から三方向までの周期条件をどう指定するか。
-    method: 近傍を通常のFMMで、遠方の周期像を事前構成した変換演算子で評価。
-    contribution: カーネル独立FMMに、周期性と整合条件を満たす処理を追加。
+    question: 三次元KIFMMへ一重・二重・三重周期を、条件収束の和の順序と物理的整合条件を正しく扱いながら、どのように小さい追加費用で導入するか。
+    method: 原箱と整数ℓ層の近傍像を自由空間KIFMMで評価する。周期Green関数から近傍像の核を差し引いた遠方核を、既存のチェック面・等価面でM2L演算子へ事前変換し、近傍で求めた上向き等価密度を再利用する。ランク欠損行列は後方安定なSVD因子適用で解く。
+    contribution: 源・標的配置に依存しない遠方補正で周期性と電荷中性・平均流などの整合条件を満たす周期解へ収束させる。固定精度でO(N)評価を保ち、Laplace/Stokesの精度・時間試験で基盤KIFMM相当の収束と小さい遠方費用を示した。
   evidence_by_item:
     question:
     - paper_id: P000082
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999117308501
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/abs/1705.02043v4
+      source_type: full_text
+      locator: PDF pp.6–9, §§2.2–2.4; pp.11–16, Figures 2–4, Tables 2–3
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000082
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999117308501
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/abs/1705.02043v4
+      source_type: full_text
+      locator: PDF pp.6–9, §§2.2–2.4; pp.11–16, Figures 2–4, Tables 2–3
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000082
-      version_id: V1
-      url: https://www.sciencedirect.com/science/article/abs/pii/S0021999117308501
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      version_id: V2
+      url: https://arxiv.org/abs/1705.02043v4
+      source_type: full_text
+      locator: PDF pp.6–9, §§2.2–2.4; pp.11–16, Figures 2–4, Tables 2–3
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
-    version_id: V1
+    level: preprint
+    version_id: V2
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000078

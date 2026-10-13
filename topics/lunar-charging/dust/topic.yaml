@@ -11,7 +11,8 @@ review:
   - 月ダストの帯電を定量化するには、電子放出と粒子電荷を対応させる必要がある。[@P000021]は月試料などの帯電、[@P000037]は模擬レゴリス表面の電荷を扱う。[@P000005]は保持した月試料・JSC-1の単粒子へ3波長のUVを当て、電荷減少から光電子効率を求めた。中性極限への外挿と光吸収モデルを介する収率は、調べたサブミクロン域では小さい粒子ほど低く、大粒子で漸近する傾向を示し、材料によっても異なる。正電位の平衡例はポリスチレンで、月試料の平衡電位や離脱を直接測った結果とは区別する。
   - 真空実験の[@P000265]と[@P000266]では、導体は孤立したUV照射で正、面から出た光電子を集める層内では負に帯電した。絶縁体・模擬土には短い照射時間でも初期の接触電荷が残る。[@P000255]は接触材料と反復振動による電荷分布の変化を調べた。平均がゼロでも正負粒子が共存し、接触履歴や検出下限をそろえないと、粉体の平均を個々の粒子へ移せない。模擬粒子同士の[@P000254]も、接触相手を比較する文献となる。
   - 粉体表面の電荷を考える[@P000391]は、照射を止めた後に外部電圧で回収した粒子から、大きな負電荷を測った。UVや電子ビームによる電子再捕集と整合するが、回収・検出できる集団の正味電荷であり、照射中の局所パッチ電荷を直接測ってはいない。
-  - 電子衝撃に対しては、[@P000166]がApollo 17の単粒子と2種類の模擬粒子を20–90 eVで比較した。材料による二次電子収率の違いは模擬試料を選ぶ基準になる。光電子・二次電子放出を整理した[@P000243]も、単粒子、接触中の粒子、粒子層で電子の出入りが異なることを考える基礎となる。
+  - 光電子・二次電子放出を整理した[@P000243]も、単粒子、接触中の粒子、粒子層で電子の出入りが異なることを考える基礎となる。
+  - 粒径と乾燥処理をそろえた比較では、Apollo 17試料の電子衝撃帯電から推定する二次電子収率はMLS-1とJSC-1の中間でMLS-1に近かった。対象は半径29±3 μm、20–90 eVビームと背景熱プラズマにさらす孤立粒子である。二峰性電荷分布と複数の平衡を示す一方、低エネルギー測定で収率のピークは一意に決まらず、細粒や接触粒子層、UV照射下への一般化には追加の検証が要る[@P000166]。
   - Pacaudら（2025）の高真空VUV実験では、バイアス動員したJSC-1A粒子の電荷が約1 fCから数百fCに広がり、検出器の電圧を±2.5から±3.5 kVへ上げるとcountsが約23〜42倍増えた。電荷分布と、重力・凝集に打ち勝って入口に達する選択を併せて扱う必要がある。再落下粒子の衝突・摩擦帯電が生じ得るため、自然のVUV帯電分布や月面離脱しきい値への換算は残る課題である。 [@P000052]
   - Vegaほかは、月模擬レゴリスの固定粒子層を導電性テープへ保持し、電子照射と毎パルス間の中和によって収率曲線を得た。これは模擬物を使う帯電・付着・静電輸送の地上試験に必要な放出特性を補う。試料を中和せず照射すると全収率は約1へ低下し、帯電状態が放出応答を変えることも確認した。実月試料や多層・多孔質層への転用は未確定で、付着力・浮揚量・輸送距離を直接測定した研究ではない。[@P000053]
 - heading: 付着した粒子が離れるまで
@@ -19,7 +20,8 @@ review:
   - 離脱には、電気力が重力に加えて接触を支える凝集力を越える条件が必要になる。[@P000387]は球と平面の凝集と平均電荷配分を仮定し、小粒子側の凝集、大粒子側の重力により中間半径で必要電場が最小になると予測した。接触が解除される条件と、上向き加速度・初速を得る条件も区別する。[@P000388]では同じ形状のポリスチレン堆積をプラズマへさらし、試験した5種類で直径15 µmが最も広がった。粒径選択性はモデルと整合する一方、凝集係数は逆算値で、離脱時の鉛直電場と粒子電荷の直接測定が残る。
   - '[@P000392]は電子ビームを当てたJSC-1の捕集粒子を比較し、小粒子側が相対的に多い分布を得た。捕集・対照を別々に規格化した分布比は、絶対的な離脱確率ではない。ポリスチレン、負バイアス、熱プラズマを使う[@P000388]とは材料・帯電・接触条件が異なるため、二つの粒径傾向は条件を対応させて比較する。'
   - 月ダストの付着・凝集機構[@P000208]と技術報告[@P000209]は、接触力の独立した評価へつなぐ資料になる。遠心法[@P000210]や真空・UV条件の付着試験[@P000211]と対応させて読む。Apollo試料とJSC-1Aの三次元形状[@P000218]は、粒径・空隙・接触の幾何を与える。
-  - プラズマ中で起きる粉体の縁からの移動（[@P000026]）や電子照射による基板との帯電差（[@P000029]）は、局所電場の役割を示した。[@P000009]のpatched charge modelは粒子間の空隙に再吸収される電子を扱う。[@P000043]は浮遊モデルへ、[@P000013]は粒子と基板の隙間へと展開する。UVと付着力を扱う[@P000040]、光とプラズマを同時照射する[@P000014]も離脱条件を調べる実験となる。電荷が残る時間には導電性（[@P000010]）が効き、内部への蓄積モデル（[@P000057]）へ論点が広がる。
+  - プラズマ中で起きる粉体の縁からの移動（[@P000026]）や電子照射による基板との帯電差（[@P000029]）は、局所電場の役割を示した。[@P000009]のpatched charge modelは粒子間の空隙に再吸収される電子を扱う。[@P000013]は粒子と基板の隙間へと展開する。UVと付着力を扱う[@P000040]、光とプラズマを同時照射する[@P000014]も離脱条件を調べる実験となる。電荷が残る時間には導電性（[@P000010]）が効き、内部への蓄積モデル（[@P000057]）へ論点が広がる。
+  - 空隙帯電を組み込んだOrgerらの計算では、離脱に必要な電荷が初速を与え、その後のシース内運動が最高高度を変える。単一空隙s=2a、半径0.1・1・5 µmを3件のCME条件で比較すると、0.1 µmはシース内で加速して最大約540 mに達する一方、5 µmはシース内で上昇を止め、高度は約0.3 mに留まる。小粒子ほど離脱までの帯電が遅く、0.1 µmでは分～時間を要するため、高い到達高度と多い離脱粒子数は直結しない。著者は5 µmの高度をSurveyorの低高度horizon glowに近いと述べるが、粒子密度や輝度の一致までは示していない。[@P000043]
   - ダストの帯電では、粒子表面を越えた電子が隣接粒子に再吸収されると、両粒子を含む領域の正味電荷が変わらなくても局所的な正負電荷分離が生じる。Kim et al. (2026) は、この粒子間移動とバルク外への脱出を区別し、残った分布を地下の体積電荷源へ結ぶ枠組みを整理した。粒径・空隙・鉱物・既存電位が保持応答を変えるため、局所電場とダスト挙動を比較するにはそれらの条件も必要になる。地下帯電による浮上量や、付着力を超える粒子の離脱は今後の検証課題である。[@P000057]
   - 放出過程を除塵へ使う[@P000164]では、VUVと電子ビームを布上の模擬粒子へ同時照射した。移動開始の条件が下がる結果は、太陽に似た波長分布・月面より高い光強度の実験から得られている。
   - 外部電場を加える[@P000215]では、光電子の軌道と粒子離脱が電場の向きに応答した。[@P000216]は局所電荷のゆらぎから求めた力を付着モデルと比較するが、成否は電荷・配置・粗さ・清浄度の仮定に依存する。斜入射電子ビームの[@P000250]は、照射側と陰側の帯電差を移動方向へ結び付けた。
@@ -27,11 +29,15 @@ review:
   - Miyake et al. (2024)は、深い空洞の浅部が電子を捕集し、底部がイオンで正帯電する局所電荷分離を取り上げ、微小スケールの局所電位差がダスト運動に関わる可能性を論じた。これは既存PICの紹介に基づく研究展望であり、実際の微小空隙の電位やダスト放出量を測った報告ではない。電子放出後の再捕集、導電性、放電などによる電位差の緩和を検討しつつ、模擬月土壌の機械的な粒子運動とモデルの粒子帯電を突き合わせる方針を示している。[@P000047]
 - heading: 地平線光から、上空のダスト分布へ
   paragraphs:
-  - Surveyorの地平線光（[@P000019]）を背景に、[@P000022]は電場で加速された粒子の噴泉モデルを提案した。別の2007年会議録[@P000389]は指数減衰する電位を取り入れ、シース内で折り返す低高度解を追加した。初期電位と孤立球容量を与える条件付きの高度予測であり、凝集離脱や供給率は求めていない。[@P000042]は環境条件と浮遊の関係を扱う。
-  - 日夜境界の[@P000221]は定常・準中性ウェイクを表面の電流収支へ組み込み、滑らかな月面の鉛直電場と、付着力を省いた試験粒子の加速を計算した。地形の陰に生じる夜側向き水平電場は定性的な説明にとどまる。クレーター寸法によるシース変化を測る[@P000263]やシース中の粒子浮遊実験[@P000267]とは、場を求める手順と接触条件を対応させて比較する。
-  - LDEXの個別衝突を解析した[@P000390]は、主に半径0.3 µm以上の粒子で明け方に偏る雲と流星群時の増加を捉え、流入隕石モデルとの比較から衝突噴出物と解釈した。同じ観測キャンペーンの[@P000039]は積分電流から半径0.1
-    µmを仮定し、各境界通過時の機体速度を用いて、高度3–250 kmの日の出側で密度上限を求めた。太陽風中で約100 m⁻³、磁気圏尾部で約40 m⁻³という上限は、残る低エネルギーイオン信号までダストとして数えた値である。異なる検出方式の二つの解析であり、独立した観測の再現とは扱わない。
-  - これらの上限は測定した粒径・高度に対する制約で、高度3 km未満の局所的な移動まで確定するものではない。薄明クレーター付近の局所増加を論じる[@P000044]も、粒径・高度・地方時・地形をそろえて比較する。到達高度のモデル、離脱する粒子の供給、検出可能な密度をつなぐことが、実験と観測の照合に必要になる。
+  - '[@P000022]は電場で加速された粒子の噴泉モデルを提案した。別の2007年会議録[@P000389]は指数減衰する電位を取り入れ、シース内で折り返す低高度解を追加した。初期電位と孤立球容量を与える条件付きの高度予測であり、凝集離脱や供給率は求めていない。'
+  - Surveyor 7の地平線光では、撮像系の広がりを考慮しても20 cm以上の鉛直厚さがあり、前方散乱モデルの下で半径5–6 µm、柱粒子数約50 grains cm⁻²が推定された。太陽の部分遮蔽で輝度減衰を補正すると柱粒子数は37–84 grains cm⁻²となるが、照明曲線は観測輝度へ合わせており、増加の解釈にはその仮定が入る。著者はHG発生域の局所攪拌量を約0.03 g cm⁻² yr⁻¹と推定した一方、広い範囲での重要性と正味輸送の評価を残した。[@P000019]
+  - Örgerら（2017）は、太陽風と光電子放出による平衡帯電をDynamic Fountain Modelへ接続し、離脱後の粒子の最大高度を比較した。式の半径定義に対応させて読んだTable11では、半径0.1 μmの明暗境界高度は通常太陽風で約1.1–1.3 km、初期CMEで0.34 km、後期CMEで0.09 kmとなる。一方、直下点ではフレアを含む初期CMEが100.56 mと最大である。約100 kmへ達する表の行は半径0.01 μmであり、凝集力を超える初期離脱の条件と地平光の再現は未検証である。初期CMEの直下点など、粒径間の高度比には式との不一致が残る。 [@P000042]
+  - 日夜境界の[@P000221]は定常・準中性ウェイクを表面の電流収支へ組み込み、滑らかな月面の鉛直電場と、付着力を省いた試験粒子の加速を計算した。地形の陰に生じる夜側向き水平電場は定性的な説明にとどまる。
+  - クレーターの地形による電場の弱まりは、穴内でダストに作用する電気力の条件を考える手掛かりとなる。Wangほかは光電子を生成しない熱アルゴンプラズマで、半径1 cmの穴に対してシースが厚くなるほど内部の電位勾配が小さくなることを測った。ダストの離脱量やポンド形成を測った研究ではなく、太陽風の流れと紫外線による光電子生成を今後の実験に残している。[@P000263]
+  - Sickafoose et al. (2002)は、導電板上の負のアルゴンプラズマシースでポリスチレン球・中空ガラス球・JSC-1の浮揚を観測した。粒径のそろった球でOMLと浮揚高さを照合し、JSC-1の約0.8〜2.0 cmの高さには力釣り合いから推定した径2〜10 µmが対応する。直径10 µmのポリスチレン球への弱いUV照射では、板電位−40〜−80 Vの5条件で高さが0.11〜0.15 cm低いが、各高さ±0.10 cmの不確かさがある。板のシース形状に有意変化がないことから、著者は粒子の光電子放出による負電荷の減少と解釈した。約−30 Vより負で撹拌なしの離脱も起きるが、付着力の値は接触電位を仮定した推定である。月への比較では、浮揚の維持と表面付着を越える離脱、負のプラズマシースと日照側の光電子シースを分けて読む必要がある。[@P000267]
+  - LDEXの個別衝突を解析した[@P000390]は、主に半径0.3 µm以上の粒子で明け方に偏る雲と流星群時の増加を捉え、流入隕石モデルとの比較から衝突噴出物と解釈した。同じ観測キャンペーンの[@P000039]は積分電流から半径0.1 µmを仮定し、各境界通過時の機体速度を用いて、高度3–250 kmの日の出側で密度上限を求めた。太陽風中で約100 m⁻³、磁気圏尾部で約40 m⁻³という上限は、残る低エネルギーイオン信号までダストとして数えた値である。異なる検出方式の二つの解析であり、独立した観測の再現とは扱わない。
+  - これらの上限は測定した粒径・高度に対する制約で、高度3 km未満の局所的な移動まで確定するものではない。到達高度のモデル、離脱する粒子の供給、検出可能な密度をつなぐことが、実験と観測の照合に必要になる。
+  - Xie et al. (2020)は太陽風擾乱・磁気異常・個別衝突増加を照合して、Copernicus近傍3例とPlinius近傍2例の反復する積分電流増加を残した。半径0.1 μmを仮定した密度換算と、風下壁の強い負電位からの軌道計算は、クレーター下流側へ広がる局所ダスト噴水と整合する。ただし著者はEvent2の高度には半径0.05 μm以下を、一部の上流側信号には0.1 μmより小さい粒子を求める。Events2・3の弱い上流側二次ピークは、現手法で太陽風由来の電流背景から分離できない。表面からの静電離脱を直接確認した観測としては扱わず、選別した電流の局所ダスト雲による解釈として位置づける。[@P000044]
 - heading: 飛翔中の電荷と、離脱前の履歴
   paragraphs:
   - 粒子への捕集電流は[@P000233]の理論にさかのぼれる。[@P000094]の読了したarXiv版は、非放出・静止球の修正OMLとPICを比較し、遮蔽を解いて求める電荷と捕集電流の精度が異なることを示した。電位が近くても、孤立球容量を使った電荷が正しいとは限らない。無衝突・無磁場・電子とイオンの温度が等しい条件と電子Debye長を確認して、月面近くの放出・流れを伴う粒子へ適用する範囲を考える。
@@ -44,6 +50,9 @@ review:
   paragraphs:
   - 光電子シースと粒子運動を計算した[@P000007]は、飛翔中の電荷変化と浮遊条件を考える前段となる。動的帯電を扱う[@P000167]との比較では、表面接触の破断を別の過程として扱う。真空実験の[@P000314]・[@P000315]は、局所帯電と粒子間反発を初速・到達高度へ結び付ける。[@P000316]は射出角と粒径の分布を追加し、斜長石を使う[@P000317]は速度と直径の関係から帯電モデルを制約した。飛翔中の帯電、離脱の条件、離脱直後の速度を合わせることで、輸送計算の入力を具体化できる。[@P000217]の日照域での打ち上げ速度の評価も、この初期条件を考える文献となる。
   - '[@P000317]は350 eV電子照射下の斜長石で、粒径信号の約79%が5 µm未満であることと、細粒ほど鉛直速度の上限が高い関係を測った。複数粒子のほぼ同時検出もあり、粒子間接触の変化による連鎖的離脱を提案する。速度から換算した高さは、正の表面と薄いシースを仮定すれば約70%が5 cm未満となるが、月面30 cm未満という外挿には同じ電場・射出条件を置いている。表面電位の未測定と月の電子電流・シース長の差を保って比較する。'
+- heading: 条件を対応させて文献を比べる
+  paragraphs:
+  - 粒子が表面を離れる条件と、離れた後の運動は分けて評価する。Örgerら（2017）は太陽風・紫外線から求めた月面電位を用い、離脱後の球粒子の最大高度を電位の二乗に比例、半径の二乗に反比例する式で計算した。凝集力を越える初期離脱は計算に含めない[@P000042]。Sickafooseら（2002）は地上の負バイアス導電板上のアルゴンシースで、直径10.0±0.5 μmの球の安定浮揚高を測り、測定電位の勾配と重力の釣り合いから電荷を推定した。板からの離脱も観測し、付着力は接触粒子が板と同電位になる仮定で見積もった。弱UV照射も、板の光電子放出がプラズマ収集電流より小さい負シース条件に限られる[@P000267]。両者は、初期離脱、安定浮揚、最大到達高度という段階と、帯電・重力・接触条件を対応させて比較する必要がある[@P000042][@P000267]。
 lineage:
 - title: 飛翔中の帯電と輸送
   steps:
@@ -470,20 +479,38 @@ entries:
   locked_fields: []
 - paper_id: P000043
   group: mechanisms
-  role: 粒子間空隙と浮遊モデル
+  role: 離脱初速とシース厚による粒径差
   summary:
-    question: 粒子間の微小空隙による帯電は、明暗境界の浮遊をどう変えるか。
-    method: 表面電場と粒子間空隙内の帯電を組み込んだ数値モデルを計算。
-    contribution: 粒子スケールの帯電を加え、ターミネーター付近の離脱条件を検討。
+    question: 微小空隙で蓄えた負電荷による離脱と表面電場による飛行中の加速を組み合わせると、CME時の月の明暗境界で粒径ごとの到達高度と離脱頻度はどう変わるか。
+    method: 3件のCME（1997年2月、1998年5月、2012年3月）のOMNI・Windプラズマデータを5分間隔へ揃え、平衡電流から表面電位・電場・Debye長を計算。単一空隙s=2aで接触力と重力を超える電荷と鉛直初速を求め、半径0.1、1、5 µmの電荷・鉛直運動を10⁻⁴ s刻みで追跡した。
+    contribution: 単一空隙s=2aの計算では、3件のCMEの期間内最高高度は0.1 µmで最大約540 m、1 µmで18.22 m、5 µmで0.344 m。小粒子では電場とシース厚、大粒子では離脱時の帯電と初速が重要であり、高度増加と離脱頻度増加を分けて説明した。
   evidence_by_item:
-    question: []
-    method: []
-    contribution: []
+    question:
+    - paper_id: P000043
+      version_id: V1
+      url: https://doi.org/10.1016/j.asr.2018.05.027
+      source_type: full_text
+      locator: PDF pp. 2, 4–7, §§2.1–3; pp. 13–15, §§5–6
+      checked_at: '2026-10-13'
+    method:
+    - paper_id: P000043
+      version_id: V1
+      url: https://doi.org/10.1016/j.asr.2018.05.027
+      source_type: full_text
+      locator: PDF pp. 4–7, §§2.2–3, Eqs. (3)–(17), Tables 2–6
+      checked_at: '2026-10-13'
+    contribution:
+    - paper_id: P000043
+      version_id: V1
+      url: https://doi.org/10.1016/j.asr.2018.05.027
+      source_type: full_text
+      locator: PDF p. 6, §2.3 (s=2a); pp. 13–15, §§5–6, Tables 8–9; p. 11, §4.3 (541.6 m wording retained as ambiguity)
+      checked_at: '2026-10-13'
   inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000047
@@ -596,20 +623,38 @@ entries:
   locked_fields: []
 - paper_id: P000019
   group: transport
-  role: 地平線光の観測
+  role: 低高度粒子雲の光学制約
   summary:
-    question: Surveyorが捉えた地平線付近の発光をどう説明するか。
-    method: 月の日没付近の画像から、地平線光の空間分布を解析。
-    contribution: 低高度のダストによる散乱光という解釈を提示し、静電浮遊研究の出発点となった。
+    question: Surveyorの日没後の地平線光について、機体間で異なる輝度・鉛直幅を撮像応答と地形で説明し、光源の高さ・粒径・柱粒子数をどこまで制限できるか。
+    method: Surveyor 7・6・5（1は検出候補）の画像を、normal/open/integrationの校正・飽和・像の広がり、光源距離と未分解光源の立体角補正を考慮して解析。S7の形態と時間減衰を、大きな球の回折散乱および部分遮蔽された太陽の照明モデルで解釈した。
+    contribution: S7の非飽和像から岩上に鉛直20–30 cm程度の粒子雲を支持し、前方散乱モデルの下で粒子半径5–6 µm、柱粒子数約50 grains cm⁻²を推定した。明暗境界の強電場による浮遊を供給機構として議論するが、電場の実測や広域の正味輸送の確認は行っていない。
   evidence_by_item:
-    question: []
-    method: []
-    contribution: []
+    question:
+    - paper_id: P000019
+      version_id: V1
+      url: https://doi.org/10.1007/bf00655715
+      source_type: full_text
+      locator: 実読は22頁の刊行論文スキャン。号冒頭のFig.6は収録されておらず未読。PDF pp.1,3; §1
+      checked_at: '2026-10-13'
+    method:
+    - paper_id: P000019
+      version_id: V1
+      url: https://doi.org/10.1007/bf00655715
+      source_type: full_text
+      locator: 実読は22頁の刊行論文スキャン。号冒頭のFig.6は収録されておらず未読。PDF pp.6–13; §2–3, Eqs.(1)–(5), Figs.2–5 PDF pp.16,18–19; §4–5
+      checked_at: '2026-10-13'
+    contribution:
+    - paper_id: P000019
+      version_id: V1
+      url: https://doi.org/10.1007/bf00655715
+      source_type: full_text
+      locator: 実読は22頁の刊行論文スキャン。号冒頭のFig.6は収録されておらず未読。PDF pp.4–5,10; Eq.(1a–b), Fig.3a PDF pp.20–21; §6
+      checked_at: '2026-10-13'
   inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000022
@@ -668,44 +713,74 @@ entries:
   locked_fields: []
 - paper_id: P000042
   group: transport
-  role: 環境条件とダスト浮遊
+  role: 環境条件と離脱後のダスト高度
   summary:
-    question: 太陽風と紫外線の条件は、ダスト浮遊にどう影響するか。
-    method: 月面の電流収支と、帯電粒子に働く力を条件別に計算。
-    contribution: 宇宙環境の変動を、月面電位と粒子浮遊の条件へ結び付けた。
+    question: 太陽風の密度・温度・流速と紫外線による光電子放出は、月面電位・電場と、離脱後のダスト上昇高をどう変えるか。
+    method: 通常太陽風と1998年5月CMEを想定した5条件で平衡電流収支を解き、表面電位をDynamic Fountain Modelの半径別最大高度計算へ接続した。
+    contribution: フレアを含む初期CMEで直下点の上昇高が、衝撃波通過後で明暗境界の上昇高が最大となる条件差を示した。半径0.1 μmの明暗境界高度は約0.09–1.26 kmで、凝集力を超える初期離脱は未検証。
   evidence_by_item:
-    question: []
-    method: []
-    contribution: []
+    question:
+    - paper_id: P000042
+      version_id: V1
+      url: https://jaxa.repo.nii.ac.jp/record/3376/files/AA1630038015.pdf
+      source_type: full_text
+      locator: PDF p.7 §4・Table11
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000042
+      version_id: V1
+      url: https://jaxa.repo.nii.ac.jp/record/3376/files/AA1630038015.pdf
+      source_type: full_text
+      locator: PDF pp.2–6 §§2–3、p.7 §4.1 Eq12–14
+      checked_at: '2026-10-12'
+    contribution:
+    - paper_id: P000042
+      version_id: V1
+      url: https://jaxa.repo.nii.ac.jp/record/3376/files/AA1630038015.pdf
+      source_type: full_text
+      locator: PDF p.7 Table11、p.8 §§5–6
+      checked_at: '2026-10-12'
   inspection:
-    level: metadata_only
-    version_id: null
-    checked_by: null
-    checked_at: null
+    level: full_text
+    version_id: V1
+    checked_by: ai
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000044
   group: transport
   role: 薄明クレーター付近のダスト増加
   summary:
-    question: 薄明域のクレーター近傍で、ダストの増加は見られるか。
-    method: LDEXの5つの増加イベントを、地形と太陽風条件に対応付ける。
-    contribution: クレーター下流の粒子増加を報告し、局所的なダスト噴水での解釈を提示。
+    question: 明暗境界近傍のLDEX積分電流に、太陽風・磁気異常・微小隕石衝突だけでは説明しにくいクレーター近傍の反復増加があるか。また、地形に伴う負帯電と静電輸送で、その位置・高度を説明できるか。
+    method: 太陽天頂角80°〜100°の太陽風中のLDEX電流ピークを近傍谷の1.9倍超で抽出し、ARTEMISの太陽風条件、月地殻磁場、LDEX個別衝突イベントと照合して反復する5例を選別。SLDEM2015地形と表面帯電・dynamic fountainモデルで表面電位と粒子輸送距離を計算し、Apollo観測幾何も対応づけた。
+    contribution: Copernicusの3例とPliniusの2例で、粒径を仮定した密度が下流側と高い電子温度に偏ることを報告し、風下壁の強い負電位による局所ダスト噴水を提案した。0.1 μmの仮定だけでは一部イベントや上流側信号を説明できず、より小さい粒子と未分離の電流背景を残す。
   evidence_by_item:
-    question: []
-    method: []
+    question:
+    - paper_id: P000044
+      version_id: V1
+      url: https://doi.org/10.1029/2020GL089593
+      source_type: full_text
+      locator: PDF p. 2 §1終段・§2
+      checked_at: '2026-10-12'
+    method:
+    - paper_id: P000044
+      version_id: V1
+      url: https://doi.org/10.1029/2020GL089593
+      source_type: full_text
+      locator: PDF pp. 2–3 §2；p. 4 §2；p. 5 Fig.2
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000044
       version_id: V1
-      url: https://doi.org/10.1029/2020gl089593
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/2020GL089593
+      source_type: full_text
+      locator: PDF pp. 3–5 §2/Figs1–2；p. 7 §4
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000164
@@ -778,38 +853,39 @@ entries:
     checked_at: '2026-09-18'
 - paper_id: P000166
   group: properties
-  role: Apollo 17粒子の電子衝撃帯電
+  role: Apollo 17粒子の電子衝撃帯電と模擬土の対応
   summary:
-    question: 実月試料と模擬粒子では、電子照射による帯電がどう異なるか。
-    method: Apollo 17・MLS-I・JSC-1の単粒子へ20–90 eVの電子を照射し、電荷を測定。
-    contribution: Apollo 17の二次電子収率は両模擬試料の中間で、MLS-Iに近いと推定した。
+    question: Apollo 17の実月試料とMLS-1・JSC-1は、電子ビームと背景熱プラズマによる単粒子の帯電と二次電子放出の推定でどの程度一致するか。
+    method: 真空乾燥・ふるい分けで半径29±3 μmにそろえたApollo 17・MLS-1・JSC-1粒子を、アルゴン熱プラズマと20–90 eVの電子ビーム中へ落下させ、各エネルギー設定で50回の電荷をファラデーカップで測定した。二峰性は二群に分け、試料ごとのプラズマ測定値と電流釣合いモデルから有効二次電子収率を適合した。
+    contribution: この条件のApollo 17試料の二次電子収率は両模擬土の中間でMLS-1に近いと推定した。E_M=400 eVを全試料に仮定した有効最大収率はMLS-1が3.1±0.1、JSC-1が3.4±0.1、Apollo 17が3.2±0.1。低エネルギー測定だけでは最大収率とピークエネルギーを一意に分けられず、二峰性電荷分布を二つの安定平衡として扱った。
   evidence_by_item:
     question:
     - paper_id: P000166
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/98je00486
+      source_type: full_text
+      locator: PDF p.3, §3 PDF pp.1–2, §2, Fig.1 PDF pp.2–3, §2, Fig.2, Eqs.(1)–(2) PDF pp.3–4, Eqs.(3)–(6) PDF pp.3–4, §3, Figs.3–4 PDF p.4, Eq.(6), Fig.5 caption PDF pp.4–5, §3, Figs.5–6 PDF pp.4–5, §3, Fig.7, §4 PDF p.2, Fig.2; p.5, Fig.7 caption PDF pp.4–5, Figs.4–7/§4
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000166
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/98je00486
+      source_type: full_text
+      locator: PDF p.3, §3 PDF pp.1–2, §2, Fig.1 PDF pp.2–3, §2, Fig.2, Eqs.(1)–(2) PDF pp.3–4, Eqs.(3)–(6) PDF pp.3–4, §3, Figs.3–4 PDF p.4, Eq.(6), Fig.5 caption PDF pp.4–5, §3, Figs.5–6 PDF pp.4–5, §3, Fig.7, §4 PDF p.2, Fig.2; p.5, Fig.7 caption PDF pp.4–5, Figs.4–7/§4
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000166
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98JE00486
-      source_type: abstract
-      locator: Abstract
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1029/98je00486
+      source_type: full_text
+      locator: PDF p.3, §3 PDF pp.1–2, §2, Fig.1 PDF pp.2–3, §2, Fig.2, Eqs.(1)–(2) PDF pp.3–4, Eqs.(3)–(6) PDF pp.3–4, §3, Figs.3–4 PDF p.4, Eq.(6), Fig.5 caption PDF pp.4–5, §3, Figs.5–6 PDF pp.4–5, §3, Fig.7, §4 PDF p.2, Fig.2; p.5, Fig.7 caption PDF pp.4–5, Figs.4–7/§4
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
+    recheck: false
 - paper_id: P000167
   group: transport
   role: 離散帯電と飛翔中の電荷変化
@@ -1886,91 +1962,73 @@ entries:
       checked_at: '2026-09-22'
 - paper_id: P000263
   group: transport
-  role: クレーター寸法とシースの実験
+  role: クレーター半径に対するシース厚さと電位分布の実験
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: クレーター寸法は内部シースをどう変えるか。
-    method: 実験室プラズマで地形寸法とデバイ長の関係を変える。
-    contribution: デバイ長が地形寸法以上になると内部電場が弱まり、外部との二重層が形成されることを示した。
+    question: 半球形クレーターの半径に対する周囲のシース厚さの違いは、穴内外の電位分布と電場をどう変えるか。
+    method: 絶縁板中央に設けた半径1 cmの半球形穴を熱アルゴンプラズマに置き、フィラメント電流で密度を変えてλDe=0.1/0.2/0.5 cm、S=0.65/1.2/3 cmを比較した。放出プローブで電位を測り、中心軸電位を微分して電場を求めた。周囲の電子分布はLangmuirプローブで診断した。
+    contribution: S/Rの増加に伴って電位輪郭の地形に沿うくぼみが弱まり、穴内電位が平坦になる変化を実測した。電場の入口から底近傍への低下は著者報告値で42/65/83%。二重層に対応する電子・イオン密度の交差は極限条件への外挿に基づく著者の予想として残る。
   evidence_by_item:
     question:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF p. 2, §1 final paragraph; PDF p. 3, §2
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp. 2–3, §2; PDF p. 2, Fig. 2 caption; PDF p. 4, §3
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp. 2–4, Figs. 2–4; PDF pp. 4–5, §3 Cases 1–3 and extrapolation/items 1–3
+      checked_at: '2026-10-13'
 - paper_id: P000267
   group: transport
   role: シース中の粒子浮遊実験
   summary:
-    question: 導電面上の低密度プラズマシースで、粒子の浮遊高さを帯電理論と力の釣り合いから説明できるか。紫外線照射が浮遊高さに及ぼす影響も調べた。
-    method: アルゴンプラズマ中で、ポリスチレン球・中空ガラス球・月模擬土JSC-1を浮遊させた。プローブでシース電位を測り、観測した高さをOML帯電理論と電気力・重力の釣り合いによる計算と比較した。
-    contribution: 粒径がそろったポリスチレン球の浮遊高さは理論計算とよく一致した。紫外線で高さがわずかに下がり、光電子放出による負電荷の減少が原因として示唆された。
+    question: 負にバイアスした導電面上のアルゴンプラズマシースで、既知粒径の粒子の浮揚高さを、測定した局所電位とOML帯電・力釣り合いで説明できるか。弱UV照射と表面からの離脱も調べた。
+    method: 直径10.0 ± 0.5 µmのポリスチレン球、中空ガラス球、JSC-1を地上の低圧アルゴンで浮揚させた。プローブでシース電位を測定し、観測高さから電荷・電位を力釣り合いで逆算した値と、OML計算および安定平衡の高さを比較した。
+    contribution: ポリスチレン球の浮揚高さは板電位−40〜−80 Vで1.46〜2.20 cmへ増加し、計算と誤差範囲で一致したが、計算は一貫して高めだった。弱UVでは高さが0.11〜0.15 cm低下した（各高さ±0.10 cm）。著者は粒子の光電子放出による負電荷減少と解釈した。約−30 Vより負では撹拌なしの離脱も観測した。
   evidence_by_item:
     question:
     - paper_id: P000267
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000267
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      url: https://doi.org/10.1029/2002JA009347
       source_type: full_text
-      locator: 1. Introduction, [5]–[7]
-      checked_at: '2026-10-06'
+      locator: PDF p.2; §1 [5]–[7]
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000267
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000267
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      url: https://doi.org/10.1029/2002JA009347
       source_type: full_text
-      locator: 1. Introduction, [5]–[6]
-      checked_at: '2026-10-06'
+      locator: PDF pp.2–5,7; §§2–3.2; [6],[8]–[23],[26]
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000267
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
-      source_type: abstract
-      locator: Abstract [1], results (2)–(3)
-      checked_at: '2026-10-06'
-    - paper_id: P000267
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      url: https://doi.org/10.1029/2002JA009347
       source_type: full_text
-      locator: 3.3.1 [26]; 3.3.2 [31]–[34]; 4. Conclusions [42]–[43]
-      checked_at: '2026-10-06'
+      locator: PDF pp.6–10; §3.3; [26]–[40]; Tables 2–4; Figs.5–7
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-12'
     recheck: false
 - paper_id: P000268
   group: transport

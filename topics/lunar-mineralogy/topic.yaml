@@ -98,89 +98,71 @@ entries:
   group: composition
   role: SPアーカイブによるイルメナイト分布
   summary:
-    question: 月面でイルメナイトに富むスペクトルを示す領域はどこに分布し、どのような地質や火砕堆積物と結びつくのかを調べた。
-    method: かぐやのスペクトルプロファイラ（SP）データから、1・2 µm帯のイルメナイト特有の反射特徴を持つ地点を抽出した。多波長画像と地形モデルで各地点の地質を調べた。
-    contribution: 該当領域は月表側の衝突盆地周縁に集中し、多くが高地を覆う火砕堆積物にあった。長石質高地や南極エイトケン盆地では検出されず、TiO₂に富む海の玄武岩の分布とも一致しなかった。
+    question: 月面のイルメナイト富化を示すスペクトル候補はどこに分布し、火砕堆積物・高地・高Ti海玄武岩との層序関係をどう説明できるか。
+    method: かぐやSP Level 2Cで1 µm吸収内の1003.6 nmの小さな盛り上がりと1797.6/752.8 nm反射率比 >2.4を併用し、51観測点を抽出。MI Map 3.0を70 mセルに平均して局所スペクトルを分類し、TC DTMとLROC NAC像で地質・被覆層を読む。
+    contribution: 候補の大部分は表側の盆地周縁にあり、暗い火砕堆積物が高地物質を覆う地質と対応する。既存高Ti海の主要分布域は同じ分光特徴を示さず、その原因は鉱物混合・粒径・成熟度・Tiの相配分等の複数の説明が残る。候補分布を資源探査に使う提案だが、含有率や採掘可能質量の実測ではない。
   evidence_by_item:
     question:
     - paper_id: P000174
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JE008663
-      source_type: abstract
-      locator: Abstract, sentence 1
-      checked_at: '2026-10-06'
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JE008663
+      source_type: full_text
+      locator: PDF pp.6–9, §3.1, Figs.2–3, Table 3; PDF pp.18–19, §4.2
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000174
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JE008663
-      source_type: abstract
-      locator: Abstract, sentences 2 and 4
-      checked_at: '2026-10-06'
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JE008663
+      source_type: full_text
+      locator: PDF p.3, §2.1; PDF pp.5–6, §2.2, Tables1–2; PDF pp.6–9, §3.1, Figs.2–3, Table 3
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000174
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JE008663
-      source_type: abstract
-      locator: Abstract, sentences 3, 4 and 6
-      checked_at: '2026-10-06'
+      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JE008663
+      source_type: full_text
+      locator: PDF pp.6–9, §3.1, Figs.2–3, Table 3; PDF p.11, Fig.5, §3.2.1; PDF pp.13–17, §§3.2.3–3.2.5, Figs.7–9; PDF pp.18–19, §4.2; PDF p.19, §4.3
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-12'
     recheck: false
 - paper_id: P000175
   group: composition
-  role: GRSによるウランとU/Th比
+  role: 月面U–Th共変動と裏側高地の組成差
   summary:
-    question: 月面のウランは全球でどのように分布し、トリウムとの量比（U/Th比）は地域によって変わるのか。月の裏側の高地が組成的に均一かを調べた。
-    method: かぐやのガンマ線分光計でウラン由来の線を識別し、その強度から月面のウラン分布図を作成した。トリウムの分布と比較して、U/Th比の地域差を調べた。
-    contribution: 月全体のウラン分布図を初めて作成した。裏側ではU/Th比に有意な地域差が見られ、高地の組成が従来考えられたほど均一ではないことを示唆した。
+    question: 月面のUをThとは別に測って全球分布を描き、全球的な共変動と裏側高地のU/Thの地域差が地殻組成に何を示すか。
+    method: 2007年12月〜2008年12月のかぐやGRS観測2674時間を用い、U系列214Biの1764.5 keV線とTh系列208Tlの2614.5 keV線を干渉線からピークフィットで分離した。背景・デッドタイム・高度を補正し、放出率・輸送・幾何・検出効率の計算で濃度較正した。9°画素の分布図と広域高地の積算値を比較した。
+    contribution: Uの独立した全球分布図を作成し、全球U–Th回帰の傾き0.269±0.007と裏側東西高地のUの差を示した。東西のThは0.36±0.02と0.33±0.02 ppmで統計誤差の範囲内、Uは0.34±0.01と0.21±0.01 ppmだった。著者は地殻の不均一形成を示唆するが、Uの系統誤差と形成後の元素移動を条件として残す。
   evidence_by_item:
     question:
     - paper_id: P000175
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000175
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      url: https://doi.org/10.1029/2010gl043061
       source_type: full_text
-      locator: 1. Introduction [2]–[3]
-      checked_at: '2026-10-06'
+      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.2–3 ¶9, Figs.3–4 PDF p.4 Fig.5, ¶¶10–15
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000175
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000175
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      url: https://doi.org/10.1029/2010gl043061
       source_type: full_text
-      locator: 2. Observation and Analysis [5]–[7]
-      checked_at: '2026-10-06'
+      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.2–3 ¶9, Figs.3–4 PDF p.4 Fig.5, ¶¶10–15
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000175
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000175
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL043061
+      url: https://doi.org/10.1029/2010gl043061
       source_type: full_text
-      locator: 3.2. Relative Distributions of U and Th [12]–[13]
-      checked_at: '2026-10-06'
+      locator: PDF p.4 Fig.5, ¶10 PDF p.4 ¶¶12–13; Figs.3–4 E/W PDF pp.1–2 ¶¶5–6 PDF p.2 ¶8; p.3 Fig.3 caption; p.4 Fig.5/¶10 PDF pp.2–3 ¶9 PDF pp.2–3 ¶9, Figs.3–4 PDF p.4 Fig.5, ¶¶10–15
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-13'
     recheck: false
 - paper_id: P000277
   group: calibration
@@ -986,7 +968,8 @@ review:
 - heading: 鉱物の分布から、地殻と深部物質を考える
   paragraphs:
   - '[@P000172]はMIの斜長石吸収帯から、高純度の斜長岩の全球分布を調べた。地殻形成モデルに対する組成の制約になる。[@P000173]のかんらん石分布は、衝突盆地周辺で深部物質が露出した可能性を考える入口である。'
-  - 元素の側からは、GRSによるウラン分布とU/Th比[@P000175]が地域差を示す。SPを再解析した[@P000174]はイルメナイトに富むスペクトルと火砕堆積物の対応を調べ、鉱物分布を資源候補の検討につないでいる。
+  - UとThは表側PKTで濃集し、全球の濃度相関はR²=0.97、回帰の傾きは0.269±0.007だった。一方、裏側東高地と西高地の広域平均では、Thが0.36±0.02と0.33±0.02 ppmで統計誤差内にあるのに対し、Uの報告値は0.34±0.01と0.21±0.01 ppmと異なる。併記された±は全系統誤差を含む誤差予算としては示されず、−0.11 ppmのU補正案の適用も明記されない。著者は不均一な地殻形成の可能性を示唆するが、Uの絶対較正に関する系統誤差と形成後の元素移動を残している。全球的な元素の共変動と地域的な組成差を両立させて読む結果である[@P000175]。
+  - Yamamoto et al. (2025)のイルメナイト富化スペクトル候補は、表側の盆地周縁の火砕堆積物に多く、既存TiO₂地図で高Tiとされる海の主要分布域では同じ特徴が検出されなかった。この違いには輝石との混合、粒径、成熟度、Tiを含む他鉱物相が関係し得るため、未検出をイルメナイトの不存在へ置き換えることはできず、火砕堆積物と高Ti海の含有率の優劣も未確定である。（PDF pp.6–7,16,18–19, §§3.1,3.2.6,4.2–4.3）[@P000174]
   - 組成と地下熱環境をつなぐ[@P000337]は、Chang’e-2のマイクロ波輝度温度を地質図と比較し、Aristarchus周辺で火砕堆積物が光学・レーダー推定より広い可能性を示した。鉱物の吸収帯による表層の分布と、マイクロ波が捉える深さの熱的な性質を対応させて解釈する。
 - heading: 機器の違いをそろえてから、組成を比べる
   paragraphs:
@@ -1019,7 +1002,7 @@ lineage:
     connection: 対象鉱物と地質条件を広げる
   - paper_id: P000174
     title: 保存スペクトルを資源候補へつなぐ
-    significance: SPのイルメナイトに富む地点を地形・地質と比較した。
+    significance: 候補の大部分は表側の盆地周縁にあり、暗い火砕堆積物が高地物質を覆う地質と対応する。既存高Ti海の主要分布域は同じ分光特徴を示さず、その原因は鉱物混合・粒径・成熟度・Tiの相配分等の複数の説明が残る。候補分布を資源探査に使う提案だが、含有率や採掘可能質量の実測ではない。
     connection: 鉱物分布から堆積物の解釈へ
 - title: 粒子形状から集団の力学応答へ
   steps:

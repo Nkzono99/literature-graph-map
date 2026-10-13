@@ -26,14 +26,16 @@ review:
   paragraphs:
   - 球状ダストでは、電位によって曲がる粒子軌道が捕集電流を決める。[@P000233]の理論、球状探針の[@P000234]、有限寸法の球・円筒探針の[@P000235]が形状とシースを含む電流の基礎になる。[@P000094]の読了したarXiv版では、非放出・静止球の修正OMLが遮蔽を解いて電荷を求め、電子・イオン温度が等しい無衝突・無磁場の水素プラズマでPICと比較した。電子Debye長に対する半径比5まで電荷差は約8%以下、比10で約20%だが、電流・加熱には約37%の差もある。浮遊電位、表面電場からの電荷、捕集電流を分けて評価する必要がある。
   - 月面の光電子シース中を動く粒子へ進むと、[@P000167]は位置と電荷を連成して追跡する。非Maxwell型の電子分布を含め、電荷を連続量で扱う場合と電子1個ずつの出入りで扱う場合を比較し、希薄な条件で軌道や浮遊の成立が変わることを示した。
-  - '[@P000265]の真空実験では、導体の孤立UV照射と光電子放出面の近傍で帯電符号が逆になった。電位は測定電荷からの球形換算で、検出下限と初期接触履歴が電荷分布に効く。シース中の粒子浮遊実験[@P000267]とは、放出・捕集の配置と電場中の力を対応させて比較する。日照月面のダスト音波[@P000268]は、単粒子の軌道から集団の非線形な波動へ対象を広げる。'
+  - '[@P000265]の真空実験では、導体の孤立UV照射と光電子放出面の近傍で帯電符号が逆になった。電位は測定電荷からの球形換算で、検出下限と初期接触履歴が電荷分布に効く。日照月面のダスト音波[@P000268]は、単粒子の軌道から集団の非線形な波動へ対象を広げる。'
+  - Sickafoose et al. (2002)は、負にバイアスした導電板上のアルゴンプラズマで、測定したシース電位から導く電場とOML帯電計算を組み合わせた。直径10 µmのポリスチレン球は板電位−40〜−80 Vで1.46〜2.20 cmに浮揚し、力釣り合いの安定な交点から求めた高さと誤差範囲で一致した。ただし計算は一貫して高く、板面へのイオン電流を一定とする仮定などに課題を残す。電荷・電位の実験値も高さからの力釣り合い推定であり、測定電位・OML帯電・粒子の安定性をつなぐ検証として位置づけられる。[@P000267]
 - heading: 放出シースの基礎と、逆シースへの移行
   paragraphs:
   - '[@P000155]は電子放出を含むLangmuirシースと熱流の基礎理論に対応する。強い二次電子放出を扱う[@P000156]は、通常のDebyeシースが成立しない条件を示した。熱電子探針の[@P000343]は、電離・衝突を含め、イオン閉じ込めを伴う仮想陰極から単調な逆シースへ移る条件を調べている。放出の種類、流入電子の分布、プレシースの粒子生成・衝突条件を区別すると、各モデルの電位構造を比較しやすい。'
   - 強い二次電子放出を扱う[@P000271]は、収率の入射エネルギー依存とシース内の電子温度変化から、不安定性を理論的に説明した。定常電位の比較に加え、放出特性が電位構造の安定性へどう効くかを調べる位置づけとなる。
 - heading: 地形と宇宙機では、形状が電位障壁を変える
   paragraphs:
-  - 平面のシースを凹地へ広げる[@P000263]は、デバイ長と地形寸法の比を変え、内部電場と二重層を実験で調べた。クレーター内の[@P000264]は、膨張前線と帯電表面の間の電子雲をPoisson方程式で解く。物体のサイズ、粒子供給、非中性領域を対応させて、平面モデルとの違いを考えられる。
+  - クレーター内の[@P000264]は、膨張前線と帯電表面の間の電子雲をPoisson方程式で解く。物体のサイズ、粒子供給、非中性領域を対応させて、平面モデルとの違いを考えられる。
+  - 半球形クレーターでは、地形に沿うシースから開口をまたぐ電位分布への変化を、クレーター半径に対するシース厚さの比で整理できる。Wangほかの熱アルゴンプラズマ実験ではR=1 cmに対してS/R≈0.65、1.2、3を比較し、電位の微分から得た入口から底近傍への電場低下を著者報告値で42%、65%、83%とした。二重層に対応する密度の交差は直接測定した分布ではなく、今後の運動論的検証を要する著者の予想である。[@P000263]
   - 宇宙機を扱う[@P000251]は、非単調なシースとイオンウェイクが、隣の機体から放出された電子の到達を妨げる条件を調べた。機体寸法・電位・位置関係を電位計測の信号へ結び付ける研究であり、シースの構造を計測器の応答まで含めて読む比較対象となる。
   - DoveらはVUV照射したZr箔とNiグリッドの間に、電子のみから成る光電子層を作り、浮遊電位をグリッド基準で評価した。WangらはArプラズマ中の浮遊ステンレス鋼平板で電子衝撃による二次電子放出を調べ、総放出電流J0seと障壁を越える電流Jseを区別して、SCL・逆シースの電位分布を測った。両実験を比較するには、放出の原因、イオンの有無と到達条件、グリッドと背景プラズマという電位基準、放出量と脱出量の違いを保つ。 [@P000092][@P000093]
 lineage:
@@ -738,39 +740,39 @@ entries:
     recheck: false
 - paper_id: P000263
   group: collection
-  role: クレーター寸法とシースの実験
+  role: クレーター半径に対するシース厚さと電位分布の実験
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-22'
+    checked_at: '2026-10-13'
     recheck: false
   summary:
-    question: クレーター寸法は内部シースをどう変えるか。
-    method: 実験室プラズマで地形寸法とデバイ長の関係を変える。
-    contribution: デバイ長が地形寸法以上になると内部電場が弱まり、外部との二重層が形成されることを示した。
+    question: 半球形クレーターの半径に対する周囲のシース厚さの違いは、穴内外の電位分布と電場をどう変えるか。
+    method: 絶縁板中央に設けた半径1 cmの半球形穴を熱アルゴンプラズマに置き、フィラメント電流で密度を変えてλDe=0.1/0.2/0.5 cm、S=0.65/1.2/3 cmを比較した。放出プローブで電位を測り、中心軸電位を微分して電場を求めた。周囲の電子分布はLangmuirプローブで診断した。
+    contribution: S/Rの増加に伴って電位輪郭の地形に沿うくぼみが弱まり、穴内電位が平坦になる変化を実測した。電場の入口から底近傍への低下は著者報告値で42/65/83%。二重層に対応する電子・イオン密度の交差は極限条件への外挿に基づく著者の予想として残る。
   evidence_by_item:
     question:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF p. 2, §1 final paragraph; PDF p. 3, §2
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp. 2–3, §2; PDF p. 2, Fig. 2 caption; PDF p. 4, §3
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000263
       version_id: V1
       url: https://doi.org/10.1029/2018ja026235
-      source_type: abstract
-      locator: 公開要旨
-      checked_at: '2026-09-22'
+      source_type: full_text
+      locator: PDF pp. 2–4, Figs. 2–4; PDF pp. 4–5, §3 Cases 1–3 and extrapolation/items 1–3
+      checked_at: '2026-10-13'
 - paper_id: P000264
   group: collection
   role: クレーター内の電子雲の解析解
@@ -810,54 +812,36 @@ entries:
   group: collection
   role: シース中の粒子浮遊実験
   summary:
-    question: 導電面上の低密度プラズマシースで、粒子の浮遊高さを帯電理論と力の釣り合いから説明できるか。紫外線照射が浮遊高さに及ぼす影響も調べた。
-    method: アルゴンプラズマ中で、ポリスチレン球・中空ガラス球・月模擬土JSC-1を浮遊させた。プローブでシース電位を測り、観測した高さをOML帯電理論と電気力・重力の釣り合いによる計算と比較した。
-    contribution: 粒径がそろったポリスチレン球の浮遊高さは理論計算とよく一致した。紫外線で高さがわずかに下がり、光電子放出による負電荷の減少が原因として示唆された。
+    question: 負にバイアスした導電面上のアルゴンプラズマシースで、既知粒径の粒子の浮揚高さを、測定した局所電位とOML帯電・力釣り合いで説明できるか。弱UV照射と表面からの離脱も調べた。
+    method: 直径10.0 ± 0.5 µmのポリスチレン球、中空ガラス球、JSC-1を地上の低圧アルゴンで浮揚させた。プローブでシース電位を測定し、観測高さから電荷・電位を力釣り合いで逆算した値と、OML計算および安定平衡の高さを比較した。
+    contribution: ポリスチレン球の浮揚高さは板電位−40〜−80 Vで1.46〜2.20 cmへ増加し、計算と誤差範囲で一致したが、計算は一貫して高めだった。弱UVでは高さが0.11〜0.15 cm低下した（各高さ±0.10 cm）。著者は粒子の光電子放出による負電荷減少と解釈した。約−30 Vより負では撹拌なしの離脱も観測した。
   evidence_by_item:
     question:
     - paper_id: P000267
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000267
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      url: https://doi.org/10.1029/2002JA009347
       source_type: full_text
-      locator: 1. Introduction, [5]–[7]
-      checked_at: '2026-10-06'
+      locator: PDF p.2; §1 [5]–[7]
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000267
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
-      source_type: abstract
-      locator: Abstract [1]
-      checked_at: '2026-10-06'
-    - paper_id: P000267
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      url: https://doi.org/10.1029/2002JA009347
       source_type: full_text
-      locator: 1. Introduction, [5]–[6]
-      checked_at: '2026-10-06'
+      locator: PDF pp.2–5,7; §§2–3.2; [6],[8]–[23],[26]
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000267
       version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
-      source_type: abstract
-      locator: Abstract [1], results (2)–(3)
-      checked_at: '2026-10-06'
-    - paper_id: P000267
-      version_id: V1
-      url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2002JA009347
+      url: https://doi.org/10.1029/2002JA009347
       source_type: full_text
-      locator: 3.3.1 [26]; 3.3.2 [31]–[34]; 4. Conclusions [42]–[43]
-      checked_at: '2026-10-06'
+      locator: PDF pp.6–10; §3.3; [26]–[40]; Tables 2–4; Figs.5–7
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-10-06'
+    checked_at: '2026-10-12'
     recheck: false
 - paper_id: P000265
   group: photoemission

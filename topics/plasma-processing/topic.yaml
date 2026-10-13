@@ -9,16 +9,19 @@ review:
   - 月資源への応用を扱う[@P000245]は、SF6とC4F8のプラズマで月の海の模擬物から酸素を抽出し、鉱物の反応を比較した。半導体加工のSiO2エッチングと整合する反応機構を論じており、表面化学を資源処理へ広げる研究として位置づけられる。
 - heading: 装置全体のプラズマと、薄いRFシースをつなぐ
   paragraphs:
-  - 基板に高周波電圧を加えると、シースが時間的に変化し、粒子が表面へ届く条件も変わる。装置寸法に比べて薄いシースを扱うため、[@P000131]は電荷の出入りを追う半解析モデルを二次元の装置計算に組み込んだ。ここでは装置から得るプラズマ状態がシースへ渡り、シースの電位降下が装置側の場にも反映される。[@P000132]のハイブリッド計算は、電磁場・粒子輸送・反応を時間スケールごとに分担して結合する考え方を整理している。流体計算、粒子追跡、半解析解をどの領域で使うかは、装置条件と必要な出力に応じた選択になる。
+  - 基板に高周波電圧を加えると、シースが時間的に変化し、粒子が表面へ届く条件も変わる。[@P000132]のハイブリッド計算は、電磁場・粒子輸送・反応を時間スケールごとに分担して結合する考え方を整理している。流体計算、粒子追跡、半解析解をどの領域で使うかは、装置条件と必要な出力に応じた選択になる。
+  - Grapperhaus（1997）は、シース電荷の時間積分と多イオン種の半解析解をHPEMへ結合し、電圧降下をPoisson境界、シース運動を電子Monte Carloの反射加熱へ返した。10 mTorr Arの400 W ICP計算では、32 Vバイアスでシースを入れると電子密度最大が4.6×10¹¹から1.1×10¹² cm⁻³へ増え、バルク電位が平坦になる。同じRF電力200 Wをシースなしで与えるには124 Vが必要となる。流束の大きさは主としてICP電力で決まるが、均一性はRFバイアスにも依存し、ICPを増やす際にバイアス電圧と電力のどちらを固定するかで傾向が変わる。実験との比較はRFバイアスを加えないDC特性に限られ、Ar/Cl₂例のICP電力は本文200 Wと図10キャプション400 Wの不一致が残る。[@P000131]
   - 電極からの放出を入射エネルギーに応じて与える[@P000248]は、容量結合RF放電の密度増幅を扱う。装置から基板へ渡す粒子条件を考える際に、表面の二次電子放出もプラズマ状態を変えるという比較軸が加わる。
 - heading: 溝の形が電流収支を変え、イオンの進路を曲げる
   paragraphs:
-  - 深い溝では側壁が電子を遮り、底面に届く電子とイオンの量に差が生じる。[@P000133]はアスペクト比が大きいほど底面が正に帯電し、その電場によるイオン偏向が側壁のノッチ形成につながる過程を計算した。[@P000134]は電子温度もこの遮蔽と電位差を変えることを示しており、形状と入射分布を組にして読むとよい。SiO2の溝を扱う[@P000135]では、入射イオンのエネルギーに対して局所電位が高くなると底面への到達が妨げられ、加工停止に至る。月面空洞の文献とも、形状による粒子選別と表面電荷の再分布に着目して読み比べられる。
+  - 深い溝では側壁が電子を遮り、底面に届く電子とイオンの量に差が生じる。[@P000134]は電子温度もこの遮蔽と電位差を変えることを示しており、形状と入射分布を組にして読むとよい。SiO2の溝を扱う[@P000135]では、入射イオンのエネルギーに対して局所電位が高くなると底面への到達が妨げられ、加工停止に至る。月面空洞の文献とも、形状による粒子選別と表面電荷の再分布に着目して読み比べられる。
+  - Hwang and Giapisは、塩素高密度プラズマ中の線幅・溝幅0.5 µmの構造で、レジスト高さを変えてAR=1–4を比較した。深い溝では底面へ届く電子が減り、底面の正電位と隣接導体間の電位差が増す。端部内側壁へのイオン束はほぼ一定のまま平均入射エネルギーが上がり、10 eVの反応しきい値を含むモデルで、100%オーバーエッチのノッチが深く広くなった。漏れ電流と二次電子放出を省く厚いSiO₂での計算であり、薄いゲート酸化膜の破壊は電位からの著者の推論として読む[@P000133]。
   - 電子の遮蔽による損傷を実験で扱う[@P000230]は、パターンに覆われた電極とゲート酸化膜を使った。電子温度と溝底電流の関係は[@P000227]が計算している。[@P000228]は配線の接続・開口幅に応じたノッチ形状を説明し、[@P000229]は一様なプラズマでも底部帯電がイオンを側壁へ曲げることを示した。入射分布を与える際には、パターンの電気的接続も条件になる。
   - Hwang and Giapis (1997)は、帯電場で偏向されたイオンの直接衝突がノッチを始め、新しく露出したSiO₂の帯電による前方偏向が奥への成長を支える過程を二次元計算で示した。基準のCl₂ ECR条件で前方偏向を加えると固定オーバーエッチ時間の反応衝突数が55%増え、少数の前方散乱粒子が先端形状を補う。反応閾値を上げると同じ深さへ達する時間が増すため、表面化学や温度の変更を低減案として提案するが、本論文でその加工条件は検証していない。開口幅の飽和と接続配線の対称ノッチは既報実験との比較で確認し、局所電位の閉包や漏れ電流省略の誤差を留保した。[@P000228]
 - heading: 帯電と粗さは、加工の進行とともに変わる
   paragraphs:
-  - 加工が進めば表面形状が変わり、粒子の集まり方と局所電位も変わる。[@P000136]は帯電・エッチング速度・形状更新を結合し、高分子表面では帯電が平滑化を促す条件を示した。さらにArによるPMMA加工を扱った[@P000137]はイオン反射と電子誘起二次電子放出を加え、反射が粗さの維持に、帯電が粗さの減少に寄与すると整理した。これらの計算では粗さの指標だけでなく、反射、入射角依存の収率、材料の誘電特性を合わせて参照すると、微細構造の損傷と表面機能の調整を同じ帯電問題から考えられる。
+  - 加工が進めば表面形状が変わり、粒子の集まり方と局所電位も変わる。ArによるPMMA加工を扱った[@P000137]はイオン反射と電子誘起二次電子放出を加え、反射が粗さの維持に、帯電が粗さの減少に寄与すると整理した。これらの計算では粗さの指標だけでなく、反射、入射角依存の収率、材料の誘電特性を合わせて参照すると、微細構造の損傷と表面機能の調整を同じ帯電問題から考えられる。
+  - PMMAのAr⁺スパッタリング計算では、帯電はイオンの偏向と減速を通じて凹凸の平滑化を早める一方、平均エッチング速度を低くする。角度依存収率では平滑化によって電位も低下し、700 sの平均速度は帯電あり・なしでほぼ一致する。収率をエネルギーのみの関数とすると柱状突起の残り方に大きな差が出るが、角度依存も加えると帯電なしでも突起が消えるため差は小さい。平均イオン90 eV・電子4 eVの本条件では帯電定常時間が膜厚1 µmで約1.5 msと加工時間より十分短く、各形状で定常帯電を解いて形を更新できる。これらは粗さを増す反射などを除いた、ミクロンスケールの数値結果である。[@P000136]
 lineage:
 - title: 表面反応から微細溝の帯電へ
   steps:
@@ -37,10 +40,10 @@ lineage:
   steps:
   - paper_id: P000131
     title: RFシースを装置モデルへ組み込む
-    significance: 半解析的なシースと二次元放電モデルを結び、表面へ届く粒子流束と電位を計算した。
+    significance: 10 mTorrのAr・Ar/Cl₂計算で、薄いシースの表現が密度・電位・自己バイアスを変えることを示し、流束の大きさは主としてICP電力、均一性はバイアスと固定する制御量にも依存することを整理した。実験比較はRFバイアスなしのDC特性に限る。
   - paper_id: P000136
     title: 帯電と表面粗さを一緒に更新
-    significance: 局所電位、加工速度、形状変化を結び、平滑化と帯電の相互作用を示した。
+    significance: 帯電による側壁へのイオン偏向と谷での減速が突起の消失を早め、粗さ低下が電子遮蔽と電位を弱める循環を示した。平均除去速度は帯電で低くなるが、角度依存収率の700 sでは帯電あり・なしでほぼ一致する。角度依存収率では帯電なしでも突起が消えるため粗さの差は小さく、膜厚による帯電時間の違いは本条件の遅い形状変化に影響しない。
     connection: 入射条件から表面形状の時間発展へ
 public: true
 scope:
@@ -146,38 +149,38 @@ entries:
   locked_fields: []
 - paper_id: P000131
   group: reactor-models
-  role: RFシースと装置モデルの結合
+  role: RFシースと装置モデルの結合・制御の連成
   summary:
-    question: 薄いRFシースを、装置全体の計算にどう組み込むか。
-    method: シース電荷の時間発展と半解析解を、二次元ハイブリッドモデルに接続。
-    contribution: Ar・Ar/Cl2放電で、誘導結合電力とRFバイアスに応じた表面流束・電位を計算。
+    question: 数十µm程度のRFシースを装置格子で解像せず、装置全体の電位・電子加熱・基板流束へ自己無撞着に結びつけるにはどうするか。
+    method: 壁の各点でシース電荷の収支を時間積分し、Boltzmann電子と衝突なしの多イオン種・緩和電位を用いる局所一次元モデルから電圧降下を求め、二次元HPEMのPoisson境界と電子Monte Carloの反射加熱へ戻す。
+    contribution: 10 mTorrのAr・Ar/Cl₂計算で、薄いシースの表現が密度・電位・自己バイアスを変えることを示し、流束の大きさは主としてICP電力、均一性はバイアスと固定する制御量にも依存することを整理した。実験比較はRFバイアスなしのDC特性に限る。
   evidence_by_item:
     question:
     - paper_id: P000131
       version_id: V1
-      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.364199
+      source_type: full_text
+      locator: PDF pp.2–3、§II、Eqs.(1)–(13)、Fig.1 PDF pp.3–4、§II末尾 PDF pp.4–5、§III、Figs.2–3 PDF pp.5–6、Figs.5–6 PDF pp.6–7、Figs.7–8 PDF pp.7–8、Fig.9 PDF pp.7–8、Figs.10–12 PDF pp.2–4、§II–III PDF pp.5–8、Figs.5–12
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000131
       version_id: V1
-      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.364199
+      source_type: full_text
+      locator: PDF pp.2–3、§II、Eqs.(1)–(13)、Fig.1 PDF pp.3–4、§II末尾 PDF pp.4–5、§III、Figs.2–3 PDF pp.5–6、Figs.5–6 PDF pp.6–7、Figs.7–8 PDF pp.7–8、Fig.9 PDF pp.7–8、Figs.10–12 PDF pp.2–4、§II–III PDF pp.5–8、Figs.5–12
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000131
       version_id: V1
-      url: https://cpseg.eecs.umich.edu/pub/articles/jap_81_569_1997.pdf
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.364199
+      source_type: full_text
+      locator: PDF pp.2–3、§II、Eqs.(1)–(13)、Fig.1 PDF pp.3–4、§II末尾 PDF pp.4–5、§III、Figs.2–3 PDF pp.5–6、Figs.5–6 PDF pp.6–7、Figs.7–8 PDF pp.7–8、Fig.9 PDF pp.7–8、Figs.10–12 PDF pp.2–4、§II–III PDF pp.5–8、Figs.5–12
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000132
@@ -220,36 +223,36 @@ entries:
   group: feature-charging
   role: アスペクト比と電子の遮蔽
   summary:
-    question: 溝が深くなると、底面電位と側壁の加工はどう変わるか。
-    method: 絶縁膜上のポリシリコン構造で、粒子入射をMonte Carlo計算。
-    contribution: 底面への電子不足が正電位とイオン偏向を強め、ノッチ形成を促すと説明。
+    question: 絶縁レジスト／導電性ポリシリコン／厚いSiO₂からなる端部溝で、アスペクト比は面別電流と電位差を通じてノッチをどう変えるか。
+    method: 塩素高密度プラズマ（1×10¹² cm⁻³、Te=4 eV、Ti=0.5 eV、p<10 mTorr）からの無衝突粒子輸送、電荷再配分・Laplace場、セル除去による形状変化を結合。線幅・溝幅0.5 µm、ポリシリコン厚0.3 µm、レジスト高さでAR=1–4を比較。
+    contribution: AR=1→4で底面電子・イオン電流は約60%減るが端部内側壁イオン束はほぼ一定。底面・隣接線の電位上昇が端部線へ向かう電場と側壁入射エネルギーを増し、100%オーバーエッチのノッチを深く広くする。
   evidence_by_item:
     question:
     - paper_id: P000133
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.365616
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.365616
+      source_type: full_text
+      locator: PDF p.2 §II–III; PDF p.3 §III Figs.3–4; PDF p.5 §§III–IV Figs.6–7; PDF p.6 §V Fig.8
+      checked_at: '2026-10-12'
     method:
     - paper_id: P000133
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.365616
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.365616
+      source_type: full_text
+      locator: PDF p.2 §II–III; PDF p.3 §III Figs.3–4; PDF p.5 §§III–IV Figs.6–7; PDF p.6 §V Fig.8
+      checked_at: '2026-10-12'
     contribution:
     - paper_id: P000133
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.365616
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.365616
+      source_type: full_text
+      locator: PDF p.2 §II–III; PDF p.3 §III Figs.3–4; PDF p.5 §§III–IV Figs.6–7; PDF p.6 §V Fig.8
+      checked_at: '2026-10-12'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-12'
     recheck: false
   locked_fields: []
 - paper_id: P000134
@@ -326,38 +329,38 @@ entries:
   locked_fields: []
 - paper_id: P000136
   group: roughness-evolution
-  role: 帯電と表面粗さの相互作用
+  role: 帯電による平滑化と平均除去速度の分離
   summary:
-    question: 高分子表面の粗さと局所電位は、加工中にどう変化するか。
-    method: 帯電・エッチング速度・形状更新のモデルを結合し、入射角依存性を比較。
-    contribution: 帯電が粗さの減少を促し、平滑化に伴って帯電電位も低下する条件を示した。
+    question: Ar⁺でPMMAのミクロンスケールの凹凸を削るとき、局所帯電と表面形状はどう影響し合い、収率の角度依存と膜厚によってその影響はどう変わるか。
+    method: 正弦波状の初期表面に対し、粒子軌道・表面電荷・Laplace電位を帯電定常まで解き、局所エッチング速度とlevel set形状更新を反復する数値計算。平均イオン90 eV、電子4 eVのPMMA/Ar⁺系で、エネルギーのみ／角度・エネルギー依存収率と帯電あり／なしを比較し、膜厚0.1–10 µmと無限厚で過渡時間も調べる。
+    contribution: 帯電による側壁へのイオン偏向と谷での減速が突起の消失を早め、粗さ低下が電子遮蔽と電位を弱める循環を示した。平均除去速度は帯電で低くなるが、角度依存収率の700 sでは帯電あり・なしでほぼ一致する。角度依存収率では帯電なしでも突起が消えるため粗さの差は小さく、膜厚による帯電時間の違いは本条件の遅い形状変化に影響しない。
   evidence_by_item:
     question:
     - paper_id: P000136
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.5018313
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.5018313
+      source_type: full_text
+      locator: PDFp.5 Sec.III Fig.3 PDFp.5 Sec.III 原頁 PDFp.4 Sec.II B Eq.(1) Fig.2 PDFp.6 Sec.IV A Figs.5–6 PDFpp.7–8 Sec.IV B1 Figs.7–8 PDFpp.8–9 Sec.IV B2 Figs.9–10 PDFp.5 Sec.III PDFpp.7–9 Sec.IV B Figs.7–10 PDFp.10 Sec.V末尾
+      checked_at: '2026-10-13'
     method:
     - paper_id: P000136
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.5018313
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.5018313
+      source_type: full_text
+      locator: PDFp.5 Sec.III Fig.3 PDFp.5 Sec.III 原頁 PDFp.4 Sec.II B Eq.(1) Fig.2 PDFp.6 Sec.IV A Figs.5–6 PDFpp.7–8 Sec.IV B1 Figs.7–8 PDFpp.8–9 Sec.IV B2 Figs.9–10 PDFp.5 Sec.III PDFpp.7–9 Sec.IV B Figs.7–10 PDFp.10 Sec.V末尾
+      checked_at: '2026-10-13'
     contribution:
     - paper_id: P000136
       version_id: V1
-      url: https://api.crossref.org/works/10.1063/1.5018313
-      source_type: abstract
-      locator: 要旨
-      checked_at: '2026-09-18'
+      url: https://doi.org/10.1063/1.5018313
+      source_type: full_text
+      locator: PDFp.5 Sec.III Fig.3 PDFp.5 Sec.III 原頁 PDFp.4 Sec.II B Eq.(1) Fig.2 PDFp.6 Sec.IV A Figs.5–6 PDFpp.7–8 Sec.IV B1 Figs.7–8 PDFpp.8–9 Sec.IV B2 Figs.9–10 PDFp.5 Sec.III PDFpp.7–9 Sec.IV B Figs.7–10 PDFp.10 Sec.V末尾
+      checked_at: '2026-10-13'
   inspection:
-    level: abstract
+    level: full_text
     version_id: V1
     checked_by: ai
-    checked_at: '2026-09-18'
+    checked_at: '2026-10-13'
     recheck: false
   locked_fields: []
 - paper_id: P000137

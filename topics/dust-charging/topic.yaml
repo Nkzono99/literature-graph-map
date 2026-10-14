@@ -2,6 +2,10 @@ schema_version: 1
 topic_id: dust-charging
 title: ダスト帯電の理論と粒子実験
 question: 孤立球の電流収支から、離散電荷、凝集体、表面上の不均一帯電へ進む。
+synopsis:
+- プラズマ中の粒子電荷は、電子・イオンの捕集と電子放出の電流収支で決まる。[@P000233]に始まる捕集理論は、遮蔽を解いた修正OMLとPICの比較（[@P000094]）で適用範囲が確かめられ、浮遊電位が合っても電荷や電流が合うとは限らないことが分かっている。
+- 研究は三つの方向へ広がった。流入が離散的であることによる電荷ゆらぎ（[@P000237]、[@P000241]）、凝集体や不規則形状での見通し遮蔽と放出電子の再捕集（[@P000239]、[@P000240]）、そして月試料や模擬土の電子放出特性の測定（[@P000166]、[@P000151]）である。粉体層の収率と孤立粒子から逆算した収率は定義が異なるため、比較には放出成分と再捕捉の条件をそろえる必要がある。
+- 表面上の粒子では、空隙への電子再捕集（[@P000009]）や接触帯電（[@P000255]）が局所の電荷分布を作る。回収粒子の電荷や運動から帯電モデルを制約する実験（[@P000391]、[@P000317]）が増えているが、局所パッチ電荷と表面電位を直接測る方法は未確立である。
 review:
 - heading: 平均電流の釣り合いから、電荷のゆらぎへ進む
   paragraphs:
@@ -44,6 +48,157 @@ review:
   paragraphs:
   - '[@P000368]はEDSにイオナイザを組み込み、極性、照射タイミング、粒径、湿度などを変えて除去率と清掃速度を調べた。照射による電荷供給を調整することで、既存の表面接触や電子放出の研究に、帯電条件を能動的に選ぶ比較軸が加わる。これは気体中の清掃実験であり、月面の光電子・プラズマ環境への適用には電流源と環境条件の対応付けが必要になる。'
   - Dukes・Baragiolaは粉体層の総電子収率σ（二次電子δと後方散乱・再拡散電子ηの和）を、帯電を抑えた短時間・低電流照射で試料電流と収集電流から求めた。AbbasらはEDBに保持した孤立粒子の電荷変化率を電流モデルへ当てはめ、付着効率ηst=1を仮定し、電荷収支に合わせてビーム幅を調整して二次電子収率を逆算した。両者を比較するには、放出成分の定義、粒子電位による再捕捉、粒子位置での入射電子数の推定条件をそろえる必要がある。[@P000151][@P000153]
+comparisons:
+- id: emission-yield
+  title: 月試料・模擬土の電子放出を測る条件
+  note: 粉体層の試料電流から求める収率と、孤立粒子の電荷変化から逆算する収率は定義が異なる。放出成分の定義、粒子電位による再捕捉、入射電子数の推定条件を比較する。
+  axes:
+  - id: sample
+    title: 試料
+  - id: form
+    title: 試料の形態
+  - id: incidence
+    title: 入射条件
+  - id: measured
+    title: 測定した量
+  - id: yield
+    title: 収率の求め方
+  rows:
+  - paper_id: P000001
+    cells:
+      sample: 月試料14259,116
+      form: 粉体
+      incidence: 単色光
+      measured: 収率と放出電子の分布
+      yield: 単色光下の直接測定。太陽スペクトルと合わせて光電子分布を算出
+  - paper_id: P000150
+    cells:
+      sample: Apollo 14試料14259.116
+      form: 粉体
+      incidence: 電子 50–2000 eV
+      measured: 収率とエネルギー分布
+      yield: 直接測定。試料の帯電による放出スペクトルの変化も測定
+  - paper_id: P000243
+    cells:
+      sample: Apollo 14・15試料
+      form: 粉体
+      incidence: 光子と電子
+      measured: 放出収率と低エネルギー電子の分布
+      yield: 直接測定。太陽照射下の光電子束を導出
+  - paper_id: P000166
+    cells:
+      sample: Apollo 17・MLS-1・JSC-1（半径29±3 μm）
+      form: 落下する単粒子
+      incidence: アルゴン熱プラズマと20–90 eV電子ビーム
+      measured: ファラデーカップで測る粒子電荷（各設定50回）
+      yield: 電流釣合いモデルへの適合から有効収率を推定。低エネルギー測定ではピーク位置と高さが縮退
+  - paper_id: P000005
+    cells:
+      sample: Apollo 17・Luna 24・JSC-1
+      form: 電気力学天秤に保持した負帯電の単粒子
+      incidence: 120・140・160 nmの光
+      measured: 電荷の減少
+      yield: 入射光子当たりの効率を測り、中性極限への外挿と吸収モデルで収率を推定
+  - paper_id: P000153
+    cells:
+      sample: Apollo 11・17（有効径0.25–13.4 µm）と球形シリカ
+      form: 電気力学天秤に保持した単粒子
+      incidence: 電子 10–200 eV
+      measured: 保持電圧から求めた電荷の時系列
+      yield: 付着効率1と調整した局所流束から収率を逆算
+  - paper_id: P000151
+    cells:
+      sample: Apollo 16土壌61241
+      form: 清浄化した粉体層
+      incidence: 電子 40–2000 eV、低nAパルス
+      measured: 試料電流・収集電流からの総収率と放出分布
+      yield: 直接測定。放出分布はAr+で帯電補償
+  - paper_id: P000053
+    cells:
+      sample: LHS-1D・LHS-1・LMS-1模擬物（4試料）
+      form: 導電性テープに固定した層
+      incidence: 電子 約10 eV–5 keV、低照射量パルス、毎パルス間に中和
+      measured: 全収率と、50 eVで区分したSEY/BSEY
+      yield: 直接測定。経験式と成分patchモデルでフィット
+- id: charging-models
+  title: 粒子電荷モデルの前提
+  note: 対象の形状、電荷を平均で扱うか離散で扱うか、遮蔽・見通しの扱い、電子放出の有無、検証の方法を並べる。
+  axes:
+  - id: target
+    title: 対象
+  - id: charge
+    title: 電荷の扱い
+  - id: shielding
+    title: 遮蔽・見通し
+  - id: emission
+    title: 電子放出
+  - id: validation
+    title: 検証・比較
+  rows:
+  - paper_id: P000233
+    cells:
+      target: 球・円筒形電極
+      charge: 平均電流
+      shielding: シース内の衝突を無視した軌道運動。シース半径が電極半径より十分大きいと電流はシース半径にほぼ依存しない
+      validation: 電流と電圧の関係から粒子の速度分布を求める式
+  - paper_id: P000234
+    cells:
+      target: 球状探針（正イオン）
+      charge: 平均電流
+      shielding: シース外縁を越えてプラズマ中へ及ぶ電場が電流を決める
+      validation: 電流–電圧特性の計算
+  - paper_id: P000235
+    cells:
+      target: 球・円筒探針
+      charge: 平均電流
+      shielding: シースと準中性領域を分けず、非線形積分方程式を反復計算
+      validation: デバイ長の100倍までの半径で電流―電位特性
+  - paper_id: P000094
+    cells:
+      target: 非放出の静止球
+      charge: 平均の電荷・捕集電流・加熱
+      shielding: 遮蔽電位を解く修正OML
+      emission: なし
+      validation: 球対称PICと比較（半径と電子Debye長の比0.25–10）
+  - paper_id: P000237
+    cells:
+      target: ダスト粒子
+      charge: 電子・イオンを一個ずつ吸収する離散電荷
+      shielding: 粒子電位に依存する捕集確率
+      emission: 含めない
+      validation: 数値計算による電荷の時系列・スペクトル・分布
+  - paper_id: P000238
+    cells:
+      target: 粒子
+      charge: 電荷の確率分布（平均と分散）
+      shielding: OMLの捕集電流
+      validation: 一定条件でのガウス分布の導出。Maxwell分布以外への拡張
+  - paper_id: P000239
+    cells:
+      target: フラクタル凝集体
+      charge: 総電荷と双極子モーメント
+      shielding: 直線軌道で、凝集体内の粒子に遮られる入射を除外するOML–LOS
+      validation: 衝突時の電荷保存を仮定する計算と比較
+  - paper_id: P000240
+    cells:
+      target: PCA/CCAで作った凝集体と同質量球
+      charge: パッチの電荷と双極子
+      shielding: OML_LOS、直線入射
+      emission: 二次電子放出（ヘリオシース条件）と光電子放出（1 AU条件）。再捕集を含む
+      validation: 同質量球との比較。構成粒子数と疎密のべき則
+  - paper_id: P000241
+    cells:
+      target: 球と凝集体、単一モノマーの追加成長
+      charge: 表面パッチへ一個ずつ付着させる離散確率（Markov/Gillespie型）
+      shielding: OMLとモノマーによる見通し遮蔽
+      emission: なし（一次電子・一価イオンの捕集）
+      validation: Ar実験室プラズマと電子欠乏Hプラズマ。等価半径の球と比較
+  - paper_id: P000167
+    cells:
+      target: 光電子シース中を飛翔する粒子
+      charge: 連続と離散の帯電を軌道と連成
+      emission: 太陽スペクトルによる光電子放出、κ分布電子
+      validation: 希薄プラズマでの軌道と静止浮遊の成立を比較
 lineage:
 - title: 球の捕集から凝集体の形状へ
   steps:

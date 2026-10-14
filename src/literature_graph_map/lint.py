@@ -92,18 +92,29 @@ def summary_gaps(snapshot: Snapshot, topic_id: str | None = None) -> list[dict[s
 
 def plain_author_gaps(snapshot: Snapshot, topic_id: str | None = None) -> list[dict[str, str]]:
     """Author names written in plain text where a citation link should carry the name."""
-    sources = [
-        (key, (snapshot.paths[key] / "topic.yaml").as_posix(), snapshot.topics[key].review)
-        for key in _topic_ids(snapshot, topic_id)
-    ]
+    sources = []
+    for key in _topic_ids(snapshot, topic_id):
+        topic = snapshot.topics[key]
+        path = (snapshot.paths[key] / "topic.yaml").as_posix()
+        if topic.synopsis:
+            sources.append((key, path, "全体像", topic.synopsis))
+        sources.extend((key, path, s.heading, s.paragraphs) for s in topic.review)
+        sources.extend(
+            (
+                key,
+                path,
+                table.title,
+                [table.note, *(c for r in table.rows for c in r.cells.values())],
+            )
+            for table in topic.comparisons
+        )
     if topic_id is None and snapshot.overview is not None:
-        sources.append(("overview", "overview.yaml", snapshot.overview.review))
-    gaps = []
-    for key, path, review in sources:
-        for section in review:
-            for paragraph in section.paragraphs:
-                for match in PLAIN_AUTHOR_YEAR.findall(paragraph):
-                    gaps.append(
-                        {"topic_id": key, "path": path, "heading": section.heading, "text": match}
-                    )
-    return gaps
+        sources.extend(
+            ("overview", "overview.yaml", s.heading, s.paragraphs) for s in snapshot.overview.review
+        )
+    return [
+        {"topic_id": key, "path": path, "heading": heading, "text": match}
+        for key, path, heading, texts in sources
+        for text in texts
+        for match in PLAIN_AUTHOR_YEAR.findall(text)
+    ]

@@ -11,7 +11,9 @@
           <p class="sidebar-caption">このページ内</p>
           <ul class="section-nav" aria-label="{{ topic.title }}のページ内目次">
             {% if navigation.children %}<li><a href="#subtopics">{{ 'テーマ一覧' if is_collection else '子テーマ' }}</a></li>{% endif %}
-            {% if topic.review %}<li><a href="#review">研究の概観</a></li>{% endif %}
+            {% if topic.synopsis %}<li><a href="#synopsis">研究の全体像</a></li>{% endif %}
+            {% if topic.review %}<li><a href="#review">{{ '論点別の概観' if topic.synopsis else '研究の概観' }}</a></li>{% endif %}
+            {% if topic.comparisons %}<li><a href="#comparisons">研究の比較</a></li>{% endif %}
             {% if topic.lineage %}<li><a href="#lineage">研究の系譜</a></li>{% endif %}
             {% if not is_collection %}<li><a href="#papers">文献一覧</a></li>{% endif %}
             {% if topic.reading_notes %}<li><a href="#reading">文献をたどる</a></li>{% endif %}

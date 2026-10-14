@@ -6,6 +6,9 @@ import pytest
 from literature_graph_map.cli import main
 from literature_graph_map.lint import plain_author_gaps, review_citation_gaps, summary_gaps
 from literature_graph_map.models import (
+    Comparison,
+    ComparisonAxis,
+    ComparisonRow,
     LineageStep,
     LineageTrack,
     Overview,
@@ -44,6 +47,33 @@ def test_only_inline_paragraph_citations_count(snapshot):
     ]
     topic.reading_notes = ["補足 [@P000004]"]
     assert [gap["paper_id"] for gap in review_citation_gaps(snapshot)] == ["P000003", "P000004"]
+
+
+def test_synopsis_citations_do_not_count_toward_review_coverage(snapshot):
+    topic = snapshot.topics["demo"]
+    topic.synopsis = ["全体像 [@P000001][@P000002]。"]
+    topic.review = [ReviewSection(heading="論点", paragraphs=["詳説 [@P000001][@P000003]。"])]
+    assert [gap["paper_id"] for gap in review_citation_gaps(snapshot)] == ["P000002", "P000004"]
+
+
+def test_plain_author_names_are_reported_in_synopsis_and_comparisons(snapshot):
+    topic = snapshot.topics["demo"]
+    topic.synopsis = ["Example et al. (2001) の全体像。"]
+    topic.comparisons = [
+        Comparison(
+            id="setup",
+            title="実験条件",
+            note="Example・Sample（2002）の整理。",
+            axes=[ComparisonAxis(id="sample", title="試料")],
+            rows=[ComparisonRow(paper_id="P000003", cells={"sample": "Exampleら（2003）の試料"})],
+        )
+    ]
+    gaps = plain_author_gaps(snapshot, "demo")
+    assert [(gap["heading"], gap["text"]) for gap in gaps] == [
+        ("全体像", "Example et al. (2001)"),
+        ("実験条件", "Example・Sample（2002）"),
+        ("実験条件", "Exampleら（2003）"),
+    ]
 
 
 def test_citations_are_checked_separately_for_each_nested_topic(snapshot):

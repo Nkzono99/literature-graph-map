@@ -17,9 +17,17 @@
   <ul class="subtopic-links">{% for item in navigation.children %}<li><a href="{{ item.url }}"><span>{{ item.title }}</span><span class="nav-count">{{ item.count }}{{ 'テーマ' if item.is_collection else '件' }}</span></a>{% if is_collection %}<p>{{ item.question }}</p>{% endif %}</li>{% endfor %}</ul>
 </section>
 {% endif %}
+{% if topic.synopsis %}
+<section id="synopsis" aria-labelledby="synopsis-heading">
+  <div class="section-heading"><h2 id="synopsis-heading">研究の全体像</h2>{% if topic.review %}<a href="#review">論点別の概観へ</a>{% endif %}</div>
+  <div class="topic-review topic-synopsis">
+    {% for paragraph in topic.synopsis %}<p>{{ review_paragraph(paragraph, citations) }}</p>{% endfor %}
+  </div>
+</section>
+{% endif %}
 {% if topic.review %}
 <section id="review" aria-labelledby="review-heading">
-  <div class="section-heading"><h2 id="review-heading">研究の概観</h2></div>
+  <div class="section-heading"><h2 id="review-heading">{{ '論点別の概観' if topic.synopsis else '研究の概観' }}</h2>{% if topic.synopsis %}<span>収録文献を論点ごとに位置づける</span>{% endif %}</div>
   <div class="topic-review">
     {% for section in topic.review %}
     <section aria-labelledby="review-section-{{ loop.index }}">
@@ -28,6 +36,28 @@
     </section>
     {% endfor %}
   </div>
+</section>
+{% endif %}
+{% if topic.comparisons %}
+<section id="comparisons" aria-labelledby="comparisons-heading">
+  <div class="section-heading"><h2 id="comparisons-heading">研究の比較</h2><span>{{ topic.comparisons | length }}表</span></div>
+  <p class="lineage-intro">テーマで重要な比較軸に沿って、収録文献の条件を並べる。空欄は要点に記載のない項目。</p>
+  {% for table in topic.comparisons %}
+  <section class="comparison" id="comparison-{{ table.id }}" aria-labelledby="comparison-heading-{{ table.id }}">
+    <h3 id="comparison-heading-{{ table.id }}">{{ table.title }}</h3>
+    {% if table.note %}<p class="comparison-note">{{ table.note }}</p>{% endif %}
+    <div class="table-scroll">
+      <table class="comparison-table">
+        <thead><tr><th scope="col">文献</th>{% for axis in table.axes %}<th scope="col">{{ axis.title }}</th>{% endfor %}</tr></thead>
+        <tbody>
+          {% for row in table.rows %}
+          <tr><th scope="row"><a href="#{{ row.paper_id }}">{{ citations[row.paper_id] }}</a></th>{% for axis in table.axes %}<td>{{ row.cells.get(axis.id, '—') }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endfor %}
 </section>
 {% endif %}
 {% if topic.lineage %}{% include "lineage.html" %}{% endif %}

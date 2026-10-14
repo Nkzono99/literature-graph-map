@@ -274,12 +274,44 @@ class LineageTrack(Model):
         return self
 
 
+class ComparisonAxis(Model):
+    id: TopicID
+    title: Text
+
+
+class ComparisonRow(Model):
+    paper_id: PaperID
+    cells: dict[TopicID, Text] = Field(default_factory=dict)
+
+
+class Comparison(Model):
+    """A few editor-chosen axes along which some of the topic's works are set side by side."""
+
+    id: TopicID
+    title: Text
+    note: str = ""
+    axes: list[ComparisonAxis] = Field(min_length=1)
+    rows: list[ComparisonRow] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def cells_match_axes(self) -> Self:
+        axes = [axis.id for axis in self.axes]
+        papers = [row.paper_id for row in self.rows]
+        if len(set(axes)) != len(axes) or len(set(papers)) != len(papers):
+            raise ValueError("comparison axes and rows must be distinct")
+        if any(not set(row.cells) <= set(axes) for row in self.rows):
+            raise ValueError("comparison cells must name an axis of the same table")
+        return self
+
+
 class Topic(Model):
     schema_version: Literal[1] = 1
     topic_id: TopicID
     title: Text
     question: Text
+    synopsis: list[Text] = Field(default_factory=list)
     review: list[ReviewSection] = Field(default_factory=list)
+    comparisons: list[Comparison] = Field(default_factory=list)
     lineage: list[LineageTrack] = Field(default_factory=list)
     public: bool = True
     scope: Scope = Field(default_factory=Scope)
@@ -302,8 +334,12 @@ class Topic(Model):
         milestones = [step.paper_id for track in self.lineage for step in track.steps]
         if len(set(milestones)) != len(milestones) or not set(milestones) <= set(papers):
             raise ValueError("lineage steps must reference distinct papers in the topic's list")
-        for section in self.review:
-            for paragraph in section.paragraphs:
-                if not set(PAPER_CITATION.findall(paragraph)) <= set(papers):
-                    raise ValueError("review citations must appear in the topic's paper list")
+        paragraphs = [*self.synopsis, *(p for s in self.review for p in s.paragraphs)]
+        for paragraph in paragraphs:
+            if not set(PAPER_CITATION.findall(paragraph)) <= set(papers):
+                raise ValueError("review citations must appear in the topic's paper list")
+        tables = [table.id for table in self.comparisons]
+        compared = [row.paper_id for table in self.comparisons for row in table.rows]
+        if len(set(tables)) != len(tables) or not set(compared) <= set(papers):
+            raise ValueError("comparison tables need distinct IDs and papers in the topic's list")
         return self

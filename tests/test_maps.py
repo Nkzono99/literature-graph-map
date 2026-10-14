@@ -7,6 +7,9 @@ from pydantic import ValidationError
 
 from literature_graph_map.cli import main
 from literature_graph_map.models import (
+    Comparison,
+    ComparisonAxis,
+    ComparisonRow,
     Inspection,
     ItemEvidence,
     LineageStep,
@@ -427,6 +430,96 @@ def test_review_citations_require_a_paper_in_the_topic(snapshot):
     data = snapshot.topics["demo"].model_dump()
     data["review"] = [{"heading": "概観", "paragraphs": ["未掲載の[@P999999]。"]}]
     with pytest.raises(ValidationError, match="review citations"):
+        Topic.model_validate(data)
+    data["review"] = []
+    data["synopsis"] = ["未掲載の[@P999999]。"]
+    with pytest.raises(ValidationError, match="review citations"):
+        Topic.model_validate(data)
+
+
+def test_synopsis_precedes_the_review_and_relabels_it(tmp_path, snapshot):
+    topic = snapshot.topics["demo"]
+    topic.review = [ReviewSection(heading="論点", paragraphs=["詳説 [@P000002]。"])]
+    page = topic_page(topic, snapshot)
+    assert 'id="synopsis"' not in page and ">研究の概観</h2>" in page
+    topic.synopsis = ["<b>全体像</b> [@P000001]。", "二段落目。"]
+    commit(tmp_path, snapshot)
+    loaded = load(tmp_path)
+    assert loaded.topics["demo"].synopsis == topic.synopsis
+    render(tmp_path, loaded)
+    page = (tmp_path / "_site/topics/demo/index.html").read_text(encoding="utf-8")
+    synopsis = page[page.index('<section id="synopsis"') : page.index('<section id="review"')]
+    assert '&lt;b&gt;全体像&lt;/b&gt; <a href="#P000001">1 2001</a>。' in synopsis
+    assert "<p>二段落目。</p>" in synopsis and '<a href="#review">' in synopsis
+    assert ">研究の全体像</h2>" in synopsis and ">論点別の概観</h2>" in page
+    sidebar = page.split('<aside class="sidebar">')[1].split("</aside>")[0]
+    assert sidebar.index('href="#synopsis"') < sidebar.index('href="#review"')
+
+
+def test_comparison_table_links_rows_to_papers_and_marks_missing_cells(tmp_path, snapshot):
+    topic = snapshot.topics["demo"]
+    assert 'id="comparisons"' not in topic_page(topic, snapshot)
+    topic.comparisons = [
+        Comparison(
+            id="setup",
+            title="実験条件",
+            note="検証用の<注記>。",
+            axes=[
+                ComparisonAxis(id="sample", title="試料"),
+                ComparisonAxis(id="probe", title="計測"),
+            ],
+            rows=[
+                ComparisonRow(paper_id="P000001", cells={"sample": "<粉体>", "probe": "探針"}),
+                ComparisonRow(paper_id="P000003", cells={"probe": "天秤"}),
+            ],
+        )
+    ]
+    commit(tmp_path, snapshot)
+    loaded = load(tmp_path)
+    assert loaded.topics["demo"].comparisons == topic.comparisons
+    render(tmp_path, loaded)
+    page = (tmp_path / "_site/topics/demo/index.html").read_text(encoding="utf-8")
+    section = page[page.index('<section id="comparisons"') : page.index('<section id="papers"')]
+    assert "検証用の&lt;注記&gt;。" in section and "<注記>" not in section
+    assert '<th scope="col">試料</th><th scope="col">計測</th>' in section
+    assert (
+        '<th scope="row"><a href="#P000001">1 2001</a></th><td>&lt;粉体&gt;</td><td>探針</td>'
+        in section
+    )
+    assert '<th scope="row"><a href="#P000003">3 2003</a></th><td>—</td><td>天秤</td>' in section
+    assert 'href="#comparisons"' in page.split('<aside class="sidebar">')[1].split("</aside>")[0]
+
+
+@pytest.mark.parametrize(
+    "axes, rows, message",
+    [
+        (["a", "a"], [("P000001", {})], "distinct"),
+        (["a"], [("P000001", {}), ("P000001", {})], "distinct"),
+        (["a"], [("P000001", {"b": "値"})], "name an axis"),
+        (["a"], [("P999999", {})], "comparison tables"),
+    ],
+)
+def test_comparison_rejects_inconsistent_axes_rows_or_papers(snapshot, axes, rows, message):
+    data = snapshot.topics["demo"].model_dump()
+    data["comparisons"] = [
+        {
+            "id": "table",
+            "title": "比較",
+            "axes": [{"id": axis, "title": "軸"} for axis in axes],
+            "rows": [{"paper_id": pid, "cells": cells} for pid, cells in rows],
+        }
+    ]
+    with pytest.raises(ValidationError, match=message):
+        Topic.model_validate(data)
+    data["comparisons"] = [
+        {
+            "id": "same",
+            "title": "比較",
+            "axes": [{"id": "a", "title": "軸"}],
+            "rows": [{"paper_id": "P000001"}],
+        }
+    ] * 2
+    with pytest.raises(ValidationError, match="comparison tables"):
         Topic.model_validate(data)
 
 

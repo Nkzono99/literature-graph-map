@@ -9,8 +9,9 @@
 次の一覧は `uv run lgm readme` が正本から生成します。手で編集せず、テーマを変えたら再生成してください。
 
 <!-- lgm:topics https://nkzono99.github.io/literature-graph-map/ -->
-- [宇宙機・プラズマ応用](https://nkzono99.github.io/literature-graph-map/topics/applications/)
+- [宇宙機・材料・プラズマ応用](https://nkzono99.github.io/literature-graph-map/topics/applications/)
   - [電子反射法による天体の磁場・電位・大気推定](https://nkzono99.github.io/literature-graph-map/topics/electron-reflectometry/)
+  - [月面資源利用・レゴリスの処理](https://nkzono99.github.io/literature-graph-map/topics/lunar-isru/)
   - [プラズマ加工・微細構造の帯電](https://nkzono99.github.io/literature-graph-map/topics/plasma-processing/)
   - [宇宙機・計測器とプラズマの相互作用](https://nkzono99.github.io/literature-graph-map/topics/spacecraft-plasma/)
 - [ダストの基礎](https://nkzono99.github.io/literature-graph-map/topics/dust-physics/)
@@ -24,6 +25,7 @@
     - [月面帯電の観測・宇宙環境](https://nkzono99.github.io/literature-graph-map/topics/lunar-charging/observations/)
     - [月面の電流収支・光電子シース](https://nkzono99.github.io/literature-graph-map/topics/lunar-charging/sheath/)
     - [月の極域・クレーター・空洞の帯電](https://nkzono99.github.io/literature-graph-map/topics/lunar-charging/topography/)
+  - [月の外圏・表面からの粒子放出](https://nkzono99.github.io/literature-graph-map/topics/lunar-exosphere/)
   - [月の地形・地質・内部構造](https://nkzono99.github.io/literature-graph-map/topics/lunar-geology/)
     - [月の衝突クレーター・年代学](https://nkzono99.github.io/literature-graph-map/topics/lunar-craters/)
     - [月の地形計測・重力・内部構造](https://nkzono99.github.io/literature-graph-map/topics/lunar-geodesy-interior/)

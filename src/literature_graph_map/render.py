@@ -29,6 +29,7 @@ KIND_LABELS = {
     "unknown": "版未確認",
 }
 SUMMARY_LABELS = {"question": "問い", "method": "方法", "contribution": "判明点"}
+WRITING_PAGE = Path("paper-writing.html")
 WEB = Path(__file__).with_name("web")
 TEMPLATES = Environment(
     loader=FileSystemLoader(WEB),
@@ -276,6 +277,7 @@ def page_context(snapshot: Snapshot, path: Path) -> dict:
     return {
         "home_url": relative_url(path, Path("index.html")),
         "works_url": relative_url(path, Path("works/index.html")),
+        "writing_url": relative_url(path, WRITING_PAGE),
         "asset_url": relative_url(path, Path("assets")),
         "copyright_url": relative_url(path, Path("copyright.html")),
         "disclaimer": DISCLAIMER,
@@ -421,6 +423,20 @@ def index_page(snapshot: Snapshot) -> str:
     )
 
 
+def writing_page(snapshot: Snapshot) -> str:
+    path = WRITING_PAGE.parent
+    topic = snapshot.topics.get("lunar-charging-dust")
+    paper_links = {}
+    if topic is not None and topic.public:
+        url = topic_link(snapshot, topic.topic_id, path)["url"]
+        paper_links = {entry.paper_id: f"{url}#{entry.paper_id}" for entry in topic.entries}
+    return TEMPLATES.get_template(WRITING_PAGE.name).render(
+        **page_context(snapshot, path),
+        title="論文の書き方",
+        paper_links=paper_links,
+    )
+
+
 COPYRIGHT = """# 原著と公開コンテンツの権利境界
 
 このリポジトリには、書誌情報、原著へのリンク、独自の概説・要点・比較・分類を掲載します。参照先論文、Abstract、本文、図表、PDFの権利は各権利者に帰属します。
@@ -459,6 +475,7 @@ def rendered_files(
     files = {
         output / "index.html": index_page(snapshot),
         output / "works" / "index.html": works_page(snapshot),
+        output / WRITING_PAGE: writing_page(snapshot),
         output / "copyright.html": TEMPLATES.get_template("copyright.html").render(
             **page_context(snapshot, Path(".")),
             title="著作権について",

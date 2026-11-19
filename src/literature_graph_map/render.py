@@ -8,7 +8,6 @@ from pathlib import Path
 from urllib.parse import quote, unquote
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from markdown import markdown
 from markupsafe import Markup
 
 from .models import PAPER_CITATION, TOPIC_CITATION, Entry, Evidence, Reading, Topic, Work, reading
@@ -30,7 +29,6 @@ KIND_LABELS = {
     "unknown": "版未確認",
 }
 SUMMARY_LABELS = {"question": "問い", "method": "方法", "contribution": "判明点"}
-WRITING_PAGE = Path("paper-writing.html")
 WEB = Path(__file__).with_name("web")
 TEMPLATES = Environment(
     loader=FileSystemLoader(WEB),
@@ -278,7 +276,6 @@ def page_context(snapshot: Snapshot, path: Path) -> dict:
     return {
         "home_url": relative_url(path, Path("index.html")),
         "works_url": relative_url(path, Path("works/index.html")),
-        "writing_url": relative_url(path, WRITING_PAGE),
         "asset_url": relative_url(path, Path("assets")),
         "copyright_url": relative_url(path, Path("copyright.html")),
         "disclaimer": DISCLAIMER,
@@ -424,16 +421,6 @@ def index_page(snapshot: Snapshot) -> str:
     )
 
 
-def writing_page(snapshot: Snapshot, source: str) -> str:
-    heading, _, body = source.partition("\n")
-    return TEMPLATES.get_template(WRITING_PAGE.name).render(
-        **page_context(snapshot, WRITING_PAGE.parent),
-        title=heading.removeprefix("# "),
-        markdown_url=WRITING_PAGE.with_suffix(".md").name,
-        guide=Markup(markdown(body, extensions=["attr_list"])),
-    )
-
-
 COPYRIGHT = """# 原著と公開コンテンツの権利境界
 
 このリポジトリには、書誌情報、原著へのリンク、独自の概説・要点・比較・分類を掲載します。参照先論文、Abstract、本文、図表、PDFの権利は各権利者に帰属します。
@@ -469,13 +456,9 @@ def rendered_files(
     notice = copyright_text(repo).strip()
     if notice.startswith("# "):
         notice = notice.partition("\n")[2]
-    guide_path = WRITING_PAGE.with_suffix(".md")
-    guide_source = (WEB / guide_path).read_text(encoding="utf-8")
     files = {
         output / "index.html": index_page(snapshot),
         output / "works" / "index.html": works_page(snapshot),
-        output / WRITING_PAGE: writing_page(snapshot, guide_source),
-        output / guide_path: guide_source,
         output / "copyright.html": TEMPLATES.get_template("copyright.html").render(
             **page_context(snapshot, Path(".")),
             title="著作権について",

@@ -88,6 +88,22 @@ main > section { margin-bottom: 3.25rem; }
 .topic-review h3 { margin-bottom: .6rem; }
 .topic-review a { text-decoration-color: var(--accent-underline); }
 .topic-review a:hover { text-decoration-color: currentColor; }
+.writing-workspace, .writing-level { max-width: 48rem; }
+.writing-picker { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: end; }
+.writing-picker > div { min-width: 0; }
+.writing-picker select { display: block; }
+.writing-actions { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; margin-bottom: 1rem; }
+.writing-actions input { width: auto; min-height: auto; }
+.writing-actions button { background: var(--accent); color: white; }
+.writing-hint { color: var(--ink-soft); font-size: .875rem; margin: .7rem 0 1rem; }
+.writing-workspace textarea { display: block; width: 100%; resize: vertical; padding: .8rem; border: 1px solid var(--line); color: inherit; background: var(--paper); font: inherit; line-height: 1.7; }
+.writing-level { border-bottom: 1px solid var(--line); padding: .7rem 0; }
+.writing-level summary { cursor: pointer; }
+.writing-level > summary { font-weight: 600; }
+.writing-level small { color: var(--muted); margin-inline-start: .4em; }
+.writing-pattern { margin: .5rem 0 .5rem 1rem; }
+.writing-pattern p { margin: .45rem 0; }
+.writing-pattern pre, .writing-example { white-space: pre-wrap; overflow-wrap: anywhere; padding: .75rem 1rem; margin: .6rem 0; border-left: 2px solid var(--accent); background: var(--side); font: inherit; }
 .topic-synopsis { font-family: var(--serif); font-size: 1.0625rem; line-height: 2; max-width: 40em; padding-left: 1.25rem; border-left: 2px solid var(--rule); }
 .section-heading > a { font-size: .8125rem; color: var(--muted); text-decoration-color: var(--accent-underline); white-space: nowrap; }
 .section-heading > a:hover { color: var(--accent); }

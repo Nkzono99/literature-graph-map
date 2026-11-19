@@ -2,101 +2,89 @@
 {% block content %}
 <header class="page-header">
   <h1>{{ title }}</h1>
-  <p class="lead">章は、読者が研究の結論を確かめる順に並べる。段落や文、数値、図表は、それを外したときに何が分からなくなるかで選ぶ。</p>
-  <p class="scope">ダストを扱う原著3本を題材にした試作。文献マップの実験・観測論文に、同じ分野の計算論文を加えた。構成の型と編集上の判断は、原文の配置をもとにした解釈。</p>
-  <div class="topic-meta">
-    <nav class="jump-links" aria-label="ページ内">
-      <a href="#structures">構成の3例</a>
-      <a href="#paragraph">段落の分解</a>
-      <a href="#placement">採用と配置</a>
-      <a href="#revision">草稿の推敲</a>
-    </nav>
-  </div>
+  <p class="lead">自分の研究に合う構成を選ぶと、章・段落・文まで展開したひな形が手に入る。［　］に手元の証拠を入れ、必要な箇所だけ別の型に差し替える。</p>
+  <div class="topic-meta"><nav class="jump-links" aria-label="ページ内">
+    <a href="#structures">型を選ぶ</a><a href="#placement">何を残すか</a><a href="#revision">記入例とモデルへの指示</a>
+  </nav></div>
 </header>
 
-<section id="structures" aria-labelledby="structures-heading">
-  <div class="section-heading"><h2 id="structures-heading">証拠を示す順に章を組む</h2></div>
-  <div class="topic-review">
-    <section>
-      <h3>機構を提案し、対照実験で絞る</h3>
-      <p>粒子の離脱を引き起こす機構を提案するWang 2016は、序論の次に粒子間の空隙へ電子がたまる帯電モデルを置く。実験結果の節で照射条件を変えた粒子の動きと、モデルを模したプローブの測定を示し、考察では計測した跳躍を軌道モデルと比べて月面へ外挿する。モデルを先に読むと、粒子の動きとプローブ電位がそれぞれ何を支えるか追える。<a href="https://doi.org/10.1002/2016GL069491">原著 §§2–4</a>{% if paper_links.P000009 %} ／ <a href="{{ paper_links.P000009 }}">文献マップの要点（Wang 2016）</a>{% endif %}</p>
-    </section>
-    <section>
-      <h3>計算の前提を示し、基準との差を調べる</h3>
-      <p>飛行中の帯電が軌道をどこまで変えるかを問うYeo 2021は、序論で離脱時の負電荷を説明し、計算の節で初速や周囲の環境を定める。結果では帯電と軌道の例を出し、粒径や重力を変えた計算を、重力だけの基準と比べる。粒子が飛び始める条件を先に共有することで、計算で変えた量と、高度差を読む基準をたどれる。<a href="https://doi.org/10.1016/j.icarus.2021.114519">原著 §§1–4、図1–3</a></p>
-    </section>
-    <section>
-      <h3>測れる信号を定義し、観測が許す上限を示す</h3>
-      <p>個別には捉えられない微粒子を探すSzalay 2015は、序論で粒径を定め、装置の節で粒子が作る信号と背景の差し引き方を説明する。観測の節で実測電流と既往研究から予測した電流を比較し、残差電流から密度の上限を求める。装置の節を読むと、背景が残る状況で上限を出せる理由が分かる。<a href="https://doi.org/10.1002/2015GL064324">原著 §§1–4、図3–4</a>{% if paper_links.P000039 %} ／ <a href="{{ paper_links.P000039 }}">文献マップの要点（Szalay 2015）</a>{% endif %}</p>
-    </section>
+<section aria-labelledby="compose-heading" hidden id="compose">
+  <div class="section-heading"><h2 id="compose-heading">原稿を組み立てる</h2></div>
+  <div class="writing-workspace">
+    <div class="writing-picker">
+      <div><label for="writing-level">階層</label><select id="writing-level">{% for level in levels %}<option>{{ level.level }}</option>{% endfor %}</select></div>
+      <div><label for="writing-pattern">使う型</label><select id="writing-pattern"></select></div>
+    </div>
+    <p class="writing-hint" id="writing-choice" aria-live="polite"></p>
+    <div class="writing-actions">
+      <label><input type="checkbox" id="writing-expand" checked> 下位の型まで展開する</label>
+      <button type="button" id="writing-insert">下書きに挿入</button>
+    </div>
+    <label for="writing-draft">下書き</label>
+    <textarea id="writing-draft" rows="14" aria-describedby="writing-help" placeholder="全体の型を選んで挿入すると、ここに記入用の原稿が表示されます。"></textarea>
+    <p class="writing-hint" id="writing-help">［　］は資料で埋める欄です。展開を外すと〈型名〉が残ります。下書きの〈型名〉や段落を選択して別の型を挿入すると、その箇所だけを差し替えられます。下書きはタブを閉じる前にファイルに保存してください。</p>
+    <button type="button" id="writing-save" disabled>Markdownで保存</button>
   </div>
 </section>
 
-<section id="paragraph" aria-labelledby="paragraph-heading">
-  <div class="section-heading"><h2 id="paragraph-heading">八つの文が、方法を選ぶ理由を作る</h2></div>
-  <div class="topic-review">
-    <p>Szalay 2015の装置説明は、最初の段落で「なぜ一粒ずつ数える方法を使えないか」に答える。各文の内容を原文の順に要約した。<a href="https://spacephysics.princeton.edu/sites/g/files/toruqf1376/files/media/15_szalay_a.pdf#page=2">原著 §2 第1段落</a></p>
-    <ol>
-      <li><strong>背景。</strong> 探査機の打ち上げ日と月周回軌道に入った日を記す。</li>
-      <li><strong>計器の紹介。</strong> 月の周囲でダストの粒径・密度分布を調べる検出器を示す。</li>
-      <li><strong>信号の発生。</strong> 粒子が標的に高速で衝突するとプラズマが生じる。</li>
-      <li><strong>信号の読み取り。</strong> そのうち正イオンを検出器へ導く。</li>
-      <li><strong>量への換算。</strong> 粒子の質量と衝突速度から信号の大きさを求める較正式を置く。</li>
-      <li><strong>判定の基準。</strong> 個別検出には約3,000電子分の電荷が必要だと示す。</li>
-      <li><strong>対象との比較。</strong> 半径0.1 µmの粒子について、密度と衝突速度を仮定し、信号を約100電子分と見積もる。</li>
-      <li><strong>方法への接続。</strong> 想定した粒子は閾値を下回るため、別の探し方が要ると結ぶ。次の段落で電荷を積算する方法を説明する。</li>
-    </ol>
-    <p>同じ段落でも、日付は探査機の紹介に使え、約100と約3,000の比較は測定方法を選ぶ根拠になる。論証を保って縮めるなら、日付を省き、信号を得る仕組みは一文にまとめられる。二つの値と比較結果は残す。較正式は後段の密度換算にもつながるため、概説では参照に縮めても、解析を再現するための方法欄では保持する。<a href="https://spacephysics.princeton.edu/sites/g/files/toruqf1376/files/media/15_szalay_a.pdf#page=4">原著 §3、密度と電流の換算</a></p>
-  </div>
+<section id="structures" aria-labelledby="patterns-heading">
+  <div class="section-heading"><h2 id="patterns-heading">執筆テンプレート</h2></div>
+  <p class="comparison-note">全体の型は、いちばん強い主張をどの証拠で支えるかで選ぶ。型を開くと、組み合わせた記入欄をそのままコピーできる。〔　〕の行は条件に合うものを使う。要旨は本文が固まってから「章」の型で書き足す。</p>
+  {% for level in levels %}
+  <details class="writing-level" data-level="{{ level.level }}"{% if loop.first %} open{% endif %}{% if level.level == '段落' %} id="paragraph"{% endif %}>
+    <summary>{{ level.level }}の型 <small>{{ level["items"] | length }}件</small></summary>
+    {% for item in level["items"] %}
+    <details class="writing-pattern">
+      <summary>{{ item.name }}</summary>
+      <p class="pattern-use">{{ item.use }}</p>
+      <pre class="pattern-plan">{{ item.text }}</pre>
+      {% if expanded[item.name] != item.text %}
+      <details>
+        <summary>記入欄まで展開</summary>
+        <pre class="pattern-full">{{ expanded[item.name] }}</pre>
+      </details>
+      {% endif %}
+    </details>
+    {% endfor %}
+  </details>
+  {% endfor %}
 </section>
 
 <section id="placement" aria-labelledby="placement-heading">
-  <div class="section-heading"><h2 id="placement-heading">本文に残すかを役割で決める</h2></div>
+  <div class="section-heading"><h2 id="placement-heading">どの穴を埋め、どこを変えるか</h2></div>
   <div class="topic-review">
+    <p>最初に、その論文で答えたい問い、答えを支える図表・記録、答えが通用する条件を一組にする。この三つが原稿を通して追えれば、章をまとめても、予測を方法より先に出してもよい。</p>
     <section>
-      <h3>外したときに困ることから判断する</h3>
-      <ul>
-        <li><strong>本文に残す。</strong> 結論を支える比較ができなくなる。適用範囲が変わって読める。</li>
-        <li><strong>参照できる場所に置く。</strong> 検算・再現・再解析に要る。方法欄、表、補足資料から選ぶ。</li>
-        <li><strong>一文にまとめる。</strong> 読者が背景を思い出したり、次の話題に移ったりする助けになる。</li>
-        <li><strong>省く。</strong> 外しても論旨が追え、同じ情報を検証できる。</li>
-      </ul>
+      <h3>一つの段落で読者の判断を一つ進める</h3>
+      <p>比較の結果なら、比較した対象、ものさし、得られた違いが必須になる。単位や分母を外すと差の意味が変わるなら、その値のそばに残す。測定範囲が狭く二つの説明を区別できないときは、判別できた範囲を結びにする。差を説明する証拠が別にあるときに、解釈の段落を加える。</p>
     </section>
     <section>
-      <h3>段落は一つの問いに答える</h3>
-      <p>段落ごとに「何と比べたか」「この差をどう説明するか」など、読者がそこで知りたいことを一つ書き出す。文を足すのは、問いを定める、根拠を出す、根拠から解釈への筋道を示す、適用範囲を限る、次の推論に要る前提を渡すとき。似た文が並んだら役割を確かめ、同じ役割ならまとめる。新しい比較や別の説明を扱うときは段落を分ける。</p>
+      <h3>図表に任せられる情報を選ぶ</h3>
+      <p>曲線の交差や分布の裾が主張を支えるなら図にし、本文では該当する系列と範囲を指す。正確な値を条件ごとに引き比べるなら表が向く。再現するときだけ要る設定は方法欄や補足にまとめる。図にある値を読み上げた文は、その値が結論を左右する箇所だけ残す。</p>
     </section>
     <section>
-      <h3>数値は、比較・判定・再現に使うものを選ぶ</h3>
-      <p>主結果の大きさ、境界となる値、比較を成り立たせる条件は、読み手が判断する箇所の近くに置く。値の意味が変わる単位、対象、基準、不確かさも添える。Szalay 2015の密度上限は約100 m<sup>−3</sup>。月が太陽風中にあるときの明け方側の明暗境界、高度3 kmで、粒子半径は0.1 µmを想定している。残差電流をすべてダストに割り当てて換算した上限だと書けば、測った量と換算した量の関係が伝わる。<a href="https://spacephysics.princeton.edu/sites/g/files/toruqf1376/files/media/15_szalay_a.pdf#page=5">原著 §4、図4</a></p>
-    </section>
-    <section>
-      <h3>図には関係を、表には照合する値を置く</h3>
-      <p>Yeo 2021の図3上段は到達高度を示し、下段は重力だけの場合との高度差を百分率で示す。下段があると、上段では線が重なる範囲でも差の向きと大きさを読める。本文は、弱い重力のもとで粒子からの光電子放出が強いと、基準より高く飛ぶ場合があることを拾い、その理由を説明する。キャプションには初期電位、系列の条件、差を計算した基準を残す。<a href="https://doi.org/10.1016/j.icarus.2021.114519">原著 §3、図3（p. 4）</a></p>
-      <p>表は条件をまたいで正確な値を照合するときに使う。Wang 2016の表1では、三つの照射条件の推定電荷や力を同じ行で比べられる。粒子を球とした凝集力の推定など、値の読み方を左右する仮定は表注に置く。<a href="https://doi.org/10.1002/2016GL069491">原著 §3.2、表1（p. 6108）</a></p>
-    </section>
-    <section>
-      <h3>主張の条件は本文に、検証の詳細は参照先に置く</h3>
-      <p>条件を省くと結論が変わって読める場合は、結果と同じ文か段落に残す。再現に必要な設定や計算過程は方法欄、表、補足資料に置き、本文からたどれるようにする。既報の手順を使った場合は、何を使い、どこを変えたかを本文に示して原典を参照する。判断にも検証にも使わない背景は、段落の流れに必要な分だけ残す。</p>
+      <h3>根拠が足りない欄の扱いを決める</h3>
+      <p>主張に必要な値や出典が手元にない欄には［要確認］を置く。追加の証拠が得られない段階では、根拠のある範囲に主張を狭める。研究に該当しない比較、前の段落と同じ理由、読者の判断を変えない背景は、その文や欄ごと省ける。</p>
     </section>
   </div>
 </section>
 
 <section id="revision" aria-labelledby="revision-heading">
-  <div class="section-heading"><h2 id="revision-heading">AI草稿は役割を見て削る</h2></div>
+  <div class="section-heading"><h2 id="revision-heading">一段落を書いてみる</h2></div>
   <div class="topic-review">
     <section>
-      <h3>対照条件と解釈の限界を一緒に残す</h3>
-      <p>Wang 2016の比較実験をもとに、説明を足しすぎた草稿を作り、比較が追える長さに推敲した。<a href="https://doi.org/10.1002/2016GL069491">原著 §3.1、図2b・3a（pp. 6105–6106）</a></p>
-      <p><strong>推敲前</strong>　粒子の運動を評価するには、粒子を取り巻く環境に注意を払う必要がある。本研究では二種類のプラズマ条件を設定し、それぞれでダストの挙動を比較した。実験の結果、表面付近の電場は両条件でおおむね同程度であったが、電子ビームを加えた場合にのみ粒子の跳躍が見られた。この結果は、条件設定が結果の解釈において重要であることを示している。</p>
-      <p><strong>推敲後</strong>　熱プラズマ単独の条件と、電子ビームを併用した条件で、表面付近の鉛直電場はいずれも約16 V/cmだった。粒子の跳躍はビームを併用した条件でのみ観察された。高さ方向の電場分布には差があった（図2b）。</p>
-      <p>環境や条件の重要性を述べる一般論を外し、読者が比較に使える電場の大きさを示した。どこまで条件がそろったかも書いたので、この比較が支える解釈の範囲をたどれる。</p>
+      <h3>架空の寸法測定で「精度の検証」を組む</h3>
+      <p>原稿の問いは「撮影画像から幅を測る手法は、照明を変えても許容誤差内に収まるか」。同じ標準片10枚を二つの照明条件で撮り、基準幅に対する絶対誤差の中央値で評価したとする。手元の架空の記録には通常照明で0.2 mm、低照度で0.8 mm、用途上の許容値は中央値0.5 mm以下とある。</p>
+      <p>全体は「新しい手法の精度を検証する」、章は「精度の検証」、段落は「差を報告する」、書き出しは「結果を述べる文」を選ぶ。結果の二文は次のようになる。</p>
+      <blockquote class="writing-example">同じ標準片10枚に対する絶対誤差の中央値は、通常照明で0.2 mm、低照度で0.8 mmだった。中央値0.5 mm以下という用途上の基準を満たしたのは、今回試した通常照明の条件だった。</blockquote>
+      <p>ここでは条件ごとの中央値で判断が済む。各標準片が許容値内かを問うなら、個々の誤差を確かめ、段落で報告する量を変える。低照度で誤差が増えた原因についても、確かめた結果が得られた段階で考察に加える。</p>
     </section>
     <section>
-      <h3>新しい文献から判断例を増やす</h3>
-      <p>章は、各節が答える問いを一行ずつ並べ、前の節の何を次で使うかを書く。細部は「原著の版と場所／要素／役割／外すと何が困るか／自分の原稿での置き場所」を一件ずつ記録する。</p>
-      <p>記録例　Szalay 2015 §2 第1段落（出版版 p. 5142、公開PDF p. 2） ／ 約100と約3,000電子分の比較 ／ 手法を選ぶ根拠 ／ 積算する理由が消える ／ 方法欄の冒頭。</p>
+      <h3>モデルに渡す指示のひな形</h3>
+      <p>資料と型に次の指示を添える。後から別の型を選んだ理由も確認できる。</p>
+      <blockquote class="writing-example">［問い］について、［手元の図表・測定記録・出典］を根拠に［選んだ型］で草稿を書いてください。比較条件、分母、単位、推定の仮定は資料に合わせてください。主張に必要な不足情報は［要確認］としてください。章の順序、段落の分割・統合、言い回しは読みやすさに合わせて選び、不要な欄は省いてください。型を変更して主張の範囲が変わった箇所だけ、理由を草稿の後に一行ずつ添えてください。</blockquote>
     </section>
   </div>
 </section>
+<script defer src="{{ asset_url }}/paper-writing.js"></script>
 {% endblock %}

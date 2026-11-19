@@ -7,6 +7,7 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote, unquote
 
+import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
@@ -424,16 +425,17 @@ def index_page(snapshot: Snapshot) -> str:
 
 
 def writing_page(snapshot: Snapshot) -> str:
-    path = WRITING_PAGE.parent
-    topic = snapshot.topics.get("lunar-charging-dust")
-    paper_links = {}
-    if topic is not None and topic.public:
-        url = topic_link(snapshot, topic.topic_id, path)["url"]
-        paper_links = {entry.paper_id: f"{url}#{entry.paper_id}" for entry in topic.entries}
+    levels = yaml.safe_load((WEB / "writing-patterns.yaml").read_text(encoding="utf-8"))
+    expanded = {}
+    # Resolve sentence templates first so a whole outline works offline, even without JS.
+    for level in reversed(levels):
+        for item in level["items"]:
+            expanded[item["name"]] = re.sub(r"〈([^〉]+)〉", lambda m: expanded[m[1]], item["text"])
     return TEMPLATES.get_template(WRITING_PAGE.name).render(
-        **page_context(snapshot, path),
+        **page_context(snapshot, WRITING_PAGE.parent),
         title="論文の書き方",
-        paper_links=paper_links,
+        levels=levels,
+        expanded=expanded,
     )
 
 
@@ -489,7 +491,7 @@ def rendered_files(
         },
         **{
             output / "assets" / name: (WEB / name).read_text(encoding="utf-8")
-            for name in ("site.css", "site.js")
+            for name in ("site.css", "site.js", "paper-writing.js")
         },
         output / ".nojekyll": "",
     }

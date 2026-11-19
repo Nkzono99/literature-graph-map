@@ -1,3 +1,4 @@
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -29,6 +30,7 @@ from literature_graph_map.render import (
     render,
     summary_block,
     topic_page,
+    writing_page,
 )
 from literature_graph_map.storage import MapError, load
 
@@ -69,6 +71,15 @@ def test_footer_states_ai_authorship_and_correction_policy(snapshot):
     footer = page.split('<footer class="site-footer">')[1]
     assert "誤りや抜け" in footer and "生成AI" in footer and "本文確認" in footer
     assert "checked_by" not in page
+
+
+def test_writing_guide_preserves_outline_and_expands_all_nested_templates(snapshot):
+    page = writing_page(snapshot)
+    assert "〈対照の設計〉" in page
+    drafts = re.findall(r'<pre class="pattern-full">(.*?)</pre>', page, re.S)
+    assert drafts
+    assert all("〈" not in draft and "［" in draft for draft in drafts)
+    assert any("## 方法" in draft and "［操作した条件］と［対照条件］" in draft for draft in drafts)
 
 
 @pytest.mark.parametrize(

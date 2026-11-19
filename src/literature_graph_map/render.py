@@ -7,8 +7,8 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote, unquote
 
-import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markdown import markdown
 from markupsafe import Markup
 
 from .models import PAPER_CITATION, TOPIC_CITATION, Entry, Evidence, Reading, Topic, Work, reading
@@ -424,18 +424,13 @@ def index_page(snapshot: Snapshot) -> str:
     )
 
 
-def writing_page(snapshot: Snapshot) -> str:
-    levels = yaml.safe_load((WEB / "writing-patterns.yaml").read_text(encoding="utf-8"))
-    expanded = {}
-    # Resolve sentence templates first so a whole outline works offline, even without JS.
-    for level in reversed(levels):
-        for item in level["items"]:
-            expanded[item["name"]] = re.sub(r"〈([^〉]+)〉", lambda m: expanded[m[1]], item["text"])
+def writing_page(snapshot: Snapshot, source: str) -> str:
+    heading, _, body = source.partition("\n")
     return TEMPLATES.get_template(WRITING_PAGE.name).render(
         **page_context(snapshot, WRITING_PAGE.parent),
-        title="論文の書き方",
-        levels=levels,
-        expanded=expanded,
+        title=heading.removeprefix("# "),
+        markdown_url=WRITING_PAGE.with_suffix(".md").name,
+        guide=Markup(markdown(body, extensions=["attr_list"])),
     )
 
 
@@ -474,10 +469,13 @@ def rendered_files(
     notice = copyright_text(repo).strip()
     if notice.startswith("# "):
         notice = notice.partition("\n")[2]
+    guide_path = WRITING_PAGE.with_suffix(".md")
+    guide_source = (WEB / guide_path).read_text(encoding="utf-8")
     files = {
         output / "index.html": index_page(snapshot),
         output / "works" / "index.html": works_page(snapshot),
-        output / WRITING_PAGE: writing_page(snapshot),
+        output / WRITING_PAGE: writing_page(snapshot, guide_source),
+        output / guide_path: guide_source,
         output / "copyright.html": TEMPLATES.get_template("copyright.html").render(
             **page_context(snapshot, Path(".")),
             title="著作権について",
@@ -491,7 +489,7 @@ def rendered_files(
         },
         **{
             output / "assets" / name: (WEB / name).read_text(encoding="utf-8")
-            for name in ("site.css", "site.js", "paper-writing.js")
+            for name in ("site.css", "site.js")
         },
         output / ".nojekyll": "",
     }

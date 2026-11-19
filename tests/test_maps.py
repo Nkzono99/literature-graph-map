@@ -1,9 +1,9 @@
-import re
 from html.parser import HTMLParser
 from pathlib import Path
 
 import pytest
 from conftest import DAY, make_entry, make_work
+from markdown import markdown
 from pydantic import ValidationError
 
 from literature_graph_map.cli import main
@@ -24,13 +24,13 @@ from literature_graph_map.models import (
 )
 from literature_graph_map.operations import commit, export_snapshot
 from literature_graph_map.render import (
+    WEB,
     access_cell,
     citation_labels,
     preprint_cell,
     render,
     summary_block,
     topic_page,
-    writing_page,
 )
 from literature_graph_map.storage import MapError, load
 
@@ -73,13 +73,18 @@ def test_footer_states_ai_authorship_and_correction_policy(snapshot):
     assert "checked_by" not in page
 
 
-def test_writing_guide_preserves_outline_and_expands_all_nested_templates(snapshot):
-    page = writing_page(snapshot)
-    assert "〈対照の設計〉" in page
-    drafts = re.findall(r'<pre class="pattern-full">(.*?)</pre>', page, re.S)
-    assert drafts
-    assert all("〈" not in draft and "［" in draft for draft in drafts)
-    assert any("## 方法" in draft and "［操作した条件］と［対照条件］" in draft for draft in drafts)
+def test_render_publishes_the_writing_guide_as_html_and_markdown(tmp_path, snapshot):
+    render(tmp_path, snapshot)
+    site = tmp_path / "_site"
+    page = (site / "paper-writing.html").read_text(encoding="utf-8")
+    guide = (site / "paper-writing.md").read_text(encoding="utf-8")
+    assert guide == (WEB / "paper-writing.md").read_text(encoding="utf-8")
+    assert 'href="paper-writing.md"' in page
+    heading, _, body = guide.partition("\n")
+    assert f"<h1>{heading.removeprefix('# ')}</h1>" in page
+    assert markdown(body, extensions=["attr_list"]) in page
+    assert '<h2 id="agent">' in page
+    assert "<textarea" not in page
 
 
 @pytest.mark.parametrize(

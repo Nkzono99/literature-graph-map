@@ -1,90 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<header class="page-header">
-  <h1>{{ title }}</h1>
-  <p class="lead">自分の研究に合う構成を選ぶと、章・段落・文まで展開したひな形が手に入る。［　］に手元の証拠を入れ、必要な箇所だけ別の型に差し替える。</p>
-  <div class="topic-meta"><nav class="jump-links" aria-label="ページ内">
-    <a href="#structures">型を選ぶ</a><a href="#placement">何を残すか</a><a href="#revision">記入例とモデルへの指示</a>
-  </nav></div>
-</header>
-
-<section aria-labelledby="compose-heading" hidden id="compose">
-  <div class="section-heading"><h2 id="compose-heading">原稿を組み立てる</h2></div>
-  <div class="writing-workspace">
-    <div class="writing-picker">
-      <div><label for="writing-level">階層</label><select id="writing-level">{% for level in levels %}<option>{{ level.level }}</option>{% endfor %}</select></div>
-      <div><label for="writing-pattern">使う型</label><select id="writing-pattern"></select></div>
-    </div>
-    <p class="writing-hint" id="writing-choice" aria-live="polite"></p>
-    <div class="writing-actions">
-      <label><input type="checkbox" id="writing-expand" checked> 下位の型まで展開する</label>
-      <button type="button" id="writing-insert">下書きに挿入</button>
-    </div>
-    <label for="writing-draft">下書き</label>
-    <textarea id="writing-draft" rows="14" aria-describedby="writing-help" placeholder="全体の型を選んで挿入すると、ここに記入用の原稿が表示されます。"></textarea>
-    <p class="writing-hint" id="writing-help">［　］は資料で埋める欄です。展開を外すと〈型名〉が残ります。下書きの〈型名〉や段落を選択して別の型を挿入すると、その箇所だけを差し替えられます。下書きはタブを閉じる前にファイルに保存してください。</p>
-    <button type="button" id="writing-save" disabled>Markdownで保存</button>
-  </div>
-</section>
-
-<section id="structures" aria-labelledby="patterns-heading">
-  <div class="section-heading"><h2 id="patterns-heading">執筆テンプレート</h2></div>
-  <p class="comparison-note">全体の型は、いちばん強い主張をどの証拠で支えるかで選ぶ。型を開くと、組み合わせた記入欄をそのままコピーできる。〔　〕の行は条件に合うものを使う。要旨は本文が固まってから「章」の型で書き足す。</p>
-  {% for level in levels %}
-  <details class="writing-level" data-level="{{ level.level }}"{% if loop.first %} open{% endif %}{% if level.level == '段落' %} id="paragraph"{% endif %}>
-    <summary>{{ level.level }}の型 <small>{{ level["items"] | length }}件</small></summary>
-    {% for item in level["items"] %}
-    <details class="writing-pattern">
-      <summary>{{ item.name }}</summary>
-      <p class="pattern-use">{{ item.use }}</p>
-      <pre class="pattern-plan">{{ item.text }}</pre>
-      {% if expanded[item.name] != item.text %}
-      <details>
-        <summary>記入欄まで展開</summary>
-        <pre class="pattern-full">{{ expanded[item.name] }}</pre>
-      </details>
-      {% endif %}
-    </details>
-    {% endfor %}
-  </details>
-  {% endfor %}
-</section>
-
-<section id="placement" aria-labelledby="placement-heading">
-  <div class="section-heading"><h2 id="placement-heading">どの穴を埋め、どこを変えるか</h2></div>
-  <div class="topic-review">
-    <p>最初に、その論文で答えたい問い、答えを支える図表・記録、答えが通用する条件を一組にする。この三つが原稿を通して追えれば、章をまとめても、予測を方法より先に出してもよい。</p>
-    <section>
-      <h3>一つの段落で読者の判断を一つ進める</h3>
-      <p>比較の結果なら、比較した対象、ものさし、得られた違いが必須になる。単位や分母を外すと差の意味が変わるなら、その値のそばに残す。測定範囲が狭く二つの説明を区別できないときは、判別できた範囲を結びにする。差を説明する証拠が別にあるときに、解釈の段落を加える。</p>
-    </section>
-    <section>
-      <h3>図表に任せられる情報を選ぶ</h3>
-      <p>曲線の交差や分布の裾が主張を支えるなら図にし、本文では該当する系列と範囲を指す。正確な値を条件ごとに引き比べるなら表が向く。再現するときだけ要る設定は方法欄や補足にまとめる。図にある値を読み上げた文は、その値が結論を左右する箇所だけ残す。</p>
-    </section>
-    <section>
-      <h3>根拠が足りない欄の扱いを決める</h3>
-      <p>主張に必要な値や出典が手元にない欄には［要確認］を置く。追加の証拠が得られない段階では、根拠のある範囲に主張を狭める。研究に該当しない比較、前の段落と同じ理由、読者の判断を変えない背景は、その文や欄ごと省ける。</p>
-    </section>
-  </div>
-</section>
-
-<section id="revision" aria-labelledby="revision-heading">
-  <div class="section-heading"><h2 id="revision-heading">一段落を書いてみる</h2></div>
-  <div class="topic-review">
-    <section>
-      <h3>架空の寸法測定で「精度の検証」を組む</h3>
-      <p>原稿の問いは「撮影画像から幅を測る手法は、照明を変えても許容誤差内に収まるか」。同じ標準片10枚を二つの照明条件で撮り、基準幅に対する絶対誤差の中央値で評価したとする。手元の架空の記録には通常照明で0.2 mm、低照度で0.8 mm、用途上の許容値は中央値0.5 mm以下とある。</p>
-      <p>全体は「新しい手法の精度を検証する」、章は「精度の検証」、段落は「差を報告する」、書き出しは「結果を述べる文」を選ぶ。結果の二文は次のようになる。</p>
-      <blockquote class="writing-example">同じ標準片10枚に対する絶対誤差の中央値は、通常照明で0.2 mm、低照度で0.8 mmだった。中央値0.5 mm以下という用途上の基準を満たしたのは、今回試した通常照明の条件だった。</blockquote>
-      <p>ここでは条件ごとの中央値で判断が済む。各標準片が許容値内かを問うなら、個々の誤差を確かめ、段落で報告する量を変える。低照度で誤差が増えた原因についても、確かめた結果が得られた段階で考察に加える。</p>
-    </section>
-    <section>
-      <h3>モデルに渡す指示のひな形</h3>
-      <p>資料と型に次の指示を添える。後から別の型を選んだ理由も確認できる。</p>
-      <blockquote class="writing-example">［問い］について、［手元の図表・測定記録・出典］を根拠に［選んだ型］で草稿を書いてください。比較条件、分母、単位、推定の仮定は資料に合わせてください。主張に必要な不足情報は［要確認］としてください。章の順序、段落の分割・統合、言い回しは読みやすさに合わせて選び、不要な欄は省いてください。型を変更して主張の範囲が変わった箇所だけ、理由を草稿の後に一行ずつ添えてください。</blockquote>
-    </section>
-  </div>
-</section>
-<script defer src="{{ asset_url }}/paper-writing.js"></script>
+<article class="writing-guide">
+  <header class="writing-header">
+    <h1>{{ title }}</h1>
+    <a href="{{ markdown_url }}" rel="alternate" type="text/markdown">ガイド本文（Markdown）</a>
+  </header>
+  <nav class="writing-contents" aria-label="ガイドの目次">
+    <a href="#revision">推敲例</a><a href="#structures">章の順序</a><a href="#paragraph">段落と文</a><a href="#placement">数値と図表</a><a href="#agent">エージェントへの依頼</a>
+  </nav>
+  {{ guide }}
+</article>
 {% endblock %}
